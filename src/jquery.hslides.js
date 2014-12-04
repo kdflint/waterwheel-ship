@@ -109,6 +109,11 @@ $.fn.hSlides = function(settings) {
 			// activate the new active panel
 			$.data($(this)[0], 'active', true);
 			$(this).addClass(settings.activeClass).each(settings.onEnter);
+			// Kathy Adds
+			document.getElementById("madeUp_index0").style.opacity='0';
+			document.getElementById("madeUp_index1").style.opacity='0';
+			document.getElementById("madeUp_index2").style.opacity='0';
+			document.getElementById("madeUp_index" + activeIndex).style.opacity='1';
 		};
 		// center the panels if configured
 		var centerPanels = function(){
