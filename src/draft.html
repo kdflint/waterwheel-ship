@@ -29,10 +29,10 @@
 					}
 
 				$('.accordion1').hSlides({
-						totalWidth: 940,
-						totalHeight: 216,
-						minPanelWidth: 107,
-						maxPanelWidth: 490
+						totalWidth: 960,
+						totalHeight: 200,
+						minPanelWidth: 120,
+						maxPanelWidth: 520
 					});
 				}
 				));
@@ -54,32 +54,29 @@
 		<div class="container">
 			<!-- Sponsor Context -->
 			<div id="sponsorApp" class="sponsorApp">
-				<img src="bg.gif" width="750" height="200"/>
-				<!-- Slider Start -->
-				<div class="activitySlide"></div>
-				<div class="slider">
+				<div class="sponsorHeader">
+					<img src="bg.gif" width="760" height="150"/>
+				</div>
+				<div class="sponsorSlider">
 					<div class="container_16">
 						<ul class="accordion accordion1">
 							<li class="one">
+								<div class="headerbox"><!--<img src="http://bannersmonster.com/themes/Circo/images/pack4big.png"  alt=""  class="leftalign" />-->
+									<div class="title"><strong>Sponsor</strong><img src="http://bannersmonster.com/themes/Circo/images/zipsmall.png"  alt="" />
+										<p>Bring powerful technology tools to the front lines of social progress.</p>
+										<!--<a href="#">Click Here</a>-->
+									</div>
+									<h1 class="white">Fund technology for world-changers</h1>
+									<p class="white">Give global web conference capability to a team that is changing the world. Choose your sponsorship level. Track your impact. See that your dollars are really making a difference. </p>
+								</div>
+							</li>
+							<li class="two">
 								<div class="headerbox"> <!--<img src="http://bannersmonster.com/themes/Circo/images/web1.gif"  alt=""  class="imgborder leftalign" />-->
 									<div class="title"><strong>Apply</strong><img src="http://bannersmonster.com/themes/Circo/images/memexsmall.png"  alt="" />
 										<p>Virtual global conference room for eligible organizations. </p>
 									</div>
 									<h1 class="white">Is your team changing the world?</h1>
 									<p class="white">If your U.S. 501(c)(3) organization is doing social justice or community-building work, you may be eligible for our global web conference package. <a href="#">Details</a></p>
-								</div>
-							</li>
-							<li class="two">
-								<div class="headerbox"><!--<img src="http://bannersmonster.com/themes/Circo/images/pack4big.png"  alt=""  class="leftalign" />-->
-									<div class="title"><strong>Sponsor</strong><img src="http://bannersmonster.com/themes/Circo/images/zipsmall.png"  alt="" />
-										<p>For as little as $50, bring powerful technology tools to the front lines of social progress.</p>
-										<!--<a href="#">Click Here</a>-->
-									</div>
-									<h1 class="white">Fund technology for world-changers</h1>
-									<p class="white">Give global web conference capability to a team that is changing the world. Choose your sponsorship level. Track your impact. See that your dollars are really making a difference. </p>
-									<button id="sponsorTypeSwitch" class="button" onClick="showLevelSponsorForm()">Levels</button>
-									<button id="sponsorTypeSwitch" class="button" onClick="showTeamSponsorForm()">Teams</button>
-									<button id="sponsorTypeSwitch" class="button" onClick="showCauseSponsorForm()">Causes</button>
 								</div>
 							</li>
 							<li class="three">
@@ -91,43 +88,31 @@
 									<p class="white">A New upcoming features of our company! Join us to walk with the trend</p>
 								</div>
 							</li>
-						</ul><!-- accordian1 -->
-					</div><!-- container_16 -->
-				</div><!-- Slider -->
-				<div id="madeUp_index0">
-					<form>
-						<p>Organization Name: <input type="text" /></p>
-						<p>Organization Budget: <select name="budget"><option selected>Please select one</option><option>$0 - $50,000</option><option>$50,001 - $200,000</option></select></p>
-						<p>Organization EIN: <input type="text" /></p>
-						<p>Team Name: <input type="text" /></p>
-						<p>Country/Region of Impact: <input type="text" /></p>
-						<p>Email: <input type="text" /></p>
-						<p>Team Mission: <input type="text" /></p>
-						<p>How will web conferencing help your team achieve your mission? <input type="text" /></p>
-						<p><button type="submit">Apply</a></p>
-					</form>
-				</div>
-				<div id="madeUp_index1">
-					<div id="levelSponsorForm">
-						<form>
-							<p>Team Name: <input type="text" /></p>
-							<p>Country/Region of Impact: <input type="text" /></p>
-							<p>Email: <input type="text" /></p>
-							<p>Team Mission: <input type="text" /></p>
-							<p><button type="submit">Apply</button></p>
-						</form>
-						<div class="pure-menu pure-menu-open">
-							<ul>
-								<li><a href="#">Level</a></li>
-								<li><a href="#">Level</a></li>
-								<li><a href="#">Level</a></li>
-								<li><a href="#">Level</a></li>
-								<li><a href="#">Level</a></li>
-								<li><a href="#">Level</a></li>
-							</ul>
-						</div>
+						</ul>
 					</div>
-					<div id="teamSponsorForm">
+				</div>
+				<div class="sponsorContent">
+					<div id="madeUp_index0">
+						<div class="sponsorContentLeft">
+						</div>
+						<div class="sponsorContentRight">
+						</div>
+						<button id="sponsorTypeSwitch" class="button" onClick="showLevelSponsorForm()">Levels</button>
+						<button id="sponsorTypeSwitch" class="button" onClick="showTeamSponsorForm()">Teams</button>
+						<button id="sponsorTypeSwitch" class="button" onClick="showCauseSponsorForm()">Causes</button>
+						<div id="levelSponsorForm">
+							<div class="pure-menu pure-menu-open">
+								<ul>
+									<li><a href="#">Level</a></li>
+									<li><a href="#">Level</a></li>
+									<li><a href="#">Level</a></li>
+									<li><a href="#">Level</a></li>
+									<li><a href="#">Level</a></li>
+									<li><a href="#">Level</a></li>
+								</ul>
+							</div>
+						</div>
+						<div id="teamSponsorForm">
 						<form>
 							<p>Search by</p>
 							<p>Organization Name: <input type="text" /></p>
@@ -144,36 +129,50 @@
 								<li><a href="#">Team</a></li>
 							</ul>
 						</div>
+						</div>
+						<div id="causeSponsorForm">
+							<form>
+								<p>Team Name: <input type="text" /></p>
+								<p>Country/Region of Impact: <input type="text" /></p>
+								<p>Email: <input type="text" /></p>
+								<p>Team Mission: <input type="text" /></p>
+								<p><button type="submit">Apply</button></p>
+							</form>
+							<div class="pure-menu pure-menu-open">
+								<ul>
+									<li><a href="#">Cause</a></li>
+									<li><a href="#">Cause</a></li>
+									<li><a href="#">Cause</a></li>
+									<li><a href="#">Cause</a></li>
+									<li><a href="#">Cause</a></li>
+									<li><a href="#">Cause</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-					<div id="causeSponsorForm">
+					<div id="madeUp_index1">
 						<form>
+							<p>Organization Name: <input type="text" /></p>
+							<p>Organization Budget: <select name="budget"><option selected>Please select one</option><option>$0 - $50,000</option><option>$50,001 - $200,000</option></select></p>
+							<p>Organization EIN: <input type="text" /></p>
 							<p>Team Name: <input type="text" /></p>
 							<p>Country/Region of Impact: <input type="text" /></p>
 							<p>Email: <input type="text" /></p>
 							<p>Team Mission: <input type="text" /></p>
-							<p><button type="submit">Apply</button></p>
+							<p>How will web conferencing help your team achieve your mission? <input type="text" /></p>
+							<p><button type="submit">Apply</a></p>
 						</form>
-						<div class="pure-menu pure-menu-open">
-							<ul>
-								<li><a href="#">Cause</a></li>
-								<li><a href="#">Cause</a></li>
-								<li><a href="#">Cause</a></li>
-								<li><a href="#">Cause</a></li>
-								<li><a href="#">Cause</a></li>
-								<li><a href="#">Cause</a></li>
-							</ul>
-						</div>
+					</div>
+					<div id="madeUp_index2">
+						<form>
+							<p>Organization Name: <input type="text" /></p>
+							<p>Organization Budget: <select name="budget"><option selected>Please select one</option><option>$0 - $50,000</option><option>$50,001 - $200,000</option></select></p>
+						</form>
 					</div>
 				</div>
-				<div id="madeUp_index2">
-					<form>
-						<p>Organization Name: <input type="text" /></p>
-						<p>Organization Budget: <select name="budget"><option selected>Please select one</option><option>$0 - $50,000</option><option>$50,001 - $200,000</option></select></p>
-					</form>
-				</div>
-			</div><!-- Sponsor Context -->
-
-			<!-- Global Navigation -->
+			</div>
+			<!-- /Sponsor Context -->
+			<!-- Global Navigation Context -->
 			<div id="navApp" class="navApp">
 				<div class="pure-menu pure-menu-open">
 					<ul>
@@ -187,15 +186,15 @@
 				</div>
 				<button id="contextSwitch" class="button" onClick="switchToAbout()">About NorthBridge</button>
 			</div>
-			
+			<!-- /Global Navigation Context -->
 			<!-- About Context -->
 			<div id="aboutApp" class="aboutApp">
 				<img src="logoShot.png" width="750" height="300"/>
 			</div>
-
+			<!-- /About Context -->
 			<div class="curtain"></div>
 
-		</div><!-- container -->
+		</div><!-- /container -->
 	</body>
 </html>
 
