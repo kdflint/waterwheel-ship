@@ -1,7 +1,7 @@
 .sponsorSlider{
-background:url(../images/slide.gif) center top no-repeat;
-height:200px;
-width:100%;
+	background:url(../images/slide.gif) center top no-repeat;
+	height:170px;
+	width:100%;
 }
 
 .accordion, .accordion1{
