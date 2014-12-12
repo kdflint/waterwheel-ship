@@ -10,8 +10,6 @@
 		<!--<script src="js/jquery.easing.js"></script>-->
 		<!--<script src="js/jquery.slidorion.min.js"></script>-->
 		
-		<link rel="import" type="text/css" href="view/mod-sponsor.html" />
-
 		<script language="javascript" type="text/javascript" src="script.js" ></script>
 		<script language="javascript" type="text/javascript" src="jquery.js"></script>
 		<script language="javascript" type="text/javascript" src="jquery.hslides.js"></script>
@@ -114,65 +112,9 @@
 						</ul>
 					</div>
 				</div>
-				<div class="sponsorContent">
+				<div class="allianceContent">
 					<div id="madeUp_index0">
-						
-						<div class="sponsorContentLeft">
-								<div class="pure-menu pure-menu-open pure-menu-horizontal">
-									Select your level.
-									<ul>
-										<li><a href="#">$25</a></li>
-										<li><a href="#">$50</a></li>
-										<li class="pure-menu-selected"><a href="#">$100</a></li>
-										<li><a href="#">$250</a></li>
-										<li><a href="#">$500</a></li>
-										<li><a href="#">Other</a></li>
-									</ul>
-								</div>
-							<div class="sponsorLevel">
-								<p>Designate your gift<p>
-								<button id="sponsorTypeSwitch" class="button" onClick="showLevelSponsorForm()">By Organization</button>
-								<button id="sponsorTypeSwitch" class="button" onClick="showTeamSponsorForm()">By Cause</button>
-							</div>
-							<div class="sponsorOrg">	
-
-								<form id="sponsorForm" class="pure-form">
-									<label for="ein">EIN</label>
-									<input id="ein" class="pure-input-rounded" type="text" size="10" value="">
-									<label for="name">Name</label>
-									<input id="name" class="pure-input-rounded" type="text" size="20" value="">
-								</form>
-								<div id="slidorion" class="slidorion">
-	    						<div class="slider">
-        						<div class="slide">About</div>
-        						<div class="slide">About</div>
-        						<div class="slide">About</div>
-    							</div>
-    							<div class="accordion">
-	        					<div class="header">Chicago Adventure Therapy</div>
-        						<div class="header">Fellowship Housing</div>
-        						<div class="header">Center for Faith and Community Health Transformation</div>
-        						<div class="header">Ravenswood Community Services</div>
-        						<div class="header">Episcopal Diocese of Chicago</div>
-        						<div class="header">Another</div>
-        						<div class="header">Another</div>
-        						<div class="header">Another</div>
-        						<div class="header">Another</div>
-        						<div class="header">Another</div>
-    							</div>
-								</div>		
-							</div>
-						</div>
-						<div class="sponsorContentRight">
-							<form id="sponsorForm" class="pure-form pure-form-stacked">
-								<label for="level">Level</label>
-								<input id="level" class="pure-input-rounded" type="text" value="" readonly>
-								<label for="level">Designated to </label>
-								<input id="level" class="pure-input-rounded" type="text" value="">
-								<p><button type="submit">Sponsor</button></p>
-							</form>						
-						</div>
-						
+						<?php include("view/mod-sponsor.html"); ?>					
 					</div>
 					<div id="madeUp_index1">
 						<div class="sponsorContentLeft">

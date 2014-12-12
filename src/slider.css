@@ -4,7 +4,7 @@
 	width:100%;
 }
 
-.accordion, .accordion1{
+.accord, .accordion1{
 	margin:0px 0 0 0px;
 	padding:0;
 	list-style-type: none;
@@ -50,10 +50,10 @@ background: #a3c2cf;
 padding:10px 10px 0 10px;
 	background:#fcc8bc;
 }
-.accordion li{
+.accord li{
 	cursor:pointer;
 }
-.accordion .active_click{
+.accord .active_click{
 	cursor:default;
 }
 

@@ -10,7 +10,7 @@
 *
 * Sample Configuration:
 * // this is the minimum configuration needed
-* $('#accordion').hSlides({
+* $('#accord').hSlides({
 * 	totalWidth: 730, 
 * 	totalHeight: 140, 
 * 	minPanelWidth: 87, 
