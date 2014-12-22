@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Remove Element (via click): Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : false, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../wand.src.js" charset="UTF-8"></script>
+	<link href="../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Remove Element (via click): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h3 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Deleting an element entirely from the DOM</h3>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<ul>
+			<li>Add <code>data-mjf="remove_onclick|return_false" data-mjf_remove_click_id="ELEMENT_CONTENT_ID" id="ELEMENT_ID"</code> to your tag</li>
+			<li>Add <code>&lt;script type="text/javascript"&gt;$m.wand.remove_onclick = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</li>
+		</ul>
+	
+	</fieldset>
+	
+	<fieldset>
+
+		<form action="submission.php" method="post" data-mjf="form_required" name="remove_onclicker_form" id="remove_onclicker_form">
+
+			<p class="form_line_field" id="my_field_1_parent">
+				<label for="my_field_1" class="form_line_left_field"><span class="required_field">*</span> Text Field 1</label>
+				<span class="form_line_right_field">
+					<input type="text" name="my_field_1" value="" data-mjf="field_required" data-mjf_err_parent="my_field_1_parent" class="input_fld input_text" id="my_field_1">
+					<span class="field_error_msg_off" id="my_field_1_required_msg"><br>This field is required</span>
+				</span>
+				<br class="clear_both">
+			</p>
+		
+			<p class="form_line_field" id="my_field_2_parent">
+				<label for="my_field_2" class="form_line_left_field"><span class="required_field">*</span> Text Field 2</label>
+				<span class="form_line_right_field">
+					<input type="text" name="my_field_2" value="" data-mjf="field_required" data-mjf_err_parent="my_field_2_parent" class="input_fld input_text" id="my_field_2">
+					<span class="field_error_msg_off" id="my_field_2_required_msg"><br>This field is required</span>
+				</span>
+				<br class="clear_both">
+			</p>
+	
+			<p class="form_line_field" id="remove_onclicker_cont">
+				<label for="my_field_3" class="form_line_left_field"><span class="required_field">*</span> Text Field 3</label>
+				<span class="form_line_right_field">
+					<input type="text" id="my_field_3" data-mjf="field_required" class="input_fld input_text" value="" name="my_field_3"><br>
+					<a href="#" data-mjf="remove_onclick|return_false" data-mjf_remove_click_id="remove_onclicker_cont" id="remove_onclicker">Remove</a>
+				</span>
+				<br class="clear_both">
+			</p>
+	
+			<p class="form_line_field">
+				<label for="my_field_4" class="form_line_left_field">Text Field 4</label>
+				<span class="form_line_right_field">
+					<input type="text" id="my_field_4" class="input_fld input_text" value="" name="my_field_4">
+				</span>
+				<br class="clear_both">
+			</p>
+	
+			<p class="form_line_field" id="input_type_select_single_parent">
+				<label class="form_line_left_field" for="input_type_select_single"><span class="required_field">*</span> Select Single</label>
+				<span class="form_line_right_field">
+					<select name="input_type_select_single" data-mjf="field_required" data-mjf_err_parent="input_type_select_single_parent" class="input_fld input_select margin_right_5" id="input_type_select_single">
+						<option value="">Please choose...</option>
+						<option value="input_type_select_single_1">Option 1</option>
+						<option value="input_type_select_single_2">Option 2</option>
+						<option value="input_type_select_single_3">Option 3</option>
+					</select>
+					<span class="helper_text">At least one option must be selected</span>
+					<span class="field_error_msg_off" id="input_type_select_single_required_msg"><br>This field is required</span>
+				</span>
+				<br class="clear_both">
+			</p>
+	
+			<div class="clear_both"></div>
+		
+			<p class="align_center margin_top_20 print_none">
+				<input type="submit" name="submit_btn" value="Submit" class="bg_colors bg_colors_default
+				 margin_right_5" id="input_submit_2">
+			</p>
+			
+		</form>
+	
+	</fieldset>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.remove_onclick = true;
+		$m.wand.form_required = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../docs/">Back to the main documentation</a></p>	
+
+</body>
+</html>

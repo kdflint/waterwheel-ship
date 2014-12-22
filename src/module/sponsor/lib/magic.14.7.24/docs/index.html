@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../stylesheets/docs.css" rel="stylesheet" media="all">
+	
+	<link href="../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../wand.src.js" charset="UTF-8"></script>
+	<link href="../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<link href="../stylesheets/dynamic_tabs.12.5.22.css" rel="stylesheet">
+	<script type="text/javascript" src="../_versions.js" charset="UTF-8"></script>
+	
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><img src="../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"> Magic JavaScript <script type="text/javascript">document.write($m.versions.magic);</script></h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">A simple to install, easy to use, JavaScript library/framework with loads of built-in functionality.</h2>
+	
+	<div class="padding_5"></div>
+
+	<ul class="tab_links">
+		<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_1" data-mjf_dtab_shct="Alt+1" class="tab_link_active" id="tab_set_1_1_link">Introduction <span class="helper_text">(Alt+1)</span></a></li>
+		<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_2" data-mjf_dtab_shct="Alt+2" class="" id="tab_set_1_2_link">Easies <span class="helper_text">(Alt+2)</span></a></li>
+		<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_3" data-mjf_dtab_shct="Alt+3" class="" id="tab_set_1_3_link">Forms <span class="helper_text">(Alt+3)</span></a></li>
+		<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_4" data-mjf_dtab_shct="Alt+4" class="" id="tab_set_1_4_link">AJAX <span class="helper_text">(Alt+4)</span></a></li>
+		<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_5" data-mjf_dtab_shct="Alt+5" class="" id="tab_set_1_5_link">Tricks <span class="helper_text">(Alt+5)</span></a></li>
+		<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_6" data-mjf_dtab_shct="Alt+6" class="" id="tab_set_1_6_link">Versions <span class="helper_text">(Alt+6)</span></a></li>
+		<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_7" data-mjf_dtab_shct="Alt+7" class="" id="tab_set_1_7_link">Development <span class="helper_text">(Alt+7)</span></a></li>
+	</ul>
+
+	<!-- Introduction -->
+	<section data-mjf_dtab_set="tab_ex" class="tab_box padding_10 display_block" id="tab_set_1_1">
+	
+		<fieldset>
+	
+			<legend>These docs are not guaranteed to be complete or accurate</legend>
+
+			<div class="form_line_content">
+				
+				<p><strong>Your job&hellip;</strong></p>				
+				<ol class="margin_bottom_20">
+					<li>Review online documentation.</li>
+					<li>Download: <script type="text/javascript">document.write('<a href="http://www.magicjs.com/downloads/magic.' + $m.versions.magic + '.zip" data-mjf="ga_click_track" id="magic_zip_primary_' + $m.versions.magic + '">magic.' + $m.versions.magic + '.zip</a>');</script>.</li>
+					<li>Unzip and upload to your website.</li>
+					<li>Follow usage instructions below and as needed.</li>
+				</ol>
+				
+			</div>
+			
+		</fieldset>
+
+
+		<fieldset>
+	
+			<legend>Usage</legend>
+			
+			<div class="form_line_content">
+			
+				<p>Review, tweak and add the code below inside your <code>&lt;head&gt;</code> tag&hellip;</p>
+	
+				<script type="text/javascript">
+					var mjf_setup = '&lt;link href="/PATH/TO/magic/stylesheets/magic.' + $m.versions.css.magic + '.css" rel="stylesheet"&gt;\n';
+					mjf_setup += '&lt;script type="text/javascript" src="/PATH/TO/magic/magic.' + $m.versions.magic + '.js" charset="UTF-8"&gt;&lt;/script&gt;\n';
+					mjf_setup += '&lt;script type="text/javascript"&gt;\n';
+					mjf_setup += '	$m.construct({\n';
+					mjf_setup += '		 lang : "en_us"\n';
+					mjf_setup += '		,create_html5 : true\n';
+					mjf_setup += '		,global_debug : false\n';
+					mjf_setup += '		,animations : { use : true }\n';
+					mjf_setup += '		,ajax : { debug : false, visual : true, timeout : 15 }\n';
+					mjf_setup += '		,geo : { use : false, debug : false, visual : true }\n';
+					mjf_setup += '		,send_timezone_to : false\n';
+					mjf_setup += '	});\n';
+					mjf_setup += '&lt;/script&gt;\n';
+					mjf_setup += '&lt;script type="text/javascript" src="/PATH/TO/magic/wand.' + $m.versions.wand + '.js" charset="UTF-8"&gt;&lt;/script&gt;\n';
+				</script>
+	
+				<p><script type="text/javascript">document.write('<textarea rows="5" cols="20" name="" class="input_fld example_code" readonly="readonly">' + mjf_setup + '</textarea>');</script></p>
+				
+			</div>
+
+		</fieldset>
+
+
+		<fieldset>
+	
+			<legend>Notes</legend>
+			
+			<p class="form_line_content">Magic JS is built around HTML5's <code>data-</code> attribute &ndash; don't stuff your tags full of invalid code. :)</p>
+			<div class="form_line_content">
+				<p><code>$m.construct()</code> is passed an object full of settings. Below are descriptions for ones that aren't overly self-explanatory:</p>
+				<ul>
+					<li><code>global_debug</code> - turns on global debugging via pop-up window.</li>
+					<li><code>animations.use</code> - determines if CSS/JavaScript transitions are used. Some <code>$m.wand</code> and <code>$m.trick</code> items use these and some don't.</li>
+					
+					<li><code>ajax.debug</code> - turns on AJAX debugging, set to <code>true</code> and also be sure <code>global_debug</code> is set to <code>true</code>.</li>
+					<li><code>ajax.visual</code> - determines if the CSS class <code>ajax_visual</code> is applied to the element making the request.</li>
+					<li><code>ajax.timeout</code> - determines how long Magic will wait before giving up on a request.</li>
+					
+					<li><code>geo.use</code> - turns on Geolocation support, set to <code>true</code>.</li>
+					<li><code>geo.debug</code> - turns on Geolocation debugging, set to <code>true</code> and also be sure <code>global_debug</code> is set to <code>true</code>.</li>
+					<li><code>geo.visual</code> - determines if the CSS class <code>geo_visual</code> is applied to the element making the request.</li>
+
+					<li><code>send_timezone_to</code> - after the page loads, Magic will insert a <code>&lt;script&gt;</code> tag with the <code>src</code> attribute set to this value along with <code>?tz=</code> and the browser's timezone.</li>
+				</ul>
+			</div>
+			<p class="form_line_content">It's not required to include the <code>wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js</code> on your page. However, all the built-in functionality for Easies, Forms and AJAX lives there.</p>
+			<p class="form_line_content">Be sure to include a unique <code>id</code> attribute on tags you add the <code>data-mjf</code> to, otherwise the magic will probably not work the way you expect or want them to.</p>
+			<div class="form_line_content">
+				<p>The <code>data-mjf</code> values are followed like a chain and will return true, executing each event until finished. This includes the default element action &mdash; <code>onclick</code>, <code>onsubmit</code>, etc.</p>
+				<ul>
+					<li>As an example, if you have <code>&lt;a href="http://www.google.com" data-mjf="lightswitch"&gt;</code>, the <code>href</code> will be followed since it's the default action.</li>
+					<li>To stop the default action, add <code>data-mjf="MAGIC<strong>|return_false</strong>"</code> to your tag. This should be noted throughout the examples.</li>
+					<li>The <code>data-mjf</code> values also DO NOT act independently of one another with regards to return values. If one returns false, the remaining WILL NOT be executed.</li>
+					<li>Review the <a href="./easies/multiple_magics.html">Multiple Magics</a> to learn how to chain functionality.</li>
+				</ul>
+			</div>
+			<div class="form_line_content">
+				<p>If the site uses Google Analytics, Magic JS will send click tracking for the following <a href="../tricks/darkroom/">Darkroom</a>, <a href="./easies/dynamic_tabs.html">Dynamic Tabs</a>, <a href="./easies/open_new_windows.html">Open New Win</a> and all AJAX requests by default.</p>
+				<ul>
+					<li>Add <code>data-mjf_ga_track="false"</code> if you don't want Google Analytics to track the particular item.</li>
+				</ul>
+			</div>
+
+		</fieldset>
+		
+		
+		<fieldset>
+	
+			<legend>Contact</legend>
+			
+			<p class="form_line_content"><a href="mailto:hi@magicjs.com">hi@magicjs.com</a> serious inquiries only, no jokers.</p>
+			
+		</fieldset>
+
+	</section>
+
+
+	<!-- Easies -->
+	<section data-mjf_dtab_set="tab_ex" class="tab_box padding_10" id="tab_set_1_2">
+
+		<fieldset>
+	
+			<legend>Easy examples of core functionality</legend>
+			
+			<p class="form_line_content">
+				<a href="./easies/confirm_click.html"><strong>Confirm Click</strong></a> &mdash; Bring up an Ok or Cancel confirmation box<br>
+				<span class="helper_text">$m.wand.confirm_click</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/confirm_unload.html"><strong>Confirm Unload</strong></a> &mdash; Let the visitor know they're about to navigate away<br>
+				<span class="helper_text">$m.wand.confirm_unload</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/css_class_update.html"><strong>CSS Class Update</strong></a> &mdash; Easily change an element's CSS class<br>
+				<span class="helper_text">$m.wand.css_class_update</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/deferred_load.html"><strong>Deferred Load</strong></a><br>
+				<span class="helper_text">$m.wand.deferred_load</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/dropdown_menu.html"><strong>Dropdown Menu</strong></a><br>
+				<span class="helper_text">$m.wand.dropdown_menu</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/dynamic_tabs.html"><strong>Dynamic Tabs</strong></a><br>
+				<span class="helper_text">$m.wand.dynamic_tabs</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/empty_onclick.html"><strong>Empty Element</strong></a> (via click) &mdash; Clear an element's innerHTML<br>
+				<span class="helper_text">$m.wand.empty_onclick</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/fire_any_event.html"><strong>Fire Any Event</strong></a><br>
+				<span class="helper_text">$m.wand.fire_event</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/frame_reload.html"><strong>Frame Reload</strong></a><br>
+				<span class="helper_text">$m.wand.frame_reload</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/geolocation.html"><strong>Geolocation</strong></a><br>
+				<span class="helper_text">$m.wand.geo_get</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/google_analytics_click_tracking.html"><strong>Google Analytics Click Tracking</strong></a><br>
+				<span class="helper_text">$m.wand.ga_click_track</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/html5_audio.html"><strong>HTML5 Audio</strong></a><br>
+				<span class="helper_text">$m.wand.html5_audio</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/html5_video.html"><strong>HTML5 Video</strong></a><br>
+				<span class="helper_text">$m.wand.html5_video</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/image_rollovers.html"><strong>Image Rollovers</strong></a><br>
+				<span class="helper_text">$m.wand.img_rollovers</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/light_switch.html"><strong>Light Switch</strong></a><br>
+				<span class="helper_text">$m.wand.lightswitch</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/open_new_windows.html"><strong>Open New Windows</strong></a><br>
+				<span class="helper_text">$m.wand.open_new_win</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/print_the_page_onclick.html"><strong>Print the Page</strong></a> (via click)<br>
+				<span class="helper_text">$m.wand.print_onclick</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/print_the_page_onload.html"><strong>Print the Page</strong></a> (via load)<br>
+				<span class="helper_text">$m.wand.print_onload</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/remove_onclick.html"><strong>Remove Element</strong></a> (via click) &ndash; Delete an element entirely from the DOM<br>
+				<span class="helper_text">$m.wand.remove_onclick</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/same_height.html"><strong>Same Height</strong></a> &mdash; Resize a parent's kids to be the same height<br>
+				<span class="helper_text">$m.wand.same_height</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/smooth_scroll_to.html"><strong>Smooth Scroll To</strong></a><br>
+				<span class="helper_text">$m.wand.smooth_scroll_to</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/simple_image_slideshow.html"><strong>Simple Image Slideshow</strong></a><br>
+				<span class="helper_text">$m.wand.img_slideshow</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/text_resizer.html"><strong>Text Resizer</strong></a><br>
+				<span class="helper_text">$m.wand.text_resize</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./easies/tool_tips.html"><strong>Tool Tips</strong></a><br>
+				<span class="helper_text">$m.wand.tool_tip</span>
+			</p>
+
+		</fieldset>
+
+	</section>
+
+
+
+	<!-- Forms -->
+	<section data-mjf_dtab_set="tab_ex" class="tab_box padding_10" id="tab_set_1_3">
+		
+		<fieldset>
+	
+			<legend>Working with forms and fields</legend>
+		
+			<p class="form_line_content">
+				<a href="./forms/add_commas.html"><strong>Add Commas</strong></a><br>
+				<span class="helper_text">$m.wand.add_commas</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/form_changed_alert.html"><strong>Changed Form Alert</strong></a> &ndash; Alert the visitor when navigating away from a changed form<br>
+				<span class="helper_text">$m.wand.form_changed_alert</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/change_field_type.html"><strong>Change Field Type</strong></a><br>
+				<span class="helper_text">$m.wand.change_field_type</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/check_all.html"><strong>Check All Checkboxes</strong></a><br>
+				<span class="helper_text">$m.wand.check_all_boxes</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/check_other_onfocus.html"><strong>Check Another Field On Focus</strong></a><br>
+				<span class="helper_text">$m.wand.check_other_onfocus</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/checked_picker.html"><strong>Checked Picker</strong></a><br>
+				<span class="helper_text">$m.wand.checked_picker</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/clearing_all_fields.html"><strong>Clear All Fields</strong></a> (via click)<br>
+				<span class="helper_text">$m.wand.clear_onclick</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/clearing_individual_fields_on_focus.html"><strong>Clear Individual Fields</strong></a> (via focus)<br>
+				<span class="helper_text">$m.wand.clear_onfocus</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/clearing_individual_fields_on_load.html"><strong>Clear Individual Fields</strong></a> (via load)<br>
+				<span class="helper_text">$m.wand.clear_onload</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/copying_fields_from_one_to_another.html"><strong>Copy Fields from One to Another</strong></a><br>
+				<span class="helper_text">$m.wand.copy_fields</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/copy_value_to_html.html"><strong>Copy a Field's Value to another Element's innerHTML</strong></a><br>
+				<span class="helper_text">$m.wand.copy_value_to_html</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/converting_fields_to_url_friendly_fields.html"><strong>Convert Fields to URL Friendly Fields</strong></a><br>
+				<span class="helper_text">$m.wand.s2lcus</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/elastic_textareas.html"><strong>Elastic Textareas</strong></a><br>
+				<span class="helper_text">$m.wand.elastic_textareas</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/enable_disable_fields_when_clicking_another_field.html"><strong>Enable/Disable Fields when Clicking Another Field</strong></a><br>
+				<span class="helper_text">$m.wand.click_enable_disable</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/submission_via_click.html"><strong>Form Submission</strong></a> (via click)<br>
+				<span class="helper_text">$m.wand.submit_onclick</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/validation.html"><strong>Form Validation</strong></a><br>
+				<span class="helper_text">$m.wand.form_required</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./forms/password_strength_checker.html"><strong>Password Stength Checker</strong></a><br>
+				<span class="helper_text">$m.wand.password_strength_checker</span>
+			</p>
+
+		</fieldset>
+
+	</section>
+
+
+	<!-- AJAX -->
+	<section data-mjf_dtab_set="tab_ex" class="tab_box padding_10" id="tab_set_1_4">
+
+		<fieldset>
+	
+			<legend>Built-in AJAX magic</legend>
+			
+			<p class="form_line_content">
+				<a href="./ajax/ajax_onchange.html"><strong>AJAX On Change</strong></a><br>
+				<span class="helper_text">$m.wand.ajax_change</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/ajax_onclick.html"><strong>AJAX On Click</strong></a><br>
+				<span class="helper_text">$m.wand.ajax_click</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/ajax_onload.html"><strong>AJAX On Load</strong></a><br>
+				<span class="helper_text">$m.wand.ajax_onload</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/ajax_polling.html"><strong>AJAX Polling</strong></a><br>
+				<span class="helper_text">$m.wand.ajax_polling</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/ajax_unload.html"><strong>AJAX Unload</strong></a><br>
+				<span class="helper_text">$m.wand.ajax_unload</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/field_submission_via_click.html"><strong>Field Submission</strong></a> (via click)<br>
+				<span class="helper_text">$m.wand.ajax_field_submit_click</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/field_submission_via_keyup_change.html"><strong>Field Submission</strong></a> (via keyup/change)<br>
+				<span class="helper_text">$m.wand.ajax_field_submit_kc</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/form_submission.html"><strong>Form Submission</strong></a><br>
+				<span class="helper_text">$m.wand.ajax_submit</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/form_submission_via_click.html"><strong>Form Submission</strong></a> (via click)<br>
+				<span class="helper_text">$m.wand.ajax_submit_link</span>
+			</p>
+			
+			<p class="form_line_content">
+				<a href="./ajax/form_submission_via_keyup_change.html"><strong>Form Submission</strong></a> (via keyup/change)<br>
+				<span class="helper_text">$m.wand.ajax_submit_kc</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/input_kc.html"><strong>Input On Keyup/Change</strong></a><br>
+				<span class="helper_text">$m.wand.ajax_kc</span>
+			</p>
+			<p class="form_line_content">
+				<a href="./ajax/predefined_json_parsing.html"><strong>Predefined JSON parsing</strong></a><br>
+				<span class="helper_text">Magic can parse a returned JSON object if you want to do more advanced things with the returned data</span>
+			</p>
+		
+		</fieldset>
+
+
+		<fieldset>
+	
+			<legend>Notes</legend>
+
+			<p class="form_line_content">Requests will send a unique name/value pair to the server. This will be something like <code>ajax_call=1322598771903</code>.</p>
+			<p class="form_line_content">Requests are queued automatically for delivery by the browser based on the visitor's request order.</p>
+			
+			<div class="form_line_content">
+
+				<p>The <code>data-mjf_ajax_XYZ</code> attributes are&hellip;</p>
+	
+				<ul>
+					<li>
+						<code>data-mjf_ajax_call_on_success="FUNCTION_NAME"</code>
+						<ul class="margin_top_10">
+							<li>custom JavaScript callback after a successful AJAX request</li>
+							<li>defaults to <code>$m.ajax.simple_content_update</code></li>
+							<li>use <code>data-mjf_ajax_call_on_success="magic_json"</code> to use the <a href="./ajax/predefined_json_parsing.html">Predefined JSON parsing</a></li> 
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_form_reset="true(OR)false"</code>
+						<ul class="margin_top_10">
+							<li>applies only to Form Submit</li>
+							<li>defaults to <code>false</code></li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_method="get(OR)post"</code>
+						<ul class="margin_top_10">
+							<li>applies to everything but Form Submit</li>
+							<li>defaults to <code>get</code></li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_query="NAME=VAR&amp;NAME_2=VAR_2"</code>
+						<ul class="margin_top_10">
+							<li>applies to everything but Form Submit</li>
+							<li>any query variables you'd like to pass to the server</li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_timeout="N"</code>
+						<ul class="margin_top_10">
+							<li>With <code>N</code> being the number of seconds before the request times out and a message is appended to the <code>data-mjf_ajax_update_id</code></li>
+							<li>defaults to <code>ajax.timeout</code> set in the main <code>$m.construct()</code> method.</li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_update_id="ELEMENT_ID"</code>
+						<ul class="margin_top_10">
+							<li>the element id where the returned server data will be put</li>
+							<li><span class="required_field">*</span> required <em>unless</em> using <code>data-mjf_ajax_call_on_success="magic_json"</code></li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_update_id_action="overwrite(OR)append(OR)prepend"</code>
+						<ul class="margin_top_10">
+							<li>overwrite, append or prepend the current content in <code>data-mjf_ajax_update_id</code></li>
+							<li>defaults to <code>overwrite</code></li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_update_id_scroll_top="true"</code>
+						<ul class="margin_top_10">
+							<li>
+								scroll to the top of the <code>data-mjf_ajax_update_id</code> after a successful AJAX request<br>
+								- useful if your update_id uses the CSS <code>overflow</code> property
+							</li>
+							<li>defaults to <code>false</code></li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_update_id_scroll_to="true"</code>
+						<ul class="margin_top_10">
+							<li>scroll to the <code>data-mjf_ajax_update_id</code> after a successful AJAX request</li>
+							<li>defaults to <code>false</code></li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_username="USERNAME"</code>
+						<ul class="margin_top_10">
+							<li>be careful using username and password</li>
+							<li>defaults to <code>false</code></li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_password="PASSWORD"</code>
+						<ul class="margin_top_10">
+							<li>defaults to <code>false</code></li>
+						</ul>
+					</li>
+					<li>
+						<code>data-mjf_ajax_url="/PATH/TO/SERVER/SCRIPT/"</code>
+						<ul class="margin_top_10">
+							<li>applies to everything but Form Submit</li>
+							<li><span class="required_field">*</span> required</li>
+						</ul>
+					</li>
+				</ul>
+			
+			</div>
+			
+		</fieldset>
+
+	</section>
+
+
+
+	<!-- Tricks -->
+	<section data-mjf_dtab_set="tab_ex" class="tab_box padding_10" id="tab_set_1_5">
+
+		<fieldset>
+	
+			<legend>Extending that core functionality</legend>
+
+				<p class="form_line_content"><strong><a href="../tricks/darkroom/">Darkroom</a> (<script type="text/javascript">document.write($m.versions.tricks.darkroom);</script>)</strong> &mdash; Showing all kinds of content in a pop-up</p>
+
+				<div class="form_line_content">
+					<p><strong><a href="../tricks/drag_n_drop/">Drag N Drop</a> (<script type="text/javascript">document.write($m.versions.tricks.drag_n_drop);</script>)</strong> &mdash; Move stuff around</p>
+					<ul>
+						<li>
+							<a href="../tricks/drag_n_drop/free_range.html">Free Range</a>
+						</li>
+						<li>
+							<a href="../tricks/drag_n_drop/sorting.html">Sorting</a>
+						</li>
+					</ul>
+				</div>
+
+				<p class="form_line_content"><strong><a href="../tricks/darkroom/">Gmaps</a> (<script type="text/javascript">document.write($m.versions.tricks.gmaps);</script>)</strong> &mdash; Talk to Google Maps</p>
+
+				<p class="form_line_content"><strong><a href="../tricks/magic_calendar/">Magic Calendar</a> (<script type="text/javascript">document.write($m.versions.tricks.magic_calendar);</script>)</strong> &mdash; Save the date in a pop-up you can actually see</p>
+
+				<div class="form_line_content">
+					<p><strong><a href="../tricks/magic_charts/">Magic Charts</a> (<script type="text/javascript">document.write($m.versions.tricks.magic_charts);</script>)</strong> &mdash; Charting with <code>&lt;canvas&gt;</code> and <code>&lt;svg&gt;</code> coming soon</p>
+					<ul>
+						<li><a href="../tricks/magic_charts/canvas_column.html">Column Chart</a></li>
+						<li><a href="../tricks/magic_charts/canvas_line_graph.html">Line Graph</a></li>
+						<li><a href="../tricks/magic_charts/canvas_pie.html">Pie Chart</a></li>
+					</ul>
+				</div>
+
+				<p class="form_line_content"><strong><a href="../tricks/magic_editor/">Magic Editor</a> (<script type="text/javascript">document.write($m.versions.tricks.magic_editor);</script>)</strong> &mdash; Formatting content in a rich-text editor</p>
+				
+				<!--
+				<p class="form_line_content"><strong><a href="../tricks/magic_imagery/">Magic Imagery</a> (<script type="text/javascript">document.write($m.versions.tricks.magic_imagery);</script>)</strong> &mdash; Easy image galleries</p>
+				-->
+				
+				<div class="form_line_content">
+					<p><strong><a href="../tricks/magic_ratings/">Magic Ratings</a> (<script type="text/javascript">document.write($m.versions.tricks.magic_ratings);</script>)</strong> &mdash; Star it like a pro</p>
+					<ul>
+						<li><a href="../tricks/magic_ratings/links.html">As Links</a></li>
+						<li><a href="../tricks/magic_ratings/forms.html">In a Form</a></li>
+					</ul>
+				</div>
+
+				<div class="form_line_content">
+					<p><strong>Motion (<script type="text/javascript">document.write($m.versions.tricks.motion);</script>)</strong> &mdash; Animation prototypes</p>
+					<ul>
+						<li>
+							<a href="../tricks/motion/fade_inout.html">Fade In and Out</a><br>
+							Fading in and out
+						</li>
+						<li>
+							<a href="../tricks/motion/flick.html">Flick</a><br>
+							Up and down and up scrolling
+						</li>
+						<li>
+							<a href="../tricks/motion/swipe.html">Swipe</a><br>
+							Left to right to left scrolling
+						</li>
+						<li>
+							<a href="../tricks/motion/vscroller.html">VScroller</a><br>
+							Vertical up scrolling
+						</li>
+					</ul>
+				</div>
+				
+				<p class="form_line_content"><strong><a href="../tricks/new_form_fields/">New Form Fields</a> (<script type="text/javascript">document.write($m.versions.tricks.new_form_fields);</script>)</strong> &mdash; Creating new form fields on the fly</p>
+				
+				<p class="form_line_content"><strong><a href="../tricks/string_deposit/">String Deposit</a> (<script type="text/javascript">document.write($m.versions.tricks.string_deposit);</script>)</strong> &mdash; Insert text strings into the Magic Editor and other form fields</p>
+				
+				
+
+
+			<!--
+			<h4><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="form_magic_cont" id="form_magic_id">More Form Magic</a></h4>
+			<div id="form_magic_cont">
+	
+				<form action="#" method="post" name="more_form_magic" id="more_form_magic">
+	
+					<div class="form_line_field">
+						<label class="form_line_left_field" for="mfm_sselect"><span class="required_field">*</span>Super Select</label>
+						<div class="form_line_right_field">
+							<input type="text" name="mfm_sselect" value="" autocomplete="off" data-mjf="mfm_dropdown" data-sselect_id="mfm_sselect_dd" class="input_fld input_text" id="mfm_sselect"><br>
+							<ul id="mfm_sselect_dd">
+								<li data-sselect_grp="specialty" data-sselect_val="Orthopedic joint surgery" id="orthopedic_joint_surgery">Orthopedic joint surgery</li>
+								<li data-sselect_grp="specialty" data-sselect_val="Spine surgery" id="spine_surgery">Spine surgery</li>
+	
+								<li data-sselect_grp="specialty" data-sselect_val="Neurosurgery" id="neurosurgery">
+									Neurosurgery<br>
+									<span class="font_size_9">The safety and effectiveness for use in neurosurgical procedures has not been established through randomized clinical study.</span>
+								</li>
+							</ul>
+						</div>
+						<br class="clear_both">
+					</div>
+	
+	
+				</form>
+	
+			</div>
+			-->
+			
+		</fieldset>
+
+	</section>
+
+
+
+	<!-- Versions -->
+	<section data-mjf_dtab_set="tab_ex" class="tab_box padding_10" id="tab_set_1_6">
+
+		<fieldset>
+			
+			<legend>Under the hood changes</legend>
+			
+			<p>The older the version, the less likely the version notes will be accurate.</p>
+			
+			<div class="form_line_content">
+			
+				<h3>14.7.24</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.14.7.24.zip" data-mjf="ga_click_track" id="magic_zip_14.7.24">magic.14.7.24.zip</a></li>
+					<li>New <a href="./ajax/ajax_onchange.html">AJAX On Change</a> in the AJAX section.</li>
+					<li>New <a href="../tricks/gmaps/">Gmaps</a> trick.</li>
+					<li>Updated versions of the <a href="../tricks/drag_n_drop/">Drag N Drop</a>, <a href="../tricks/magic_calendar/">Magic Calendar</a> and <a href="../tricks/magic_editor/">Magic Editor</a> tricks.</li>
+					<li>New <code>$m.media.supports.flash()</code></li>
+				</ul>
+			
+			</div>
+			
+			<div class="form_line_content">
+			
+				<h3>13.10.28</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.13.10.28.zip" data-mjf="ga_click_track" id="magic_zip_13.10.28">magic.13.10.28.zip</a></li>
+					<li>New <a href="./forms/elastic_textareas.html">Elastic Textareas</a> to grow and shrink them based on their content length.</li>
+					<li><a href="./easies/html5_video.html">HTML5 Video</a> now sets the <code>&lt;video&gt;</code> to the dimensions defined in the <code>data-mjf_h5v_dims</code> attribute.</li>
+					<li><a href="./forms/validation.html">Form Validation</a> now supports the new HTML5 input types: <code>color</code>, <code>date</code>, <code>datetime</code>, <code>datetime-local</code>, <code>email</code>, <code>month</code>, <code>number</code>, <code>search</code>, <code>tel</code>, <code>time</code>, <code>url</code>, and <code>week</code>.</li>
+					<li>Fixed a bug where IE10 would sometimes fail to replace selections.</li>
+				</ul>
+			
+			</div>
+
+			<div class="form_line_content">
+			
+				<h3>13.5.21</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.13.5.21.zip" data-mjf="ga_click_track" id="magic_zip_13.5.21">magic.13.5.21.zip</a></li>
+					<li>Ensured all internal arrays were re-initialized correctly during AJAX requests.</li>
+					<li>New <code>$m.tag.get_body(IN_PARENT)</code> method which returns a document's <code>body</code> element.</li>
+					<li>New <code>$m.tag.get_head(IN_PARENT)</code> method which returns a document's <code>head</code> element.</li>
+					<li>New <code>$m.tag.remove_children(TAG_ID)</code> method which removes all child nodes from an element.</li>
+					<li>Updated <code>$m.tag.html(IN_ID, IN_CONTENT, IN_HOW, IN_ENCODED)</code> to more reliably append, prepend and replace content. <code>IN_CONTENT</code> can now also be a collection of nodes in addition to being a string.</li>
+					<li>Updated the CSS classes <code>.lightswitch_block</code> and <code>.lightswitch_none</code> with <code>cursor:pointer !important</code>.</li>
+				</ul>
+			
+			</div>
+
+			<div class="form_line_content">
+			
+				<h3>13.4.23</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.13.4.23.zip" data-mjf="ga_click_track" id="magic_zip_13.4.23">magic.13.4.23.zip</a></li>
+					<li>New <a href="../tricks/magic_ratings/">Magic Ratings</a> trick.</li>
+					<li>Removed miscellaneous debugging calls.</li>
+					<li>Fix a couple <code>$m.storage</code> quirks.</li>
+				</ul>
+			
+			</div>
+
+			<div class="form_line_content">
+			
+				<h3>13.3.28</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.13.3.28.zip" data-mjf="ga_click_track" id="magic_zip_13.3.28">magic.13.3.28.zip</a></li>
+					<li>New <a href="./ajax/ajax_onload.html">AJAX On Load</a> in the AJAX section.</li>
+					<li>New <code>$m.app_cache.available</code> variable to tell if the browser supports offline websites. Defaults to <code>false</code>.</li>
+					<li>New <code>$m.vd.is_online</code> variable to tell if the browser is online or not. Defaults to <code>true</code>.</li>
+					<li>Updated versions of the <a href="../tricks/darkroom/">Darkroom</a>, <a href="../tricks/magic_calendar/">Magic Calendar</a> and <a href="../tricks/magic_editor/">Magic Editor</a> tricks.</li>
+					<li>Updated <code>$m.tag.get_iframe_doc()</code> to be more stable.</li>
+				</ul>
+			
+			</div>
+			
+			<div class="form_line_content">
+			
+				<h3>13.3.26</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.13.3.26.zip" data-mjf="ga_click_track" id="magic_zip_13.3.26">magic.13.3.26.zip</a></li>
+					<li>New <a href="./easies/deferred_load.html">Deferred Load</a> in the Easies section.</li>
+					<li>New <code>$m.storage.get.page_code(IN_STRING)</code> for record identification.</li>
+					<li>New <code>$m.storage.remove(IN_TABLE, IN_ID)</code> for remove records.</li>
+					<li>Fixed <a href="./easies/dropdown_menu.html">Dropdown Menu</a> touch-based browser support. There's a new stylesheet and the CSS <code>class</code> name has changed, please update your code.</li>
+					<li>Records utilizing $m.storage are now deleted auto-magically for <a href="./easies/dynamic_tabs.html">Dynamic Tabs</a>, <a href="./easies/light_switch.html">Light Switch</a> and <a href="./easies/text_resizer.html">Text Resizer</a> if they no longer apply on a specific page.</li>
+					<li><a href="./forms/converting_fields_to_url_friendly_fields.html">Converting Fields to URL Friendly Fields</a> now removes single and double curly quotes before the conversion.</li>
+					<li>Language files for the Tricks are now loaded better.</li>
+				</ul>
+			
+			</div>
+
+			<div class="form_line_content">
+			
+				<h3>13.3.19</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.13.3.19.zip" data-mjf="ga_click_track" id="magic_zip_13.3.19">magic.13.3.19.zip</a></li>
+					<li>Misc MSIE 10 fixes.</li>
+					<li>Initial work on removing records from <code>$m.storage</code>.</li>
+					<li>Updated versions of the <a href="../tricks/drag_n_drop/">Drag N Drop</a> and <a href="../tricks/magic_editor/">Magic Editor</a> tricks.</li>
+				</ul>
+			
+			</div>
+			
+			<div class="form_line_content">
+			
+				<h3>13.2.8</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.13.2.8.zip" data-mjf="ga_click_track" id="magic_zip_13.2.8">magic.13.2.8.zip</a></li>
+					<li>New <a href="./easies/smooth_scroll_to.html">Smooth Scroll To</a> in the Easies section.</li>
+					<li>Fixed the SSL bug with <code>$m.config.basedir</code>.</li>
+					<li>Updated versions of the <a href="../tricks/magic_calendar/">Magic Calendar</a>, <a href="../tricks/magic_editor/">Magic Editor</a> and <a href="../tricks/string_deposit/">String Deposit</a> tricks.</li>
+				</ul>
+			
+			</div>
+			
+			<div class="form_line_content">
+			
+				<h3>12.12.21</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.12.21.zip" data-mjf="ga_click_track" id="magic_zip_12.12.21">magic.12.12.21.zip</a></li>
+					<li>Updated <code>$m.tag.replace(IN_OLD, IN_NEW)</code> &ndashed this will break your code if you're using this method.</li>
+					<li>Fixed the <code>$m.cursor.set(IN_ID, IN_POS)</code> bug where the cursor would only be set to the beginning or ending.</li>
+					<li>Removed the <code>$m.config.ajax.use</code> property since it was no longer being used.</li>
+					<li>New <code>$m.selection.replace(IN_HTML, IN_DOCUMENT)</code>.</li>
+					<li>Removed <code>$m.insert_node_at_selection_point()</code> since the above method is faster, more reliable and more flexible.</li>
+					<li>Fixed the undefined <code>result_set</code> variable in <code>$m.storage</code>.</li>
+					<li>New <code>$m.tag.get_iframe_doc(in_id)</code>.</li>
+					<li>Updated <code>$m.tag.create(IN_PARENT, IN_TYPE, IN_ATTS, IN_HTML, IN_WHERE, IN_DOCUMENT)</code> to allow for different <code>document</code> element creation.</li>
+					<li>Fixed the <a href="./easies/text_resizer.html">Text Resizer</a> JS error thrown when the <code>data-mjf_resize_id=""</code> didn't have a default <code>style</code> property.</li>
+				</ul>
+			
+			</div>
+
+			<div class="form_line_content">
+			
+				<h3>12.12.14</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.12.14.zip" data-mjf="ga_click_track" id="magic_zip_12.12.14">magic.12.12.14.zip</a></li>
+					<li>New <a href="./forms/field_submission_via_keyup_change.html">AJAX Field Submission</a> (via keyup/change) in the AJAX section.</li>
+					<li>Fixed the <a href="./ajax/form_submission.html">AJAX Form Submission</a> bug that didn't send the form fields to the server.</li>
+					<li>Fixed the <a href="./easies/confirm_unload.html">Confirm Unload</a> bug that would throw a JavaScript error if the language file hadn't loaded.</li>
+					<li>Fixed the <a href="./easies/light_switch.html">Light Switch</a> bug that didn't respect the <code>data-mjf_lswitch_animate_increments="0"</code> attribute to disable the animation.</li>
+					<li>Updated <a href="./easies/dropdown_menu.html">Dropdown Menu</a> to support touch-based browsers.</li>
+					<li>Updated <a href="./easies/tool_tips.html">Tool Tips</a> to support touch-based browsers.</li>
+					<li>Disabled most animations on touch-based browsers &mdash; too slow at the moment.</li>
+				</ul>
+			
+			</div>
+			
+			<div class="form_line_content">
+			
+				<h3>12.12.12</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.12.12.zip" data-mjf="ga_click_track" id="magic_zip_12.12.12">magic.12.12.12.zip</a></li>
+					<li>New <a href="./forms/password_strength_checker.html">Password Stength Checker</a> in the Forms section.</li>
+					<li>More reliable <a href="./forms/clearing_individual_fields_on_load.html">Clear Individual Fields</a> (via load).</li>
+					<li>Minor bug and documentation fixes.</li>
+				</ul>
+			
+			</div>
+
+			<div class="form_line_content">
+			
+				<h3>12.12.11</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.12.11.zip" data-mjf="ga_click_track" id="magic_zip_12.12.11">magic.12.12.11.zip</a></li>
+					<li>Fixed the <code>form action</code> bug in <a href="./ajax/form_submission_via_click.html">AJAX Form Submission</a> (via click) and <a href="./ajax/form_submission_via_keyup_change.html">AJAX Form Submission</a> (via keyup/change)</li>
+					<li>All AJAX query string variables are now properly encoded.</li>
+					<li>Better exisiting class matching in <code>$m.css_class.add(IN_ID, IN_CLASS)</code>.</li>
+					<li>The Magic Debugger will now attempt to pass entries to the <code>console.log()</code> for touch-based browsers.</li>
+					<li>New <code>$m.event.get(IN_EVENT)</code> and <code>$m.event.get_target(IN_EVENT)</code>.</li>
+					<li>Removed <code>$m.get_query_string(IN_OBJECT)</code>.</li>
+					<li>New <code>$m.query_string.create(IN_OBJECT)</code> and <code>$m.query_string.parse(IN_STRING)</code>.</li>
+					<li>Added the <kbd>shift</kbd> key as a worthy keycode.</li>
+					<li>New <code>$m.tag.get_prev_sibling(IN_ID)</code> and <code>$m.tag.get_next_sibling(IN_ID)</code>.</li>
+					<li>More reliable detection of touch-based browsers.</li>
+				</ul>
+			
+			</div>
+
+			<div class="form_line_content">
+			
+				<h3>12.11.29</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.11.29.zip" data-mjf="ga_click_track" id="magic_zip_12.11.29">magic.12.11.29.zip</a></li>
+					<li>New <a href="./easies/confirm_unload.html">Confirm Unload</a> in the Easies section.</li>
+					<li>New <a href="./easies/geolocation.html">Geolocation</a> in the Easies section.</li>
+					<li>New <a href="./ajax/form_submission_via_keyup_change.html">AJAX Form Submission</a> (via keyup/change) in the AJAX section.</li>
+					<li>New <code>$m.query_string.create(IN_OBJECT)</code>.</li>
+					<li>New <code>$m.is.good_string(IN_OBJECT)</code>.</li>
+					<li>New <code>$m.storage.create.data_record(IN_ID, IN_COLUMN, IN_VALUE)</code>.</li>
+					<li>New <code>$m.storage.get.page_tiny_id(IN_STRING)</code>.</li>
+					<li>New <code>$m.ut.friendly_url(IN_STRING)</code>.</li>
+					<li>Completed rewritten AJAX engine. The monolithic object code has been replaced with a <code>var my_ajax = new $m.ajax()</code> model. This will break your code if you've written custom JS and you don't update.</li>
+					<li>Removed deprecated <code>data-mjf_ajax_update_id_overwrite</code> attribute.</li>
+					<li>Various bug fixes.</li>
+				</ul>
+			
+			</div>
+
+			<div class="form_line_content">
+
+				<h3>12.11.14</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.11.14.zip" data-mjf="ga_click_track" id="magic_zip_12.11.14">magic.12.11.14.zip</a></li>
+					<li>New <code>$m.storage</code> which allows storing data first in <code>window.localStorage</code> and then <code>document.cookie</code>.
+						<ul class="margin_top_10">
+							<li>Coming sooner or later: <code>window.indexedDB</code></li>
+						</ul>
+					</li>
+					<li>Removed <code>$m.cookies</code> in light of above change. This will break your code if you don't update.</li>
+					<li>Increased default speed for all <code>$m.wand</code> animations.</li>
+				</ul>
+			
+			</div>
+			
+			<div class="form_line_content">
+			
+				<h3>12.11.12</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.11.12.zip" data-mjf="ga_click_track" id="magic_zip_12.11.12">magic.12.11.12.zip</a></li>
+					<li>New <a href="./ajax/ajax_unload.html">AJAX Unload</a> in the AJAX section.</li>
+					<li>Updated <a href="./ajax/ajax_onclick.html">AJAX On Click</a>, <a href="./easies/frame_reload.html">Frame Reload</a>, <a href="./easies/google_analytics_click_tracking.html">Google Analytics Click Track</a> and <a href="./forms/submission_via_click.html">Form Submission</a> (via click) now work withy any clickable tag.</li>
+					<li>Server-side username and passwords can now sent with AJAX requests. Be careful what you put in your source.</li>
+				</ul>
+			
+			</div>
+			
+			<div class="form_line_content">
+			
+				<h3>12.11.6</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.11.6.zip" data-mjf="ga_click_track" id="magic_zip_12.11.6">magic.12.11.6.zip</a></li>
+					<li>Updated <a href="./easies/empty_onclick.html">Empty Element</a> (via click) to reset the <code>style.opacity</code> to <code>1</code> after the element has been emptied.</li>
+					<li>Updated/cleaned up <code>images/icons/</code>.</li>
+				</ul>
+			
+			</div>
+			
+			<div class="form_line_content">
+				
+				<h3>12.10.30</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.10.30.zip" data-mjf="ga_click_track" id="magic_zip_12.10.30">magic.12.10.30.zip</a></li>
+					<li>Updated everything to work with animation easing functionality added in 12.10.2.</li>
+					<li>Updated <a href="./easies/light_switch.html">Light Switch</a> to work with single checkboxes.</li>
+					<li>Updated documentation design.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.10.18</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.10.18.zip" data-mjf="ga_click_track" id="magic_zip_12.10.18">magic.12.10.18.zip</a></li>
+					<li>Added an error message for when AJAX requests don't leave a vistor's browser. For example, the AdBlock extension will block all requests to <code>/advertiser</code> links.</li>
+					<li>Fixed the <a href="./forms/add_commas.html">Add Commas</a> bug where an empty value in the field would cause a "false" to appear.</li>
+					<li>Updated <a href="../tricks/magic_editor/">Magic Editor</a> trick.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.10.12</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.10.12.zip" data-mjf="ga_click_track" id="magic_zip_12.10.12">magic.12.10.12.zip</a></li>
+					<li>Updated <a href="./forms/enable_disable_fields_when_clicking_another_field.html">Enable/Disable Fields when Clicking Another Field</a> with more functionality. This will break your code if you don't update!</li>
+					<li>Updated <a href="../tricks/magic_editor/">Magic Editor</a> trick.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.10.8</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.10.8.zip" data-mjf="ga_click_track" id="magic_zip_12.10.8">magic.12.10.8.zip</a></li>
+					<li>New <a href="./forms/copy_value_to_html.html">Copy a Field's Value to another Element's innerHTML</a> in the Forms section.</li>
+					<li>Updated <a href="./easies/same_height.html">Same Height</a> with a configurable delay before resizing.</li>
+					<li>Updated <a href="../tricks/magic_editor/">Magic Editor</a> and <a href="../tricks/new_form_fields/">New Form Fields</a> tricks.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.10.2</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.10.2.zip" data-mjf="ga_click_track" id="magic_zip_12.10.2">magic.12.10.2.zip</a></li>
+					<li>New animation easing functionality, not in use yet.</li>
+					<li>Magic Debugger work to fix Firefox's <code>NS_ERROR_NOT_AVAILABLE</code></li>
+					<li>New <code>$m.ut.add_commas(IN_STRING)</code></li>
+					<li>New <a href="./easies/same_height.html">Same Height</a> in the Easies section.</li>
+					<li>New <a href="./forms/add_commas.html">Add Commas</a> in the Forms section.</li>
+					<li>Updated <code>$m.h.animations.opaque.set()</code> to use IE's built in <code>style.filter</code> for versions 8 and below.</li>
+					<li>Updated <a href="./forms/copying_fields_from_one_to_another.html">Copying Fields from One to Another</a> with the <code>data-mjf_cf_only_empty="true"</code> attribute. This allows the copy to only happen if the field is empty.</li>
+					<li>Updated <a href="./easies/light_switch.html">Light Switch</a> with collapse/expand all functionality.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.9.18</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.9.18.zip" data-mjf="ga_click_track" id="magic_zip_12.9.18">magic.12.9.18.zip</a></li>
+					<li>Added the <a>Quick Jump &crarr;</a> link to all documenation pages.</li>
+					<li>Added an optional <code>data-mjf_asl_name_value="NAME=VALUE"</code> to <a href="./ajax/form_submission_via_click.html">AJAX Form Submission</a> (via click).</li>
+					<li>Updated <a href="./ajax/form_submission_via_click.html">AJAX Form Submission</a> (via click) documentation to correctly state that the <code>data-mjf_asl_action=""</code> attribute is optional.</li>
+					<li>Fixed JSON return bug where the <code>&lt;input&gt;</code> value wasn't always being updated correctly.</li>
+					<li>Fixed the <code>$m.h.form_required.valid_forms[]</code> bug.</li>
+					<li><a href="./easies/html5_video.html">HTML5 Video</a> scriptable <em>Play</em> option now delays for a second before actually playing. This gives the FLV player a second to initialize if it hasn't already.</li>
+					<li>Minor update to the <a href="../tricks/magic_calendar/">Magic Calendar</a>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.8.24</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.8.24.zip" data-mjf="ga_click_track" id="magic_zip_12.8.24">magic.12.8.24.zip</a></li>
+					<li>New <code>$m.tag.html(IN_ID, IN_CONTENT, IN_HOW, IN_ENCODED)</code> to allow for easier and consisent HTML updates.</li>
+					<li>New <code>$m.de.throw_fatal(IN_MSG)</code> to send errors both to the console and the Magic Debugger.</li>
+					<li>Better error handling.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.8.20</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.8.20.zip" data-mjf="ga_click_track" id="magic_zip_12.8.20">magic.12.8.20.zip</a></li>
+					<li><a href="./forms/validation.html">Form Validation</a> is now done on the fly based on the fields currently in the form.</li>
+					<li>Better error handling.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.8.7</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.8.7.zip" data-mjf="ga_click_track" id="magic_zip_12.8.7">magic.12.8.7.zip</a></li>
+					<li><a href="./easies/remove_onclick.html">Remove Element</a> (via click) and <a href="./easies/empty_onclick.html">Empty Element</a> (via click) now attempt to reset <a href="./forms/validation.html">Form Validation</a>.</li>
+					<li>If a field is deleted after the <a href="./forms/validation.html">Form Validation</a> has been initialized, it's ignored during validation.</li>
+					<li>Even more reliable <a href="./ajax/predefined_json_parsing.html">Predefined JSON parsing</a>.</li>
+					<li>Reverted <code>$m.attr.set()</code> element handling &ndash; individuals vs. collections &ndash; to 12.7.31 until more stable.</li>
+					<li>If the Magic Debugger isn't available, a browser error will be thrown instead.</li>
+					<li>Updated <a href="http://www.magicjs.com/favicon.ico">favicon.ico</a>.</li>
+					<li>Misc code cleanup.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.8.6</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.8.6.zip" data-mjf="ga_click_track" id="magic_zip_12.8.6">magic.12.8.6.zip</a></li>
+					<li>New and replacement icons.</li>
+					<li>More reliable <a href="./ajax/predefined_json_parsing.html">Predefined JSON parsing</a>.</li>
+					<li><code>$m.stop_bubble()</code> will now add a message to the Magic Debugger if there isn't an event to stop.</li>
+					<li>
+						<code>$m.attr.set()</code> can now take a collection of elements as its first argument instead of only one.<br>
+						In a future revision similar methods &mdash; <code>$m.css_class.add()</code> &mdash; will be able to, also.
+					</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.7.31</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.7.31.zip" data-mjf="ga_click_track" id="magic_zip_12.7.31">magic.12.7.31.zip</a></li>
+					<li>Added <code>$m.ajax.update_queue()</code> to easily update the AJAX queue from other functions.</li>
+					<li>If <code>$m.config.ajax.use === false</code>, the browser will now throw a JavaScript error.</li>
+					<li>Form field values are now retained when append/prepending content with AJAX.</li>
+					<li><a href="./forms/converting_fields_to_url_friendly_fields.html">Converting Fields to URL Friendly Fields</a> now removes single quotes before the conversion.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.7.20</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.7.20.zip" data-mjf="ga_click_track" id="magic_zip_12.7.20">magic.12.7.20.zip</a></li>
+					<li>For <a href="./easies/tool_tips.html">Tool Tips</a> you must now manually add a CSS class <code>tool_tip_cont</code> to the tag that tool tip itself. This will keep the tip from appearing momentarily as the page loads. This will also break your code if you don't update!</li>
+					<li>Fixed a bug in the <a href="./forms/checked_picker.html">Checked Picker</a> where the groups weren't created properly during AJAX requests.</li>
+					<li>Added the <code>$m.document</code> property which holds either the current <code>document</code> or the <code>$m.ajax.request.update_id</code>. This is useful for initializing elements after AJAX requests.</li>
+					<li>New <a href="./ajax/predefined_json_parsing.html">Predefined JSON parsing</a> in the AJAX section.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.7.7</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.7.7.zip" data-mjf="ga_click_track" id="magic_zip_12.7.7">magic.12.7.7.zip</a></li>
+					<li>New <a href="./forms/form_changed_alert.html">Alerting the visitor when navigating away from a changed form</a> in the Forms section.</li>
+					<li>New <a href="./easies/css_class_update.html">CSS Class Update</a> in the Easies section.</li>
+					<li>New <a href="./easies/empty_onclick.html">Empty Element</a> (via click) in the Easies section.</li>
+					<li>New <a href="./easies/remove_onclick.html">Remove Element</a> (via click) in the Easies section.</li>
+					<li>Added CSS3 transitions to AJAX requests. Change the look by updating <code>.ajax_visual_content</code> in the <code>magic.12.7.7.css</code>.</li>
+					<li>New <code>data-mjf_ajax_update_id_action="overwrite(OR)append(OR)prepend"</code> attribute for AJAX requests.</li>
+					<li>In light of the above change, <code>data-mjf_ajax_update_id_overwrite</code> has been deprecated and will be removed in a future version.</li>
+					<li>Added JavaScript support to control the <a href="./easies/html5_video.html">HTML5 Video</a> player.</li>
+					<li>Temporarily removed the <code>data-mjf_h5v_autoload="true"</code> and <code>data-mjf_h5v_autoplay="true"</code> attributes from <a href="./easies/html5_video.html">HTML5 Video</a>.</li>
+					<li>More documentation clean up.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.5.30</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.5.30.zip" data-mjf="ga_click_track" id="magic_zip_12.5.30">magic.12.5.30.zip</a></li>
+					<li>Fixed the AJAX bug where the case sensitive <code>method</code> on <a href="./ajax/form_submission.html">Form Submission</a> wasn't recognized.</li>
+					<li>More documentation clean up.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.5.22</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.5.22.zip" data-mjf="ga_click_track" id="magic_zip_12.5.22">magic.12.5.22.zip</a></li>
+					<li>New <a href="./easies/html5_video.html">HTML5 Video</a> in the Easies section.</li>
+					<li>4 Tricks were updated as well.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.4.19</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.4.19.zip" data-mjf="ga_click_track" id="magic_zip_12.4.19">magic.12.4.19.zip</a></li>
+					<li>Added <code>data-mjf_err_parent="PARENT_ID"</code> to <a href="./forms/validation.html">Form Validation</a> to allow highlighting of a particular HTML element on error.</li>
+					<li>Added a stack trace to the Magic Debugger.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.4.3</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.4.3.zip" data-mjf="ga_click_track" id="magic_zip_12.4.3">magic.12.4.3.zip</a></li>
+					<li>Added config options for <a href="./easies/dynamic_tabs.html">Dynamic Tabs</a> with options to autostart the rotation, etc. This won't break existing implementations.</li>
+					<li>Added a millisecond delay before executing callbacks when dynamically inserting <code>&lt;script&gt;</code> tags.</li>
+					<li>Fixed the bug where MSIE wasn't passing the <code>window.event</code> to various methods.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.3.22</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.3.22.zip" data-mjf="ga_click_track" id="magic_zip_12.3.22">magic.12.3.22.zip</a></li>
+					<li>Removed the auto-magically adding the <a href="./easies/dropdown_menu.html">Dropdown Menu</a> and <a href="./easies/dynamic_tabs.html">Dynamic Tabs</a> style sheet to pages. You'll need to do this manually now. Please see its corresponding documentation.</li>
+					<li>Removed config option for <code>css_versions</code> in light of change above. This greatly increases page load and rendering times.</li>
+					<li>Fixed broken <a href="../tricks/darkroom/">Darkroom</a> links on the documentation pages.</li>
+				</ul></ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3><h3>12.2.24</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.2.24.zip" data-mjf="ga_click_track" id="magic_zip_12.2.24">magic.12.2.24.zip</a></li>
+					<li>New <a href="./easies/html5_audio.html">HTML5 Audio</a> in the Easies section.</li>
+					<li>Misc code clean up.</li>
+				</ul></ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3><h3>12.2.12</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.2.12.zip" data-mjf="ga_click_track" id="magic_zip_12.2.12">magic.12.2.12.zip</a></li>
+					<li>New config option to set <code>ajax.timeout</code> on a per-page basis.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.1.31</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.1.31.zip" data-mjf="ga_click_track" id="magic_zip_12.1.28">magic.12.1.31.zip</a></li>
+					<li>
+						We're now localized!
+						<ul class="margin_top_10">
+							<li>Please see the <strong>Introduction</strong> tab, <strong>Usage</strong> section and look for the <code>lang : "en_us"</code> property - this is new.</li>
+							<li>If this isn't set, it will default to <code>en_us</code>.</li>
+							<li>All Tricks will inherit this setting.</li>
+							<li><code>en_us</code> is the only available language. This, hopefully, will change in the future.</li>
+						</ul>
+					</li>
+					
+					<li>The config argument <code>basedir : "/PATH/TO/"</code> passed to <code>$m.construct()</code> can now be used if you'd like to manually set this.</li>
+					<li>Refined the timeout for AJAX calls.</li>
+					<li>Fixed MSIE6 crash when repeatedly refreshing a page.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.1.28</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.1.28.zip" data-mjf="ga_click_track" id="magic_zip_12.1.28">magic.12.1.28.zip</a></li>
+					<li>
+						AJAX calls will now time out after 5 seconds and a message will be shown to the visitor.
+						<ul class="margin_top_10">
+							<li>This can be overridden on a per element basis by using <code>data-mjf_ajax_timeout="N"</code>.</li>
+						</ul>
+					</li>
+					<li>Alphabetized the objects in <code>magic.src.js</code>.</li>
+					<li>Added <code>$m.trim(IN_STRING)</code>.</li>
+					<li>Changed <code>$m.get_keycode(IN_KEYCODE)</code> to <code>$m.keycode.get(IN_KEYCODE)</code>.</li>
+					<li>Changed <code>$m.is_worthy_keycode(IN_KEYCODE)</code> to <code>$m.keycode.is_worthy(IN_KEYCODE)</code>.</li>
+					<li>Changed <code>$m.get_mouse_btn(IN_EVENT)</code> to <code>$m.mouse_btn.get(IN_EVENT)</code>.</li>
+					<li>Changed <code>$m.ev(IN_STRING)</code> to <code>$m.ev.all(IN_STRING)</code>.</li>
+					<li>Changed <code>$m.ev_script(IN_STRING)</code> to <code>$m.ev.script(IN_STRING)</code>.</li>
+					<li><a href="./forms/converting_fields_to_url_friendly_fields.html">Converting Fields to URL Friendly Fields</a> now REALLY strips everything but alphanumeric characters and replaces them with underscores.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.1.19</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.1.19.zip" data-mjf="ga_click_track" id="magic_zip_12.1.19">magic.12.1.19.zip</a></li>
+					<li><a href="./forms/converting_fields_to_url_friendly_fields.html">Converting Fields to URL Friendly Fields</a> now strips everything but alphanumeric characters and replaces them with underscores.</li>
+					<li>New <a href="./easies/frame_reload.html">Frame Reload</a> in the Easies section.</li>
+					<li>Alphabetized the objects in <code>wand.src.js</code>.</li>
+					<li>Continued documentation cleanup.</li>
+				</ul></ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3><h3>12.1.11</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.1.11.zip" data-mjf="ga_click_track" id="magic_zip_12.1.11">magic.12.1.11.zip</a></li>
+					<li>AJAX requests are now queued.</li>
+					<li>AJAX failed requests are now more efficiently caught.</li>
+					<li>Replaced <code>$m.wand.ajax_auto</code> with <code>$m.wand.ajax_polling</code></li>
+					<li><a href="./forms/converting_fields_to_url_friendly_fields.html">Converting Fields to URL Friendly Fields</a> now strips single quotes instead of replacing them with underscores.</li>
+					<li><a href="./easies/dropdown_menu.html">Dropdown Menu</a> improvements. Please review the documentation for proper implementation.</li>
+					<li>Continued documentation cleanup.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.1.9</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.1.9.zip" data-mjf="ga_click_track" id="magic_zip_12.1.9">magic.12.1.9.zip</a></li>
+					<li>Removed <code>basedir : "/resources/javascript/magic/"</code> from the config argument passed to <code>$m.construct()</code> in light of change below.</li>
+					<li>
+						Added <code>$m.find_baseurl()</code>
+						<ul class="margin_top_10">
+							<li>Magic will now find out where it lives and write its links appropriately.</li>
+						</ul>
+					</li>
+					<li>All file version numbers are stored in <code>/PATH/TO/magic/_versions.js</code> for easier documentation and reference.</li>
+					<li>Renamed <code>data-mjf_ajax_click_method</code> to <code>data-mjf_ajax_method</code>.</li>
+					<li>Added special characters to <code>$m.is_worthy_keycode(IN_KEYCODE)</code>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>12.1.3</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.12.1.3.zip" data-mjf="ga_click_track" id="magic_zip_12.1.3">magic.12.1.3.zip</a></li>
+					<li>
+						Replaced <code>$m.wand.ajax_change</code> with <code>$m.wand.ajax_kc</code>
+						<ul class="margin_top_10">
+							<li>This adds the additional <code>onkeyup</code> event handler to the tags and also a three quarter of a second timeout before sending the request.</li>
+						</ul>
+					</li>
+					<li>
+						Added <code>$m.is_worthy_keycode(IN_KEYCODE)</code>
+						<ul class="margin_top_10">
+							<li>The worthy keys are: A-Z, 0-9, backspace and delete.</li>
+						</ul>
+					</li>
+					<li>If <code>$m.ajax.request.update_id</code> doesn't exist, JavaScript will now throw an error.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.12.29</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.11.12.29.zip" data-mjf="ga_click_track" id="magic_zip_11.12.29">magic.11.12.29.zip</a></li>
+					<li>
+						Added two new arguments for <code>$m.smooth_scroll.construct(IN_ID, IN_MINUS_PADDING_TOP, IN_MINUS_PADDING_LEFT)</code>
+						<ul class="margin_top_10">
+							<li><code>IN_MINUS_PADDING_TOP</code> - moves the scroll up by this integer (in pixels).</li>
+							<li><code>IN_MINUS_PADDING_LEFT</code> - moves the scroll left by this integer (in pixels).</li>
+						</ul>
+					</li>
+					<li><a href="./forms/validation.html">Form Validation</a> uses the above change to pull the page up 20 more pixels than the first error'ed form field.</li>
+					<li>Minor code clean up.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.12.19</h3>
+				<ul>
+					<li><a href="http://www.magicjs.com/downloads/magic.11.12.19.zip" data-mjf="ga_click_track" id="magic_zip_11.12.19">magic.11.12.19.zip</a></li>
+					<li>Added date arrays for <a href="../tricks/magic_calendar/">Magic Calendar</a>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.11.29</h3>
+				<ul>
+					<li>Revamped docs!</li>
+					<li>Bug fixes for <a href="./ajax/ajax_polling.html">AJAX Polling</a>.</li>
+					<li>Bug fixes for <a href="./forms/checked_picker.html">Checked Picker</a>.</li>
+					<li>Disabled AJAX state checking for now.</li>
+					<li>New config option to set dynamic_tabs.VERSION.css.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.11.18</h3>
+				<ul>
+					<li>Version number added to magic_debugger.css</li>
+					<li>
+						New <code>$m.tags.remove</code>
+						<ul class="margin_top_10">
+							<li>Code added for <code>$m.tags.remove.empty</code>.</li>
+						</ul>
+					</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.11.11</h3>
+				<ul>
+					<li>Misc updates for the latest <a href="../tricks/magic_editor/">Magic Editor</a>.</li>
+					<li>New <code>$m.tag.clone()</code>.</li>
+					<li>New <code>$m.tag.replace()</code>.</li>
+					<li>Try/catch for <code>$m.tag.remove()</code>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.11.1</h3>
+				<ul>
+					<li><a href="./forms/checked_picker.html">Checked Picker</a> no longer submits the form when pressing <code>Enter</code> / <code>Return</code> and other bug fixes.</li>
+					<li>Removed the incorrectly name trick version of the <a href="./forms/checked_picker.html">Checked Picker</a> link. Look at <strong>Form Example 5</strong> for documentation.</li>
+					<li>Misc bug fixes and code cleanup.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.9.29</h3>
+				<ul>
+					<li>Fixed <a href="./easies/google_analytics_click_tracking.html">Google Analytics Click Track</a>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.9.27</h3>
+				<ul>
+					<li>Misc bug fixes and code cleanup.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.7.1</h3>
+				<ul>
+					<li><code>$m.tag.remove()</code> now returns a reference to the removed element.</li>
+					<li><code>$m.ajax.just_html_update()</code> can now return AJAX responses to <code>&lt;input type="text"&gt;</code> elements.</li>
+					<li><a href="./ajax/input_kc.html">Input On Keyup/Change</a> now works with <code>&lt;input type="text"&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code> elements.</li>
+					<li>New <a href="./forms/checked_picker.html">Checked Picker</a>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.4.29</h3>
+				<ul>
+					<li>Complete code overhaul! This will break your code! Check the "Always Do These" on the Easy Examples tab for how to include the scripts on your page. Also check all the Wand and Tricks that you're using for updated details.</li>
+					<li>Removed <code>setAttribute()</code> and <code>getAttribute()</code> as much as possible.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.3.25</h3>
+				<ul>
+					<li>New <code>$m.ajax.active.state</code> and <code>$m.ajax.active.msg</code> to prevent unwanted, multiple requests.</li>
+					<li><code>$m.stop_bubble()</code> now with more precision.</li>
+					<li><code>$m.shortcut</code> overhaul.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.3.15</h3>
+				<ul>
+					<li>New config option to set dropdown_menu.VERSION.css.</li>
+					<li>Misc CSS updates.</li>
+					<li>Misc code clean up and optimization.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.2.15</h3>
+				<ul>
+					<li>Better AJAX return handling.</li>
+					<li>Removed <code>$m.ajax.request_failed()</code>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.2.14</h3>
+				<ul>
+					<li>New <a href="./easies/text_resizer.html">Text Resizer</a> easy example.</li>
+					<li>New <code>$m.ev_script()</code> for eval'ing JavaScript in a string of HTML.</li>
+					<li><code>$m.smooth_scroll</code> and <code>$m.smooth_scroll_overflow</code> disabled on Amazon Kindle.</li>
+					<li><a href="./forms/submission_via_click.html">Form Submission</a> (via click) bug fixes and form validation.</li>
+					<li>Google Analytics now tracking new <code>_gag</code> style of Analytics code.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.2.11</h3>
+				<ul>
+					<li><a href="./easies/dynamic_tabs.html">Dynamic Tabs</a> is now using CSS3 transitions for opacity changing.</li>
+					<li><code>$m.smooth_scroll</code> has replaced <code>$m.scroll_to_id</code>.</li>
+					<li><code>$m.smooth_scroll_overflow</code> has replaced <code>$m.scroll_top</code>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.2.8</h3>
+				<ul>
+					<li>New <code>$m.shortcut</code> for easy keyboard shortcut additions.</li>
+					<li>Stable <a href="./ajax/ajax_polling.html">AJAX Polling</a> and documentation.</li>
+					<li>Optimized <code>&lt;script&gt;</code> parsing and executing of AJAX returns.</li>
+					<li>Misc code clean up and optimization.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.2.1</h3>
+				<ul>
+					<li>New <a href="./ajax/ajax_polling.html">AJAX Polling</a> functionality &ndash; not ready for primetime just yet.</li>
+					<li>Misc code clean up and optimization.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>11.1.4</h3>
+				<ul>
+					<li>New <code>$m.element.attach()</code> for handling <code>addEventListener()</code> and <code>attachEvent()</code>.</li>
+					<li>New <code>$m.element.detach()</code> for handling <code>removeEventListener()</code> and <code>detachEvent()</code>.</li>
+					<li>New <code>$m.stop_bubble()</code> for stopping event propagation.</li>
+					<li>New <code>$m.try_json_unpack()</code> for handling <code>JSON.parse()</code> errors.</li>
+					<li>New <code>$m.scroll_top()</code> -- sets the element ID <code>scrollTop = 0</code>;</li>
+					<li>New <code>$m.de.get_tricks()</code> -- gets all current loaded tricks.</li>
+					<li>New <code>$m.insert_node_at_selection_point()</code> -- inserts a chunk of HTML into a content editable document (non-MSIE).</li>
+					<li>New <code>data-mjf_ajax_update_id_scroll_to</code> AJAX option -- uses <code>$m.scroll_to_id();</code>.</li>
+					<li>Nintendo Wii and Amazon Kindle browser detection.</li>
+					<li><a href="../tricks/darkroom/">Darkroom</a> -- v10.12.28</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.12.22</h3>
+				<ul>
+					<li>New <a href="./forms/submission_via_click.html">Form Submission</a> (via click) functionality.</li>
+					<li>Updated <a href="./easies/light_switch.html">Light Switch</a> to include CSS <code>display: table-row</code>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.12.21</h3>
+				<ul>
+					<li>AJAX now doesn't bomb for MSIE 6&amp;7.</li>
+					<li>When returning HTML from an AJAX request, only the new HTML is snooped when re-initializing MJS.</li>
+					<li>New <code>data-mjf_ajax_form_reset</code> for <code>$m.wand.ajax_submit</code>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.12.20</h3>
+				<ul>
+					<li><code>$m.wand.submit_onclick</code> now doesn't bomb when there isn't form validation.</li>
+					<li><code>$m.wand.submit_onclick</code> now let's you send a name/value pair to the server. This is handy for uniquely identifying their clicks.</li>
+					<li>New <code>data-mjf_ajax_update_id_overwrite</code> AJAX option -- shall we overwrite the update_id content or not?</li>
+					<li>New <code>.ajax_visual_form</code> CSS rule for forms.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.12.16</h3>
+				<ul>
+					<li>Renamed the majority of files to include their respective version number. This is for browser caching.</li>
+					<li>Moved the <code>mjf_config</code> out of <code>magic.11.11.29.js</code> and into the HTML files. This is also for caching.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.12.1</h3>
+				<ul>
+					<li>Misc code clean up, optimization and bug fixes.</li>
+		</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.10.16</h3>
+				<ul>
+					<li>Moved various docs around.</li>
+					<li><a href="../tricks/darkroom/">Darkroom</a> is now its own <code>trick</code> &ndash; this will break your code if you don't update!</li>
+					<li><a href="../tricks/new_form_fields/">New Form Fields</a> variable name changes &ndash; this will break your code if you don't update!</li>
+					<li>New <code>$m.init_tag()</code> for setting up a new tag.</li>
+					<li>Misc code clean up and optimization.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.10.14</h3>
+				<ul>
+					<li>Added <code>assist/json2.js</code> for browsers without support.</li>
+					<li>Added iPad detection.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.10.11</h3>
+				<ul>
+					<li><code>dropdown_menu.css</code> and <code>ajax_lookup.css</code> no longer inserted on each AJAX request.</li>
+					<li><code>$m.strip_tags()</code> now works only on strings.</li>
+					<li>New <code>$m.strip_tags_from_id()</code> for stripping tags from an ID.</li>
+					<li>New <code>$m.ut.decode_entities()</code> for decoding HTML entities in a string.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.9.28</h3>
+				<ul>
+					<li>Added time zone detection! Set <code>mjf_config.send_timezone_to</code> to a server side URL and MJS will send you the user's timezone offset.</li>
+					<li><code>motion.js</code> updates. Not ready for production use.</li>
+					<li>Misc code clean up - no new functionality other than the above.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.9.24</h3>
+				<ul>
+					<li>Added IE9 beta support and updated MSIE browser sniffing.</li>
+					<li><code>$m.wand.s2lcus</code> and <code>$m.wand.copy_fields</code> now working again. Ugh.</li>
+					<li>Style updates in <code>magic.10.12.20</code> and <code>dropdown_menu.css</code> &ndash; better CSS3 support.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.9.22</h3>
+				<ul>
+					<li>Updated form validation to validate <code>&lt;select&gt;</code> properly. However, you must have an <code>&lt;option value=""&gt;</code> as your first, empty option.</li>
+					<li>Fixed <code>mjf_config.animations.use</code> quirk.</li>
+					<li>Updated <code>mjf_config.global_debug</code> with <code>false</code>, <code>"low"</code>, and <code>"high"</code> options.</li>
+					<li>Added documentation for <a href="./easies/simple_image_slideshow.html">Simple Image Slideshow</a>.</li>
+					<li>New <code>$m.wand.clear_onclick</code> functionality.</li>
+					<li>One checkbox or radio button no longer screws up form validation.</li>
+					<li>Lots of other bug fixes and code improvements.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.9.19</h3>
+				<ul>
+					<li>Updated <a href="./easies/google_analytics_click_tracking.html">Google Analytics Click Track</a> in light of <code>10.9.15</code> changes.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.9.15</h3>
+				<ul>
+					<li>Updated Google Analytics tracking to better integrate with Google. All hits will now be found in GA's Content &gt; Event Tracking.</li>
+					<li>Removed <code>data-mjf_ga_track_ext</code> and <code>data-mjf_ga_track_ext_cat</code> since they will now be handled automatically.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.9.7</h3>
+				<ul>
+					<li>Set default path for cookies to <code>/</code>.</li>
+					<li>Added <code>mjf_config</code> object for Animations. Turned off by default until implemented via CSS3.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.8.27</h3>
+				<ul>
+					<li>New <code>$m.wand.change_field_type</code> functionality.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.8.26</h3>
+				<ul>
+					<li>Updated <code>$m.wand.copy_fields</code> functionality.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.8.24</h3>
+				<ul>
+					<li>More Geolocation code, still no functionality ready.</li>
+					<li>New <code>mjf_config</code> objects for AJAX and Geolocation.</li>
+					<li>Magic Debugger looks and works better.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.8.23</h3>
+				<ul>
+					<li>Split the core functionality and the <code>wand</code> items into separate files. This will break your code! Check the "Always Do These" on the Easy Examples tab for how to link to the new <code>$m.wand.js</code> file.</li>
+					<li>Added new <code>$m.wand.copy_fields</code>.</li>
+					<li>For <a href="./easies/light_switch.html">Light Switch</a>
+						<ul class="margin_top_10">
+							<li>Added new <code>data-mjf_lswitch_use_css="false"</code> &ndash; this will keep the expanded/collapsed arrows from being added to the trigger.</li>
+							<li>Added new <code>data-mjf_lswitch_cookie="false"</code> &ndash; this will keep the individual Light Switch from being stored in a cookie.</li>
+						</ul>
+					</li>
+					<li>Added <code>data-mjf_dr_hide="false"</code> to forms inside of a darkroom. This keeps the darkroom open when submitting the form. This is useful if you have a form that submits via AJAX and is inside a darkroom.</li>
+					<li>Initial Geolocation code, no functionality at present.</li>
+					<li>Various bug fixes.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.8.18</h3>
+				<ul>
+					<li>Bug fixes.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.8.17</h3>
+				<ul>
+					<li>New <code>$m.set_cursor = function(in_id, in_pos)</code> method.</li>
+					<li>New <code>data-mjf_ajax_update_id_scroll_top</code> attribute which scrolls window to the top of the <code>data-mjf_ajax_update_id</code> after a successful AJAX request.</li>
+					<li>New timer to monitor MJS loading time. Turning on debugging to see.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.8.13</h3>
+				<ul>
+					<li>Replaced <code>data-m="WHATEVER"</code> with <code>data-mjf="WHATEVER"</code>. This will break your code!</li>
+					<li>Replaced all <code>data-(!mjf)="WHATEVER"</code> with <code>data-(mjf_*)="WHATEVER"</code>. This will break your code!</li>
+					<li>New <code>data-mjf="|return_false"</code> added to control the final return value. This will break your code - see Notes section on the first tab.</li>
+					<li>Many bug fixes.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.30</h3>
+				<ul>
+					<li>New <code>$m.remove_tag()</code>.</li>
+					<li>New <code>new_form_fields.js</code> &ndash; see <strong>Other Tricks</strong> tab.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.28</h3>
+				<ul>
+					<li><code>trick</code> and <code>wand</code> are no longer globals.</li>
+					<li>Blurring all <code>&lt;a&gt;</code> tags if links aren't followed.</li>
+					<li>Even better mobile device recognition.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.27</h3>
+				<ul>
+					<li>Better mobile device recognition.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.23</h3>
+				<ul>
+					<li>Updated <a href="./easies/light_switch.html">Light Switch</a>; breaks previous versions &ndash; update your code.</li>
+					<li><a href="./easies/light_switch.html">Light Switch</a> now remember state.</li>
+					<li>Better state handling for <a href="./easies/dynamic_tabs.html">Dynamic Tabs</a>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.16</h3>
+				<ul>
+					<li>Blurring <code>&lt;a&gt;</code> links for <a href="./ajax/ajax_onclick.html">AJAX Clicks</a>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.14</h3>
+				<ul>
+					<li>Fixed <a href="../tricks/darkroom/">Darkroom</a> close image style display for MSIE6 &amp; 7.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.8</h3>
+				<ul>
+					<li>Removed animation from <a href="./easies/dynamic_tabs.html">Dynamic Tabs</a>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.6</h3>
+				<ul>
+					<li>Fixed <code>document.all[in_id].attributes[in_attribute].value</code> error for MSIE7 and lower.</li>
+					<li>Consolidated MSIE7 and lower checks.</li>
+					<li>Fixed GA tracking <code>#</code> bug.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.5</h3>
+				<ul>
+					<li>Fixed <code>setTimeout()</code> error.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.2</h3>
+				<ul>
+					<li>Added <a href="./easies/google_analytics_click_tracking.html">Google Analytics Click Track</a> so you can track any <code>&lt;a href="/page.html"&gt;</code> or <code>&lt;a href="http://www.domain.com/page.html"&gt;</code> click.</li>
+					<li>Added Google Analytics tracking for <a href="./easies/open_new_windows.html">Open New Win</a>.</li>
+					<li>Removed old animations that weren't being used. Will move to CSS based transitions soon.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.7.1</h3>
+				<ul>
+					<li>Updated <a href="./easies/light_switch.html">Light Switch</a>; breaks previous versions &ndash; update your code.</li>
+					<li>More <a href="../tricks/darkroom/">Darkroom</a> fixes for the new overlay functionality.</li>
+					<li>Removed WebKit script load check, hadn't used it in awhile anyway.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.6.25</h3>
+				<ul>
+					<li>Ensured <a href="../tricks/darkroom/">Darkroom</a> overlay resizes when window resizes.</li>
+					<li>Reverted to original throbber.gif.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.6.22</h3>
+				<ul>
+					<li>Ensured HTML is added to the document before the JavaScript is executed.</li>
+					<li>Updated CSS style <code>.ajax_visual</code>.</li>
+					<li>New throbber.gif.</li>
+					<li>New overlay option for <a href="../tricks/darkroom/">Darkroom</a>.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.6.19</h3>
+				<ul>
+					<li>CSS style <code>.ajax_visual</code> now added/removed on AJAX requests, can be turned off in global <code>var config = { }</code>.</li>
+					<li>Added <code>data-mjf_ga_track="false"</code> option to <a href="../tricks/darkroom/">Darkroom</a>, <a href="./easies/dynamic_tabs.html">Dynamic Tabs</a> and all AJAX requests if they needn't be tracked by Google Analytics.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.6.18</h3>
+				<ul>
+					<li>Better initial display of <a href="./easies/dropdown_menu.html">Dropdown Menu</a>.</li>
+					<li>Fixed non-styled <a href="./easies/light_switch.html">Light Switch</a> elements.</li>
+				</ul>
+		
+			</div>
+					
+			<div class="form_line_content">
+		
+				<h3>10.6.16</h3>
+				<ul>
+					<li>Added Google Analytics tracking for <a href="../tricks/darkroom/">Darkroom</a>, <a href="./easies/dynamic_tabs.html">Dynamic Tabs</a> and all AJAX requests.</li>
+					<li>Started tracking version changes. <strong>:)</strong></li>
+				</ul>
+		
+			</div>
+			
+		</fieldset>
+
+		
+	</section>
+
+
+
+	<!-- Development -->
+	<section data-mjf_dtab_set="tab_ex" class="tab_box padding_10" id="tab_set_1_7">		
+	
+		<fieldset>
+	
+			<legend>A loose list of what needs done</legend>
+			
+			<div class="form_line_content">
+			
+				<h3>magic.src.js</h3>
+				
+				<h4>&bull; Build</h4>
+				<ul>
+					<li>Better small-screen support for documentation.</li>
+					<li>A <code>pages.css</code> file that any trick, etc. can inherit from for a default look and feel.</li>
+					<li>Unit testing framework.</li>
+				</ul>
+				
+				<h4>&bull; Document</h4>
+				<ul>
+					<li>Internal Magic methods and properties.</li>
+				</ul>
+				
+				<h4>&bull; Rewrite</h4>
+				<ul>
+					<li><code>$m.de.construct()</code> and fix Magic Debugger's <code>NS_ERROR_NOT_AVAILABLE</code> thrown by <code>this.new_document.close()</code> when using Firefox.</li>
+					<li><code>top_msg</code> for AJAX and other errors.</li>
+					<li>Various pieces to optimize for browser features.</li>
+					<li>Don't put <code>id</code> into arrays when they're actually <code>href</code> - see <a href="./easies/dynamic_tabs.html">Dynamic Tabs</a>.</li>
+				</ul>
+				
+			</div>
+
+			<div class="form_line_content">
+
+				<h3>wand.src.js</h3>
+
+				<h4>&bull; Build</h4>
+				<ul>
+					<li>Image-based <a href="./forms/checked_picker.html">Checked Picker</a>.</li>
+				</ul>
+
+				<h4>&bull; Fix</h4>
+				<ul>
+					<li><a href="./easies/dynamic_tabs.html">Dynamic Tabs</a> keyboard shortcuts in Opera.</li>
+				</ul>
+
+				<h4>&bull; Rewrite</h4>
+				<ul>
+					<li><a href="./forms/checked_picker.html">Checked Picker</a> to make form validation easier and add touch-based browser support.</li>
+					<li><a href="./easies/text_resizer.html">Text Resizer</a> to include option not to remember text size.</li>
+				</ul>
+
+				<h4>&bull; Investigate</h4>
+				<ul>
+					<li><a href="./easies/dropdown_menu.html">Dropdown Menu</a> on Chrome for Android.</li>
+				</ul>
+				
+
+			</div>
+			
+			<div class="form_line_content">
+
+				<h3>more_form_magic.src.js</h3>
+				<ul>
+					<li>Review/update code.</li>
+					<li>Event handler to hide the pseudo drop down.</li>
+					<li>Write documentation.</li>
+				</ul>
+
+			</div>
+			
+			<div class="form_line_content">
+
+				<h3><a href="../tricks/ajax_lookup/">ajax_lookup.src.js</a></h3>
+				<p>Under heavy development - not for production use.</p>
+				<ul>
+					<li>Review/update code.</li>
+					<li>Write documentation.</li>
+				</ul>
+
+			</div>
+			
+			<div class="form_line_content">
+
+				<h3>sortable_tables.src.js</h3>
+				<ul>
+					<li>Review/update code.</li>
+					<li>Write documentation.</li>
+				</ul>
+
+			</div>
+
+		</fieldset>
+
+
+		<fieldset>
+	
+			<legend>API</legend>
+			
+			<div class="form_line_content">
+			
+				<ul>
+					<li>Currently there isn't documentation to utilize the internal properties and methods of the global <code>$m</code> object.</li>
+					<li>Currently there isn't documentation on writing your own Tricks.</li>
+					<li>These <em>will</em> become a higher priority in the future.</li>
+					<li>However, the code in the <code>*.src.js</code> files is fairly clean and should be easy to comprehend.</li>
+				</ul>
+
+			</div>
+
+		</fieldset>
+
+
+		<fieldset>
+	
+			<legend>Use at your own risk!</legend>
+			
+			<div class="form_line_content">
+		
+				<ul>
+					<li><a href="../dev/">Details</a></li>
+					<li><a href="../dev/ajax_queue.html">AJAX Queue</a></li>
+					<li><a href="../dev/checked_picker.html">Checked Picker</a></li>
+					<li><a href="../dev/form_validation.html">Form Validation</a></li>
+					<li><a href="../dev/geolocation.html">Geolocation</a></li>
+					<li><a href="../dev/magic_editor.html">Magic Editor</a></li>
+					<li><a href="../dev/storage.html">Storage</a></li>
+					<li><a href="../dev/versions_json.html">Version JSON</a></li>
+				</ul>
+				
+			</div>
+			
+		</fieldset>
+
+	</section>
+
+	<script type="text/javascript">
+		//$m.trick.more_form_magic.sselect = true;
+		$m.trick.darkroom = true;
+		$m.wand.ga_click_track = true;
+		$m.wand.dynamic_tabs = true;
+	</script>
+
+	<div class="clear_both"></div>
+
+
+</body>
+</html>

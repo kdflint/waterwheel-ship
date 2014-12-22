@@ -1,0 +1,11 @@
+/****** Version 12.4.19 ******/
+body{background:#000;color:#fff;font-family:Courier New,monospace;font-size:12px;font-weight:bold;padding:2px;}
+h1{font-size:14px;}
+h2{font-size:13px;}
+#debug_box{padding:2px;}
+#debug_box p{border-top:1px solid #333 !important;margin:2px;padding:4px 2px 4px 2px;}
+#current_line{color:lime;font-size:13px;}
+#clear_debugger{margin-left:20px;}
+#clear_debugger input{font-size:9px;margin:0;}
+#clear_debugger input:hover{font-weight:bold;}
+ul{color:#999;font-size:10px;margin:0 0 10px 0;}

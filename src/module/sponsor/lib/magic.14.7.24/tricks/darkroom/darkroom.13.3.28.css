@@ -1,0 +1,15 @@
+/****** Version 13.3.28 ******/
+.mjf_darkroom_content{box-shadow:0 4px 15px #666666;display:none;-ms-transition:all 250ms ease-in-out;-webkit-transition:all 250ms ease-in-out;transition:all 250ms ease-in-out;padding:0 10px 10px 10px;position:absolute;z-index:9999;}
+.mjf_darkroom_content_current{display:block !important;}
+.mjf_darkroom_content_noshadow{border:3px solid #dadada;}
+.mjf_darkroom_close_img{cursor:pointer;float:right;margin:3px 2px 0 0;}
+.mjf_darkroom_handle{background-color:#eee;border:1px solid #eee;border-bottom-right-radius:4px;border-bottom-left-radius:4px;display:block;height:20px;margin-bottom:10px;}
+#mjf_darkroom_overlay{background:url(../../images/backgrounds/bg_overlay.png);display:none;left:0;position:absolute;top:0;z-index:9998;}
+#mjf_darkroom_img_only_p{background-color:#fff;margin:0;padding:0 10px 10px 10px;text-align:center;}
+#mjf_darkroom_img_only_p img{max-width:100%;}
+#mjf_darkroom_img_only_cache{position:absolute;left:-8000px;top:-8000px;}
+@media print{#mjf_darkroom_img_only_cache{display:none;}}
+#mjf_darkroom_img_only_cache img{display:block;}
+#mjf_darkroom_iframe_div{background:#fff;text-align:center;}
+.mjf_darkroom_iframe_loading{}
+.dr_visibility_hidden{visibility:hidden;}

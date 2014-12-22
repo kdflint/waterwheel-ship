@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drag N Drop: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<link href="drag_n_drop.src.css" rel="stylesheet">
+	<script type="text/javascript" src="drag_n_drop.src.js" charset="UTF-8"></script>
+
+</head>
+<body>
+
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Drag N Drop (<script type="text/javascript">document.write($m.versions.tricks.drag_n_drop);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Move stuff around</h2>
+
+	<fieldset>
+
+		<legend>Examples</legend>
+
+		<p class="form_line_content"><a href="free_range.html"><strong>Free Range</strong></a></p>
+		<p class="form_line_content"><a href="sorting.html"><strong>Sorting</strong></a></p>
+
+	</fieldset>
+
+		
+	<fieldset>
+
+		<legend>Change Log</legend>
+
+		<div class="form_line_content">
+			<h3>14.2.14</h3>
+			<ul>
+				<li>Dropped support MSIE 9 and below for <a href="free_range.html">Free Range</a>.</li>
+			</ul>
+		</div>
+		
+		<div class="form_line_content">
+			<h3>13.5.21</h3>
+			<ul>
+				<li>Added the optional <code>data-mjf_drag_n_drop_ignore="true"</code> attribute. This will keep elements in the <code>class="dnd_sort_box"</code> container from triggering the drag and drop operation.</li>
+				<li>Dropped elements now retain their child elements much more reliably.</li>
+			</ul>
+		</div>
+		
+		<div class="form_line_content">
+			<h3>13.4.19</h3>
+			<ul>
+				<li><code>data-mjf_drag_n_drop_callback</code> are now passed the newly dropped element and not the element's parent's ID.</li>
+			</ul>
+		</div>
+		
+		<div class="form_line_content">
+			<h3>13.3.26</h3>
+			<ul>
+				<li>Better language file loading.</li>
+			</ul>
+		</div>
+			
+		<div class="form_line_content">
+			<h3>13.3.19</h3>
+			<ul>
+				<li>Fixed MSIE 10 and touch-based browser <em>Free Range Title Grabs</em>.</li>
+			</ul>
+		</div>
+		
+		<div class="form_line_content">
+			<h3>12.12.11</h3>
+			<ul>
+				<li>Completely rewritten using HTML5! This will break your code if you don't update.</li>
+				<li><em>Sorting Boxes with Add (via click)</em> and <em>Sorting Boxes with Add (via drag in)</em> have been removed. These may or may not be re-added in a future version.</li>
+				<li>Removed the the option to revert draggable elements to their original position. This will be re-added in a future version.</li>
+				<li>Misc bug fixes.</li>
+			</ul>
+		</div>
+		
+		<div class="form_line_content">
+			<h3>12.8.6</h3>
+			<ul>
+				<li>Added an option to hide the Remove <img src="../../images/icons/icon_clear.png" alt="Remove" class="valign_middle"> icon from draggable elements.</li>
+				<li>Added a prompt when removing draggable elements.</li>
+				<li>Added a visual clue that a draggable element is being deleted.</li>
+				<li>Removed draggable elements for the <a href="sorting_boxes_with_add_via_click.html">Sorting Boxes with Add (via click)</a> are now added back to their original parent, <em>if they originally had one</em>.</li>
+				<li>Added an option to allow elements to be dragged to any container.</li>
+				<li>Added a localization.</li>
+				<li>Misc code clean up.</li>
+			</ul>
+		</div>
+		
+		<div class="form_line_content">
+			<h3>12.5.30</h3>
+			<ul>
+				<li>Fixed a bug where the drag-n-drop containers were being ignored.</li>
+			</ul>
+		</div>
+			
+		<div class="form_line_content">
+			<h3>12.4.16</h3>
+			<ul>
+				<li>Fixed a bug where the <code>&lt;body&gt;</code> tag was being assigned the <code>dnd_grabbed</code> CSS class.</li>
+			</ul>
+		</div>
+			
+		<div class="form_line_content">
+			<h3>11.9.28</h3>
+			<ul>
+				<li>Production ready</li>
+			</ul>
+		</div>
+			
+		<div class="form_line_content">
+			<h3>11.9.16</h3>
+			<ul>
+				<li>Alpha release 2</li>
+			</ul>
+		</div>
+			
+		<div class="form_line_content">
+			<h3>11.9.6</h3>
+			<ul>
+				<li>Alpha release 1</li>
+			</ul>
+		</div>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>To Do</legend>
+		
+		<div class="form_line_content">
+			<ul>
+				<li>Fix sorting issues for touch-based browsers.</li>
+				<li>Add functionality to add a new element in between exisiting elements.</li>
+				<li>Add functionality to revert a moved element to its previous position.</li>
+				<li>Research and implement <code>dataStore</code>.</li>
+				<li>Document internal methods and properties.</li>
+			</ul>
+		</div>
+		
+	</fieldset>
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+	</script>
+
+</body>
+</html>

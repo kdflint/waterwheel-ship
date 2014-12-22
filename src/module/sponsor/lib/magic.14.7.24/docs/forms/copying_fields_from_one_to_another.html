@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copying Fields from One to Another: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Copying Fields from One to Another: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<form action="submission.php" method="post">
+	
+		<fieldset>
+	
+			<legend>Basic Usage</legend>
+	
+			<p class="form_line_content">Add <code>data-mjf="copy_fields" data-mjf_cf_on="click(OR)change(OR)focus(OR)etc" data-mjf_cf_slaves="SLAVE_GROUP"</code> to the field that has the value to copy from (master).</p>
+			<p class="form_line_content">Add <code>data-mjf_cf_slave="SLAVE_ID"</code> to the field to copy to (slave).</p>
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.copy_fields = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		
+		</fieldset>
+		
+		<fieldset>
+	
+			<legend>Examples</legend>
+
+			<div class="form_line_field">
+
+				<p class="form_line_field">
+					<label for="copy_from_change">Copy from this</label>
+					<span>
+						<input type="text" name="copy_from_change" value="" data-mjf="copy_fields" data-mjf_cf_on="change" data-mjf_cf_slaves="copy_onchange" class="input_fld input_text_small" id="copy_from_change">
+						<label class="margin_left_5" for="copy_to_change">to this</label>
+						<input type="text" name="copy_to_change" value="" data-mjf_cf_slaves="copy_onchange" class="input_fld input_text_small" id="copy_to_change">
+						when <strong>changing</strong> the first. To trigger the <strong>change</strong>, you must click outside of the field.
+					</span>
+				</p>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;input type="text" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="change" data-mjf_cf_slaves="copy_onchange" id="copy_from_change"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_onchange" id="copy_to_change"&gt;</textarea></p></textarea></p>
+
+			</div>
+
+			<div class="form_line_field">
+	
+				<p class="form_line_field">
+					<label for="copy_from_keyup">Copy from this</label>
+					<span>
+						<input type="text" name="copy_from_keyup" value="" data-mjf="copy_fields" data-mjf_cf_on="keyup" data-mjf_cf_slaves="copy_onkeyup" class="input_fld input_text_small" id="copy_from_keyup">
+						<label class="margin_left_5" for="copy_to_keyup">to this</label>
+						<input type="text" name="copy_to_keyup" value="" data-mjf_cf_slaves="copy_onkeyup" class="input_fld input_text_small" id="copy_to_keyup">
+						when <strong>typing</strong> in the first.
+					</span>
+				</p>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;input type="text" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="keyup" data-mjf_cf_slaves="copy_onkeyup" id="copy_from_keyup"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_onkeyup" id="copy_to_keyup"&gt;</textarea></p>
+
+			</div>
+
+			<div class="form_line_field">
+	
+				<p class="form_line_field">
+					<label for="copy_from_change_2">Copy from this</label>
+					<span>
+						<input type="text" name="copy_from_change_2" value="" data-mjf="copy_fields" data-mjf_cf_on="keyup" data-mjf_cf_slaves="copy_onchange_2" class="input_fld input_text_small" id="copy_from_change_2">
+						<label class="margin_left_5" for="copy_to_change_2">to this</label>
+						<input type="text" name="copy_to_change_2" value="" data-mjf_cf_slaves="copy_onchange_2" class="input_fld input_text_small" id="copy_to_change_2">
+						<label class="margin_left_5" for="copy_to_change_3">and to this</label>
+						<input type="text" name="copy_to_change_3" value="" data-mjf_cf_slaves="copy_onchange_2" class="input_fld input_text_small" id="copy_to_change_3">
+						when <strong>typing</strong> in the first.
+					</span>
+				</p>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;input type="text" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="keyup" data-mjf_cf_slaves="copy_onchange_2" id="copy_from_change_2"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_onchange_2" id="copy_to_change_2"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_onchange_2" id="copy_to_change_3"&gt;</textarea></p>
+	
+			</div>
+
+			<div class="form_line_field">
+
+				<p class="form_line_field">
+					<label for="copy_from_focus">Copy from this</label>
+					<span>
+						<input type="text" name="copy_from_focus" value="green" data-mjf="copy_fields" data-mjf_cf_on="focus" data-mjf_cf_slaves="copy_onfocus" class="input_fld input_text_small" id="copy_from_focus">
+						<label class="margin_left_5" for="copy_to_focus">to this</label>
+						<input type="text" name="copy_to_focus" value="" data-mjf_cf_slaves="copy_onfocus" class="input_fld input_text_small" id="copy_to_focus">
+						when <strong>focusing</strong> the first.
+					</span>
+				</p>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;input type="text" name="" value="green" data-mjf="copy_fields" data-mjf_cf_on="focus" data-mjf_cf_slaves="copy_onfocus" id="copy_from_focus"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_onfocus" id="copy_to_focus"&gt;</textarea></p>
+
+			</div>
+
+			<div class="form_line_field">
+	
+				<p class="form_line_field">
+					<label for="copy_from_change_select">Copy from this</label>
+					<span>
+						<select data-mjf="copy_fields" data-mjf_cf_on="change" data-mjf_cf_slaves="copy_select_onchange" class="input_fld input_select" name="copy_from_change_select" id="copy_from_change_select">
+							<option value="red">red</option>
+							<option value="blue">blue</option>
+							<option value="purple">purple</option>
+						</select>
+						<label class="margin_left_5" for="copy_to_change_select">to this</label>
+						<input type="text" name="copy_to_change_select" value="" data-mjf_cf_slaves="copy_select_onchange" class="input_fld input_text_small" id="copy_to_change_select">										
+						when <strong>changing</strong> the drop down.
+					</span>
+				</p>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;select data-mjf="copy_fields" data-mjf_cf_on="change" data-mjf_cf_slaves="copy_select_onchange" name="" id="copy_from_change_select"&gt;
+    &lt;option value="red"&gt;red&lt;/option&gt;
+    &lt;option value="blue"&gt;blue&lt;/option&gt;
+    &lt;option value="purple"&gt;purple&lt;/option&gt;
+&lt;/select&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_select_onchange" id="copy_to_change_select"&gt;</textarea></p>
+	
+			</div>
+
+			<div class="form_line_field">
+
+				<p class="form_line_field">
+					<label for="copy_from_click2">Copy from this</label>
+					<span>
+						<input type="checkbox" name="copy_from_click2" value="cards" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_slaves="copy_onclick2" data-mjf_cf_master="copy_from_click2_cards" class="input_checkbox" id="copy_from_click2_cards">
+						<label for="copy_from_click2_cards"><code>value=cards</code></label>
+						to this <input type="text" name="copy_to_click2" value="" data-mjf_cf_slaves="copy_onclick2" class="input_fld input_text_small" id="copy_to_click2">
+						when <strong>clicking</strong> the checkbox.
+					</span>
+				</p>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;input type="checkbox" name="" value="cards" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_slaves="copy_onclick2" data-mjf_cf_master="copy_from_click2_cards" id="copy_from_click2_cards"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_onclick2" id="copy_to_click2"&gt;</textarea></p>
+	
+			</div>
+
+			<div class="form_line_field">
+	
+				<p class="form_line_field">
+					Copy from this
+					<input type="text" name="copy_from_checkbox" value="red" data-mjf_cf_slaves="copy_from_checkbox" class="input_fld input_text_small" id="copy_from_checkbox">
+					to this <input type="text" name="copy_from_checkbox" value="" data-mjf_cf_slaves="copy_from_checkbox" class="input_fld input_text_small" id="copy_to_checkbox">
+					<input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_slaves="copy_from_checkbox" data-mjf_cf_master="copy_from_checkbox" class="input_checkbox" id="copy_from_checkbox_link"><label for="copy_from_checkbox_link">when clicking this</label>
+				</p>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;input type="text" name="" value="red" data-mjf_cf_slaves="copy_from_checkbox" id="copy_from_checkbox"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_from_checkbox" id="copy_to_checkbox"&gt;
+&lt;input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_slaves="copy_from_checkbox" data-mjf_cf_master="copy_from_checkbox" id="copy_from_checkbox_link"&gt;</textarea></p>
+	
+			</div>
+
+			<div class="form_line_field">
+	
+				<p class="form_line_field">
+					Copy from this
+					<input type="text" name="copy_from_checkbox_3" value="purple" data-mjf_cf_slaves="copy_from_checkbox_3" class="input_fld input_text_small" id="copy_from_checkbox_3">
+					to this <input type="text" name="copy_from_checkbox_3" value="" data-mjf_cf_slaves="copy_from_checkbox_3" class="input_fld input_text_small" id="copy_to_checkbox_3">
+					and this <input type="text" name="copy_from_checkbox_3" value="" data-mjf_cf_slaves="copy_from_checkbox_3" class="input_fld input_text_small" id="copy_to_checkbox_3b"> 
+					<input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_slaves="copy_from_checkbox_3" data-mjf_cf_master="copy_from_checkbox_3" class="input_checkbox" id="copy_from_checkbox_3_link"><label for="copy_from_checkbox_3_link">when clicking this</label>
+				</p>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;input type="text" name="" value="purple" data-mjf_cf_slaves="copy_from_checkbox_3" id="copy_from_checkbox_3"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_from_checkbox_3" id="copy_to_checkbox_3"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_from_checkbox_3" id="copy_to_checkbox_3b"&gt;
+&lt;input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_slaves="copy_from_checkbox_3" data-mjf_cf_master="copy_from_checkbox_3" id="copy_from_checkbox_3_link"&gt;</textarea></p>
+	
+	
+				<p class="form_line_field">
+					Copy from this
+					<input type="text" name="copy_from_checkbox_4" value="pink" data-mjf_cf_slaves="copy_from_checkbox_4" class="input_fld input_text_small" id="copy_from_checkbox_4">
+					to only this <input type="text" name="copy_from_checkbox_4" value="" data-mjf_cf_slaves="copy_from_checkbox_4" class="input_fld input_text_small margin_top_5" id="copy_to_checkbox_4">
+					<input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_master="copy_from_checkbox_4" data-mjf_cf_slave="copy_to_checkbox_4" class="input_checkbox" id="copy_from_checkbox_4_link"><label for="copy_from_checkbox_4_link">when clicking this</label>
+					... or to only this <input type="text" name="copy_from_checkbox_4" value="" class="input_fld input_text_small margin_top_5" id="copy_to_checkbox_4b">
+					<input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_master="copy_from_checkbox_4" data-mjf_cf_slave="copy_to_checkbox_4b" class="input_checkbox" id="copy_from_checkbox_4b_link"><label for="copy_from_checkbox_4b_link">when clicking this</label>
+				</p>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;input type="text" name="" value="pink" data-mjf_cf_slaves="copy_from_checkbox_4" id="copy_from_checkbox_4"&gt;
+&lt;input type="text" name="" value="" data-mjf_cf_slaves="copy_from_checkbox_4" id="copy_to_checkbox_4"&gt;
+&lt;input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_master="copy_from_checkbox_4" data-mjf_cf_slave="copy_to_checkbox_4" id="copy_from_checkbox_4_link"&gt;
+&lt;input type="text" name="" value="" id="copy_to_checkbox_4b"&gt;
+&lt;input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_master="copy_from_checkbox_4" data-mjf_cf_slave="copy_to_checkbox_4b" id="copy_from_checkbox_4b_link"&gt;</textarea></p>
+
+			</div>
+
+			<div class="form_line_field">
+				
+				<table class="general_table margin_bottom_10">
+					<tr class="general_tr_header">
+						<td colspan="2">
+							<input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_m2s="billing2shipping" class="input_checkbox" id="slave_to_slave_checkbox"><label for="slave_to_slave_checkbox">Copy first field set to second set</label>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="text" name="" value="Magic" class="input_fld input_text" data-mjf_cf_m2s="billing2shipping" data-mjf_cf_m2slave="slave_to_slave_1.b" id="slave_to_slave_1.a"></td>
+						<td><input type="text" name="" value="" class="input_fld input_text" id="slave_to_slave_1.b"></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="" value="JavaScript" class="input_fld input_text" data-mjf_cf_m2s="billing2shipping" data-mjf_cf_m2slave="slave_to_slave_2.b" id="slave_to_slave_2.a"></td>
+						<td><input type="text" name="" value="" class="input_fld input_text" id="slave_to_slave_2.b"></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="" value="Framework" class="input_fld input_text" data-mjf_cf_m2s="billing2shipping" data-mjf_cf_m2slave="slave_to_slave_3.b" id="slave_to_slave_3.a"></td>
+						<td><input type="text" name="" value="" class="input_fld input_text" id="slave_to_slave_3.b"></td>
+					</tr>
+				</table>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;table&gt;
+    &lt;tr&gt;
+        &lt;td colspan="2"&gt;
+            &lt;input type="checkbox" name="" value="" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_m2s="billing2shipping" id="slave_to_slave_checkbox"&gt;
+            &lt;label for="slave_to_slave_checkbox"&gt;Copy first field set to second set&lt;/label&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;input type="text" name="" value="Magic" data-mjf_cf_m2s="billing2shipping" data-mjf_cf_m2slave="slave_to_slave_1.b" id="slave_to_slave_1.a"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;input type="text" name="" value="" id="slave_to_slave_1.b"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;input type="text" name="" value="JavaScript" data-mjf_cf_m2s="billing2shipping" data-mjf_cf_m2slave="slave_to_slave_2.b" id="slave_to_slave_2.a"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;input type="text" name="" value="" id="slave_to_slave_2.b"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;input type="text" name="" value="Framework" data-mjf_cf_m2s="billing2shipping" data-mjf_cf_m2slave="slave_to_slave_3.b" id="slave_to_slave_3.a"&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;input type="text" name="" value="" id="slave_to_slave_3.b"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</textarea></p>
+	
+				<!--
+				<p class="form_line_field">
+					<label for="copy_from_click">Copy from this</label>
+					<span>
+						<input type="radio" name="copy_from_click" value="mints" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_slaves="copy_onclick" data-mjf_cf_master="copy_from_click_mints" class="input_radio" id="copy_from_click_mints"><label for="copy_from_click_mints"><code>value=mints</code></label>
+						<input type="radio" name="copy_from_click" value="gum" data-mjf="copy_fields" data-mjf_cf_on="click" data-mjf_cf_slaves="copy_onclick" data-mjf_cf_master="copy_from_click_gum" class="input_radio" id="copy_from_click_gum"><label for="copy_from_click_gum"><code>value=gum</code></label>
+						to this <input type="text" name="copy_to_click" value="" data-mjf_cf_slaves="copy_onclick" class="input_fld input_text_small" id="copy_to_click">
+						when clicking either radio button
+					</span>
+				</p>
+				-->
+			
+		</fieldset>
+
+
+		<fieldset>
+	
+			<legend>Notes</legend>
+	
+			<p class="form_line_content">Add <code>data-mjf_cf_only_empty="true"</code> to the "copy to" field if you only want to the copy to happen if the "copy to" field is blank.</p>
+			<p class="form_line_content">Look at the example code to see how they work and for other ideas and possibilities.</p>
+		
+		</fieldset>
+
+	</form>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.copy_fields = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

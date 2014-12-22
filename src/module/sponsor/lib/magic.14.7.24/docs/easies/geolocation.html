@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geolocation: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : true, debug : false, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<link href="../../stylesheets/dynamic_tabs.12.5.22.css" rel="stylesheet">
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Geolocation: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<div class="form_line_content">
+			<p><strong>Geolocation support is turned off by default!</strong> The visitor's browser otherwise will notify them that your website would like to gather location information.</p>
+			<ul>
+				<li>Change <code>geo : { use : <strong>false</strong></code> to <code>geo : { use : <strong>true</strong></code> in the <code>$m.construct()</code> method call at the top of your page to turn it on.</li>
+			</ul>
+		</div>
+		
+		<p class="form_line_content">When support is turned on, Magic immediately asks the visitor's browser for geolocation data. See below for more details.</p>
+		<p class="form_line_content">By itself, the Magic's geolocation code doesn't provide more than simple functionality to ask the browser for location details. What you do with the data is up to you. Below is an example.</p>
+		
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Example</legend>
+
+		<div class="form_line_content">
+			<p>
+				<a href="#"
+					data-mjf="geo_get|return_false"
+					data-mjf_geo_update_id="position_info"
+					data-mjf_geo_call_on_success="show_geo_data()"
+					id="get_pos_link"><strong>Show my geolocation data</strong></a>
+			</p>
+			
+			<div class="float_right" id="geo_dev_map"></div>
+			<div id="position_info"></div>
+			<div class="clear_both"></div>
+		</div>
+
+
+	</fieldset>
+
+	<fieldset>
+
+		<legend>API</legend>
+
+		<p class="form_line_content">If geolocation data is available, it will be saved to the <code>$m.geo.pos</code> object.</p>
+		
+		<div class="form_line_content">
+			<ul>
+				<li><code>$m.geo.pos.timestamp</code> &mdash; DOM timestamp</li>
+				<li><code>$m.geo.pos.coords.latitude</code> &mdash; decimal degrees</li>
+				<li><code>$m.geo.pos.coords.longitude</code> &mdash; decimal degrees</li>
+				<li><code>$m.geo.pos.coords.accuracy</code> &mdash; meters</li>
+				<li><code>$m.geo.pos.coords.altitude</code> &mdash; meters above the reference ellipsoid</li>
+				<li><code>$m.geo.pos.coords.altitudeAccuracy</code> &mdash; meters</li>
+				<li><code>$m.geo.pos.coords.heading</code> &mdash; degrees clockwise from true north</li>
+				<li><code>$m.geo.pos.coords.speed</code> &mdash; meters per second</li>
+			</ul>
+		</div>
+		
+		<p class="form_line_content">Any properties not available will be set to <code>false</code>.</p>
+
+
+	</fieldset>
+
+
+	<script type="text/javascript">
+		function show_geo_data()
+		{
+			$m.geo.simple_content_update();
+			$m.id("geo_dev_map").innerHTML = '<iframe class="border_double" id="geo_dev_map" width="560" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=' + $m.geo.pos.coords.latitude + ',' + $m.geo.pos.coords.longitude + '&amp;z=12&amp;output=embed"></iframe>';
+		}
+
+		$m.trick.darkroom = true;
+		$m.wand.geo_get = true;
+
+		/*
+			data-mjf_geo_call_on_success -- defaults to $m.geo.simple_content_update()
+			data-mjf_geo_keep_watching -- true OR false; defaults to false
+			data-mjf_geo_max_age -- seconds until cached location is invalid; defaults to 300
+			data-mjf_geo_timeout -- seconds until timeout; defaults to 15
+			data-mjf_geo_update_id -- 
+		*/
+
+	</script>
+	
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

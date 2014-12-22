@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dropdown Menu: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<!-- <link href="../../stylesheets/defaults.css" rel="stylesheet" media="all"> -->
+	<!-- <link href="../../stylesheets/docs.css" rel="stylesheet" media="all"> -->
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<!-- <script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script> -->
+	<!--
+<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+-->
+	<!-- <link href="../../stylesheets/dropdown_menu.13.3.26.css" rel="stylesheet"> -->
+	<!-- <script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script> -->
+
+<script type="text/javascript">
+	
+$m.h.dropdown_menu =
+{
+	 name : "dropdown_menu"
+	,data_att : "dropdown_menu"
+	,uls_tag : {}
+	,timeout : false
+	,timeout_setting : false
+
+	// $m.h.dropdown_menu.construct()
+	,construct : function(in_wand)
+	{
+		//if($m.ajax_init === false)
+		//	$m.insert_link.stylesheet($m.config.basedir + "stylesheets/dropdown_menu." + $m.config.css_versions.dropdown_menu + ".css");
+
+		var good_uls = $m.attr.get_tags_with($m.tags.get("document", "ul"), $m.data_att, this.data_att)
+			,all_lis = []
+			,tmp_lis_id = ""
+			,tmp_uls = "";
+
+		for(var i=0, uls_len=good_uls.length; i < uls_len; i++)
+		{
+			all_lis = $m.tags.get($m.attr.get(good_uls[i], "id"), "li");
+			
+			for(var j=0, lis_len=all_lis.length; j < lis_len; j++)
+			{
+				tmp_lis_id = $m.attr.get(all_lis[j], "id");
+				
+				if($m.is.alive(tmp_lis_id) === true)
+				{
+					tmp_uls = $m.tags.get(tmp_lis_id, "ul");
+	
+					if(tmp_uls[0] !== undefined)
+					{
+						this.uls_tag[tmp_lis_id] = tmp_uls[0];
+						$m.attr.set(this.uls_tag[tmp_lis_id], { "class" : "ddm_ul_off" });
+
+						tmp_lis_id_obj = $m.id(tmp_lis_id);
+						$m.attr.set(tmp_lis_id_obj,
+						{
+							 "class" : "ddm_li_off"
+							,"data-mjf_ddm" : "off"
+						});
+
+						if($m.vd.is_mobile_touch === true)
+						{
+							$m.element.bind(tmp_lis_id, "click", this.show);
+						}
+						else
+						{
+							$m.element.bind(tmp_lis_id, "mouseover", this.show);
+							$m.element.bind(tmp_lis_id, "mouseout", this.hide);
+						}
+					}
+				}
+			}
+			
+			$m.css_class.remove(good_uls[i], "display_none");
+		}
+	}
+
+	// $m.h.dropdown_menu.show()
+	,show : function()
+	{
+		clearTimeout($m.h.dropdown_menu.timeout);
+
+		var id = $m.id(this.id)
+			,id_string = this.id
+			,current_state = $m.attr.get(id_string, "data-mjf_ddm");
+		
+		for(var i in $m.h.dropdown_menu.uls_tag)
+		{
+			$m.attr.set(i, { "class" : "ddm_li_off" });
+			$m.attr.set($m.h.dropdown_menu.uls_tag[i], { "class" : "ddm_ul_off" });
+		}
+
+		if($m.vd.is_mobile_touch === true)
+		{
+			if(current_state == "off")
+			{
+				$m.attr.set($m.h.dropdown_menu.uls_tag[id_string], { "class" : "ddm_ul_on" });
+				$m.attr.set(id,
+				{
+					 "class" : "ddm_li_on"
+					,"data-mjf_ddm" : "on"
+				});
+			}
+			else
+			{
+				$m.attr.set($m.h.dropdown_menu.uls_tag[id_string], { "class" : "ddm_ul_off" });
+				$m.attr.set(id,
+				{
+					 "class" : "ddm_li_off"
+					,"data-mjf_ddm" : "off"
+				});
+			}
+		}
+		else
+		{
+			$m.css_class.replace(id, "ddm_li_off", "ddm_li_on");
+			$m.css_class.replace($m.h.dropdown_menu.uls_tag[id_string], "ddm_ul_off", "ddm_ul_on");
+		
+			//$m.attr.set(id, { "class" : "ddm_li_on" });
+			//$m.attr.set($m.h.dropdown_menu.uls_tag[id_string], { "class" : "ddm_ul_on" });
+		}
+	}
+
+	// $m.h.dropdown_menu.hide()
+	,hide : function()
+	{
+		var id = $m.id(this.id)
+			,id_string = this.id;
+		
+		$m.h.dropdown_menu.timeout = setTimeout(function()
+		{
+			$m.css_class.replace(id, "ddm_li_on", "ddm_li_off");
+			$m.css_class.replace($m.h.dropdown_menu.uls_tag[id_string], "ddm_ul_on", "ddm_ul_off");
+
+			//$m.attr.set(id, { "class" : "ddm_li_off" });
+			//$m.attr.set($m.h.dropdown_menu.uls_tag[id_string], { "class" : "ddm_ul_off" });
+
+		}, 400);
+	}
+}
+	
+</script>
+
+	<style type="text/css">
+		
+.dropdown_menu,.dropdown_menu ul{list-style-type:none;margin:0;padding:0;}
+.dropdown_menu li{color:#d08d4a;float:left;height:27px;margin:0;padding:0;text-transform:uppercase;}
+.dropdown_menu li a{color:#d08d4a;display:block;font-weight:bold;margin:0;padding:5px 7px;text-decoration:none;}
+.dropdown_menu li a:hover,.ddm_li_on a{background:#1e5069;color:#fff !important;}
+.ddm_li_on,.dropdown_menu li:hover{background:#1e5069;color:#fff;}
+.ddm_ul_on{display:block;position:absolute;margin-top:4px !important;width:200px;z-index:100;}
+.ddm_ul_off{display:none;}
+.dropdown_menu li ul li{border-bottom:1px solid #7c99a8;border-left:0;border-right:0;border-top:1px solid #7c99a8;float:none;height:auto;margin:-1px 0 0 0;}
+.dropdown_menu li ul li a{font-weight:normal;}
+.dropdown_menu li ul li a:hover{background:#7c99a8;}
+.dropdown_menu a:focus{background:#000 !important;color:#fff !important;}
+		
+	</style>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Dropdown Menu: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">
+				<!--
+Add <code>&lt;link href="/PATH/TO/magic/stylesheets/dropdown_menu.<script type="text/javascript">document.write($m.versions.css.dropdown_menu)</script>.css" rel="stylesheet"&gt;</code><br><br>
+				below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+-->
+			</p>
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.dropdown_menu = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		<p class="form_line_content">Use the example below as a guide for building your own!</p>
+	
+	</fieldset>
+	
+	<fieldset>
+
+		<legend>Example</legend>
+
+		<div class="form_line_content">
+			<ul data-mjf="dropdown_menu" class="dropdown_menu margin_left_20" id="my_dropdown_menu">
+				<li id="section_1"><a href="#">Section 1</a>
+					<ul>
+						<li>
+							<a href="#">Link 1.1</a>
+							<ul>
+								<li><a href="#">Link 1.1a</a></li>
+								<li><a href="#">Link 1.1b</a></li>
+								<li><a href="#">Link 1.1c</a></li>
+								<li><a href="#">Link 1.1d</a></li>
+								<li><a href="#">Link 1.1e</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Link 1.2</a></li>
+						<li><a href="#">Link 1.3</a></li>
+						<li><a href="#">Link 1.4</a></li>
+						<li><a href="#">Link 1.5</a></li>
+					</ul>
+				</li>
+				<li id="section_2"><a href="#">Section 2</a>
+					<ul>
+						<li><a href="#">Link 2.1</a></li>
+						<li><a href="#">Link 2.2</a></li>
+						<li><a href="#">Link 2.3</a></li>
+						<li><a href="#">Link 2.4</a></li>
+						<li><a href="#">Link 2.5</a></li>
+					</ul>
+				</li>
+				<li id="section_3"><a href="#">Section 3</a>
+					<ul>
+						<li><a href="#">Link 3.1</a></li>
+						<li><a href="#">Link 3.2</a></li>
+						<li><a href="#">Link 3.3</a></li>
+						<li><a href="#">Link 3.4</a></li>
+						<li><a href="#">Link 3.5</a></li>
+					</ul>
+				</li>
+			</ul>
+	
+			<div class="clear_both"></div>
+
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code margin_top_10" readonly="readonly">&lt;ul data-mjf="dropdown_menu" class="mjs_dropdown_menu" id="my_dropdown_menu"&gt;
+    &lt;li id="section_1"&gt;&lt;a href="#"&gt;Section 1&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1.1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1.2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1.3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1.4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1.5&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li id="section_2"&gt;&lt;a href="#"&gt;Section 2&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2.1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2.2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2.3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2.4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2.5&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li id="section_3"&gt;&lt;a href="#"&gt;Section 3&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 3.1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 3.2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 3.3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 3.4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 3.5&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</textarea></p>
+
+		</div>
+		
+	</fieldset>
+
+	<script type="text/javascript">
+		//$m.trick.darkroom = true;
+		$m.wand.dropdown_menu = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

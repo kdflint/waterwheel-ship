@@ -1,0 +1,20 @@
+/****** Version 11.4.29 ******/
+
+/*** auto-suggest boxes **/
+.suggest_box {
+	display: block;
+	font-size: 0;
+	position: relative;
+	width: 90%;
+}
+	.suggest_box select {
+		border: 1px solid #043B98;
+		background-color: #FFFFDD;
+		position: absolute;
+		top: -1px;
+		width: 101%;
+	}
+		.suggest_box select option:hover {
+			background-color: #043B98;
+			color: #FFFFFF;
+		}

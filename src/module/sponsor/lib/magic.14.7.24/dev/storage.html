@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Storage: Dev: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../wand.src.js" charset="UTF-8"></script>
+	<link href="../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../docs/"><img src="../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Storage: Dev: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<form method="post" action="#" name="storage_form" id="storage_form">
+
+		<p>
+			<input type="button" name="" onclick="add_set_1();" value="Add Set 1" class="bg_colors bg_colors_default">
+			<input type="button" name="" onclick="add_set_2();" value="Add Set 2" class="bg_colors bg_colors_default">
+		</p>
+		
+		<p>
+			<input type="button" name="" onclick="get_records('first_name', '=', 'Travis');" value="Get first_name = Travis" class="bg_colors bg_colors_default">
+			<input type="button" name="" onclick="get_records('first_name', '!=', 'Travis');" value="Get first_name != Travis" class="bg_colors bg_colors_default">
+			<input type="button" name="" onclick="get_records('first_name', '%', 'i');" value="Get first_name % i" class="bg_colors bg_colors_default">
+			<input type="button" name="" onclick="get_records('person_number', '>=', '2');" value="Get person_number >= 2" class="bg_colors bg_colors_default">
+		</p>
+		
+		<p>
+			<input type="button" name="" onclick="$m.storage.truncate('address_book')" value="Truncate address_book" class="bg_colors bg_colors_default">
+			<input type="button" name="" onclick="$m.storage.drop('address_book')" value="Drop address_book" class="bg_colors bg_colors_default">
+			<!-- <input type="button" name="" onclick="dump()" value="Dump address_book" class="bg_colors bg_colors_default"> -->
+		</p>
+	
+	</form>
+
+
+	<p class="align_center">&laquo; <a href="../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+
+
+		// get_records()
+		function get_records(in_column, in_operator, in_value)
+		{
+			var record = $m.storage.get.records("address_book", in_column, in_operator, in_value);
+			
+			console.log("++++++++++++++++++++++++++++++++++++");
+			
+			if($m.is.alive(record) === true)
+			{
+				for(var i in record)
+				{
+					for(var j in record[i])
+					{
+						console.log("record[" + i + "][" + j + "] = " + record[i][j]);
+					}
+				}
+			}
+			else
+			{
+				console.log("record = " + record);
+			}
+			
+			//console.log("record = " + record);
+		}
+	
+
+		// add_set_1()
+		function add_set_1()
+		{
+			var my_data_records = {};
+		
+			my_data_records[0] = {
+				 "person_number" : 1
+				,"first_name" : "Travis"
+				,"last_name" : "Cremer"
+				,"phone_number" : "630-618-0264"
+			}
+				
+			my_data_records[1] = {
+				 "person_number" : 2
+				,"first_name" : "Dominik"
+				,"last_name" : "Heller"
+				,"phone_number" : "515-759-9851"
+			}
+
+			$m.storage.set("address_book", my_data_records);
+		}
+		
+		// add_set_2()
+		function add_set_2()
+		{
+			var my_data_records = {};
+		
+			my_data_records[2] = {
+				 "person_number" : 3
+				,"first_name" : "Christy"
+				,"last_name" : "Knapp"
+				,"phone_number" : "630-862-8468"
+			}
+			
+			my_data_records[0] = {
+				 "person_number" : 1
+				,"first_name" : "Travis"
+				,"last_name" : "Cremer"
+				,"phone_number" : "630-762-8468"
+			}
+
+			$m.storage.set("address_book", my_data_records);
+		}
+		
+		// dump()
+		function dump()
+		{
+			$m.storage.debug("address_book");
+		}
+
+
+		
+
+
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Magic Editor: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+
+	<link href="magic_editor.src.css" rel="stylesheet">
+	<script type="text/javascript" src="magic_editor.src.js" charset="UTF-8"></script>
+
+	<link href="../drag_n_drop/drag_n_drop.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../drag_n_drop/drag_n_drop.src.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Magic Editor (<script type="text/javascript">document.write($m.versions.tricks.magic_editor);</script>): Magic JavaScript</h1>
+
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Formatting content in a rich-text editor</h2>
+	
+	<form method="post" action="./pages/submit.php" data-mjf="magic_editor_form" name="magic_editor_form" id="magic_editor_form">
+
+
+		<fieldset>
+	
+			<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="me_usage_cont" id="me_usage_link">Usage</a></legend>
+			
+			<div class="display_block" id="me_usage_cont">
+	
+				<p class="form_line_content">
+					Add <code>&lt;link href="/PATH/TO/magic/tricks/darkroom/darkroom.<script type="text/javascript">document.write($m.versions.tricks.css.darkroom);</script>.css" rel="stylesheet"&gt;</code><br>
+					<code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/darkroom/darkroom.<script type="text/javascript">document.write($m.versions.tricks.darkroom);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br>
+					<code>&lt;link href="/PATH/TO/magic/tricks/magic_editor/magic_editor.<script type="text/javascript">document.write($m.versions.tricks.css.magic_editor);</script>.css" rel="stylesheet"&gt;</code><br>
+					<code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/magic_editor/magic_editor.<script type="text/javascript">document.write($m.versions.tricks.magic_editor);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+					below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+				</p>
+				<p class="form_line_content">Add <code>data-mjf="magic_editor_form" id="ELEMENT_ID"</code> to your <code>&lt;form&gt;</code> tag.</p>
+				<p class="form_line_content">Add <code>data-mjf="magic_editor" id="ELEMENT_ID"</code> to your <code>&lt;textarea&gt;</code> tag.</p>
+				
+				<div class="form_line_content">
+					<p>Add the code below inside your <code>&lt;body&gt;</code> tag&hellip;</p>
+					<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;script type="text/javascript"&gt;
+    $m.trick.magic_editor.config = {
+         type : "simple(OR)advanced"
+        ,css_links : [
+             $m.config.basedir + "tricks/magic_editor/magic_editor.14.1.12.css"
+            ,"/PATH/TO/extra_stylesheet_1.css"
+            ,"/PATH/TO/extra_stylesheet_2.css"
+        ]
+    };
+&lt;/script&gt;</textarea></p>
+
+					<p class="form_line_content">
+						If you'd like the <em>Darkrooms</em> to be be drag droppable, add <code>&lt;link href="/PATH/TO/magic/tricks/drag_n_drop/drag_n_drop.<script type="text/javascript">document.write($m.versions.tricks.css.drag_n_drop);</script>.css" rel="stylesheet"&gt;</code><br>
+						<code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/drag_n_drop/drag_n_drop.<script type="text/javascript">document.write($m.versions.tricks.drag_n_drop);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+						below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/darkroom/darkroom.<script type="text/javascript">document.write($m.versions.tricks.darkroom);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+						and <code>&lt;script type="text/javascript"&gt;$m.trick.drag_n_drop.free = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.
+					</p>
+
+
+				</div>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+	
+			<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="me_example_cont" id="me_example_link">Example</a></legend>
+			
+			<div class="form_line_content display_block" id="me_example_cont">
+			
+				<div>
+					<textarea rows="25" cols="80" class="input_fld input_textarea" data-mjf="magic_editor" name="ta_1" id="ta_1" onresizestart="return false;"><p><img src="../../images/examples/magic_0.png" alt="Magic image example" style="float:right;" title="Magic image example"></p>
+
+<h1>What is Lorem Ipsum?</h1>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+<h2>Where does it come from?</h2> 
+<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+
+<h3>Why do we use it?</h3>
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+<p style="text-align:center;"><a href="http://www.lipsum.com/" target="_blank"><strong>Learn More</strong></a> &rarr;</p></textarea>
+				</div>
+	
+				<p class="align_center margin_top_20">
+					<input type="submit" name="" value="Submit" class="bg_colors bg_colors_default">
+				</p>
+				
+			</div>
+			
+		</fieldset>
+	
+	</form>
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="me_custom_toolbars_cont" id="me_custom_toolbars_link">Custom Toolbars</a></legend>
+		
+		<div class="display_block" id="me_custom_toolbars_cont">
+
+			<div class="form_line_content">
+			
+				<p>You can build and organize your own toolbar by duplicating and changing the example code below.</p>
+
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;script type="text/javascript"&gt;
+	$m.t.magic_editor.types["my_custom_toolbar"] = [
+		 "bold"
+		,"italic"
+		,"underline"
+		,"strikethrough"
+			,"separator"
+		,"blockquote"
+			,"separator"
+		,"justify_left"
+		,"justify_center"
+		,"justify_right"
+		,"indent"
+		,"outdent"
+			,"separator"
+		,"list_ordered"
+		,"list_unordered"
+			,"separator"
+		,"superscript"
+		,"subscript"
+			,"separator"
+		,"undo"
+		,"redo"
+		,"search"
+			,"separator"
+		,"content_style"
+		,"font_family"
+		,"font_size"
+		,"font_color"
+		,"hilite_color"
+			,"separator"
+		,"remove_formatting"
+			,"separator"
+		,"paste_msword"
+		,"table"
+		,"image"
+		,"video"
+		,"hyperlink"
+			,"separator"
+		,"view_full"
+		,"code_view"
+		,"clean_code"
+			,"separator"
+		,"help"
+	]
+
+	$m.trick.magic_editor.config = {
+		 type : "my_custom_toolbar"
+		,css_links : [
+			 $m.config.basedir + "tricks/magic_editor/magic_editor.13.11.14"
+			,$m.config.basedir + "tricks/magic_editor/example.css"
+		]
+
+	};
+&lt;/script&gt;</textarea></p>
+
+			</div>
+
+		</div>
+
+	</fieldset>
+	
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="me_custom_buttons_cont" id="me_custom_buttons_link">Custom Buttons</a></legend>
+		
+		<div class="display_block" id="me_custom_buttons_cont">
+
+			<div class="form_line_content">
+
+				<p>You can build own toolbar buttons by following the example code below&hellip;</p>
+
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;script type="text/javascript"&gt;
+    $m.t.magic_editor.buttons["uppercase"] = {
+         name : "uppercase"
+        ,use_css : false
+        ,title : "Uppercase"
+        ,win_keystroke : "Ctrl+E"
+        ,mac_keystroke : "Cmd+E"
+        ,command_type : "custom"
+        ,command : function()
+        {
+            $m.t.magic_editor.set_cur_ed(in_id);
+            $m.t.magic_editor.selection.save("magic_" + $m.t.magic_editor.cur_ed);
+
+            var uppercase_txt = "&lt;span style='text-transform:uppercase;'&gt;" + $m.t.magic_editor.selection.html + "&lt;/span&gt;";
+            $m.t.magic_editor.inject_html(uppercase_txt, "inline");
+        }
+    }
+&lt;/script&gt;</textarea></p>
+
+			</div>
+
+			<div class="form_line_content">
+				<p><strong>Notes</strong></p>
+				<ul>
+					<li>After you write your new button, create a custom toolbar as described above and add your new button to it.</li>
+					<li>In most cases you'll want to keep <code>use_css</code> to <code>false</code> unless you know what you're doing.</li>
+					<li>The <code>win_keystroke</code> and <code>mac_keystroke</code> can be set to an empty string. Be careful mapping them to existing keystrokes, you could get unpredictable behavior.</li>
+					<li>The <code>command_type</code> should be set to <code>custom</code>. More documentation on this coming soon.</li>
+				</ul>
+			</div>
+			
+		</div>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="me_change_log_cont" id="me_change_log_link">Change Log</a></legend>
+		
+		<div class="display_block" id="me_change_log_cont">
+		
+			<div class="form_line_content">
+				<h3>14.1.12</h3>
+				<ul>
+					<li>Minor bug fixes.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>13.10.28</h3>
+				<ul>
+					<li>Fixed the <em>Removed formatting</em> bug.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>13.7.2</h3>
+				<ul>
+					<li>New <code>Insert a special character</code> button and functionality.</li>
+					<li>Removed the buggy <code>&lt;font&gt;</code> to <code>&lt;span&gt;</code> code clean up functionality.</li>
+				</ul>
+			</div>
+		
+			<div class="form_line_content">
+				<h3>13.3.27</h3>
+				<ul>
+					<li>Code optimization.</li>
+				</ul>
+			</div>
+		
+			<div class="form_line_content">
+				<h3>13.3.26</h3>
+				<ul>
+					<li>Better language file loading.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>13.3.19</h3>
+				<ul>
+					<li>Fixed some MSIE 10 bugs.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>13.2.8</h3>
+				<ul>
+					<li>Removed the legacy "ADD CONTENT HERE" necessity.</li>
+					<li>Simplified table editing controls in Firefox.</li>
+					<li>Buttons that utilize Darkrooms are now more reliable.</li>
+					<li>Better MSIE9 support.</li>
+					<li>Better Word doc cleanup.</li>
+					<li>Misc bug fixes.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>12.12.21</h3>
+				<ul>
+					<li>Added "Remove Link" functionality inside hyperlink <em>Darkroom</em>.</li>
+					<li>Removed the "Remove a Hyperlink" toolbar button in light of above change.</li>
+					<li>Removed <code>id="me_dr_body"</code> manipulations in <em>Darkrooms</em>.</li>
+					<li>Misc bug fixes.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>12.12.12</h3>
+				<ul>
+					<li>Added an <kbd>esc</kbd> shortcut that will hide everything.</li>
+					<li>Empty tags, including iframes, are no longer being auto-magically removed.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.11.6</h3>
+				<ul>
+					<li>New toolbar icons.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.10.18</h3>
+				<ul>
+					<li>Appropriate buttons are now selected when clicking a styled element. For example, the bold button shows a border when the selected/focus'ed word is clicked.</li>
+					<li><code>&lt;font&gt;</code> tags and their deprecated attributes are now replaced <code>&lt;span&gt;</code> tags and a single <code>style</code> attribute, in most cases.</li>
+					<li>Fixed MSIE 9's word wrap issue with the HTML source view.</li>
+					<li>Fixed MSIE 9's buggy selection restoration.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.10.12</h3>
+				<ul>
+					<li>Consolidated 1<sup>st</sup> and 2<sup>nd</sup> toolbars into a single toolbar that wraps the buttons.</li>
+					<li>Removed the status bar. </li>
+					<li>Reorganized toolbar buttons.</li>
+					<li>Removed the <code>magic_editor_setup.12.3.19.js</code> file and added the code to <code>magic_editor.src.js</code>.</li>
+					<li>New Custom Toolbars functionality.</li>
+					<li>New Custom Buttons functionality.</li>
+					<li>"Remove formatting" is now more reliable.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.10.5</h3>
+				<ul>
+					<li>Now <em>even</em> more reliable when using <a href="../../docs/ajax/predefined_json_parsing.html">Predefined JSON parsing.</a></li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.8.20</h3>
+				<ul>
+					<li>Now more reliable when using <a href="../../docs/ajax/predefined_json_parsing.html">Predefined JSON parsing.</a></li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.7.20</h3>
+				<ul>
+					<li>Fixed a bug where the editors weren't always initialized properly during AJAX requests.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.5.29</h3>
+				<ul>
+					<li>Fixed "Image" not setting Alt and Title selected text correctly bug.</li>
+					<li>Fixed "Hyperlink" <code>false</code> bug.</li>
+					<li>Fixed "Search" <code>false</code> bug.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.4.3</h3>
+				<ul>
+					<li>Fixed MSIE 9's image insertion bug.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.3.22</h3>
+				<ul>
+					<li>New "Paste from Microsoft&reg; Word&trade;" toolbar button.</li>
+					<li>New "View Editor Fullscreen" toolbar button.</li>
+					<li>Updated HTML source editor to be shown in a <em>Darkroom</em> instead of inline.</li>
+					<li>Fixed a bug where some HTML entities would be incorrectly convereted to first letter uppercase.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+
+				<h3>12.1.31</h3>
+				<ul>
+					<li>We're now localized &mdash; please see the <strong>Introduction</strong> tab, <strong>Usage</strong> section of the <strong>Main Documentation</strong> and look for the <code>lang : "en_us"</code> property - this is new.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>11.12.29</h3>
+				<ul>
+					<li>Fixed bug where <em>Magic Editor</em> styling was applied to non-<em>Magic Editor</em> <em>Darkroom</em> links.</li>
+					<li>Minor code clean up.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>11.11.30</h3>
+				<ul>
+					<li>Fixed MSIE image insertion.</li>
+					<li>Minor optimization.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>11.11.18</h3>
+				<ul>
+					<li>Removing empty tags on clean up.</li>
+					<li>New border option for images.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>11.11.14</h3>
+				<ul>
+					<li>Set 400px minimum widths on editors.</li>
+					<li>New search and replace.</li>
+					<li>New double-click to edit images and anchors.</li>
+					<li>New <code>&lt;blockquote&gt;</code> insertion.</li>
+					<li>New Video insertion.</li>
+					<li><code>&lt;b&gt;...&lt;/b&gt;</code> will be automatically replaced with <code>&lt;strong&gt;...&lt;/strong&gt;</code>.</li>
+					<li><code>&lt;i&gt;...&lt;/i&gt;</code> will be automatically replaced with <code>&lt;em&gt;...&lt;/em&gt;</code>.</li>
+					<li><em>Darkroom</em> is no longer magically added. Please review the <strong>Setup</strong> instructions above.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>11.7.24</h3>
+				<ul>
+					<li>Fixed broken form submissions when submitting in source mode.</li>
+					<li>Better styling when toggling between design and source mode.</li>
+					<li>Removed extra <code>&lt;/script&gt;</code> tags from <em>Darkroom</em> pages.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>11.5.10</h3>
+				<ul>
+					<li>Added Darkroom version config options.</li>
+					<li>Code optimization.</li>
+					<li>Bug fixes.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>11.4.29</h3>
+				<ul>
+					<li>Migrated to latest MJS code base.</li>
+					<li>Code optimization.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>11.3.25</h3>
+				<ul>
+					<li>Beta release 1</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>11.3.15</h3>
+				<ul>
+					<li>Alpha release 2</li>
+				</ul>
+			</div>
+				
+			<div class="form_line_content">
+				<h3>11.1.4</h3>
+				<ul>
+					<li>Alpha release 1</li>
+				</ul>
+			</div>
+
+		</div>
+	
+	</fieldset>
+	
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="me_to_do_cont" id="me_to_do_link">To Do</a></legend>
+		
+		<div class="display_block" id="me_to_do_cont">
+
+			<div class="form_line_content">
+				<ul>
+					<li>Get working in touch-based browsers.</li>
+					<li>Migrate <em>Magic Editor</em> iframe pages to Defaults CSS.</li>
+					<li>Edit <code>&lt;table&gt;</code> tags.</li>
+					<li>Document internal methods and properties.</li>
+					<li>Fix the bug where when selecting text and the cursor goes outside of the editor, the selection is unreliable.</li>
+				</ul>
+			</div>
+			
+		</div>
+
+	</fieldset>
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.lightswitch = true;
+		$m.trick.magic_editor.config = {
+			 type : "advanced"
+			,css_links : [
+				 $m.config.basedir + "tricks/magic_editor/magic_editor.14.1.12.css"
+				,$m.config.basedir + "tricks/magic_editor/example.css"
+				,$m.config.basedir + "stylesheets/defaults.css"
+			]
+		};
+		$m.trick.drag_n_drop.free = true;
+	</script>
+
+
+</body>
+</html>

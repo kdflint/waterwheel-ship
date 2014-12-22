@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Check All Checkboxes: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Check All Checkboxes: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<form action="submission.php" method="post">
+	
+		<fieldset>
+	
+			<legend>Usage</legend>
+	
+			<p class="form_line_content">Add <code>data-mjf="check_all_boxes" id="FIELD_NAME_MASTER"</code> to your master <code>&lt;input type="checkbox"&gt;</code> tag.</p>
+    		<p class="form_line_content">Add <code>data-mjf_checkall="FIELD_NAME_MASTER" id="FIELD_NAME_SLAVES"</code> to your slave <code>&lt;input type="checkbox"&gt;</code> tags.</p>
+    		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.check_all_boxes = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		
+		</fieldset>
+		
+		<fieldset>
+	
+			<legend>Example</legend>
+
+			<p class="form_line_field">
+				<span class="form_line_left_field">Checkboxes</span>
+				<span class="form_line_right_field">
+					<input type="checkbox" name="input_type_checkbox_master" value="Val 1" data-mjf="check_all_boxes" class="input_checkbox" id="input_type_checkbox_0"><label for="input_type_checkbox_0">Check All</label><br>
+					<input type="checkbox" name="input_type_checkbox[]" value="Val 2" data-mjf_checkall="input_type_checkbox_0" class="input_checkbox" id="input_type_checkbox_1"><label for="input_type_checkbox_1">Option 1</label><br>
+					<input type="checkbox" name="input_type_checkbox[]" value="Val 3" data-mjf_checkall="input_type_checkbox_0" class="input_checkbox" id="input_type_checkbox_2"><label for="input_type_checkbox_2">Option 2</label><br>
+					<input type="checkbox" name="input_type_checkbox[]" value="Val 4" data-mjf_checkall="input_type_checkbox_0" class="input_checkbox" id="input_type_checkbox_3"><label for="input_type_checkbox_3">Option 3</label>
+				</span>
+				<br class="clear_both">
+			</p>
+	
+			<div class="clear_both"></div>
+			
+		</fieldset>
+
+	</form>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.check_all_boxes = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

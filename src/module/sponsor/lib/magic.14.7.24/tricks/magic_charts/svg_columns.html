@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Column Chart: Magic Charts: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<script type="text/javascript" src="magic_charts.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="magic_charts_themes.js" charset="UTF-8"></script>
+	
+	<style type="text/css">
+		svg{background:#fff;border:0;}
+		
+		/*
+#drawing_test_svg_column{
+			background: url(../../images/backgrounds/bg_overlay.png);
+		}
+*/
+	</style>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Column Chart: Magic Charts (<script type="text/javascript">document.write($m.versions.tricks.magic_charts);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="usage_cont" id="usage_link">Usage</a></legend>
+		
+		<div class="display_block" id="usage_cont">
+
+			<p class="form_line_content">
+				Add <code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/magic_charts/magic_charts.<script type="text/javascript">document.write($m.versions.tricks.magic_charts);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;<br>
+				&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/magic_charts/magic_charts_themes.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+				below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+			</p>
+			<p class="form_line_content">Use the examples below as a guide for building your own!</p>
+			
+		</div>
+	
+	</fieldset>
+
+
+
+	<fieldset>
+
+		<legend>Examples</legend>
+
+		<div class="form_line_content">
+			<p><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_column_example_1" id="svg_column_example_1_link"><strong>Default Column Chart</strong></a></p>
+			<div class="display_block" id="svg_column_example_1"></div>
+		</div>
+		
+		<div class="form_line_content">
+			<p><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_column_example_2" id="svg_column_example_2_link"><strong>Custom Column Chart 1</strong></a></p>
+			<div class="display_block" id="svg_column_example_2"></div>
+		</div>
+		
+		<div class="form_line_content">
+			<p><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_column_example_3" id="svg_column_example_3_link"><strong>Custom Column Chart 2</strong></a></p>
+			<div class="display_block" id="svg_column_example_3"></div>
+		</div>
+
+	</fieldset>
+
+
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="todo_cont" id="todo_link">To Do</a></legend>
+			
+		<div class="display_block" id="todo_cont">
+
+			<div class="form_line_content">
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+			
+		</div>
+
+	</fieldset>
+
+
+	<p class="align_center">&laquo; <a href="./">Back to Magic Charts</a></p>
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+
+		$m.trick.magic_charts.render = [
+			/**/
+			{
+				 "chart" : "column"
+				,"type" : "svg"
+				
+				,"parent_id" : "svg_column_example_1"
+
+				,"dimensions" : {
+					 "height" : "200px"
+					,"width" : "100%"
+				}
+
+				,"data" : {
+
+					 "Monday" : {
+					 	 "value" : 95
+					 }
+					 
+					 ,"Tuesday" : {
+					 	 "value" : 25
+					 }
+
+					,"Wednesday" : {
+					 	 "value" : 10
+					}
+
+					,"Thursday" : {
+					 	 "value" : 60
+					}
+
+					,"Friday" : {
+					 	 "value" : 55
+					}
+
+					,"Saturday" : {
+					 	 "value" : 71
+					}
+
+					,"Sunday" : {
+					 	 "value" : -50
+					}
+				}
+
+				,"y_axis" : {
+					 "title" : "Numbers"
+					,"min_value" : -100
+					,"max_value" : 100
+					,"increments" : 25
+				}
+			}
+			/**/
+			/**
+			,{
+				 "chart" : "column"
+				,"type" : "svg"
+				
+				,"parent_id" : "svg_column_example_2"
+
+				,"animations" : {
+					 "use" : false
+					,"duration" : "0.25s"
+				}
+
+				,"dimensions" : {
+					 "height" : "200px"
+					,"width" : "100%"
+				}
+
+				,"data" : {
+
+					 "Mon" : {
+					 	 "value" : 95
+					 	,"color" : "#38A818"
+					 	,"fill" : "#38A818"
+					 }
+					 
+					 ,"Tue" : {
+					 	 "value" : 25
+					 }
+
+					,"Wed" : {
+					 	 "value" : 10
+					 	,"color" : "#EE3C0D"
+					 	,"fill" : "#EE3C0D"
+					}
+
+					,"Thu" : {
+					 	 "value" : 60
+					}
+
+					,"Fri" : {
+					 	 "value" : 55
+					}
+				}
+
+				,"columns" : {
+					 "color" : "#007ABD"
+					,"margin" : 10
+					,"width" : 25
+				}
+				
+				,"text" : {
+					 "color" : "#007ABD"
+					,"family" : "Helvetica"
+					,"size" : 9
+				}
+
+				,"x_axis" : {
+					 "bars_color" : "#9FD6FF"
+					,"show_names" : true
+					,"show_values" : false
+				}
+
+				,"y_axis" : {
+					 "title" : "Numbers"
+					,"max_value" : 100
+					,"increments" : 20
+				}
+			}
+			/**/
+			/**
+			,{
+				 "chart" : "column"
+				,"type" : "svg"
+				
+				,"parent_id" : "svg_column_example_3"
+				
+				,"theme" : "typewriter"
+
+				,"dimensions" : {
+					 "height" : "200px"
+					,"width" : "100%"
+				}
+
+				,"data" : {
+
+					 "Monday" : {
+					 	 "value" : 95
+					 }
+					 
+					 ,"Tuesday" : {
+					 	 "value" : 25
+					 }
+
+					,"Wednesday" : {
+					 	 "value" : 10
+					}
+
+					,"Thursday" : {
+					 	 "value" : 60
+					}
+
+					,"Friday" : {
+					 	 "value" : 55
+					}
+				}
+
+				,"x_axis" : {
+					 "bars_color" : "#c0c0c0"
+				}
+
+				,"y_axis" : {
+					 "title" : "Numbers"
+					,"max_value" : 95
+					,"increments" : 10
+				}
+			}
+			/**/
+		];
+
+
+		$m.wand.lightswitch = true;
+		$m.trick.darkroom = true;
+	</script>
+
+</body>
+</html>

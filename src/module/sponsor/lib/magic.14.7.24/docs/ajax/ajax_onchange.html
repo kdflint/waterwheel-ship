@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Input On Change: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> AJAX Input On Change: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<form action="_ajax.php" method="post" id="ajax_change_form">
+
+		<fieldset>
+	
+			<legend>Usage</legend>
+
+			<p class="form_line_content">Add <code>data-mjf="ajax_change" data-mjf_ajax_url="/PATH/TO/SERVER/SCRIPT/" data-mjf_ajax_update_id="ELEMENT_ID" id="ELEMENT_ID"</code> to your form field.</p>
+
+			<div class="form_line_content">
+				<p>Below are the acceptable ones&hellip;</p>
+				<ul>
+					<li><code>&lt;input type="text"&gt;</code></li>
+					<li><code>&lt;input type="file"&gt;</code></li>
+					<li><code>&lt;input type="password"&gt;</code></li>
+					<li><code>&lt;textarea&gt;</code></li>
+					<li><code>&lt;select&gt;</code></li>
+				</ul>
+			</div>
+			
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.ajax_change = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+
+		</fieldset>
+		
+		<fieldset>
+
+			<legend>Examples</legend>
+
+			<div class="form_line_field">
+
+				<p>
+					<input type="text" name="input_type_onchange" value="" data-mjf="ajax_change" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="input_type_onchange_update" class="input_fld input_text margin_bottom_5" id="input_type_onchange"><br>
+					<code>&lt;input type="text" name="" value="" data-mjf="ajax_change" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="FIELD_ID_CONT" id="FIELD_ID"&gt;</code>
+				</p>
+		
+				<div class="bg_white margin_10 padding_5" id="input_type_onchange_update"></div>
+				
+			</div>
+	
+			<div class="form_line_field">
+
+				<p>
+					<textarea rows="5" cols="20" name="textarea_onchange" data-mjf="ajax_change" data-mjf_ajax_method="post" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="textarea_onchange_update" class="input_fld input_textarea margin_bottom_5" id="textarea_onchange"></textarea><br>
+					<code>&lt;textarea rows="5" cols="20" name="" data-mjf="ajax_change" data-mjf_ajax_method="post" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="FIELD_ID_CONT" id="FIELD_ID"&gt;&lt;/textarea&gt;</code>
+				</p>
+				
+				<p>You may have noticed that the <code>data-mjf_ajax_method="post"</code> attribute &mdash; this is so newlines are sent correctly by the browser.</p>
+		
+				<div class="bg_white margin_10 padding_5" id="textarea_onchange_update"></div>
+				
+			</div>
+
+			<div class="form_line_field">
+
+				<p>
+					<select name="select_onchange" class="input_fld input_select" data-mjf="ajax_change" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="select_onchange_update" id="select_onchange">
+						<option value="blue">Blue</option>
+						<option value="red">Red</option>
+						<option value="green">Green</option>
+					</select>
+				</p>
+				
+				<p>
+					<code>
+						&lt;select name="" data-mjf="ajax_change" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="FIELD_ID_CONT" id="FIELD_ID"&gt;<br>
+						&nbsp;&nbsp;&lt;option value="blue"&gt;Blue&lt;/option&gt;<br>
+						&nbsp;&nbsp;&lt;option value="red"&gt;Red&lt;/option&gt;<br>
+						&nbsp;&nbsp;&lt;option value="green"&gt;Green&lt;/option&gt;<br>
+						&lt;/select&gt;
+					</code>
+				</p>
+		
+				<div id="select_onchange_update"></div>
+				
+			</div>
+			
+		</fieldset>
+
+	</form>
+
+
+	<fieldset>
+
+		<legend>Notes</legend>
+		
+		<p class="form_line_content">There's a three quarter of a second timeout before sending the request.</p>
+		
+	</fieldset>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.ajax_change = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

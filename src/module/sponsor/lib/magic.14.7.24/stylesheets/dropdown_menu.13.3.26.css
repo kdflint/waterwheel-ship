@@ -1,0 +1,13 @@
+/****** Version 13.3.26 ******/
+.mjs_dropdown_menu{font-weight:bold;}
+.mjs_dropdown_menu,.mjs_dropdown_menu ul{list-style-type:none;margin:0;padding:0;}
+.mjs_dropdown_menu li{border-bottom:1px solid #272727;border-left:1px solid #454545;border-right:1px solid #454545;float:left;margin:-1px 0 0 -1px;padding:0;}
+.mjs_dropdown_menu li ul{display:none;}
+.mjs_dropdown_menu li a{background-color:transparent;color:#fff;display:block;margin:0;padding:10px 15px;text-decoration:none;}
+.ddm_li_on{background-color:#454545;}
+.ddm_li_off{background-color:#272727;}
+.ddm_ul_on{background-color:#454545;box-shadow:1px 1px 8px #717171;display:block !important;position:absolute;width:200px;z-index:100;}
+.mjs_dropdown_menu li ul li{background-color:#454545;border:1px solid #79797b;float:none;}
+.mjs_dropdown_menu li ul li a{background-color:#454545;}
+.mjs_dropdown_menu li ul li a:hover{background-color:#0056CA;color:#fff;}
+.mjs_dropdown_menu a:focus{background:#0056CA !important;color:#fff !important;}

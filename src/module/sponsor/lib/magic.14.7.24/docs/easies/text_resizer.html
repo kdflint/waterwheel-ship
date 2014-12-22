@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Text Resizer: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Text Resizer: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.text_resize = XX;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag where <code>XX</code> is the default size in pixels of the text.</p>
+		<p class="form_line_content">Use the example below as a guide for building your own resizer!</p>
+	
+	</fieldset>
+
+	
+	<fieldset>
+
+		<legend>Example</legend>
+		
+		<div class="form_line_content">
+
+			<p>
+				<a href="#" data-mjf="text_resize|return_false" data-mjf_resize_id="text_resize_ex" data-mjf_resize_amt="-1" id="text_resize_ex_smaller">Smaller A-</a>
+				<a href="#" data-mjf="text_resize|return_false" data-mjf_resize_id="text_resize_ex" data-mjf_resize_amt="0" id="text_resize_ex_default" class="margin_left_10 margin_right_10">Default</a>
+				<a href="#" data-mjf="text_resize|return_false" data-mjf_resize_id="text_resize_ex" data-mjf_resize_amt="+1" id="text_resize_ex_larger">Larger A+</a>
+			</p>
+	
+			<p id="text_resize_ex">Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit. Mauris a quam non tortor tempor laoreet eu sit amet lectus. Suspendisse potenti. Quisque vehicula faucibus lacinia. Proin ligula massa, tristique et fermentum sollicitudin, dictum eget enim. Integer fermentum metus quis libero suscipit in semper lorem ornare. Aenean laoreet, justo a commodo bibendum, lorem nisi rutrum massa, quis gravida dui sapien condimentum eros.</p>
+	
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;
+	&lt;a href="#" data-mjf="text_resize|return_false" data-mjf_resize_id="text_resize_ex" data-mjf_resize_amt="-1" id="text_resize_ex_smaller"&gt;Smaller A-&lt;/a&gt;
+	&lt;a href="#" data-mjf="text_resize|return_false" data-mjf_resize_id="text_resize_ex" data-mjf_resize_amt="0" id="text_resize_ex_default"&gt;Default&lt;/a&gt;
+	&lt;a href="#" data-mjf="text_resize|return_false" data-mjf_resize_id="text_resize_ex" data-mjf_resize_amt="+1" id="text_resize_ex_larger"&gt;Larger A+&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;p id="text_resize_ex"&gt;Your content here..&lt;/p&gt;
+
+&lt;script type="text/javascript"&gt;$m.wand.text_resize = 12;&lt;/script&gt;</textarea></p>
+
+		</div>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Notes</legend>
+
+		<p class="form_line_content">The text size is remembered by default. This can't be disabled at the moment.</p>
+	
+	</fieldset>
+
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.text_resize = 12;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

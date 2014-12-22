@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vscroller: Motion: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<link href="motion.12.5.7.css" rel="stylesheet">
+	<script type="text/javascript" src="motion.src.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Vscroller: Motion (<script type="text/javascript">document.write($m.versions.tricks.motion);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite padding_10">There isn't documentation for this. If you want to use it, use the source.</h2>
+	
+	<p class="form_line_content">The animation below will scroll <em>up</em> in an infinite loop. It will <em>stop</em> when you mouseover and <em>start</em> when you mouseout.</p>
+	
+	<div data-mjf="vscroller" data-mjf_vscroller_autostart="true" data-mjf_vscroller_delay="5" class="motion_vscroller" id="vscroll_1">
+		<div>
+			<p>
+				<img src="../../images/examples/magic_0.png" width="45" alt="" class="float_left">
+				<a>POSSIBLE LINK 1</a><br>
+				POSSIBLE DESCRIPTION HERE OF THIS FRAME<br>
+				POSSIBLE DESCRIPTION HERE OF THIS FRAME<br>
+				POSSIBLE DESCRIPTION HERE OF THIS FRAME
+			</p>
+		</div>
+		<div>
+			<p>
+				<img src="../../images/examples/magic_1.png" width="45" alt="" class="float_left">
+				<a>POSSIBLE LINK 2</a><br>
+				POSSIBLE DESCRIPTION HERE OF THIS FRAME<br>
+				POSSIBLE DESCRIPTION HERE OF THIS FRAME<br>
+				POSSIBLE DESCRIPTION HERE OF THIS FRAME
+			</p>
+		</div>
+		<div>
+			<p>
+				<img src="../../images/examples/magic_2.png" width="45" alt="" class="float_left">
+				<a>POSSIBLE LINK 3</a><br>
+				POSSIBLE DESCRIPTION HERE OF THIS FRAME<br>
+				POSSIBLE DESCRIPTION HERE OF THIS FRAME<br>
+				POSSIBLE DESCRIPTION HERE OF THIS FRAME
+			</p>
+		</div>
+	</div>
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.trick.motion.vscroller = true;
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enable/Disable Fields when Clicking Another Field: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Enable/Disable Fields when Clicking Another Field: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<form action="submission.php" method="post">
+	
+		<fieldset>
+	
+			<legend>Usage</legend>
+			
+			<p class="form_line_field">Add <code>data-mjf="click_enable_disable" id="FIELD_ID"</code> to your onclickable tag.</p>
+			<p class="form_line_field">Add <code>&lt;script type="text/javascript"&gt;$m.wand.click_enable_disable = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+			<p class="form_line_field">Use the examples below for building your own!</p>
+
+		</fieldset>
+		
+		<fieldset>
+	
+			<legend>Examples</legend>
+			
+			<div class="form_line_field">
+			
+				<p><strong>Enable / Disable a single field with 2 radio buttons</strong></p>
+	
+				<p>
+					<input type="radio" name="enable_disable_radio" checked="checked" data-mjf="click_enable_disable" data-mjf_click_enable_id="enable_disable_slave_radio" class="input_radio" id="enable_master_radio"><label for="enable_master_radio">Enable Field</label>
+					<input type="radio" name="enable_disable_radio" data-mjf="click_enable_disable" data-mjf_click_disable_id="enable_disable_slave_radio" class="input_radio" id="disable_master_radio"><label class="margin_right_5" for="disable_master_radio">Disable Field</label><br>
+					<input type="text" value="Lorem ipsum dolor sit amet" class="input_fld input_text margin_top_5" id="enable_disable_slave_radio">
+				</p>
+				
+				<p>
+					<code>
+						&lt;input type="radio" checked="checked" data-mjf="click_enable_disable" data-mjf_click_enable_id="FIELD_ID_3" id="FIELD_ID_1"&gt;<br>
+						&lt;input type="radio" data-mjf="click_enable_disable" data-mjf_click_disable_id="FIELD_ID_3" id="FIELD_ID_2"&gt;<br>
+						&lt;input type="text" id="FIELD_ID_3"&gt;
+					</code>
+				</p>
+				
+			</div>
+
+			<div class="form_line_field">
+	
+				<p><strong>Enable / Disable a single field with 1 checkbox</strong></p>
+
+				<p>
+					<input type="checkbox" name="enable_disable_checkbox" checked="checked" data-mjf="click_enable_disable" data-mjf_click_enable_disable_id="enable_disable_slave_checkbox" class="input_checkbox" id="enable_disable_master_checkbox"><label class="margin_right_5" for="enable_disable_master_checkbox">Enable / Disable Field</label><br>
+					<input type="text" name="enable_disable_slave_checkbox" value="Ut at massa aliquam libero porttitor" class="input_fld input_text margin_top_5" id="enable_disable_slave_checkbox">
+				</p>
+	
+				<p>
+					<code>
+						&lt;input type="checkbox" checked="checked" data-mjf="click_enable_disable" data-mjf_click_enable_disable_id="FIELD_ID_5" id="FIELD_ID_4"&gt;<br>
+						&lt;input type="text" id="FIELD_ID_5"&gt;
+					</code>
+				</p>
+	
+			</div>
+
+			<div class="form_line_field">
+
+				<p><strong>Enable / Disable a group of fields with 2 radio buttons</strong></p>
+	
+				<p>
+					<input type="radio" name="enable_disable_radio_group" checked="checked" data-mjf="click_enable_disable" data-mjf_click_enable_group="enable_slave_radio_group" class="input_radio" id="enable_master_radio_group"><label for="enable_master_radio_group">Enable Fields</label>
+					<input type="radio" name="enable_disable_radio_group" data-mjf="click_enable_disable" data-mjf_click_disable_group="disable_slave_radio_group" class="input_radio" id="disable_master_radio_group"><label class="margin_right_5" for="disable_master_radio_group">Disable Fields</label><br>
+					<input type="text" value="Lorem ipsum dolor sit amet" data-mjf_click_enable_group="enable_slave_radio_group" data-mjf_click_disable_group="disable_slave_radio_group" class="input_fld input_text margin_top_5"><br>
+					<input type="text" value="Ut at massa aliquam libero porttitor" data-mjf_click_enable_group="enable_slave_radio_group" data-mjf_click_disable_group="disable_slave_radio_group" class="input_fld input_text margin_top_5"><br>
+					<input type="text" value="Nam ultricies quam sed dignissim" data-mjf_click_enable_group="enable_slave_radio_group" data-mjf_click_disable_group="disable_slave_radio_group" class="input_fld input_text margin_top_5"><br>
+				</p>
+				
+				<p>
+					<code>
+						&lt;input type="radio" checked="checked" data-mjf="click_enable_disable" data-mjf_click_enable_group="GROUP_1" id="FIELD_ID_6"&gt;<br>
+						&lt;input type="radio" data-mjf="click_enable_disable" data-mjf_click_disable_group="GROUP_1" id="FIELD_ID_7"&gt;<br>
+						&lt;input type="text" data-mjf_click_enable_group="GROUP_1" data-mjf_click_disable_group="GROUP_1"&gt;<br>
+						&lt;input type="text" data-mjf_click_enable_group="GROUP_1" data-mjf_click_disable_group="GROUP_1"&gt;<br>
+						&lt;input type="text" data-mjf_click_enable_group="GROUP_1" data-mjf_click_disable_group="GROUP_1"&gt;
+					</code>
+				</p>
+	
+			</div>
+
+			<div class="form_line_field">
+
+				<p><strong>Disable a group of fields with 1 checkbox buttons</strong></p>
+	
+				<p>
+					<input type="checkbox" name="enable_disable_checkbox_group" checked="checked" data-mjf="click_enable_disable" data-mjf_click_enable_disable_group="enable_slave_checkbox_group" class="input_checkbox" id="enable_master_checkbox_group"><label for="enable_master_checkbox_group">Enable / Disable Fields</label><br>
+					<input type="text" value="Lorem ipsum dolor sit amet" data-mjf_click_enable_disable_group="enable_slave_checkbox_group" class="input_fld input_text margin_top_5" id="enable_disable_slave_checkbox_group_1"><br>
+					<input type="text" value="Ut at massa aliquam libero porttitor" data-mjf_click_enable_disable_group="enable_slave_checkbox_group" class="input_fld input_text margin_top_5" id="enable_disable_slave_checkbox_group_2"><br>
+					<input type="text" value="Nam ultricies quam sed dignissim" data-mjf_click_enable_disable_group="enable_slave_checkbox_group" class="input_fld input_text margin_top_5" id="enable_disable_slave_checkbox_group_3"><br>
+				</p>
+				
+				<p>
+					<code>
+						&lt;input type="checkbox" checked="checked" data-mjf="click_enable_disable" data-mjf_click_enable_disable_group="GROUP_2" id="FIELD_ID_8"&gt;<br>
+						&lt;input type="text" data-mjf_click_enable_disable_group="GROUP_2"&gt;<br>
+						&lt;input type="text" data-mjf_click_enable_disable_group="GROUP_2"&gt;<br>
+						&lt;input type="text" data-mjf_click_enable_disable_group="GROUP_2"&gt;
+					</code>
+				</p>
+
+		</fieldset>
+
+
+
+		<fieldset>
+	
+			<legend>Notes</legend>
+	
+			<p class="form_line_content">The separate <code>$m.wand.click_enable</code> and <code>$m.wand.click_disable</code> options have been retired in favor of the more robust options above.</p>
+		
+		</fieldset>
+
+	</form>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.click_enable_disable = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

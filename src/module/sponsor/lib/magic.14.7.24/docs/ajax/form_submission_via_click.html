@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Form Submission (via click): Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> AJAX Form Submission (via click): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">Add <code>data-mjf="ajax_submit|return_false" data-mjf_ajax_update_id="ELEMENT_ID" id="FORM_ID"</code> to your <code>&lt;form&gt;</code> tag.</p>
+		<p class="form_line_content">Add <code>data-mjf="ajax_submit_link" data-mjf_asl_form_id="FORM_ID" id="ELEMENT_ID"</code> to your clickable tag.</p>
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.ajax_submit_link = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Example</legend>
+
+		<form action="_ajax.php" method="post" data-mjf="ajax_submit|return_false" data-mjf_ajax_update_id="simple_ajax_submit" name="form_ajax_post" id="form_ajax_post">
+
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_type_text_aj">Input Field</label>
+				<span class="form_line_right_field">
+					<input type="text" name="input_type_text" value="" class="input_fld input_text" id="input_type_text">
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<span class="form_line_left_field">Radio Buttons</span>
+				<span class="form_line_right_field">
+					<input type="radio" name="input_type_radio_ajax" value="Radio Option 1" class="input_radio" id="input_type_radio_ajax_1"><label for="input_type_radio_ajax_1">Option 1</label><br>
+					<input type="radio" name="input_type_radio_ajax" value="Radio Option 2" class="input_radio" id="input_type_radio_ajax_2"><label for="input_type_radio_ajax_2">Option 2</label><br>
+					<input type="radio" name="input_type_radio_ajax" value="Radio Option 3" class="input_radio" id="input_type_radio_ajax_3"><label for="input_type_radio_ajax_3">Option 3</label>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<span class="form_line_left_field">Checkboxes</span>
+				<span class="form_line_right_field">
+					<input type="checkbox" name="input_type_checkbox_ajax[]" value="Checkbox Option 1" class="input_checkbox" id="input_type_checkbox_ajax_1"><label for="input_type_checkbox_ajax_1">Option 1</label><br>
+					<input type="checkbox" name="input_type_checkbox_ajax[]" value="Checkbox Option 2" class="input_checkbox" id="input_type_checkbox_ajax_2"><label for="input_type_checkbox_ajax_2">Option 2</label><br>
+					<input type="checkbox" name="input_type_checkbox_ajax[]" value="Checkbox Option 3" class="input_checkbox" id="input_type_checkbox_ajax_3"><label for="input_type_checkbox_ajax_3">Option 3</label>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_type_textarea_ajax">Textarea</label>
+				<span class="form_line_right_field">
+					<textarea name="input_type_textarea_ajax" class="input_fld input_textarea" id="input_type_textarea_ajax"></textarea>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_type_select_single_ajax">Select Single</label>
+				<span class="form_line_right_field">
+					<select class="input_fld input_select" name="input_type_select_single_ajax" id="input_type_select_single_ajax">
+						<option value="">Please choose...</option>
+						<option value="Option 1">Option 1</option>
+						<option value="Option 2">Option 2</option>
+						<option value="Option 3">Option 3</option>
+					</select>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_type_select_multiple_ajax">Select Multiple</label>
+				<span class="form_line_right_field">
+					<select class="input_fld input_select" name="input_type_select_multiple_ajax[]" id="input_type_select_multiple_ajax" multiple="multiple" size="5">
+						<option value="Option 0">Please choose...</option>
+						<option value="Option 1">Option 1</option>
+						<option value="Option 2">Option 2</option>
+						<option value="Option 3">Option 3</option>
+						<option value="Option 4">Option 4</option>
+					</select>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="align_center margin_top_20 print_none">
+				<input type="submit" name="submit_btn" value="Submit" class="bg_colors bg_colors_default margin_right_5">
+				
+				<a href="#" data-mjf="ajax_submit_link|return_false" data-mjf_asl_form_id="form_ajax_post" data-mjf_asl_action="_ajax2.php" class="margin_right_5" id="ajax_submit_link_1">Submit the above to ajax2.php</a>
+				<a href="#" data-mjf="ajax_submit_link|return_false" data-mjf_asl_form_id="form_ajax_post" data-mjf_asl_action="_ajax3.php" id="ajax_submit_link_2">Submit the above to ajax3.php</a>
+				
+			</p>
+
+		</form>
+
+		<div class="margin_10" id="simple_ajax_submit"></div>
+		
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Notes</legend>
+
+		<p class="form_line_content">The <code>action</code> and <code>method</code> attributes for your form are still required and will be used when making the AJAX call.</p>
+		<p class="form_line_content">Add <code>data-mjf_asl_name_value="NAME=VALUE"</code> to your clickable tag is you want to submit it as a form field.</p>
+		<p class="form_line_content">Add <code>data-mjf_asl_action="/PATH/TO/NEW_ACTION"</code> to your clickable tag if you want your <code>&lt;form&gt;</code> to use a different action</p>
+		<p class="form_line_content">You may want to use <a href="../forms/validation.html">Form Validation</a> as well &mdash; <code>data-mjf="form_required|ajax_submit|return_false"</code> for your <code>&lt;form&gt;</code>.</p>
+	
+	</fieldset>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.ajax_submit = true;
+		$m.wand.ajax_submit_link = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

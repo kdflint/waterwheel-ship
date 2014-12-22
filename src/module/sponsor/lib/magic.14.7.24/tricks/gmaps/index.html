@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gmaps: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : false, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+
+	<script type="text/javascript" src="../gmaps/gmaps.src.js" charset="UTF-8"></script>
+
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<style type="text/css">
+		#gmap_ex_1{background-color:silver;height:600px;margin-bottom:20px;width:95%;}
+		.box_map_info{min-width:200px;}
+	</style>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Gmaps (<script type="text/javascript">document.write($m.versions.tricks.gmaps);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Talk to Google Maps</h2>
+	
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">
+			Add <code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/gmaps/gmaps.<script type="text/javascript">document.write($m.versions.tricks.gmaps);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+			below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+		</p>
+
+		<p class="form_line_content">
+			Add <code>&lt;script type="text/javascript"&gt;$m.trick.gmaps.config = { api_key : "YOUR_API_KEY" &lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.
+		</p>
+
+		<p class="form_line_content">
+			Add your markers like in <code>/PATH/TO/magic/tricks/gmaps/gmap_ex_1.json</code>.
+		</p>
+
+		<p class="form_line_content">
+			Create like a <code>format_marker</code> function like in this page's source code.
+		</p>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Example 1</legend>
+
+		<div data-mjf="gmaps" data-mjf_gmaps='{"config" : { "json_file" : "/assets/javascript/magic/tricks/gmaps/gmap_ex_1.json", "animate" : true, "zoom" : 3, "start_lat" : "42.145809" , "start_lon" : "-33.462164" } }' id="gmap_ex_1"></div>
+		<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;div data-mjf="gmaps"
+ data-mjf_gmaps='{"config" : { "json_file" : "/PATH/TO/YOUR_MARKERS.json", "animate" : true, "zoom" : 3, "start_lat" : "42.145809" , "start_lon" : "-33.462164" } }'
+ id="gmap_ex_1"&gt;&lt;/div&gt;</textarea></p>
+
+		<p>&hellip;or&hellip;</p>
+
+		<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;div data-mjf="gmaps"
+ data-mjf_gmaps='{"config" : { "json_var" : "NAME_OF_JSON_VARIABLE_ON_YOUR_PAGE", "animate" : true, "zoom" : 3, "start_lat" : "42.145809" , "start_lon" : "-33.462164" } }'
+ id="gmap_ex_2"&gt;&lt;/div&gt;</textarea></p>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Change Log</legend>
+
+		<h3>&rarr; 14.7.16</h3>
+		<ul>
+			<li>Added support for "json_var"</li>
+		</ul>
+
+		<h3>&rarr; 14.7.2</h3>
+		<ul>
+			<li>Initial release</li>
+		</ul>
+	
+	</fieldset>
+	
+	<fieldset>
+
+		<legend>To Do</legend>
+
+		<ul>
+			<li>Make docs better</li>
+			<li>Search map</li>
+			<li>Find geographical coordinates by address</li>
+		</ul>
+
+	</fieldset>
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.gmaps.config = {
+			api_key : "AIzaSyBj1ie9puOW1MeQJQRbayLoG3vrit6vgT0"
+		}
+
+		function format_marker(in_record)
+		{
+			var marker_html = '<div class="box_map_info">';
+
+			marker_html += '<h3>' + in_record.Name + '</h3>';
+			marker_html += '<p>' + in_record.Address + '</p>';
+			marker_html += '<p>Height: ' + in_record.Height + '</p>';
+			marker_html += '</div>';
+
+			return marker_html;
+		}
+
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Magic Charts: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Magic Charts (<script type="text/javascript">document.write($m.versions.tricks.magic_charts);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Charting with <code>&lt;canvas&gt;</code> with <code>&lt;svg&gt;</code> coming soon</h2>
+
+	<!--
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Charting with <code>&lt;canvas&gt;</code> and <code>&lt;svg&gt;</code></h2>
+
+	<fieldset>
+
+		<legend>SVG Examples</legend>
+		
+		<ol>
+			<li><a href="svg_columns.html">Columns</a></li>
+		</ol>
+		
+	</fieldset>
+	-->
+	
+	<fieldset>
+
+		<legend>Canvas Examples</legend>
+		
+		<p class="form_line_content">
+			<span class="form_line_left_content"><img src="../../images/examples/chart_column.png" alt="column chart"></span>
+			<span class="form_line_right_content">
+				<br><a href="canvas_column.html"><strong>Columns</strong></a>
+			</span>
+			<br class="clear_both">
+		</p>
+		
+
+		<p class="form_line_content">
+			<span class="form_line_left_content"><img src="../../images/examples/chart_line_graph.png" alt="line graph chart"></span>
+			<span class="form_line_right_content">
+				<br><a href="canvas_line_graph.html"><strong>Line Graphs</strong></a>
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<p class="form_line_content">
+			<span class="form_line_left_content"><img src="../../images/examples/chart_pie.png" alt="pie chart"></span>
+			<span class="form_line_right_content">
+				<br><a href="canvas_pie.html"><strong>Pies</strong></a>
+			</span>
+			<br class="clear_both">
+		</p>
+
+
+	</fieldset>
+
+
+	
+	<fieldset>
+
+		<legend>Change Log</legend>
+		
+		<div class="margin_top_10"></div>
+		
+		<h3>&rarr; 12.5.18</h3>
+		<ul>
+			<li>Renamed <em>Vertical Bar</em> chart to <em>Column</em> chart - this will break your code if you don't review and update your code!</li>
+			<li>Added several config options for the <em>Column</em> chart.</li>
+			<li>Added wedge color config option for the <em>Pie</em> chart.</li>
+		</ul>
+		
+		<h3>&rarr; 12.3.23</h3>
+		<ul>
+			<li>Add <code>y_increments</code> config optin to the <em>Line Graph</em> charts.</li>
+			<li>Renamed <code>increments</code> config option to <code>y_increments</code> in the <em>Column</em> charts.</li>
+		</ul>
+		
+		<h3>&rarr; 11.9.14</h3>
+		<ul>
+			<li>Initial Release</li>
+		</ul>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>To Do</legend>
+
+		<ul>
+			<li>Finish SVG charts.</li>
+			<li>Row Charts.</li>
+			<li>Check for non-canvas and non-svg support and act appropriately.</li>
+			<li>More examples, testing and debugging.</li>
+		</ul>
+
+	</fieldset>
+
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+	</script>
+
+</body>
+</html>

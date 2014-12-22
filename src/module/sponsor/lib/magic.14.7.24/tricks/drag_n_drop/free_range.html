@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Free Range: Drag N Drop: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<link href="drag_n_drop.src.css" rel="stylesheet">
+	<script type="text/javascript" src="drag_n_drop.src.js" charset="UTF-8"></script>
+	
+		<link href="/admin/resources/javascript/magic/tricks/magic_editor/magic_editor.14.1.12.css" rel="stylesheet">
+	<script type="text/javascript" src="/admin/resources/javascript/magic/tricks/magic_editor/magic_editor.13.5.8.js" charset="UTF-8"></script>
+
+</head>
+<body>
+
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Free Range Any Where Drag: Drag N Drop (<script type="text/javascript">document.write($m.versions.tricks.drag_n_drop);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">
+			Add <code>&lt;link href="/PATH/TO/magic/tricks/drag_n_drop/drag_n_drop.<script type="text/javascript">document.write($m.versions.tricks.css.drag_n_drop);</script>.css" rel="stylesheet"&gt;</code><br>
+			<code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/drag_n_drop/drag_n_drop.<script type="text/javascript">document.write($m.versions.tricks.drag_n_drop);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+			below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+		</p>
+		
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.trick.drag_n_drop.free = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		
+		<p class="form_line_content">Use the examples below to build your own!</p>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Examples</legend>
+		
+		<div class="form_line_content">
+	
+			<p><strong>1. Grab any where on the box below and drag it any where</strong></p>
+			
+			<div data-mjf="drag_n_drop_free" class="dnd_example" id="drag_ex_1">
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+			</div>
+	
+			<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;div data-mjf="drag_n_drop_free" class="dnd_example" id="drag_ex_1"&gt;
+    &lt;p&gt;Your content here...&lt;/p&gt;
+&lt;/div&gt;</textarea></p>
+
+		</div>
+
+
+		<div class="padding_10"></div>
+
+
+		<div class="form_line_content">
+		
+			<p><strong>2. Grab the title on the box below and drag it any where.</strong></p>
+			
+			<div data-mjf="drag_n_drop_free" class="dnd_example" id="drag_ex_2">
+				<h2 data-mjf="drag_n_drop_handle" id="drag_ex_2_title">Title Grab</h2>
+				<p>Duis aute irure dolor in <a href="http://www.google.com/">reprehenderit</a> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				
+				
+				
+				<form action="#" method="post" data-mjf="magic_editor_form" id="anything_form_name">
+					
+					<div>
+						<input type="checkbox" name="asdf" value="" class="input_checkbox" id="adfs">
+						<!-- <textarea rows="10" cols="20" name="anything_name" data-mjf="magic_editor" id="anything_name"><p>yadada</p></textarea> -->
+					</div>
+				
+				</form>
+				
+			</div>
+	
+			<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;div data-mjf="drag_n_drop_free" class="dnd_example" id="drag_ex_2"&gt;
+    &lt;h2 data-mjf="drag_n_drop_handle" id="drag_ex_2_title"&gt;Title Grab&lt;/h2&gt;
+    &lt;p&gt;Your content here...&lt;/p&gt;
+&lt;/div&gt;</textarea></p>
+			
+		</div>
+
+
+		<div class="padding_10"></div>
+
+
+		<div class="form_line_content">
+		
+			<p><strong>3. Drag the image</strong></p>
+		
+			<p><img src="../../images/examples/magic_2.png" alt="Magic Icon" data-mjf="drag_n_drop_free" id="dnd_magic_img"></p>
+
+			<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;
+    &lt;img src="magic_2.png" alt="Magic Icon" data-mjf="drag_n_drop_free" id="dnd_magic_img"&gt;
+&lt;/p&gt;</textarea></p>
+
+		</div>
+
+
+		<div class="padding_10"></div>
+
+
+		<div class="form_line_content">
+		
+			<p><strong>4. Drag the image and then fire a JavaScript callback</strong> <span id="dnd_magic_img_2_callback"></span></p>
+		
+			<p><img src="../../images/examples/magic_3.png" alt="Magic Icon" data-mjf="drag_n_drop_free" data-mjf_drag_n_drop_callback="example_img_2_callback" id="dnd_magic_img_2"></p>
+
+			<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;
+    &lt;img src="magic_3.png" alt="Magic Icon" data-mjf="drag_n_drop_free" data-mjf_drag_n_drop_callback="example_img_2_callback" id="dnd_magic_img_2"&gt;
+&lt;/p&gt;</textarea></p>
+
+			<p>The <code>data-mjf_drag_n_drop_callback</code> attribute should be set to an existing JavaScript function's name.</p>
+			<p>It will be passed the element's ID as a string.</p>
+
+		</div>
+
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Notes</legend>
+		<p class="form_line_content">Once and elment is moved, it will no longer be part of the page's visual flow.</p>
+	
+	</fieldset>
+
+<!--
+	<fieldset>
+
+		<legend>To Do</legend>
+		
+		<div class="form_line_content">
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+		
+	</fieldset>
+-->
+
+
+	<p class="align_center">&laquo; <a href="./">Back to Drag N Drop</a></p>
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.trick.drag_n_drop.free = true;
+		
+	$m.trick.magic_editor.config = {
+		 type : "advanced"
+		,css_links : [
+			  $m.config.basedir + "tricks/magic_editor/magic_editor.13.5.8.css"
+			,"/resources/stylesheets/defaults.css"
+			,"/resources/stylesheets/site.css"
+		]
+	};
+
+		function example_img_2_callback(in_id)
+		{
+			$m.id("dnd_magic_img_2_callback").innerHTML = "&mdash; updated at " + $m.dt.get_time_now();
+		}
+	</script>
+
+
+</body>
+</html>

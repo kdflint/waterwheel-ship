@@ -1,0 +1,54 @@
+/****** Version 14.7.28 ******/
+
+.motion_slider_animation{transition:all 500ms ease-in-out;-ms-transition:all 500ms ease-in-out;	-moz-transition:all 500ms ease-in-out;-o-transition:all 500ms ease-in-out;-webkit-transition:all 500ms ease-in-out;}
+
+
+/*** VSlide ***/
+.motion_vslider{overflow:hidden;position:relative;}
+.motion_vslider_cont{left:0;position:absolute;transition:all 500ms ease-in-out;-ms-transition:all 500ms ease-in-out;	-moz-transition:all 500ms ease-in-out;-o-transition:all 500ms ease-in-out;-webkit-transition:all 500ms ease-in-out;}
+
+.motion_vslider_ctrls{position:relative;}
+.motion_vslider_ctrls_link{}
+.motion_vslider_ctrls a:hover, .motion_vslider_ctrls_active{}
+
+
+/*** HSlide ***/
+.motion_hslider{overflow:hidden;}
+.motion_hslider_cont{left:0;height:100%;}
+.motion_hslider_box{float:left;height:100%;}
+.motion_hslider_box p:last-child{margin-bottom:0;}
+
+.motion_hslider_ctrls{position:relative;}
+.motion_hslider_ctrls_link{}
+.motion_hslider_ctrls a:hover, .motion_hslider_ctrls_active{}
+
+/*** VScroller ***/
+.motion_vscroller{border:1px solid blue;height:70px;margin-bottom:20px;overflow:hidden;padding:5px;position:relative;width:405px;}
+.motion_vscroller_box{border-bottom:1px solid #D4D4D4;position:absolute;width:400px;}
+.motion_vscroller_box p{margin:0;padding:5px;}
+
+/*** Flick ***/
+#motion_flick{background:url(../../images/throbbers/throbber_loading.gif) no-repeat center;border:1px solid #c0c0c0;height:550px;margin-bottom:20px;overflow:hidden;position:relative;width:300px;}
+#motion_flick_inside{border:0px solid red;height:100px;position:absolute;height:10000px;}
+.motion_flick_box{border:1px solid #D4D4D4;margin:5px;padding:5px;}
+.motion_flick_box h4, .motion_flick_box p{margin:0;padding:0;text-align:center !important;}
+
+#motion_flick_top{background:#000 url(./arrow_top.png) no-repeat center;cursor:pointer;height:36px;opacity:.1;position:absolute;top:0;width:100%;z-index:10;}
+#motion_flick_top:hover{opacity:.3;}
+
+#motion_flick_bottom{background:#000 url(./arrow_bottom.png) no-repeat center;cursor:pointer;height:36px;opacity:.1;position:absolute;bottom:0;width:100%;z-index:10;}
+#motion_flick_bottom:hover{opacity:.3;}
+
+
+/*** Swipe ***/
+#motion_swipe{background:url(../../images/throbbers/throbber_loading.gif) no-repeat center;border:1px solid #c2b881;height:320px;margin-bottom:20px;overflow:hidden;position:relative;width:590px;}
+#motion_swipe_inside{height:100px;position:absolute;width:10000px;}
+.motion_swipe_box{background-color:#fff;border:1px solid #D4D4D4;float:left;height:300px;margin:5px;overflow:hidden;padding:2px;text-align:center !important;width:225px;}
+.motion_swipe_box p{margin:0;padding:0;}
+.motion_swipe_box h4{font-size:12px;margin-top:0;}
+
+#motion_swipe_left{background:#000 url(./arrow_left.png) no-repeat center;cursor:pointer;height:100%;opacity:.1;position:absolute;left:0;width:36px;z-index:10;}
+#motion_swipe_left:hover{opacity:.3;}
+
+#motion_swipe_right{background:#000 url(./arrow_right.png) no-repeat center;cursor:pointer;height:100%;opacity:.1;position:absolute;right:0;width:36px;z-index:10;}
+#motion_swipe_right:hover{opacity:.3;}

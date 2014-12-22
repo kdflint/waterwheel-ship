@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Queue: Dev: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../wand.src.js" charset="UTF-8"></script>
+	<link href="../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../docs/"><img src="../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> AJAX Queue: Dev: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<h3 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Testing queue'ed AJAX calls</h3>
+	
+	<p class="margin_10">&bull; <a href="_ajax.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_query="extra=ajax_queue_1" data-mjf_ajax_update_id="ajax_queue_1_cont" id="ajax_queue_1_link">Queue 1</a></p>
+	<div class="margin_10" id="ajax_queue_1_cont"></div>
+	
+	<p class="margin_10">&bull; <a href="_ajax2.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_query="extra=ajax_queue_2" data-mjf_ajax_update_id="ajax_queue_2_cont" id="ajax_queue_2_link">Queue 2</a></p>
+	<div class="margin_10" id="ajax_queue_2_cont"></div>
+	
+	<p class="margin_10">&bull; <a href="_ajax3.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_query="extra=ajax_queue_3" data-mjf_ajax_update_id="ajax_queue_3_cont" id="ajax_queue_3_link">Queue 3</a></p>
+	<div class="margin_10" id="ajax_queue_3_cont"></div>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.ajax_click = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../docs/">Back to the main documentation</a></p>	
+
+</body>
+</html>

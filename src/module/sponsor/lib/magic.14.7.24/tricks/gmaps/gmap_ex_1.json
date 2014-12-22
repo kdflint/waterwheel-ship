@@ -1,0 +1,30 @@
+{
+	"format_function" : "format_marker"
+
+	,"markers" : [
+		{
+			 "Name" : "Eiffel Tower"
+			,"Height" : "1,063' (324 m)"
+			,"Address" : "Paris, France"
+			,"Latitude" : "48.8583496"
+			,"Longitude" : "2.2258148"
+		}
+
+		,{
+			 "Name" : "Big Ben"
+			,"Height" : "316' (96 m)"
+			,"Address" : "London, England"
+			,"Latitude" : "51.500708"
+			,"Longitude" : "-0.1932922"
+		}
+
+		,{
+			 "Name" : "Statue of Liberty"
+			,"Height" : "305' (93 m)"
+			,"Address" : "New York, USA"
+			,"Latitude" : "40.6892439"
+			,"Longitude" : "-74.0788328"
+		}
+	]
+
+}

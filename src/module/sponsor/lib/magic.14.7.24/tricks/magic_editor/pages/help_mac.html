@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Help: Magic Editor: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../magic_editor.14.1.12.css" rel="stylesheet" media="all">
+	<link href="pages.css" rel="stylesheet" media="all">
+	<script type="text/javascript" src="help.12.10.12.js" charset="UTF-8"></script>
+</head>
+
+<body>
+	<h1><span class="magic_editor_btn magic_editor_btn_help"></span> <script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.mac_help);</script></h1>
+	
+	<fieldset>
+	
+		<legend><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.paste_from_microsoft_word);</script></legend>
+		
+		<p><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.paste_from_microsoft_word_content);</script></p>
+		
+	</fieldset>
+
+	<fieldset>
+	
+		<legend><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.editing_links_and_images);</script></legend>
+		
+		<p><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.editing_links_and_images_content);</script></p>
+		
+	</fieldset>
+
+	<fieldset>
+	
+		<legend><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.keyboard_shortcuts);</script></legend>
+		
+		<p><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.keyboard_shortcuts_intro);</script></p>
+	
+		<table class="help_tables" cellspacing="1">
+			<tr><td colspan="3" class="bg_silver section_header"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.formatting);</script></td></tr>
+	
+			<script type="text/javascript">
+				for(var i in toolbars)
+				{
+					if(parent.$m.is.alive(btns[toolbars[i]]) === false || toolbars[i] == "separator" || parent.$m.is.alive(btns[toolbars[i]].mac_keystroke) === false) continue;
+					shcts = btns[toolbars[i]].mac_keystroke.split("+");
+					if(shcts[0] == "Cmd") shcts[0] = '&#8984;';
+					if(shcts[0] == "Shift") shcts[0] = '&#8679;';
+					if(shcts[1] == "Cmd") shcts[1] = '&#8984;';
+					if(shcts[1] == "Shift") shcts[1] = '&#8679;';
+					shcts[2] = (parent.$m.is.alive(shcts[2]) === true) ? '+ <span class="fake_button">' + shcts[2] + '</span>' : '';
+					btns_html += '<tr><td class="align_right"><span class="fake_button">' + shcts[0] + '</span> + <span class="fake_button">' + shcts[1] + '</span>' + shcts[2] + '</td><td>' + btns[toolbars[i]].title + '</td><td class="align_center"><span class="magic_editor_btn magic_editor_btn_' + toolbars[i] + ' bg_edeef2"></span></td></tr>';
+				}
+				
+				document.write(btns_html);
+			</script>
+
+			<tr><td colspan="3" class="bg_silver section_header"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.copy_cut_and_paste);</script></td></tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8984;</span> + <span class="fake_button">C</span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.copy_selected_text);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8984;</span> + <span class="fake_button">X</span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.cut_selected_text);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8984;</span> + <span class="fake_button">V</span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.paste_text);</script></td>
+				<td></td>
+			</tr>
+
+			<tr><td colspan="3" class="bg_silver section_header"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.content_navigation);</script></td></tr>
+			<tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8984;</span> + <span class="fake_button"><span class="arrow_key">&larr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.move_to_beginning);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8984;</span> + <span class="fake_button"><span class="arrow_key">&rarr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.move_to_end);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8997;</span> + <span class="fake_button"><span class="arrow_key">&larr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.move_one_word_left);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8997;</span> + <span class="fake_button"><span class="arrow_key">&rarr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.move_one_word_right);</script></td>
+				<td></td>
+			</tr>
+
+			<tr><td colspan="3" class="bg_silver section_header"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.content_selection);</script></td></tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8679;</span> + <span class="fake_button"><span class="arrow_key">&rarr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.select_one_char_right);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8679;</span> + <span class="fake_button"><span class="arrow_key">&larr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.select_one_char_left);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8679;</span> + <span class="fake_button">&#8997;</span> + <span class="fake_button"><span class="arrow_key">&rarr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.select_end_of_word);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8679;</span> + <span class="fake_button">&#8997;</span> + <span class="fake_button"><span class="arrow_key">&larr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.select_beginning_of_word);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8679;</span> + <span class="fake_button">&#8984;</span> + <span class="fake_button"><span class="arrow_key">&rarr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.select_end_of_line);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8679;</span> + <span class="fake_button">&#8984;</span> + <span class="fake_button"><span class="arrow_key">&larr;</span></span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.select_beginning_of_line);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8679;</span> + <span class="fake_button">&darr;</span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.select_one_line_down);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8679;</span> + <span class="fake_button">&uarr;</span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.select_one_line_up);</script></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="align_right"><span class="fake_button">&#8984;</span> + <span class="fake_button">A</span></td>
+				<td><script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.select_all);</script></td>
+				<td></td>
+			</tr>
+
+		</table>
+	
+	</fieldset>
+	
+	<!-- <p><input type="button" value="Refresh" onclick="window.location.reload();"></p> -->
+	
+</body>
+</html>

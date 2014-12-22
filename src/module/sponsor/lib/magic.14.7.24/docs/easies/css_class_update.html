@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Class Update: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> CSS Class Update: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Easily change an element's CSS class</h2>
+	
+	<fieldset>
+
+		<legend>Introduction</legend>
+		
+		<p class="form_line_content">First add <code>data-mjf="css_class_update|return_false" data-mjf_ccu_id="ELEMENT_CONTENT_ID"  id="ELEMENT_ID"</code> to your clickable tag.</p>
+		
+		<div class="form_line_content">
+			<p>Next there are three types of changes you can invoke&hellip;</p>
+			<ol>
+				<li>add &mdash; <code>data-mjf_ccu_exec="add(YOUR_CLASS_NAME)"</code></li>
+				<li>replace &mdash; <code>data-mjf_ccu_exec="replace(YOUR_CLASS_NAME)"</code></li>
+				<li>remove &mdash; <code>data-mjf_ccu_exec="remove(YOUR_CLASS_NAME)"</code></li>
+			</ol>
+		</div>
+
+		<p class="form_line_content">Finally add <code>&lt;script type="text/javascript"&gt;$m.wand.css_class_update = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+	
+	</fieldset>
+	
+	<fieldset>
+
+		<legend>Examples</legend>
+		
+		<div class="form_line_content">
+
+			<p><a href="#" data-mjf="css_class_update|return_false" data-mjf_ccu_id="css_class_update_add_cont" data-mjf_ccu_exec="add(align_right)" id="css_class_update_add_link"><strong>Add "align_right"</strong></a></p>
+			<p><code>&lt;a href="#" data-mjf="css_class_update|return_false" data-mjf_ccu_id="css_class_update_add_cont" data-mjf_ccu_exec="add(align_right)" id="css_class_update_add_link"&gt;Add "align_right"&lt;/a&gt;</code></p>
+			
+			<div class="bg_white margin_5 padding_5" id="css_class_update_add_cont">
+				<p>Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit. Mauris a quam non tortor tempor laoreet eu sit amet lectus. Suspendisse potenti. Quisque vehicula faucibus lacinia. Proin ligula massa, tristique et fermentum sollicitudin, dictum eget enim. Integer fermentum metus quis libero suscipit in semper lorem ornare. Aenean laoreet, justo a commodo bibendum, lorem nisi rutrum massa, quis gravida dui sapien condimentum eros. Curabitur ac erat massa. Donec pretium pharetra ante ac sodales. Phasellus quam turpis, rutrum vel eleifend pretium, malesuada vel purus.</p>
+			</div>
+			
+		</div>
+		
+		<div class="form_line_content">
+	
+			<p><a href="#" data-mjf="css_class_update|return_false" data-mjf_ccu_id="css_class_update_replace_cont" data-mjf_ccu_exec="replace(padding_5,padding_20)" id="css_class_update_replace_link"><strong>Replace "padding_5" with "padding_20"</strong></a></p>
+			<p><code>&lt;a href="#" data-mjf="css_class_update|return_false" data-mjf_ccu_id="css_class_update_replace_cont" data-mjf_ccu_exec="replace(padding_5,padding_20)" id="css_class_update_replace_link"&gt;Replace "padding_5" with "padding_20"&lt;/a&gt;</code></p>
+			
+			<div class="bg_white margin_5 padding_5" id="css_class_update_replace_cont">
+				<p>Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam non augue sit amet justo fringilla vestibulum at nec nisl. Nullam massa mi, rutrum non accumsan nec, feugiat aliquam ligula. Proin urna magna, tempor ut blandit in, tincidunt vel massa. Donec semper lorem sapien, at interdum mi. Mauris fermentum tempus lorem at congue. Phasellus dignissim congue nisl in mollis. Aliquam sodales auctor vehicula.</p>
+			</div>
+		
+		</div>
+		
+		<div class="form_line_content">
+	
+			<p><a href="#" data-mjf="css_class_update|return_false" data-mjf_ccu_id="css_class_update_remove_cont" data-mjf_ccu_exec="remove(align_center)" id="css_class_update_remove_link"><strong>Remove "align_center"</strong></a></p>
+			<p><code>&lt;a href="#" data-mjf="css_class_update|return_false" data-mjf_ccu_id="css_class_update_remove_cont" data-mjf_ccu_exec="remove(align_center)" id="css_class_update_remove_link"&gt;Remove "align_center"&lt;/a&gt;</code></p>
+			
+			<div class="bg_white margin_5 padding_5 align_center" id="css_class_update_remove_cont">
+				<p>Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci. Integer in massa faucibus turpis rhoncus pretium non sit amet felis. Nam tincidunt cursus augue vel vehicula. In sed arcu quis purus sagittis dignissim. Mauris lacus leo, fermentum nec consequat quis, facilisis ac quam. Nulla facilisi. Proin fringilla leo at lectus ultrices et iaculis dui vestibulum. Pellentesque interdum commodo nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit amet orci luctus mi hendrerit dapibus.</p>
+			</div>
+
+		</div>
+	
+	</fieldset>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.css_class_update = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

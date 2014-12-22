@@ -1,0 +1,109 @@
+						<div class="mod-sponsor-contentLeft">
+							
+							<div class="mod-sponsor-controlLevel">
+								<div class="mod-sponsor-controlLabel">
+									Your Level
+								</div>
+								<div class="mod-sponsor-controlContent">
+									<form id="levelForm" class="pure-form" style="padding:7px;">
+										<input id="option1" type="radio" name="levels" value="25" onclick="copyLevelValue();"/>&nbsp;$25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<input id="option2" type="radio" name="levels" value="50" onchange="copyLevelValue();" />&nbsp;$50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<input id="option3" type="radio" name="levels" value="100" onclick="copyLevelValue();" checked/>&nbsp;$100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<input id="option4" type="radio" name="levels" value="250" onclick="copyLevelValue();" />&nbsp;$250&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<input id="option5" type="radio" name="levels" value="500" onclick="copyLevelValue();" />&nbsp;$500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</form>	
+								</div>
+							</div>
+							
+							<div class="mod-sponsor-controlSponsorship">
+								<div class="mod-sponsor-controlLabel">
+									Sponsorship
+								</div>	
+								<div class="mod-sponsor-controlContent">
+									<form id="" class="pure-form">
+								    <fieldset>
+        							<label for="showSponsorship">
+            					<input id="showSponsorship" type="checkbox" id="sponsorChecked"/> Public?&nbsp;&nbsp;
+        							</label>
+							        <input type="email" placeholder="Please use this name" style="font-size: 80%;" data-mjf="copy_value_to_html" data-mjf_cvth_id="sponsorNameDisplay" id="sponsorName">
+							        <!--<a class="pure-button" href="#" style="font-size: 80%;"><span class="fa fa-file-image-o"></span> Upload Logo</a>-->
+    								</fieldset>
+									</form>
+								</div>							
+							</div>
+							
+							<div class="mod-sponsor-controlImpact">
+								<div class="mod-sponsor-controlLabel">
+									Impact Report
+								</div>	
+								<div class="mod-sponsor-controlContent">
+									<form id="" class="pure-form">
+								    <fieldset>
+        							<label for="showImpact">
+            					<input id="showImpact" type="checkbox" disabled /> No Thanks&nbsp;&nbsp;
+        							</label>
+							        <input type="email" placeholder="Please email to" style="font-size: 80%;" data-mjf="copy_value_to_html" data-mjf_cvth_id="impactEmailDisplay" id="impactEmail" disabled>
+							        <!--<a class="pure-button" href="#" style="font-size: 80%;"><span class="fa fa-file-image-o"></span> Upload Logo</a>-->
+    								</fieldset>
+									</form>
+								</div>							
+							</div>
+						
+							<div class="mod-sponsor-controlDesignate">
+								<div class="mod-sponsor-controlLabel">
+									Designate By
+									<a class="pure-button mod-sponsor-button" id="orgButton" href="#" style="font-size: 80%;">Org Name</a>
+									<a class="pure-button mod-sponsor-button" id="listButton" href="#" style="font-size: 80%;">Waiting List</a>
+									<a class="pure-button mod-sponsor-button pure-button-disabled pure-button-disabled" id="causeButton" href="#" style="font-size: 80%;">Cause</a>
+									<a class="pure-button mod-sponsor-button pure-button-disabled" id="regionButton" href="#" style="font-size: 80%;">Region</a>
+								</div>	
+								<div class="mod-sponsor-controlContent">
+									<div id="slidorion" class="slidorion">
+	    							<div class="slider">
+        						<div class="slide">About</div>
+        						<div class="slide">About</div>
+        						<div class="slide">About</div>
+    								</div>
+    								<div class="accordion">
+	        					<div class="header">Chicago Adventure Therapy</div>
+        						<div class="header">Fellowship Housing</div>
+        						<div class="header">Center for Faith and Community Health Transformation</div>
+        						<div class="header">Ravenswood Community Services</div>
+        						<div class="header">Episcopal Diocese of Chicago</div>
+        						<div class="header">Another</div>
+        						<div class="header">Another</div>
+        						<div class="header">Another</div>
+        						<div class="header">Another</div>
+        						<div class="header">Another</div>
+    								</div>
+    							</div>
+								</div>		
+							</div>
+							<!--
+									<form id="" class="pure-form">
+										<label for="name">Lookup by Name</label>
+										<input id="name" type="text" size="20" value="" style="font-size: 80%;">
+									</form>
+						-->
+						</div>
+						<div class="mod-sponsor-contentRight">
+							<form id="mod-sponsor-form" class="pure-form pure-form-stacked">
+								<p>Your generous gift of $<span id="levelAmountDisplay">100</span> will provide 1 year of <span id="levelServiceDisplay"></span> web conference service to <span id="benefactorNameDisplay">an eligible 501(c)(3) organization</span>.</p>
+																
+								<!-- TODO - hide on checkbox unselect -->
+								<p id="sponsorCheckedDisplay">
+									Your gift will be acknowledged in the name of <span id="sponsorNameDisplay"></span>.
+								</p>
+								
+								<p id="impactCheckedDisplay">
+									We will be delighted to send your impact report to <span id="impactEmailDisplay"></span>
+								</p>
+
+								
+								<p><button type="submit">Sponsor</button></p>
+								
+								<input type="hidden" name="level" value="">
+							</form>						
+						</div>
+						
+						<script type="text/javascript">$m.wand.copy_value_to_html = true;</script>

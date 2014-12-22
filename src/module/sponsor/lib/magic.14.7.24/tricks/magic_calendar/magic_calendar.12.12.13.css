@@ -1,0 +1,18 @@
+/****** Version 12.12.13 ******/
+img{border:0;}
+.mcal_iframe{border:1px solid #1863EC;border-radius:5px;box-shadow:3px 3px 5px #4D4D4D;display:block;position:absolute;width:350px;z-index:99999;}
+.mcal_icon{cursor:pointer;margin-left:5px;}
+.mcal_icon img{vertical-align:middle;}
+.mcal_table{background:#fff;border:0;border-collapse:collapse;height:250px;width:100%;}
+.mcal_table th,.mcal_subhead{height:23px;vertical-align:middle;}
+.mcal_table td{vertical-align:middle;}
+.mcal_subhead td{background-color:#d4d4d4 !important;border:1px solid #d4d4d4;}
+.mcal_table th{background-color:#1863EC;border:1px solid #1863EC;color:#fff;font-weight:bold;padding:3px;text-align:center;vertical-align:middle;}
+.mcal_table th img, .mcal_table td img{cursor:pointer;margin:auto 3px;vertical-align:middle;}
+.mcal_table td{background-color:#f9f9f9;border:1px solid #d4d4d4;padding:5px;text-align:center;vertical-align:middle;}
+.mcal_date_cur{background-color:#ffffcc !important;}
+.mcal_date a{color:#1863EC;padding:2px 5px;text-decoration:none;}
+.mcal_date a:hover,.mcal_date_sel a{background-color:#1863EC !important;border:1px #1863EC !important;border-radius:9px;color:#fff !important;padding:2px 5px;}
+.mcal_other_month{color:#c0c0c0;}
+.mcal_select{font-size:11px;margin:0;vertical-align:middle;}
+.mcal_field_on{box-shadow:0 0 4px #1863EC;}

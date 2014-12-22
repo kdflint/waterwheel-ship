@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Deposit - Example 2: Tricks: Magic JavaScript Framework</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="string_deposit.src.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	
+	<style type="text/css">
+		body{background-color:#fafbfd;font-family:Arial,sans-serif;font-size:12px;margin:0;padding:5px;}
+		h1{background-color:#e0e1e5 !important;border:1px solid #cdced1;border-radius:3px;font-size:15px;margin:0 0 5px 0;padding:5px;}
+		h1 img{vertical-align:middle;}
+	</style>
+	
+	<script type="text/javascript">
+	
+		/**/
+		var $str_deposit = {
+			
+			 // HTML Element ID which will show the list built from the "deposits" object below
+			 "id" : "string_deposit_ex_2_cont"
+			
+			// HTML template for each "deposit"
+			,"template" : '<tr><td><a href="#" class="bg_colors bg_colors_default" string_deposit="DEPOSIT_VALUE">DEPOSIT_TITLE</td><td>DEPOSIT_DESC</td></tr>'
+			
+			// The deposits object; values on the left are place holders for the template above
+			,"deposits" : {
+				0 : {
+					 "DEPOSIT_TITLE" : "Current Income"
+					,"DEPOSIT_VALUE" : "$current_income"
+					,"DEPOSIT_DESC" : "Your current gross income"
+				}
+				
+				,1 : {
+					 "DEPOSIT_TITLE" : "Desired Income"
+					,"DEPOSIT_VALUE" : "$desired_income"
+					,"DEPOSIT_DESC" : "Your desired income in 5 years"
+				}
+				
+				,2 : {
+					 "DEPOSIT_TITLE" : "Projected Income"
+					,"DEPOSIT_VALUE" : "$projected_income"
+					,"DEPOSIT_DESC" : "Your projected income"
+				}
+			}
+
+			// Action performed on the HTML Element ID above; Acceptable values are: overwrite, append, prepend
+			,"action" : "ovewrite"
+		}
+		/**/
+
+	</script>
+</head>
+
+<body>
+
+	<h1><img src="icon_string_deposit.png" alt="icon_string_deposit" width="16" height="16"> String Deposit &ndash; Example 2</h1>
+	
+	<table class="general_table margin_top_10" id="string_deposit_ex_2_cont"></table>
+	
+	<!-- <p><input type="button" value="Refresh" onclick="window.location.reload();"></p> -->
+
+	<script type="text/javascript">
+		window.onload = function(){parent.$m.t.string_deposit.cur.deposit_id=document.getElementById($str_deposit.id);parent.$m.t.string_deposit.cur.deposit_template=$str_deposit.template;parent.$m.t.string_deposit.cur.deposits=$str_deposit.deposits;parent.$m.t.string_deposit.cur.deposit_action=$str_deposit.action;parent.$m.t.string_deposit.write();};
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Lookup: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+	
+	<link href="ajax_lookup.11.4.29.css" rel="stylesheet">
+	<script type="text/javascript" src="ajax_lookup.src.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> AJAX Lookup (11.12.30): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Fetching server data when typing on the client</h2>
+
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<ul>
+			<li>
+				Add<br>
+				<code>&lt;link href="/PATH/TO/magic/tricks/ajax_lookup/ajax_lookup.<script type="text/javascript">document.write($m.versions.tricks.ajax_lookup);</script>.css" rel="stylesheet"&gt;</code><br>
+				<code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/ajax_lookup/ajax_lookup.<script type="text/javascript">document.write($m.versions.tricks.css.ajax_lookup);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+				below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+			</li>
+			<li>Add <code>data-mjf="ajax_lookup|return_false" id="ELEMENT_ID"</code> to your clickable tag.</li>
+			<li>Add <code>&lt;script type="text/javascript"&gt;$m.trick.ajax_lookup = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</li>
+		</ul>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Example 1</legend>
+		
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="order.dealer_code"><span class="required_field">*</span> Dealer Code</label>
+				<span class="form_line_right_field">
+					<input type="text" name="dealer_code_suggest" value="" class="input_fld input_text" data-mjf="ajax_suggest" data-suggest_id="order.dealer_code_suggest" data-mjf_ajax_url="/dealers/" data-mjf_ajax_update_id="dealer_info_order" id="order.dealer_code" autocomplete="off">
+					<span class="suggest_box" id="dealer_info_order"></span>
+				</span>
+				<br class="clear_both">
+			</p>
+		
+	</fieldset>
+
+
+
+	<fieldset>
+
+		<legend>Notes</legend>
+
+		<ul>
+			<li></li>
+		</ul>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Change Log</legend>
+
+		<h3>&rarr; 11.12.30</h3>
+		<ul>
+			<li></li>
+		</ul>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>To Do</legend>
+
+		<ul>
+			<li></li>
+		</ul>
+
+	</fieldset>
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>	
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.trick.ajax_lookup.ajax_suggest = true;
+		$m.trick.ajax_lookup.suggest_select = true;
+	</script>
+
+
+</body>
+</html>

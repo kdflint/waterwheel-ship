@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Polling: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> AJAX Polling: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<div class="form_line_content">
+			<p>Add the code below inside your <code>&lt;body&gt;</code> tag and then update it&hellip;</p>
+
+<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;script type="text/javascript"&gt;
+    $m.wand.ajax_polling = {
+         callback : "JS_FUNCTION" // optional -- JavaScript callback; defaults to "simple_content_update"
+        ,element_id : "auto_poller" // REQUIRED -- a unique identifier
+        ,ga_track : false // optional -- "true" or "false"; defaults to "true"
+        ,interval : 7 // REQUIRED -- in seconds
+        ,method : "get" // optional -- "get" or "post"; defaults to "get"
+        ,password : "" // optional
+        ,query : "NAME=VAR" // optional -- "extra=awesome&foo=bar"
+        ,timeout : // optional -- in seconds
+        ,update_id : "ELEMENT_UPDATE_ID" // REQUIRED -- an HTML element that will receive the data from the server
+        ,update_id_action : "overwrite" // optional -- "overwrite", "append", or "prepend"; defaults to "overwrite"
+        ,url : "/PATH/TO/SERVER/SCRIPT/" // REQUIRED
+        ,username : "" // optional
+    }
+&lt;/script&gt;</textarea></p>
+
+		</div>
+	
+	</fieldset>
+	
+	<fieldset>
+
+		<legend>Example</legend>
+		
+		<div class="form_line_content">
+		
+			<p>AJAX Polling will fire every 7 seconds &mdash; wait for it, wait for it&hellip;</p>
+
+			<div id="auto_polling_id"></div>
+			
+		</div>
+		
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Notes</legend>
+
+		<p class="form_line_content">Use this wisely &mdash; it's a good way to annoy your visitors and hammer your server.</p>
+		<p class="form_line_content">You may safely remove the <code>// optional</code> properties from the example.</p>
+
+	</fieldset>
+
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		/**/
+		$m.wand.ajax_polling = {
+			 url : "_ajax.php"
+			,query : "extra=awesome"
+			,element_id : "auto_poller"
+			,update_id : "auto_polling_id"
+			,interval : 7
+		}
+		/**/
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

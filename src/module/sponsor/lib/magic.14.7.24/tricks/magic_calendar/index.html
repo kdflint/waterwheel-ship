@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Magic Calendar: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<link href="magic_calendar.src.css" rel="stylesheet">
+	<script type="text/javascript" src="magic_calendar.src.js" charset="UTF-8"></script>
+	
+	<script type="text/javascript">
+		//$m.t.magic_calendar.earliest_year = 1800;
+	</script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Magic Calendar (<script type="text/javascript">document.write($m.versions.tricks.magic_calendar);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Save the date in a pop-up you can actually see</h2>
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="usage_cont" id="usage_link">Usage</a></legend>
+		
+		<div class="display_block" id="usage_cont">
+
+			<p class="form_line_content">
+				Add <code>&lt;link href="/PATH/TO/magic/tricks/magic_calendar/magic_calendar.<script type="text/javascript">document.write($m.versions.tricks.css.magic_calendar);</script>.css" rel="stylesheet"&gt;<br>
+				&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/magic_calendar/magic_calendar.<script type="text/javascript">document.write($m.versions.tricks.magic_calendar);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+				below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+			</p>
+				
+			<div class="form_line_content">
+				<p>Add <code>data-mjf_mcal_date_format="DATE_FORMAT"</code> to your <code>&lt;input&gt;</code> tag where <code>DATE_FORMAT</code> is one from the list below&hellip;</p>
+				<ul>
+					<li><code>MM-dd-yyyy</code> &ndash; <span class="helper_text">09-15-2011</span></li>
+					<li><code>MM/dd/yyyy</code> &ndash; <span class="helper_text">09/15/2011</span></li>
+					<li><code>yyyy-MM-dd</code> &ndash; <span class="helper_text">2011-09-15</span></li>
+					<li><code>yyyy/MM/dd</code> &ndash; <span class="helper_text">2011/09/15</span></li>
+					<li><code>MMM dd, yyyy</code> &ndash; <span class="helper_text">Sep 15, 2011</span></li>
+					<li><code>MMMM dd, yyyy</code> &ndash; <span class="helper_text">September 15, 2011</span></li>
+				</ul>
+			</div>
+	
+			<div class="form_line_content">
+				<p>Add <code>data-mjf_mcal_time_format="TIME_FORMAT"</code> to your <code>&lt;input&gt;</code> tag (if you'd like to include the time) where <code>TIME_FORMAT</code> is one from the list below&hellip;</p>
+				<ul>
+					<li><code>H:mm:ss ampm</code> &ndash; <span class="helper_text">2:30:00 pm</span></li>
+					<li><code>H:mm ampm</code> &ndash; <span class="helper_text">1:00 pm</span></li>
+				</ul>
+			</div>
+	
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.trick.magic_calendar = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+			<p class="form_line_content">Use the examples below as a guide for building up your own!</p>
+			
+		</div>
+	
+	</fieldset>
+
+
+	<form action="#" method="post">
+
+		<fieldset>
+	
+			<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="examples_cont" id="examples_link">Examples</a></legend>
+			
+			<div class="display_block" id="examples_cont">
+			
+				<div class="form_line_content">
+				
+					<p>
+						<input type="text" name="mcal_ex_1" value="09-15-2011" size="10" data-mjf="magic_calendar" data-mjf_mcal_date_format="MM-dd-yyyy" class="input_fld input_text_small" id="mcal_ex_1">
+					</p>
+					<p>
+						<code>&lt;input type="text" name="mcal_ex_1" value="09-15-2011" size="10" data-mjf="magic_calendar" data-mjf_mcal_date_format="MM-dd-yyyy" class="input_fld input_text_small" id="mcal_ex_1"&gt;</code>
+					</p>
+	
+				</div>
+	
+				<div class="form_line_content">
+	
+					<p>
+						<input type="text" name="mcal_ex_2" value="09/15/2002 2:30:00 pm" size="25" data-mjf="magic_calendar" data-mjf_mcal_date_format="MM/dd/yyyy" data-mjf_mcal_time_format="H:mm:ss ampm" class="input_fld input_text_small" id="mcal_ex_2">
+					</p>
+					<p>
+						<code>&lt;input type="text" name="mcal_ex_2" value="09/15/2002 2:30:00 pm" size="25" data-mjf="magic_calendar" data-mjf_mcal_date_format="MM/dd/yyyy" data-mjf_mcal_time_format="H:mm:ss ampm" class="input_fld input_text_small" id="mcal_ex_2"&gt;</code>
+					</p>
+	
+				</div>
+	
+				<div class="form_line_content">
+	
+					<p>
+						<input type="text" name="mcal_ex_3" value="2002-09-15" size="10" data-mjf="magic_calendar" data-mjf_mcal_date_format="yyyy-MM-dd" class="input_fld input_text_small" id="mcal_ex_3">
+					</p>
+					<p>
+						<code>&lt;input type="text" name="mcal_ex_3" value="2002-09-15" size="10" data-mjf="magic_calendar" data-mjf_mcal_date_format="yyyy-MM-dd" class="input_fld input_text_small" id="mcal_ex_3"&gt;</code>
+					</p>
+	
+				</div>
+	
+				<div class="form_line_content">
+	
+					<p>
+						<input type="text" name="mcal_ex_4" value="2002/09/15 1:00 pm" size="25" data-mjf="magic_calendar" data-mjf_mcal_date_format="yyyy/MM/dd" data-mjf_mcal_time_format="H:mm ampm" class="input_fld input_text_small" id="mcal_ex_4">
+					</p>
+					<p>
+						<code>&lt;input type="text" name="mcal_ex_4" value="2002/09/15 1:00 pm" size="25" data-mjf="magic_calendar" data-mjf_mcal_date_format="yyyy/MM/dd" data-mjf_mcal_time_format="H:mm ampm" class="input_fld input_text_small" id="mcal_ex_4"&gt;</code>
+					</p>
+	
+				</div>
+	
+				<div class="form_line_content">
+	
+					<p>
+						<input type="text" name="mcal_ex_5" value="Sep 15, 2002" size="15" data-mjf="magic_calendar" data-mjf_mcal_date_format="MMM dd, yyyy" class="input_fld input_text_small" id="mcal_ex_5">
+					</p>
+					<p>
+						<code>&lt;input type="text" name="mcal_ex_5" value="Sep 15, 2002" size="15" data-mjf="magic_calendar" data-mjf_mcal_date_format="MMM dd, yyyy" class="input_fld input_text_small" id="mcal_ex_5"&gt;</code>
+					</p>
+	
+				</div>
+	
+				<div class="form_line_content">
+	
+					<p>
+						<input type="text" name="mcal_ex_6" value="September 15, 2002  9:30:10 am" size="30" data-mjf="magic_calendar" data-mjf_mcal_date_format="MMMM dd, yyyy" data-mjf_mcal_time_format="H:mm:ss ampm" class="input_fld input_text_small" id="mcal_ex_6">
+					</p>
+					<p>
+						<code>&lt;input type="text" name="mcal_ex_6" value="September 15, 2002  9:30:10 am" size="30" data-mjf="magic_calendar" data-mjf_mcal_date_format="MMMM dd, yyyy" data-mjf_mcal_time_format="H:mm:ss ampm" class="input_fld input_text_small" id="mcal_ex_6"&gt;</code>
+					</p>
+	
+				</div>
+	
+				<div class="form_line_content">
+	
+					<p>
+						<input type="text" name="mcal_ex_7" value="" size="30" data-mjf="magic_calendar" data-mjf_mcal_date_format="MMMM dd, yyyy" data-mjf_mcal_time_format="H:mm:ss ampm" class="input_fld input_text_small" id="mcal_ex_7">
+					</p>
+					<p>
+						<code>&lt;input type="text" name="mcal_ex_7" value="" size="30" data-mjf="magic_calendar" data-mjf_mcal_date_format="MMMM dd, yyyy" data-mjf_mcal_time_format="H:mm:ss ampm" class="input_fld input_text_small" id="mcal_ex_7"&gt;</code>
+					</p>
+	
+				</div>
+
+			</div>
+
+		</fieldset>
+
+	</form>
+
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="notes_cont" id="notes_link">Notes</a></legend>
+			
+		<div class="display_block" id="notes_cont">
+
+			<p class="form_line_content">24 hour times are not supported - visitors can easily become confused when entering the hour.</p>
+			<p class="form_line_content">To set the starting year of the dropdown, add <code>&lt;script type="text/javascript"&gt;$m.t.magic_calendar.earliest_year = YYYY&lt;/script&gt;</code> inside your <code>&lt;head&gt;</code> tag. It defaults to 100 years in the past.</p>
+			<p class="form_line_content">To set the ending year of the dropdown, add <code>&lt;script type="text/javascript"&gt;$m.t.magic_calendar.furthest_year = YYYY&lt;/script&gt;</code> inside your <code>&lt;head&gt;</code> tag. It defaults to 50 years in the future.</p>
+
+		</div>
+
+	</fieldset>
+
+
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="change_log_cont" id="change_log_link">Change Log</a></legend>
+			
+		<div class="display_block" id="change_log_cont">
+		
+			<div class="form_line_content">
+				<h3>14.6.3</h3>
+				<ul>
+					<li>Minor design freshen.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>13.3.27</h3>
+				<ul>
+					<li>Fixed the bug in touch-based browsers where calendars didn't disappear when clicking outside the calendar.</li>
+					<li>Code optimization.</li>
+				</ul>
+			</div>
+		
+			<div class="form_line_content">
+				<h3>13.2.6</h3>
+				<ul>
+					<li>Invalid dates and times are now handled more gracefully.</li>
+				</ul>
+			</div>
+		
+			<div class="form_line_content">
+				<h3>12.12.13</h3>
+				<ul>
+					<li>Moved as much CSS as possible from magic_calendar.src.js to magic_calendar.src.css.</li>
+					<li>Added a box shadow (CSS class <code>mcal_field_on</code>) to the form field associated with the calendar while the calendar is visible.</li>
+					<li>Disabled the form field focus when picking a date/time for touch-based browsers.</li>
+					<li>Disabled opacity animation on touch-based browsers &mdash; too slow at the moment.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.12.12</h3>
+				<ul>
+					<li>Removed the JavaScript <code>alert</code> when entering invalid date/times.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.11.6</h3>
+				<ul>
+					<li>New toolbar icons.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>12.10.30</h3>
+				<ul>
+					<li>Updated to use animation easing functionality added in Magic JS 12.10.2 when showing the calendar.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.9.17</h3>
+				<ul>
+					<li>Now displays a JavaScript <code>alert()</code> when the calendar encounters an invalid date/time format.</li>
+				</ul>
+			</div>
+				
+			<div class="form_line_content">
+				<h3>12.8.20</h3>
+				<ul>
+					<li>Now more reliable when using <a href="../../docs/ajax/predefined_json_parsing.html">Predefined JSON parsing.</a></li>
+				</ul>
+			</div>
+				
+			<div class="form_line_content">
+				<h3>12.7.20</h3>
+				<ul>
+					<li>Calendar pop-up will now position itself horizontally so it's always visible.</li>
+					<li>Added the ability to set the earliest and furthest years in the dropdown.</li>
+				</ul>
+			</div>
+				
+			<div class="form_line_content">
+				<h3>12.1.9</h3>
+				<ul>
+					<li>Calendar pop-up will now position itself vertically so it's always visible.</li>
+					<li>Original date field is now focus'ed after choosing a date.</li>
+					<li>Fixed tab key navigation - the selected date is now focused by default and visitors can use the tab/shift+tab key(s) to navigate the various fields and dates.</li>
+					<li>Fixed Opera font colors.</li>
+				</ul>
+			</div>
+				
+			<div class="form_line_content">
+				<h3>11.12.18</h3>
+				<ul>
+					<li>Initial Release</li>
+				</ul>
+			</div>
+				
+			<div class="form_line_content">
+				<h3>11.12.2</h3>
+				<ul>
+					<li>Initial Build</li>
+				</ul>
+			</div>
+			
+		</div>
+
+	</fieldset>
+
+	<script type="text/javascript">
+		$m.wand.lightswitch = true;
+		$m.trick.darkroom = true;
+		$m.trick.magic_calendar = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic Tabs: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<link href="../../stylesheets/dynamic_tabs.12.5.22.css" rel="stylesheet">
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Dynamic Tabs: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+			<p class="form_line_content">
+				Add <code>&lt;link href="/PATH/TO/magic/stylesheets/dynamic_tabs.<script type="text/javascript">document.write($m.versions.css.dynamic_tabs)</script>.css" rel="stylesheet"&gt;</code><br><br>
+				below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+			</p>
+			
+			<div class="form_line_content">
+			
+				<p>Add&hellip;</p>
+				<p><code>&lt;script type="text/javascript"&gt;$m.wand.dynamic_tabs = true;&lt;/script&gt;</code>
+							
+				<p>-OR-</p>
+					
+				<p><code>&lt;script type="text/javascript"&gt;<br>
+&nbsp;$m.wand.dynamic_tabs = [{<br>
+&nbsp;&nbsp;&nbsp;name : "tab_ex"<br>
+&nbsp;&nbsp;,autostart : true<br>
+&nbsp;&nbsp;,delay : 3 // seconds<br>
+&nbsp;}];<br>
+&lt;/script&gt;</code></p>
+				
+				<p>&hellip;inside your <code>&lt;body&gt;</code> tag.</p>
+				
+			</div>
+				
+				
+			<p class="form_line_content">Use the example below as a guide for building your own!</li>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Example</legend>
+
+		<div class="padding_10">
+		
+			<ul class="tab_links">
+				<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_1" class="tab_link_active" id="tab_set_1_1_link">Tab 1</a></li>
+				<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_2" class="" id="tab_set_1_2_link">Tab 2</a></li>
+				<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_3" class="" id="tab_set_1_3_link">Tab 3</a></li>
+			</ul>
+			
+			<div data-mjf_dtab_set="tab_ex" class="tab_box display_block" id="tab_set_1_1">
+				<p>Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit. Mauris a quam non tortor tempor laoreet eu sit amet lectus. Suspendisse potenti. Quisque vehicula faucibus lacinia. Proin ligula massa, tristique et fermentum sollicitudin, dictum eget enim. Integer fermentum metus quis libero suscipit in semper lorem ornare. Aenean laoreet, justo a commodo bibendum, lorem nisi rutrum massa, quis gravida dui sapien condimentum eros. Curabitur ac erat massa. Donec pretium pharetra ante ac sodales. Phasellus quam turpis, rutrum vel eleifend pretium, malesuada vel purus.</p>
+				<p>Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci. Integer in massa faucibus turpis rhoncus pretium non sit amet felis. Nam tincidunt cursus augue vel vehicula. In sed arcu quis purus sagittis dignissim. Mauris lacus leo, fermentum nec consequat quis, facilisis ac quam. Nulla facilisi. Proin fringilla leo at lectus ultrices et iaculis dui vestibulum. Pellentesque interdum commodo nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit amet orci luctus mi hendrerit dapibus.</p>
+			</div>
+			
+			<div data-mjf_dtab_set="tab_ex" class="tab_box" id="tab_set_1_2">
+				<p>Pellentesque in elit vel urna ultrices cursus sit amet ultrices magna. Curabitur eu enim sit amet risus tempor ultrices quis suscipit lectus. Curabitur id ligula lacus, at porttitor leo. Etiam accumsan condimentum metus vel tempus. Nullam eget mauris felis. Cras pulvinar pharetra sodales. Nunc suscipit turpis neque. Vestibulum ut eros eros, vitae congue enim. Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit. Mauris a quam non tortor tempor laoreet eu sit amet lectus. Suspendisse potenti. Quisque vehicula faucibus lacinia.</p>
+				<p>Proin ligula massa, tristique et fermentum sollicitudin, dictum eget enim. Integer fermentum metus quis libero suscipit in semper lorem ornare. Aenean laoreet, justo a commodo bibendum, lorem nisi rutrum massa, quis gravida dui sapien condimentum eros. Curabitur ac erat massa. Donec pretium pharetra ante ac sodales. Phasellus quam turpis, rutrum vel eleifend pretium, malesuada vel purus.</p>
+			</div>
+			
+			<div data-mjf_dtab_set="tab_ex" class="tab_box" id="tab_set_1_3">
+				<p>Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci. Integer in massa faucibus turpis rhoncus pretium non sit amet felis. Nam tincidunt cursus augue vel vehicula. In sed arcu quis purus sagittis dignissim. Mauris lacus leo, fermentum nec consequat quis, facilisis ac quam. Nulla facilisi. Proin fringilla leo at lectus ultrices et iaculis dui vestibulum. Pellentesque interdum commodo nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit amet orci luctus mi hendrerit dapibus.</p>
+				<p>Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit. Mauris a quam non tortor tempor laoreet eu sit amet lectus. Suspendisse potenti. Quisque vehicula faucibus lacinia. Proin ligula massa, tristique et fermentum sollicitudin, dictum eget enim. Integer fermentum metus quis libero suscipit in semper lorem ornare. Aenean laoreet, justo a commodo bibendum, lorem nisi rutrum massa, quis gravida dui sapien condimentum eros. Curabitur ac erat massa. Donec pretium pharetra ante ac sodales. Phasellus quam turpis, rutrum vel eleifend pretium, malesuada vel purus.</p>
+			</div>
+			
+		</div>
+
+<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly"><ul class="tab_links">
+	<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_1" class="tab_link_active" id="tab_set_1_1_link">Tab 1</a></li>
+	<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_2" class="" id="tab_set_1_2_link">Tab 2</a></li>
+	<li><a href="#" data-mjf="dynamic_tabs|return_false" data-mjf_dtab_set="tab_ex" data-mjf_dtab_id="tab_set_1_3" class="" id="tab_set_1_3_link">Tab 3</a></li>
+</ul>
+
+<div data-mjf_dtab_set="tab_ex" class="tab_box display_block" id="tab_set_1_1">
+	<p>Tab Content 1</p>
+</div>
+
+<div data-mjf_dtab_set="tab_ex" class="tab_box" id="tab_set_1_2">
+	<p>Tab Content 2</p>
+</div>
+
+<div data-mjf_dtab_set="tab_ex" class="tab_box" id="tab_set_1_3">
+	<p>Tab Content 3</p>
+</div></textarea></p>
+
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Notes</legend>
+		
+		<p class="form_line_content">Add <code>data-mjf_dtab_shct="KEYSTROKE"</code> to your <code>&lt;a&gt;</code> tags if you'd like to enable keyboard shortcuts.</p>
+		<p class="form_line_content">Add <code>data-mjf_ga_track="false"</code> to your <code>&lt;a&gt;</code> tags if you don't want Google Analytics to track the particular click.</p>
+		<p class="form_line_content">Add <code>data-mjf_dtab_cookie="false"</code> to your <code>&lt;a&gt;</code> tags if you don't want the last tab to be remembered.</p>
+	
+	</fieldset>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		/**/
+		$m.wand.dynamic_tabs = [
+			{
+				 name : "tab_ex"
+				,autostart : true
+				,delay : 3
+			}
+		];
+		/**/
+		
+		/**
+		$m.wand.dynamic_tabs = true;
+		/**/
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

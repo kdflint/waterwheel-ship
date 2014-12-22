@@ -1,0 +1,1 @@
+<?php echo date("Y-M-d g:i:s a"); ?>

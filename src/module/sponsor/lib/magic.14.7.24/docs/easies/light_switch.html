@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Light Switch: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Light Switch: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+		
+		<p class="form_line_content">Add <code>data-mjf="lightswitch|return_false" data-mjf_lswitch_id="ELEMENT_CONTENT_ID" id="ELEMENT_ID"</code> to your clickable tag.</p>
+		<p class="form_line_content">Add <code>class="display_block(OR)display_inline(OR)display_table-row(OR)display_none" id="ELEMENT_CONTENT_ID"</code> to your tag that contains the lightswitch content itself. This sets the intial content style.</p>
+		<p class="form_line_content">Add <code>data-mjf_lswitch_display="inline"</code> to your clickable tag if the lightswitch content is to be displayed inline</p>
+		<p class="form_line_content">Add <code>data-mjf_lswitch_display="table-row"</code> to your clickable tag if the lightswitch content is to be displayed as a table row.</p>
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.lightswitch = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Examples</legend>
+
+		<div class="form_line_content">
+
+			<p>
+				<a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_all="expand" id="lswitch_toggle_all"><strong>Toggle All</strong></a> &rarr; Collapse or expand all lightswitches on a page
+			</p>
+	
+			<p><code>&lt;a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_all="collapse(OR)expand" id="lswitch_toggle_all"&gt;Toggle All&lt;/a&gt;</code></p>
+			
+		</div>
+
+
+		<div class="form_line_content">
+	
+			<p>
+				<a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="ls_example_block" id="ls_example_block_link"><strong>Display Block</strong></a>
+			</p>
+			
+			<div class="bg_white display_none padding_5" id="ls_example_block">
+				<p>Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit. Mauris a quam non tortor tempor laoreet eu sit amet lectus. Suspendisse potenti. Quisque vehicula faucibus lacinia. Proin ligula massa, tristique et fermentum sollicitudin, dictum eget enim. Integer fermentum metus quis libero suscipit in semper lorem ornare. Aenean laoreet, justo a commodo bibendum, lorem nisi rutrum massa, quis gravida dui sapien condimentum eros. Curabitur ac erat massa. Donec pretium pharetra ante ac sodales. Phasellus quam turpis, rutrum vel eleifend pretium, malesuada vel purus. Pellentesque in elit vel urna ultrices cursus sit amet ultrices magna. Curabitur eu enim sit amet risus tempor ultrices quis suscipit lectus. Curabitur id ligula lacus, at porttitor leo. Etiam accumsan condimentum metus vel tempus. Nullam eget mauris felis. Cras pulvinar pharetra sodales. Nunc suscipit turpis neque. Vestibulum ut eros eros, vitae congue enim.</p>
+				<p>Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam non augue sit amet justo fringilla vestibulum at nec nisl. Nullam massa mi, rutrum non accumsan nec, feugiat aliquam ligula. Proin urna magna, tempor ut blandit in, tincidunt vel massa. Donec semper lorem sapien, at interdum mi. Mauris fermentum tempus lorem at congue. Phasellus dignissim congue nisl in mollis. Aliquam sodales auctor vehicula. Phasellus ut tortor nisi. Quisque velit est, vehicula at auctor ut, blandit a est. Ut in augue arcu. Praesent sed malesuada lectus. In ac interdum nunc. Cras est sapien, scelerisque non mattis aliquam, scelerisque sit amet felis. Curabitur non leo diam. Nunc dictum mauris in erat vehicula aliquet. Fusce sed faucibus eros. Morbi turpis libero, sodales eu lobortis auctor, vulputate a purus. Praesent interdum cursus justo.</p>
+				<p>Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci. Integer in massa faucibus turpis rhoncus pretium non sit amet felis. Nam tincidunt cursus augue vel vehicula. In sed arcu quis purus sagittis dignissim. Mauris lacus leo, fermentum nec consequat quis, facilisis ac quam. Nulla facilisi. Proin fringilla leo at lectus ultrices et iaculis dui vestibulum. Pellentesque interdum commodo nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit amet orci luctus mi hendrerit dapibus.</p>
+			</div>
+	
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;&lt;a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="ls_example_block" id="ls_example_block_link"&gt;Display Block&lt;/a&gt;&lt;/p&gt;
+&lt;p class="display_none" id="ls_example_block"&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</textarea></p>
+
+		</div>
+
+
+		<div class="form_line_content">
+	
+			<p>
+				<a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="ls_example_inline" data-mjf_lswitch_display="inline" data-mjf_lswitch_use_css="false" id="ls_example_inline_link"><strong>Display Inline</strong></a>
+				<span class="bg_white display_none padding_5" id="ls_example_inline">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+			</p>
+	
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;
+    &lt;a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="ls_example_inline" data-mjf_lswitch_display="inline" data-mjf_lswitch_use_css="false" id="ls_example_inline_link"&gt;Display Inline&lt;/a&gt; (without link styling)
+    &lt;span class="display_none" id="ls_example_inline"&gt;Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/span&gt;
+&lt;/p&gt;</textarea></p>
+
+			<p>This example doesn't contain link styling.</p>
+	
+		</div>
+
+
+		<div class="form_line_content">
+			
+			<p> <!-- -->
+				<input type="checkbox" name="" value="" data-mjf="lightswitch" data-mjf_lswitch_id="ls_example_checkbox" data-mjf_lswitch_animate_increments="25" class="input_checkbox" id="ls_example_checkbox_link"><label for="ls_example_checkbox_link"><strong>Single Checkbox</strong></label>
+			</p>
+			
+			<p class="bg_white display_block padding_5" id="ls_example_checkbox">
+				Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci. Integer in massa faucibus turpis rhoncus pretium non sit amet felis. Nam tincidunt cursus augue vel vehicula. In sed arcu quis purus sagittis dignissim. Mauris lacus leo, fermentum nec consequat quis, facilisis ac quam. Nulla facilisi. Proin fringilla leo at lectus ultrices et iaculis dui vestibulum. Pellentesque interdum commodo nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit amet orci luctus mi hendrerit dapibus.
+			</p>
+
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;&lt;input type="checkbox" data-mjf="lightswitch" data-mjf_lswitch_id="ls_example_checkbox" data-mjf_lswitch_animate_increments="25" class="input_checkbox" id="ls_example_checkbox_link"&gt;&lt;label for="ls_example_checkbox_link"&gt;Single Checkbox&lt;/label&gt;&lt;/p&gt;
+&lt;p class="display_block" id="ls_example_checkbox"&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;</textarea></p>
+			
+		</div>
+
+		
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Notes</legend>
+		
+		<p class="form_line_content">Add <code>data-mjf_lswitch_cookie="false"</code> to your clickable tags if you don't want the lightswitch to be remembered.</p>
+		<p class="form_line_content">Add <code>data-mjf_lswitch_use_css="false"</code> if you don't want the click tag to be styled.</p>
+		<p class="form_line_content">Add <code>data-mjf_lswitch_animate_increments="N"</code> if you want to set the animation speed. It defaults to <code>5</code> and a higher number slows down the animation. Use <code>0</code> to disable to the animation completely.</p>
+		<p class="form_line_content">If you want to use radio buttons, have a look at the <a href="css_class_update.html">CSS Class Update</a> and use the predefined <code>display_none</code> and <code>display_block</code> CSS classes.</p>
+		<p class="form_line_content">Currently only <code>display_block</code> lightswitches are animated.</p>
+		<p class="form_line_content">Checkboxes aren't and won't be styled by default.</p>
+
+	</fieldset>
+
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.lightswitch = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

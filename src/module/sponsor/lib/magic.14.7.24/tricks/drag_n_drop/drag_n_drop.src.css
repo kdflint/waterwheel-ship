@@ -1,0 +1,10 @@
+/****** Version 12.12.11 ******/
+.dnd_grab{cursor:move;}
+.dnd_grab_current{display:none;}
+.dnd_sort_cont{border:3px inset #666; height:160px;}
+html>body .dnd_sort_cont{height:auto;min-height:160px;}
+.dnd_sort_box{background-color:#fff !important;border:1px solid #d4d4d4;cursor:move;float:left;height:65px;margin:5px;overflow:hidden;padding:75px 5px 5px 5px;position:relative;text-align:center;width:140px;}
+.dnd_sort_box *{cursor:default;}
+.dnd_sort_box_remove{cursor:pointer !important;position:absolute;right:1px;top:1px;}
+.dnd_removed{background-color:#FFDBE1 !important;}
+#mjs_drag_helper{background-color:#fffff4 !important;border-style:dashed;}

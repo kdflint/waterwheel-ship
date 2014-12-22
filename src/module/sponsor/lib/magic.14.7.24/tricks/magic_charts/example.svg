@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0px" y="0px" width="612px" height="792px" viewBox="-135.584 -327.812 612 792" overflow="visible" enable-background="new -135.584 -327.812 612 792" xml:space="preserve">
+	<rect y="138.606" width="235.289" height="4.256"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="11.738" x2="0" y2="11.738"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="0.199" x2="0" y2="0.199"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="27.596" x2="0" y2="27.596"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="43.455" x2="0" y2="43.455"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="59.313" x2="0" y2="59.313"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="75.172" x2="0" y2="75.172"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="91.03" x2="0" y2="91.03"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="106.891" x2="0" y2="106.891"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="122.748" x2="0" y2="122.748"/>
+	<line fill="none" stroke="#CDCCCC" stroke-width="0.3984" x1="235.282" y1="138.606" x2="0" y2="138.606"/>
+	<rect x="11.997" y="125.837" fill="#3FBEEE" width="53.824" height="12.77"/>
+	<rect x="167.634" y="133.808" fill="#D32027" width="53.823" height="4.799"/>
+	<rect x="89.815" y="3.834" fill="#F6EB16" width="53.823" height="134.772"/>
+	<g>
+		<text transform="matrix(1 0 0 1 30.688 118.502)" fill="#010101" font-family="'Helvetica'" font-size="9.2226">8 %</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 108.687 118.502)" fill="#010101" font-family="'Helvetica'" font-size="9.2226">89 %</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 181.4688 118.502)" fill="#010101" font-family="'Helvetica'" font-size="9.2226">1.3 %</text>
+	</g>
+</svg>

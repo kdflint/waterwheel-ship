@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table: Magic Editor: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../magic_editor.14.1.12.css" rel="stylesheet" media="all">
+	<link href="pages.css" rel="stylesheet" media="all">
+	<script type="text/javascript" src="table.src.js" charset="UTF-8"></script>
+</head>
+
+<body>
+
+	<h1><span class="magic_editor_btn magic_editor_btn_table"></span><script type="text/javascript">document.write(parent.$m.lang.magic_editor.table.table);</script></h1>
+	
+	<div class="padding_5">
+
+		<form action="#" method="post">
+		
+			<p class="bg_edeef2 padding_5">
+				<label for="tbl_rows"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.table.rows);</script></label> <input type="text" name="tbl_rows" size="2" class="margin_right_5" id="tbl_rows" value="4">
+				<label for="tbl_cols"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.table.columns);</script></label> <input type="text" name="tbl_cols" size="2" class="margin_right_5" id="tbl_cols" value="4">
+				<label for="tbl_padding"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.table.cell_padding);</script></label> <input type="text" name="tbl_padding" size="2" class="margin_right_5" id="tbl_padding" value="2">
+			</p>
+
+			<p class="bg_edeef2 padding_5">
+				<label class="form_left" for="tbl_width"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.table.width);</script></label>
+				<input type="text" name="tbl_width" size="3" class="input_fld input_text_small" id="tbl_width" value="100">
+				<input type="radio" name="tbl_width_in" value="%" class="input_radio" id="tbl_width_in_per" checked="checked"><label for="tbl_width_in_per"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.table.percent);</script></label>
+				<input type="radio" name="tbl_width_in" value="px" class="input_radio" id="tbl_width_in_pix"><label for="tbl_width_in_pix"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.table.pixels);</script></label>
+			</p>
+
+			<p class="padding_5">
+				<script type="text/javascript">
+					document.write(parent.$m.lang.magic_editor.table.border + '<select name="tbl_bo_color" class="margin_left_5" id="tbl_bo_color" onchange="$me_table.update_preview();"><option value="black">' + parent.$m.lang.magic_editor.table.colors.black + '</option><option value="blue">' + parent.$m.lang.magic_editor.table.colors.blue + '</option><option value="green">' + parent.$m.lang.magic_editor.table.colors.green + '</option><option value="lime">' + parent.$m.lang.magic_editor.table.colors.lime + '</option><option value="navy">' + parent.$m.lang.magic_editor.table.colors.navy + '</option><option value="orange">' + parent.$m.lang.magic_editor.table.colors.orange + '</option><option value="purple">' + parent.$m.lang.magic_editor.table.colors.purple + '</option><option value="red">' + parent.$m.lang.magic_editor.table.colors.red + '</option><option value="teal">' + parent.$m.lang.magic_editor.table.colors.teal + '</option><option value="white">' + parent.$m.lang.magic_editor.table.colors.white + '</option><option value="yellow">' + parent.$m.lang.magic_editor.table.colors.yellow + '</option></select>');
+				</script>
+				<select name="tbl_border_size" class="margin_left_5 margin_right_5" id="tbl_border_size" onchange="$me_table.update_preview();">
+					<option value="0">0 pt</option>
+					<option value="1" selected="selected">1 pt</option>
+					<option value="2">2 pt</option>
+					<option value="3">3 pt</option>
+					<option value="4">4 pt</option>
+					<option value="5">5 pt</option>
+				</select>
+			</p>
+			
+			<p class="bg_edeef2 padding_5">
+				<script type="text/javascript">document.write('<input type="button" value="' + parent.$m.lang.magic_editor.table.insert_table + '" class="margin_right_5" onclick="$me_table.insert(true);"><input type="button" value="' + parent.$m.lang.magic_editor.table.cancel + '" class="margin_right_5" onclick="$me_table.cancel();">');</script>
+				<input type="button" value="Refresh" onclick="window.location.reload();">
+			</p>
+
+			<p class="align_center"><strong><script type="text/javascript">document.write(parent.$m.lang.magic_editor.table.preview);</script></strong></p>
+			<div id="tbl_preview"></div>
+
+		</form>
+		
+	</div>
+
+</body>
+</html>

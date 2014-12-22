@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Predefined JSON parsing: AJAX: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+	
+	<style type="text/css">
+		.general_table{background:#fff;border:0;border-collapse:collapse;}
+		.general_table td,.general_table th{border-bottom:1px solid #d4d4d4;border-left:1px dotted #eee;border-right:1px dotted #eee;border-top:1px solid #d4d4d4;padding:5px;text-align:left;vertical-align:top;}
+		.general_table tr:hover{background:#fffde3 !important;}
+		.general_table tr:hover .hidden_action_link{visibility:visible;}
+		.general_table td img{margin-right:2px;vertical-align:middle;}
+		.general_tr_header td,.general_table th{background:#fff;font-size:14px;font-weight:bold;height:auto !important;}
+		.general_tr_sub_header td{font-weight:bold;}
+	</style>
+
+</head>
+<body>
+
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Predefined JSON parsing: AJAX: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<p class="align_center bg_yellow_lite margin_bottom_20 padding_5"> Magic can parse a returned JSON object if you want to do more advanced things with the returned data</p>
+	
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">Add <code>data-mjf_ajax_call_on_success="magic_json"</code> to your tag along with the normal Magic JS AJAX attributes.</p>
+		<p class="form_line_content">
+			Your returned JSON object should be structured using the example below.<br>
+		
+<textarea rows="5" cols="20" name="" class="input_fld example_code margin_top_5" readonly="readonly" wrap="off">[{
+	 "update_id" : "ELEMENT_1"
+	,"update_html" : "HTML_STRING_1"
+	,"update_callback" : "YOUR_FUNCTION_1()"
+	,"update_method" : "append"
+},{
+	 "update_id" : "ELEMENT_2"
+	,"update_html" : "HTML_STRING_2"
+	,"update_callback" : "YOUR_FUNCTION_2()"
+	,"update_method" : "prepend"
+},{
+	 "update_id" : "ELEMENT_3"
+	,"update_html" : "HTML_STRING_3"
+	,"update_callback" : "YOUR_FUNCTION_3()"
+	,"update_method" : "replace"
+}]</textarea></p>
+		
+		<div class="form_line_content">
+			<p><strong>Definitions</strong></p>
+			<ul>
+				<li><code>update_id</code> is an HTML element.</li>
+				<li><code>update_html</code> is the HTML string to populate the above element with.</li>
+				<li><code>update_method</code> is how the HTML string is inserted. Available values are <code>append</code>, <code>prepend</code> and <code>replace</code>. If left out, it defaults to <code>replace</code>.</li>
+				<li><code>update_callback</code> is a JavaScript function to execute.</li>
+				<li>None are required. However, <code>update_id</code> and <code>update_html</code> must both exist if you want to use them.</p>
+			</ul>
+		</div>
+
+	</fieldset>
+
+	<fieldset>
+
+		<legend>Example</legend>
+		
+		<div class="form_line_content">
+
+			<p><a href="_ajax_json.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax_json.php" data-mjf_ajax_call_on_success="magic_json" data-mjf_ajax_json_delay="750" id="ajax_json_link"><strong>Get me a JSON object</strong></a> and then populate the three <code>&lt;td&gt;</code> tags below with the returned content.</p>
+	
+			<table class="general_table margin_10">
+			
+				<tr>
+					<th>AJAX JSON 1 Content</th>
+					<th>AJAX JSON 2 Content</th>
+					<th>AJAX JSON 3 Content</th>
+					<th>AJAX JSON 4 Content</th>
+				</tr>
+	
+				<tr>
+					<td id="ajax_json_1_cont">Red</td>
+					<td id="ajax_json_2_cont">Blue</td>
+					<td id="ajax_json_3_cont">Green</td>
+					<td>
+						<input type="text" name="ajax_json_4_cont" value="" class="input_fld input_text" id="ajax_json_4_cont">
+					</td>
+				</tr>
+			
+			</table>
+			
+			<p class="margin_left_20" id="ajax_json_4_cont_p">The last JSON item will also update this <code>&lt;p&gt;</code> tag.</p>
+
+		</div>
+
+		<p class="form_line_content">
+			<strong>The HTML</strong><br>
+<textarea rows="5" cols="20" name="" class="input_fld example_code margin_top_5" readonly="readonly" wrap="off">&lt;p&gt;&lt;a href="_ajax_json.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax_json.php" data-mjf_ajax_call_on_success="magic_json" id="ajax_json_link"&gt;Get me a JSON object&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;AJAX JSON 1 Content&lt;/th&gt;
+        &lt;th&gt;AJAX JSON 2 Content&lt;/th&gt;
+        &lt;th&gt;AJAX JSON 3 Content&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td id="ajax_json_1_cont"&gt;Red&lt;/td&gt;
+        &lt;td id="ajax_json_2_cont"&gt;Blue&lt;/td&gt;
+        &lt;td&gt;&lt;input type="text" name="ajax_json_3_cont" value="" id="ajax_json_3_cont"&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</textarea></p>
+
+		<p class="form_line_content">
+			<strong>Returned JSON</strong><br>
+<textarea rows="5" cols="20" name="" class="input_fld example_code margin_top_5" readonly="readonly" wrap="off">[{
+	 "update_id" : "ajax_json_1_cont"
+	,"update_html" : "<em>First item's returned HTML<\/em><br><span class=\"helper_text\">replaced current content<\/span><br>12:27:06 pm"
+},{
+	 "update_id" : "ajax_json_2_cont"
+	,"update_html" : "<p><code>Second item's returned HTML<\/code><br><span class=\"helper_text\">appended current content<\/span><\/p><p>12:27:06 pm<\/p>"
+	,"update_method" : "append"
+},{
+	 "update_id" : "ajax_json_3_cont"
+	,"update_html" : "Third item's returned HTML<br><span class=\"helper_text\">prepended current content<\/span><br>12:27:06 pm"
+	,"update_method" : "prepend"
+},{
+	 "update_id" : "ajax_json_4_cont"
+	,"update_html" : "12:27:06 pm"
+	,"update_callback" : "$m.tag.html(\"ajax_json_4_cont_p\", \"I've been updated at 12:27:06 pm -- woo-hoo!\")"
+}]</textarea></p>
+
+		
+		<div id="debug_div_id"></div>
+
+	</fieldset>
+
+	<fieldset>
+
+		<legend>Notes</legend>
+		
+		<p class="form_line_content">The JSON object will be evaluated based on the order of the objects.</p>
+
+		<p class="form_line_content">This applies to any type of Magic AJAX request. <em>AJAX On Click</em> was used simply as an example.</p>
+
+	</fieldset>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.ajax_click = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

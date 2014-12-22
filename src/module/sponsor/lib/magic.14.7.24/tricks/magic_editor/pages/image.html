@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image: Magic Editor: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../magic_editor.14.1.12.css" rel="stylesheet" media="all">
+	<link href="pages.css" rel="stylesheet" media="all">
+	<script type="text/javascript" src="image.12.12.21.js" charset="UTF-8"></script>
+</head>
+
+<body>
+
+	<h1><span class="magic_editor_btn magic_editor_btn_image"></span><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.image);</script></h1>
+	
+	<div class="padding_5">
+
+		<form action="#" method="post">
+
+			<p class="bg_edeef2 padding_5">
+				<label for="img_url"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.address_source);</script></label><br>
+				<input type="text" name="img_url" class="width_95per" id="img_url" value="http://"><br>
+				<span class="helper_text"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.address_source_help);</script></span>
+			</p>
+			
+			<p class="padding_5">
+				<label for="img_title"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.title);</script></label><br>
+				<input type="text" name="img_title" class="width_95per" id="img_title" value=""><br>
+				<span class="helper_text"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.title_help);</script></span>
+			</p>
+			
+			<p class="bg_edeef2 padding_5">
+				<label for="img_alt"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.alternate_text);</script></label><br>
+				<input type="text" name="img_alt" class="width_95per" id="img_alt" value=""><br>
+				<span class="helper_text"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.alternate_text_help);</script></span>
+			</p>
+
+			<p class="padding_5">
+				<span class="margin_right_5"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.margins);</script></span>
+				<label for="img_margin_top"><strong class="html_arr">&uarr;</strong></label>
+				<input type="text" name="img_alt" size="2" class="margin_right_5" id="img_margin_top" value="0">
+				
+				<label for="img_margin_right"><strong class="html_arr">&rarr;</strong></label>
+				<input type="text" name="img_alt" size="2" class="margin_right_5" id="img_margin_right" value="0">
+				
+				<label for="img_margin_bottom"><strong class="html_arr">&darr;</strong></label>
+				<input type="text" name="img_alt" size="2" class="margin_right_5" id="img_margin_bottom" value="0">
+				
+				<label for="img_margin_left"><strong class="html_arr">&larr;</strong></label>
+				<input type="text" name="img_alt" size="2" class="margin_right_5" id="img_margin_left" value="0">
+				
+				<span class="helper_text"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.margin_in_pixels);</script></span>
+			</p>
+			
+			<p class="bg_edeef2 padding_5">
+				<span class="margin_right_5"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.float);</script></span>
+				<input type="radio" name="img_float" value="none" class="input_radio" id="img_float_none" checked="checked"><label for="img_float_none" class="margin_right_5"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.float_none);</script></label>
+				<input type="radio" name="img_float" value="left" class="input_radio" id="img_float_left"><label for="img_float_left" class="margin_right_5"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.float_left);</script></label>
+				<input type="radio" name="img_float" value="right" class="input_radio" id="img_float_right"><label for="img_float_right" class="margin_right_5"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.float_right);</script></label>
+			</p>
+
+			<p class="padding_5">
+				<label for="img_border" class="margin_right_5"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.border);</script></label>
+				<input type="text" name="img_border" size="2" class="margin_right_5" id="img_border" value="0">
+				<span class="helper_text"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.border_in_pixels);</script></span>
+			</p>
+
+			<p class="bg_edeef2 padding_5">
+				<label for="img_link"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.optional_link);</script></label>
+				<input type="text" name="img_link" class="width_95per" id="img_link" value="http://"><br>
+				<span class="helper_text"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.optional_link_help);</script></span>
+			</p>
+			
+			<p class="padding_5"><input type="checkbox" name="img_link_target" id="img_link_target" value="Y"><label for="img_link_target"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.image.optional_link_open_new_window);</script></label></p>
+
+			<p class="padding_5">
+				<script type="text/javascript">document.write('<input type="button" value="' + parent.$m.lang.magic_editor.image.insert_image + '" class="margin_right_5" id="img_create" onclick="$me_image.create();"><input type="button" value="' + parent.$m.lang.magic_editor.image.cancel + '" class="margin_right_5" onclick="$me_image.cancel();">');</script>
+				<!-- <input type="button" value="Refresh" onclick="window.location.reload();"> -->
+			</p>
+			
+		</form>
+
+	</div>
+
+</body>
+</html>

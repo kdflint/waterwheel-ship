@@ -1,0 +1,5 @@
+/****** Version 13.4.22 ******/
+.magic_rating_link{background-repeat:no-repeat;color:transparent;display:inline-block;height:17px;margin:0 !important;text-indent:-9999px;width:17px;}
+.magic_rating_link:hover,.magic_rating_link_hover{background-image:url(bg_rating_over.png) !important;}
+.magic_rating_link_on{background-image:url(bg_rating_on.png);}
+.magic_rating_link_off,.magic_rating_link_off_tmp{background-image:url(bg_rating_off.png);}

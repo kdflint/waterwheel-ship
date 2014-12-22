@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Copy a Field's Value to another Element's innerHTML: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Copy a Field's Value to another Element's innerHTML: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Does it <code>onkeyup</code> and <code>onchange</code></h2>
+	
+	<form action="submission.php" method="post">
+	
+		<fieldset>
+	
+			<legend>Usage</legend>
+	
+			<p class="form_line_content">Add <code>data-mjf="copy_value_to_html" id="ELEMENT_ID"</code> to your <code>&lt;input&gt;</code> or <code>&lt;textarea&gt;</code> tag.</p>
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.copy_value_to_html = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		
+		</fieldset>
+		
+		<fieldset>
+	
+			<legend>Examples</legend>
+			
+			<div class="form_line_content">
+	
+				<p>
+					<input type="text" name="" value="" data-mjf="copy_value_to_html" data-mjf_cvth_id="copy_value_to_html_ex_1_cont" class="input_fld input_text" id="copy_value_to_html_ex_1"><br>
+					<code>&lt;p&gt;&lt;input type="text" name="" value="" data-mjf="copy_value_to_html" data-mjf_cvth_id="ELEMENT_ID_CONT_1" id="ELEMENT_ID_1"&gt;&lt;/p&gt;</code><br>
+					<code>&lt;p id="ELEMENT_ID_CONT_1"&gt;&lt;/p&gt;</code>
+				</p>
+				
+				<p class="bg_white padding_5" id="copy_value_to_html_ex_1_cont"></p>
+			
+			</div>
+			
+			<div class="form_line_content">
+	
+				<p>
+					<textarea rows="5" cols="20" name="" data-mjf="copy_value_to_html" data-mjf_cvth_id="copy_value_to_html_ex_2_cont" class="input_fld input_textarea" id="copy_value_to_html_ex_2"></textarea><br>
+					<code>&lt;p&gt;&lt;textarea rows="5" cols="20" name="" data-mjf="copy_value_to_html" data-mjf_cvth_id="ELEMENT_ID_CONT_2" id="ELMENT_ID_2"&gt;&lt;/textarea&gt;&lt;/p&gt;</code><br>
+					<code>&lt;p id="ELEMENT_ID_CONT_2"&gt;&lt;/p&gt;</code>
+				</p>
+				
+				<p class="bg_white padding_5" id="copy_value_to_html_ex_2_cont"></p>
+				
+			</div>
+
+		</fieldset>
+
+	</form>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.copy_value_to_html = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

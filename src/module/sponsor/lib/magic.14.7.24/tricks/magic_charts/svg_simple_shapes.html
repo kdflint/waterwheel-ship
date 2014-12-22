@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Magic Charts: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<script type="text/javascript" src="magic_charts.src.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Magic Charts (<script type="text/javascript">document.write($m.versions.tricks.magic_charts);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+	
+		<!-- http://apike.ca/prog_svg_intro.html -->
+
+		<legend>Simple SVG Shapes</legend>
+		
+		<div class="margin_top_10"></div>
+
+		<!-- SVG -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_cont" id="svg_link">SVG</a></h3>
+			
+			<div class="display_block" id="svg_cont">
+				<p>
+					<code>&lt;svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:75px;"&gt;<br>&lt;/svg&gt;</code>
+				</p>
+			</div>
+			
+		</div>
+
+		<!-- Circle -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_circle_cont" id="svg_circle_link">Circle</a></h3>
+			
+			<div class="display_block" id="svg_circle_cont">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:75px;">
+					<circle cx="40" cy="40" r="20" fill="#0074C3" />
+				</svg>
+				
+				<p>
+					<code>&lt;circle cx="40" cy="40" r="20" fill="#0074C3" /&gt;</code>
+				</p>
+			</div>
+			
+		</div>
+
+		<!-- Ellipse -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_ellipse_cont" id="svg_ellipse_link">Ellipse</a></h3>
+			
+			<div class="display_block" id="svg_ellipse_cont">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:75px;">
+					<ellipse cx="60" cy="40" rx="40" ry="20" fill="#0074C3" />
+				</svg>
+				
+				<p>
+					<code>&lt;ellipse cx="60" cy="40" rx="40" ry="20" fill="#0074C3" /&gt;</code>
+				</p>
+			</div>
+			
+		</div>
+
+		<!-- Image -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_image_cont" id="svg_image_link">Image</a></h3>
+			
+			<div class="display_block" id="svg_image_cont">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:60px;">
+					<image x="10" y="15" width="32" height="32" xlink:href="../../images/icons/icon_magic.png" />
+				</svg>
+				
+				<p>
+					<code>&lt;image x="10" y="15" width="32" height="32" xlink:href="../../images/icons/icon_magic.png" /&gt;</code>
+				</p>
+			</div>
+			
+		</div>
+
+		<!-- Line -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_line_cont" id="svg_line_link">Line</a></h3>
+			
+			<div class="display_block" id="svg_line_cont">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:60px;">
+					<line x1="10" y1="10" x2="500" y2="50" stroke="#0074C3" stroke-width="2" />
+				</svg>
+				
+				<p>
+					<code>&lt;line x1="10" y1="10" x2="500" y2="50" stroke="#0074C3" stroke-width="2" /&gt;</code>
+				</p>
+			</div>
+			
+		</div>
+
+		<!-- Polyline -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_polyline_cont" id="svg_polyline_link">Polyline</a></h3>
+			
+			<div class="display_block" id="svg_polyline_cont">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:60px;">
+					<polyline points="10,50 20,50 20,10 40,10 40,50 50,50" stroke="#0074C3" fill="#FF8B00" stroke-width="2" />
+				</svg>
+				
+				<p>
+					<code>&lt;polyline points="10,50 20,50 20,10 40,10 40,50 50,50" stroke="#0074C3" fill="#FF8B00" stroke-width="2" /&gt;</code>
+				</p>
+			</div>
+			
+		</div>
+
+		<!-- Polygon -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_polygon_cont" id="svg_polygon_link">Polygon</a></h3>
+			
+			<div class="display_block" id="svg_polygon_cont">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:60px;">
+					<polygon points="10,50 50,10 100,10 150,50" stroke="#0074C3" fill="#FF8B00" stroke-width="2" fill-rule="nonzero" />
+				</svg>
+				
+				<p>
+					<code>&lt;polygon points="10,50 20,50 20,10 40,10 40,50 50,50" stroke="#0074C3" fill="#FF8B00" stroke-width="2" fill-rule="nonzero" /&gt;</code>
+				</p>
+			</div>
+			
+		</div>
+
+		<!-- Rectangle -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_rectangle_cont" id="svg_rectangle_link">Rectangle</a></h3>
+			
+			<div class="display_block" id="svg_rectangle_cont">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:75px;">
+					<rect x="10" y="10" width="160" height="50" fill="#FF8B00" stroke="#0074C3" stroke-width="2" />
+				</svg>
+				
+				<p>
+					<code>&lt;rect x="10" y="10" width="160" height="50" fill="#FF8B00" stroke="#0074C3" stroke-width="2" /&gt;</code>
+				</p>
+			</div>
+			
+		</div>
+
+		<!-- Text -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_text_cont" id="svg_text_link">Text</a></h3>
+			
+			<div class="display_block" id="svg_text_cont">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:40px;">
+					<text x="10" y="25" fill="#FF8B00">Integer in massa faucibus turpis rhoncus</text>
+				</svg>
+				
+				<p>
+					<code>&lt;text x="10" y="25" fill="#FF8B00"&gt;Integer in massa faucibus turpis rhoncus&lt;/text&gt;</code>
+				</p>
+			</div>
+
+		</div>
+		
+
+		<!-- Text Wrapped -->
+		<div class="form_line_content">
+		
+			<h3><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="svg_text_wrapped_cont" id="svg_text_wrapped_link">Text Wrapped</a></h3>
+			
+			<div class="display_block" id="svg_text_wrapped_cont">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="height:70px;">
+					<text x="10" y="0" fill="#FF8B00" font-size="12">
+						<tspan x="10" dy="15">Integer in massa faucibus turpis rhoncus</tspan>
+						<tspan x="10" dy="15">pretium non sit amet felis. Ut at massa</tspan>
+						<tspan x="10" dy="15">aliquam libero porttitor vehicula. Nam</tspan>
+						<tspan x="10" dy="15">ultricies, quam sed dignissim ornare.</tspan>
+					</text>
+				</svg>
+
+
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;text x="10" y="0" fill="#FF8B00" font-size="12"&gt;<br>
+    &lt;tspan x="10" dy="15"&gt;Integer in massa faucibus turpis rhoncus&lt;/tspan&gt;
+    &lt;tspan x="10" dy="15"&gt;pretium non sit amet felis. Ut at massa&lt;/tspan&gt;
+    &lt;tspan x="10" dy="15"&gt;aliquam libero porttitor vehicula. Nam&lt;/tspan&gt;
+    &lt;tspan x="10" dy="15"&gt;ultricies, quam sed dignissim ornare.&lt;/tspan&gt;
+&lt;/text&gt;</textarea></p>
+
+			</div>
+
+		</div>
+
+
+
+
+	</fieldset>
+
+	<p class="align_center">&laquo; <a href="./">Back to Magic Charts</a></p>
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.wand.lightswitch = true;
+		$m.trick.darkroom = true;
+	</script>
+
+</body>
+</html>

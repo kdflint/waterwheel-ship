@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX On Click: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> AJAX On Click: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">Add <code>data-mjf="ajax_click|return_false" data-mjf_ajax_url="/PATH/TO/SERVER/SCRIPT/" data-mjf_ajax_update_id="ELEMENT_ID" id="ELEMENT_ID"</code> to your clickable tag.</p>
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.ajax_click = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+	
+	</fieldset>
+
+	<fieldset>
+
+		<legend>Examples</legend>
+		
+		<div class="form_line_content">
+			<p><a href="_ajax.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_query="extra=ajax_queue_1" data-mjf_ajax_update_id="ajax_queue_1_cont" id="ajax_queue_1_link"><strong>Overwrite content</strong></a></p>
+			<p><code>&lt;a href="_ajax.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_query="extra=ajax_queue_1" data-mjf_ajax_update_id="ajax_queue_1_cont" id="ajax_queue_1_link"&gt;Overwrite content&lt;/a&gt;</code></p>
+			<div id="ajax_queue_1_cont"></div>
+		</div>
+	
+		<div class="form_line_content">
+			<p><a href="_ajax2.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_query="extra=ajax_queue_2" data-mjf_ajax_update_id="ajax_queue_2_cont" data-mjf_ajax_update_id_action="append" id="ajax_queue_2_link"><strong>Append content</strong></a></p>
+			<p><code>&lt;a href="_ajax2.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_query="extra=ajax_queue_2" data-mjf_ajax_update_id="ajax_queue_2_cont" data-mjf_ajax_update_id_action="append" id="ajax_queue_2_link"&gt;Append content&lt;/a&gt;</code></p>
+			<div id="ajax_queue_2_cont"></div>
+		</div>
+	
+		<div class="form_line_content">
+			<p><a href="_ajax3.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_query="extra=ajax_queue_3" data-mjf_ajax_update_id="ajax_queue_3_cont" data-mjf_ajax_update_id_action="prepend" data-mjf_ajax_timeout="10" id="ajax_queue_3_link"><strong>Prepend content</strong></a></p>
+			<p><code>&lt;a href="_ajax3.php" data-mjf="ajax_click|return_false" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_query="extra=ajax_queue_3" data-mjf_ajax_update_id="ajax_queue_3_cont" data-mjf_ajax_update_id_action="prepend" data-mjf_ajax_timeout="10 id="ajax_queue_3_link"&gt;Prepend content&lt;/a&gt;</code></p>
+			<div id="ajax_queue_3_cont"></div>
+		</div>
+
+	</fieldset>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.ajax_click = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

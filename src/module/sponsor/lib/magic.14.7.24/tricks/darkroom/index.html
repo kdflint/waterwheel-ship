@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Darkroom: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="darkroom.src.js" charset="UTF-8"></script>
+	<link href="../drag_n_drop/drag_n_drop.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../drag_n_drop/drag_n_drop.src.js" charset="UTF-8"></script>
+
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<style type="text/css">
+		.dr_fixed_width{
+			width:500px;
+		}
+	</style>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Darkroom (<script type="text/javascript">document.write($m.versions.tricks.darkroom);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Showing all kinds of content in a pop-up</h2>
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="initial_setup_cont" id="initial_setup">Initial Setup</a></legend>
+		
+		<div class="display_block" id="initial_setup_cont">
+		
+			<p class="form_line_content">
+				Add <code>&lt;link href="/PATH/TO/magic/tricks/darkroom/darkroom.<script type="text/javascript">document.write($m.versions.tricks.css.darkroom);</script>.css" rel="stylesheet"&gt;</code><br>
+				<code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/darkroom/darkroom.<script type="text/javascript">document.write($m.versions.tricks.darkroom);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+				below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+			</p>
+	
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.trick.darkroom = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+			
+			<p class="form_line_content">
+				If you'd like the <em>Darkrooms</em> to be be drag droppable, add <code>&lt;link href="/PATH/TO/magic/tricks/drag_n_drop/drag_n_drop.<script type="text/javascript">document.write($m.versions.tricks.css.drag_n_drop);</script>.css" rel="stylesheet"&gt;</code><br>
+				<code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/drag_n_drop/drag_n_drop.<script type="text/javascript">document.write($m.versions.tricks.drag_n_drop);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+				below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/darkroom/darkroom.<script type="text/javascript">document.write($m.versions.tricks.darkroom);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+				and <code>&lt;script type="text/javascript"&gt;$m.trick.drag_n_drop.free = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.
+			</p>
+					
+			<p class="form_line_content">Use the examples below as a guide for building your own!</p>
+			
+		</div>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="examples_cont" id="examples_link">Examples</a></legend>
+		
+		<div class="display_block" id="examples_cont">
+
+
+			<!-- Dynamic width block -->
+			<div class="form_line_content">
+				<p><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_dynamic" id="darkroom_dynamic_link"><strong>Dynamic width block</strong></a></p>
+				<div class="bg_white display_none" id="darkroom_dynamic">
+					<h4>Dynamic width block</h4>
+					<p>Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam non augue sit amet justo fringilla vestibulum at nec nisl. Nullam massa mi, rutrum non accumsan nec, feugiat aliquam ligula. Proin urna magna, tempor ut blandit in, tincidunt vel massa. Donec semper lorem sapien, at interdum mi. Mauris fermentum tempus lorem at congue. Phasellus dignissim congue nisl in mollis. Aliquam sodales auctor vehicula. Phasellus ut tortor nisi. Quisque velit est, vehicula at auctor ut, blandit a est. Ut in augue arcu. Praesent sed malesuada lectus. In ac interdum nunc. Cras est sapien, scelerisque non mattis aliquam, scelerisque sit amet felis. Curabitur non leo diam. Nunc dictum mauris in erat vehicula aliquet. Fusce sed faucibus eros. Morbi turpis libero, sodales eu lobortis auctor, vulputate a purus. Praesent interdum cursus justo.</p>
+					<p>Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit. Mauris a quam non tortor tempor laoreet eu sit amet lectus. Suspendisse potenti. Quisque vehicula faucibus lacinia. Proin ligula massa, tristique et fermentum sollicitudin, dictum eget enim. Integer fermentum metus quis libero suscipit in semper lorem ornare. Aenean laoreet, justo a commodo bibendum, lorem nisi rutrum massa, quis gravida dui sapien condimentum eros. Curabitur ac erat massa. Donec pretium pharetra ante ac sodales. Phasellus quam turpis, rutrum vel eleifend pretium, malesuada vel purus. Pellentesque in elit vel urna ultrices cursus sit amet ultrices magna. Curabitur eu enim sit amet risus tempor ultrices quis suscipit lectus. Curabitur id ligula lacus, at porttitor leo. Etiam accumsan condimentum metus vel tempus. Nullam eget mauris felis. Cras pulvinar pharetra sodales. Nunc suscipit turpis neque. Vestibulum ut eros eros, vitae congue enim.</p>
+					<p>Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci. Integer in massa faucibus turpis rhoncus pretium non sit amet felis. Nam tincidunt cursus augue vel vehicula. In sed arcu quis purus sagittis dignissim. Mauris lacus leo, fermentum nec consequat quis, facilisis ac quam. Nulla facilisi. Proin fringilla leo at lectus ultrices et iaculis dui vestibulum. Pellentesque interdum commodo nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit amet orci luctus mi hendrerit dapibus.</p>
+				</div>
+
+<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;&lt;a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_dynamic" id="darkroom_dynamic_link"&gt;Dynamic width&lt;/a&gt;&lt;/p&gt;
+&lt;div class="display_none" id="darkroom_dynamic"&gt;
+    &lt;h4&gt;Dynamic width&lt;/h4&gt;
+    &lt;p&gt;Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien.&lt;/p&gt;
+    &lt;p&gt;Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit.&lt;/p&gt;
+    &lt;p&gt;Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci.&lt;/p&gt;
+&lt;/div&gt;</textarea></p>
+
+				<p>The width of the content is not set via CSS so it's calculated auto-magically when shown. The height is based on the length of the content.</em></p>
+			</div>
+
+
+			<!-- Fixed width block -->
+			<div class="form_line_content">
+				<p><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_fixed" id="darkroom_fixed_link"><strong>Fixed width block</strong></a></p>
+				<div class="bg_white display_none dr_fixed_width" id="darkroom_fixed">
+					<h4>Fixed width block</h4>
+					<p>Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit. Mauris a quam non tortor tempor laoreet eu sit amet lectus. Suspendisse potenti. Quisque vehicula faucibus lacinia. Proin ligula massa, tristique et fermentum sollicitudin, dictum eget enim. Integer fermentum metus quis libero suscipit in semper lorem ornare. Aenean laoreet, justo a commodo bibendum, lorem nisi rutrum massa, quis gravida dui sapien condimentum eros. Curabitur ac erat massa. Donec pretium pharetra ante ac sodales. Phasellus quam turpis, rutrum vel eleifend pretium, malesuada vel purus. Pellentesque in elit vel urna ultrices cursus sit amet ultrices magna. Curabitur eu enim sit amet risus tempor ultrices quis suscipit lectus. Curabitur id ligula lacus, at porttitor leo. Etiam accumsan condimentum metus vel tempus. Nullam eget mauris felis. Cras pulvinar pharetra sodales. Nunc suscipit turpis neque. Vestibulum ut eros eros, vitae congue enim.</p>
+					<p>Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam non augue sit amet justo fringilla vestibulum at nec nisl. Nullam massa mi, rutrum non accumsan nec, feugiat aliquam ligula. Proin urna magna, tempor ut blandit in, tincidunt vel massa. Donec semper lorem sapien, at interdum mi. Mauris fermentum tempus lorem at congue. Phasellus dignissim congue nisl in mollis. Aliquam sodales auctor vehicula. Phasellus ut tortor nisi. Quisque velit est, vehicula at auctor ut, blandit a est. Ut in augue arcu. Praesent sed malesuada lectus. In ac interdum nunc. Cras est sapien, scelerisque non mattis aliquam, scelerisque sit amet felis. Curabitur non leo diam. Nunc dictum mauris in erat vehicula aliquet. Fusce sed faucibus eros. Morbi turpis libero, sodales eu lobortis auctor, vulputate a purus. Praesent interdum cursus justo.</p>
+					<p>Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci. Integer in massa faucibus turpis rhoncus pretium non sit amet felis. Nam tincidunt cursus augue vel vehicula. In sed arcu quis purus sagittis dignissim. Mauris lacus leo, fermentum nec consequat quis, facilisis ac quam. Nulla facilisi. Proin fringilla leo at lectus ultrices et iaculis dui vestibulum. Pellentesque interdum commodo nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit amet orci luctus mi hendrerit dapibus.</p>
+				</div>
+
+<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;&lt;a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_fixed" id="darkroom_fixed_link"&gt;Fixed width&lt;/a&gt;&lt;/p&gt;
+&lt;div class="display_none" id="darkroom_fixed"&gt;
+    &lt;h4&gt;Fixed width&lt;/h4&gt;
+    &lt;p&gt;Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien.&lt;/p&gt;
+    &lt;p&gt;Ut at massa aliquam libero porttitor vehicula. Vivamus tristique metus velit.&lt;/p&gt;
+    &lt;p&gt;Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci.&lt;/p&gt;
+&lt;/div&gt;</textarea></p>
+
+				<p>The width of the content is set via CSS and therefore respected when shown. The height is based on the length of the content.</em></p>
+			</div>
+
+
+			<!-- 450 x 250 block -->
+			<div class="form_line_content">
+				<p><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_450x250_dim" data-mjf_dr_dim="450x250" id="darkroom_450x250_dim_link"><strong>450 x 250 block</strong></a></p>
+				<div class="bg_white display_none dr_fixed_width" id="darkroom_450x250_dim">
+					<h4>450 x 250 block</h4>
+					<p>Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci. Integer in massa faucibus turpis rhoncus pretium non sit amet felis. Nam tincidunt cursus augue vel vehicula. In sed arcu quis purus sagittis dignissim. Mauris lacus leo, fermentum nec consequat quis, facilisis ac quam. Nulla facilisi. Proin fringilla leo at lectus ultrices et iaculis dui vestibulum. Pellentesque interdum commodo nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit amet orci luctus mi hendrerit dapibus.</p>
+					<p>Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam non augue sit amet justo fringilla vestibulum at nec nisl. Nullam massa mi, rutrum non accumsan nec, feugiat aliquam ligula. Proin urna magna, tempor ut blandit in, tincidunt vel massa. Donec semper lorem sapien, at interdum mi. Mauris fermentum tempus lorem at congue. Phasellus dignissim congue nisl in mollis. Aliquam sodales auctor vehicula. Phasellus ut tortor nisi. Quisque velit est, vehicula at auctor ut, blandit a est. Ut in augue arcu. Praesent sed malesuada lectus. In ac interdum nunc. Cras est sapien, scelerisque non mattis aliquam, scelerisque sit amet felis. Curabitur non leo diam. Nunc dictum mauris in erat vehicula aliquet. Fusce sed faucibus eros. Morbi turpis libero, sodales eu lobortis auctor, vulputate a purus. Praesent interdum cursus justo.</p>
+				</div>
+
+<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;&lt;a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_450x250_dim" data-mjf_dr_dim="450x250" id="darkroom_450x250_dim_link"&gt;Fixed width&lt;/a&gt;&lt;/p&gt;
+&lt;div class="display_none" id="darkroom_450x250_dim"&gt;
+    &lt;h4&gt;Fixed width&lt;/h4&gt;
+    &lt;p&gt;Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci.&lt;/p&gt;
+    &lt;p&gt;Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien.&lt;/p&gt;
+&lt;/div&gt;</textarea></p>
+
+				<p>The width and height of the content is set via the <code>data-mjf_dr_dim</code> attribute.</em></p>
+			</div>
+
+
+<div id="content" style="position:relative; width:750px; margin:0 auto;background:red;">
+  <div id="leftOutsideAd" style="position:absolute; top:0; left:150px;background:blue;">
+    <p><a href="#" style="position:fixed;">xxxxxxx</a></p>
+  </div>
+</div>
+
+
+
+			<!-- Fill block -->
+			<div class="form_line_content">
+				<p><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_fill_dim" data-mjf_dr_dim="fill" id="darkroom_fill_dim_link"><strong>Block that fills the window</strong></a></p>
+				<div class="bg_white display_none dr_fixed_width" id="darkroom_fill_dim">
+					<h4>Block that fills the window</h4>
+					<p>Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci. Integer in massa faucibus turpis rhoncus pretium non sit amet felis. Nam tincidunt cursus augue vel vehicula. In sed arcu quis purus sagittis dignissim. Mauris lacus leo, fermentum nec consequat quis, facilisis ac quam. Nulla facilisi. Proin fringilla leo at lectus ultrices et iaculis dui vestibulum. Pellentesque interdum commodo nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit amet orci luctus mi hendrerit dapibus.</p>
+					<p>Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam non augue sit amet justo fringilla vestibulum at nec nisl. Nullam massa mi, rutrum non accumsan nec, feugiat aliquam ligula. Proin urna magna, tempor ut blandit in, tincidunt vel massa. Donec semper lorem sapien, at interdum mi. Mauris fermentum tempus lorem at congue. Phasellus dignissim congue nisl in mollis. Aliquam sodales auctor vehicula. Phasellus ut tortor nisi. Quisque velit est, vehicula at auctor ut, blandit a est. Ut in augue arcu. Praesent sed malesuada lectus. In ac interdum nunc. Cras est sapien, scelerisque non mattis aliquam, scelerisque sit amet felis. Curabitur non leo diam. Nunc dictum mauris in erat vehicula aliquet. Fusce sed faucibus eros. Morbi turpis libero, sodales eu lobortis auctor, vulputate a purus. Praesent interdum cursus justo.</p>
+				</div>
+
+<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;&lt;a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_fill_dim" data-mjf_dr_dim="fill" id="darkroom_fill_dim_link"&gt;Fixed width&lt;/a&gt;&lt;/p&gt;
+&lt;div class="display_none" id="darkroom_fill_dim"&gt;
+    &lt;h4&gt;Fixed width&lt;/h4&gt;
+    &lt;p&gt;Proin eget erat urna. Aenean eu justo id tortor gravida pellentesque non sit amet orci.&lt;/p&gt;
+    &lt;p&gt;Nam ultricies, quam sed dignissim ornare, enim dolor tristique urna, eget convallis diam magna ac sapien.&lt;/p&gt;
+&lt;/div&gt;</textarea></p>
+
+				<p>The width and height of the content is set via the <code>data-mjf_dr_dim</code> attribute.</em></p>
+			</div>
+
+
+			<!-- Single image -->
+			<div class="form_line_content">
+				<p><a href="darkroom_example.jpg" data-mjf="darkroom|return_false" data-mjf_dr_type="image" id="darkroom_image_only" title="Darkroom Image Only"><strong>Single image</strong></a></p>
+
+<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;
+    &lt;a href="darkroom_example.jpg" data-mjf="darkroom|return_false" data-mjf_dr_type="image" id="darkroom_image_only" title="Darkroom Image Only"&gt;Single image&lt;/a&gt;
+&lt;/p&gt;</textarea></p>
+
+				<p>The <code>href</code> points to the image that will be shown and the <code>title</code> attribute is optional.</p>
+			</div>
+
+
+			<!-- 400 x 400 iframe -->
+			<div class="form_line_content">
+				<p><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="iframe.html" data-mjf_dr_dim="400x400" id="darkroom_iframe_400x400"><strong>400 x 400 iframe</strong></a></p>
+
+<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;
+    &lt;a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="iframe.html" data-mjf_dr_dim="400x400" id="darkroom_iframe_400x400"&gt;400x400 iframe&lt;/a&gt;
+&lt;/p&gt;</textarea></p>
+
+				<p>The dimensions of the iframe are set via the <code>data-mjf_dr_dim</code> attribute.</p>
+			</div>
+	
+			
+			<!-- 1024 x 768 iframe -->
+			<div class="form_line_content">
+				<p><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="iframe2.html" data-mjf_dr_dim="1024x768" id="darkroom_1024x768"><strong>1024 x 768 iframe</strong></a></p>
+
+<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;
+    &lt;a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="iframe2.html" data-mjf_dr_dim="1024x768" id="darkroom_1024x768"&gt;1024x768 iframe&lt;/a&gt;
+&lt;/p&gt;</textarea></p>
+
+				<p>In this example the iframe width is 1024 and if the width of the browser window is smaller, the iframe will expand its width only to fill the window.</p>
+			</div>
+
+			
+			<!-- iframe that fills the window -->
+			<div class="form_line_content">
+				<p><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="iframe3.html" data-mjf_dr_dim="fill" id="darkroom_iframe_fill"><strong>iframe that fills the window</strong></a></p>
+
+<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;p&gt;
+    &lt;a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="iframe3.html" data-mjf_dr_dim="fill" id="darkroom_iframe_fill"&gt;iframe that fills the window&lt;/a&gt;
+&lt;/p&gt;</textarea></p>
+
+				<p>Using <code>data-mjf_dr_dim="fill"</code> will expand the iframe to cover most of the browser window.</p>
+			</div>
+			
+		</div>
+		
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="notes_cont" id="notes_link">Notes</a></legend>
+		
+		<div class="display_block" id="notes_cont">
+		
+			<p class="form_line_content">Add <code>data-mjf_dr_overlay="true"</code> to your clickable tag if you'd like the traditional <a href="darkroom_example.jpg" data-mjf="darkroom|return_false" data-mjf_dr_type="image" data-mjf_dr_overlay="true" id="darkroom_overlay" title="Darkroom Image Only">semi-transparent overlay</a> to appear behind the content.</p>
+			
+			<p class="form_line_content">Add <code>data-mjf_dr_xy="XxY"</code> where <code>X</code> is the number of pixels left and <code>Y</code> is the number of pixels top if you don't want the content to be horizontally and vertically centered. Ex: <a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_0x20" data-mjf_dr_xy="0x20" id="darkroom_0x20_link">0 pixels left and 20 pixels down</a> and <a href="#" data-mjf="darkroom|return_false" data-mjf_dr_id="darkroom_50x200" data-mjf_dr_xy="-50x-200" id="darkroom_50x200_link">50 pixels left and 200 pixels up</a>. Negative values are okay, too.</p>
+
+			<div class="align_center bg_white display_none width_250" id="darkroom_0x20">
+				<h4>0 pixels left and 20 pixels down.</h4>
+				<p>
+					<img src="../../images/examples/magic_0.png" alt="magic_0"><br>
+					<code>data-mjf_dr_xy="0x20"</code>
+				</p>
+			</div>
+			
+			<div class="align_center bg_white display_none width_250" id="darkroom_50x200">
+				<h4>50 pixels left and 200 pixels up</h4>
+				<p>
+					<img src="../../images/examples/magic_1.png" alt="magic_1"><br>
+					<code>data-mjf_dr_xy="-50x-200"</code>
+				</p>
+			</div>
+
+			<p class="form_line_content">Add <code>data-mjf_dr_hide="false"</code> to your <code>&lt;form&gt;</code> tag if your <em>Darkroom</em> content contains a form and you'd like to keep the <em>Darkroom</em> content open after submission.</p>
+			
+			<p class="form_line_content">Add <code>data-mjf_dr_form="FORM_ID"</code> if your <em>Darkroom</em> content is in a form and you're also using <a href="../../docs/forms/validation.html">Form Validation</a>.</p>
+			
+			<p class="form_line_content">Add <code>data-mjf_ga_track="false"</code> if you use Google Analytics and don't want to track the particular click.</p>
+			
+			<p class="form_line_content">Touch-based browsers automatically resize iframes to their full content height so visitors can all of the content.</p>
+
+		</div>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="change_log_cont" id="change_log_link">Change Log</a></legend>
+		
+		<div class="display_block" id="change_log_cont">
+
+			<div class="form_line_content">
+				<h3>13.5.28</h3>
+				<ul>
+					<li>The <code>mjf_dr_iframe_dim</code> attribute has been replaced with <code>mjf_dr_dim</code>. The latter attribute can now <em>also</em> be used on any content block. The former still works but is deprecated.</li>
+					<li>Code optimization.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>13.3.28</h3>
+				<ul>
+					<li>Initial animation work.</li>
+					<li>Code optimization.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>13.3.26</h3>
+				<ul>
+					<li>Better language file loading.</li>
+				</ul>
+			</div>
+		
+			<div class="form_line_content">
+				<h3>12.12.14</h3>
+				<ul>
+					<li>Fixed iframe resize bugs on touch-based browsers.</li>
+					<li>Fixed the <em>semi-transparent overlay</em> bug where it would calculate its size on every <em>Darkroom</em> click.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.12.11</h3>
+				<ul>
+					<li>Removed the animation easing functionality added in 12.10.30 &mdash; it was too distracting.</li>
+					<li><em>Darkrooms</em> are no longer hidden when resizing the window.</li>
+					<li><em>Darkrooms</em> are now <a href="../drag_n_drop/">drag-and-drop</a> capable. See instructions in the <a href="#initial_setup">Initial Setup</a> section above.</li>
+					<li><em>Darkrooms</em> with iframes will now be hidden when the iframe is focused and the visitor hits the <kbd>esc</kbd> key.</li>
+					<li>Bug fixes and code optimization.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>12.11.29</h3>
+				<ul>
+					<li>Fixed IE6/7 resize bugs.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.11.14</h3>
+				<ul>
+					<li>Updated default animation speed from <code>5</code> to <code>1</code>.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.11.12</h3>
+				<ul>
+					<li>Fixed bug where the <em>semi-transparent overlay</em> wasn't hiding when resizing the window.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.11.6</h3>
+				<ul>
+					<li>Better animations.</li>
+				</ul>
+			</div>
+			
+			<div class="form_line_content">
+				<h3>12.10.30</h3>
+				<ul>
+					<li>Any <em>Darkroom</em> can now be positioned using <code>data-mjf_dr_xy="XxY"</code>. Previously this wasn't possible when setting <code>data-mjf_dr_type=""</code>.</li>
+					<li>Updated to use animation easing functionality added in Magic JS 12.10.2.</li>
+					<li>Documentation cleanup.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>12.5.3</h3>
+				<ul>
+					<li>Fixed a bug where <em>Darkroom</em> wouldn't re-initialize itself on AJAX requests.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>12.2.24</h3>
+				<ul>
+					<li>If <em>Darkroom</em> images are larger than the browser dimensions, the image will be scaled to fit.</li>
+					<li>New <code>data-mjf_dr_dim="fill"</code> attribute for iframes.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>12.1.31</h3>
+				<ul>
+					<li>We're now localized! Please see the <strong>Introduction</strong> tab, <strong>Usage</strong> section of the <strong>Main Documentation</strong> and look for the <code>lang : "en_us"</code> property - this is new.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>11.12.29</h3>
+				<ul>
+					<li>Fixed the <code>data-mjf_dr_xy="XxY"</code> positioning bug.</li>
+					<li>Fixed a few height/width bugs for <code>data-mjf_dr_type="image"</code> and <code>data-mjf_dr_type="iframe"</code>.</li>
+					<li>Fixed a bug where the <em>Darkroom</em> contents would sometimes fail to hide when clicking the close image.</li>
+					<li>Set a timeout when displaying the <code>data-mjf_dr_type="iframe"</code> content. This should help with the jerk-y-ness.</li>
+					<li>Disabled JavaScript based transitions. Will move to CSS transitions in a future version.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>11.11.15</h3>
+				<ul>
+					<li>When opened, new darkrooms no longer hide the existing ones.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>11.11.7</h3>
+				<ul>
+					<li>Fixed bug where the close image wouldn't work when the content was returned via AJAX.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>11.10.28</h3>
+				<ul>
+					<li><em>Darkroom</em> can now be trigger by any element and not just a link.</li>
+					<li>For example: instead of using an <code>&lt;a&gt;</code> as noted in the docs above, just apply the same attributes to an <code>&lt;input type="button"&gt;</code>.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>11.8.10</h3>
+				<ul>
+					<li>Better preloading of <code>data-mjf_dr_type="image"</code></li>
+					<li>Fixed height issue.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>11.4.29</h3>
+				<ul>
+					<li>Keyboard shortcut ESC to close all Darkrooms.</li>
+					<li>Migrated to latest MJS code base.</li>
+					<li>Code optimization.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>11.3.2</h3>
+				<ul>
+					<li>Bug fixes</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>11.2.1</h3>
+				<ul>
+					<li>Misc code clean up and optimization.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>11.1.4</h3>
+				<ul>
+					<li>New iframe is now only inserted once.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>10.12.28</h3>
+				<ul>
+					<li>New iframe type!</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>10.10.17</h3>
+				<ul>
+					<li>Corrected the background image path for the "traditional semi-transparent overlay."</li>
+					<li>Minor, minor tune-up.</li>
+				</ul>
+			</div>
+
+			<div class="form_line_content">
+				<h3>10.10.16</h3>
+				<ul>
+					<li>Made <em>Darkroom</em> it's own trick with all the options you see above!</li>
+				</ul>
+			</div>
+			
+		</div>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="todo_cont" id="todo_link">To Do</a></legend>
+		
+		<div class="display_block" id="todo_cont">
+		
+			<div class="form_line_content">
+				<ul>
+					<li>Add better small screen support.</li>
+					<li>Add the ability to resize <em>Darkrooms</em>.</li>
+					<li>Add support for multiple images.</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+	</fieldset>
+
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>	
+
+	<script type="text/javascript">
+		$m.wand.lightswitch = true;
+		$m.trick.darkroom = true;
+		$m.trick.drag_n_drop.free = true;
+	</script>
+
+
+</body>
+</html>

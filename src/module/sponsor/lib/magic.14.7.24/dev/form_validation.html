@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Dev: Testing: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../wand.src.js" charset="UTF-8"></script>
+	<link href="../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../docs/"><img src="../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Form Validation: Dev: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<form action="submission.php" method="post" data-mjf="form_required" name="form_required_1" id="form_required_1">
+
+		<p class="form_line_field">
+			<label for="my_field_1" class="form_line_left_field"><span class="required_field">*</span> My Field 1</label>
+			<span class="form_line_right_field">
+				<input type="text" title="My Field" id="my_field_1" data-mjf="field_required" class="input_fld input_text" value="" name="my_field_1">
+				<span class="field_error_msg_off" id="my_field_1_required_msg"><br>This field is required</span>
+			</span>
+			<br class="clear_both">
+		</p>
+	
+		<p class="form_line_field ">
+			<label for="my_field_2" class="form_line_left_field"><span class="required_field">*</span> My Field 2</label>
+			<span class="form_line_right_field">
+				<input type="text" id="my_field_2" data-mjf="field_required" class="input_fld input_text" value="" name="my_field_2">
+				<span class="field_error_msg_off" id="my_field_2_required_msg"><br>This field is required</span>
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<p class="form_line_field">
+			<label for="my_field_3" class="form_line_left_field"><span class="required_field">*</span> My Field 3</label>
+			<span class="form_line_right_field">
+				<input type="text" id="my_field_3" data-mjf="field_required" class="input_fld input_text" value="" name="my_field_3">
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<p class="form_line_field ">
+			<label for="my_field_4" class="form_line_left_field">My Field 4</label>
+			<span class="form_line_right_field">
+				<input type="text" id="my_field_4" class="input_fld input_text" value="" name="my_field_4">
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<p class="form_line_field">
+			<label class="form_line_left_field" for="input_type_select_single"><span class="required_field">*</span> Single Select</label>
+			<span class="form_line_right_field">
+				<select data-mjf="field_required" class="input_fld input_select margin_right_5" id="input_type_select_single">
+					<option value="">Please choose...</option>
+					<option value="input_type_select_single_1">Option 1</option>
+					<option value="input_type_select_single_2">Option 2</option>
+					<option value="input_type_select_single_3">Option 3</option>
+				</select>
+				<span class="helper_text">At least one option must be selected</span>
+				<span class="field_error_msg_off" id="input_type_select_single_required_msg"><br>This field is required</span>
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<p class="form_line_field ">
+			<label class="form_line_left_field" for="input_type_select_multiple"><span class="required_field">*</span> Multi Select</label>
+			<span class="form_line_right_field">
+				<select data-mjf="field_required" class="input_fld input_select" id="input_type_select_multiple" multiple="multiple" size="5">
+					<option value="input_type_select_multiple_1">Option 1</option>
+					<option value="input_type_select_multiple_2">Option 2</option>
+					<option value="input_type_select_multiple_3">Option 3</option>
+				</select>
+				<span class="field_error_msg_off" id="input_type_select_multiple_required_msg"><br>At least one option must be selected</span>
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<p class="form_line_field">
+			<span class="form_line_left_field"><span class="required_field">*</span> Radio Buttons</span>
+			<span class="form_line_right_field">
+				<input type="radio" name="input_type_radio" value="" data-mjf="field_required" class="input_radio" id="input_type_radio_1"><label for="input_type_radio_1">Option 1</label><br>
+				<input type="radio" name="input_type_radio" value="" data-mjf="field_required" class="input_radio" id="input_type_radio_2"><label for="input_type_radio_2">Option 2</label><br>
+				<input type="radio" name="input_type_radio" value="" data-mjf="field_required" class="input_radio" id="input_type_radio_3"><label for="input_type_radio_3">Option 3</label><br>
+				<input type="radio" name="input_type_radio" value="" data-mjf="field_required" class="input_radio" id="input_type_radio_4"><label for="input_type_radio_4">Option 4</label><br>
+				<span class="helper_text" id="input_type_radio_1_required_msg">At least one radio button must be selected</span>
+
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<p class="form_line_field ">
+			<span class="form_line_left_field"><span class="required_field">*</span> Checkboxes</span>
+			<span class="form_line_right_field">
+				<input type="checkbox" name="input_type_checkbox[]" value="" data-mjf="field_required" class="input_checkbox" id="input_type_checkbox_1"><label for="input_type_checkbox_1">Option 1</label><br>
+				<input type="checkbox" name="input_type_checkbox[]" value="" data-mjf="field_required" class="input_checkbox" id="input_type_checkbox_2"><label for="input_type_checkbox_2">Option 2</label><br>
+				<input type="checkbox" name="input_type_checkbox[]" value="" data-mjf="field_required" class="input_checkbox" id="input_type_checkbox_3"><label for="input_type_checkbox_3">Option 3</label><br>
+				<span class="helper_text" id="input_type_checkbox_1_required_msg">At least one check box must be selected</span>
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<p class="form_line_field">
+			<span class="form_line_left_field"><span class="required_field">*</span> Radio Button</span>
+			<span class="form_line_right_field">
+				<input type="radio" name="input_type_radio_single" value="" data-mjf="field_required" class="input_radio" id="input_type_radio_single"><label for="input_type_radio_single">Option 1</label><br>
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<p class="form_line_field ">
+			<span class="form_line_left_field"><span class="required_field">*</span> Checkbox</span>
+			<span class="form_line_right_field">
+				<input type="checkbox" name="input_type_checkbox_single" value="" data-mjf="field_required" class="input_checkbox" id="input_type_checkbox_single"><label for="input_type_checkbox_single">Option 1</label><br>
+			</span>
+			<br class="clear_both">
+		</p>
+
+		<div class="clear_both"></div>
+	
+		<p class="align_center margin_top_20 print_none">
+			<input type="submit" name="submit_btn" value="Submit" class="bg_colors bg_colors_default margin_right_5" id="input_submit_2">
+		</p>
+
+	</form>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.form_required = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../docs/">Back to the main documentation</a></p>	
+
+</body>
+</html>

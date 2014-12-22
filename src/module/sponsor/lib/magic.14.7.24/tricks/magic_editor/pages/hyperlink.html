@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hyperlink: Magic Editor: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../magic_editor.14.1.12.css" rel="stylesheet" media="all">
+	<link href="pages.css" rel="stylesheet" media="all">
+	<script type="text/javascript" src="hyperlink.12.12.21.js" charset="UTF-8"></script>
+</head>
+
+<body>
+
+	<h1><span class="magic_editor_btn magic_editor_btn_hyperlink"></span><script type="text/javascript">document.write(parent.$m.lang.magic_editor.hyperlink.hyperlink);</script></h1>
+
+	<div class="padding_5">
+
+		<form action="#" method="post">
+
+			<p class="padding_5">
+				<label for="nlink_title"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.hyperlink.title);</script></label><br>
+				<input type="text" name="nlink_title" class="width_95per" id="nlink_title" value="">
+			</p>
+
+			<p class="bg_edeef2 padding_5">
+				<label for="nlink_url"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.hyperlink.address);</script></label><br>
+				<input type="text" name="nlink_url" class="width_95per" id="nlink_url" value="">
+			</p>
+
+			<p class="padding_left_5">
+				<input type="checkbox" name="link_target" id="nlink_target" value="Y"><label class="margin_right_5" for="nlink_target"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.hyperlink.open_new_window);</script></label>
+				<!-- <input type="checkbox" name="nlink_track" id="nlink_track" value="Y"><label for="nlink_track"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.hyperlink.track);</script></label> -->
+			</p>
+			
+			<p class="bg_edeef2 padding_5">
+				<script type="text/javascript">document.write('<input type="button" value="' + parent.$m.lang.magic_editor.hyperlink.remove_link + '" class="float_right margin_right_5" id="link_remove" onclick="$me_hyperlink.remove();"><input type="button" value="' + parent.$m.lang.magic_editor.hyperlink.insert_link + '" class="margin_right_5" id="link_create" onclick="$me_hyperlink.create();"><input type="button" value="' + parent.$m.lang.magic_editor.hyperlink.cancel + '" class="margin_right_5" onclick="$me_hyperlink.cancel();">');</script>
+				<!-- <input type="button" value="Refresh" onclick="window.location.reload();"> -->
+			</p>
+
+		</form>
+		
+	</div>
+	
+</body>
+</html>

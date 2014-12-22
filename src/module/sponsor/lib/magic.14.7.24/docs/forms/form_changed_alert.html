@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Changed Form Alert: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : false, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Changed Form Alert: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Alert the visitor when navigating away from a changed form</h2>
+	
+	<form action="submission.php" method="post" data-mjf="form_changed_alert" id="my_form_changed_alert">
+	
+		<fieldset>
+	
+			<legend>Usage</legend>
+	
+			<p class="form_line_content">Add <code>data-mjf="form_changed_alert" id="FORM_ID"</code> to your <code>&lt;form&gt;</code> tag.</p>
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.form_changed_alert = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		
+		</fieldset>
+		
+		<fieldset>
+	
+			<legend>Example</legend>
+			
+			<p class="form_line_content">If you navigate away from this page after changing one of the fields below, you'll get an alert box letting you know that you haven't submited the form.</p>
+
+			<p class="form_line_field">
+				<label for="my_field_1" class="form_line_left_field">Text Field 1</label>
+				<span class="form_line_right_field">
+					<input type="text" name="my_field_1" value="" class="input_fld input_text" id="my_field_1">
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<label for="my_field_12" class="form_line_left_field">Text Field 2</label>
+				<span class="form_line_right_field">
+					<input type="text" name="my_field_2" value="" class="input_fld input_text" id="my_field_2">
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<label for="my_textarea_1" class="form_line_left_field">Text Area</label>
+				<span class="form_line_right_field">
+					<textarea rows="5" cols="20" name="my_textarea_1" class="input_fld input_textarea" id="my_textarea_1"></textarea>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_type_select_single">Select Single</label>
+				<span class="form_line_right_field">
+					<select name="input_type_select_single" class="input_fld input_select" id="input_type_select_single">
+						<option value="" selected="selected">Please choose...</option>
+						<option value="input_type_select_single_1">Option 1</option>
+						<option value="input_type_select_single_2">Option 2</option>
+						<option value="input_type_select_single_3">Option 3</option>
+					</select>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<span class="form_line_left_field">Radio Buttons</span>
+				<span class="form_line_right_field">
+					<input type="radio" name="input_type_radio" value="" data-mjf_err_parent="input_type_radio" class="input_radio" id="input_type_radio_1"><label for="input_type_radio_1">Option 1</label><br>
+					<input type="radio" name="input_type_radio" value="" data-mjf_err_parent="input_type_radio" class="input_radio" id="input_type_radio_2"><label for="input_type_radio_2">Option 2</label><br>
+					<input type="radio" name="input_type_radio" value="" data-mjf_err_parent="input_type_radio" class="input_radio" id="input_type_radio_3"><label for="input_type_radio_3">Option 3</label><br>
+					<input type="radio" name="input_type_radio" value="" data-mjf_err_parent="input_type_radio" class="input_radio" id="input_type_radio_4"><label for="input_type_radio_4">Option 4</label>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<span class="form_line_left_field">Checkboxes</span>
+				<span class="form_line_right_field">
+					<input checked="checked" type="checkbox" name="input_type_checkbox[]" value="" class="input_checkbox" id="input_type_checkbox_1"><label for="input_type_checkbox_1">Option 1</label><br>
+					<input type="checkbox" name="input_type_checkbox[]" value="" class="input_checkbox" id="input_type_checkbox_2"><label for="input_type_checkbox_2">Option 2</label><br>
+					<input type="checkbox" name="input_type_checkbox[]" value="" class="input_checkbox" id="input_type_checkbox_3"><label for="input_type_checkbox_3">Option 3</label>
+				</span>
+				<br class="clear_both">
+			</p>
+		
+			<p class="align_center margin_top_20 print_none">
+				<input type="submit" name="submit_btn" value="Submit" class="bg_colors bg_colors_default">
+			</p>
+			
+		</fieldset>
+
+		<fieldset>
+	
+			<legend>Notes</legend>
+	
+			<p class="form_line_content">This does not work in touch-based browsers and Opera 12 (the latest version as of this writing) or below - no support for <code>OnBeforeUnload</code>.</p>
+		
+		</fieldset>
+
+	</form>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.form_changed_alert = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

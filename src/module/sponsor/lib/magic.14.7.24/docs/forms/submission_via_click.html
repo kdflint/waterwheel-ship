@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Submission (via click): Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+	
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Form Submission (via click): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<form action="submission.php" method="post" id="form_required_1">
+	
+		<fieldset>
+	
+			<legend>Usage</legend>
+	
+			<p class="form_line_content">Add <code>data-mjf="submit_onclick|return_false" data-mjf_soc_id="FORM_ELEMENT_ID" id="ELEMENT_ID"</code> to your clickable tag.</p>
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.submit_onclick = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+
+		</fieldset>
+		
+		<fieldset>
+	
+			<legend>Example</legend>
+
+			<p class="form_line_field">
+				<label for="my_field_1" class="form_line_left_field">My Field 1</label>
+				<span class="form_line_right_field">
+					<input type="text" title="My Field" id="my_field_1" class="input_fld input_text" value="" name="my_field_1">
+				</span>
+				<br class="clear_both">
+			</p>
+		
+			<p class="form_line_field ">
+				<label for="my_field_2" class="form_line_left_field"> My Field 2</label>
+				<span class="form_line_right_field">
+					<input type="text" id="my_field_2" class="input_fld input_text" value="" name="my_field_2">
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<div class="clear_both"></div>
+			
+			<p class="align_center margin_top_20"><a href="#" data-mjf="submit_onclick|return_false" data-mjf_soc_id="form_required_1" data-mjf_soc_name_value="anchor_tag=Submitted" id="submit_that_form">Submit the form above!</a></p>
+			
+		</fieldset>
+
+		<fieldset>
+	
+			<legend>Notes</legend>
+	
+	
+			<p class="form_line_content">Add <code>data-mjf_soc_name_value="NAME=VALUE"</code> if you want to submit your clickable tag as a form field.</p>
+	
+			<p class="form_line_content">If you have a field element with <code>name="submit"</code> this will not work, you'll get a JavaScript error. This is completely from the browser and nothing we can do. Rename your field element to something else.</p>
+			<p class="form_line_content">If you have a form tag with <code>onsubmit="FUNCTION()"</code> the <code>onsubmit</code> probably won't fire. There isn't a work-around other than to write your own MJS <code>onsubmit</code> handler.</p>
+			<p class="form_line_content">If you're using, <code>$m.wand.form_required = true;</code> put this before <code>$m.wand.submit_onclick = true;</code> so the validation will work.</p>
+			
+		
+		</fieldset>
+
+	</form>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.submit_onclick = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

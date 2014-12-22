@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Version JSON: Dev: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../wand.src.js" charset="UTF-8"></script>
+	<link href="../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+
+	<script type="text/javascript">
+
+		function mjf_versions_encode()
+		{
+			$m.id("version_output").value = "$m.versions=" + JSON.stringify({
+
+				 "magic" : "14.7.24"
+				,"wand" : "14.7.14"
+
+				,"css" : {
+					 "dropdown_menu" : "13.3.26"
+					,"dynamic_tabs" : "12.5.22"
+					,"magic" : "13.5.17"
+				}
+
+				,"tricks" : {
+					 "ajax_lookup" : "11.4.29"
+					,"darkroom" : "13.5.28"
+					,"drag_n_drop" : "14.2.14"
+					,"gmaps" : "14.7.16"
+					,"magic_calendar" : "14.6.3"
+					,"magic_charts" : "12.5.18"
+					,"magic_editor" : "14.1.12"
+					,"magic_imagery" : "src"
+					,"magic_ratings" : "13.4.22"
+					,"motion" : "14.7.28"
+					,"new_form_fields" : "13.3.26"
+					,"string_deposit" : "13.1.25"
+
+					,"css" : {
+						 "ajax_lookup" : "11.4.29"
+						,"darkroom" : "13.3.28"
+						,"drag_n_drop" : "12.12.11"
+						,"magic_calendar" : "12.12.13"
+						,"magic_editor" : "14.1.12"
+						,"magic_imagery" : "src"
+						,"magic_ratings" : "13.4.22"
+						,"motion" : "14.7.28"
+						,"string_deposit" : "12.12.21"
+					}
+				}
+			});
+		}
+
+	</script>
+
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../docs/"><img src="../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Version JSON: Dev: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<fieldset>
+
+		<legend>Version JSON</legend>
+
+		<div class="margin_left_20">
+			<p><input type="button" name="Generate" value="Generate" class="bg_colors bg_colors_default" onclick="mjf_versions_encode();"></p>
+			<p><textarea rows="5" cols="20" name="" class="input_fld input_textarea" id="version_output"></textarea></p>
+		</div>
+	
+	</fieldset>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../docs/">Back to the main documentation</a></p>	
+
+</body>
+</html>

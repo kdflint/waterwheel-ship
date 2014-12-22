@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paste from Microsoft &reg; Word: Magic Editor: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../magic_editor.14.1.12.css" rel="stylesheet" media="all">
+	<link href="pages.css" rel="stylesheet" media="all">
+	<script type="text/javascript" src="paste_msword.13.2.1.js" charset="UTF-8"></script>
+</head>
+
+<body>
+
+	<h1><span class="magic_editor_btn magic_editor_btn_paste_msword"></span><script type="text/javascript">document.write(parent.$m.lang.magic_editor.paste_msword.paste_msword_header);</script></h1>
+
+	<div class="padding_5">
+
+		<form action="#" method="post">
+
+			<p class="padding_5">
+				<script type="text/javascript">document.write(parent.$m.lang.magic_editor.help.paste_from_microsoft_word_content);</script>
+				<script type="text/javascript">document.write(parent.$m.lang.magic_editor.paste_msword.paste_msword_details);</script>
+			</p>
+			
+			<div contenteditable="true" class="box_content_editable" id="paste_msword_html"></div>
+
+			<p class="padding_5">
+				<script type="text/javascript">document.write('<input type="button" value="' + parent.$m.lang.magic_editor.paste_msword.insert_content + '" class="margin_right_5" id="link_create" onclick="$me_paste_msword.insert();"><input type="button" value="' + parent.$m.lang.magic_editor.paste_msword.cancel + '" class="margin_right_5" onclick="$me_paste_msword.cancel();">');</script>
+				<!-- <input type="button" value="Refresh" onclick="window.location.reload();"> -->
+			</p>
+
+		</form>
+		
+	</div>
+	
+</body>
+</html>

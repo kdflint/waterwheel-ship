@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiple Magics: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Multiple Magics: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<fieldset>
+
+		<legend>Example</legend>
+
+		<p class="margin_left_10"><a href="http://www.google.com/" data-mjf="confirm_click|open_new_win|return_false" title="Visit Google?" data-mjf_win_dim="300x300" id="confirm_new_win">Confirm Click and then Open a New 300x300 Pop Up Window</a></p>
+
+<p><textarea rows="5" cols="20" name="" class="example_code" id="example_code_1" readonly="readonly"><a href="http://www.google.com/" data-mjf="confirm_click|open_new_win|return_false" title="Visit our Google?" data-mjf_win_dim="300x300" id="confirm_new_win">Confirm Click and then Open a New 300x300 Pop Up Window</a>
+
+<script type="text/javascript">
+	$m.wand.confirm_click = true;
+	$m.wand.open_new_win = true;
+</script></textarea></p>
+
+		<p class="align_center margin_top_10"><input type="button" name="" value="Select Code" class="bg_colors bg_colors_default" onclick="$m.id('example_code_1').select();"></p>
+
+	</fieldset>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.confirm_click = true;
+		$m.wand.open_new_win = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

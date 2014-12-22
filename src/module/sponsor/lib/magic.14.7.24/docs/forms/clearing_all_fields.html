@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clearing All Fields (via click): Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Clearing All Fields (via click): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<form action="submission.php" method="post">
+	
+		<fieldset>
+	
+			<legend>Usage</legend>
+	
+			<p class="form_line_content">Add <code>data-mjf="clear_onclick" data-mjf_coc_form="FORM_ID" id="ELEMENT_ID"</code> to your tag.</p>
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.clear_onclick = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		
+		</fieldset>
+		
+		<fieldset>
+	
+			<legend>Example</legend>
+
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_type_text">Text Field</label>
+				<span class="form_line_right_field">
+					<input type="text" name="input_type_text" value="Red" class="input_fld input_text" id="coc_input_type_text"><br>
+					<span class="helper_text">Will also work on <code>type="password"</code> and <code>type="file"</code></span>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_type_textarea">Textarea Field</label>
+				<span class="form_line_right_field">
+					<textarea name="input_type_textarea" class="input_fld input_textarea" id="coc_input_type_textarea">Blue</textarea>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<span class="form_line_left_field">Radio Buttons</span>
+				<span class="form_line_right_field">
+					<input type="radio" name="input_type_radio" value="" checked="checked" class="input_radio" id="coc_input_type_radio_1"><label for="input_type_radio_1">Option 1</label><br>
+					<input type="radio" name="input_type_radio" value="" class="input_radio" id="coc_input_type_radio_2"><label for="input_type_radio_2">Option 2</label><br>
+					<input type="radio" name="input_type_radio" value="" class="input_radio" id="coc_input_type_radio_3"><label for="input_type_radio_3">Option 3</label><br>
+					<input type="radio" name="input_type_radio" value="" class="input_radio" id="coc_input_type_radio_4"><label for="input_type_radio_4">Option 4</label>
+				</span>
+				<br class="clear_both">
+			</p>
+	
+			<p class="form_line_field">
+				<span class="form_line_left_field">Checkboxes</span>
+				<span class="form_line_right_field">
+					<input type="checkbox" name="input_type_checkbox[]" value="" class="input_checkbox" id="coc_input_type_checkbox_1"><label for="input_type_checkbox_1">Option 1</label><br>
+					<input type="checkbox" name="input_type_checkbox[]" value="" checked="checked" class="input_checkbox" id="coc_input_type_checkbox_2"><label for="input_type_checkbox_2">Option 2</label><br>
+					<input type="checkbox" name="input_type_checkbox[]" value="" checked="checked" class="input_checkbox" id="coc_input_type_checkbox_3"><label for="input_type_checkbox_3">Option 3</label>
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_type_select_single">Select Single</label>
+				<span class="form_line_right_field">
+					<select class="input_fld input_select margin_right_5" id="coc_input_type_select_single">
+						<option value="input_type_select_single_0">Please choose...</option>
+						<option value="input_type_select_single_1">Option 1</option>
+						<option value="input_type_select_single_2" selected="selected">Option 2</option>
+						<option value="input_type_select_single_3">Option 3</option>
+					</select>
+					<span class="helper_text">This will set <code>selectedIndex</code> to <code>-1</code></span>
+				</span>
+				<br class="clear_both">
+			</p>
+	
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_type_select_multiple">Select Multiple</label>
+				<span class="form_line_right_field">
+					<select class="input_fld input_select" id="coc_input_type_select_multiple" multiple="multiple" size="5">
+						<option value="input_type_select_multiple_1">Option 1</option>
+						<option value="input_type_select_multiple_2" selected="selected">Option 2</option>
+						<option value="input_type_select_multiple_3" selected="selected">Option 3</option>
+					</select>
+					<span class="helper_text">This will set <code>selectedIndex</code> to <code>-1</code></span>
+				</span>
+				<br class="clear_both">
+			</p>
+	
+			<div class="clear_both"></div>
+		
+			<p class="align_center margin_top_20 print_none">
+				<input type="button" name="clear_btn" value="Clear" data-mjf="clear_onclick" data-mjf_coc_form="form_clear_onclick" class="bg_colors bg_colors_default margin_right_5" id="coc_clear_btn">
+				<input type="reset" value="Reset" class="bg_colors bg_colors_default margin_right_5">
+			</p>
+			
+		</fieldset>
+
+		<fieldset>
+	
+			<legend>Notes</legend>
+	
+			<p class="form_line_content">It's best to use a <code>&lt;input <strong>type="button"</strong> value="Clear" data-mjf="clear_onclick" data-mjf_coc_form="form_clear_onclick"&gt;</code>.</p>
+			<p class="form_line_content">The <code>&lt;input <strong>type="reset"</strong> value="Reset"&gt;</code> will <em>reset the fields to their default values</em> and is only shown for clarification.</p>
+		
+		</fieldset>
+
+	</form>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.clear_onclick = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

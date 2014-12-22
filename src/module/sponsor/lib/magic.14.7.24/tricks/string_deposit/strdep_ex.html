@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>String Deposit - Example 1: Tricks: Magic JavaScript Framework</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="string_deposit.src.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	
+	<style type="text/css">
+		body{background-color:#fafbfd;font-family:Arial,sans-serif;font-size:12px;margin:0;padding:5px;}
+		h1{background-color:#e0e1e5 !important;border:1px solid #cdced1;border-radius:3px;font-size:15px;margin:0 0 5px 0;padding:5px;}
+		h1 img{vertical-align:middle;}
+	</style>
+	
+	<script type="text/javascript">
+	
+		var $str_deposit = {
+			
+			 // HTML Element ID which will show the list built from the "deposits" object below
+			 "id" : "string_deposit_ex_1_cont"
+			
+			// HTML template for each "deposit"
+			,"template" : '<p><a href="#" class="bg_colors bg_colors_default" string_deposit="DEPOSIT_VALUE">DEPOSIT_TITLE</a><br><span class="helper_text">DEPOSIT_DESC</span></p>'
+			
+			// The deposits object; values on the left are place holders for the template above
+			,"deposits" : {
+				0 : {
+					 "DEPOSIT_TITLE" : "First Name"
+					,"DEPOSIT_VALUE" : "$first_name"
+					,"DEPOSIT_DESC" : "This is the client's first name"
+				}
+				
+				,1 : {
+					 "DEPOSIT_TITLE" : "Last Name"
+					,"DEPOSIT_VALUE" : "$last_name"
+					,"DEPOSIT_DESC" : "This is the client's last name"
+				}
+				
+				,2 : {
+					 "DEPOSIT_TITLE" : "Email Address"
+					,"DEPOSIT_VALUE" : "$email_address"
+					,"DEPOSIT_DESC" : "This is the client's email address"
+				}
+				
+				,3 : {
+					 "DEPOSIT_TITLE" : "Phone Number"
+					,"DEPOSIT_VALUE" : "$phone_number"
+					,"DEPOSIT_DESC" : "This is the client's phone number"
+				}
+			}
+
+			// Action performed on the HTML Element ID above; Acceptable values are: overwrite, append, prepend
+			,"action" : "ovewrite"
+		}
+
+	</script>
+</head>
+
+<body>
+
+	<h1><img src="icon_string_deposit.png" alt="icon_string_deposit" width="16" height="16"> String Deposit &ndash; Example 1</h1>
+
+	<div class="margin_top_10" id="string_deposit_ex_1_cont"></div>
+
+	<!-- <p><input type="button" value="Refresh" onclick="window.location.reload();"></p> -->
+
+	<script type="text/javascript">
+		window.onload = function(){parent.$m.t.string_deposit.cur.deposit_id=document.getElementById($str_deposit.id);parent.$m.t.string_deposit.cur.deposit_template=$str_deposit.template;parent.$m.t.string_deposit.cur.deposits=$str_deposit.deposits;parent.$m.t.string_deposit.cur.deposit_action=$str_deposit.action;parent.$m.t.string_deposit.write();};
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dev: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : true, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../wand.src.js" charset="UTF-8"></script>
+	<link href="../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../docs/"><img src="../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Dev: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">What MJS thinks it knows about your computer and browser.</h2>
+	
+	<script type="text/javascript">
+	
+		$m.vd.get_view_port();
+		$m.geo.construct();
+		$m.storage.construct();
+		
+		var html_output = '<table class="general_table width_full">'
+			,supports_h264 = $m.media.supports.h264()
+			,supports_theora = $m.media.supports.theora()
+			,supports_vorbis = $m.media.supports.vorbis()
+			,supports_flash = $m.media.supports.flash()
+		
+			,visitor_details = {
+			
+				 "User agent<br><span class='helper_text'>$m.vd.ua</span>" : $m.vd.ua
+				 
+				,"Browser<br><span class='helper_text'>$m.vd.browser</span>" : $m.vd.browser
+		
+				,"Touch event support<br><span class='helper_text'>$m.vd.is_mobile_touch</span>" : $m.vd.is_mobile_touch
+	
+				,"Screen height<br><span class='helper_text'>$m.vd.screen_height</span>" : $m.vd.screen_height
+				,"Screen width<br><span class='helper_text'>$m.vd.screen_width</span>" : $m.vd.screen_width
+				
+				,"Visible page height<br><span class='helper_text'>$m.vd.visible_page_height</span>" : $m.vd.visible_page_height
+				,"Visible page width<br><span class='helper_text'>$m.vd.visible_page_width</span>" : $m.vd.visible_page_width
+	
+				,"Scrolled from the left<br><span class='helper_text'>$m.vd.scrolled_left</span>" : $m.vd.scrolled_left
+				,"Scrolled from the top<br><span class='helper_text'>$m.vd.scrolled_top</span>" : $m.vd.scrolled_top
+	
+				,"Total page height<br><span class='helper_text'>$m.vd.total_page_height</span>" : $m.vd.total_page_height
+				,"Total page width<br><span class='helper_text'>$m.vd.total_page_width</span>" : $m.vd.total_page_width
+				
+				,"Geolocation support<br><span class='helper_text'>$m.geo.has</span>" : $m.geo.has
+				
+				,"IndexedDB support<br><span class='helper_text'>$m.storage.indexed_db.available</span>" : $m.storage.indexed_db.available
+				,"Local Storage support<br><span class='helper_text'>$m.storage.local.available</span>" : $m.storage.local.available
+				,"Cookie support<br><span class='helper_text'>$m.storage.cookies.available</span>" : $m.storage.cookies.available
+				
+				,"H.264/MP4 media support<br><span class='helper_text'>$m.media.supports.h264()</span>" : supports_h264
+				,"Theora/Ogg media support<br><span class='helper_text'>$m.media.supports.theora()</span>" : supports_theora
+				,"Vorbis/WebM media support<br><span class='helper_text'>$m.media.supports.vorbis()</span>" : supports_vorbis
+				,"Flash media support<br><span class='helper_text'>$m.media.supports.flash()</span>" : supports_flash
+				
+				,"Supports offline websites<br><span class='helper_text'>$m.app_cache.available</span>" : $m.app_cache.available
+				
+				,"Are you online?<br><span class='helper_text'>$m.vd.is_online</span>" : $m.vd.is_online
+				
+				,"Where MJS thinks it lives<br><span class='helper_text'>$m.config.basedir</span>" : $m.config.basedir
+				
+			}
+		
+		for(var i in visitor_details)
+		{
+			html_output += '<tr><td class="align_right">' + i + '</td><td>' + visitor_details[i] + '</td></tr>';
+		}
+		
+		html_output += '</table>';
+		
+		document.write(html_output);
+
+	</script>
+
+	<p>&nbsp;</p>
+
+	<p class="align_center">&laquo; <a href="../docs/">Back to the main documentation</a></p>	
+
+</body>
+</html>

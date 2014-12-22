@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flick: Motion: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<link href="motion.12.5.7.css" rel="stylesheet">
+	<script type="text/javascript" src="motion.src.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Flick: Motion (<script type="text/javascript">document.write($m.versions.tricks.motion);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite padding_10">There isn't documentation for this. If you want to use it, use the source.</h2>
+	
+	<p class="form_line_content">The animation below will scroll <em>down</em> until it reaches the end of the content. It will then scroll <em>up</em> until it reaches the top again. Then it will do it all over again.</p>
+	<p class="form_line_content">If you mouseover, it will <em>stop</em> completely. If you click either the <em>up</em> or <em>down</em> arrows, it will scroll accordingly.</p>
+
+	<div data-mjf_mflick_autostart="true" id="motion_flick">
+		<div class="visibility_hidden" id="motion_flick_top"></div><div class="visibility_hidden" id="motion_flick_bottom"></div>
+		<div class="visibility_hidden" id="motion_flick_inside">
+			<div style="width:275px;">
+				<p><img src="../../images/examples/magic_0.png" alt="magic_0" width="128" height="128"></p>
+				<h4 class="margin_top_0">Magic 0</h4>
+			</div>
+			<div>
+				<p><img src="../../images/examples/magic_1.png" alt="magic_1" width="128" height="128"></p>
+				<h4 class="margin_top_0">Magic 1</h4>
+			</div>
+			<div>
+				<p><img src="../../images/examples/magic_2.png" alt="magic_2" width="128" height="128"></p>
+				<h4 class="margin_top_0">Magic 2</h4>
+			</div>
+			<div>
+				<p><img src="../../images/examples/magic_3.png" alt="magic_3" width="128" height="128"></p>
+				<h4 class="margin_top_0">Magic 3</h4>
+			</div>
+			<div>
+				<p><img src="../../images/examples/magic_4.png" alt="magic_4" width="128" height="128"></p>
+				<h4 class="margin_top_0">Magic 4</h4>
+			</div>
+			<div>
+				<p><img src="../../images/examples/magic_5.png" alt="magic_5" width="128" height="128"></p>
+				<h4 class="margin_top_0">Magic 5</h4>
+			</div>
+		</div>
+	</div>
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.trick.motion.flick = true;
+	</script>
+
+</body>
+</html>

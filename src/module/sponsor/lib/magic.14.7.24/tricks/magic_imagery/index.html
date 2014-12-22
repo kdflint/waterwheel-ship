@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Magic Imagery: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : true
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<link href="magic_imagery.src.css" rel="stylesheet">
+	<script type="text/javascript" src="magic_imagery.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Magic Imagery (<script type="text/javascript">document.write($m.versions.tricks.magic_imagery);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+<!--
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Easy image galleries</h2>
+
+	<fieldset>
+
+		<legend><a href="#" data-mjf="lightswitch|return_false" data-mjf_lswitch_id="initial_setup_cont" id="initial_setup">Initial Setup</a></legend>
+		
+		<div class="display_block" id="initial_setup_cont">
+		
+			<p class="form_line_content">
+				Add <code>&lt;link href="/PATH/TO/magic/tricks/magic_imagery/magic_imagery.<script type="text/javascript">document.write($m.versions.tricks.css.magic_imagery);</script>.css" rel="stylesheet"&gt;</code><br>
+				<code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/magic_imagery/magic_imagery.<script type="text/javascript">document.write($m.versions.tricks.magic_imagery);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+				below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+			</p>
+	
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.trick.magic_imagery = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+
+			<p class="form_line_content">Use the examples below as a guide for building your own!</p>
+			
+		</div>
+	
+	</fieldset>
+-->
+
+	<fieldset>
+
+		<legend>Example 1</legend>
+		
+		<div class="magic_imagery_wrapper">
+		
+			<div class="magic_imagery_cont">
+			
+				<div class="magic_imagery_full">
+					<p><img src="./examples/example_1.jpg" alt=""></p>
+					<p><a href="./examples/example_1.jpg" data-mjf="darkroom|return_false" data-mjf_dr_overlayx="true" data-mjf_dr_type="image" id="darkroom_image_only" title="Black train on tracks">Black train on tracks</a></p>
+				</div>
+			
+				<div class="magic_imagery_thumbs">
+					
+					<div class="magic_imagery_box">
+						<p>
+							<a href="./examples/example_1.jpg"><img src="./examples/example_1_t.jpg" alt=""></a><br>
+							Black train on tracks
+						</p>
+					</div>
+					
+					<div class="magic_imagery_box">
+						<p>
+							<a href="./examples/example_2.jpg"><img src="./examples/example_2_t.jpg" alt=""></a><br>
+							Silver train inside
+						</p>
+					</div>
+					
+					<div class="magic_imagery_box">
+						<p>
+							<a href="./examples/example_3.jpg"><img src="./examples/example_3_t.jpg" alt=""></a><br>
+							Commuter train Commuter train Commuter train Commuter train
+						</p>
+					</div>
+					
+					<div class="magic_imagery_box">
+						<p>
+							<a href="./examples/example_4.jpg"><img src="./examples/example_4_t.jpg" alt=""></a><br>
+							Orange train inside
+						</p>
+					</div>
+					
+					<div class="magic_imagery_box">
+						<p>
+							<a href="./examples/example_1.jpg"><img src="./examples/example_1_t.jpg" alt=""></a><br>
+							Black train on tracks
+						</p>
+					</div>
+					
+					<div class="magic_imagery_box">
+						<p>
+							<a href="./examples/example_2.jpg"><img src="./examples/example_2_t.jpg" alt=""></a><br>
+							Silver train inside
+						</p>
+					</div>
+					
+					<div class="magic_imagery_box">
+						<p>
+							<a href="./examples/example_3.jpg"><img src="./examples/example_3_t.jpg" alt=""></a><br>
+							Commuter train Commuter train Commuter train Commuter train
+						</p>
+					</div>
+					
+					<div class="magic_imagery_box">
+						<p>
+							<a href="./examples/example_4.jpg"><img src="./examples/example_4_t.jpg" alt=""></a><br>
+							Orange train inside
+						</p>
+					</div>
+					
+				</div>
+				
+				
+				<div class="clear_both"></div>
+				
+			</div>
+		
+		</div>
+
+	</fieldset>
+
+
+
+
+
+	<fieldset>
+
+		<legend>Change Log</legend>
+
+		<h3>&rarr; YY.MM.DD</h3>
+		<ul>
+			<li>Alpha release 1</li>
+		</ul>
+	
+	</fieldset>
+	
+	<fieldset>
+
+		<legend>To Do</legend>
+
+		<ul>
+			<li>TODO_1</li>
+		</ul>
+
+	</fieldset>
+
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.trick.magic_imagery = true;
+	</script>
+
+
+</body>
+</html>

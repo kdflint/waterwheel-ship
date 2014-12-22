@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Line Graph: Magic Charts: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<script type="text/javascript" src="magic_charts.12.5.18.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Line Graph: Magic Charts (<script type="text/javascript">document.write($m.versions.tricks.magic_charts);</script>): Magic JavaScript</h3>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<form action="#" method="post">
+
+		<fieldset>
+	
+			<legend>Usage</legend>
+	
+			<p class="form_line_content">
+				Add <code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/magic_charts/magic_charts.<script type="text/javascript">document.write($m.versions.tricks.magic_charts);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+				below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+			</p>
+			<p class="form_line_content">Use the examples below as a guide for building your own!</p>
+		
+		</fieldset>
+	
+	
+		<fieldset>
+		
+			<legend>Examples</legend>
+			
+			<div class="form_line_content">
+			
+				<p><strong>Default Line Graph</strong></p>
+
+				<canvas class="border_silver margin_bottom_20" id="line_graph_1" width="500" height="175"></canvas>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;canvas id="line_graph_1" width="500" height="175"&gt;&lt;/canvas&gt;
+&lt;script type="text/javascript"&gt;
+    $m.trick.magic_charts.line_graph = [{
+         "canvas_id" : "line_graph_1"
+        ,"data" : [
+             "Jan:4"
+            ,"Feb:10"
+            ,"Mar:28"
+            ,"Apr:34"
+            ,"May:30"
+            ,"Jun:19"
+            ,"Jul:31"
+            ,"Aug:25"
+        ]
+    }]
+&lt;/script&gt;</textarea></p>
+
+			</div>
+
+	
+			<div class="form_line_content">
+
+				<p><strong>Custom Line Graph</strong></p>
+		
+				<canvas class="border_silver margin_bottom_20" id="line_graph_2" width="300" height="250"></canvas>
+	
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;canvas id="line_graph_2" width="300" height="250"&gt;&lt;/canvas&gt;
+&lt;script type="text/javascript"&gt;
+    $m.trick.magic_charts.line_graph = [{
+         "canvas_id" : "line_graph_2"
+        ,"dot_color" : "purple"	 //optional
+        ,"line_color" : "orange" //optional
+        ,"text_color" : "purple" //optional
+        ,"text_style" : "italic 11px sans-serif" //optional
+        ,"y_increments" : 10 // optional
+        ,"data" : [
+             "Jan:12"
+            ,"Feb:28"
+            ,"Mar:18"
+            ,"Apr:34"
+            ,"May:40"
+        ]
+    }]
+&lt;/script&gt;</textarea></p>
+			
+			</div>
+
+		</fieldset>
+
+	</form>
+
+
+	<p class="align_center">&laquo; <a href="./">Back to Magic Charts</a></p>
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+
+		$m.trick.magic_charts.line_graph = [
+			{
+				 "canvas_id" : "line_graph_1"
+				,"data" : [
+					 "Jan:4"
+					,"Feb:10"
+					,"Mar:28"
+					,"Apr:34"
+					,"May:30"
+					,"Jun:19"
+					,"Jul:31"
+					,"Aug:25"
+				]
+			},{
+				 "canvas_id" : "line_graph_2"
+				,"dot_color" : "purple"
+				,"line_color" : "orange"
+				,"text_color" : "purple"
+				,"text_style" : "italic 11px sans-serif"
+				,"data" : [
+					 "Jan:12"
+					,"Feb:28"
+					,"Mar:18"
+					,"Apr:34"
+					,"May:40"
+				]
+			}
+		]
+
+	</script>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Field Submission (via keyup/change): Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : false, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> AJAX Field Submission (via keyup/change): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">Add <code>data-mjf="ajax_field_submit_kc" data-mjf_ajax_url="/PATH/TO/SERVER/SCRIPT/" data-mjf_ajax_update_id="ELEMENT_ID" id="ELEMENT_ID"</code> to your form field.</p>
+		<p class="form_line_content">Add <code>data-mjf_afskc="GROUP_NAME"</code> to your form fields if you'd like to submit them as a group.</p>
+
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.ajax_field_submit_kc = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Examples</legend>
+
+		<form action="#" method="post">
+
+			<div class="form_line_field">
+			
+				<p><strong>Single input text field</strong></p>
+			
+				<p>
+					<input type="text" name="input_text_1" value="" data-mjf="ajax_field_submit_kc" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="input_text_1_cont" class="input_fld input_text" id="input_text_1">
+				</p>
+				<div id="input_text_1_cont"></div>
+
+				<p><code>
+					&lt;input type="text" name="input_text_1" value="" data-mjf="ajax_field_submit_kc" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="input_text_1_cont" id="input_text_1"&gt;
+				</code></p>
+
+			</div>
+			
+			<div class="form_line_field">
+			
+				<p><strong>Multiple input text fields</strong></p>
+				
+				<p>
+					<input type="text" name="input_text_2a" value="" data-mjf="ajax_field_submit_kc" data-mjf_afskc="input_text_2" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="input_text_2_cont" class="margin_bottom_5 input_fld input_text" id="input_text_2a">
+					<input type="text" name="input_text_2b" value="" data-mjf="ajax_field_submit_kc" data-mjf_afskc="input_text_2" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_update_id="input_text_2_cont" class="input_fld input_text" id="input_text_2b">
+				</p>
+				<div id="input_text_2_cont"></div>
+
+				<p><code>
+					&lt;input type="text" name="input_text_2a" value="" data-mjf="ajax_field_submit_kc" data-mjf_afskc="input_text_2" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="input_text_2_cont" id="input_text_2a"&gt;<br><br>
+					&lt;input type="text" name="input_text_2b" value="" data-mjf="ajax_field_submit_kc" data-mjf_afskc="input_text_2" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_update_id="input_text_2_cont" id="input_text_2b"&gt;
+				</code></p>
+
+			</div>
+			
+			<div class="form_line_field">
+			
+				<p><strong>Single select field</strong></p>
+			
+				<p>
+					<select data-mjf="ajax_field_submit_kc" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_update_id="select_1_cont" class="input_fld input_select" name="select_1" id="select_1">
+						<option value="">Please choose...</option>
+						<option value="Option 1">Option 1</option>
+						<option value="Option 2">Option 2</option>
+						<option value="Option 3">Option 3</option>
+					</select>
+				</p>
+				<div id="select_1_cont"></div>
+
+				<p><code>
+					&lt;select data-mjf="ajax_field_submit_kc" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_update_id="select_1_cont" name="select_1" id="select_1"&gt;<br>
+						&nbsp; &lt;option value=""&gt;Please choose...&lt;/option&gt;<br>
+						&nbsp; &lt;option value="Option 1"&gt;Option 1&lt;/option&gt;<br>
+						&nbsp; &lt;option value="Option 2"&gt;Option 2&lt;/option&gt;<br>
+						&nbsp; &lt;option value="Option 3"&gt;Option 3&lt;/option&gt;<br>
+					&lt;/select&gt;
+				</code></p>
+
+			</div>
+			
+			<div class="form_line_field">
+			
+				<p><strong>Single textarea field and a multi-select field</strong></p>
+			
+				<p><textarea rows="5" cols="20" data-mjf="ajax_field_submit_kc" data-mjf_afskc="textarea_1" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="textarea_1_cont" name="textarea_1" class="input_fld input_textarea" id="textarea_1"></textarea></p>
+				<p>
+					<select size="5" multiple="multiple" data-mjf="ajax_field_submit_kc" data-mjf_afskc="textarea_1" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_update_id="textarea_1_cont" class="input_fld input_select" name="select_2[]" id="select_2">
+						<option value="">Please choose...</option>
+						<option value="Option 1">Option 1</option>
+						<option value="Option 2">Option 2</option>
+						<option value="Option 3">Option 3</option>
+						<option value="Option 4">Option 4</option>
+					</select>
+				</p>
+				<div id="textarea_1_cont"></div>
+
+				<p><code>
+
+					&lt;textarea rows="5" cols="20" data-mjf="ajax_field_submit_kc" data-mjf_afskc="textarea_1" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="textarea_1_cont" name="textarea_1" id="textarea_1"&gt;&lt;/textarea&gt;<br><br>
+
+					&lt;select size="5" multiple="multiple" data-mjf="ajax_field_submit_kc" data-mjf_afskc="textarea_1" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_update_id="textarea_1_cont" name="select_2[]" id="select_2"&gt;<br>
+						&nbsp; &lt;option value=""&gt;Please choose...&lt;/option&gt;<br>
+						&nbsp; &lt;option value="Option 1"&gt;Option 1&lt;/option&gt;<br>
+						&nbsp; &lt;option value="Option 2"&gt;Option 2&lt;/option&gt;<br>
+						&nbsp; &lt;option value="Option 3"&gt;Option 3&lt;/option&gt;<br>
+						&nbsp; &lt;option value="Option 4"&gt;Option 4&lt;/option&gt;<br>
+					&lt;/select&gt;
+					
+				</code></p>
+
+			</div>
+			
+			<div class="form_line_field">
+			
+				<p><strong>Multiple checkbox fields</strong></p>
+				
+				<p>
+					<input type="checkbox" data-mjf="ajax_field_submit_kc" data-mjf_afskc="checkbox_grp_1" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_update_id="checkbox_grp_1_cont" name="checkbox_grp_1[]" value="Option 1" class="input_checkbox" id="checkbox_grp_1a"><label for="checkbox_grp_1a">Option 1</label><br>
+					<input type="checkbox" data-mjf="ajax_field_submit_kc" data-mjf_afskc="checkbox_grp_1" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="checkbox_grp_1_cont" name="checkbox_grp_1[]" value="Option 2" class="input_checkbox" id="checkbox_grp_1b"><label for="checkbox_grp_1b">Option 2</label><br>
+					<input type="checkbox" data-mjf="ajax_field_submit_kc" data-mjf_afskc="checkbox_grp_1" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_update_id="checkbox_grp_1_cont" name="checkbox_grp_1[]" value="Option 3" class="input_checkbox" id="checkbox_grp_1c"><label for="checkbox_grp_1c">Option 3</label>
+				</p>
+				<div id="checkbox_grp_1_cont"></div>
+
+				<p><code>
+					&lt;input type="checkbox" data-mjf="ajax_field_submit_kc" data-mjf_afskc="checkbox_grp_1" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_update_id="checkbox_grp_1_cont" name="checkbox_grp_1[]" value="Option 1" id="checkbox_grp_1a"&gt;<br><br>
+					&lt;input type="checkbox" data-mjf="ajax_field_submit_kc" data-mjf_afskc="checkbox_grp_1" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="checkbox_grp_1_cont" name="checkbox_grp_1[]" value="Option 2" id="checkbox_grp_1b"&gt;<br><br>
+					&lt;input type="checkbox" data-mjf="ajax_field_submit_kc" data-mjf_afskc="checkbox_grp_1" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_update_id="checkbox_grp_1_cont" name="checkbox_grp_1[]" value="Option 3" id="checkbox_grp_1c"&gt;
+				</code></p>
+
+			</div>
+
+			<div class="form_line_field">
+			
+				<p><strong>Multiple radio button fields and a single checkbox field</strong></p>
+				
+				<p>
+					<input type="radio" data-mjf="ajax_field_submit_kc" data-mjf_afskc="radio_grp_1" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_update_id="radio_grp_1_cont" name="radio_grp_1" value="Option 1" class="input_radio" id="radio_grp_1a"><label for="radio_grp_1a">Option 1</label><br>
+					<input type="radio" data-mjf="ajax_field_submit_kc" data-mjf_afskc="radio_grp_1" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="radio_grp_1_cont" name="radio_grp_1" value="Option 2" class="input_radio" id="radio_grp_1b"><label for="radio_grp_1b">Option 2</label><br>
+					<input type="radio" data-mjf="ajax_field_submit_kc" data-mjf_afskc="radio_grp_1" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_update_id="radio_grp_1_cont" name="radio_grp_1" value="Option 3" class="input_radio" id="radio_grp_1c"><label for="radio_grp_1c">Option 3</label><br>
+					<input type="checkbox" data-mjf="ajax_field_submit_kc" data-mjf_afskc="radio_grp_1" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_update_id="radio_grp_1_cont" name="checkbox_grp_2" value="Option 4" class="input_checkbox" id="radio_grp_1d"><label for="radio_grp_1d">Option 4</label>
+				</p>
+				<div id="radio_grp_1_cont"></div>
+
+				<p><code>
+					&lt;input type="radio" data-mjf="ajax_field_submit_kc" data-mjf_afskc="radio_grp_1" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_update_id="radio_grp_1_cont" name="radio_grp_1" value="Option 1" id="radio_grp_1a"&gt;<br><br>
+					&lt;input type="radio" data-mjf="ajax_field_submit_kc" data-mjf_afskc="radio_grp_1" data-mjf_ajax_url="_ajax.php" data-mjf_ajax_update_id="radio_grp_1_cont" name="radio_grp_1" value="Option 2" id="radio_grp_1b"&gt;<br><br>
+					&lt;input type="radio" data-mjf="ajax_field_submit_kc" data-mjf_afskc="radio_grp_1" data-mjf_ajax_url="_ajax2.php" data-mjf_ajax_update_id="radio_grp_1_cont" name="radio_grp_1" value="Option 3" id="radio_grp_1c"&gt;<br><br>
+					&lt;input type="checkbox" data-mjf="ajax_field_submit_kc" data-mjf_afskc="radio_grp_1" data-mjf_ajax_url="_ajax3.php" data-mjf_ajax_update_id="radio_grp_1_cont" name="checkbox_grp_2" value="Option 4" id="radio_grp_1d"&gt;
+				</code></p>
+
+			</div>
+
+
+		</form>
+		
+	</fieldset>
+
+
+<!--
+	<fieldset>
+
+		<legend>Notes</legend>
+
+		<p class="form_line_content">The <code>action</code> and <code>method</code> attributes for your form are still required and will be used when making the AJAX call.</p>
+		<p class="form_line_content">Add <code>data-mjf_askc_action="/PATH/TO/NEW_ACTION"</code> to your form field if you want your <code>&lt;form&gt;</code> to use a different action.</p>
+		<p class="form_line_content">You may want to use <a href="../forms/validation.html">Form Validation</a> as well &mdash; <code>data-mjf="form_required|ajax_submit|return_false"</code> for your <code>&lt;form&gt;</code>.</p>
+	
+	</fieldset>
+-->
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.ajax_field_submit_kc = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

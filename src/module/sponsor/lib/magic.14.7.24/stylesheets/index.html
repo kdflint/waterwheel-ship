@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Defaults CSS (12.12.19)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="defaults.css" rel="stylesheet" media="all">
+	<style type="text/css">
+		body{background:#fff;color:#262626;font-family:Arial, sans-serif;font-size:12px;line-height:16px;padding:10px;}
+		code{background-color:#F2F2F2;color:#006000;padding:2px;}
+		#defaults_css_sidebar{float:left;margin-top:10px;width:150px;}
+		#defaults_css_sidebar ul{margin: 0 0 10px 15px;padding:0;}
+		#defaults_css_sidebar li{margin: 0 0 5px 0;padding:0;}
+		#defaults_css_primary{margin:30px 0 0 160px;}
+		#defaults_css_primary fieldset{margin-bottom:40px !important;}
+	</style>
+
+</head>
+<body>
+
+	<h1 class="align_center" id="top"><img src="./defaults_css/color_wheel.png" alt=""> Defaults CSS (12.12.19)</h1>
+
+	<div id="defaults_css_sidebar">
+
+		<fieldset>
+		
+			<legend>Jump to</legend>
+		
+			<ul>
+				<li>
+					<h3><a href="#messaging">Messaging</a></h3>
+					<ul>
+						<li><a href="#msg_success">Success</a></li>
+						<li><a href="#msg_information">Information</a></li>
+						<li><a href="#msg_danger">Danger</a></li>
+						<li><a href="#msg_warning">Warning</a></li>
+					</ul>
+				</li>
+				<li><h3><a href="#sticky_notes">Sticky Notes</a></h3></li>
+				<li><h3><a href="#dropdown_menu">Dropdown Menu</a></h3></li>
+				<li>
+					<h3><a href="#form_fields">Form Fields</a></h3>
+					<ul>
+						<li><a href="#fld_input_box">Input Box</a></li>
+						<li><a href="#fld_input_box_small">Input Box (small)</a></li>
+						<li><a href="#fld_input_box_upload">Input Box (file upload)</a></li>
+						<li><a href="#fld_input_box_disabled">Input Box (disabled)</a></li>
+						<li><a href="#fld_textarea">Text Area</a></li>
+						<li><a href="#fld_textarea_large">Text Area (large)</a></li>
+						<li><a href="#fld_select_single">Select Drop Down (single)</a></li>
+						<li><a href="#fld_select_multi">Select Box (multiple)</a></li>
+						<li><a href="#fld_checkboxes_vertical">Check Boxes (vertical)</a></li>
+						<li><a href="#fld_checkboxes_horizontal">Check Boxes (horizontal)</a></li>
+						<li><a href="#fld_radiobuttons_vertical">Radio Buttons (vertical)</a></li>
+						<li><a href="#fld_radiobuttons_horizontal">Radio Buttons (horizontal)</a></li>
+						<li><a href="#horizontal_labels_and_fields">Horizontal labels and fields</a></li>
+					</ul>
+				</li>
+				<li><h3><a href="#form_content">Form Content</a></h3></li>
+				<li>
+					<h3><a href="#buttons">Buttons</a></h3>
+					
+					<ul>
+						<li>
+							<h4>Input Buttons</h4>
+							<ul>
+								<li><a href="#buttons">Primary</a></li>
+								<li><a href="#buttons">Default</a></li>
+								<li><a href="#buttons">Danger</a></li>
+								<li><a href="#buttons">Success</a></li>
+								<li><a href="#buttons">Warning</a></li>
+							</ul>
+						</li>
+						<li>
+							<h4>Link Buttons</h4>
+							<ul>
+								<li><a href="#buttons">Primary</a></li>
+								<li><a href="#buttons">Default</a></li>
+								<li><a href="#buttons">Danger</a></li>
+								<li><a href="#buttons">Success</a></li>
+								<li><a href="#buttons">Warning</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><h3><a href="#tables">Tables</a></h3></li>
+			</ul>
+
+		</fieldset>
+
+	</div>
+
+
+	<div id="defaults_css_primary">
+
+		<fieldset class="margin_top_20" id="messaging">
+		
+			<legend>Messaging</legend>
+			
+			<div class="padding_top_5" id="msg_success"></div>
+			<div class="box_msg bg_colors bg_colors_green"><p>Success Message</p></div>
+			<p><code>&lt;div class="box_msg bg_colors bg_colors_green"&gt;&lt;p&gt;Success Message&lt;/p&gt;&lt;/div&gt;</code></p>
+			
+			<div class="box_msg bg_colors bg_colors_green">
+				<p>Success Message 2</p>
+				<p>Success Message 3</p>
+			</div>
+			<p>
+				<code>&lt;div class="box_msg bg_colors bg_colors_green"&gt;<br>
+				 &nbsp;&nbsp;&lt;p&gt;Success Message 2&lt;/p&gt;<br>
+				 &nbsp;&nbsp;&lt;p&gt;Success Message 3&lt;/p&gt;<br>
+				&lt;/div&gt;</code>
+			</p>
+		
+			<div class="padding_top_5" id="msg_information"></div>
+			<div class="box_msg bg_colors bg_colors_blue" id="msg_information"><p>Information Message</p></div>
+			<p><code>&lt;div class="box_msg bg_colors bg_colors_blue"&gt;&lt;p&gt;Information Message&lt;/p&gt;&lt;/div&gt;</code></p>
+			
+			<div class="padding_top_5" id="msg_danger"></div>
+			<div class="box_msg bg_colors bg_colors_red" id="msg_danger"><p>Danger Message</p></div>
+			<p><code>&lt;div class="box_msg bg_colors bg_colors_red"&gt;&lt;p&gt;Danger Message&lt;/p&gt;&lt;/div&gt;</code></p>
+			
+			<div class="box_msg bg_colors bg_colors_red">
+				<p>Danger Message 2</p>
+				<ul>
+					<li>Danger Sub-message 1</li>
+					<li>Danger Sub-message 2</li>
+					<li>Danger Sub-message 3</li>
+				</ul>
+			</div>
+			<p>
+				<code>&lt;div class="box_msg bg_colors bg_colors_red"&gt;<br>
+				&nbsp;&nbsp;&lt;p&gt;Danger Message 2&lt;/p&gt;<br>
+				&nbsp;&nbsp;&lt;ul&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Danger Sub-message 1&lt;/li&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Danger Sub-message 2&lt;/li&gt;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Danger Sub-message 3&lt;/li&gt;<br>
+				&nbsp;&nbsp;&lt;/ul&gt;<br>
+				&lt;/div&gt;</code>
+			</p>
+			
+			<div class="padding_top_5" id="msg_warning"></div>
+			<div class="box_msg bg_colors bg_colors_yellow" id="msg_warning"><p>Warning Message</p></div>
+			<p><code>&lt;div class="box_msg bg_colors bg_colors_yellow"&gt;&lt;p&gt;Warning Message&lt;/p&gt;&lt;/div&gt;</code></p>
+			
+			<p class="align_center margin_top_20"><a href="#top"><strong>Top &uarr;</strong></a></p>
+		
+		</fieldset>
+		
+		
+		
+		
+		<fieldset class="margin_top_20" id="sticky_notes">
+		
+			<legend>Sticky Notes</legend>
+
+			<div class="sticky_note"><p>Basic Note</p></div>
+			<p class="padding_bottom_20"><code>&lt;div class="sticky_note"&gt;&lt;p&gt;Basic Note&lt;/p&gt;&lt;/div&gt;</code></p>
+
+			<div class="sticky_note">
+				<p>Multiple Notes 1</p>
+				<p>Multiple Notes 2</p>
+			</div>
+			<p class="padding_bottom_20">
+				<code>&lt;div class="sticky_note"&gt;<br>
+				&nbsp;&nbsp;&lt;p&gt;Multiple Notes 1&lt;/p&gt;<br>
+				&nbsp;&nbsp;&lt;p&gt;Multiple Notes 2&lt;/p&gt;<br>
+				&lt;/div&gt;</code>
+			</p>
+			
+			<div class="sticky_note">
+				<p>Basic Note with list items</p>
+				<ul>
+					<li>List Item 1</li>
+					<li>List Item 2</li>
+					<li>List Item 3</li>
+				</ul>
+			</div>
+			<p class="padding_bottom_20">
+				<code>&lt;div class="sticky_note"&gt;<br>
+					&nbsp;&nbsp;&lt;p&gt;Basic Note with list items&lt;/p&gt;<br>
+					&nbsp;&nbsp;&lt;ul&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;List Item 1&lt;/li&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;List Item 2&lt;/li&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;List Item 3&lt;/li&gt;<br>
+					&nbsp;&nbsp;&lt;/ul&gt;<br>
+				&lt;/div&gt;</code>
+			</p>
+
+			<div class="sticky_note sticky_note_purple"><p>Purple Note</p></div>
+			<p class="padding_bottom_20"><code>&lt;div class="sticky_note sticky_note_purple"&gt;&lt;p&gt;Purple Note&lt;/p&gt;&lt;/div&gt;</code></p>
+			
+			<div class="sticky_note sticky_note_green"><p>Green Note</p></div>
+			<p class="padding_bottom_20"><code>&lt;div class="sticky_note sticky_note_green"&gt;&lt;p&gt;Green Note&lt;/p&gt;&lt;/div&gt;</code></p>
+
+			<div class="sticky_note sticky_note_orange"><p>Orange Note</p></div>
+			<p class="padding_bottom_20"><code>&lt;div class="sticky_note sticky_note_green"&gt;&lt;p&gt;Orange Note&lt;/p&gt;&lt;/div&gt;</code></p>
+			
+			<div class="sticky_note sticky_note_aqua"><p>Aqua Note</p></div>
+			<p class="padding_bottom_20"><code>&lt;div class="sticky_note sticky_note_aqua"&gt;&lt;p&gt;Aqua Note&lt;/p&gt;&lt;/div&gt;</code></p>
+
+			
+			<div class="sticky_note sticky_note_comment"><p>Comment Note</p></div>
+			<p class="padding_bottom_20"><code>&lt;div class="sticky_note sticky_note_comment"&gt;&lt;p&gt;Comment Note&lt;/p&gt;&lt;/div&gt;</code></p>
+
+			<div class="sticky_note sticky_note_purple sticky_note_comment"><p>Purple Comment Note</p></div>
+			<p class="padding_bottom_20"><code>&lt;div class="sticky_note sticky_note_purple sticky_note_comment"&gt;&lt;p&gt;Comment Note&lt;/p&gt;&lt;/div&gt;</code></p>
+
+			<div class="sticky_note sticky_note_todo"><p>Todo Note</p></div>
+			<p class="padding_bottom_20"><code>&lt;div class="sticky_note sticky_note_todo"&gt;&lt;p&gt;Todo Note&lt;/p&gt;&lt;/div&gt;</code></p>
+			
+			<div class="sticky_note sticky_note_orange sticky_note_todo"><p>Orange Todo Note</p></div>
+			<p class="padding_bottom_20"><code>&lt;div class="sticky_note sticky_note_orange sticky_note_todo"&gt;&lt;p&gt;Todo Note&lt;/p&gt;&lt;/div&gt;</code></p>
+
+			
+			<p class="align_center margin_top_20"><a href="#top"><strong>Top &uarr;</strong></a></p>
+		
+		</fieldset>
+		
+		
+
+
+		<fieldset id="dropdown_menu">
+
+			<legend>Dropdown Menu</legend>
+			
+			<ul class="dropdown_menu margin_left_20">
+				<li>
+					<a href="#">Section 1</a>
+					<ul>
+						<li><a href="#">Link 1.1</a></li>
+						<li><a href="#">Link 1.2</a></li>
+						<li><a href="#">Link 1.3</a></li>
+						<li><a href="#">Link 1.4</a></li>
+						<li><a href="#">Link 1.5</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Section 2</a>
+					<ul>
+						<li><a href="#">Link 2.1</a></li>
+						<li><a href="#">Link 2.2</a></li>
+						<li><a href="#">Link 2.3</a></li>
+						<li>
+							<a href="#">Link 2.4 <span class="float_right">&rarr;</span></a>
+							<ul>
+								<li>
+									<a href="#">Link 2.4.1 <span class="float_right">&rarr;</span></a>
+									<ul>
+										<li><a href="#">Link 2.4.1.1</a></li>
+										<li><a href="#">Link 2.4.1.2</a></li>
+										<li><a href="#">Link 2.4.1.3</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Link 2.4.2</a></li>
+								<li><a href="#">Link 2.4.3</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Link 2.5</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Section 3</a>
+					<ul>
+						<li>
+							<a href="#">Link 3.1 <span class="float_right">&rarr;</span></a>
+							<ul>
+								<li><a href="#">Link 3.1.1</a></li>
+								<li><a href="#">Link 3.1.2</a></li>
+								<li><a href="#">Link 3.1.3</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Link 3.2 <span class="float_right">&rarr;</span></a>
+							<ul>
+								<li><a href="#">Link 3.2.1</a></li>
+								<li><a href="#">Link 3.2.2</a></li>
+								<li><a href="#">Link 3.2.3</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Link 3.3</a></li>
+						<li><a href="#">Link 3.4</a></li>
+					</ul>
+				</li>	
+			</ul>
+
+<pre><code>&lt;link href="dropdown_menu.css" rel="stylesheet"&gt;
+&lt;ul class="dropdown_menu"&gt;
+	&lt;li&gt;
+		&lt;a href="#"&gt;Section 1&lt;/a&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 1.1&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 1.2&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 1.3&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 1.4&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 1.5&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href="#"&gt;Section 2&lt;/a&gt;
+		&lt;ul&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 2.1&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 2.2&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 2.3&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href="#"&gt;Link 2.4 &lt;span class="float_right"&gt;&rarr;&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					&lt;li&gt;
+						&lt;a href="#"&gt;Link 2.4.1 &lt;span class="float_right"&gt;&rarr;&lt;/span&gt;&lt;/a&gt;
+						&lt;ul&gt;
+							&lt;li&gt;&lt;a href="#"&gt;Link 2.4.1.1&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="#"&gt;Link 2.4.1.2&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="#"&gt;Link 2.4.1.3&lt;/a&gt;&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Link 2.4.2&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Link 2.4.3&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 2.5&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#"&gt;Section 3&lt;/a&gt;
+		&lt;ul&gt;
+			&lt;li&gt;
+				&lt;a href="#"&gt;Link 3.1 &lt;span class="float_right"&gt;&rarr;&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Link 3.1.1&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Link 3.1.2&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Link 3.1.3&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href="#"&gt;Link 3.2 &lt;span class="float_right"&gt;&rarr;&lt;/span&gt;&lt;/a&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Link 3.2.1&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Link 3.2.2&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href="#"&gt;Link 3.2.3&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 3.3&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;Link 3.4&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;	
+&lt;/ul&gt;
+</code></pre>
+
+
+		</fieldset>
+
+
+
+
+		<fieldset id="form_fields">
+		
+			<legend>Form Fields</legend>
+
+			<div class="padding_10">
+			
+				<h3>Form fields should be wrapped in the following code:</h3>
+<pre><code>&lt;p class="form_line_field"&gt;
+	&lt;label class="form_line_left_field" for="FIELD_ID"&gt;FIELD_LABEL&lt;/label&gt;
+	&lt;span class="form_line_right_field"&gt;
+		FIELD_INPUT_TAG&lt;br&gt;
+		&lt;span class="helper_text"&gt;HELP_TEXT&lt;/span&gt;
+	&lt;/span&gt;
+	&lt;br class="clear_both"&gt;
+&lt;/p&gt;</code></pre>
+
+			</div>
+
+
+			<div class="padding_top_5" id="fld_input_box"></div>
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_text_fld">Input Box</label>
+				<span class="form_line_right_field">
+					<input type="text" name="" value="" class="input_fld input_text" id="input_text_fld"><br>
+					<code>&lt;input type="text" name="" value="" class="input_fld input_text" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_input_box_small"></div>
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_text_small_fld">Input Box (small)</label>
+				<span class="form_line_right_field">
+					<input type="text" name="" value="" class="input_fld input_text_small" id="input_text_small_fld"><br>
+					<code>&lt;input type="text" name="" value="" class="input_fld input_text_small" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_input_box_upload"></div>
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_file_fld">Input Box (file upload)</label>
+				<span class="form_line_right_field">
+					<input type="file" name="" value="" class="input_file" id="input_file_fld"><br>
+					<code>&lt;input type="file" name="" class="input_file" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_input_box_disabled"></div>
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_text_fld">Input Box (disabled)</label>
+				<span class="form_line_right_field">
+					<input type="text" name="" value="" disabled="disabled" class="input_fld input_text" id="input_text_disabled_fld"><br>
+					<code>&lt;input type="text" disabled="disabled" name="" value="" class="input_fld input_text" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_textarea"></div>
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_textarea_fld">Text Area</label>
+				<span class="form_line_right_field">
+					<textarea rows="5" cols="20" name="" class="input_fld input_textarea" id="input_textarea_fld"></textarea><br>
+					<code>&lt;textarea rows="10" cols="20" name="" class="input_fld input_textarea" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_textarea_large"></div>
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_textarea_large_fld">Text Area (large)</label>
+				<span class="form_line_right_field">
+					<textarea rows="10" cols="20" name="" class="input_fld input_textarea_large" id="input_textarea_large_fld"></textarea><br>
+					<code>&lt;textarea rows="10" cols="20" name="" class="input_fld input_textarea_large" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_select_single"></div>
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_select_single_fld">Select Drop Down (single)</label>
+				<span class="form_line_right_field">
+					<select name="" class="input_fld input_select" id="input_select_single_fld">
+						<option value="">Option 1</option>
+						<option value="">Option 2</option>
+						<option value="">Option 3</option>
+					</select><br>
+					<code>&lt;select name="" class="input_fld input_select" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_select_multi"></div>
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_select_multi_fld">Select Box (multiple)</label>
+				<span class="form_line_right_field">
+					<select name="" multiple="multiple" class="input_fld input_select" id="input_select_multi_fld" size="5">
+						<option value="">Option 1</option>
+						<option value="">Option 2</option>
+						<option value="">Option 3</option>
+						<option value="">Option 4</option>
+						<option value="">Option 5</option>
+						<option value="">Option 6</option>
+						<option value="">Option 7</option>
+					</select><br>
+					<code>&lt;select multiple="multiple" name="" class="input_fld input_select" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_checkboxes_vertical"></div>
+			<p class="form_line_field">
+				<span class="form_line_left_field">Check Boxes (vertical)</span>
+				<span class="form_line_right_field">
+					<input type="checkbox" name="input_checkbox_flds" value="" class="input_checkbox" id="input_checkbox_fld_1v"><label for="input_checkbox_fld_1v">Check 1</label><br>
+					<input type="checkbox" name="input_checkbox_flds" value="" class="input_checkbox" id="input_checkbox_fld_2v"><label for="input_checkbox_fld_2v">Check 2</label><br>
+					<input type="checkbox" name="input_checkbox_flds" value="" class="input_checkbox" id="input_checkbox_fld_3v"><label for="input_checkbox_fld_3v">Check 3</label><br>
+					<input type="checkbox" name="input_checkbox_flds" value="" class="input_checkbox" id="input_checkbox_fld_4v"><label for="input_checkbox_fld_4v">Check 4</label><br>
+					<input type="checkbox" name="input_checkbox_flds" value="" class="input_checkbox" id="input_checkbox_fld_5v"><label for="input_checkbox_fld_5v">Check 5</label><br>
+					<code>&lt;input type="checkbox" name="" value="" class="input_checkbox" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_checkboxes_horizontal"></div>
+			<p class="form_line_field">
+				<span class="form_line_left_field">Check Boxes (horizontal)</span>
+				<span class="form_line_right_field">
+					<input type="checkbox" name="input_checkbox_flds" value="" class="input_checkbox" id="input_checkbox_fld_1h"><label for="input_checkbox_fld_1h">Check 1</label>
+					<input type="checkbox" name="input_checkbox_flds" value="" class="input_checkbox" id="input_checkbox_fld_2h"><label for="input_checkbox_fld_2h">Check 2</label>
+					<input type="checkbox" name="input_checkbox_flds" value="" class="input_checkbox" id="input_checkbox_fld_3h"><label for="input_checkbox_fld_3h">Check 3</label>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_radiobuttons_vertical"></div>
+			<p class="form_line_field">
+				<span class="form_line_left_field">Radio Buttons (vertical)</span>
+				<span class="form_line_right_field">
+					<input type="radio" name="input_radio_flds" value="" class="input_radio" id="input_radio_fld_1v"><label for="input_radio_fld_1v">Radio 1</label><br>
+					<input type="radio" name="input_radio_flds" value="" class="input_radio" id="input_radio_fld_2v"><label for="input_radio_fld_2v">Radio 2</label><br>
+					<input type="radio" name="input_radio_flds" value="" class="input_radio" id="input_radio_fld_3v"><label for="input_radio_fld_3v">Radio 3</label><br>
+					<input type="radio" name="input_radio_flds" value="" class="input_radio" id="input_radio_fld_4v"><label for="input_radio_fld_4v">Radio 4</label><br>
+					<input type="radio" name="input_radio_flds" value="" class="input_radio" id="input_radio_fld_5v"><label for="input_radio_fld_5v">Radio 5</label><br>
+					<code>&lt;input type="radio" name="" value="" class="input_radio" id=""&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<div class="padding_top_5" id="fld_radiobuttons_horizontal"></div>
+			<p class="form_line_field">
+				<span class="form_line_left_field">Radio Buttons (horizontal)</span>
+				<span class="form_line_right_field">
+					<input type="radio" name="input_radio_flds" value="" class="input_radio" id="input_radio_fld_1h"><label for="input_radio_fld_1h">Radio 1</label>
+					<input type="radio" name="input_radio_flds" value="" class="input_radio" id="input_radio_fld_2h"><label for="input_radio_fld_2h">Radio 2</label>
+					<input type="radio" name="input_radio_flds" value="" class="input_radio" id="input_radio_fld_3h"><label for="input_radio_fld_3h">Radio 3</label>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+
+			<h3 class="padding_left_10 padding_top_10" id="horizontal_labels_and_fields">Horizontal labels and fields:</h3>
+
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_text_small_fld_2">Input Box Left (small)</label>
+				<span class="form_line_right_field">
+				
+					<span class="form_line_right_field_inner">
+						<input type="text" name="" value="" size="35" class="input_fld input_text_small" id="input_text_small_fld_2">
+					</span>
+					
+					<span class="form_line_right_field_inner">
+						<label for="input_text_small_fld_3">Input Box Right (small)</label>
+						<input type="text" name="" value="" size="25" class="input_fld input_text_small" id="input_text_small_fld_3">
+					</span>
+					
+				</span>
+				<br class="clear_both">
+			</p>
+
+
+			<div class="padding_left_10">
+
+<pre><code>&lt;p class="form_line_field"&gt;
+	&lt;label class="form_line_left_field" for=""&gt;Input Box Left (small)&lt;/label&gt;
+	&lt;span class="form_line_right_field"&gt;
+		&lt;span class="form_line_right_field_inner"&gt;
+			&lt;input type="text" name="" value="" size="35" class="input_fld input_text_small" id=""&gt;
+		&lt;/span&gt;
+		&lt;span class="form_line_right_field_inner"&gt;
+			&lt;label for="input_text_small_fld_3"&gt;Input Box Right (small)&lt;/label&gt;
+			&lt;input type="text" name="" value="" size="25" class="input_fld input_text_small" id=""&gt;
+		&lt;/span&gt;
+	&lt;/span&gt;
+	&lt;br class="clear_both"&gt;
+&lt;/p&gt;</code></pre>
+
+			</div>
+
+
+			<div class="padding_10">
+				<h3>Below are a couple of examples:</h3>
+				<p>Tip: Use the <code>size=""</code> attribute on the <code>&lt;input&gt;</code> elements to control the width of the fields.</p>
+			</div>
+			
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_text_small_fld_4">First</label>
+				<span class="form_line_right_field">
+				
+				
+					<span class="form_line_right_field_inner">
+						<input type="text" name="" value="" size="25" class="input_fld input_text_small" id="input_text_small_fld_4">
+					</span>
+					
+					<span class="form_line_right_field_inner">
+						<label for="input_text_small_fld_5">M.I.</label>
+						<input type="text" name="" value="" size="5" class="input_fld input_text_small" id="input_text_small_fld_5">
+					</span>
+					
+					<span class="form_line_right_field_inner">
+						<label for="input_text_small_fld_6">Last</label>
+						<input type="text" name="" value="" size="25" class="input_fld input_text_small" id="input_text_small_fld_6">
+					</span>
+					
+				</span>
+				<br class="clear_both">
+			</p>
+
+			<p class="form_line_field">
+				<label class="form_line_left_field" for="input_text_small_fld_7">City</label>
+				<span class="form_line_right_field">
+
+					<span class="form_line_right_field_inner">
+						<input type="text" name="" value="" size="25" class="input_fld input_text_small" id="input_text_small_fld_7">
+					</span>
+					
+					<span class="form_line_right_field_inner">
+						<label for="input_text_small_fld_5">State</label>
+						<select name="" class="input_fld input_select" id="input_text_small_fld_5">
+							<option value="AL">Alabama</option>
+							<option value="AK">Alaska</option>
+							<option value="AZ">Arizona</option>
+							<option value="AR">Arkansas</option>
+							<option value="CA">California</option>
+							<option value="CO">Colorado</option>
+							<option value="CT">Connecticut</option>
+							<option value="DE">Delaware</option>
+							<option value="DC">District of Columbia</option>
+							<option value="FL">Florida</option>
+							<option value="GA">Georgia</option>
+							<option value="HI">Hawaii</option>
+							<option value="ID">Idaho</option>
+							<option value="IL">Illinois</option>
+							<option value="IN">Indiana</option>
+							<option value="IA">Iowa</option>
+							<option value="KS">Kansas</option>
+							<option value="KY">Kentucky</option>
+							<option value="LA">Louisiana</option>
+							<option value="ME">Maine</option>
+							<option value="MD">Maryland</option>
+							<option value="MA">Massachusetts</option>
+							<option value="MI">Michigan</option>
+							<option value="MN">Minnesota</option>
+							<option value="MS">Mississippi</option>
+							<option value="MO">Missouri</option>
+							<option value="MT">Montana</option>
+							<option value="NE">Nebraska</option>
+							<option value="NV">Nevada</option>
+							<option value="NH">New Hampshire</option>
+							<option value="NJ">New Jersey</option>
+							<option value="NM">New Mexico</option>
+							<option value="NY">New York</option>
+							<option value="NC">North Carolina</option>
+							<option value="ND">North Dakota</option>
+							<option value="OH">Ohio</option>
+							<option value="OK">Oklahoma</option>
+							<option value="OR">Oregon</option>
+							<option value="PA">Pennsylvania</option>
+							<option value="RI">Rhode Island</option>
+							<option value="SC">South Carolina</option>
+							<option value="SD">South Dakota</option>
+							<option value="TN">Tennessee</option>
+							<option value="TX">Texas</option>
+							<option value="UT">Utah</option>
+							<option value="VT">Vermont</option>
+							<option value="VA">Virginia</option>
+							<option value="WA">Washington</option>
+							<option value="WV">West Virginia</option>
+							<option value="WI">Wisconsin</option>
+							<option value="WY">Wyoming</option>
+						</select>
+					</span>
+					
+					<span class="form_line_right_field_inner">
+						<label for="input_text_small_fld_9">Zip</label>
+						<input type="text" name="" value="" size="5" class="input_fld input_text_small" id="input_text_small_fld_9">
+					</span>
+					
+				</span>
+				<br class="clear_both">
+			</p>
+
+
+			<p class="align_center margin_top_20"><a href="#top"><strong>Top &uarr;</strong></a></p>
+
+		</fieldset>
+
+
+		<fieldset id="form_content">
+		
+			<legend>Form Content</legend>
+
+			<div class="padding_10">
+			
+				<h3>Form content should be wrapped in the following code:</h3>
+<pre><code>&lt;p class="form_line_content"&gt;
+	&lt;span class="form_line_left_content"&gt;CONTENT_LABEL&lt;/span&gt;
+	&lt;span class="form_line_right_content"&gt;
+		CONTENT&lt;br&gt;
+		&lt;span class="helper_text"&gt;HELP_TEXT&lt;/span&gt;
+	&lt;/span&gt;
+	&lt;br class="clear_both"&gt;
+&lt;/p&gt;</code></pre>
+
+			</div>
+			
+			<p class="form_line_content">
+				<span class="form_line_left_content">Example 1:</span>
+				<span class="form_line_right_content">
+					Ut at massa aliquam libero porttitor vehicula
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<p class="form_line_content">
+				<span class="form_line_left_content">Example 2:</span>
+				<span class="form_line_right_content">
+					Suspendisse potenti
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<p class="align_center margin_top_20"><a href="#top"><strong>Top &uarr;</strong></a></p>
+			
+		</fieldset>
+
+
+		<fieldset id="buttons">
+		
+			<legend>Buttons</legend>
+
+			<p class="form_line_field">
+				<span class="form_line_left_field">Input Buttons</span>
+				<span class="form_line_right_field">
+					<input type="submit" name="" value="Primary Button" class="bg_colors bg_colors_blue"><br>
+					<code>&lt;input type="submit" name="" value="" class="bg_colors bg_colors_blue"&gt;</code><br><br>
+					<input type="submit" name="" value="Default Button" class="bg_colors bg_colors_default"><br>
+					<code>&lt;input type="submit" name="" value="" class="bg_colors bg_colors_default"&gt;</code><br><br>
+					<input type="submit" name="" value="Danger Button" class="bg_colors bg_colors_red"><br>
+					<code>&lt;input type="submit" name="" value="" class="bg_colors bg_colors_red"&gt;</code><br><br>
+					<input type="submit" name="" value="Success Button" class="bg_colors bg_colors_green"><br>
+					<code>&lt;input type="submit" name="" value="" class="bg_colors bg_colors_green"&gt;</code><br><br>
+					<input type="submit" name="" value="Warning Button" class="bg_colors bg_colors_yellow"><br>
+					<code>&lt;input type="submit" name="" value="" class="bg_colors bg_colors_yellow"&gt;</code><br><br>
+					
+					<input type="submit" name="" value="Primary Button (disabled)" disabled="disabled" class="bg_colors bg_colors_blue"><br>
+					<code>&lt;input type="submit" name="" value="" disabled="disabled" class="bg_colors bg_colors_blue"&gt;</code><br><br>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<p class="form_line_field">
+				<span class="form_line_left_field">Link Buttons</span>
+				<span class="form_line_right_field">
+					<a href="#" class="bg_colors bg_colors_blue">Primary Link</a><br>
+					<code>&lt;a href="#" class="bg_colors bg_colors_blue"&gt;&lt;/a&gt;</code><br><br>
+					<a href="#" class="bg_colors bg_colors_default">Default Link</a><br>
+					<code>&lt;a href="#" class="bg_colors bg_colors_default"&gt;&lt;/a&gt;</code><br><br>
+					<a href="#" class="bg_colors bg_colors_red">Danger Link</a><br>
+					<code>&lt;a href="#" class="bg_colors bg_colors_red"&gt;&lt;/a&gt;</code><br><br>
+					<a href="#" class="bg_colors bg_colors_green">Success Link</a><br>
+					<code>&lt;a href="#" class="bg_colors bg_colors_green"&gt;&lt;/a&gt;</code><br><br>
+					<a href="#" class="bg_colors bg_colors_yellow">Warning Link</a><br>
+					<code>&lt;a href="#" class="bg_colors bg_colors_yellow"&gt;&lt;/a&gt;</code>
+				</span>
+				<br class="clear_both">
+			</p>
+			
+			<p class="align_center margin_top_20"><a href="#top"><strong>Top &uarr;</strong></a></p>
+	
+		</fieldset>
+		
+		<fieldset id="tables">
+		
+			<legend>Tables</legend>
+			
+			<div class="padding_10">
+			
+				<p>Table widths should generally be decided by the browser but you can add the CSS class <code>width_full</code> to your table if you'd like it to fill its parent.</p>
+			
+				<table class="general_table margin_bottom_10">
+					<tr class="general_tr_header">
+						<th>Header 1</th>
+						<th>Header 2</th>
+					</tr>
+					<tr class="general_tr_sub_header">
+						<td>Sub-header 1</td>
+						<td>Sub-header 2</td>
+					</tr>
+					<tr>
+						<td>Row 1, Cell 1</td>
+						<td>Row 1, Cell 2</td>
+					</tr>
+					<tr>
+						<td>Row 2, Cell 1</td>
+						<td>Row 2, Cell 2</td>
+					</tr>
+				</table>
+	
+	
+				<p class="margin_left_20"><code>&lt;table class="general_table"&gt;<br>
+				&nbsp;&nbsp;&lt;tr class="general_tr_header"&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 1&lt;/th&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Header 2&lt;/th&gt;<br>
+				&nbsp;&nbsp;&lt;/tr&gt;<br>
+				&nbsp;&nbsp;&lt;tr class="general_tr_sub_header"&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Sub-header 1&lt;/td&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Sub-header 2&lt;/td&gt;<br>
+				&nbsp;&nbsp;&lt;/tr&gt;<br>
+				&nbsp;&nbsp;&lt;tr&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Cell 1&lt;/td&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 1, Cell 2&lt;/td&gt;<br>
+				&nbsp;&nbsp;&lt;/tr&gt;<br>
+				&nbsp;&nbsp;&lt;tr&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Cell 1&lt;/td&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Row 2, Cell 2&lt;/td&gt;<br>
+				&nbsp;&nbsp;&lt;/tr&gt;<br>
+				&lt;/table&gt;</code></p>
+				
+			</div>
+			
+			<p class="align_center margin_top_20"><a href="#top"><strong>Top &uarr;</strong></a></p>
+		
+		</fieldset>
+	
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorting: Drag N Drop: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+	<link href="drag_n_drop.src.css" rel="stylesheet">
+	<script type="text/javascript" src="drag_n_drop.src.js" charset="UTF-8"></script>
+
+</head>
+<body>
+
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Sorting: Drag N Drop (<script type="text/javascript">document.write($m.versions.tricks.drag_n_drop);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">
+			Add <code>&lt;link href="/PATH/TO/magic/tricks/drag_n_drop/drag_n_drop.<script type="text/javascript">document.write($m.versions.tricks.css.drag_n_drop);</script>.css" rel="stylesheet"&gt;</code><br>
+			<code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/drag_n_drop/drag_n_drop.<script type="text/javascript">document.write($m.versions.tricks.drag_n_drop);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+			below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+		</p>
+		
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.trick.drag_n_drop.sort = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		
+		<p class="form_line_content">Use the examples below to build your own!</p>
+	
+	</fieldset>
+
+	<fieldset>
+
+		<legend>Examples</legend>
+
+		<div class="form_line_content">
+		
+			<p><strong>1. Simple sorting</strong></p>
+
+			<div data-mjf="drag_n_drop_sort" class="dnd_sort_cont" id="dnd_sort_ex_1">
+			
+				<div class="dnd_sort_box" id="dnd_sort_ex_1_1">
+					<p>Sort Box 1.1</p>
+				</div>
+		
+				<div class="dnd_sort_box" id="dnd_sort_ex_1_2">
+					<p>Sort Box 1.2</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_1_3">
+					<p>Sort Box 1.3</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_1_4">
+					<p>Sort Box 1.4</p>
+				</div>
+				
+				<div class="clear_both"></div>
+				
+			</div>
+			
+			<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;div data-mjf="drag_n_drop_sort" class="dnd_sort_cont" id="dnd_sort_ex_1"&gt;
+			
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_1_1"&gt;
+        &lt;p&gt;Sort Box 1.1&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_1_2"&gt;
+        &lt;p&gt;Sort Box 1.2&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_1_3"&gt;
+        &lt;p&gt;Sort Box 1.3&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_1_4"&gt;
+        &lt;p&gt;Sort Box 1.4&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="clear_both"&gt;&lt;/div&gt;
+    
+&lt;/div&gt;</textarea></p>
+
+		</div>
+
+
+		<div class="padding_10"></div>
+
+
+<!-- -->
+
+		<div class="form_line_content">
+		
+			<p><strong>2. Sorting and recording values</strong></p>
+
+			<div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_update_field="dnd_sort_ex_2_field" class="dnd_sort_cont" id="dnd_sort_ex_2">
+			
+				<div class="dnd_sort_box" data-mjf_drag_n_drop_value="2.1" id="dnd_sort_ex_2_1">
+					<p>Sort Box 2.1</p>
+				</div>
+		
+				<div class="dnd_sort_box" data-mjf_drag_n_drop_value="2.2" id="dnd_sort_ex_2_2">
+					<p>Sort Box 2.2</p>
+				</div>
+				
+				<div class="dnd_sort_box" data-mjf_drag_n_drop_value="2.3" id="dnd_sort_ex_2_3">
+					<p>Sort Box 2.3</p>
+				</div>
+				
+				<div class="dnd_sort_box" data-mjf_drag_n_drop_value="2.4" id="dnd_sort_ex_2_4">
+					<p>Sort Box 2.4</p>
+				</div>
+				
+				<div class="clear_both"></div>
+				
+				<p class="margin_5"><input type="text" name="dnd_sort_ex_2_field" value="" class="input_fld input_text" id="dnd_sort_ex_2_field"></p>
+				
+			</div>
+			
+			<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_update_field="dnd_sort_ex_2_field" class="dnd_sort_cont" id="dnd_sort_ex_2"&gt;
+			
+    &lt;div class="dnd_sort_box" data-mjf_drag_n_drop_value="2.1" id="dnd_sort_ex_2_1"&gt;
+        &lt;p&gt;Sort Box 2.1&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="dnd_sort_box" data-mjf_drag_n_drop_value="2.1" id="dnd_sort_ex_2_2"&gt;
+        &lt;p&gt;Sort Box 2.2&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" data-mjf_drag_n_drop_value="2.1" id="dnd_sort_ex_2_3"&gt;
+        &lt;p&gt;Sort Box 2.3&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" data-mjf_drag_n_drop_value="2.1" id="dnd_sort_ex_2_4"&gt;
+        &lt;p&gt;Sort Box 2.4&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="clear_both"&gt;&lt;/div&gt;
+    
+    &lt;p&gt;&lt;input type="text" name="" value="" id="dnd_sort_ex_2_field"&gt;&lt;/p&gt;
+    
+&lt;/div&gt;</textarea></p>
+
+			<p>The <code>data-mjf_drag_n_drop_update_field</code> attribute should be set to an existing form field's ID.</p>
+			<p>After sorting, the field's value will be set to a sorted, pipe-delimited string.</p>
+			<p>The <code>data-mjf_drag_n_drop_value</code> attributes should be set to whatever values you'd like to record.</p>
+
+		</div>
+
+
+		<div class="padding_10"></div>
+
+
+		<div class="form_line_content">
+		
+			<p><strong>3. Sorting and deleting</strong></p>
+
+			<div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_remove="true" class="dnd_sort_cont" id="dnd_sort_ex_3">
+			
+				<div class="dnd_sort_box" id="dnd_sort_ex_3_1">
+					<p>Sort Box 3.1</p>
+				</div>
+		
+				<div class="dnd_sort_box" id="dnd_sort_ex_3_2">
+					<p>Sort Box 3.2</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_3_3">
+					<p>Sort Box 3.3</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_3_4">
+					<p>Sort Box 3.4</p>
+				</div>
+				
+				<div class="clear_both"></div>
+				
+			</div>
+			
+			<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_remove="true" class="dnd_sort_cont" id="dnd_sort_ex_3"&gt;
+			
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_3_1"&gt;
+        &lt;p&gt;Sort Box 3.1&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_3_2"&gt;
+        &lt;p&gt;Sort Box 3.2&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_3_3"&gt;
+        &lt;p&gt;Sort Box 3.3&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_3_4"&gt;
+        &lt;p&gt;Sort Box 3.4&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="clear_both"&gt;&lt;/div&gt;
+    
+&lt;/div&gt;</textarea></p>
+
+			<p>When the <code>data-mjf_drag_n_drop_remove</code> attribute is set to <code>"true"</code> a <img src="../../images/icons/icon_clear.png" alt="Remove" class="valign_middle"> will appear on each sortable item.</p>
+
+		</div>
+
+
+		<div class="padding_10"></div>
+
+
+		<div class="form_line_content">
+		
+			<p class="margin_top_10"><strong>4. Dragging to different containers</strong></p>
+
+			<div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_parent_set="any" class="dnd_sort_cont margin_bottom_10" id="dnd_sort_ex_4">
+			
+				<div class="dnd_sort_box" id="dnd_sort_ex_4_1">
+					<p>Sort Box 4.1</p>
+				</div>
+		
+				<div class="dnd_sort_box" id="dnd_sort_ex_4_2">
+					<p>Sort Box 4.2</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_4_3">
+					<p>Sort Box 4.3</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_4_4">
+					<p>Sort Box 4.4</p>
+				</div>
+				
+				<div class="clear_both"></div>
+				
+			</div>
+
+			<div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_parent_set="any" class="dnd_sort_cont" id="dnd_sort_ex_5">
+			
+				<div class="dnd_sort_box" id="dnd_sort_ex_5_1">
+					<p>Sort Box 5.1</p>
+				</div>
+		
+				<div class="dnd_sort_box" id="dnd_sort_ex_5_2">
+					<p>Sort Box 5.2</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_5_3">
+					<p>Sort Box 5.3</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_5_4">
+					<p>Sort Box 5.4</p>
+				</div>
+				
+				<div class="clear_both"></div>
+				
+			</div>
+			
+			<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_parent_set="any" class="dnd_sort_cont" id="dnd_sort_ex_4"&gt;
+
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_4_1"&gt;
+        &lt;p&gt;Sort Box 4.1&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_4_2"&gt;
+        &lt;p&gt;Sort Box 4.2&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_4_3"&gt;
+        &lt;p&gt;Sort Box 4.3&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_4_4"&gt;
+        &lt;p&gt;Sort Box 4.4&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="clear_both"&gt;&lt;/div&gt;
+    
+&lt;/div&gt;
+
+&lt;div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_parent_set="any" class="dnd_sort_cont" id="dnd_sort_ex_5"&gt;
+
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_5_1"&gt;
+        &lt;p&gt;Sort Box 5.1&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_5_2"&gt;
+        &lt;p&gt;Sort Box 5.2&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_5_3"&gt;
+        &lt;p&gt;Sort Box 5.3&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="dnd_sort_box" id="dnd_sort_ex_5_4"&gt;
+        &lt;p&gt;Sort Box 5.4&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="clear_both"&gt;&lt;/div&gt;
+    
+&lt;/div&gt;</textarea></p>
+
+			<p>By default, sortable elements <em>cannot</em> be dragged from one container to another.</p>
+
+			<p>This can be disabled by adding <code>data-mjf_dnds_set_parent="any"</code> to the primary container that contains the <code>data-mjf="drag_n_drop_sort"</code>.</p>
+
+		</div>
+
+
+		<div class="padding_10"></div>
+
+
+		<div class="form_line_content">
+	
+			<p><strong>5. Sorting and then fire a JavaScript callback</strong> <span id="dnd_sort_ex_6_callback"></span></p>
+
+			<div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_callback="example_6_callback" class="dnd_sort_cont" id="dnd_sort_ex_6">
+			
+				<div class="dnd_sort_box" id="dnd_sort_ex_6_1">
+					<p>Sort Box 6.1</p>
+				</div>
+		
+				<div class="dnd_sort_box" id="dnd_sort_ex_6_2">
+					<p>Sort Box 6.2</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_6_3">
+					<p>Sort Box 6.3</p>
+				</div>
+				
+				<div class="dnd_sort_box" id="dnd_sort_ex_6_4">
+					<p>Sort Box 6.4</p>
+				</div>
+				
+				<div class="clear_both"></div>
+				
+			</div>
+			
+			<p class="margin_top_10"><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;div data-mjf="drag_n_drop_sort" data-mjf_drag_n_drop_callback="example_6_callback" class="dnd_sort_cont" id="dnd_sort_ex_6"&gt;
+			
+	&lt;div class="dnd_sort_box" id="dnd_sort_ex_6_1"&gt;
+		&lt;p&gt;Sort Box 6.1&lt;/p&gt;
+	&lt;/div&gt;
+
+	&lt;div class="dnd_sort_box" id="dnd_sort_ex_6_2"&gt;
+		&lt;p&gt;Sort Box 6.2&lt;/p&gt;
+	&lt;/div&gt;
+	
+	&lt;div class="dnd_sort_box" id="dnd_sort_ex_6_3"&gt;
+		&lt;p&gt;Sort Box 6.3&lt;/p&gt;
+	&lt;/div&gt;
+	
+	&lt;div class="dnd_sort_box" id="dnd_sort_ex_6_4"&gt;
+		&lt;p&gt;Sort Box 6.4&lt;/p&gt;
+	&lt;/div&gt;
+	
+	&lt;div class="clear_both"&gt;&lt;/div&gt;
+	
+&lt;/div&gt;</textarea></p>
+
+			<p>The <code>data-mjf_drag_n_drop_callback</code> attribute should be set to an existing JavaScript function's name.</p>
+			<p>It will be passed the newly dropped element as an object.</p>
+
+		</div>
+
+
+<!-- -->
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Notes</legend>
+		<p class="form_line_content">The various <code>data-mjf_drag_and_drop_*</code> attributes can be mixed and matched as needed.</p>
+		<p class="form_line_content">By default, any elements inside a <code>class="dnd_sort_box"</code> will trigger the drag and drop operation. If you wish certain elements NOT to do this, add <code>data-mjf_drag_n_drop_ignore="true"</code> to that element.</p>
+	
+	</fieldset>
+
+
+
+	<fieldset>
+
+		<legend>To Do</legend>
+
+		<div class="form_line_content">
+			<ul>
+				<li>Get working in touch-based browsers.</li>
+				<li>Sort by <code>data-mjf_drag_n_drop_value=""</code> with a custom link.</li>
+				<li>Add dividers to sort area.</li>
+				<li>Remove dividers from sort area.</li>
+			</ul>
+		</div>
+		
+	</fieldset>
+
+
+
+
+	<p class="align_center">&laquo; <a href="./">Back to Drag N Drop</a></p>
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.trick.drag_n_drop.sort = true;
+		
+		function example_6_callback(in_parent)
+		{
+			$m.id("dnd_sort_ex_6_callback").innerHTML = "&mdash; updated at " + $m.dt.get_time_now();
+		}
+		
+	</script>
+
+
+</body>
+</html>

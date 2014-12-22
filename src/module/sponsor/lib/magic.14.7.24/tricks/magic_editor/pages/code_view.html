@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Code View: Magic Editor: Tricks: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link href="../magic_editor.14.1.12.css" rel="stylesheet" media="all">
+	<link href="pages.css" rel="stylesheet" media="all">
+	<script type="text/javascript" src="code_view.13.3.28.js" charset="UTF-8"></script>
+</head>
+
+<body>
+
+	<h1><span class="magic_editor_btn magic_editor_btn_code_view"></span><script type="text/javascript">document.write(parent.$m.lang.magic_editor.code_view.code_view_header);</script></h1>
+
+	<div class="padding_5">
+
+		<form action="#" method="post">
+	
+			<p class="padding_left_5">
+				<input type="checkbox" name="code_view_wrap" value="Y" onclick="$me_code_view.toggle_wrap();" class="input_checkbox" id="code_view_wrap"><label for="code_view_wrap"><script type="text/javascript">document.write(parent.$m.lang.magic_editor.code_view.word_wrap);</script></label>
+			</p>
+	
+			<p><textarea rows="5" cols="20" name="code_view_html" class="box_content_editable" id="code_view_html" spellcheck="false" wrap="off"></textarea></p>
+
+			<p class="padding_5">
+				<script type="text/javascript">document.write('<input type="button" value="' + parent.$m.lang.magic_editor.code_view.clean + '" class="margin_right_5" id="link_create" onclick="$me_code_view.clean();"><input type="button" value="' + parent.$m.lang.magic_editor.code_view.update + '" class="margin_right_5" id="link_create" onclick="$me_code_view.update();"><input type="button" value="' + parent.$m.lang.magic_editor.code_view.cancel + '" class="margin_right_5" onclick="$me_code_view.cancel();">');</script>
+				<!-- <input type="button" value="Refresh" onclick="window.location.reload();"> -->
+			</p>
+
+		</form>
+		
+	</div>
+	
+</body>
+</html>

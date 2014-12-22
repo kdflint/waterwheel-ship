@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Form Fields: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+	
+	<script type="text/javascript" src="/resources/javascript/magic/tricks/new_form_fields/new_form_fields.src.js" charset="UTF-8"></script>
+
+	<style type="text/css">
+		li {
+			margin-bottom: 10px;
+		}
+		code {
+			background-color: #F2F2F2;
+			border-left: 1px solid #D8DFEA;
+			color: #006000;
+			padding: 1px;
+		}
+	</style>
+
+</head>
+<body class="bg_white padding_5">
+	
+	<h1 class="align_center margin_bottom_5"><a href="../../docs/"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> New Form Fields (<script type="text/javascript">document.write($m.versions.tricks.new_form_fields);</script>): Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../../docs/_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Creating new form fields on the fly</h2>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">
+			Add <code>&lt;script type="text/javascript" src="/PATH/TO/magic/tricks/new_form_fields/new_form_fields.<script type="text/javascript">document.write($m.versions.tricks.new_form_fields);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code><br><br>
+			below your <code>&lt;script type="text/javascript" src="/PATH/TO/magic/wand.<script type="text/javascript">document.write($m.versions.wand);</script>.js" charset="UTF-8"&gt;&lt;/script&gt;</code>
+		</p>
+		<p class="form_line_content">Add <code>data-mjf="new_form_fields|return_false" data-mjf_nff="tag:input|type:FIELD_TYPE|name:NEW_FIELD_NAME|parent:NEW_FIELD_PARENT_ID" id="ELEMENT_ID"</code> to your <code>&lt;a&gt;</code> tag.</p>
+
+		<div class="form_line_content">
+			<p class="form_line_content"><strong>The required <code>data-mjf_nff</code> attributes are:</strong></p>
+			<ul>
+				<li><code>tag:</code>
+					<ul>
+						<li><code>input</code></li>
+						<li><code>textarea</code></li>
+					</ul>
+				</li>
+				<li>If <code>tag:input</code>, <code>type:</code> 
+					<ul>
+						<li><code>text</code></li>
+						<li><code>radio</code> <span class="helper_text">(will prompt for value)</span></li>
+						<li><code>checkbox</code> <span class="helper_text">(will prompt for value)</span></li>
+						<li><code>file</code></li>
+					</ul>
+				</li>
+				<li><code>name:</code>
+					<ul>
+						<li><code>NEW_FIELD_NAME</code></li>
+					</ul>
+				</li>
+				<li><code>parent:</code>
+					<ul>
+						<li><code>NEW_FIELD_PARENT_ID</code></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="form_line_content">
+			<p><strong>The optional <code>data-mjf_nff</code> attributes are:</strong></p>
+			<ul>
+				<li><code>label</code>: <span class="helper_text">(will prompt for value)</span>
+					<ul>
+						<li><code>before</code></li>
+						<li><code>after</code></li>
+					</ul>
+				</li>
+				<li><code>br_after_label</code>
+					<ul>
+						<li><code>1</code></li>
+						<li><code>2</code></li>
+						<li>etc.</li>								
+					</ul>
+				</li>
+				<li><code>br_after_field</code>
+					<ul>
+						<li><code>1</code></li>
+						<li><code>2</code></li>
+						<li>etc.</li>
+					</ul>
+				</li>
+				<li>Any other form field attributes you may want to include:
+					<ul>
+						<li><code>class:input_text</code></li>
+						<li><code>id:my_new_field</code> <span class="helper_text">(if the <code>id</code> already exists, a random number will be appended)</span></li>
+						<li><code>value:my new value</code></li>
+						<li><code>rows:5</code></li>
+						<li><code>checked:checked</code></li>
+						<li><code>size:25</code></li>
+						<li><code>data-mjf:field_required</code></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.trick.new_form_field = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		<p class="form_line_content">Use the examples below as a guide for building your own!</p>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Examples</legend>
+		
+		<div class="form_line_content">
+		
+			<p>
+				<strong>A <code>label</code> followed by a line-break, followed by an <code>input=text</code> followed by two line-breaks</strong> &rarr; <a href="#" data-mjf="new_form_fields|return_false" data-mjf_nff="tag:input|type:text|value:hi there|name:new_input|id:new_field|class:input_fld input_text|label:before|br_after_label:1|br_after_field:2|parent:add_new_input_field_parent" id="add_new_input_field">create</a>
+			</p>
+	
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" readonly="readonly" wrap="off">&lt;a href="#" data-mjf="new_form_fields|return_false" data-mjf_nff="tag:input|type:text|value:hi there|name:new_input|id:new_field|class:input_fld input_text|label:before|br_after_label:1|br_after_field:2|parent:add_new_input_field_parent" id="add_new_input_field"&gt;TITLE&lt;/a&gt;</textarea></p>
+			
+			<p>Outputs &rarr; <code>&lt;label&gt;&lt;br&gt;&lt;input type="text"&gt;&lt;br&gt;&lt;br&gt;</code></p>
+			
+			<p id="add_new_input_field_parent"></p>
+	
+		</div>
+		
+		<div class="form_line_content">
+	
+			<p>
+				<strong>A <code>label</code> followed by an <code>input=text</code> followed by a line-break</strong> &rarr; <a href="#" data-mjf="new_form_fields|return_false" data-mjf_nff="tag:input|type:text|value:hi|name:new_input|id:new_field_2|class:input_text_small|label:before|br_after_field:2|parent:add_new_input_field_parent_2" id="add_new_input_field_2">create</a>
+			</p>
+	
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" readonly="readonly" wrap="off">&lt;a href="#" data-mjf_nff="tag:input|type:text|value:hi|name:new_input|id:new_field_2|class:input_text_small|label:before|br_after_field:1|parent:add_new_input_field_parent_2" id="add_new_input_field_2"&gt;TITLE&lt;/a&gt;</textarea></p>
+			
+			<p>Outputs &rarr; <code>&lt;label&gt;&lt;input type="text"&gt;&lt;br&gt;&lt;br&gt;</code></a></p>
+			
+			<p id="add_new_input_field_parent_2"></p>
+	
+		</div>
+		
+		<div class="form_line_content">
+	
+			<p>
+				<strong>An <code>input=checkbox</code> followed by a label followed by a line-break</strong> &rarr; <a href="#" data-mjf="new_form_fields|return_false" data-mjf_nff="tag:input|type:checkbox|name:new_checkbox|id:new_checkbox|class:input_checkbox|label:after|br_after_field:1|parent:add_new_checkbox_field_parent" id="add_new_checkbox_field">create</a>
+			</p>
+	
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" readonly="readonly" wrap="off">&lt;a href="#" data-mjf_nff="tag:input|type:checkbox|name:new_checkbox|id:new_checkbox|class:input_checkbox|label:after|br_after_field:1parent:add_new_checkbox_field_parent" id="add_new_checkbox_field"&gt;TITLE&lt;/a&gt;</textarea></p>
+			
+			<p>Outputs &rarr; <code>&lt;input type="checkbox"&gt;&lt;label&gt;&lt;br&gt;</code></p>
+			
+			<p id="add_new_checkbox_field_parent"></p>
+	
+		</div>
+		
+		<div class="form_line_content">
+	
+			<p>
+				<strong>An <code>input=</code>radio followed by a <code>label</code> followed by two line-breaks</strong> &rarr; <a href="#" data-mjf="new_form_fields|return_false" data-mjf_nff="tag:input|type:radio|name:new_radio|id:new_checkbox|class:input_radio|label:after|br_after_field:1|parent:add_new_radio_field_parent" id="add_new_radio_field">create</a>
+			</p>
+	
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" readonly="readonly" wrap="off">&lt;a href="#" data-mjf_nff="tag:input|type:radio|name:new_radio|id:new_checkbox|class:input_radio|label:after|br_after_field:1|parent:add_new_radio_field_parent" id="add_new_radio_field"&gt;TITLE&lt;/a&gt;</textarea></p>
+			
+			<p>Outputs &rarr; <code>&lt;input type="radio"&gt;&lt;label&gt;&lt;br&gt;&lt;br&gt;</code></p>
+			
+			<p id="add_new_radio_field_parent"></p>
+	
+		</div>
+		
+		<div class="form_line_content">
+	
+			<p>
+				<strong>An <code>input=file</code> followed by a line-break</strong> &rarr; <a href="#" data-mjf="new_form_fields|return_false" data-mjf_nff="tag:input|type:file|name:new_file|id:new_file|class:input_file|br_after_field:1|parent:add_new_file_field_parent" id="add_new_file_field">create</a>
+			</p>
+	
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" readonly="readonly" wrap="off">&lt;a href="#" data-mjf_nff="tag:input|type:file|name:new_file|id:new_file|class:input_file|br_after_field:1|parent:add_new_file_field_parent" id="add_new_file_field"&gt;TITLE&lt;/a&gt;</textarea></p>
+			
+			<p>Outputs &rarr; <code>&lt;input type="file"&gt;&lt;br&gt;</code></p>
+			
+			<p id="add_new_file_field_parent"></p>
+	
+		</div>
+		
+		<div class="form_line_content">
+	
+			<p>
+				<strong>A <code>textarea</code> followed by two line-breaks</strong> &rarr; <a href="#" data-mjf="new_form_fields|return_false" data-mjf_nff="tag:textarea|name:new_textarea|id:new_textarea|class:input_textarea|rows:4|cols:7|br_after_field:2|parent:add_new_textarea_field_parent" id="add_new_textarea_field">create</a>
+			</p>
+	
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" readonly="readonly" wrap="off">&lt;a href="#" data-mjf_nff="tag:textarea|name:new_textarea|id:new_textarea|class:input_textarea|rows:4|cols:7|br_after_field:2|parent:add_new_textarea_field_parent" id="add_new_textarea_field"&gt;TITLE&lt;/a&gt;</textarea></p>
+			
+			<p>Outputs &rarr; <code>&lt;textarea&gt;&lt;br&gt;&lt;br&gt;</code></p>
+			
+			<p id="add_new_textarea_field_parent"></p>
+			
+		</div>
+
+	</fieldset>
+	
+
+	<fieldset>
+
+		<legend>Notes</legend>
+		<p class="form_line_content">The order of the <code>data-mjf_nff</code> attributes is irrelevant.</p>
+
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Change Log</legend>
+
+		<div class="form_line_content">
+			<h3>13.3.26</h3>
+			<ul>
+				<li>Better language file loading.</li>
+			</ul>
+		</div>
+
+		<div class="form_line_content">
+			<h3>12.10.8</h3>
+			<ul>
+				<li>Proper JavaScript <code>prompt</code> values.</li>
+				<li>Improved error handling.</li>
+			</ul>
+		</div>
+		
+		<div class="form_line_content">
+			<h3>12.1.31</h3>
+			<ul>
+				<li>
+					We're now localized! Please see the <strong>Introduction</strong> tab, <strong>Usage</strong> section of the <strong>Main Documentation</strong> and look for the <code>lang : "en_us"</code> property - this is new.</li>
+				</li>
+			</ul>
+		</div>
+		
+	</fieldset>
+
+	
+	<p class="align_center">&laquo; <a href="../../docs/">Back to the main documentation</a></p>	
+
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.trick.new_form_fields = true;
+	</script>
+
+
+</body>
+</html>

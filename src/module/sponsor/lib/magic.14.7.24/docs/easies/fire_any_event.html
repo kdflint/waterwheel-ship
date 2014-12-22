@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fire Any Event: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Fire Any Event: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+		
+		<p class="form_line_content">First add <code>data-mjf="fire_event|return_false" id="ELEMENT_ID" </code> to your clickable tag.</p>
+		
+		<div class="form_line_content">
+			<p>Next there are three attributes to determine&hellip;</p>
+			<ol>
+				<li><code>data-mjf_fe_on="click(OR)mousedown(OR)etc"</code> &mdash; event that triggers the Fire Event</li>
+				<li><code>data-mjf_fe_exe="focus(OR)blur(OR)etc"</code> &mdash; the actual event to fire</li>
+				<li><code>data-mjf_fe_id="ELEMENT_ID_TO_FIRE_ON"</code> &mdash; the element id to act on</li>
+			</ol>
+		</div>
+		
+		<p class="form_line_content">Finally add <code>&lt;script type="text/javascript"&gt;$m.wand.fire_event = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+	
+	</fieldset>
+
+
+	<fieldset>
+
+		<legend>Examples</legend>
+
+		<div class="form_line_content">
+			<p>
+				<a href="#" data-mjf="fire_event|return_false" data-mjf_fe_on="click" data-mjf_fe_exe="focus" data-mjf_fe_id="testing_input" id="focus_link">Focus Field</a>
+				<input type="text" name="testing_input" value="" class="input_fld input_text_small" id="testing_input">
+			</p>
+			<p>
+				<code>&lt;a href="#" data-mjf="fire_event|return_false" data-mjf_fe_on="click" data-mjf_fe_exe="focus" data-mjf_fe_id="testing_input" id="focus_link"&gt;Focus Field&lt;/a&gt;<br>
+				&lt;input type="text" name="" value="" id="testing_input"&gt;</code>
+			</p>
+		</div>
+		
+		<div class="form_line_content">
+			<p>
+				<a href="#" data-mjf="lightswitch|fire_event|return_false" data-mjf_lswitch_id="focus_link_cont" data-mjf_fe_on="click" data-mjf_fe_exe="focus" data-mjf_fe_id="testing_input2" id="focus_link2">Focus Field after Light Switch</a>
+				<span class="display_none margin_top_5" id="focus_link_cont"><input type="text" name="testing_input2" value="" size="40" class="input_fld input_text_small" id="testing_input2"></span>
+			</p>
+			<p>
+				<code>&lt;a href="#" data-mjf="lightswitch|fire_event|return_false" data-mjf_lswitch_id="focus_link_cont" data-mjf_fe_on="click" data-mjf_fe_exe="focus" data-mjf_fe_id="testing_input2" id="focus_link2"&gt;Focus Field after Light Switch&lt;/a&gt;<br>
+				&lt;span class="display_none" id="focus_link_cont"&gt;&lt;input type="text" name="" value="" id="testing_input2"&gt;&lt;/span&gt;</code>
+			</p>
+		</div>
+
+	</fieldset>
+
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.lightswitch = true;
+		$m.wand.fire_event = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

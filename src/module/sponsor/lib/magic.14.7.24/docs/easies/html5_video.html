@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 Video: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+	
+	<script type="text/javascript">
+		function do_callback()
+		{
+			$m.css_class.replace("do_callback_cont", "display_none", "display_block");
+		}
+	</script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> HTML5 Video: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<h2 class="align_center bg_yellow_lite margin_bottom_20 padding_10">Currently playing FLV, MP4, OGG and WebM videos</h2>
+
+	<fieldset>
+
+		<legend>Usage</legend>
+
+		<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.html5_video = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+		<p class="form_line_content">Use the example below as a guide for building your own!</p>
+		<p class="form_line_content">PS.. remove the comments since we're working in a <code>&lt;div&gt;</code>.</p>
+	
+	</fieldset>
+
+	<fieldset>
+
+		<legend>Example</legend>
+		
+		<div class="form_line_content">
+		
+			<div class="box_msg bg_colors bg_colors_warning display_none" id="do_callback_cont"><h3 class="margin_bottom_0">The video has reached the end and the <code>do_callback()</code> function just fired!</h3></div>
+
+			<div class="margin_10"
+				data-mjf="html5_video"
+	
+				data-mjf_h5v_path="/assets/"
+				data-mjf_h5v_poster="/assets/video_supermario.jpg"
+	
+				data-mjf_h5v_mp4="video_supermario.mp4"
+				data-mjf_h5v_ogg="video_supermario.ogg"
+				data-mjf_h5v_webm="video_supermario.webm"
+				data-mjf_h5v_flv="video_supermario.flv"
+				
+				data-mjf_h5v_color_bg="000000"
+				data-mjf_h5v_color_fg="991517"
+	
+				data-mjf_h5v_js_callback="do_callback()"
+				data-mjf_h5v_dims="480x320"
+	
+				id="magic_media_video_cont"><p>Your browser can't play this video.</p></div>
+
+			<p><textarea rows="5" cols="20" name="" class="input_fld example_code" readonly="readonly" wrap="off">&lt;div data-mjf="html5_video" // required
+    data-mjf_h5v_path="/assets/" // required - URL path of the video files; can be absolute or relative
+    data-mjf_h5v_poster="/assets/video_supermario.jpg" // optional - an image to show while the video is loading
+	
+    data-mjf_h5v_mp4="video_supermario.mp4" 	// optional - the MP4 filename
+    data-mjf_h5v_ogg="video_supermario.ogg" 	// optional - the OGG filename
+    data-mjf_h5v_webm="video_supermario.webm" 	// optional - the WebM filename
+    data-mjf_h5v_flv="video_supermario.flv" 	// optional - the FLV filename
+	
+    data-mjf_h5v_color_bg="000000" // optional - the FLV hex background color; defaults to "000000"
+    data-mjf_h5v_color_fg="991517" // optional - the FLV hex foreground color; defaults to "991517"
+	
+    data-mjf_h5v_js_callback="do_callback()" // optional - JavaScript function called when the video ends
+    data-mjf_h5v_dims="400x300" // required - the video file width and height
+
+    id="magic_media_video_cont"&gt;
+
+        &lt;p&gt;Your browser can't play this video.&lt;/p&gt;
+&lt;/div&gt;</textarea></p>
+			
+	
+	<!--
+				data-mjf_h5v_autoload="true" // optional - autoload the video; true or false; defaults to "true"
+				data-mjf_h5v_autoplay="true" // optional - autoplay the video; true or false; defaults to "false"
+	
+				data-mjf_h5v_autoload="true"
+				data-mjf_h5v_autoplay="true"
+	-->
+
+		</div>
+
+		<p class="form_line_content">
+			<a href="#" data-mjf="html5_video_play|return_false" data-mjf_h5v_video_id="magic_media_video_cont" id="magic_media_video_play"><strong>Play</strong></a><br>
+			<code>&lt;a href="#" data-mjf="html5_video_play|return_false" data-mjf_h5v_video_id="magic_media_video_cont" id="magic_media_video_play"&gt;Play&lt;/a&gt;</code>
+		</p>
+		
+		<p class="form_line_content">
+			<a href="#" data-mjf="html5_video_pause|return_false" data-mjf_h5v_video_id="magic_media_video_cont" id="magic_media_video_pause"><strong>Pause</strong></a><br>
+			<code>&lt;a href="#" data-mjf="html5_video_pause|return_false" data-mjf_h5v_video_id="magic_media_video_cont" id="magic_media_video_pause"&gt;Pause&lt;/a&gt;</code>
+		</p>
+		
+		<p class="form_line_content">
+			<a href="#" data-mjf="html5_video_stop|return_false" data-mjf_h5v_video_id="magic_media_video_cont" id="magic_media_video_stop"><strong>Stop</strong></a><br>
+			<code>&lt;a href="#" data-mjf="html5_video_stop|return_false" data-mjf_h5v_video_id="magic_media_video_cont" id="magic_media_video_stop"&gt;Stop&lt;/a&gt;</code>
+		</p>
+		
+		<p class="form_line_content">
+			<a href="#" data-mjf="html5_video_seek|return_false" data-mjf_h5v_video_id="magic_media_video_cont" data-mjf_h5v_seek_time="5" id="magic_media_video_seek_5"><strong>Go to 5 seconds</strong></a><br>
+			<code>&lt;a href="#" data-mjf="html5_video_seek|return_false" data-mjf_h5v_video_id="magic_media_video_cont" data-mjf_h5v_seek_time="5" id="magic_media_video_seek_5"&gt;Go to 5 seconds&lt;/a&gt;</code>
+		</p>
+		
+		<p class="form_line_content">
+			<a href="#" data-mjf="html5_video_seek|return_false" data-mjf_h5v_video_id="magic_media_video_cont" data-mjf_h5v_seek_time="50" id="magic_media_video_seek_50"><strong>Go to 50 seconds</strong></a><br>
+			<code>&lt;a href="#" data-mjf="html5_video_seek|return_false" data-mjf_h5v_video_id="magic_media_video_cont" data-mjf_h5v_seek_time="50" id="magic_media_video_seek_50"&gt;Go to 50 seconds&lt;/a&gt;</code>
+		</p>
+		
+		<p class="form_line_content">
+			<a href="#" data-mjf="html5_video_end|return_false" data-mjf_h5v_video_id="magic_media_video_cont" id="magic_media_video_end"><strong>Go to the end</strong></a><br>
+			<code>&lt;a href="#" data-mjf="html5_video_end|return_false" data-mjf_h5v_video_id="magic_media_video_cont" id="magic_media_video_end"&gt;Go to the end&lt;/a&gt;</code>
+		</p>
+
+	</fieldset>
+
+	<fieldset>
+
+		<legend>Notes</legend>
+
+		<p class="form_line_content">Even though all video filenames are optional, you probably should include at least one.</p>
+    	<p class="form_line_content">The inserted <code>&lt;video&gt;</code> -or- <code>&lt;object&gt;</code> elements have IDs: <code>id="ELEMENT_ID_video"</code>.</p>
+    	<p class="form_line_content">If you're using FLV videos, the <code>data-mjf_h5v_path</code> must be relative.</p>
+    	<p class="form_line_content">FLV videos don't support the <code>data-mjf_h5v_poster</code> attribute - yet.</p>
+    	<p class="form_line_content">FLV videos will all share the <em>same JavaScript callback</em> since there is only one SWF player.</p>
+    	<p class="form_line_content">Need to convert your video? The free <a href="http://www.mirovideoconverter.com/">Miro Video Converter</a> does MP4, OGG, and WebM.</p>
+    	<p class="form_line_content">The FLV player is a heavily modified version of the <a href="#">OS FLV v3.0</a>.</p>
+
+	</fieldset>
+	
+	<fieldset>
+
+		<legend>To Do</legend>
+
+		<p class="form_line_content">Re-enable the <code>data-mjf_h5v_autoload="true"</code> and <code>data-mjf_h5v_autoplay="true"</code> attributes.</p>
+		<p class="form_line_content">Update flash player to OS FLV v4.2.</p>
+		<p class="form_line_content">Add <code>&lt;object&gt;&lt;embed&gt;&lt;/object&gt;</code> fallback when nothing else works.</p>
+		<p class="form_line_content">Add player branding for HTML5 players.</p>
+
+	</fieldset>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.html5_video = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>

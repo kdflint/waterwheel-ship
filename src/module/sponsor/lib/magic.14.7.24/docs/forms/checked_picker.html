@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Checked Picker: Magic JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<link href="../../stylesheets/defaults.css" rel="stylesheet" media="all">
+	<link href="../../stylesheets/docs.css" rel="stylesheet" media="all">
+
+	<link href="../../stylesheets/magic.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../magic.src.js" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$m.construct({
+			 lang : "en_us"
+			,create_html5 : true
+			,global_debug : false
+			,animations : { use : true }
+			,ajax : { debug : true, visual : true, timeout : 15 }
+			,geo : { use : false, debug : true, visual : true }
+			,send_timezone_to : false
+		});
+	</script>
+	<script type="text/javascript" src="../../wand.src.js" charset="UTF-8"></script>
+	<link href="../../tricks/darkroom/darkroom.src.css" rel="stylesheet">
+	<script type="text/javascript" src="../../tricks/darkroom/darkroom.src.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../../_versions.js" charset="UTF-8"></script>
+
+</head>
+<body>
+	
+	<h1 class="align_center margin_bottom_5"><a href="../"><img src="../../images/icons/icon_magic.png" alt="Magic Icon" class="valign_middle"></a> Checked Picker: Magic JavaScript</h1>
+	
+	<p id="mjs_quick_jump"><a href="#" data-mjf="darkroom|return_false" data-mjf_dr_type="iframe" data-mjf_dr_iframe_src="../_quick_jump.html" data-mjf_dr_iframe_dim="fill" id="mjs_quick_jump_link">Quick Jump &crarr;</a></p>
+	
+	<form action="submission.php" method="post" data-mjf="form_required" name="checked_picker_form" id="checked_picker_form">
+	
+		<fieldset>
+	
+			<legend>Usage</legend>
+
+			<p class="form_line_content">In order to scale to 1000s of records, the Checked Picker has certain criteria, ie. you must set up the HTML properly.</p>
+			
+			<p class="form_line_content">Add <code>&lt;script type="text/javascript"&gt;$m.wand.checked_picker = true;&lt;/script&gt;</code> inside your <code>&lt;body&gt;</code> tag.</p>
+			<p class="form_line_content">Use the example below as a guide for building your own! The easiest way to use it – copy/paste into your text editor and replace everything in UPPERCASE with your strings.<br>For example, replace <code>YOUR_GROUP</code> with <code>ice_cream_group</code> and <code>UNIQUE</code> with <code>ice_cream_choice</code>.</p>
+		
+		</fieldset>
+		
+		
+		<fieldset>
+	
+			<legend>Example</legend>
+		
+			<p class="form_line_field" id="this_span_id">
+	
+					<input value="" onkeypress="return $m.h.checked_picker.test(event)" onkeyup="$m.h.checked_picker.search('numbers_grp', this.value, event)" autocomplete="off" class="mjf_checked_picker_search_box" id="numbers_grp_search" type="text">
+					<img src="/resources/javascript/magic/images/icons/icon_clear.png" class="mjf_checked_picker_clear_img" onclick="$m.h.checked_picker.clear('numbers_grp')" alt=""><br>
+	
+					<span class="mjf_checked_picker_box mjf_checked_picker_box_left">
+						<span class="mjf_checked_picker_list" id="checked_picker_list_numbers_grp_on">
+							<label for="qnkqbkr6o1e3lcsa05rqc0u1a_0" id="qnkqbkr6o1e3lcsa05rqc0u1a_0_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="qnkqbkr6o1e3lcsa05rqc0u1a_0_label" name="numbers[]" value="qnkqbkr6o1e3lcsa05rqc0u1a" checked="checked" class="input_checkbox" id="qnkqbkr6o1e3lcsa05rqc0u1a_0">qnkqbkr6o1e3lcsa05rqc0u1a</label>
+							<label for="icfanp1zedwokts2p3ehac1n3_1" id="icfanp1zedwokts2p3ehac1n3_1_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="icfanp1zedwokts2p3ehac1n3_1_label" name="numbers[]" value="icfanp1zedwokts2p3ehac1n3" checked="checked" class="input_checkbox" id="icfanp1zedwokts2p3ehac1n3_1">icfanp1zedwokts2p3ehac1n3</label>
+							<label for="1vpxcbml4gzrn6uirmucm8djo_2" id="1vpxcbml4gzrn6uirmucm8djo_2_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="1vpxcbml4gzrn6uirmucm8djo_2_label" name="numbers[]" value="1vpxcbml4gzrn6uirmucm8djo" checked="checked" class="input_checkbox" id="1vpxcbml4gzrn6uirmucm8djo_2">1vpxcbml4gzrn6uirmucm8djo</label>
+							<label for="u68ywikhgqt4i5vedgpte7i57_3" id="u68ywikhgqt4i5vedgpte7i57_3_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="u68ywikhgqt4i5vedgpte7i57_3_label" name="numbers[]" value="u68ywikhgqt4i5vedgpte7i57" checked="checked" class="input_checkbox" id="u68ywikhgqt4i5vedgpte7i57_3">u68ywikhgqt4i5vedgpte7i57</label>
+							<label for="1kt4kig3dm9i4n9hhrslvs78c_4" id="1kt4kig3dm9i4n9hhrslvs78c_4_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="1kt4kig3dm9i4n9hhrslvs78c_4_label" name="numbers[]" value="1kt4kig3dm9i4n9hhrslvs78c" checked="checked" class="input_checkbox" id="1kt4kig3dm9i4n9hhrslvs78c_4">1kt4kig3dm9i4n9hhrslvs78c</label>
+							<label for="ph4cal5qsr05hc06sn0iuxukn_5" id="ph4cal5qsr05hc06sn0iuxukn_5_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="ph4cal5qsr05hc06sn0iuxukn_5_label" name="numbers[]" value="ph4cal5qsr05hc06sn0iuxukn" checked="checked" class="input_checkbox" id="ph4cal5qsr05hc06sn0iuxukn_5">ph4cal5qsr05hc06sn0iuxukn</label>
+							<label for="elirwb9en5zrsxqar8z6hb0gq_6" id="elirwb9en5zrsxqar8z6hb0gq_6_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="elirwb9en5zrsxqar8z6hb0gq_6_label" name="numbers[]" value="elirwb9en5zrsxqar8z6hb0gq" checked="checked" class="input_checkbox" id="elirwb9en5zrsxqar8z6hb0gq_6">elirwb9en5zrsxqar8z6hb0gq</label>
+							<label for="932tb1nn0p9o4tl0efdylt1am_7" id="932tb1nn0p9o4tl0efdylt1am_7_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="932tb1nn0p9o4tl0efdylt1am_7_label" name="numbers[]" value="932tb1nn0p9o4tl0efdylt1am" checked="checked" class="input_checkbox" id="932tb1nn0p9o4tl0efdylt1am_7">932tb1nn0p9o4tl0efdylt1am</label>
+							<label for="q5x3emlyvq6fxjt7eiwksp4yv_8" id="q5x3emlyvq6fxjt7eiwksp4yv_8_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="q5x3emlyvq6fxjt7eiwksp4yv_8_label" name="numbers[]" value="q5x3emlyvq6fxjt7eiwksp4yv" checked="checked" class="input_checkbox" id="q5x3emlyvq6fxjt7eiwksp4yv_8">q5x3emlyvq6fxjt7eiwksp4yv</label>
+							<label for="ywxu6d2k4hjmwcb4eh4xkfxm8_9" id="ywxu6d2k4hjmwcb4eh4xkfxm8_9_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="ywxu6d2k4hjmwcb4eh4xkfxm8_9_label" name="numbers[]" value="ywxu6d2k4hjmwcb4eh4xkfxm8" checked="checked" class="input_checkbox" id="ywxu6d2k4hjmwcb4eh4xkfxm8_9">ywxu6d2k4hjmwcb4eh4xkfxm8</label>
+							<label for="zaw0cgzku2ln46z308hcp3b46_10" id="zaw0cgzku2ln46z308hcp3b46_10_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="zaw0cgzku2ln46z308hcp3b46_10_label" name="numbers[]" value="zaw0cgzku2ln46z308hcp3b46" checked="checked" class="input_checkbox" id="zaw0cgzku2ln46z308hcp3b46_10">zaw0cgzku2ln46z308hcp3b46</label>
+							<label for="kw4wjnxg1hf8rhwcvgh1u3nap_11" id="kw4wjnxg1hf8rhwcvgh1u3nap_11_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="kw4wjnxg1hf8rhwcvgh1u3nap_11_label" name="numbers[]" value="kw4wjnxg1hf8rhwcvgh1u3nap" checked="checked" class="input_checkbox" id="kw4wjnxg1hf8rhwcvgh1u3nap_11">kw4wjnxg1hf8rhwcvgh1u3nap</label>
+							<label for="ueo6dqktrf8o3rega1cujhad4_12" id="ueo6dqktrf8o3rega1cujhad4_12_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="ueo6dqktrf8o3rega1cujhad4_12_label" name="numbers[]" value="ueo6dqktrf8o3rega1cujhad4" checked="checked" class="input_checkbox" id="ueo6dqktrf8o3rega1cujhad4_12">ueo6dqktrf8o3rega1cujhad4</label>
+							<label for="u00aqvksy1esmpke9n3rkvrrs_13" id="u00aqvksy1esmpke9n3rkvrrs_13_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="u00aqvksy1esmpke9n3rkvrrs_13_label" name="numbers[]" value="u00aqvksy1esmpke9n3rkvrrs" checked="checked" class="input_checkbox" id="u00aqvksy1esmpke9n3rkvrrs_13">u00aqvksy1esmpke9n3rkvrrs</label>
+							<label for="05tmlr2ey5l2h4r2jad4do990_14" id="05tmlr2ey5l2h4r2jad4do990_14_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="05tmlr2ey5l2h4r2jad4do990_14_label" name="numbers[]" value="05tmlr2ey5l2h4r2jad4do990" checked="checked" class="input_checkbox" id="05tmlr2ey5l2h4r2jad4do990_14">05tmlr2ey5l2h4r2jad4do990</label>
+							<label for="vg1t65rqhd2uh9bd8orj0vg23_15" id="vg1t65rqhd2uh9bd8orj0vg23_15_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="vg1t65rqhd2uh9bd8orj0vg23_15_label" name="numbers[]" value="vg1t65rqhd2uh9bd8orj0vg23" checked="checked" class="input_checkbox" id="vg1t65rqhd2uh9bd8orj0vg23_15">vg1t65rqhd2uh9bd8orj0vg23</label>
+							<label for="9cm0n27nr96hu3ph23owlwbul_16" id="9cm0n27nr96hu3ph23owlwbul_16_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="9cm0n27nr96hu3ph23owlwbul_16_label" name="numbers[]" value="9cm0n27nr96hu3ph23owlwbul" checked="checked" class="input_checkbox" id="9cm0n27nr96hu3ph23owlwbul_16">9cm0n27nr96hu3ph23owlwbul</label>
+							<label for="vue0tm4t2rxrircjkxzkfqm2z_17" id="vue0tm4t2rxrircjkxzkfqm2z_17_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="vue0tm4t2rxrircjkxzkfqm2z_17_label" name="numbers[]" value="vue0tm4t2rxrircjkxzkfqm2z" checked="checked" class="input_checkbox" id="vue0tm4t2rxrircjkxzkfqm2z_17">vue0tm4t2rxrircjkxzkfqm2z</label>
+							<label for="bndtkaqa68fu4vx0g83mexlsg_18" id="bndtkaqa68fu4vx0g83mexlsg_18_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="bndtkaqa68fu4vx0g83mexlsg_18_label" name="numbers[]" value="bndtkaqa68fu4vx0g83mexlsg" checked="checked" class="input_checkbox" id="bndtkaqa68fu4vx0g83mexlsg_18">bndtkaqa68fu4vx0g83mexlsg</label>
+							<label for="i35zzfzodr617xxpsnzmk470g_19" id="i35zzfzodr617xxpsnzmk470g_19_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="i35zzfzodr617xxpsnzmk470g_19_label" name="numbers[]" value="i35zzfzodr617xxpsnzmk470g" checked="checked" class="input_checkbox" id="i35zzfzodr617xxpsnzmk470g_19">i35zzfzodr617xxpsnzmk470g</label>
+							<label for="b3ga2gew8ya722o8fmcona8ec_20" id="b3ga2gew8ya722o8fmcona8ec_20_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="b3ga2gew8ya722o8fmcona8ec_20_label" name="numbers[]" value="b3ga2gew8ya722o8fmcona8ec" checked="checked" class="input_checkbox" id="b3ga2gew8ya722o8fmcona8ec_20">b3ga2gew8ya722o8fmcona8ec</label>
+							<label for="xpdkhvuj6vayjp0fbcd0uwnb4_21" id="xpdkhvuj6vayjp0fbcd0uwnb4_21_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="xpdkhvuj6vayjp0fbcd0uwnb4_21_label" name="numbers[]" value="xpdkhvuj6vayjp0fbcd0uwnb4" checked="checked" class="input_checkbox" id="xpdkhvuj6vayjp0fbcd0uwnb4_21">xpdkhvuj6vayjp0fbcd0uwnb4</label>
+							<label for="fbhmue5kjs700xdzmfybv0rz5_22" id="fbhmue5kjs700xdzmfybv0rz5_22_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="fbhmue5kjs700xdzmfybv0rz5_22_label" name="numbers[]" value="fbhmue5kjs700xdzmfybv0rz5" checked="checked" class="input_checkbox" id="fbhmue5kjs700xdzmfybv0rz5_22">fbhmue5kjs700xdzmfybv0rz5</label>
+							<label for="y90fhsfysg2d11q2gdyn1kse5_23" id="y90fhsfysg2d11q2gdyn1kse5_23_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="y90fhsfysg2d11q2gdyn1kse5_23_label" name="numbers[]" value="y90fhsfysg2d11q2gdyn1kse5" checked="checked" class="input_checkbox" id="y90fhsfysg2d11q2gdyn1kse5_23">y90fhsfysg2d11q2gdyn1kse5</label>
+							<label for="jidxxmv9zv1jum8lu1g1k87re_24" id="jidxxmv9zv1jum8lu1g1k87re_24_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="jidxxmv9zv1jum8lu1g1k87re_24_label" name="numbers[]" value="jidxxmv9zv1jum8lu1g1k87re" checked="checked" class="input_checkbox" id="jidxxmv9zv1jum8lu1g1k87re_24">jidxxmv9zv1jum8lu1g1k87re</label>
+						</span>
+						<a href="#" class="mjf_checked_picker_toggle_all_link" onclick="$m.h.checked_picker.toggle_all('numbers_grp', false); return false;">Uncheck All</a>
+					</span>
+
+					<span class="mjf_checked_picker_box mjf_checked_picker_box_right">
+						<span class="mjf_checked_picker_list" id="checked_picker_list_numbers_grp_off">
+							<label for="i25ihyn3akom29w0yynmwve6i_0" id="i25ihyn3akom29w0yynmwve6i_0_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="i25ihyn3akom29w0yynmwve6i_0_label" name="numbers[]" value="i25ihyn3akom29w0yynmwve6i"  class="input_checkbox" id="i25ihyn3akom29w0yynmwve6i_0">i25ihyn3akom29w0yynmwve6i</label>
+							<label for="1cx1oecfydfzf81t4cvlo3kt9_1" id="1cx1oecfydfzf81t4cvlo3kt9_1_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="1cx1oecfydfzf81t4cvlo3kt9_1_label" name="numbers[]" value="1cx1oecfydfzf81t4cvlo3kt9"  class="input_checkbox" id="1cx1oecfydfzf81t4cvlo3kt9_1">1cx1oecfydfzf81t4cvlo3kt9</label>
+							<label for="al2ixwryampdr9j0jonuvv4bq_2" id="al2ixwryampdr9j0jonuvv4bq_2_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="al2ixwryampdr9j0jonuvv4bq_2_label" name="numbers[]" value="al2ixwryampdr9j0jonuvv4bq"  class="input_checkbox" id="al2ixwryampdr9j0jonuvv4bq_2">al2ixwryampdr9j0jonuvv4bq</label>
+							<label for="mbldhhknvfi5c9cmpwt8ztqct_3" id="mbldhhknvfi5c9cmpwt8ztqct_3_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="mbldhhknvfi5c9cmpwt8ztqct_3_label" name="numbers[]" value="mbldhhknvfi5c9cmpwt8ztqct"  class="input_checkbox" id="mbldhhknvfi5c9cmpwt8ztqct_3">mbldhhknvfi5c9cmpwt8ztqct</label>
+							<label for="g7bciuqeehwew1fepn1qof1ew_4" id="g7bciuqeehwew1fepn1qof1ew_4_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="g7bciuqeehwew1fepn1qof1ew_4_label" name="numbers[]" value="g7bciuqeehwew1fepn1qof1ew"  class="input_checkbox" id="g7bciuqeehwew1fepn1qof1ew_4">g7bciuqeehwew1fepn1qof1ew</label>
+							<label for="gr0xr83m6oi8ipwvsyo1bzvli_5" id="gr0xr83m6oi8ipwvsyo1bzvli_5_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="gr0xr83m6oi8ipwvsyo1bzvli_5_label" name="numbers[]" value="gr0xr83m6oi8ipwvsyo1bzvli"  class="input_checkbox" id="gr0xr83m6oi8ipwvsyo1bzvli_5">gr0xr83m6oi8ipwvsyo1bzvli</label>
+							<label for="lx8ukmytoky5e1sz101qhsc5k_6" id="lx8ukmytoky5e1sz101qhsc5k_6_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="lx8ukmytoky5e1sz101qhsc5k_6_label" name="numbers[]" value="lx8ukmytoky5e1sz101qhsc5k"  class="input_checkbox" id="lx8ukmytoky5e1sz101qhsc5k_6">lx8ukmytoky5e1sz101qhsc5k</label>
+							<label for="3acrluh3vtj82c0hvy94h3zxh_7" id="3acrluh3vtj82c0hvy94h3zxh_7_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="3acrluh3vtj82c0hvy94h3zxh_7_label" name="numbers[]" value="3acrluh3vtj82c0hvy94h3zxh"  class="input_checkbox" id="3acrluh3vtj82c0hvy94h3zxh_7">3acrluh3vtj82c0hvy94h3zxh</label>
+							<label for="zz1fgf84h4fvu04vzz9veigi4_8" id="zz1fgf84h4fvu04vzz9veigi4_8_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="zz1fgf84h4fvu04vzz9veigi4_8_label" name="numbers[]" value="zz1fgf84h4fvu04vzz9veigi4"  class="input_checkbox" id="zz1fgf84h4fvu04vzz9veigi4_8">zz1fgf84h4fvu04vzz9veigi4</label>
+							<label for="e17tccjcuyasfyeyfutffvpsj_9" id="e17tccjcuyasfyeyfutffvpsj_9_label"><input type="checkbox" data-mjf="checked_picker|field_required" data-mjf_err_parent="this_span_id" data-mjf_checked_picker_group="numbers_grp" data-mjf_checked_picker_label="e17tccjcuyasfyeyfutffvpsj_9_label" name="numbers[]" value="e17tccjcuyasfyeyfutffvpsj"  class="input_checkbox" id="e17tccjcuyasfyeyfutffvpsj_9">e17tccjcuyasfyeyfutffvpsj</label>
+						</span>
+						<a href="#" class="mjf_checked_picker_toggle_all_link" onclick="$m.h.checked_picker.toggle_all('numbers_grp', true); return false;">Check All</a>
+					</span><br>
+					
+					<span class="field_error_msg_off" id="jidxxmv9zv1jum8lu1g1k87re_24_required_msg"><br>This field is required</span>
+
+					<br class="clear_both">
+			</p>
+
+
+			<div class="form_line_content">
+
+				<p><textarea rows="5" cols="20" name="" class="input_fld example_code" wrap="off" readonly="readonly">&lt;input type="text" value="" onkeypress="return $m.h.checked_picker.test(event)" onkeyup="$m.h.checked_picker.search('YOUR_GROUP', this.value, event)" autocomplete="off" class="mjf_checked_picker_search_box" id="YOUR_GROUP_search"&gt;
+&lt;img src="/resources/javascript/magic/images/icons/icon_clear.png" class="mjf_checked_picker_clear_img" onclick="$m.h.checked_picker.clear('YOUR_GROUP')" alt=""&gt;&lt;br&gt;
+
+&lt;span class="mjf_checked_picker_box mjf_checked_picker_box_left"&gt;
+	&lt;span class="mjf_checked_picker_list" id="checked_picker_list_YOUR_GROUP_on"&gt;
+		&lt;label for="UNIQUE_1" id="UNIQUE_1_label"&gt;&lt;input type="checkbox" data-mjf="checked_picker" data-mjf_checked_picker_group="YOUR_GROUP" data-mjf_checked_picker_label="UNIQUE_1_label" name="UNIQUE" value="VALUE" checked="checked" id="UNIQUE_1"&gt;UNIQUE_1&lt;/label&gt;
+		&lt;label for="UNIQUE_2" id="UNIQUE_2_label"&gt;&lt;input type="checkbox" data-mjf="checked_picker" data-mjf_checked_picker_group="YOUR_GROUP" data-mjf_checked_picker_label="UNIQUE_2_label" name="UNIQUE" value="VALUE" checked="checked" id="UNIQUE_2"&gt;UNIQUE_2&lt;/label&gt;
+	&lt;/span&gt;
+	&lt;a href="#" class="mjf_checked_picker_toggle_all_link" onclick="$m.h.checked_picker.toggle_all('YOUR_GROUP', false); return false;"&gt;Uncheck All&lt;/a&gt;
+&lt;/span&gt;&lt;br&gt;
+
+&lt;span class="mjf_checked_picker_box mjf_checked_picker_box_right"&gt;
+	&lt;span class="mjf_checked_picker_list" id="checked_picker_list_YOUR_GROUP_off"&gt;
+		&lt;label for="UNIQUE_3" id="UNIQUE_3_label"&gt;&lt;input type="checkbox" data-mjf="checked_picker" data-mjf_checked_picker_group="YOUR_GROUP" data-mjf_checked_picker_label="UNIQUE_3_label" name="UNIQUE" value="VALUE" id="UNIQUE_3"&gt;UNIQUE_3&lt;/label&gt;
+		&lt;label for="UNIQUE_4" id="UNIQUE_4_label"&gt;&lt;input type="checkbox" data-mjf="checked_picker" data-mjf_checked_picker_group="YOUR_GROUP" data-mjf_checked_picker_label="UNIQUE_4_label" name="UNIQUE" value="VALUE" id="UNIQUE_4"&gt;UNIQUE_4&lt;/label&gt;
+	&lt;/span&gt;
+	&lt;a href="#" class="mjf_checked_picker_toggle_all_link" onclick="$m.h.checked_picker.toggle_all('YOUR_GROUP', true); return false;"&gt;Check All&lt;/a&gt;
+&lt;/span&gt;</textarea></p>
+
+			</div>
+
+		</fieldset>
+
+
+		<fieldset>
+	
+			<legend>Notes</legend>
+	
+			<p class="form_line_content">The checkboxes need to be sorted and separated before they get to the browser with the <em>Checked</em> checkboxes on the left and <em>unchecked</em> on the right.</p>
+			
+			<p class="form_line_content">Checked Pickers aren't currently supported in touch-based browsers &ndash; they don't move to the left and right and back again.</p>
+		
+		</fieldset>
+
+
+	</form>
+	
+	<script type="text/javascript">
+		$m.trick.darkroom = true;
+		$m.wand.checked_picker = true;
+		$m.wand.form_required = true;
+	</script>
+
+	<p class="align_center">&laquo; <a href="../">Back to the main documentation</a></p>	
+
+</body>
+</html>
