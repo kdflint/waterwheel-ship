@@ -8,12 +8,13 @@
 		<link rel="stylesheet" type="text/css" href="../../style.css" />
 		<link rel="stylesheet" type="text/css" href="mod-sponsor.css" />
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-		<link rel="stylesheet" type="text/css" href="lib/Slidorion-master/css/slidorion.css" />
+		<!--<link rel="stylesheet" type="text/css" href="lib/Slidorion-master/css/slidorion.css" />-->
 
 		<script type="text/javascript" src="mod-sponsor.js"></script>				
 		<script type="text/javascript" src="../../jquery.js"></script>
-		<script type="text/javascript" src="lib/Slidorion-master/js/jquery.slidorion.js"></script>
+		<!--<script type="text/javascript" src="lib/Slidorion-master/js/jquery.slidorion.js"></script>-->
 	
+		<!--
 		<script type='text/javascript'>
 			$(document).ready(function(){
 				$(document).ready('#slidorion').slidorion({
@@ -24,6 +25,7 @@
 				});
 			});
 		</script>
+		-->
 		
 		<!-- http://www.magicjs.com/resources/javascript/magic/docs/ -->
 		

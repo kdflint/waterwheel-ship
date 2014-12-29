@@ -66,12 +66,13 @@
 }
 
 .accordion .content {
-	height: 258px;			/* This height needs to be changed as it depends on the accordion height and number of tabs */
+	//height: 258px;
+	height: 0px;			/* This height needs to be changed as it depends on the accordion height and number of tabs */
 	font-weight: normal;
 	font-size: 12px;
-	line-height: 20px;
+	//line-height: 20px;
 	margin: 0;
-	padding: 16px;
+	//padding: 16px;
 	border: none;
 	background: #d6d6d6;
 	background: -moz-linear-gradient(top, #d6d6d6 0%, #ffffff 10%);

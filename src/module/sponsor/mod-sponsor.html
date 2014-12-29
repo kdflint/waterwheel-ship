@@ -10,7 +10,8 @@
 										<input id="option2" type="radio" name="levels" value="50" onchange="copyLevelValue();" />&nbsp;$50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										<input id="option3" type="radio" name="levels" value="100" onclick="copyLevelValue();" checked/>&nbsp;$100&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										<input id="option4" type="radio" name="levels" value="250" onclick="copyLevelValue();" />&nbsp;$250&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input id="option5" type="radio" name="levels" value="500" onclick="copyLevelValue();" />&nbsp;$500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<input id="option5" type="radio" name="levels" value="500" onclick="copyLevelValue();" />&nbsp;$
+										<input id="optionOther" type="text" name="otherLevel" size="5" placeholder="Other" style="font-size:80%;"/>
 									</form>	
 								</div>
 							</div>
@@ -20,13 +21,12 @@
 									Sponsorship
 								</div>	
 								<div class="mod-sponsor-controlContent">
-									<form id="" class="pure-form">
+									<form id="sponsorForm" class="pure-form">
 								    <fieldset>
         							<label for="showSponsorship">
-            					<input id="showSponsorship" type="checkbox" id="sponsorChecked"/> Public?&nbsp;&nbsp;
+            					<input id="showSponsorship" type="checkbox" onchange="toggleSponsorDisplay();" checked/> Public?&nbsp;&nbsp;
         							</label>
-							        <input type="email" placeholder="Please use this name" style="font-size: 80%;" data-mjf="copy_value_to_html" data-mjf_cvth_id="sponsorNameDisplay" id="sponsorName">
-							        <!--<a class="pure-button" href="#" style="font-size: 80%;"><span class="fa fa-file-image-o"></span> Upload Logo</a>-->
+							        <input type="text" placeholder="Please use this name" style="font-size: 80%;margin-left:17px;" data-mjf="copy_value_to_html" data-mjf_cvth_id="sponsorNameDisplay" size="32" id="sponsorName">
     								</fieldset>
 									</form>
 								</div>							
@@ -37,13 +37,12 @@
 									Impact Report
 								</div>	
 								<div class="mod-sponsor-controlContent">
-									<form id="" class="pure-form">
+									<form id="impactForm" class="pure-form">
 								    <fieldset>
         							<label for="showImpact">
-            					<input id="showImpact" type="checkbox" disabled /> No Thanks&nbsp;&nbsp;
+            					<input id="showImpact" type="checkbox" onchange="toggleImpactDisplay();" disabled /> No Thanks&nbsp;&nbsp;
         							</label>
-							        <input type="email" placeholder="Please email to" style="font-size: 80%;" data-mjf="copy_value_to_html" data-mjf_cvth_id="impactEmailDisplay" id="impactEmail" disabled>
-							        <!--<a class="pure-button" href="#" style="font-size: 80%;"><span class="fa fa-file-image-o"></span> Upload Logo</a>-->
+							        <input type="email" placeholder="Please email report to" style="font-size: 80%;" data-mjf="copy_value_to_html" data-mjf_cvth_id="impactEmailDisplay" id="impactEmail" size="32" disabled>
     								</fieldset>
 									</form>
 								</div>							
@@ -51,52 +50,69 @@
 						
 							<div class="mod-sponsor-controlDesignate">
 								<div class="mod-sponsor-controlLabel">
-									Designate By
-									<a class="pure-button mod-sponsor-button" id="orgButton" href="#" style="font-size: 80%;">Org Name</a>
-									<a class="pure-button mod-sponsor-button" id="listButton" href="#" style="font-size: 80%;">Waiting List</a>
-									<a class="pure-button mod-sponsor-button pure-button-disabled pure-button-disabled" id="causeButton" href="#" style="font-size: 80%;">Cause</a>
-									<a class="pure-button mod-sponsor-button pure-button-disabled" id="regionButton" href="#" style="font-size: 80%;">Region</a>
+									Designate By									
+									<a class="pure-button mod-sponsor-button" id="listButton" href="#" onclick="toggleSearchCategory('waitingList');" style="font-size: 80%;">Waiting List</a>
+									<a class="pure-button mod-sponsor-button" id="orgButton" href="#" onclick="toggleSearchCategory('searchResultsList');" style="font-size: 80%;">Org Name</a>
+									<a class="pure-button mod-sponsor-button pure-button-disabled pure-button-disabled" id="causeButton" href="#" onclick="toggleSearchCategory('causeList');" style="font-size: 80%;">Cause</a>
 								</div>	
 								<div class="mod-sponsor-controlContent">
-									<div id="slidorion" class="slidorion">
-	    							<div class="slider">
-        						<div class="slide">About</div>
-        						<div class="slide">About</div>
-        						<div class="slide">About</div>
+									<form id="designateForm" class="pure-form">
+										
+										<div class="slidorion" id="waitingList">
+
+		    								<div class="slider">
+	        								<div class="slide" id="slide1">Stuff about Chicago Adventure Therapy</div>
+        									<div class="slide" id="slide2">Stuff about Center for Faith and Community Health Transformation</div>
+       										<div class="slide" id="slide3">Stuff about Ravenswood Community Services</div>
+       										<div class="slide" id="slide4">Stuff 4</div>
+       										<div class="slide" id="slide5">Stuff 5</div>
+       										<div class="slide" id="slide6">Stuff 6</div>
+       										<div class="slide" id="slide7">Stuff 7</div>
+       										<div class="slide" id="slide8">Stuff 8</div>
+       										<div class="slide" id="slide9">Stuff 9</div>
+       										<div class="slide" id="slide10">Stuff 10</div>
+    										</div>
+    										<div class="accordion">
+			        						<div class="header" id="header1"><a href="#" onclick="showSlide('1');">Chicago Adventure Therapy</a><input id="check1" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('1');" /></div>
+        									<div class="header" id="header2"><a href="#" onclick="showSlide('2');">Fellowship Housing</a><input id="check2" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('2');" /></div>
+        									<div class="header" id="header3"><a href="#" onclick="showSlide('3');">Center for Faith and Community Health Transformation</a><input id="check3" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('3');" /></div>
+        									<div class="header" id="header4"><a href="#" onclick="showSlide('4');">Ravenswood Community Services</a><input id="check4" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('4');" /></div>
+        									<div class="header" id="header5"><a href="#" onclick="showSlide('5');">Episcopal Diocese of Chicago</a><input id="check5" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('5');" /></div>
+        									<div class="header" id="header6"><a href="#" onclick="showSlide('6');">Another</a><input id="check6" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('6');" /></div>
+        									<div class="header" id="header7"><a href="#" onclick="showSlide('7');">Another</a><input id="check7" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('7');" /></div>
+        									<div class="header" id="header8"><a href="#" onclick="showSlide('8');">Another</a><input id="check8" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('8');" /></div>
+        									<div class="header" id="header9"><a href="#" onclick="showSlide('9');">Another</a><input id="check9" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('9');" /></div>
+        									<div class="header" id="header10"><a href="#" onclick="showSlide('10');">Another</a><input id="check10" type="checkbox" name="designation" style="float:right;" onchange="designateOrg('10');" /></div>
+    										</div>
     								</div>
-    								<div class="accordion">
-	        					<div class="header">Chicago Adventure Therapy</div>
-        						<div class="header">Fellowship Housing</div>
-        						<div class="header">Center for Faith and Community Health Transformation</div>
-        						<div class="header">Ravenswood Community Services</div>
-        						<div class="header">Episcopal Diocese of Chicago</div>
-        						<div class="header">Another</div>
-        						<div class="header">Another</div>
-        						<div class="header">Another</div>
-        						<div class="header">Another</div>
-        						<div class="header">Another</div>
+
+    								<div class="slidorion" id="searchResultsList">
+	            					<!--Search for Eligible Organization-->
+            						<div class="slider">
+	            						<textarea rows="2" cols="22" placeholder="By Name" style="font-size: 80%;margin:5px;" ></textarea>
+							        		<input type="text" placeholder="By EIN" style="font-size: 80%;margin:5px;" size="12">
+							        		<a class="pure-button mod-sponsor-button" id="" href="#" style="font-size: 80%;" onclick="loadXMLDoc()"><span class="fa fa-search" ></span> Search</a>
+							        	</div>									
+    										<div class="accordion">
+	    										<div id="orgSearchResults">
+    											</div>
+    										</div>
     								</div>
-    							</div>
+    								
+ 									</form>
 								</div>		
 							</div>
-							<!--
-									<form id="" class="pure-form">
-										<label for="name">Lookup by Name</label>
-										<input id="name" type="text" size="20" value="" style="font-size: 80%;">
-									</form>
-						-->
 						</div>
 						<div class="mod-sponsor-contentRight">
 							<form id="mod-sponsor-form" class="pure-form pure-form-stacked">
-								<p>Your generous gift of $<span id="levelAmountDisplay">100</span> will provide 1 year of <span id="levelServiceDisplay"></span> web conference service to <span id="benefactorNameDisplay">an eligible 501(c)(3) organization</span>.</p>
+								<p>Your generous gift of $<span id="levelAmountDisplay">100</span> will provide 1 year of <span id="levelServiceDisplay">advanced</span> web conference service to <span id="benefactorNameDisplay">an eligible 501(c)(3) organization</span>.</p>
 																
-								<!-- TODO - hide on checkbox unselect -->
 								<p id="sponsorCheckedDisplay">
-									Your gift will be acknowledged in the name of <span id="sponsorNameDisplay"></span>.
+									This gift will be acknowledged in the name of <span id="sponsorNameDisplay">the donor</span>.
 								</p>
 								
 								<p id="impactCheckedDisplay">
-									We will be delighted to send your impact report to <span id="impactEmailDisplay"></span>
+									We will be delighted to send your impact report to <span id="impactEmailDisplay">the donation email address</span>.
 								</p>
 
 								

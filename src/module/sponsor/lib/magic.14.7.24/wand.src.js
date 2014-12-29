@@ -1396,8 +1396,17 @@ $m.h.copy_value_to_html =
 
 	// $m.h.copy_value_to_html.exec()
 	,exec : function(in_id)
+	
 	{
-		$m.id($m.attr.get(in_id, "data-mjf_cvth_id")).innerHTML = $m.id(in_id).value;
+		// Kathy add
+		var defaultOut = {sponsorName:"the donor", impactEmail:"the donor email address"};
+	
+		if ($m.id(in_id).value.length > 0) {
+			$m.id($m.attr.get(in_id, "data-mjf_cvth_id")).innerHTML = $m.id(in_id).value;
+		} else {
+			// display default value when there is no input present
+			$m.id($m.attr.get(in_id, "data-mjf_cvth_id")).innerHTML = defaultOut[in_id];
+		}
 	}
 }
 
