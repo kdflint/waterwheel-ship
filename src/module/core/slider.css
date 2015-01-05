@@ -1,6 +1,6 @@
 .sponsorSlider{
 	background:url(../images/slide.gif) center top no-repeat;
-	height:170px;
+	height:120px;
 	width:100%;
 }
 
@@ -8,6 +8,7 @@
 	margin:0px 0 0 0px;
 	padding:0;
 	list-style-type: none;
+	border-radius:20px;
 }
 .one h1 , .two h1 , .three h1, .four h1 ,.five h1{
 font:normal bold 22px/30px "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -20,18 +21,21 @@ margin:0 15px 0 0;
 
 /* --------------------ONE------------------ */
 .one{
-	background:#193441; 
+	//background:#193441; 
+	background: #96a17c;
  }
 
 /* --------------------TWO------------------ */
 .two{
-background:#3e606f;
+//background:#3e606f;
+background: #608595;
 }
 
 
 /* --------------------THREE------------------ */
 .three{
-background:#608595 ;
+//background:#608595 ;
+background: #f5ba3b;
 }
 
 /* --------------------FOUR------------------ */

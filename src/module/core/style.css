@@ -1,7 +1,9 @@
 body { 
 	font-family: 'PT Sans Narrow', sans-serif;
 	text-align: center; 
+	background: #1d2a2f url(../images/bg.gif) center top no-repeat;
 	background-color: #638f90;
+	color:#484848;
 }
 
 .container {
@@ -22,8 +24,9 @@ body {
 }
 
 .sponsorHeader {
-	height: 140px;
+	height: 160px;
 	width: 760px;
+	padding: 10px;
 }
 
 .allianceContent {
