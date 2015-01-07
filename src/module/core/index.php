@@ -39,6 +39,9 @@
 		<link rel="stylesheet" media="all" type="text/css" href="style2.css" >
 		<!-- SLIDER CSS  goes here -->
 		<link rel="stylesheet" media="screen" type="text/css" href="slider.css" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Numans' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Numans|Nova+Round|Nova+Square|Coda|Oswald:400,300|Nunito:400,300|Asap|Dosis:400,500,300|Ropa+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
 
 		<!-- initialize horizontal sliders -->
@@ -53,7 +56,7 @@
 
 				$('.accordion1').hSlides({
 						totalWidth: 760,
-						totalHeight: 120,
+						totalHeight: 90,
 						minPanelWidth: 120,
 						maxPanelWidth: 520
 					});
@@ -61,7 +64,7 @@
 				));
 		</script>
 	
-		<!-- initialize horizontal sliders ?? -->
+		<!-- initialize horizontal sliders ??
 		<script type='text/javascript'>
 			$(document).ready(function(){
 				$(document).ready("#dropmenu ul").css({display: "none"}); // Opera Fix
@@ -72,6 +75,7 @@
 					});
 			});
 		</script>
+		-->
 
 	</head>
 
@@ -80,7 +84,15 @@
 			<!-- Sponsor Context -->
 			<div id="sponsorApp" class="sponsorApp">
 				<div class="sponsorHeader">
-					<img src="corp_images/final_files/final_files/NB_horizontal_rgb.png" width="500" height="136"/>
+					<div class="sponsorHeaderLeft">
+						<span class="fa fa-group" style="color:#f59816;margin:5px;font-size:46px;padding-top:30px;"></span>
+						Web conferencing
+						<p style="text-indent:70px;">for world changers</p>		
+						<p style="text-indent:70px;font-size:13px;line-height:100%;"><i>(Shouldn't your technology be as big as you are?)</i></p>				
+					</div>
+					<div class="sponsorHeaderRight">
+						<a class="whitepaper-button" id="" href="#" style="" onclick=""><span class="fa fa-file-pdf-o fa-2x" style="color:#608595;margin:2px;"></span> Whitepaper</a>
+					</div>
 				</div>
 				<div class="sponsorSlider">
 					<div class="container_16">
@@ -88,17 +100,17 @@
 							<li class="one">
 								<div class="headerbox"><!--<img src="http://bannersmonster.com/themes/Circo/images/pack4big.png"  alt=""  class="leftalign" />-->
 									<div class="title"><strong>Sponsor</strong>
-										<p></p>
+										<p><span class="fa fa-life-buoy fa-3x" style="color:#f2f2e1;"></i></p>
 										<!--<a href="#">Click Here</a>-->
 									</div>
 									<h1 class="white">Fund technology for world-changers</h1>
-									<p class="white"><b>Give global web conference capability to a team that is changing the world.</b> Choose your sponsorship level. Track your impact. See that your dollars are really making a difference on the front lines of social progress.</p>
+									<p class="white"><b>Give a virtual web conference room to a team that is changing the world.</b> Choose your level. Track your impact. Make a difference.</p>
 								</div>
 							</li>
 							<li class="two">
 								<div class="headerbox"> <!--<img src="http://bannersmonster.com/themes/Circo/images/web1.gif"  alt=""  class="imgborder leftalign" />-->
 									<div class="title"><strong>Apply</strong>
-										<p></p>
+										<p><span class="fa fa-send fa-3x" style="color:#e3e2c8"></i></p>
 									</div>
 									<h1 class="white">Is your team changing the world?</h1>
 									<p class="white">Is your U.S. 501(c)(3) organization is doing social justice or community-building work? You may be eligible for a virtual global web conference room.</p>
@@ -107,7 +119,7 @@
 							<li class="three">
 								<div class="headerbox"><!-- <img src="http://bannersmonster.com/themes/Circo/images/pack3big.png"  alt=""  class="leftalign" />-->
 									<div class="title"><strong>Volunteer</strong>
-										<p></p>
+										<p><span class="fa fa-cogs fa-3x" style="color:#608595"/i></p>
 									</div>
 									<h1 class="skyblue">Do you want to change the world?</h1>
 									<p class="white">Join our influential group of volunteers deploying real-world projects! Use your skills to help others change the world.</p>
@@ -131,22 +143,13 @@
 			<!-- /Sponsor Context -->
 			<!-- Global Navigation Context -->
 			<div id="navApp" class="navApp">
-				<div class="pure-menu pure-menu-open">
-					<ul>
-						<li><a href="#">Item</a></li>
-						<li><a href="#">Item</a></li>
-						<li><a href="#">Item</a></li>
-						<li><a href="#">Item</a></li>
-						<li><a href="#">Item</a></li>
-						<li><a href="#">Item</a></li>
-					</ul>
-				</div>
-				<button id="contextSwitch" class="button" onClick="switchToAbout()">About NorthBridge</button>
+				<img src="corp_images/final_files/final_files/NB_vertical_rgb.png" width="200" height="161" style="padding: 15px 0px" id="smallLogo"/>
+				<button id="contextSwitch" class="button" onClick="switchToAbout()">About Northbridge</button>
 			</div>
 			<!-- /Global Navigation Context -->
 			<!-- About Context -->
 			<div id="aboutApp" class="aboutApp">
-				<img src="corp_images/final_files/final_files/NB_horizontal_tagline_rgb.png" width="750" height="232"/>
+				<img src="corp_images/final_files/final_files/NB_horizontal_tagline_rgb.png" width="700" height="218" style="padding:30px 10px 10px 10px;"/>
 			</div>
 			<!-- /About Context -->
 			<div class="curtain"></div>
