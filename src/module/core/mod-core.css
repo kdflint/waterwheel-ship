@@ -1,0 +1,265 @@
+.sponsorHeader {
+	height: 190px;
+	width: 760px;
+	padding: 10px;
+}
+
+.sponsorHeaderLeft {
+	position: absolute;
+	width: 390px;
+	font-size: 33px;
+	line-height: 110%;
+	font:'Oxygen', Arial, sans-serif;
+}
+
+.sponsorHeaderRight {
+	position: absolute;
+	width: 390px;
+	left: 400px;
+}
+
+.allianceContent {
+	height:350px;
+	width:760px;
+}
+
+.sponsorApp {
+	position: absolute;
+	left: 0px;
+	height: 100%;
+	opacity: 1;
+	z-index: 1;
+}
+
+.navApp {
+	position: absolute;
+	left: 760px;
+	width: 200px;
+	height: 100%;
+	z-index: 1;
+	background-image: url("images/curtain.png");
+	transition: left 2s ease;
+  -webkit-transition: left 2s; 
+}
+
+.aboutApp {
+	position: absolute;
+	left: 960px;	
+	height: 100%;
+	width: 760px;
+	z-index: 1;
+	background-image: url("images/curtain.png");
+	transition: left 2s ease;
+  -webkit-transition: left 2s; 
+}
+
+div.curtain {
+	position: absolute;
+	left: 960px;	
+	height: 400px;
+	width: 760px;
+	z-index: 1;
+	background-image: url("images/curtain.png");
+}
+
+#madeUp_index0 {
+	position: absolute;
+	visibility: visible;
+	font: 11px/20px Oxygen, Arial, sans-serif;
+}
+
+#madeUp_index1, #madeUp_index2  {
+	position: absolute;
+	visibility: hidden;
+	font: 11px/20px Oxygen, Arial, sans-serif;
+}
+
+#smallLogo {
+	transition: opacity 2s;
+}
+
+.whitepaper-button {
+	position: absolute;
+	width: 130px;
+	height: 40px;
+	top: 90px;
+	left: 90px;
+	border-radius: 10px;
+	background-color: #fff;
+	font-size: 15px;
+	font-family: Oxygen, Arial, sans-serif;
+	padding: 15px;
+	color: #000;
+	border: 2px dotted #fcb040;
+ 	text-decoration: none;
+ 	transition: opacity 2s;
+}
+
+.whitepaper-button:hover {
+	background-color: #f2f2e1;
+}
+
+.whitepaper-button:active {
+	background-color: #e3e2c8;
+}
+
+.btn-open-close {
+    position: absolute;
+    top: 423px;
+    left: -33px;
+    width: 178px;
+    padding-top: 70px;
+    background: url('http://www.mckinsey.com/images/dotcom/home/btn-open-close.png') no-repeat scroll 0px 0px transparent;
+}
+
+.button {
+   margin: 18px 10px 10px 10px;
+   border-top: 1px solid #a1bdc9;
+   background: #608595;
+   background: -webkit-gradient(linear, left top, left bottom, from(#608595), to(#608595));
+   background: -webkit-linear-gradient(top, #608595, #608595);
+   background: -moz-linear-gradient(top, #608595, #608595);
+   background: -ms-linear-gradient(top, #608595, #608595);
+   background: -o-linear-gradient(top, #608595, #608595);
+   padding: 5px 28px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 15px;
+   font-family: "Oswald",Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   letter-spacing: .5px;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+   
+/* slider stuff */
+
+h1.slider {
+	letter-spacing:-1px;
+	margin:0 0 5px 0;
+}
+
+.sponsorSlider{
+	background:url(../images/slide.gif) center top no-repeat;
+	height:90px;
+	width:100%;
+}
+
+.accord, .accordion1{
+	margin:0px 0 0 0px;
+	padding:0;
+	list-style-type: none;
+	border-radius:20px;
+}
+.one h1 , .two h1 , .three h1, .four h1 ,.five h1{
+font:bold 20px/30px "Oxygen",Arial,sans-serif;
+padding:0 0px 0px 0px;
+ }
+.one img, .two img, .three img, .four img, .five img{
+margin:0 15px 0 0;
+}
+
+
+/* --------------------ONE------------------ */
+.one{
+	background: #899d70;
+ }
+
+/* --------------------TWO------------------ */
+.two{
+	background: #486c7a;
+}
+
+
+/* --------------------THREE------------------ */
+.three{
+	background: #fcb040;
+}
+
+/* --------------------LINKs------------------ */
+.active {
+padding:10px 10px 0 10px;
+	background:#fcc8bc;
+}
+.accord li{
+	cursor:pointer;
+}
+.accord .active_click{
+	cursor:default;
+}
+
+.headerbox div.title
+{
+position:absolute;
+right:0;
+top:10px;
+padding-left:10px;
+display:block;
+height:100%;
+width:120px;
+text-align: center;
+}
+
+.title strong
+{
+font:normal 18px/18px "Oswald", Arial, sans-serif;
+margin:5px;
+text-transform:uppercase;
+color:#f7f8ef;
+}
+
+div.title img
+{
+margin-left:15px;
+margin-top:15px;
+}
+
+div.title p
+{
+font:normal 10px/12px Arial, sans-serif;
+color:#e0e0e0;
+padding:10px 10px 10px 10px;
+margin:0px 0 0 0;
+}
+
+div.title a
+{
+font:normal bold 10px/12px Arial, sans-serif;
+color:#eee;
+text-transform:uppercase;
+}
+
+div.title a:hover
+{
+font:normal bold 10px/12px Arial, sans-serif;
+color:#fff;
+text-transform:uppercase;
+}
+
+.headerbox
+{
+margin:0px 100px 0px 10px;
+width:auto;
+overflow:hidden;
+padding:5px;
+}
+
+.headerbox p
+{
+font:normal 11px/18px Arial, sans-serif;
+margin-right:10px;
+}

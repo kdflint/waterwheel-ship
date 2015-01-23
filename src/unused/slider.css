@@ -1,0 +1,111 @@
+.sponsorSlider{
+	background:url(../images/slide.gif) center top no-repeat;
+	height:90px;
+	width:100%;
+}
+
+.accord, .accordion1{
+	margin:0px 0 0 0px;
+	padding:0;
+	list-style-type: none;
+	border-radius:20px;
+}
+.one h1 , .two h1 , .three h1, .four h1 ,.five h1{
+font:normal bold 22px/30px "Trebuchet MS", Arial, Helvetica, sans-serif;
+padding:0 0px 0px 0px;
+ }
+.one img, .two img, .three img, .four img, .five img{
+margin:0 15px 0 0;
+}
+
+
+/* --------------------ONE------------------ */
+.one{
+	background: #899d70;
+ }
+
+/* --------------------TWO------------------ */
+.two{
+	background: #486c7a;
+}
+
+
+/* --------------------THREE------------------ */
+.three{
+	background: #fcb040;
+}
+
+/* --------------------LINKs------------------ */
+.active {
+padding:10px 10px 0 10px;
+	background:#fcc8bc;
+}
+.accord li{
+	cursor:pointer;
+}
+.accord .active_click{
+	cursor:default;
+}
+
+.headerbox div.title
+{
+position:absolute;
+right:0;
+top:10px;
+padding-left:10px;
+background: url(../images/shade.png) left center no-repeat;
+display:block;
+height:100%;
+width:120px;
+text-align: center;
+}
+
+.title strong
+{
+font:normal 18px/18px "Trebuchet MS", Georgia, Tahoma, Helvetica, sans-serif;
+margin:5px;
+text-transform:uppercase;
+color:#f7f8ef;
+}
+
+div.title img
+{
+margin-left:15px;
+margin-top:15px;
+}
+
+div.title p
+{
+font:normal 10px/12px Tahoma, Georgia, Tahoma, Helvetica, sans-serif;
+color:#e0e0e0;
+padding:10px 10px 10px 10px;
+margin:0px 0 0 0;
+}
+
+div.title a
+{
+font:normal bold 10px/12px verdana, Georgia, Tahoma, Helvetica, sans-serif;
+color:#eee;
+text-transform:uppercase;
+}
+
+div.title a:hover
+{
+font:normal bold 10px/12px verdana, Georgia, Tahoma, Helvetica, sans-serif;
+color:#fff;
+text-transform:uppercase;
+}
+
+.headerbox
+{
+margin:0px 100px 0px 10px;
+width:auto;
+overflow:hidden;
+padding:5px;
+}
+
+.headerbox p
+{
+font:normal 11px/18px Verdana, Georgia, Tahoma, Helvetica, sans-serif;
+margin-right:10px;
+}

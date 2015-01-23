@@ -4,15 +4,14 @@
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 		<?php
-			include("mod-sponsor-meta.php"); 
-			include("../core/mod-core-meta.php");
+			include("mod-volunteer-meta.html"); 
 		?>		
-		
+
 	</head>
 	<body>
 		<div class="container">
 			<div class="allianceContent">
-					<?php include("mod-sponsor.php"); ?>					
+					<?php include("mod-volunteer.html"); ?>					
 			</div>
 		</div>
 	</body>

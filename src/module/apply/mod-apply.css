@@ -1,0 +1,12 @@
+.mod-apply-content {
+	position: absolute;
+	background-color: #ffffff;
+	height:330px;
+	-moz-box-shadow:    inset 0 0 6px #608595;
+  -webkit-box-shadow: inset 0 0 6px #608595;
+  box-shadow:         inset 0 0 6px #608595;
+	padding:10px;
+	border-radius:20px;
+	width: 740px;
+}	
+

@@ -1,0 +1,618 @@
+/*-------------------------------------------------------
+* Filename: styles.css
+* Version: 1.0.0
+* Website: http://www.aivah.com
+* Author: system32
+* Description: Handles the site layout.
+-----------------------------------------------------*/
+
+/*------------------------------------------------------
+Global Reset
+------------------------------------------------------*/	
+body{  
+margin:0px;
+font:normal 12px/20px Arial, Tahoma, Helvetica, sans-serif;
+color:#484848;
+}
+
+* html {
+margin:0;padding:0;
+}
+
+.imgborder
+{
+background:#FFFFFF;
+padding:3px;
+border:1px solid #ccc;
+}
+.imgborder:hover
+{
+background:#fff;
+padding:3px;
+border:1px solid #aaa;
+}
+
+
+
+.clear {
+clear:both; 
+}
+.rightalign
+{
+float:right;
+}
+.leftalign
+{
+float:left;
+}
+.textleft
+{
+text-align:left;
+}
+.textright
+{
+text-align:right;
+}
+
+p { margin: 0 0 5px 0;}
+
+/************************* ------------------
+ Header part css here 
+----------------------------********************/
+.header {
+//height:35px;
+}
+ 
+.slogan h3{
+font:normal 20px Arial, Helvetica, sans-serif;
+color:#fff;
+padding-top:25px;
+text-align:right;
+}
+
+.slogan h6{
+color:#fff;
+margin:0;
+text-align:right;
+}
+
+.logo{
+margin:15px 0 0 10px;
+}
+
+ 
+  
+/**************************----------------
+ Backgrounds 
+ -----------------------------***********/
+.bgcol
+{
+background:#00CCFF;
+}
+
+.bg_top{
+background: url(../images/topmid.png) no-repeat;
+height:30px;
+}
+
+.bg_repeat{
+background: url(../images/mid_plain.jpg) repeat-y;
+overflow:hidden;
+height:100%;
+}
+
+.bg_bottom{
+background: url(../images/botmid.png) no-repeat;
+height:30px;
+}
+
+/************* --------------------------
+ Start BreadCrumb here 
+ ------------------------------------********/  
+ 
+.subheader{
+background: url(../images/sliderbg.gif) center top no-repeat;
+height:110px;
+position:relative;
+margin-bottom:20px;
+}
+
+.subheader h2{
+color:#fff;
+padding:30px 0 0 20px;
+}
+.subheader p{
+padding:40px 20px 0 0;
+color:#FFFFFF;
+}
+.subheader span
+{
+color:#fff;
+position:absolute;
+bottom:10px;
+left:25px;
+}
+
+
+.subheader span a { color:#ddd; padding:0 5px; font-size:11px;}
+.subheader span a:hover { color:#fff;}
+ 
+
+
+
+
+/************************************************
+                      HEADINGS                  
+************************************************/
+
+h1{
+font: normal 40px/40px "Trebuchet MS", Arial, Helvetica, sans-serif;
+letter-spacing:-1px;
+padding:0 0 0 0;
+margin:0 0 5px 0;
+color:#000;
+}
+
+h2{
+font: normal 26px/30px "Trebuchet MS", Georgia, Arial, Helvetica, sans-serif;
+color:#444847;
+margin:0 0 5px 0;
+}
+
+h3 		{ 
+font: normal 22px/26px "Trebuchet MS", Georgia, Arial, Helvetica, sans-serif; 
+color:#484848;
+letter-spacing:-1px;
+padding:0 0 0 0;
+margin:0 0 5px 0;
+}
+
+h4 		{ 
+font: normal 20px "Trebuchet MS", Georgia, Arial, Helvetica, sans-serif; 
+color:#934858; 
+letter-spacing:-1px;
+padding:0 0 0 0;
+margin:0 0 5px 0;
+}
+
+h5 		{ 
+font: normal 16px "Trebuchet MS", Georgia, Arial, Helvetica, sans-serif; 
+color:#5d5d5d; 
+padding:0 0 0 0;
+margin:0 0 5px 0;
+}
+
+h6 		{ 
+font: italic normal 12px Georgia, Arial, Helvetica, sans-serif; 
+color:#4D4C4C; 
+padding:0 0 0 0;
+margin:0 0 5px 0;
+}
+
+
+a {
+text-decoration:none;
+color:#2f736c;
+}
+a:hover
+{
+color:#934858;
+text-decoration:none;
+}
+.middle_content
+{
+padding:20px 30px 20px 20px;
+margin:0px;
+}
+
+
+
+/************* --------------------------
+ Form Code here 
+ ------------------------------------********/  
+fieldset
+{
+padding:20px;
+border:1px solid #CCCCCC;
+}
+
+fieldset legend
+{
+font-weight:bold;
+padding:6px 20px;
+border:1px solid #CCCCCC;
+}
+
+
+
+
+/************* --------------------------
+quick-contact start            
+----------------------------------********/
+.quick-contact
+{ 
+margin-top:20px; 
+border:0px solid #dddddd; 
+background:none;
+color:#484848;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-khtml-border-radius:5px;
+height:100%;
+overflow:hidden;
+} 
+
+ 
+.quick-contact p
+{
+font:normal 11px/18px Tahoma, Arial, Helvetica, sans-serif;
+color:#484848;
+text-align:left;
+}
+.quick-contact img
+{
+vertical-align:top;
+}
+
+ 
+/************* --------------------------
+Footer            
+----------------------------------********/  
+
+.footer
+{
+padding:30px 0;
+color:#CCCCCC;
+text-align:center;
+font:Arial, Helvetica, sans-serif;
+}
+
+/*--------------------------------------------
+  				Twitter box
+  		------------------------------------*/
+.leftsidebar {
+ padding:20px;   
+ margin:0 5px;}
+
+
+.twitterbox
+{
+padding:20px;
+}
+
+.twitterbox p
+{
+font: italic normal 12px Georgia, Arial, Helvetica, sans-serif; 
+}
+
+/*------------------------------------------------------
+  				News Unordered Lists
+  ------------------------------------------------------*/	
+	.sidebar h2{
+padding:0 0 0 10px;
+	}
+ul.newslist
+{
+margin:10px 0px 10px 0;
+padding:0;;
+}
+
+ul.newslist li
+{
+padding:3px 0 3px 5px;
+margin-bottom:5px;
+color:#666666;
+}
+ul.newslist li a:link, ul.newslist li a:visited, ul.newslist li a:active
+{
+padding:3px 0px;color:#959595;
+text-decoration:none;
+}
+
+ul.newslist li a:hover
+{
+color:#000;
+padding:3px 0px;
+text-decoration:none;
+}
+
+ul.newslist li span
+{
+font-weight:bold;
+display:block;
+}
+/*--------------------------------------------
+  				Sidebar Menu
+  		------------------------------------*/
+		
+.submenu {
+margin:0 0px 20px 0px;
+text-align:left;
+}
+
+.submenu ul {
+margin:0;
+list-style:none;
+padding:0 0px;
+}
+
+.submenu li a {
+voice-family:inherit;
+margin:0 0 0px 0;
+height:16px;
+background:#f5f5f5;
+border-bottom:1px solid #ddd;
+text-decoration:none;
+}
+
+.submenu li li a {
+margin:0 0 0 0;
+border:1px solid #eee;
+text-decoration:none;
+
+}
+
+.submenu li li a:link, .submenu li li a:visited {
+color:#484848;
+display:block;
+padding:6px 10px;
+}
+
+.submenu li a:link, .submenu li a:visited {
+color:#484848;
+display:block;
+padding:6px 10px;
+}
+
+.submenu li.current a {
+text-decoration:none;
+-moz-border-radius:3px;
+-khtml-border-radius:3px;
+-webkit-border-radius:3px;
+color:#000;
+background:#eee;
+}
+
+.submenu li a:hover {
+background:#eee;
+color:#000;
+padding:6px 10px;
+z-index:100;
+text-decoration:none;
+}
+
+/*--------------------------------------------
+  				Sidebar box
+  		------------------------------------*/
+		
+.sidebarbox h3 		{ 
+font: normal 22px/28px Georgia, Arial, Helvetica, sans-serif; 
+color:#4D4C4C;
+text-align:center;
+padding:10px;
+margin:0;
+text-decoration:none;
+}
+
+
+.sidebarbox {
+border:0px solid #cbcbcb;
+background:none;
+padding:15px;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+-khtml-border-radius:3px;
+}
+
+.tour	{
+	padding:10px 0 0 0px;
+	border:none;
+}
+
+/*------------------------------------------------------
+  				Services Page Services Block
+  ------------------------------------------------------*/
+	.servicebox{
+margin-left:20px;
+padding:15px;
+border-bottom :1px dashed #717171; 
+}
+.servicebox p, .servicebox ul.listitems, .servicebox h3
+{
+ margin-left:80px;
+}
+
+
+.servicebox2
+{
+border-bottom :1px dashed #717171; 
+overflow:hidden;
+height:100%;
+padding:20px;
+margin:0;
+}
+.servicebox2 h3, .servicebox2 p
+{
+margin:0;
+padding-left:10px;
+margin-left:70px;
+}
+
+.servicebox2 img
+{
+border-right:1px solid #ddd;
+padding-right:5px;
+}
+
+
+.readmore
+{
+margin:10px 0 10px 0;
+color:#fff;
+background:#2f736c;
+padding:2px 10px;
+text-decoration:none;
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+-khtml-border-radius:3px;
+
+}
+a.readmore:hover
+{
+color:#fff;
+background:#934858;
+text-decoration:none;
+}
+/************* -------------------------------------------
+Portfolio page  middle part content css here             
+---------------------------------------------------********/  
+
+
+.content-box{ 
+background:url(../images/borderbottom.gif) bottom center no-repeat;
+overflow:auto;
+height:100%;
+padding:20;
+margin:0 0 20px 0;
+
+}
+
+.content-box p
+{
+
+font:normal 12px/22px Georgia, "Times New Roman", Times, serif;
+margin:10px 0 0;
+}
+
+.content-box h3 a:hover
+{
+border-bottom:1px solid #999; 
+}
+
+.content-box img
+{
+margin:10px 20px 0 0;
+}
+
+.post-info{
+padding:5px;
+border-bottom:1px dashed #717171; 
+border-top:1px dashed #717171; 
+margin:0;
+font:normal 11px/20px   Arial, Helvetica, sans-serif;
+color:#000; 
+}
+
+.comments
+{
+float:right;
+padding:0px 0 0 0;
+background: url(../images/comment.gif) no-repeat;
+width:85px;
+text-align:center;
+height:26px;
+}
+
+.comments a		 { color:#777; text-decoration:none;}
+.comments a:hover	 { color:#69452e; text-decoration:none;}
+
+ 
+
+
+/*------------------------------------------------------
+  	Top Menu Lists
+  ------------------------------------------------------*/	
+.topmenubg	{
+width:940px;
+background:#eee;
+-moz-border-radius-topleft:5px;
+-moz-border-radius-topright:5px;
+-webkit-border-top-left-radius:5px;
+-webkit-border-top-right-radius:5px;
+height:40px;
+
+}
+
+.topmenu
+{
+padding-left:10px;
+padding-top:8px;
+}
+
+#dropmenu, #dropmenu ul {margin:0 0 0 0; padding:0 0 0 0; list-style-type:none; list-style-position:outside; position:relative; line-height:1.5em; z-index:400; width:100%;  font-weight:bold;font-family:Arial, Helvetica, sans-serif;}
+#dropmenu a {display:block; padding:0.25em 1em; color:#686868; border-right:1px solid #c8c8c8; text-decoration:none; background:#eeeeee;}
+#dropmenu a:hover {background:#19475a; color:#fff;}
+#dropmenu li {float:left; position:relative;}
+#dropmenu ul {position:absolute; display:none; width:12em; top:1.9em; left:-1px;}
+#dropmenu ul a {border-left:1px solid #c8c8c8;background:#fff;}
+#dropmenu li ul {border-top:1px solid #c8c8c8;background:#fff; width:14.1em;}
+#dropmenu li ul a {width:12em; height:auto; float:left;  border-bottom:1px solid #ddd;}
+#dropmenu ul ul {top:auto;}
+#dropmenu li ul ul {left:12em; margin:0px 0 0 10px;}
+#dropmenu li:hover ul ul, #dropmenu li:hover ul ul ul, #dropmenu li:hover ul ul ul ul {display:none;}
+#dropmenu li:hover ul, #dropmenu li li:hover ul, #dropmenu li li li:hover ul, #dropmenu li li li li:hover ul {display:block;}
+#dropmenu li.current_page_item a:link  {background:#19475a; color:#fff;}
+#dropmenu li.current_page_parent a {background:#19475a; color:#fff;}
+#dropmenu li.current-cat a {background:#19475a; color:#fff;}
+
+/******* COLORS **********/
+
+.yellow 	{ color:#FFCC33; }
+.skyblue 	{ color:#9fe5ff; }
+.gray 	{ color:#484848 !important; }
+.white 	{ color:#ffffff; }
+
+/******* Table **********/
+table{
+border:none;
+border-collapse:collapse;
+margin:10px 0 10px 0;
+}
+
+td,th
+{
+border-bottom:1px solid #cacaca;
+color:#4c4c4c;
+padding:10px 15px;
+}
+th
+{
+background:url(../images/table-head-mid.gif) repeat-x 0 0;
+text-align:left;
+padding-left:20px;
+}
+th.lefthead
+{background:url(../images/table-head-left.gif) no-repeat 0 0;
+text-align:left;
+padding-left:20px;
+}
+th.righthead
+{background:url(../images/table-head-right.gif) no-repeat right top;
+text-align:left;
+}
+
+table a {text-decoration:none;}
+table a:link {}
+table a:visited {}
+
+tbody tr:hover 		{background:#f1f1f1;}
+
+tr.even
+{
+background:#f1f1f1;
+}
+
+/*******************************************************
+  				Error / Success / Notice	
+*******************************************************/
+
+.notes 	{background: #f0f0f0;border: 1px solid #b8b8b8;}
+.success 	{background: #ccfcd1;border: 1px solid #60a400;}
+.error	{background: #f9e3e3;	border: 1px solid #e79e9e;}
+.notice 	{background: #fcf0cc;border: 1px solid #ecc735;}
+	.notes, .notice, .success, .error 
+		{font-size: 100%;color:#484848;padding:10px;width:auto;margin: 0 0 20px 0px; text-align:left}
+	.notes span, .notice span, .success span, .error span 
+		{font-weight: bold;font-size: 1.2em;padding: 2px 40px;}
+	.notes p, .success p, .error p, .notice p 
+		{margin: 0px;padding: 0px 40px;}

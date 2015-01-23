@@ -18,9 +18,10 @@
 
 .mod-sponsor-contentRight {
 	left: 520px;
-	width: 220px;
+	width: 219px;
 	border-left: thin dashed;
 	border-left-color: #638f90;
+	font-weight: bold;
 }
 
 .mod-sponsor-controlLevel, .mod-sponsor-controlSponsorship, .mod-sponsor-controlImpact, .mod-sponsor-controlDesignate {
@@ -45,19 +46,26 @@
 	vertical-align: middle;
 	padding: 7px;
 	width: 120px;
+	font-weight: bold;
 }
 
 .mod-sponsor-controlContent {
 	position: absolute;
 	vertical-align: middle;
 	margin-left: 125px;
-	width: 380px;
+	width: 360px;
+	font-weight: normal;
 }
 
 .mod-sponsor-button {
 	width:50px;
 	border-radius: 6px;
-	margin:3px;
+	margin:4px;
+}
+
+.mod-sponsor-sponsorButtons {
+	position: absolute;
+	top: 303px;
 }
 
 
@@ -107,6 +115,8 @@
 	z-index:999;
 	overflow: auto;
 	float: left;
+	font-family: 'PT Sans Narrow', sans-serif;
+	line-height: 100%;
 }
 
 .mod-sponsor-accordion .header:first-child {

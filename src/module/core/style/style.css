@@ -1,0 +1,35 @@
+@import url("../mod-core.css");
+
+body { 
+	font: bold 12px/20px "Oxygen", Arial, sans-serif;
+	text-align: center; 
+	background-color: #638f90;
+	color:#484848;
+	background: transparent;
+	margin: 0px;
+	
+	//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:400,300|Nunito:400,300|Asap|Dosis:400,500,300|Ropa+Sans&subset=latin,latin-ext">
+  //<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans|Roboto|Montserrat|Varela|Share+Tech|Noto+Sans|Oxygen|Spinnaker'>
+  // Caption: Ropa
+  //
+}
+
+.container {
+	position: relative;
+	background-color: #ffffff;
+	margin: 0px auto;
+	width: 960px;
+	height: 660px;
+	text-align: left;
+}
+
+p {
+	margin: 0 0 5px 0;
+}
+
+.skyblue 	{ color:#004d62; }
+.otherblue 	{ color:#486c7a; }
+.white 	{ color:#f7f8ef; }
+.tan { color:#edf0de; }
+.yellow { color:#fcb040; }
+

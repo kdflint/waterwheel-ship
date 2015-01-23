@@ -1,0 +1,12 @@
+.mod-volunteer-content {
+	position: absolute;
+	background-color: #ffffff;
+	height:330px;
+	-moz-box-shadow:    inset 0 0 6px #f59815;
+  -webkit-box-shadow: inset 0 0 6px #f59815;
+  box-shadow:         inset 0 0 6px #f59815;
+	padding:10px;
+	border-radius:20px;
+	width: 740px;
+}	
+
