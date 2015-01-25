@@ -1,26 +1,51 @@
 .sponsorHeader {
-	height: 190px;
-	width: 760px;
-	padding: 10px;
+	height: 160px;
+	width: 740px;
+	padding: 20px 0px 10px;
 }
 
 .sponsorHeaderLeft {
+	font: bold 33px "Oxygen", Arial, sans-serif;
 	position: absolute;
-	width: 390px;
-	font-size: 33px;
+	width: 520px;
 	line-height: 110%;
-	font:'Oxygen', Arial, sans-serif;
 }
 
 .sponsorHeaderRight {
 	position: absolute;
 	width: 390px;
-	left: 400px;
+	left: 520px;
+	margin-top: 23px;
 }
+
+#sponsorHeaderRight {
+	transition: left 2s;
+}
+
+.sponsorHeaderLeader {
+	position: absolute;
+	font-size: 46px;
+	left: 40px;
+}	
+
+.sponsorHeaderCaption {
+	font-size: 14px;
+	line-height: 130%;
+	font-weight: lighter;
+	font-style: italic;
+}
+ 	
+
+.sponsorHeaderHeadline {
+	position: absolute;
+	top: 15px;
+	left: 100px;
+	text-align: right;
+}	
 
 .allianceContent {
 	height:350px;
-	width:760px;
+	width:740px;
 }
 
 .sponsorApp {
@@ -46,7 +71,7 @@
 	position: absolute;
 	left: 960px;	
 	height: 100%;
-	width: 760px;
+	width: 740px;
 	z-index: 1;
 	background-image: url("images/curtain.png");
 	transition: left 2s ease;
@@ -74,25 +99,34 @@ div.curtain {
 	font: 11px/20px Oxygen, Arial, sans-serif;
 }
 
-#smallLogo {
+#navTopSponsorContext {
+	opacity: 1;
 	transition: opacity 2s;
+	position: absolute;
+	top: 20px;
+}
+
+#navTopAboutContext {
+	opacity: 0;
+	transition: opacity 2s;
+	position: absolute;
+	top: 20px;
+	padding-top: 23px;
 }
 
 .whitepaper-button {
 	position: absolute;
 	width: 130px;
-	height: 40px;
-	top: 90px;
-	left: 90px;
+	height: 25px;
 	border-radius: 10px;
-	background-color: #fff;
 	font-size: 15px;
 	font-family: Oxygen, Arial, sans-serif;
 	padding: 15px;
-	color: #000;
 	border: 2px dotted #fcb040;
  	text-decoration: none;
  	transition: opacity 2s;
+ 	margin-top: 5px;
+ 	text-align: center;
 }
 
 .whitepaper-button:hover {

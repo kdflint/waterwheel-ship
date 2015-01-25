@@ -3,8 +3,9 @@ function switchToAbout() {
 	document.getElementById("aboutApp").style.left='200px';
 	document.getElementById("sponsorApp").style.transitionDelay='0s'; 
 	document.getElementById("sponsorApp").style.opacity='.5';
-	document.getElementById("smallLogo").style.opacity = "0";
-	document.getElementById("testtest").style.opacity = "1";
+	document.getElementById("navTopSponsorContext").style.opacity = "0";
+	document.getElementById("navTopAboutContext").style.opacity = "1";
+	document.getElementById("sponsorHeaderRight").style.left = "0px";
  	document.getElementById("contextSwitch").innerHTML='Web Tools';
 	document.getElementById("contextSwitch").onclick = function() {switchToSponsor()}
 }
@@ -14,8 +15,9 @@ function switchToSponsor() {
 	document.getElementById("aboutApp").style.left='960px';
 	document.getElementById("sponsorApp").style.transitionDelay="2s"; 
 	document.getElementById("sponsorApp").style.opacity="1";
-	document.getElementById("smallLogo").style.opacity = "1";
-	document.getElementById("testtest").style.opacity = "0";
+	document.getElementById("navTopSponsorContext").style.opacity = "1";
+	document.getElementById("navTopAboutContext").style.opacity = "0";
+	document.getElementById("sponsorHeaderRight").style.left = "520px";
 	document.getElementById("contextSwitch").innerHTML='About Northbridge';
 	document.getElementById("contextSwitch").onclick = function() {switchToAbout()}
 }

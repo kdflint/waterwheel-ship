@@ -15,24 +15,22 @@
 			<div id="sponsorApp" class="sponsorApp">
 				<div class="sponsorHeader">
 					<div class="sponsorHeaderLeft">
-						<span class="fa fa-group yellow" style="margin:5px;font-size:46px;padding-top:30px;"></span>
-						<span class="skyblue">Web&nbsp;conferencing</span>
-						<p class="skyblue" style="text-indent:70px;">for&nbsp;world-changers</p>	
-						<p class="otherblue">
-							<span class="fa fa-comments" style="margin: 5px 5px 5px 70px;"></span>
+						<span class="fa fa-group yellow sponsorHeaderLeader"></span>
+						<p class="skyblue sponsorHeaderHeadline">Web&nbsp;conferencing<br/>for&nbsp;world-changers<br/>
+							<span class="fa fa-comments"></span>
 							<span class="fa fa-play-circle" style="margin:5px;"></span>
 							<span class="fa fa-laptop" style="margin:5px;"></span>
 							<span class="fa fa-globe" style="margin:5px;"></span>
 							<span class="fa fa-microphone" style="margin:5px;"></span>
 							<span class="fa fa-video-camera" style="margin:5px;"></span>
 							<span class="fa fa-mobile" style="margin:5px;"></span>
-					</p>			
+						</p>			
 					</div>
-					<div class="sponsorHeaderRight">
+					<div class="sponsorHeaderRight" id="sponsorHeaderRight">
+						<p class="skyblue sponsorHeaderCaption">Shouldn't your technology<br/>be as great as you are?</p>		
 						<a class="whitepaper-button" id="" href="#" onclick="">
-							<span class="fa fa-file-pdf-o fa-2x otherblue " style="margin:2px;"></span> <span class="skyblue">Whitepaper</span>
+							<span class="fa fa-file-pdf-o fa-2x otherblue"></span>&nbsp;<span class="skyblue">Whitepaper</span>
 						</a>
-						<p class="skyblue" style="font-size:13px;line-height:100%;font-family:Arial,sans-serif;font-weight:lighter;position:absolute;top:50px;left:90px;"><i>Shouldn't your technology<br/>be as good as you are?</i></p>		
 					</div>
 				</div>
 				<div class="sponsorSlider">
@@ -44,7 +42,7 @@
 										<p><span class="fa fa-send fa-3x tan" ></p>
 									</div>
 									<h1 class="slider white">Is your team changing the world?</h1>
-									<p class="white"><b>Is your U.S. 501(c)(3) organization is doing social justice and community-building work?</b> You are eligible for a virtual global web conference room.</p>
+									<p class="white"><b>Is your U.S. 501(c)(3) organization doing social justice or community building?</b> You may be eligible for a global web conference room.</p>
 								</div>
 							</li>
 							<li class="two">
@@ -83,13 +81,19 @@
 			<!-- /Sponsor Context -->
 			<!-- Global Navigation Context -->
 			<div id="navApp" class="navApp">
-			<div id="navTop" style="display:block;width:200px;height:200px">
-					<img src="images/NB_vertical_rgb.png" width="200" height="161" style="padding: 15px 0px" id="smallLogo"/>
+			<div id="navTopSponsorContext">
+					<img src="images/NB_vertical_rgb.png" width="200" height="161" id="smallLogo"/>
 					<a class="whitepaper-button" id="testtest" href="#" onclick="" style="opacity:0;">
-						<span class="fa fa-file-pdf-o fa-2x otherblue " style="margin:2px;"></span> <span class="skyblue">Whitepaper</span>
+						<span class="fa fa-file-pdf-o fa-2x otherblue "></span> <span class="skyblue">Whitepaper</span>
 					</a>
 			</div>
-			<button id="contextSwitch" class="button" onClick="switchToAbout()">About Northbridge</button>
+			<div id="navTopAboutContext">
+				<p class="skyblue sponsorHeaderCaption">Shouldn't your technology<br/>be as great as you are?</p>		
+				<a class="whitepaper-button" id="" href="#" onclick="">
+					<span class="fa fa-file-pdf-o fa-2x otherblue"></span>&nbsp;<span class="skyblue">Whitepaper</span>
+				</a>				
+			</div>
+			<button id="contextSwitch" class="button" style="position:absolute;top:190px;" onClick="switchToAbout()">About Northbridge</button>
 				<?php // include("../..."); ?>
 			</div>
 			<!-- /Global Navigation Context -->

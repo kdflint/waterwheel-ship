@@ -11,14 +11,14 @@
 
 .mod-sponsor-contentLeft {
 	left: 0px;
-	width:500px;
+	width: 490px;
 	border-right: thin dashed;
 	border-right-color: #638f90;
 }
 
 .mod-sponsor-contentRight {
-	left: 520px;
-	width: 219px;
+	left: 510px;
+	width: 210px;
 	border-left: thin dashed;
 	border-left-color: #638f90;
 	font-weight: bold;

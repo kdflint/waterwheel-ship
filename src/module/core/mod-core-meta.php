@@ -26,10 +26,10 @@
 				$(this).html('inactive');
 			}
 			$('.accordion1').hSlides({
-				totalWidth: 760,
+				totalWidth: 740,
 				totalHeight: 90,
 				minPanelWidth: 120,
-				maxPanelWidth: 520
+				maxPanelWidth: 500
 			});
 		}
 		));
