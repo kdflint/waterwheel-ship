@@ -93,13 +93,13 @@
 					<span class="fa fa-file-pdf-o fa-2x otherblue"></span>&nbsp;<span class="skyblue">Whitepaper</span>
 				</a>				
 			</div>
-			<button id="contextSwitch" class="button" style="position:absolute;top:190px;" onClick="switchToAbout()">About Northbridge</button>
+			<button id="contextSwitch" class="button" style="position:absolute;top:230px;" onClick="switchToAbout()">About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;"></span></button>
 				<?php // include("../..."); ?>
 			</div>
 			<!-- /Global Navigation Context -->
 			<!-- About Context -->
 			<div id="aboutApp" class="aboutApp">
-				<img src="images/NB_horizontal_tagline_rgb.png" width="700" height="218" style="padding:30px 10px 10px 10px;"/>
+				<img src="images/NB_horizontal_tagline_rgb.png" width="680" height="212" style="padding:30px 10px 10px 30px;"/>
 			</div>
 			<!-- /About Context -->
 			<div class="curtain"></div>

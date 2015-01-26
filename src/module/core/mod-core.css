@@ -111,7 +111,7 @@ div.curtain {
 	transition: opacity 2s;
 	position: absolute;
 	top: 20px;
-	padding-top: 23px;
+	padding: 23px 0px 0px 20px;
 }
 
 .whitepaper-button {
@@ -147,37 +147,26 @@ div.curtain {
 }
 
 .button {
-   margin: 18px 10px 10px 10px;
-   border-top: 1px solid #a1bdc9;
-   background: #608595;
-   background: -webkit-gradient(linear, left top, left bottom, from(#608595), to(#608595));
-   background: -webkit-linear-gradient(top, #608595, #608595);
-   background: -moz-linear-gradient(top, #608595, #608595);
-   background: -ms-linear-gradient(top, #608595, #608595);
-   background: -o-linear-gradient(top, #608595, #608595);
-   padding: 5px 28px;
+   border-top: 1px solid #a6c3ce;
+   background: #004d62;
+   padding: 5px 15px;
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
-   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-   box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
-   color: white;
-   font-size: 15px;
+   color: #edf0de;
+   font-size: 16px;
    font-family: "Oswald",Arial, Sans-Serif;
    text-decoration: none;
    vertical-align: middle;
    letter-spacing: .5px;
+   width: 100%;
    }
 .button:hover {
-   border-top-color: #28597a;
-   background: #28597a;
-   color: #ccc;
+   background: #a6c3ce;
    }
 .button:active {
-   border-top-color: #1b435e;
-   background: #1b435e;
+   background: #a6c3ce;
    }
    
 /* slider stuff */
