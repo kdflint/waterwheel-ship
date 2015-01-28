@@ -2,9 +2,9 @@
 	position: absolute;
 	background-color: #ffffff;
 	height:330px;
-	-moz-box-shadow:    inset 0 0 6px #96a17c;
-  -webkit-box-shadow: inset 0 0 6px #96a17c;
-  box-shadow:         inset 0 0 6px #96a17c;
+	-moz-box-shadow:    inset 0 0 6px #486c7a;
+  -webkit-box-shadow: inset 0 0 6px #486c7a;
+  box-shadow:         inset 0 0 6px #486c7a;
 	padding:10px;
 	border-radius:20px;
 }	
@@ -13,14 +13,14 @@
 	left: 0px;
 	width: 490px;
 	border-right: thin dashed;
-	border-right-color: #638f90;
+	border-right-color: #486c7a;
 }
 
 .mod-sponsor-contentRight {
 	left: 510px;
 	width: 210px;
 	border-left: thin dashed;
-	border-left-color: #638f90;
+	border-left-color: #486c7a;
 	font-weight: bold;
 }
 

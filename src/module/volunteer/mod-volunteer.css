@@ -1,12 +1,73 @@
-.mod-volunteer-content {
+
+.mod-volunteer-frameLeft, .mod-volunteer-frameRight {
 	position: absolute;
 	background-color: #ffffff;
 	height:330px;
-	-moz-box-shadow:    inset 0 0 6px #f59815;
-  -webkit-box-shadow: inset 0 0 6px #f59815;
-  box-shadow:         inset 0 0 6px #f59815;
+	-moz-box-shadow:    inset 0 0 6px #fcb040;
+  -webkit-box-shadow: inset 0 0 6px #fcb040;
+  box-shadow:         inset 0 0 6px #fcb040;
 	padding:10px;
 	border-radius:20px;
 	width: 740px;
 }	
 
+.mod-volunteer-frameLeft {
+	left: 0px;
+	width: 490px;
+	border-right: thin dashed;
+	border-right-color: #fcb040;
+}
+
+.mod-volunteer-frameRight {
+	left: 510px;
+	width: 210px;
+	border-left: thin dashed;
+	border-left-color: #fcb040;
+}
+
+.mod-volunteer-columnLeft {
+	position: absolute;
+	width: 235px;
+	margin: 5px;
+}
+
+.mod-volunteer-columnRight {
+	position: absolute;
+	left: 255px;
+	width: 236px;
+	margin: 5px;
+}
+
+.mod-volunteer-columnRightLeft {
+	position: absolute;
+	width: 110px;
+}
+
+.mod-volunteer-columnRightRight {
+	position: absolute;
+	left: 120px;
+}
+
+.mod-volunteer-columnRightBottom {
+	position: absolute;
+	top: 82px;
+}
+
+
+.mod-volunteer-controlLabel {
+	font-weight: bold;
+}
+
+.mod-volunteer-controlContent {
+	font-weight: normal;
+	font-size: 90%;
+}
+
+.mod-volunteer-anchor {
+	text-decoration: none;
+	color: #d27b4b;
+}
+
+.pure-form input[type="text"], .pure-form input[type="email"] {
+	margin: 0px 0px 5px 0px;
+}

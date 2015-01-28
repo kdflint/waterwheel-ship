@@ -1,4 +1,4 @@
-<?php define("SPONSOR_ROOT", "http://localhost/waterwheel/module/core"); ?>
+<?php //define("SPONSOR_ROOT", "http://localhost/waterwheel/module/core"); ?>
 
 					<script type="text/javascript">$m.wand.copy_value_to_html = true;</script>
 					

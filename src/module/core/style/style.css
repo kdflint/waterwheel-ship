@@ -32,4 +32,10 @@ p {
 .white 	{ color:#f7f8ef; }
 .tan { color:#edf0de; }
 .yellow { color:#fcb040; }
+.orange { color:#d27b4b; }
+
+.required {
+	color: #d27b4b;
+	vertical-align: top;	
+}
 

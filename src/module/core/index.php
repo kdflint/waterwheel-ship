@@ -5,6 +5,7 @@
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">		
 		<?php 
 			include("../sponsor/mod-sponsor-meta.php"); 
+			include("../volunteer/mod-volunteer-meta.php"); 
 			include("mod-core-meta.php");
 		?>		
 	</head>
@@ -74,7 +75,7 @@
 						<?php include("../sponsor/mod-sponsor.php"); ?>				
 					</div>
 					<div id="madeUp_index2">
-						<?php // include("../volunteer/mod-volunteer.html"); ?>
+						<?php include("../volunteer/mod-volunteer.php"); ?>
 					</div>
 				</div>
 			</div>

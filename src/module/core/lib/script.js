@@ -22,20 +22,3 @@ function switchToSponsor() {
 	document.getElementById("contextSwitch").onclick = function() {switchToAbout()}
 }
 
-function showTeamSponsorForm() {
-	document.getElementById("teamSponsorForm").style.opacity='1';
-	document.getElementById("causeSponsorForm").style.opacity='0';
-	document.getElementById("levelSponsorForm").style.opacity='0';
-}
-
-function showCauseSponsorForm() {
-	document.getElementById("causeSponsorForm").style.opacity='1';
-	document.getElementById("teamSponsorForm").style.opacity='0';
-	document.getElementById("levelSponsorForm").style.opacity='0';
-}
-
-function showLevelSponsorForm() {
-	document.getElementById("causeSponsorForm").style.opacity='0';
-	document.getElementById("teamSponsorForm").style.opacity='0';
-	document.getElementById("levelSponsorForm").style.opacity='1';
-}
