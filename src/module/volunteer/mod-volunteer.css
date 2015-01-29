@@ -70,4 +70,19 @@
 
 .pure-form input[type="text"], .pure-form input[type="email"] {
 	margin: 0px 0px 5px 0px;
+	padding: 0.35em 0.6em;
 }
+
+/*
+.volunteerForm input:invalid {
+   border: 1px solid #d27b4b;
+}
+ 
+.volunteerForm input:valid {
+  border: 1px solid #899d70;
+}
+  
+.volunteerForm input:required {
+  border: 1px solid #d27b4b;
+}
+*/

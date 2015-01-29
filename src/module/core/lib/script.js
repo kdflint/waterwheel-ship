@@ -22,3 +22,23 @@ function switchToSponsor() {
 	document.getElementById("contextSwitch").onclick = function() {switchToAbout()}
 }
 
+
+function isValidEmail(email) {
+    var atpos = email.indexOf("@");
+    var dotpos = email.lastIndexOf(".");
+    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+        return false;
+    }
+    return true;
+}
+
+function isSafeCharacterSet(set) {	
+	if(set.indexOf('<') > -1  ||
+		 set.indexOf('>') > -1  ||
+		 set.indexOf('%') > -1  ||
+		 set.indexOf('*') > -1 ) {
+  	return false;
+	}
+	return true;
+}
+
