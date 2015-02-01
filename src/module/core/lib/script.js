@@ -26,19 +26,25 @@ function switchToSponsor() {
 function isValidEmail(email) {
     var atpos = email.indexOf("@");
     var dotpos = email.lastIndexOf(".");
-    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+    if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
         return false;
     }
     return true;
 }
 
 function isSafeCharacterSet(set) {	
-	if(set.indexOf('<') > -1  ||
-		 set.indexOf('>') > -1  ||
-		 set.indexOf('%') > -1  ||
-		 set.indexOf('*') > -1 ) {
+	if(set.indexOf('<') > -1 ||
+		 set.indexOf('>') > -1 ||
+		 set.indexOf('%') > -1 ||
+		 set.indexOf('*') > -1 ||
+		 set.indexOf('&') > -1 ||
+		 set.indexOf('=') > -1 ||
+		 set.indexOf('\/') > -1 ||
+		 set.indexOf('\\') > -1 ||
+		 set.indexOf('!') > -1) {
   	return false;
 	}
 	return true;
 }
+
 
