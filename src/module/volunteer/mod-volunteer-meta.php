@@ -1,4 +1,10 @@
-<?php define("VOLUNTEER_ROOT", "http://localhost/waterwheel/module/volunteer"); ?>
+<?php 
+
+require_once("../../config/env_config.php");
+
+define("VOLUNTEER_ROOT", "http://" . $env_host . "/waterwheel/module/volunteer"); 
+
+?>
 
 <!--================== Volunteer Module Meta ==================--!>
 

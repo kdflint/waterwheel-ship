@@ -3,7 +3,9 @@
 //error_reporting(E_ALL);
 //ini_set( 'display_errors','1'); 
 
-define("DOMAIN_ROOT", "http://localhost/waterwheel/module/core/domain");
+require_once("../../config/env_config.php");
+
+define("DOMAIN_ROOT", "http://" . $env_host . "/waterwheel/module/core/domain");
 
 $volunteer;
 $testMode = FALSE;
@@ -17,7 +19,7 @@ if (isset($_POST['testMode']) && !strcmp($_POST['testMode'], "true")) {
 	$volunteer = new Volunteer();
 }
 
-// All POST data is validated here by the domain object.
+// All POST data is validated by the domain object.
 
 if (isset($volunteer)) {
 	
@@ -25,36 +27,36 @@ if (isset($volunteer)) {
 		$volunteer->setFname($_POST['fname']); 
 		$volunteer->setLname($_POST['lname']);
 		$volunteer->setEmail($_POST['email_1']);
-		//echo $volunteer->setMotives($_POST['motives']);
-		//echo $volunteer->setSkills($_POST['skills']);
+		$volunteer->setMotives($_POST['motives']);
+		$volunteer->setSkills($_POST['skills']);
 		$volunteer->setMotiveComment($_POST['otherMotive']);
 		$volunteer->setSkillComment($_POST['otherSkill']);
 		$volunteer->setAboutComment($_POST['otherInfo']);		
-	} catch(Exception $e) { logErrorAndReturn($e, $testMode); }
+	} catch(Exception $e) { logErrorAndReturn($e, $testMode, $env_host); }
 		
 	$volunteer->activate();
+	$volunteer->notify();
 } else { 
 	
-	logErrorAndReturn("Volunteer object is null.", $testMode);
+	logErrorAndReturn("Volunteer object is null.", $testMode, $env_host);
 }
 
-logNormalAndReturn($testMode, $volunteer);
+logNormalAndReturn($testMode, $volunteer, $env_host);
 
-function logErrorAndReturn($error, $test) {
+function logErrorAndReturn($error, $test, $host) {
 	if ($test) {
 		echo $error->getMessage();
 	} else {
-		header("location:http://localhost/waterwheel/module/volunteer/tester.php");
+		header("location:http://" . $host . "/waterwheel/module/volunteer/tester.php");
 	}
 	exit(0);
 }
 
-function logNormalAndReturn($test, $vol) {
+function logNormalAndReturn($test, $vol, $host) {
 	if ($test) {
 		echo "No error";
-		//echo "state = " . $vol->toString();
 	} else {
-		header("location:http://localhost/waterwheel/module/volunteer/tester.php");
+		header("location:http://" . $host . "/waterwheel/module/volunteer/tester.php");
 	}
 	exit(0);
 }	

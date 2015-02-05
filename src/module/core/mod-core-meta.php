@@ -1,4 +1,10 @@
-<?php define("CORE_ROOT", "http://localhost/waterwheel/module/core"); ?>
+<?php 
+
+require_once("../../config/env_config.php");
+
+define("CORE_ROOT", "http://" . $env_host . "/waterwheel/module/core"); 
+
+?>
 
 <!--================== Core Module Meta ==================--!>
 
