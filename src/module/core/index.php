@@ -5,6 +5,7 @@
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">		
 		<?php 
 			include("mod-core-meta.php");
+			include("../apply/mod-apply-meta.php"); 
 			include("../sponsor/mod-sponsor-meta.php"); 
 			include("../volunteer/mod-volunteer-meta.php"); 
 		?>		
@@ -69,7 +70,7 @@
 				</div>
 				<div class="allianceContent">
 					<div id="madeUp_index0">
-						<?php //include("../sponsor/mod-sponsor.php"); ?>		
+						<?php include("../apply/mod-apply.php"); ?>		
 					</div>
 					<div id="madeUp_index1">
 						<?php include("../sponsor/mod-sponsor.php"); ?>				
@@ -106,6 +107,14 @@
 			<div class="curtain"></div>
 
 		</div><!-- /container -->
+		
+		<!-- initialize major context -->
+		<?php if (!strcmp($_GET['context'], 'about')) { ?>
+			<script type="text/javascript">
+				switchToAbout();
+			</script>
+		<?php } ?> 
+
 	</body>
 </html>
 

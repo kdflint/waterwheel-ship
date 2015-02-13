@@ -22,7 +22,7 @@ define("VOLUNTEER_ROOT", "http://" . $env_host . "/waterwheel/module/volunteer")
 				<input type="checkbox" name="motives[]" value="3" /> Leadership opportunities<br/>
 				<input type="checkbox" name="motives[]" value="4" /> Involvement in the open source community<br/>
 				<input type="checkbox" name="motives[]" value="5" /> Creative and groundbreaking work<br/>
-				<input type="checkbox" name="motives[]" value="6" /> Other <input type="text" name="otherMotive" placeholder="Please specify"  maxLength="50"/><br/>
+				<input type="checkbox" name="motives[]" value="6" /> Other <input type="text" name="otherMotive" placeholder="Please specify"  maxLength="50" style="width:70%;"/><br/>
 			</div>
 		</div>
 		<div class="mod-volunteer-columnRight">		
@@ -44,11 +44,11 @@ define("VOLUNTEER_ROOT", "http://" . $env_host . "/waterwheel/module/volunteer")
 			<div class="mod-volunteer-columnRightBottom">
 				<div class="mod-volunteer-controlContent">
 					<input type="checkbox" name="skills[]" value="7" /> Testing (automated or otherwise)<br/>
-					<input type="checkbox" name="skills[]" value="16" /> Other <input type="text" name="otherSkill" placeholder="Please specify" maxLength="50"/><br/>
+					<input type="checkbox" name="skills[]" value="16" /> Other <input type="text" name="otherSkill" placeholder="Please specify" maxLength="50" style="width:78%;"/><br/>
 				</div>
 				<div class="mod-volunteer-controlLabel" style="margin-top:10px;">What else would you like to tell us about yourself?</div>
 				<div class="mod-volunteer-controlContent">
-					<textarea name="otherInfo" placeholder="Specific skills, level of experience, personal goals, etc." rows="8" cols="25" maxlength="500"></textarea>
+					<textarea name="otherInfo" placeholder="Specific skills, level of experience, personal goals, etc." rows="8" maxlength="500" style="width:100%;"></textarea>
 				</div>
 			</div>
 		</div>		

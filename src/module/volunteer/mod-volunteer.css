@@ -71,6 +71,7 @@
 .pure-form input[type="text"], .pure-form input[type="email"] {
 	margin: 0px 0px 5px 0px;
 	padding: 0.35em 0.6em;
+	width: 90%;
 }
 
 /*
