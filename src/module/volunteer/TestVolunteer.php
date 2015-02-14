@@ -1,10 +1,7 @@
 <?php
 
-require_once("../../config/env_config.php");
-require_once($env_fileRoot . "/Validate.php");
-require_once("Volunteer.php");
-
-define("CORE_ROOT", "http://" . $env_host . "/waterwheel/module/core"); 
+require_once("../core/domain/Util.php");
+require_once(Util::getFileDomainPath() . "/Volunteer.php");
 
 class TestVolunteer extends Volunteer {
 	

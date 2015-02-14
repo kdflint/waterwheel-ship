@@ -80,7 +80,8 @@ class Application {
 	
 	public function setUrl($url) {
 		if (isset($url) &&
-			filter_var($url, FILTER_VALIDATE_URL) &&
+			// TODO - finish this validation
+			// filter_var($url, FILTER_VALIDATE_URL, FILTER_FLAG_HOST_REQUIRED) &&
 			strlen($url) <= 100) {
 			$this->url = $url;
 		} else {
@@ -88,7 +89,7 @@ class Application {
 		}
 		return;
 	}
-
+	
 	public function setReach($rin) {
 		if (isset($rin) &&
 			  Validate::string($rin, array('min_length' => 1, 'max_length' => 100)) &&
@@ -163,8 +164,8 @@ class Application {
 	}
 	
 	public function notify() {
-		$this->sendApplicationConfirmEmail();
-		$this->sendApplicationEmail();
+		$this->queueApplicationConfirmMessage();
+		$this->queueApplicationNotifyMessage();
 	}
 	
 	public function toString() {
@@ -172,39 +173,6 @@ class Application {
 		// TODO - finish implementation
 	}
 		
-	private function sendApplicationConfirmEmail() {
-		$email_addr = $this->email;
-		$subject = "Thank you for your application";
-		$from = "noreply@nexus.northbridgetech.org";
-		$reply = "noreply@nexus.northbridgetech.org";
-		$message = "Hello " . $this->oname . ",
-		
-		Fill in...
-		
-		Regards,
-	
-		NorthBridge Technology Alliance";
-		
-		Util::sendEmail($email_addr, $subject, $message, $from, $reply);
-	}
-	
-	private function sendApplicationEmail() {
-		$email_addr = "kathy.flint@northbridgetech.org";
-		$subject = "New application submitted";
-		$from = "noreply@nexus.northbridgetech.org";
-		$reply = "noreply@nexus.northbridgetech.org";
-		$message = "Hello,
-		
-		A new vapplication has been submitted.
-		
-		Regards,
-	
-		Your own self";
-		
-		Util::sendEmail($email_addr, $subject, $message, $from, $reply);
-	}
-
-
 	private function insertApplication() {
 		$this->setUuid();
 		$query = "insert into grant_application (uuid, oname, ein, url, budget_id_fk, tname, cname, email, reach, mission, status_id_fk) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, '6') returning id";
@@ -222,6 +190,18 @@ class Application {
 			Util::psExecute($query, array($this->serviceComment));
 		}
 
+		return;
+	}
+
+	private function queueApplicationConfirmMessage() {
+		$query = Util::getMessageQueueInsert();
+		$result = Util::psExecute($query, array("3", $this->email, $this->cname));
+		return;
+	}
+	
+	private function queueApplicationNotifyMessage() {
+		$query = Util::getMessageQueueInsert();
+		$result = Util::psExecute($query, array("4", "kathy.flint@northbridgetech.org", "Kathy"));
 		return;
 	}
 

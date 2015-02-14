@@ -1,14 +1,12 @@
 <?php 
 
-require_once("../../config/env_config.php");
-
-define("VOLUNTEER_ROOT", "http://" . $env_host . "/waterwheel/module/volunteer"); 
+require_once("../core/domain/Util.php");
 
 ?>
 
 <!--================== Volunteer Module Meta ==================--!>
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo VOLUNTEER_ROOT; ?>/mod-volunteer.css" />
+<link rel="stylesheet" type="text/css" href="mod-volunteer.css" />
 
-<script type="text/javascript" src="<?php echo VOLUNTEER_ROOT; ?>/mod-volunteer.js"></script>	
+<script type="text/javascript" src="<?php echo Util::getHttpVolunteerPath(); ?>/mod-volunteer.js"></script>	

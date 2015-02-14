@@ -32,7 +32,7 @@ if (isset($application)) {
 		$application->setReach($_POST['reach']);		
 		$application->setMission($_POST['mission']);	
 	} catch(Exception $e) { logErrorAndReturn($e, $testMode); }
-		
+			
 	$application->apply();
 	$application->notify();
 } else { 
@@ -46,6 +46,8 @@ function logErrorAndReturn($error, $test) {
 	if ($test) {
 		echo $error->getMessage();
 	} else {
+		// TODO - log error
+		echo $error->getMessage(); exit(0);
 		header("location:" . Util::getHttpApplyPath() . "/tester.php");
 	}
 	exit(0);

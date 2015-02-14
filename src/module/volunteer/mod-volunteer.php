@@ -1,12 +1,10 @@
 <?php 
 
-require_once("../../config/env_config.php");
-
-define("VOLUNTEER_ROOT", "http://" . $env_host . "/waterwheel/module/volunteer"); 
+require_once("../core/domain/Util.php");
 
 ?>
 
-<form id="volunteer-form" class="pure-form volunteer-form" action="<?php echo VOLUNTEER_ROOT; ?>/mod-volunteer-processor.php" method="POST">
+<form id="volunteer-form" class="pure-form volunteer-form" action="<?php echo Util::getHttpVolunteerPath(); ?>/mod-volunteer-processor.php" method="POST">
 	<input type="hidden" name="testMode" value=""/>
 	<div class="mod-volunteer-frameLeft">	
 		<div class="mod-volunteer-columnLeft">

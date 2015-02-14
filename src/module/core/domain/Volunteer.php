@@ -18,7 +18,7 @@ class Volunteer {
 	public function setFname($fin) {
 		if (isset($fin) &&
 			  Validate::string($fin, array('min_length' => 1, 'max_length' => 25)) &&
-			  $this->isCleanCharacterSet($fin)) {
+			  Util::isCleanCharacterSet($fin)) {
 				 $this->fname = $fin;
 		} else {
 			throw new Exception("Invalid state on first name.");
@@ -29,7 +29,7 @@ class Volunteer {
 	public function setLname($lin) {
 		if (isset($lin)) {
 		 if (Validate::string($lin, array('min_length' => 0, 'max_length' => 25)) &&
-			   $this->isCleanCharacterSet($lin)) {
+			   Util::isCleanCharacterSet($lin)) {
 					 $this->lname = $lin;
 			} else {
 				throw new Exception("Invalid state on last name.");
@@ -94,7 +94,7 @@ class Volunteer {
 	public function setMotiveComment($mcin) {
 		if (isset($mcin)) {
 			if (Validate::string($mcin, array('min_length' => 0, 'max_length' => 50)) &&
-					$this->isCleanCharacterSet($mcin)) {
+					Util::isCleanCharacterSet($mcin)) {
 						$this->motiveComment = $mcin;
 			}	else {
 					throw new Exception("Invalid state on motive comment.");
@@ -106,7 +106,7 @@ class Volunteer {
 	public function setSkillComment($scin) {	
 		if (isset($scin)) {
 			if (Validate::string($scin, array('min_length' => 0, 'max_length' => 50)) &&
-					$this->isCleanCharacterSet($scin)) {
+					Util::isCleanCharacterSet($scin)) {
 						$this->skillComment = $scin;
 			}	else {
 					throw new Exception("Invalid state on skill comment.");
@@ -118,7 +118,7 @@ class Volunteer {
 	public function setAboutComment($acin) {
 		if (isset($acin)) {
 			if (Validate::string($acin, array('min_length' => 0, 'max_length' => 500)) &&
-					$this->isCleanCharacterSet($acin)) {
+					Util::isCleanCharacterSet($acin)) {
 						$this->aboutComment = $acin;
 			} else {
 					throw new Exception("Invalid state on about comment.");
@@ -132,133 +132,55 @@ class Volunteer {
 	}
 	
 	public function notify() {
-		$this->sendVolunteerWelcomeEmail();
-		$this->sendCoachEmail();
+		$this->queueVolunteerConfirmMessage();
+		$this->queueVolunteerNotifyMessage();
 	}
 	
 	public function toString() {
 		return "First name = " . $this->fname;
+		// TODO - finish impl
 	}
-	
-	private function isCleanCharacterSet($in) {
-		if (isset($in) && strlen($in) > 0) {
-			if (preg_match("/[<>%*&=\/\\!]/", $in)) {
-				return false;
-			}
-		}
-	return true;
-	}
-	
-	private function connect() {	
-		
-		
-		// TODO get from config file
-		//$db_host = "50.87.120.82"; 
-		$db_host = "localhost";
-		$db_user = "northbr6_web";  
-		$db_pass = "bdTEzR?MRs[C"; 
-		$db = "northbr6_devwaterwheel";
-		
-		$con = pg_connect("host=$db_host dbname=$db user=$db_user password=$db_pass")
-    or trigger_error("Could not connect to the database server\n", E_USER_ERROR);   
-    return $con;
-	}
-	
-	private function disconnect($con) {
-		pg_close($con);
-	}
-	
-	private function psExecute($query, $input) {
-		$result = $prepare = FALSE;
-		$con = $this->connect();
-		$prepare = pg_prepare($con, "ps", $query);
-		if (!$prepare) {
-				trigger_error("Cannot prepare statement: $query\n", E_USER_ERROR);	
-		}
-		$result = pg_execute($con, "ps", $input);
-		$this->disconnect($con);
-		if (!$result) {
-			trigger_error("Cannot execute query: $query\n", E_USER_ERROR);
-		}
-		return $result;
-	}
-	
-	// TODO - create new method: queueVolunteerWelcomeEmail(), queueCoachEmail()
-	
-	private function sendVolunteerWelcomeEmail() {
-		$email_addr = $this->email;
-		$subject = "Thank you for your interest in Northbridge";
-		$from = "noreply@nexus.northbridgetech.org";
-		$reply = "noreply@nexus.northbridgetech.org";
-		$message = "Hello " . $this->fname . " " . $this->lname . ",
-		
-		Team North Stars is amazing!!!
-		
-		The real message has not been composed yet :)
-		
-		Regards,
-	
-		The Development Team at
-		NorthBridge Technology Alliance";
-		
-		$this->sendEmail($email_addr, $subject, $message, $from, $reply);
-	}
-	
-	private function sendCoachEmail() {
-		$email_addr = "coach@northbridgetech.org";
-		$subject = "New volunteer submitted";
-		$from = "noreply@nexus.northbridgetech.org";
-		$reply = "noreply@nexus.northbridgetech.org";
-		$message = "Hello,
-		
-		A new volunteer has been submitted:
-		
-		" . $this->email . "
-		" . $this->fname . " " . $this->lname . "
-		
-		[TODO] List skills and motivates
-		
-		Regards,
-	
-		The Development Team at
-		NorthBridge Technology Alliance";
-		
-		$this->sendEmail($email_addr, $subject, $message, $from, $reply);
-	}
-	
-	private function sendEmail($email, $subject, $message, $from, $reply) {
- 		$headers = "From: " . $from  . "\r\n" . "Reply-To: " . $reply; 	
-		mail($email, $subject, $message, $headers);
-	}
-
+			
 	public function insertVolunteer() {
 		$query = "insert into volunteer (email, fname, lname, descr, status_id_fk) values ($1, $2, $3, $4, '1') returning id";
-		$result = $this->psExecute($query, array($this->email, $this->fname, $this->lname, $this->aboutComment));
+		$result = Util::psExecute($query, array($this->email, $this->fname, $this->lname, $this->aboutComment));
 		$row = pg_fetch_row($result);
 		$volunteerId = $row[0];
 
 		$query = "insert into volunteer_skill (volunteer_id_fk, skill_id_fk) values ($1, $2)";			
 		foreach ($this->skills as $skillId) {
-			$this->psExecute($query, array($volunteerId, $skillId));
+			Util::psExecute($query, array($volunteerId, $skillId));
 		}
 		
 		if (isset($this->skillComment) && strlen($this->skillComment) > 0) {
 			$query = "update volunteer_skill set note = $1 where volunteer_id_fk = " . $volunteerId . " and skill_id_fk = '16'";
-			$this->psExecute($query, array($this->skillComment));
+			Util::psExecute($query, array($this->skillComment));
 		}
 		
 		$query = "insert into volunteer_motive (volunteer_id_fk, motive_id_fk) values ($1, $2)";			
 		foreach ($this->motives as $motiveId) {
-			$this->psExecute($query, array($volunteerId, $motiveId));
+			Util::psExecute($query, array($volunteerId, $motiveId));
 		}
 		
 		if (isset($this->motiveComment) && strlen($this->motiveComment) > 0) {
 			$query = "update volunteer_motive set note = $1 where volunteer_id_fk = " . $volunteerId . " and motive_id_fk = '6'";
-			$this->psExecute($query, array($this->motiveComment));
+			Util::psExecute($query, array($this->motiveComment));
 		}	
 		return;
 	}
-
+	
+	private function queueVolunteerConfirmMessage() {
+		$query = Util::getMessageQueueInsert();
+		$result = Util::psExecute($query, array("1", $this->email, $this->fname . " " . $this->lname));
+		return;
+	}
+	
+	private function queueVolunteerNotifyMessage() {
+		$query = Util::getMessageQueueInsert();
+		$result = Util::psExecute($query, array("2", "coach@northbridgetech.org", "Coaches"));
+		return;
+	}
+	
 }
 
 ?>

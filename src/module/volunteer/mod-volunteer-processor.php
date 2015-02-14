@@ -1,11 +1,6 @@
 <?php
 
-//error_reporting(E_ALL);
-//ini_set( 'display_errors','1'); 
-
-require_once("../../config/env_config.php");
-
-define("DOMAIN_ROOT", "http://" . $env_host . "/waterwheel/module/core/domain");
+require_once("../core/domain/Util.php");
 
 $volunteer;
 $testMode = FALSE;
@@ -15,7 +10,7 @@ if (isset($_POST['testMode']) && !strcmp($_POST['testMode'], "true")) {
 	$volunteer = new TestVolunteer();
 	$testMode = TRUE;
 } else {
-	require_once("Volunteer.php");
+	require_once(Util::getFileDomainPath() . "/Volunteer.php");
 	$volunteer = new Volunteer();
 }
 
@@ -32,31 +27,31 @@ if (isset($volunteer)) {
 		$volunteer->setMotiveComment($_POST['otherMotive']);
 		$volunteer->setSkillComment($_POST['otherSkill']);
 		$volunteer->setAboutComment($_POST['otherInfo']);		
-	} catch(Exception $e) { logErrorAndReturn($e, $testMode, $env_host); }
+	} catch(Exception $e) { logErrorAndReturn($e, $testMode); }
 		
 	$volunteer->activate();
 	$volunteer->notify();
 } else { 
 	
-	logErrorAndReturn("Volunteer object is null.", $testMode, $env_host);
+	logErrorAndReturn("Volunteer object is null.", $testMode);
 }
 
-logNormalAndReturn($testMode, $volunteer, $env_host);
+logNormalAndReturn($testMode, $volunteer);
 
-function logErrorAndReturn($error, $test, $host) {
+function logErrorAndReturn($error, $test) {
 	if ($test) {
 		echo $error->getMessage();
 	} else {
-		header("location:http://" . $host . "/waterwheel/module/volunteer/tester.php");
+		header("location:" . Util::getHttpVolunteerPath() . "/tester.php");
 	}
 	exit(0);
 }
 
-function logNormalAndReturn($test, $vol, $host) {
+function logNormalAndReturn($test, $vol) {
 	if ($test) {
 		echo "No error";
 	} else {
-		header("location:http://" . $host . "/waterwheel/module/volunteer/tester.php");
+		header("location:" . Util::getHttpVolunteerPath() . "/tester.php");
 	}
 	exit(0);
 }	
