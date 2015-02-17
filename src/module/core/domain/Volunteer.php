@@ -177,7 +177,7 @@ class Volunteer {
 	
 	private function queueVolunteerNotifyMessage() {
 		$query = Util::getMessageQueueInsert();
-		$result = Util::psExecute($query, array("2", "coach@northbridgetech.org", "Coaches"));
+		$result = Util::psExecute($query, array("2", "kathy.flint@northbridgetech.org", "Coaches"));
 		return;
 	}
 	

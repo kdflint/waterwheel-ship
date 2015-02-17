@@ -1,7 +1,9 @@
 function volunteerValidateAndSubmit() {
-		
+			
 		var pass = true;
 		var volunteerForm = document.forms["volunteer-form"];
+		var submitButton = document.getElementById("volunteerSubmitButton");
+		var errorBackground = "rgba(252,176,64,0.5) url('') no-repeat right top";
 
     var fnameField = volunteerForm["fname"];
     var fname = fnameField.value;
@@ -9,11 +11,11 @@ function volunteerValidateAndSubmit() {
     fnameField.placeholder = "First name";
     if (fname == null || fname == "") {
       fnameField.placeholder = "First name is required.";
-      fnameField.style.backgroundColor = "rgba(252,176,64,0.5)";
+      fnameField.style.background = errorBackground;
       pass = false;
     } else if (!isSafeCharacterSet(fname)) {
     	fnameField.placeholder = "Not allowed: < > % * & = / \\ !";
-      fnameField.style.backgroundColor = "rgba(252,176,64,0.5)";
+      fnameField.style.background = errorBackground;
     	fnameField.value = "";
     	pass = false;
     }
@@ -26,7 +28,7 @@ function volunteerValidateAndSubmit() {
   		// valid condition
   	} else if (!isSafeCharacterSet(lname)) {
     	lnameField.placeholder = "Not allowed: < > % * & = / \\ !";
-      lnameField.style.backgroundColor = "rgba(252,176,64,0.5)";
+      lnameField.style.background = errorBackground;
     	lnameField.value = "";
     	pass = false;
     }
@@ -37,17 +39,17 @@ function volunteerValidateAndSubmit() {
     email_1Field.placeholder = "Email";
     if (email_1 == null || email_1 == "") {
       email_1Field.placeholder = "Valid email is required.";
-      email_1Field.style.backgroundColor = "rgba(252,176,64,0.5)";
+      email_1Field.style.background = errorBackground;
       pass = false;
     } else if (!isValidEmail(email_1)) {
       email_1Field.placeholder = "Valid email is required.";
-      email_1Field.style.backgroundColor = "rgba(252,176,64,0.5)";
+      email_1Field.style.background = errorBackground;
       email_1Field.value = "";
     	pass = false;
     } else if (email_1.length > 100) {
     	alert("max length exceeded");
       email_1Field.placeholder = "Email max length is 100";
-      email_1Field.style.backgroundColor = "rgba(252,176,64,0.5)";
+      email_1Field.style.background = errorBackground;
       email_1Field.value = "";
       pass = false;
     }
@@ -58,21 +60,21 @@ function volunteerValidateAndSubmit() {
     email_2Field.placeholder = "Confirm Email";
     if (email_2 == null || email_2 == "") {
       email_2Field.placeholder = "Valid email is required.";
-      email_2Field.style.backgroundColor = "rgba(252,176,64,0.5)";
+      email_2Field.style.background = errorBackground;
       pass = false;
     } else if (!isValidEmail(email_2)) {
       email_2Field.placeholder = "Valid email is required.";
-      email_2Field.style.backgroundColor = "rgba(252,176,64,0.5)";
+      email_2Field.style.background = errorBackground;
       email_2Field.value = "";
     	pass = false;
     } else if (email_2.length > 100) {
       email_2Field.placeholder = "Email max length is 100";
-      email_2Field.style.backgroundColor = "rgba(252,176,64,0.5)";
+      email_2Field.style.background = errorBackground;
       email_2Field.value = "";
       pass = false;
     } else if (!(email_1 == null || email_1 == "") && email_1 != email_2) {
       email_2Field.placeholder = "Email does not match.";
-      email_2Field.style.backgroundColor = "rgba(252,176,64,0.5)";
+      email_2Field.style.background = errorBackground;
       email_2Field.value = "";
     	pass = false;
     }  
@@ -85,7 +87,7 @@ function volunteerValidateAndSubmit() {
   		// valid condition
   	} else if (!isSafeCharacterSet(oMotive)) {
     	otherMotiveField.placeholder = "Not allowed: < > % * & = / \\ !";
-      otherMotiveField.style.backgroundColor = "rgba(252,176,64,0.5)";
+      otherMotiveField.style.background = errorBackground;
     	otherMotiveField.value = "";
     	pass = false;
     }
@@ -98,7 +100,7 @@ function volunteerValidateAndSubmit() {
   		// valid condition
   	} else if (!isSafeCharacterSet(oSkill)) {
     	otherSkillField.placeholder = "Not allowed: < > % * & = / \\ !";
-      otherSkillField.style.backgroundColor = "rgba(252,176,64,0.5)";
+      otherSkillField.style.background = errorBackground;
     	otherSkillField.value = "";
     	pass = false;
     }
@@ -113,6 +115,9 @@ function volunteerValidateAndSubmit() {
     }
     
  		if (Boolean(pass)) {
+ 			submitButton.disabled = true;  
+ 			submitButton.innerHTML = "One Moment"; 
+ 			submitButton.style.opacity = ".6";
  			volunteerForm.submit();
  		}   
 }

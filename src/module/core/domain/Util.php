@@ -57,6 +57,10 @@ final class Util {
 		return self::getFileCorePath() . self::$domain_path;
 	}
 	
+	public static function getEnvName() {
+		return ENV_NAME;
+	}
+	
 	
 
 	/*************** GENERAL UTILITIES ***************/

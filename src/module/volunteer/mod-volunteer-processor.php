@@ -42,20 +42,19 @@ function logErrorAndReturn($error, $test) {
 	if ($test) {
 		echo $error->getMessage();
 	} else {
-		header("location:" . Util::getHttpVolunteerPath() . "/tester.php");
+		header("location:" . Util::getHttpCorePath() . "/index.php?view=volunteer");
 	}
 	exit(0);
 }
 
 function logNormalAndReturn($test, $vol) {
 	if ($test) {
-		echo "No error";
-	} else {
 		header("location:" . Util::getHttpVolunteerPath() . "/tester.php");
+	} else {
+		header("location:" . Util::getHttpCorePath() . "/index.php?view=volunteer");
 	}
 	exit(0);
 }	
-
 
 
 ?>

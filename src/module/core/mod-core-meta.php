@@ -2,10 +2,29 @@
 
 require_once("domain/Util.php");
 $coreHttpPath = Util::getHttpCorePath();
+$envName = Util::getEnvName();
+$viewArray = array("apply"=>"0", "sponsor"=>"1", "volunteer"=>"2");
+$slideIndex = 0;
+if(isset($_GET['view']) && isset($viewArray[$_GET['view']])) {
+  $slideIndex = $viewArray[$_GET["view"]];
+}
 
 ?>
 
-<!--================== Core Module Meta ==================--!>
+<!--================== Core Module Meta ==================-->
+
+<!-- initialize calendar widget -->
+<script id="spc-event-calendar-script" src="http://northbridgetech.org/dev/nexus/module/calendar/services/event-calendar/event-calendar.php?accessKey=98641b8c5f580fd30198f0d162e55a1e"></script>
+
+<script>
+  initSPCWidgets(function() {
+     $("#calendars").spcCalendars();
+     $("#month-calendar").spcMonthCalendar();
+     $("#upcoming-events").spcUpcomingEvents();
+     $("#event-search").spcSearch();
+     $("#event-list").spcEventList();
+   });
+</script>
 
 <!-- http://purecss.io/ -->
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/pure-min.css" />
@@ -21,7 +40,7 @@ $coreHttpPath = Util::getHttpCorePath();
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/jquery.hslides.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/jquery.easing.js"></script>
 		
-<!-- initialize horizontal sliders -->
+<!-- initialize horizontal sliders, using context passed to page -->
 <script type="text/javascript">
 		$((function(){
 			enterFunction = function(){
@@ -36,6 +55,10 @@ $coreHttpPath = Util::getHttpCorePath();
 				minPanelWidth: 120,
 				maxPanelWidth: 500
 			});
+			$('li:eq(<?php echo $slideIndex; ?>)').trigger('click');
 		}
 		));
 </script>
+
+
+

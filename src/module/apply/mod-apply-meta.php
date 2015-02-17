@@ -4,10 +4,10 @@ require_once("../core/domain/Util.php");
 
 ?>
 
-<!--================== Apply Module Meta ==================--!>
+<!--================== Apply Module Meta ==================-->
 
 
-<link rel="stylesheet" type="text/css" href="mod-apply.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Util::getHttpApplyPath(); ?>/mod-apply.css" />
 
 <script type="text/javascript" src="<?php echo Util::getHttpApplyPath(); ?>/mod-apply.js"></script>	
 

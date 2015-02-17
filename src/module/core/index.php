@@ -83,19 +83,23 @@
 			<!-- /Sponsor Context -->
 			<!-- Global Navigation Context -->
 			<div id="navApp" class="navApp">
-			<div id="navTopSponsorContext">
-					<img src="images/NB_vertical_rgb.png" width="200" height="161" id="smallLogo"/>
-					<a class="whitepaper-button" id="testtest" href="#" onclick="" style="opacity:0;">
-						<span class="fa fa-file-pdf-o fa-2x otherblue "></span> <span class="skyblue">Whitepaper</span>
-					</a>
-			</div>
-			<div id="navTopAboutContext">
-				<p class="skyblue sponsorHeaderCaption">Shouldn't your technology<br/>be as great as you are?</p>		
-				<a class="whitepaper-button" id="" href="#" onclick="">
-					<span class="fa fa-file-pdf-o fa-2x otherblue"></span>&nbsp;<span class="skyblue">Whitepaper</span>
-				</a>				
-			</div>
-			<button id="contextSwitch" class="button" style="position:absolute;top:230px;" onClick="switchToAbout()">About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;"></span></button>
+				<div id="navTopSponsorContext">
+						<img src="images/NB_vertical_rgb.png" width="200" height="161" id="smallLogo"/>
+						<a class="whitepaper-button" id="testtest" href="#" onclick="" style="opacity:0;">
+							<span class="fa fa-file-pdf-o fa-2x otherblue "></span> <span class="skyblue">Whitepaper</span>
+						</a>
+				</div>
+				<div id="navTopAboutContext">
+					<p class="skyblue sponsorHeaderCaption">Shouldn't your technology<br/>be as great as you are?</p>		
+					<a class="whitepaper-button" id="" href="#" onclick="">
+						<span class="fa fa-file-pdf-o fa-2x otherblue"></span>&nbsp;<span class="skyblue">Whitepaper</span>
+					</a>				
+				</div>
+				<button id="contextSwitch" class="button" style="position:absolute;top:230px;" onClick="switchToAbout()">About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;"></span></button>
+				<div id="calendar" style="position:absolute;top:325px;">
+					<p>Upcoming Events</p>
+					<div id="event-list"></div>
+				</div>
 				<?php // include("../..."); ?>
 			</div>
 			<!-- /Global Navigation Context -->
@@ -105,7 +109,6 @@
 			</div>
 			<!-- /About Context -->
 			<div class="curtain"></div>
-
 		</div><!-- /container -->
 		
 		<!-- initialize major context -->

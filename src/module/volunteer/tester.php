@@ -6,7 +6,9 @@
 		<?php
 			include("../core/mod-core-meta.php");
 			include("mod-volunteer-meta.php"); 
-		?>		
+		?>	
+		
+		<style> .button-submit {width: 100px; bottom: 20px; left: 90px;}	</style>
 
 		<!--
 		*********************************************************************

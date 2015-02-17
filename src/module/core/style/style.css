@@ -48,5 +48,14 @@ p {
 }
 
 .button-submit {
+	position: absolute;
   background: #d27b4b; 
+  text-decoration: none;
+  width: 80px;
+  bottom: 20px;
+  left: 110px;
+}
+
+#volunteerSubmitButton {
+	text-decoration: none;
 }

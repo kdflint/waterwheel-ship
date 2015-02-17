@@ -6,6 +6,7 @@ require_once("../core/domain/Util.php");
 
 <form id="volunteer-form" class="pure-form volunteer-form" action="<?php echo Util::getHttpVolunteerPath(); ?>/mod-volunteer-processor.php" method="POST">
 	<input type="hidden" name="testMode" value=""/>
+	<input type="hidden" name="sliderIndex" value="2"/>
 	<div class="mod-volunteer-frameLeft">	
 		<div class="mod-volunteer-columnLeft">
 			<div class="mod-volunteer-controlLabel">Contact Information</div>
@@ -56,12 +57,11 @@ require_once("../core/domain/Util.php");
 			<p>For more information or to be considered for a team placement, submit this no-obligation form.</p>
 			<p style="font-weight:normal;">Here are some resources that describe the Northbridge volunteer experience.</p>
 		</div>
-		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="#">Whitepaper</a> [TODO]</p>
-		<p><span class="fa fa-github fa-2x"></span> <a class="mod-volunteer-anchor" href="https://github.com/NorthBridge/playbook/wiki" target="_blank">Team Playbook</a> </p>
-		<p><span class="fa fa-reply fa-2x"></span>  <a class="mod-volunteer-anchor" href="#">Reserve Orientation Seat</a></p>
-		<p style="font-weight:normal;">TODO - show next two sessions from dynamic event calendar</p>	
+		<p style="margin-top:10px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getHttpVolunteerPath(); ?>/whyVolunteerWithNorthbridge.pdf" target="_blank" style="margin-left:11px;">Why Volunteer?</a></p>
+		<p><span class="fa fa-github fa-2x"></span> <a class="mod-volunteer-anchor" href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank" style="margin-left:11px;">Team Playbook</a> </p>
+		<p><span class="fa fa-reply fa-2x"></span>  <a class="mod-volunteer-anchor" href="#" style="margin-left:9px;">Reserve Orientation Seat</a></p>
 		<p style="font-weight:normal;">TODO - indicate that submission was successful</p>	
-	<a class="pure-button button-submit" id="volunteerSubmitButton" href="#" onclick="volunteerValidateAndSubmit();"><span class="fa fa-square" style="font-size:110%;" ></span> Submit</a>
+		<a class="pure-button button-submit" id="volunteerSubmitButton" href="#" onclick="volunteerValidateAndSubmit();"><span class="fa fa-square" style="font-size:110%;margin-right:3px;" ></span> Submit</a>
 	</div>
 	
 </form>	

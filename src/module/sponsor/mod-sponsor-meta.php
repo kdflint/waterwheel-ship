@@ -4,7 +4,7 @@ require_once("../core/domain/Util.php");
 
 ?>
 
-<!--================== Sponsor Module Meta ==================--!>
+<!--================== Sponsor Module Meta ==================-->
 
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400'>		
 <link rel="stylesheet" type="text/css" href="<?php echo Util::getHttpSponsorPath(); ?>/mod-sponsor.css" />
@@ -25,3 +25,4 @@ require_once("../core/domain/Util.php");
 		,send_timezone_to : false
 	});
 </script>
+
