@@ -13,6 +13,7 @@ final class Util {
 	private static $apply_path = "/module/apply";
 	private static $volunteer_path = "/module/volunteer";
 	private static $sponsor_path = "/module/sponsor";
+	private static $about_path = "/module/about";
 	private static $domain_path = "/domain";	
 	
 	// TODO - put getters on all env_config constants
@@ -27,6 +28,10 @@ final class Util {
 	
 	public static function getHttpSponsorPath() {
 		return "http://" . ENV_HOST . APP_NAME . self::$sponsor_path;
+	}
+	
+	public static function getHttpAboutPath() {
+		return "http://" . ENV_HOST . APP_NAME . self::$about_path;
 	}
 	
 	public static function getHttpCorePath() {
@@ -47,6 +52,10 @@ final class Util {
 	
 	public static function getFileSponsorPath() {
 		return WEB_ROOT . self::$sponsor_path;
+	}
+	
+	public static function getAboutSponsorPath() {
+		return WEB_ROOT . self::$about_path;
 	}
 	
 	public static function getFileCorePath() {

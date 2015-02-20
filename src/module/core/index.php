@@ -8,7 +8,11 @@
 			include("../apply/mod-apply-meta.php"); 
 			include("../sponsor/mod-sponsor-meta.php"); 
 			include("../volunteer/mod-volunteer-meta.php"); 
+			include("../about/mod-about-meta.php"); 
 		?>		
+		
+		<!--================== End Meta ==================-->
+		
 	</head>
 
 	<body>
@@ -119,37 +123,42 @@
 			<!-- /Global Navigation Context -->
 			<!-- About Context -->
 			<div id="aboutApp" class="aboutApp" style="border:0px solid;">
-				<img src="images/NB_horizontal_tagline_rgb.png" width="515" height="160" style="padding:30px 10px 10px 30px;"/>
-				<div id="aboutQuote0" class="position:absolute;left:570px;top:30px;font-size:22px;line-height:110%;font-family:'Swanky and Moo Moo',cursive;color:#dae0bc;text-align:right;">It always seems impossible until it's done. Mandela</div>
-				<div id="aboutQuote0" class="position:absolute;left:570px;top:30px;font-size:22px;line-height:110%;font-family:'Swanky and Moo Moo',cursive;color:#dae0bc;text-align:right;">... go instead where there is no path and leave a trail. Emerson</div>
-				<div id="aboutQuote0" class="position:absolute;left:570px;top:30px;font-size:22px;line-height:110%;font-family:'Swanky and Moo Moo',cursive;color:#dae0bc;text-align:right;">...working together... we might just be able to fix it... Cascio.</div>
-				<div class="pure-menu pure-menu-open pure-menu-horizontal" style="text-align:right;font-size:140%;letter-spacing:.75px;">
-   				<ul>
-        		<li><a href="#" onclick="switchAboutView(0);">News</a></li>
-        		<li><a href="#" onclick="switchAboutView(1);">About</a></li>
-        		<li><a href="#" onclick="switchAboutView(2);">Projects</a></li>
-        		<li><a href="#" onclick="switchAboutView(3);">Leaders</a></li>
-        		<li><a href="#" onclick="switchAboutView(4);">Partners</a></li>
-        		<li><a href="#" onclick="switchAboutView(5);">Gallery</a></li>
-    		</ul>
+				<div class="aboutHeader">
+					<img src="images/NB_horizontal_tagline_rgb.png" width="515" height="160" style="padding:30px 10px 10px 30px;"/>
+					<div id="aboutQuote0" class="mod-about-quotes">Need a quote. Citation</div>
+					<div id="aboutQuote1" class="mod-about-quotes" style="visibility:visible;opacity:1;">All in. No regrets.</br>Flint</div>
+					<div id="aboutQuote2" class="mod-about-quotes">It always seems impossible until it's done.</br>Mandela</div>
+					<div id="aboutQuote3" class="mod-about-quotes">... go instead where there is no path and leave a trail.</br>Emerson</div>
+					<div id="aboutQuote4" class="mod-about-quotes">working together... we might just be able to fix it...</br>Cascio</div>
+					<div id="aboutQuote5" class="mod-about-quotes">Need a quote. Citation</div>
+					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="text-align:right;font-size:140%;letter-spacing:.75px;">
+	   				<ul>
+        			<li><a href="#" onclick="switchAboutView(0);">News</a></li>
+        			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(1);">About</a></li>
+        			<li><a href="#" onclick="switchAboutView(2);">Projects</a></li>
+        			<li><a href="#" onclick="switchAboutView(3);">Leaders</a></li>
+        			<li><a href="#" onclick="switchAboutView(4);">Partners</a></li>
+        			<li><a href="#" onclick="switchAboutView(5);">Gallery</a></li>
+    				</ul>
+					</div>
 				</div>
 				<div class="aboutContent">
-					<div id="aboutIndex0" style="visibility:hidden;opacity:0;transition: opacity 1s;">
+					<div id="aboutIndex0" class="mod-about-frame">
 						<?php include("../about/news.php"); ?>		
            </div>
-					<div id="aboutIndex1" style="visibility:visible;opacity:1;transition: opacity 1s;">
+					<div id="aboutIndex1" class="mod-about-frame" style="visibility:visible;opacity:1;">
 						<?php include("../about/about.php"); ?>		
           </div>
-					<div id="aboutIndex2" style="visibility:hidden;">
+					<div id="aboutIndex2" class="mod-about-frame">
 						<?php include("../about/projects.php"); ?>		
           </div>
-					<div id="aboutIndex3" style="visibility:hidden;">
+					<div id="aboutIndex3" class="mod-about-frame">
 						<?php include("../about/leaders.php"); ?>		
           </div>
-					<div id="aboutIndex4" style="visibility:hidden;">
+					<div id="aboutIndex4" class="mod-about-frame">
 						<?php include("../about/partners.php"); ?>		
           </div>
-					<div id="aboutIndex5" style="visibility:hidden;">
+					<div id="aboutIndex5" class="mod-about-frame">
 						<?php include("../about/gallery.php"); ?>		
           </div>
 				</div>          
