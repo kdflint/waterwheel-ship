@@ -33,6 +33,7 @@ p {
 .tan { color:#edf0de; }
 .yellow { color:#fcb040; }
 .orange { color:#d27b4b; }
+.olive { color:#dae0bc; }
 
 .required {
 	color: #d27b4b;
@@ -56,6 +57,33 @@ p {
   left: 110px;
 }
 
+.user-message {
+	position: absolute;
+	font-weight: normal;
+	background-color: rgba(252,176,64,0.5);
+	border-radius: 4px;
+	padding: 0px 5px;
+	bottom: 55px;
+	margin-right: 14px;
+}
+
 #volunteerSubmitButton {
 	text-decoration: none;
 }
+
+.pure-menu li a {
+	color: #475b64;
+	font-family: oswald, arial, sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	background: #edf0de;
+	text-decoration: none;
+	border-radius: 4px;
+	width: 60px;
+	text-align: center;
+}
+
+.pure-menu li a:hover, .pure-menu li a:focus {
+	background-color: #a6c3ce;
+}
+

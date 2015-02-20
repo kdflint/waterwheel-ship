@@ -2,6 +2,9 @@
 
 require_once("../core/domain/Util.php");
 
+//$conf = array('append' => true, 'mode' => 0644, 'timeFormat' => '%X %x');
+//$logger = Log::singleton("file", Util::getFileCorePath() . "web_log", "", $conf, PEAR_LOG_DEBUG);
+
 $volunteer;
 $testMode = FALSE;
 
@@ -27,18 +30,18 @@ if (isset($volunteer)) {
 		$volunteer->setMotiveComment($_POST['otherMotive']);
 		$volunteer->setSkillComment($_POST['otherSkill']);
 		$volunteer->setAboutComment($_POST['otherInfo']);		
-	} catch(Exception $e) { logErrorAndReturn($e, $testMode); }
+	} catch(Exception $e) { logErrorAndReturn($e, $testMode, $volunteer); }
 		
 	$volunteer->activate();
 	$volunteer->notify();
 } else { 
 	
-	logErrorAndReturn("Volunteer object is null.", $testMode);
+	logErrorAndReturn(new Exception("Volunteer object is null."), $testMode, null);
 }
 
 logNormalAndReturn($testMode, $volunteer);
 
-function logErrorAndReturn($error, $test) {
+function logErrorAndReturn($error, $test, $vol) {
 	if ($test) {
 		echo $error->getMessage();
 	} else {
@@ -49,9 +52,9 @@ function logErrorAndReturn($error, $test) {
 
 function logNormalAndReturn($test, $vol) {
 	if ($test) {
-		header("location:" . Util::getHttpVolunteerPath() . "/tester.php");
+		header("location:" . Util::getHttpVolunteerPath() . "/tester.php?view=volunteer&success=true");
 	} else {
-		header("location:" . Util::getHttpCorePath() . "/index.php?view=volunteer");
+		header("location:" . Util::getHttpCorePath() . "/index.php?view=volunteer&success=true");
 	}
 	exit(0);
 }	

@@ -121,6 +121,7 @@ require_once("../core/domain/Util.php");
 	<p id="sponsorOptOutDisplay">At your request this gift will remain anonymous.</p>						
 	<p id="impactCheckedDisplay">We will be delighted to send your targeted impact report to <span id="impactEmailDisplay">the donation email address</span>.</p>
 	<p id="impactOptOutDisplay">At your request we will withold your targeted impact report.</p>	
+	<p id="user-message0" class="user-message"><?php echo $message; ?></p>	
 	<div class="mod-sponsor-sponsorButtons">						
 		<a class="pure-button mod-sponsor-button" id="" href="#"  onclick="" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;"><span class="fa fa-paypal" style="font-size:110%;"></span> PayPal</a>
 		<a class="pure-button mod-sponsor-button" id="" href="#" onclick="" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;font-size:110%;"><span class="fa fa-cc-stripe" style="font-size:120%;" ></span> Credit</a>

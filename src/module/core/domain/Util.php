@@ -61,6 +61,10 @@ final class Util {
 		return ENV_NAME;
 	}
 	
+	public static function getTwitterHandle() {
+		return TWITTER_HANDLE;
+	}
+	
 	
 
 	/*************** GENERAL UTILITIES ***************/

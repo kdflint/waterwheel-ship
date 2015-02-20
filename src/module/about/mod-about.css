@@ -1,0 +1,13 @@
+
+.mod-about-frame {
+	position: absolute;
+	background-color: #ffffff;
+	height:330px;
+	-moz-box-shadow:    inset 0 0 6px #fcb040;
+  -webkit-box-shadow: inset 0 0 6px #fcb040;
+  box-shadow:         inset 0 0 6px #fcb040;
+	padding:10px;
+	border-radius:20px;
+	width: 740px;
+}	
+

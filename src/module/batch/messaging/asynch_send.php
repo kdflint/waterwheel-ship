@@ -19,9 +19,7 @@ while (!$queueEmpty) {
 	$counter = 0;
 	
 	while ($row = pg_fetch_array($cursor)) {
-		$message = new Message($row['type']);
-		$message->setToAddr($row['to']);
-		$message->setSalutationName($row['name']);
+		$message = new Message($row['type'], $row['to'], $row['name']);
 		$message->send();
 		$counter++;
 		$query = "update message_queue set status_id_fk = '11', update_dttm = now() where id = $1";

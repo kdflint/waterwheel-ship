@@ -22,6 +22,18 @@ function switchToSponsor() {
 	document.getElementById("contextSwitch").onclick = function() {switchToAbout()}
 }
 
+function switchAboutView(viewIndex) {
+	document.getElementById("aboutIndex0").style.visibility='hidden';
+	document.getElementById("aboutIndex1").style.visibility='hidden';
+	document.getElementById("aboutIndex2").style.visibility='hidden';
+	document.getElementById("aboutIndex3").style.visibility='hidden';
+	document.getElementById("aboutIndex4").style.visibility='hidden';
+	document.getElementById("aboutIndex" + viewIndex).style.visibility='visible';
+
+	document.getElementById("aboutIndex0").style.opacity='0';	
+	document.getElementById("aboutIndex1").style.opacity='0';	
+	document.getElementById("aboutIndex" + viewIndex).style.opacity='1';
+}
 
 function isValidEmail(email) {
     var atpos = email.indexOf("@");
@@ -45,6 +57,10 @@ function isSafeCharacterSet(set) {
   	return false;
 	}
 	return true;
+}
+
+function otherCommentsSelectCheckbox(checkboxId) {
+		document.getElementById(checkboxId).checked=true;
 }
 
 

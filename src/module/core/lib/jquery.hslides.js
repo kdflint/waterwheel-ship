@@ -114,10 +114,17 @@ $.fn.hSlides = function(settings) {
 			document.getElementById("madeUp_index1").style.visibility='hidden';
 			document.getElementById("madeUp_index2").style.visibility='hidden';
 			document.getElementById("madeUp_index" + activeIndex).style.visibility='visible';
+			
 			document.getElementById("madeUp_index0").style.opacity='0';
 			document.getElementById("madeUp_index1").style.opacity='0';
 			document.getElementById("madeUp_index2").style.opacity='0';
 			document.getElementById("madeUp_index" + activeIndex).style.opacity='1';
+			
+			var curMessage = document.getElementById("user-message" + activeIndex).innerHTML;
+			document.getElementById("user-message0").innerHTML='';
+			document.getElementById("user-message1").innerHTML='';
+			document.getElementById("user-message2").innerHTML='';
+			document.getElementById("user-message" + activeIndex).innerHTML=curMessage;
 		};
 		// center the panels if configured
 		var centerPanels = function(){

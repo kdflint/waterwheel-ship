@@ -29,10 +29,13 @@
 }	
 
 .sponsorHeaderCaption {
-	font-size: 14px;
-	line-height: 130%;
-	font-weight: lighter;
-	font-style: italic;
+	font-size: 16px;
+	line-height: 120%;
+	font-weight: bold;
+	font-family:'Swanky and Moo Moo',cursive;
+	width: 200px;
+	position: relative;
+	left: -20px;
 }
  	
 
@@ -44,8 +47,16 @@
 }	
 
 .allianceContent {
-	height:350px;
-	width:740px;
+	height: 350px;
+	width: 740px;
+}
+
+.aboutContent {
+	height: 350px;
+	width: 700px;
+	margin-left: 40px;
+	margin-top: 10px;
+	text-align: right;
 }
 
 .sponsorApp {
@@ -81,7 +92,7 @@
 div.curtain {
 	position: absolute;
 	left: 960px;	
-	height: 400px;
+	height: 740px;
 	width: 760px;
 	z-index: 1;
 	background-image: url("images/curtain.png");
@@ -119,7 +130,8 @@ div.curtain {
 }
 
 .whitepaper-button {
-	position: absolute;
+	position: relative;
+	top: 15px;
 	width: 130px;
 	height: 25px;
 	border-radius: 10px;
@@ -129,7 +141,6 @@ div.curtain {
 	border: 2px dotted #fcb040;
  	text-decoration: none;
  	transition: opacity 2s;
- 	margin-top: 5px;
  	text-align: center;
 }
 

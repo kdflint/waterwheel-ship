@@ -28,24 +28,18 @@ class Message {
 	private $to;	
 	private $name;
 
-	public function __construct($typeId) {
-		$this->type = $typeId; 
+	public function __construct($messageTypeId, $toAddr, $salutationName) {
+		$this->type = $messageTypeId; 
+		$this->to = $toAddr;
+		$this->name = $salutationName;
 		$this->subject = $this->getSubject($this->type);
 		$this->from = $this->getFrom($this->type);
 		$this->team = $this->getTeam($this->type);
 		$this->messageBody = $this->getMessageBody($this->type);
 	}
 	
-	public function setToAddr($to) {
-		$this->to = $to;
-	}
-
-	public function setSalutationName($name) {
-		$this->name = $name;
-	}
-
 	private function getFrom($typeId) {
-		return "Northbridge Technology Alliance <noreply@northbridgetech.org>";
+		return "Northbridge Technology Alliance <contact@northbridgetech.org>";
 	}
 
 	private function getSubject($typeId) {
@@ -95,6 +89,11 @@ class Message {
 		}		
 	}
 	
+	private function getMessageFooter() {
+		return "This message is produced and distributed by Northbridge Technology Alliance, a United States 501(c)(3) nonprofit corporation, Evanston, Illinois  60202";
+	}
+	
+	/* generate these social media images from Front Awesome library at http://fa2png.io/ */
 	private function constructHtmlMessage($boundary) {
 		$formatLineBreaks = str_replace("\r\n\r\n", "</p><p>",$this->messageBody);
 		return "--" . $boundary . "
@@ -105,12 +104,24 @@ Content-Transfer-Encoding: 7bit
 <html>
 	<head>
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oxygen'>
+		<link rel='stylesheet' type='text/css' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 	</head>
-	<body style='font-family:Oxygen,Arial,sans-serif;color:#333333;'>
+	<body style='font-family:Oxygen,Arial,sans-serif;color:#484848;'>
 		<table style='width:90%;display:block;max-width:620px;'>
-			<tr><td><img src='http://northbridgetech.org/dev/waterwheel/module/core/images/NB_horizontal_rgb.png' alt='Northbridge Technology Alliance Logo' width='252' height='68' style='padding-bottom:15px;'/></td></tr>
-			<tr><td><p>Hello " . $this->name . ",</p><p>" . $formatLineBreaks . "</p><p>Our regards,<br/>Northbridge " . $this->team . "</p></td></tr>
-			<tr><td style='font-size:70%;color:#666666;'><hr/><p>This message is produced and distributed by Northbridge Technology Alliance, a United States 501(c)(3) nonprofit corporation, Evanston, Illinois  60202</td></tr>
+			<tr>
+				<td colspan='2'><img src='http://northbridgetech.org/dev/waterwheel/module/core/images/NB_horizontal_rgb.png' alt='Northbridge Technology Alliance Logo' width='252' height='68' style='padding-bottom:10px;padding-right:30px;'/></td>
+			</tr>
+			<tr>
+				<td style='vertical-align:top;padding-top:10px;'>
+					<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/twitter_dae0bc_32.png' width='32' height=32' alt='Twit' /></a><br/>
+					<a href='https://plus.google.com/u/0/b/101145194341428988499/101145194341428988499/posts' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/google-plus-square_dae0bc_32.png' width='32' height=32' alt='g+' /></a><br/>
+					<a href='https://www.linkedin.com/company/2232384' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/linkedin_dae0bc_32.png' width='32' height=32' alt='LI' /></a><br/>
+					<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/facebook-square_dae0bc_32.png' width='32' height=32' alt='FB' /></a><br/>
+					<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/github_dae0bc_32.png' width='32' height=32' alt='GitH' /></a>
+				</td>
+				<td style='vertical-align:top;padding-left:10px;'><p>Hello " . $this->name . ",</p><p>" . $formatLineBreaks . "</p><p>Our regards,<br/>Northbridge " . $this->team . "</p></td>
+			</tr>
+			<tr><td colspan='2'style='font-size:70%;color:#666666;'><hr color='#dae0bc'/><p>" . $this->getMessageFooter() . "</td></tr>
 		</table>
 	</body>
 </html>
@@ -119,7 +130,7 @@ Content-Transfer-Encoding: 7bit
 	
 	private function constructTextMessage($boundary) {
 		return "--" . $boundary . "\r\n" . "Content-Type: text/plain; charset=\"iso-8859-1\"\r\n" . "Content-Transfer-Encoding: 7bit\r\n
-Hello " . $this->name . ",\r\n\r\n" . $this->messageBody . "\r\n\r\nOur regards,\r\nNorthbridge " . $this->team . "\r\n\r\n=================\r\nThis message is produced and distributed by Northbridge Technology Alliance,\r\na United States 501(c)(3) nonprofit corporation, Evanston, Illinois  60202\r\n";
+Hello " . $this->name . ",\r\n\r\n" . $this->messageBody . "\r\n\r\nOur regards,\r\nNorthbridge " . $this->team . "\r\n\r\n=================\r\n" . $this->getMessageFooter() . "\r\n";
 	}
 	
 	private function constructMessage($boundary) {

@@ -73,9 +73,8 @@ require_once("../core/domain/Util.php");
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="#">Grant Details</a> [TODO]</p>
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="#">Service Details</a> [TODO]</p>
 		<p><span class="fa fa-reply fa-2x"></span>  <a class="mod-apply-anchor" href="#">Reserve Orientation Seat</a></p>
-		<p style="font-weight:normal;">TODO - show next two sessions from dynamic event calendar</p>	
-		<p style="font-weight:normal;">TODO - indicate that submission was successful</p>	
-	<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit();"><span class="fa fa-square" style="font-size:110%;" ></span> Apply</a>
+		<p id="user-message1" class="user-message" style="visibility:hidden;"><?php echo $message; ?></p>	
+	<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit();"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Apply</a>
 	</div>
 	
 </form>	
