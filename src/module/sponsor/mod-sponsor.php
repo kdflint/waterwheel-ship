@@ -4,10 +4,12 @@ require_once("../core/domain/Util.php");
 
 ?>
 
-<script type="text/javascript">$m.wand.copy_value_to_html = true;</script>
+<script language="javascript" type="text/javascript">$m.wand.copy_value_to_html = true;</script>
 		
 <div class="mod-sponsor-contentLeft">
-	<form id="sponsor-form" class="pure-form sponsor-form" action="<?php echo Util::getHttpSponsorPath(); ?>/mod-sponsor-processor.php" method="POST">							
+	<form id="sponsor-form" class="pure-form sponsor-form" action="<?php echo Util::getHttpSponsorPath(); ?>/mod-sponsor-processor.php" method="POST">	
+		<input type="hidden" name="testMode" value=""/>			
+		
 		<div class="mod-sponsor-controlLevel">
 			<div class="mod-sponsor-controlLabel">
 				Your Level
@@ -113,7 +115,7 @@ require_once("../core/domain/Util.php");
 					</div>
 				</div>		
 			</div>
-	</form>
+
 </div>
 <div class="mod-sponsor-contentRight">
 	<p>Your generous gift of $<span id="levelAmountDisplay">100</span> provides <span id="levelTimeDisplay">1 year</span> of <span id="levelServiceDisplay">advanced</span> web conference service to <span id="designateNameDisplay">an eligible 501(c)(3) organization</span>.</p>															
@@ -123,10 +125,51 @@ require_once("../core/domain/Util.php");
 	<p id="impactOptOutDisplay">At your request we will withold your targeted impact report.</p>	
 	<p id="user-message0" class="user-message"><?php echo $message; ?></p>	
 	<div class="mod-sponsor-sponsorButtons">						
-		<a class="pure-button mod-sponsor-button" id="" href="#"  onclick="" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;"><span class="fa fa-paypal" style="font-size:110%;"></span> PayPal</a>
-		<a class="pure-button mod-sponsor-button" id="" href="#" onclick="" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;font-size:110%;"><span class="fa fa-cc-stripe" style="font-size:120%;" ></span> Credit</a>
-		<a class="pure-button mod-sponsor-button" id="" href="#" onclick="" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;"><span class="fa fa-envelope" style="font-size:110%;" ></span> Check</a>						
+		<a class="pure-button mod-sponsor-button" id="paypalButton" href="#" onclick="sponsorValidateAndSubmit();" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;"><span class="fa fa-paypal" style="font-size:110%;"></span> PayPal</a>
+		<a class="pure-button mod-sponsor-button" id="stripeButton" href="#" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;font-size:110%;"><span class="fa fa-cc-stripe" style="font-size:120%;" ></span> Credit</a>
+		<a class="pure-button mod-sponsor-button" id="checkButton" href="#" onclick="sponsorValidateAndSubmit();" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;"><span class="fa fa-envelope" style="font-size:110%;" ></span> Check</a>						
 	</div>
 </div>
-					
+	</form>
+
+<!-- initialize Stripe button -->
+<script language="javascript" type="text/javascript">
+  $('#stripeButton').click(function(){
+    var token = function(res){
+      var $input = $('<input type=hidden name=stripeToken />').val(res.id);
+      $('form[id="sponsor-form"]').append($input).submit();
+    };
+     StripeCheckout.open({
+      key:         'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+      address:     true,
+      amount:      5000,
+      currency:    'usd',
+      name:        'Joes Pistachios',
+      description: 'A bag of Pistachios',
+      panelLabel:  'Checkout',
+      token:       token
+    });
+     return false;
+  });
+</script>
+
+<!--
+PAYPAL
+convert user-selected amount to paypal button code
+use javascript to post to processor
+insert into db
+curl post to paypal
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="YKLMWFWTJVQEU">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+-->
+
+<!--
+CHECK
+popup check mail instructions
+-->		
 

@@ -57,42 +57,20 @@ require_once("../core/domain/Util.php");
 			<p>For more information or to be considered for a team placement, submit this no-obligation form.</p>
 			<p style="font-weight:normal;">Here are some resources that describe the Northbridge volunteer experience.</p>
 		</div>
-		<!--<div style="position:absolute;width:135px;margin-top:10px;">-->
-			<p><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getHttpVolunteerPath(); ?>/whyVolunteerWithNorthbridge.pdf" target="_blank" style="margin-left:5px;">Why Volunteer?</a></p>
-			<p><span class="fa fa-github fa-2x"></span> <a class="mod-volunteer-anchor" href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank" style="margin-left:5px;">Team Playbook</a> </p>
-			<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-volunteer-anchor" href="#" style="margin-left:3px;" onclick="$('td:eq(0)').trigger('click');">Information Webinar</a></p>
-		<!--</div>-->
-		<!--<div style="position:absolute;left:140px;width:75px;margin-top:17px;">-->
-
-			<p style="position:absolute;left:140px;">
-				<a class="twitter-share-button"
-					href="https://twitter.com/share"
-					data-url="<?php echo Util::getHttpCorePath(); ?>/index.php?view=volunteer"
-					data-via="<?php echo Util::getTwitterHandle(); ?>"
-					data-text="Excellent FOSS tech volunteer opportunities!">Tweet
-				</a>
-				<script>
-					window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-				</script>
-				<!-- Linked In Share widget does not allow custom text - aargh!- so implementing this way -->
-				<!--
-				<a 
-					href="http://www.linkedin.com/shareArticle?
-						mini=true&
-						url=<?php echo Util::getHttpCorePath(); ?>/index.php?view=volunteer&
-						title=Excellent%20FOSS%20tech%20volunteer%20opportunities%21&
-						summary=Interested%20in%20technology%20and%20social%20justice?%20Don%27t%20miss%20out%20on%20Northbridge%20Technology%20Alliance%2E" 
-					onclick="javascript:void window.open('http://www.linkedin.com/shareArticle?mini=true&url=<?php echo Util::getHttpCorePath(); ?>/index.php?view=volunteer&title=Excellent%20FOSS%20tech%20volunteer%20opportunities%21&summary=Interested%20in%20technology%20and%20social%20justice?%20Don%27t%20miss%20out%20on%20Northbridge%20Technology%20Alliance%2E','1424296949376','width=600,height=350,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;"
-					style="text-decoration:none;font-family:'open sans',arial;font-size:90%;position:absolute;top:222px;">
-						<img src="<?php echo Util::getHttpCorePath(); ?>/images/li.png" width="23px" height="20px" style="vertical-align:middle;"/>Share
-				</a>
-				-->
-			</p>
-			<!-- Not able to customize the share to this specific page for either g+ or fb :(
-			<div class="g-plusone" data-size="medium"></div>
-			<div class="fb-share-button" data-href="<?php echo Util::getHttpCorePath(); ?>/index.php?view=volunteer" data-layout="button_count"></div>
-			-->
-		<!--</div>-->
+		<p><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getHttpVolunteerPath(); ?>/whyVolunteerWithNorthbridge.pdf" target="_blank" style="margin-left:5px;">Why Volunteer?</a></p>
+		<p><span class="fa fa-github fa-2x"></span> <a class="mod-volunteer-anchor" href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank" style="margin-left:5px;">Team Playbook</a> </p>
+		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-volunteer-anchor" href="#" style="margin-left:3px;" onclick="$('td:eq(0)').trigger('click');">Information Webinar</a></p>
+		<p style="position:absolute;left:140px;">
+			<a class="twitter-share-button"
+				href="https://twitter.com/share"
+				data-url="<?php echo Util::getHttpCorePath(); ?>/index.php?view=volunteer"
+				data-via="<?php echo Util::getTwitterHandle(); ?>"
+				data-text="Excellent FOSS tech volunteer opportunities!">Tweet
+			</a>
+			<script>
+				window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+			</script>
+		</p>
 		<p id="user-message2" class="user-message"><?php echo $message; ?></p>	
 		<a class="pure-button button-submit" id="volunteerSubmitButton" href="#" onclick="volunteerValidateAndSubmit();"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Submit</a>
 	</div>

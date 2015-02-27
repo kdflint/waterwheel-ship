@@ -1,4 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<?php 
+require_once("domain/Util.php");
+?>
 <html>
 
 	<head>
@@ -11,12 +14,13 @@
 			include("../about/mod-about-meta.php"); 
 		?>		
 		
-		<!--================== End Meta ==================-->
+<!--================== End Meta ==================-->
 		
 	</head>
 
 	<body>
 		<div class="container">
+			
 			<!-- Sponsor Context -->
 			<div id="sponsorApp" class="sponsorApp">
 				<div class="sponsorHeader">
@@ -33,10 +37,7 @@
 						</p>			
 					</div>
 					<div class="sponsorHeaderRight" id="sponsorHeaderRight">
-						<p class="skyblue sponsorHeaderCaption">Shouldn't your technology<br/>be as great as you are?</p>		
-						<a class="whitepaper-button" id="" href="#" onclick="">
-							<span class="fa fa-file-pdf-o fa-2x otherblue"></span>&nbsp;<span class="skyblue">Whitepaper</span>
-						</a>
+						<?php include("whitepaper-link.php"); ?>	
 					</div>
 				</div>
 				<div class="sponsorSlider">
@@ -47,7 +48,7 @@
 									<div class="title"><strong>Apply</strong>
 										<p><span class="fa fa-send fa-3x tan" ></p>
 									</div>
-									<h1 class="slider white">Is your team changing the world?</h1>
+									<h1 class="slider white">Is your team changing worlds?</h1>
 									<p class="white"><b>Is your U.S. 501(c)(3) organization doing social justice or community building?</b> You may be eligible for a global web conference room.</p>
 								</div>
 							</li>
@@ -93,22 +94,16 @@
 				</div>
 			</div>
 			<!-- /Sponsor Context -->
+			
 			<!-- Global Navigation Context -->
 			<div id="navApp" class="navApp">
 				<div id="navTopSponsorContext">
-						<img src="images/NB_vertical_rgb.png" width="200" height="161" id="smallLogo"/>
-						<a class="whitepaper-button" id="testtest" href="#" onclick="" style="opacity:0;">
-							<span class="fa fa-file-pdf-o fa-2x otherblue "></span> <span class="skyblue">Whitepaper</span>
-						</a>
+					<img src="images/NB_vertical_rgb.png" width="200" height="161" id="smallLogo"/>
 				</div>
 				<div id="navTopAboutContext">
-					<p class="skyblue sponsorHeaderCaption">Shouldn't your technology be as great as you are?</p>		
-					<a class="whitepaper-button" id="" href="#" onclick="">
-						<span class="fa fa-file-pdf-o fa-2x otherblue"></span>&nbsp;<span class="skyblue">Whitepaper</span>
-					</a>				
+					<?php include("whitepaper-link.php"); ?>			
 				</div>
-				<button id="contextSwitch" class="button" style="position:absolute;top:195px;" onClick="switchToAbout()">About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;"></span></button>
-				<div id="calendar" style="position:absolute;top:250px;">
+				<div id="calendar" style="position:absolute;top:200px;">
 					<div id="sm-links" style="margin-bottom:15px;">
 						<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x olive" style="margin-left:7px;"></a>
 						<a href="https://plus.google.com/u/0/b/101145194341428988499/101145194341428988499/posts" target="_blank"><span class="fa fa-google-plus-square fa-3x olive" style="margin-left:7px;"></a>
@@ -116,21 +111,23 @@
 						<a href="https://www.facebook.com/northbridgenfp#" target="_blank"><span class="fa fa-facebook-square fa-3x olive"></a>
 						<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x olive" style="margin-left:7px;"></a>
 					</div>
+					<button id="contextSwitch" class="button" onClick="switchToAbout()">About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;"></span></button>
 					<div id="event-list"></div>
 				</div>
 				<?php // include("../..."); ?>
 			</div>
 			<!-- /Global Navigation Context -->
+			
 			<!-- About Context -->
-			<div id="aboutApp" class="aboutApp" style="border:0px solid;">
+			<div id="aboutApp" class="aboutApp">
 				<div class="aboutHeader">
 					<img src="images/NB_horizontal_tagline_rgb.png" width="515" height="160" style="padding:30px 10px 10px 30px;"/>
-					<div id="aboutQuote0" class="mod-about-quotes">Need a quote. Citation</div>
-					<div id="aboutQuote1" class="mod-about-quotes" style="visibility:visible;opacity:1;">All in. No regrets.</br>Flint</div>
+					<div id="aboutQuote0" class="mod-about-quotes" style="visibility:visible;opacity:1;">Need a quote. Citation</div>
+					<div id="aboutQuote1" class="mod-about-quotes">Need a quote. Citation</div>
 					<div id="aboutQuote2" class="mod-about-quotes">It always seems impossible until it's done.</br>Mandela</div>
 					<div id="aboutQuote3" class="mod-about-quotes">... go instead where there is no path and leave a trail.</br>Emerson</div>
 					<div id="aboutQuote4" class="mod-about-quotes">working together... we might just be able to fix it...</br>Cascio</div>
-					<div id="aboutQuote5" class="mod-about-quotes">Need a quote. Citation</div>
+					<div id="aboutQuote5" class="mod-about-quotes">All in. No regrets.</br>Flint</div>
 					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="text-align:right;font-size:140%;letter-spacing:.75px;">
 	   				<ul>
         			<li><a href="#" onclick="switchAboutView(0);">News</a></li>
@@ -161,11 +158,11 @@
 					<div id="aboutIndex5" class="mod-about-frame">
 						<?php include("../about/gallery.php"); ?>		
           </div>
-				</div>          
-
+				</div>
 			</div>
-			<!-- /About Context -->
 			<div class="curtain"></div>
+			<!-- /About Context -->
+			
 		</div><!-- /container -->
 		
 		<!-- initialize major context -->

@@ -61,9 +61,8 @@
 			<p>NOTE: To clear success message, remove parameters from request url in browser bar and reload</p>
 			<form id="volunteer-tester-form" class="pure-form volunteer-form" action="" method="">
 			<p><input type="radio" name="testRadio" id="frontSide" onClick="stubForFrontValidation();" checked /> Front side input validation (no server side validation, email, or data post)</p>
-			<p><input type="radio" name="testRadio" id="serverSide" onClick="stubForServerValidation();" /> Server side input validation (no front validation, email, or data post)
+			<p><input type="radio" name="testRadio" id="serverSide" onClick="stubForServerValidation();" /> Server side input validation (no front validation, email, or data post)</p>
 				<ul><li>This mode allows testing on post-submit alterations to the post data by using a browser plug-in like TamperData</li></ul>
-			</p>
 			<p><input type="radio" name="testRadio" id="allSide" onClick="stubForRoundTrip();" /> Full functionality (all validations, email, and data post)</p>
 		</form>
 			<div class="allianceContent">

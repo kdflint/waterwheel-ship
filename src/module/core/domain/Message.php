@@ -81,7 +81,7 @@ class Message {
         return "A new volunteer submission has been received.";
     	case self::APPLICATION_CONFIRM:
     	// TODO - finish
-        return "Thank you for your application for space in the Northbridge Technology Alliance global web conference center.";
+        return "Thank you for your application for a room in the Northbridge Technology Alliance Global Web Conference Center.\r\n\r\nWe will review your information and contact you at this email address within two weeks.\r\n\r\nIf you believe you have received this message in error, would you kindly reply and let us know?";
       case self::APPLICATION_NOTIFY;
       	return "A new grant applicaton has been received.";
     	default:

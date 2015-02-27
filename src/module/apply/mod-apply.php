@@ -45,7 +45,7 @@ require_once("../core/domain/Util.php");
 			</div>
 			<div class="mod-apply-columnRightRight">
 				<div class="mod-apply-controlContent">
-					<input type="checkbox" name="services[]" value="6"/> Housing Equity<br/>
+					<input type="checkbox" name="services[]" value="6" /> Housing Equity<br/>
 					<input type="checkbox" name="services[]" value="7" /> Education Equity<br/>
 					<input type="checkbox" name="services[]" value="8" /> Health Equity<br/>
 					<input type="checkbox" name="services[]" value="5" /> Human Rights<br/>
@@ -53,7 +53,7 @@ require_once("../core/domain/Util.php");
 			</div>
 			<div class="mod-apply-columnRightBottom">
 				<div class="mod-apply-controlContent">
-					<input type="checkbox" name="services[]" value="2" /> Other <input type="text" name="otherService" placeholder="Please specify" maxLength="50" style="width:78%;"/><br/>
+					<input id="serviceOther" type="checkbox" name="services[]" value="2" /> Other <input type="text" name="otherService" placeholder="Please specify" maxLength="50" style="width:78%;"  onkeypress="otherCommentsSelectCheckbox('serviceOther', this);"/><br/>
 				</div>
 				<div class="mod-apply-controlLabel" style="margin-top:10px;">What is your team's service reach?<span class="required"> *</span></div>
 				<div class="mod-apply-controlContent">
@@ -70,11 +70,21 @@ require_once("../core/domain/Util.php");
 		<div class="mod-apply-controlLabel">
 			<p>No gimmicks. No obligation. Use this form to apply for space in our global web conference center.</p>
 		</div>
-		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="#">Grant Details</a> [TODO]</p>
-		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="#">Service Details</a> [TODO]</p>
-		<p><span class="fa fa-reply fa-2x"></span>  <a class="mod-apply-anchor" href="#">Reserve Orientation Seat</a></p>
-		<p id="user-message1" class="user-message" style="visibility:hidden;"><?php echo $message; ?></p>	
-	<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit();"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Apply</a>
+		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Whitepaper_grant_details.pdf" style="margin-left:5px;" target="_blank" >Grant Details</a></p>
+		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="#" style="margin-left:3px;" onclick="$('td:eq(0)').trigger('click');">Information Webinar</a></p>
+		<p style="position:absolute;left:140px;">
+			<a class="twitter-share-button"
+				href="https://twitter.com/share"
+				data-url="<?php echo Util::getHttpCorePath(); ?>/index.php?view=apply"
+				data-via="<?php echo Util::getTwitterHandle(); ?>"
+				data-text="Exclusive opportunity for community building nonprofits.">Tweet
+			</a>
+			<script>
+				window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+			</script>
+		</p>
+		<p id="user-message2" class="user-message"><?php echo $message; ?></p>	
+		<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit();"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Apply</a>
 	</div>
 	
 </form>	

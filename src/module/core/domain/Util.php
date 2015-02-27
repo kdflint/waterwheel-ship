@@ -14,7 +14,8 @@ final class Util {
 	private static $volunteer_path = "/module/volunteer";
 	private static $sponsor_path = "/module/sponsor";
 	private static $about_path = "/module/about";
-	private static $domain_path = "/domain";	
+	private static $domain_path = "/domain";
+	private static $download_path = "/download";	
 	
 	// TODO - put getters on all env_config constants
 
@@ -40,6 +41,10 @@ final class Util {
 	
 	public static function getHttpDomainPath() {
 		return self::getHttpCorePath() . self::$domain_path;
+	}
+	
+	public static function getHttpDownloadPath() {
+		return self::getHttpCorePath() . self::$download_path;
 	}
 	
 	public static function getFileApplyPath() {

@@ -9,5 +9,5 @@ require_once("../core/domain/Util.php");
 
 <link rel="stylesheet" type="text/css" href="<?php echo Util::getHttpVolunteerPath(); ?>/mod-volunteer.css" />
 
-<script type="text/javascript" src="<?php echo Util::getHttpVolunteerPath(); ?>/mod-volunteer.js"></script>	
+<script language="javascript" type="text/javascript" src="<?php echo Util::getHttpVolunteerPath(); ?>/mod-volunteer.js"></script>	
 

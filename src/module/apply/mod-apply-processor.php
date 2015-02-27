@@ -15,8 +15,6 @@ if (isset($_POST['testMode']) && !strcmp($_POST['testMode'], "true")) {
 	$application = new Application();
 }
 
-// All POST data is validated by the domain object.
-
 if (isset($application)) {
 	
 	try {
@@ -31,37 +29,33 @@ if (isset($application)) {
 		$application->setServiceComment($_POST['otherService']);
 		$application->setReach($_POST['reach']);		
 		$application->setMission($_POST['mission']);	
-	} catch(Exception $e) { logErrorAndReturn($e, $testMode); }
+	} catch(Exception $e) { logErrorAndReturn($e, $testMode, null); }
 			
 	$application->apply();
 	$application->notify();
 } else { 
 	
-	logErrorAndReturn("Volunteer object is null.", $testMode);
+	logErrorAndReturn("Volunteer object is null.", $testMode, null);
 }
 
 logNormalAndReturn($testMode, $application);
 
-function logErrorAndReturn($error, $test) {
+function logErrorAndReturn($error, $test, $app) {
 	if ($test) {
 		echo $error->getMessage();
 	} else {
-		// TODO - log error
-		echo $error->getMessage(); exit(0);
-		header("location:" . Util::getHttpApplyPath() . "/tester.php");
+		header("location:" . Util::getHttpCorePath() . "/index.php?view=apply");
 	}
 	exit(0);
 }
 
-function logNormalAndReturn($test) {
+function logNormalAndReturn($test, $app) {
 	if ($test) {
-		echo "No error";
+		header("location:" . Util::getHttpApplyPath() . "/tester.php?view=apply&success=true");
 	} else {
-		header("location:" . Util::getHttpApplyPath() . "/tester.php");
+		header("location:" . Util::getHttpCorePath() . "/index.php?view=apply&success=true");
 	}
 	exit(0);
 }	
-
-
 
 ?>

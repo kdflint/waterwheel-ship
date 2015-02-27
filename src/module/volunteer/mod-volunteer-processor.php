@@ -2,9 +2,6 @@
 
 require_once("../core/domain/Util.php");
 
-//$conf = array('append' => true, 'mode' => 0644, 'timeFormat' => '%X %x');
-//$logger = Log::singleton("file", Util::getFileCorePath() . "web_log", "", $conf, PEAR_LOG_DEBUG);
-
 $volunteer;
 $testMode = FALSE;
 
@@ -16,8 +13,6 @@ if (isset($_POST['testMode']) && !strcmp($_POST['testMode'], "true")) {
 	require_once(Util::getFileDomainPath() . "/Volunteer.php");
 	$volunteer = new Volunteer();
 }
-
-// All POST data is validated by the domain object.
 
 if (isset($volunteer)) {
 	

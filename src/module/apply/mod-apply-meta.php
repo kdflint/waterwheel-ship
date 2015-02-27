@@ -9,5 +9,5 @@ require_once("../core/domain/Util.php");
 
 <link rel="stylesheet" type="text/css" href="<?php echo Util::getHttpApplyPath(); ?>/mod-apply.css" />
 
-<script type="text/javascript" src="<?php echo Util::getHttpApplyPath(); ?>/mod-apply.js"></script>	
+<script language="javascript" type="text/javascript" src="<?php echo Util::getHttpApplyPath(); ?>/mod-apply.js"></script>	
 

@@ -51,14 +51,6 @@
 	width: 740px;
 }
 
-.aboutContent {
-	height: 350px;
-	width: 700px;
-	margin-left: 30px;
-	margin-top: 10px;
-	text-align: right;
-}
-
 .sponsorApp {
 	position: absolute;
 	left: 0px;
@@ -80,6 +72,7 @@
 
 .aboutApp {
 	position: absolute;
+	top: 0px;
 	left: 960px;	
 	height: 100%;
 	width: 740px;
@@ -89,12 +82,20 @@
   -webkit-transition: left 2s; 
 }
 
+.aboutContent {
+	height: 350px;
+	width: 700px;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
 div.curtain {
 	position: absolute;
+	top: 0px;
 	left: 960px;	
-	height: 740px;
-	width: 760px;
-	z-index: 1;
+	height: 800px;
+	width: 900px;
+	z-index: 2;
 	background-image: url("images/curtain.png");
 }
 
@@ -254,7 +255,7 @@ text-align: center;
 
 .title strong
 {
-font:normal 18px/18px "Oswald", Arial, sans-serif;
+font:normal 18px/18px Oswald, Arial, sans-serif;
 margin:5px;
 text-transform:uppercase;
 color:#f7f8ef;
@@ -268,7 +269,7 @@ margin-top:15px;
 
 div.title p
 {
-font:normal 10px/12px Arial, sans-serif;
+font:normal 10px/12px Oxygen, Arial, sans-serif;
 color:#e0e0e0;
 padding:10px 10px 10px 10px;
 margin:0px 0 0 0;
@@ -276,14 +277,14 @@ margin:0px 0 0 0;
 
 div.title a
 {
-font:normal bold 10px/12px Arial, sans-serif;
+font:normal bold 10px/12px Oxygen, Arial, sans-serif;
 color:#eee;
 text-transform:uppercase;
 }
 
 div.title a:hover
 {
-font:normal bold 10px/12px Arial, sans-serif;
+font:normal bold 10px/12px Oxygen, Arial, sans-serif;
 color:#fff;
 text-transform:uppercase;
 }
@@ -298,6 +299,6 @@ padding:5px;
 
 .headerbox p
 {
-font:normal 11px/18px Arial, sans-serif;
+font:normal 11px/18px Oxygen, Arial, sans-serif;
 margin-right:10px;
 }

@@ -7,7 +7,7 @@ function switchToAbout() {
 	document.getElementById("navTopAboutContext").style.opacity = "1";
 	document.getElementById("sponsorHeaderRight").style.left = "20px";
  	document.getElementById("contextSwitch").innerHTML='<span class="fa fa-chevron-circle-left fa-2x tan" style="margin-right:10px;vertical-align:middle;"></span>Web Tools';
- 	//document.getElementById("defaultMenuItem").focus();
+ 	document.getElementById("defaultMenuItem").focus();
 	document.getElementById("contextSwitch").onclick = function() {switchToSponsor()}
 }
 
