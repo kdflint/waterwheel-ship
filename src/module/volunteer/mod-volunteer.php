@@ -72,7 +72,7 @@ require_once("../core/domain/Util.php");
 			</script>
 		</p>
 		<p id="user-message2" class="user-message"><?php echo $message; ?></p>	
-		<a class="pure-button button-submit" id="volunteerSubmitButton" href="#" onclick="volunteerValidateAndSubmit();"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Submit</a>
+		<a class="pure-button button-submit" id="volunteerSubmitButton" href="#" onclick="volunteerValidateAndSubmit();" style="background:#fcb040;"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Submit</a>
 	</div>
 	
 </form>	

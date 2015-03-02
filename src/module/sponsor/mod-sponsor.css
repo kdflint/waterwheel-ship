@@ -61,6 +61,7 @@
 	width:50px;
 	border-radius: 6px;
 	margin:4px;
+	background-color: #a6c3ce;
 }
 
 .mod-sponsor-sponsorButtons {
@@ -68,12 +69,10 @@
 	top: 303px;
 }
 
-
 .mod-sponsor-designate {
 	position: absolute;
 	width: 100%;
 	height: 170px;
-	border: 1px solid #BBB;
 	margin-top: 12px;
 	border-radius:10px;
 	display: none;
@@ -84,11 +83,13 @@
 }
 
 .mod-sponsor-slider {
-	width: 68%;
+	width: 60%;
 	height: 100%;
 	position: relative;
 	float: left;
 	overflow: hidden;
+	border: 1px solid #004d62;
+	border-radius: 8px;
 }
 
 .mod-sponsor-slider .slide:first-child {
@@ -99,18 +100,17 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
+	width: 90%;
+	height: 90%;
 	opacity: 0;
 	transition: opacity 1s;
   -webkit-transition: opacity 1s; 
+  margin: 10px;
 }
 
 .mod-sponsor-accordion {
 	width: 32%;
 	height: 100%;
-	background: #eee;
-	box-shadow: -3px 0px 3px -1px rgba(51,51,51,0.3);
 	position: relative;
 	z-index:999;
 	overflow: auto;
@@ -120,7 +120,8 @@
 }
 
 .mod-sponsor-accordion .header:first-child {
-	border: 1px solid orange;
+	//border: 2px solid #fcb040;
+	//background: #a6c3ce;
 }
 
 .mod-sponsor-accordion .header {
@@ -128,14 +129,19 @@
 	font-size: 10px;
 	font-weight: bold;
 	color: #333;
-	background: #ededed;
-	background: -moz-linear-gradient(top, #ededed 59%, #dcdcdc 100%);
-	background: -webkit-linear-gradient(top, #ededed 59%,#dcdcdc 100%);
-	background: -o-linear-gradient(top, #ededed 59%,#dcdcdc 100%);
-	background: -ms-linear-gradient(top, #ededed 59%,#dcdcdc 100%);
-	background: linear-gradient(top, #ededed 59%,#dcdcdc 100%);
+	background: #dbe7eb;
+	background: -moz-linear-gradient(top, #f7f9fa 30%, #dbe7eb 100%);
+	background: -webkit-linear-gradient(top, #f7f9fa 30%,#dbe7eb 100%);
+	background: -o-linear-gradient(top, #f7f9fa 30%,#dbe7eb 100%);
+	background: -ms-linear-gradient(top, #f7f9fa 30%,#dbe7eb 100%);
+	background: linear-gradient(top, #f7f9fa 30%,#dbe7eb 100%);
 	border-top: 1px solid #ccc;
 	overflow: hidden;
+	border-radius: 8px;
+}
+
+.mod-sponsor-accordion .unavailable {
+	background: #f6f6f6;
 }
 
 .mod-sponsor-accordion .header a {
@@ -144,12 +150,14 @@
 }
 
 .mod-sponsor-accordion .header:hover {
-	background: #EDEDED;
+	border: 2px solid #fcb040;
+	background: #a6c3ce;
 	cursor: pointer;
 }
 
 .mod-sponsor-accordion .header.active {
 	border-bottom: none;
-	background: #676767 !important;
-	color: #FFF;
+	border: 2px solid #fcb040;
+	background: #a6c3ce;
 }
+

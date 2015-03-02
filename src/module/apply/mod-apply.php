@@ -68,9 +68,10 @@ require_once("../core/domain/Util.php");
 	</div>		
 	<div class="mod-apply-frameRight">
 		<div class="mod-apply-controlLabel">
-			<p>No gimmicks. No obligation. Use this form to apply for space in our global web conference center.</p>
+			<p>No gimmicks. No obligation. Use this form to apply for partnership with Northbridge Technology Alliance.</p>
+			<p style="font-weight:normal;">Partnership grants you eligibility for all of Northbridge technology services, including space in our global web conference center.</p>
 		</div>
-		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Whitepaper_grant_details.pdf" style="margin-left:5px;" target="_blank" >Grant Details</a></p>
+		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Whitepaper_grant_details.pdf" style="margin-left:5px;" target="_blank" >Partnership Details</a></p>
 		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="#" style="margin-left:3px;" onclick="$('td:eq(0)').trigger('click');">Information Webinar</a></p>
 		<p style="position:absolute;left:140px;">
 			<a class="twitter-share-button"
@@ -84,7 +85,7 @@ require_once("../core/domain/Util.php");
 			</script>
 		</p>
 		<p id="user-message2" class="user-message"><?php echo $message; ?></p>	
-		<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit();"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Apply</a>
+		<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit();" style="background:#99af7d;"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Apply</a>
 	</div>
 	
 </form>	

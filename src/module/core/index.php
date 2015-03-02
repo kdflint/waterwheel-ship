@@ -55,14 +55,6 @@ require_once("domain/Util.php");
 							<li class="two">
 								<div class="headerbox">	
 									<div class="title"><strong>Sponsor</strong>
-										<!--
-										<p><span class="fa fa-fire fa-3x tan" ></p>
-										<p><span class="fa fa-life-buoy fa-3x tan" ></p>
-										<p><span class="fa fa-unlock fa-3x tan" ></p>
-										<p><span class="fa fa-bolt fa-3x tan" ></p>
-										<p><span class="fa fa-bullseye fa-3x tan" ></p>
-										<p><span class="fa fa-dollar fa-3x tan" ></p>
-										-->
 										<p><span class="fa fa-money fa-3x tan" ></p>
 									</div>
 									<h1 class="slider white">Fund technology for world-changers</h1>
@@ -103,8 +95,8 @@ require_once("domain/Util.php");
 				<div id="navTopAboutContext">
 					<?php include("whitepaper-link.php"); ?>			
 				</div>
-				<div id="calendar" style="position:absolute;top:200px;">
-					<div id="sm-links" style="margin-bottom:15px;">
+				<div id="calendar" style="position:absolute;top:195px;">
+					<div id="sm-links" style="margin-bottom:5px;">
 						<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x olive" style="margin-left:7px;"></a>
 						<a href="https://plus.google.com/u/0/b/101145194341428988499/101145194341428988499/posts" target="_blank"><span class="fa fa-google-plus-square fa-3x olive" style="margin-left:7px;"></a>
 						<a href="https://www.linkedin.com/company/2232384" target="_blank"><span class="fa fa-linkedin fa-3x olive" style="margin-left:7px;"></a>
@@ -128,7 +120,7 @@ require_once("domain/Util.php");
 					<div id="aboutQuote3" class="mod-about-quotes">... go instead where there is no path and leave a trail.</br>Emerson</div>
 					<div id="aboutQuote4" class="mod-about-quotes">working together... we might just be able to fix it...</br>Cascio</div>
 					<div id="aboutQuote5" class="mod-about-quotes">All in. No regrets.</br>Flint</div>
-					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="text-align:right;font-size:140%;letter-spacing:.75px;">
+					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="margin-left:47px;font-size:140%;letter-spacing:.75px;">
 	   				<ul>
         			<li><a href="#" onclick="switchAboutView(0);">News</a></li>
         			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(1);">About</a></li>

@@ -51,4 +51,3 @@ function otherCommentsSelectCheckbox(checkboxId) {
 		document.getElementById(checkboxId).checked=true;
 }
 
-

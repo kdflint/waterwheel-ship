@@ -1,5 +1,5 @@
 function getCurrentLevelIndex() {
-	var radio = document.forms['sponsorForm'].levels;
+	var radio = document.forms['sponsor-form'].levels;
 	for (var i = 0; i < radio.length; i++) {
 		if (radio[i].checked) {
 			return i;
@@ -7,16 +7,45 @@ function getCurrentLevelIndex() {
 	}
 }
 
+function getCurrentLevelAmount() {
+	var index = getCurrentLevelIndex();	
+	var otherLevel = document.getElementById("sponsorLevelOptionOther").value;
+	if (index < 4) {
+		return document.forms['sponsor-form'].levels[index].value;
+	} else if (index == 4) {
+   	var otherLevel = document.getElementById("sponsorLevelOptionOther").value;
+   	if (otherLevel.length < 1 || parseInt(otherLevel) < 1) {
+			return "undefined";
+  	} else if (parseInt(otherLevel) < 25) {
+  		return "0";
+		} else if (parseInt(otherLevel) < 50) {
+			return "25";
+		} else if (parseInt(otherLevel) < 100) {
+			return "50";
+		} else if (parseInt(otherLevel) < 250) {
+			return "100";
+		} else if (parseInt(otherLevel) < 500) {
+			return "250";
+		} else {
+			return "500";
+		}
+	}		
+	
+}
+
 function copyLevelValue() {
-	var radio = document.forms['sponsorForm'].levels;
-	var display = document.getElementById("levelAmountDisplay");
+	document.getElementById("sponsorLevelOptionOther").value = "";
+	var radio = document.forms['sponsor-form'].levels;
 	var index = getCurrentLevelIndex();
-	display.innerHTML = radio[index].value;
 	displayFeatures(radio[index].value);
 }
 
+function copyOtherLevelValue() {
+	displayFeatures("other");
+}
+
 function copyDesignateValue() {
-	var boxes = document.forms['sponsorForm'].designation;
+	var boxes = document.forms['sponsor-form'].designation;
 	var display = document.getElementById("designateNameDisplay");
 	var catDisplay = "";
 	var counter = 0;
@@ -34,15 +63,15 @@ function copyDesignateValue() {
 }
 
 function copyCauseValue() {
-	var index = document.forms['sponsorForm'].cause.selectedIndex;
+	var index = document.forms['sponsor-form'].cause.selectedIndex;
 	var display = document.getElementById("designateNameDisplay");
-	display.innerHTML = document.forms['sponsorForm'].cause.options[index].value;
+	display.innerHTML = document.forms['sponsor-form'].cause.options[index].value;
 }
 
 function toggleSponsorDisplay() {
 	var customDisplay = document.getElementById("sponsorCheckedDisplay");
 	var optOutDisplay = document.getElementById("sponsorOptOutDisplay");		
-	if (document.forms['sponsorForm'].showSponsorship.checked) {
+	if (document.forms['sponsor-form'].showSponsorship.checked) {
 		customDisplay.style.display = 'block';
 		optOutDisplay.style.display = 'none';
 	} else {
@@ -54,7 +83,7 @@ function toggleSponsorDisplay() {
 function toggleImpactDisplay() {
 	var customDisplay = document.getElementById("impactCheckedDisplay");
 	var optOutDisplay = document.getElementById("impactOptOutDisplay");		
-	if (!document.forms['sponsorForm'].showImpact.checked) {
+	if (!document.forms['sponsor-form'].showImpact.checked) {
 		customDisplay.style.display = 'block';
 		optOutDisplay.style.display = 'none';
 	} else {
@@ -85,13 +114,41 @@ function displayFeatures(level) {
 	var causeButton = document.getElementById("causeButton");
 	var levelAmountDisplay = document.getElementById("levelAmountDisplay");
 	var levelServiceDisplay = document.getElementById("levelServiceDisplay");
+	var designateSlides = document.getElementsByClassName("mod-sponsor-slider");
 	var designateNameDisplay = document.getElementById("designateNameDisplay");
+	var designateMessageDisplay = document.getElementById("designateMessageDisplay");
 	var sponsorCheckedDisplay = document.getElementById("sponsorCheckedDisplay");
 	var sponsorOptOutDisplay = document.getElementById("sponsorOptOutDisplay");
 	var impactCheckedDisplay = document.getElementById("impactCheckedDisplay");
 	var impactOptOutDisplay = document.getElementById("impactOptOutDisplay");
+	var otherAmount = document.getElementById("sponsorLevelOptionOther");
+	
+	otherAmount.style.background = "rgba(255,255,255,1) url('') no-repeat right top";
 	
 	switch(level) {
+    	case "0":
+					showSponsorship.disabled = true;
+					sponsorName.disabled = true;
+					showImpact.disabled = true;
+					impactEmail.disabled = true;
+					orgButton.className = "pure-button mod-sponsor-button pure-button-disabled";
+					listButton.className = "pure-button mod-sponsor-button pure-button-disabled";
+					causeButton.className = "pure-button mod-sponsor-button pure-button-disabled";
+					levelAmountDisplay.innerHTML = "";
+					levelTimeDisplay.innerHTML = "valuable";
+					levelServiceDisplay.innerHTML = "";
+					showSlide('0');
+					designateSlides[0].style.border = "0px solid #004d62";
+					toggleHeaders("disable");
+					designateNameDisplay.innerHTML = "a Northbridge partner organization";
+					designateMessageDisplay.innerHTML = "Northbridge will be happy to designate your gift to one of our eligible partners.";
+					sponsorCheckedDisplay.style.display = 'none';
+					sponsorOptOutDisplay.style.display = 'none';
+					impactCheckedDisplay.style.display = 'none';
+					impactOptOutDisplay.style.display = 'none';
+					reduceDesignateList();
+					toggleSearchCategory('waitingList');
+        	break;
     	case "25":
 					showSponsorship.disabled = true;
 					sponsorName.disabled = true;
@@ -100,10 +157,14 @@ function displayFeatures(level) {
 					orgButton.className = "pure-button mod-sponsor-button pure-button-disabled";
 					listButton.className = "pure-button mod-sponsor-button pure-button-disabled";
 					causeButton.className = "pure-button mod-sponsor-button pure-button-disabled";
-					levelAmountDisplay.innerHTML = "25";
+					levelAmountDisplay.innerHTML = "of $25";
 					levelTimeDisplay.innerHTML = "6 months";
-					levelServiceDisplay.innerHTML = "basic";
-					designateNameDisplay.innerHTML = "an eligible 501(c)(3) organization";
+					levelServiceDisplay.innerHTML = "of basic";
+					showSlide('0');
+					designateSlides[0].style.border = "0px solid #004d62";
+					toggleHeaders("disable");
+					designateNameDisplay.innerHTML = "a Northbridge partner organization";
+					designateMessageDisplay.innerHTML = "Northbridge will be happy to designate your gift to one of our eligible partners.";
 					sponsorCheckedDisplay.style.display = 'none';
 					sponsorOptOutDisplay.style.display = 'none';
 					impactCheckedDisplay.style.display = 'none';
@@ -119,10 +180,13 @@ function displayFeatures(level) {
 					orgButton.className = "pure-button mod-sponsor-button";
 					listButton.className = "pure-button mod-sponsor-button";
 					causeButton.className = "pure-button mod-sponsor-button pure-button-disabled";
-					levelAmountDisplay.innerHTML= "50"
+					levelAmountDisplay.innerHTML= "of $50";
 					levelTimeDisplay.innerHTML = "1 year";
-					levelServiceDisplay.innerHTML = "basic";
-					designateNameDisplay.innerHTML = "your designated 501(c)(3) organization";
+					levelServiceDisplay.innerHTML = "of basic";
+					designateSlides[0].style.border = "1px solid #004d62";
+					toggleHeaders("enable");
+					designateNameDisplay.innerHTML = "your designated Northbridge partner organization";
+					designateMessageDisplay.innerHTML = "If you wish, you may designate your gift to one eligible Northbridge partner.";
 					sponsorCheckedDisplay.style.display = 'none';
 					sponsorOptOutDisplay.style.display = 'none';
 					impactCheckedDisplay.style.display = 'none';
@@ -131,18 +195,22 @@ function displayFeatures(level) {
 					toggleSearchCategory('waitingList');
         	break;
       case "100":
-					showSponsorship.disabled = false;
-					sponsorName.disabled = false;
+					showSponsorship.disabled = true;
+					sponsorName.disabled = true;
 					showImpact.disabled = true;
 					impactEmail.disabled = true;
 					orgButton.className = "pure-button mod-sponsor-button";
 					listButton.className = "pure-button mod-sponsor-button";
 					causeButton.className = "pure-button mod-sponsor-button pure-button-disabled";
-					levelAmountDisplay.innerHTML = "100"
+					levelAmountDisplay.innerHTML = "of $100";
 					levelTimeDisplay.innerHTML = "1 year";
-					levelServiceDisplay.innerHTML = "advanced";
-					designateNameDisplay.innerHTML = "your designated 501(c)(3) organization";
-					toggleSponsorDisplay();
+					levelServiceDisplay.innerHTML = "of advanced";
+					designateSlides[0].style.border = "1px solid #004d62";
+					toggleHeaders("enable");
+					designateNameDisplay.innerHTML = "your designated Northbridge partner organization";
+					designateMessageDisplay.innerHTML = "If you wish, you may designate your gift to one eligible Northbridge partner.";
+					sponsorCheckedDisplay.style.display = 'none';
+					sponsorOptOutDisplay.style.display = 'none';
 					impactCheckedDisplay.style.display = 'none';
 					impactOptOutDisplay.style.display = 'none';
 					reduceDesignateList();
@@ -151,19 +219,54 @@ function displayFeatures(level) {
       case "250":
 					showSponsorship.disabled = false;
 					sponsorName.disabled = false;
+					showImpact.disabled = true;
+					impactEmail.disabled = true;
+					orgButton.className = "pure-button mod-sponsor-button";
+					listButton.className = "pure-button mod-sponsor-button";
+					causeButton.className = "pure-button mod-sponsor-button";
+					levelAmountDisplay.innerHTML = "of $250";
+					levelTimeDisplay.innerHTML = "1 year";
+					levelServiceDisplay.innerHTML = "of advanced";
+					toggleHeaders("enable");
+					designateSlides[0].style.border = "1px solid #004d62";
+					designateNameDisplay.innerHTML = "your designated Northbridge partner organizations";
+					designateMessageDisplay.innerHTML = "If you wish, you may designate your gift to two eligible Northbridge partners.";
+					toggleSponsorDisplay();
+					impactCheckedDisplay.style.display = 'none';
+					impactOptOutDisplay.style.display = 'none';
+					reduceDesignateList();
+        	break;
+       case "500":
+					showSponsorship.disabled = false;
+					sponsorName.disabled = false;
 					showImpact.disabled = false;
 					impactEmail.disabled = false;
 					orgButton.className = "pure-button mod-sponsor-button";
 					listButton.className = "pure-button mod-sponsor-button";
 					causeButton.className = "pure-button mod-sponsor-button";
-					levelAmountDisplay.innerHTML = "250"
+					levelAmountDisplay.innerHTML = "of $500";
 					levelTimeDisplay.innerHTML = "1 year";
-					levelServiceDisplay.innerHTML = "advanced";
-					designateNameDisplay.innerHTML = "your designated 501(c)(3) organizations";
+					levelServiceDisplay.innerHTML = "of advanced";
+					toggleHeaders("enable");
+					designateSlides[0].style.border = "1px solid #004d62";
+					designateNameDisplay.innerHTML = "your designated Northbridge partner organizations";
+					designateMessageDisplay.innerHTML = "If you wish, you may designate your gift to three eligible Northbridge partners.";
 					toggleSponsorDisplay();
 					toggleImpactDisplay();
 					reduceDesignateList();
         	break;
+      case "other":
+      		otherCommentsSelectCheckbox("sponsorLevelOption5");
+      		var otherLevel = getCurrentLevelAmount();
+      		if (otherLevel == "undefined") {
+						displayFeatures("0");
+						otherAmount.style.background = "rgba(252,176,64,0.5) url('') no-repeat right top";
+      			break;
+      		} else { 
+      			displayFeatures(otherLevel);
+					}
+					levelAmountDisplay.innerHTML = "of $" + document.getElementById("sponsorLevelOptionOther").value;
+					break;
     	default:
 	} 
 }
@@ -181,36 +284,38 @@ function showSlide(elementId) {
 		items[i].style.borderTop = '1px solid #ccc';
 	}
 	thisSlide.style.opacity = '1';
-	thisItem.style.border = '1px solid orange';
+	thisItem.style.border = '2px solid #fcb040';
 }
 
 function designateOrg(elementId) {
-	var index = getCurrentLevelIndex();
-	var boxes = document.forms['sponsorForm'].designation;
+	var boxes = document.forms['sponsor-form'].designation;
 	var counter = 0;
-	switch(document.forms['sponsorForm'].levels[index].value) {
+	switch(getCurrentLevelAmount()) {
 		case "250":
-			// at this level, up to three boxes are allowed to be selected at one time
+			// at this level, up to two boxes are allowed to be selected at one time
 			for(var i = 0; i < boxes.length; i++) {
 				if (boxes[i].checked) {counter++;}
 			}
 			// disable/enable other boxes depending on how many checks are allowed for this level
-			if (counter < 3) {
+			if (counter < 2) {
 				for(var i = 0; i < boxes.length; i++) {
 					boxes[i].disabled = false;
 				}				
 			}
-			if (counter >= 3) {
+			if (counter >= 2) {
 				for(var i = 0; i < boxes.length; i++) {
 					if (!boxes[i].checked) {boxes[i].disabled = true;}
 				}
 			}	
 			copyDesignateValue();				
 			break;
+		case "500":
+			
 		default:
 			// at this level, only one box is allowed to be selected at one time
 			var box = document.getElementById("check" + elementId);
 			var state = box.checked;
+
 			for(var i = 0; i < boxes.length; i++) {
 				boxes[i].checked = false;
 				boxes[i].disabled = false;
@@ -223,9 +328,13 @@ function designateOrg(elementId) {
 }
 
 function reduceDesignateList() {
-	var boxes = document.forms['sponsorForm'].designation;
-	var index = getCurrentLevelIndex();
-	if (document.forms['sponsorForm'].levels[index].value == '25') {
+	var boxes = document.forms['sponsor-form'].designation;
+	var disableBoxes = false;
+	var curAmount = getCurrentLevelAmount();
+	if (curAmount == "0") { disableBoxes = true; }
+	if (curAmount == "25") { disableBoxes = true; }
+	if (curAmount == "undefined") { disableBoxes = true; }
+	if (disableBoxes) {
 		for(var i = 0; i < boxes.length; i++) {
 			boxes[i].disabled = true;
 		}
@@ -233,11 +342,23 @@ function reduceDesignateList() {
 		for(var i = 0; i < boxes.length; i++) {	
 			boxes[i].disabled = false;
 			if (boxes[i].checked) {
-				designateOrg(i + 1);
-				break;
+				designateOrg(i + "L");
 			}
 		}	
 	}
+}
+
+function toggleHeaders(state) {
+	var designateHeaders = document.getElementsByClassName("header");
+	if (state == "disable") {
+		for (var i = 0; i < designateHeaders.length; i++) {
+			designateHeaders[i].className = "header unavailable";
+		}
+	} else {
+		for (var i = 0; i < designateHeaders.length; i++) {
+			designateHeaders[i].className = "header";
+		}
+	}		
 }
 
 function loadSearchResults() {
