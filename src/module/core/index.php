@@ -114,12 +114,12 @@ require_once("domain/Util.php");
 			<div id="aboutApp" class="aboutApp">
 				<div class="aboutHeader">
 					<img src="images/NB_horizontal_tagline_rgb.png" width="515" height="160" style="padding:30px 10px 10px 30px;"/>
-					<div id="aboutQuote0" class="mod-about-quotes" style="visibility:visible;opacity:1;">Need a quote. Citation</div>
-					<div id="aboutQuote1" class="mod-about-quotes">Need a quote. Citation</div>
-					<div id="aboutQuote2" class="mod-about-quotes">It always seems impossible until it's done.</br>Mandela</div>
-					<div id="aboutQuote3" class="mod-about-quotes">... go instead where there is no path and leave a trail.</br>Emerson</div>
-					<div id="aboutQuote4" class="mod-about-quotes">working together... we might just be able to fix it...</br>Cascio</div>
-					<div id="aboutQuote5" class="mod-about-quotes">All in. No regrets.</br>Flint</div>
+					<div id="aboutQuote0" class="mod-about-quotes">All in.<br/>No regrets.<br/>Flint</div>
+					<div id="aboutQuote1" class="mod-about-quotes" style="visibility:visible;opacity:1;">In the shadow of each other, the people live.<br/>Proverb.</div>
+					<div id="aboutQuote2" class="mod-about-quotes">It always seems impossible until it's done.<br/>Mandela</div>
+					<div id="aboutQuote3" class="mod-about-quotes">... go instead where there is no path and leave a trail.<br/>Emerson</div>
+					<div id="aboutQuote4" class="mod-about-quotes">working together... we might just be able to fix it...<br/>Cascio</div>
+					<div id="aboutQuote5" class="mod-about-quotes">All in.<br/>No regrets.<br/>Flint</div>
 					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="margin-left:47px;font-size:140%;letter-spacing:.75px;">
 	   				<ul>
         			<li><a href="#" onclick="switchAboutView(0);">News</a></li>
