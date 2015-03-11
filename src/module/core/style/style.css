@@ -47,6 +47,7 @@ p {
 	position: absolute;
   background: #d27b4b; 
   text-decoration: none;
+  font-weight: bold;
   width: 80px;
   bottom: 20px;
   left: 110px;

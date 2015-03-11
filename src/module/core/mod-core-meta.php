@@ -26,7 +26,8 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 
 <!--================== Core Module Meta ==================-->
 
-<!-- initialize calendar widget -->
+<!-- initialize calendar widget - commented for now because buggy
+
 <script id="spc-event-calendar-script" src="http://northbridgetech.org/dev/nexus/module/calendar/services/event-calendar/event-calendar.php?accessKey=98641b8c5f580fd30198f0d162e55a1e"></script>
 
 <script language="javascript" type="text/javascript">
@@ -39,6 +40,10 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
    });
 </script>
 
+end widget comment out-->
+
+
+
 <!-- http://purecss.io/ -->
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/pure-min.css" />
 <!-- http://fortawesome.github.io/Font-Awesome/ -->
@@ -46,6 +51,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 <!-- https://www.google.com -->
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans|Oxygen|Swanky+and+Moo+Moo">
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/style.css" />		
+<link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/mod-core.css" />	
 
 <!-- Stripe -->
 <script language="javascript" type="text/javascript" src="https://checkout.stripe.com/v2/checkout.js"></script>

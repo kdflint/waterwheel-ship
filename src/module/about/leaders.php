@@ -35,7 +35,8 @@ require_once("../core/domain/Util.php");
 
 	<div id="leaderIndex1" class="mod-leader-frame">
 		<p style="font-weight:bold;">Chief Executive Officer<span style="float:right;padding:10px;"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_kf.jpg" id="kf" width="100" height="100" style="border-radius:10px;"/></span></p>
-		<p class="mod-about-leaderText">... </p>
+		<p class="mod-about-leaderText">Kathy Flint (M.S. with honors, University of Chicago) is the founder and CEO of Northbridge Technology Alliance</p>
+		<p class="mod-about-normalText">In 2013 Kathy shifted her professional focus from the corporate sector to the nonprofit sector in order to advance the level of technology resources that are available to social change-makers. Prior to the founding of Northbridge, Kathy served in a variety of corporate software leadership roles. Most recently she was positioned with U.S. Bancorp as Development Manager for Internet and Electronic Payments, where she led enterprise-scale software engineering efforts supporting $5 billion in electronic transactions annually. </p>
 	</div>
 	<div id="leaderIndex2" class="mod-leader-frame" style="visibility:visible;opacity:1;">
 		<p class="mod-about-leaderText"><span style="float:right;padding:5px;"><span class="fa fa-cogs fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getHttpCorePath(); ?>/index.php?view=volunteer">Volunteer</a></span>Frankly, there is no such thing as a Northbidge volunteer who is not a leader. It really only seems right to name each and every one!</p>

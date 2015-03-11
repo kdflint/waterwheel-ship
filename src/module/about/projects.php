@@ -14,12 +14,12 @@ require_once("../core/domain/Util.php");
 	</div>
 	<div class="mod-about-frameBottomMiddle">
 			<p style="font-weight:bold;">Nexus</p>
-			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Nexus-Overview.pdf" target="_blank">Whitepaper</a></span>In pilot phase through 2015, Nexus facilitates collaboration among networks of community service providers. Nexus incorporates our global web conference service and adds a suite of web based collaboration tools including directory services, discussion forums, calendering, workgroups, real time chat, private messaging, and collaboration tracking.
+			<p class="mod-about-normalText"><!--<span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Nexus-Overview.pdf" target="_blank">Whitepaper</a></span>-->In pilot phase through 2015, Nexus facilitates collaboration among networks of community service providers. Nexus incorporates our global web conference service and adds a suite of web based collaboration tools including directory services, discussion forums, calendering, workgroups, real time chat, private messaging, and collaboration tracking.
 			</p>
 	</div>
 	<div class="mod-about-frameBottomRight">
 			<p style="font-weight:bold;">Call for Conversation</p>
-			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-comment-o fa-2x"></span> <a class="mod-about-anchor" href="http://linkedin.com" target="_blank">Join the Discussion</a></span>Do you have ideas?</p>
-			<p class="mod-about-normalText">Northbridge hosts active and intentional conversation about advancing technology solutions for folks working toward social justice and community building goals. If you are one of those folks, we would enjoy your contributions on our LinkedIn discussion group.</p>
+			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-comment-o fa-2x"></span> <a class="mod-about-anchor" href="#">(Coming soon)<!--Join the Discussion--></a></span>Do you have ideas?</p>
+			<p class="mod-about-normalText">Northbridge hosts active and intentional conversation about advancing technology solutions for folks working toward social justice and community building goals. If you are one of those folks, we would enjoy your contributions on our LinkedIn discussion group. <b>(Coming soon.)</b></p>
 	</div>
 </div>

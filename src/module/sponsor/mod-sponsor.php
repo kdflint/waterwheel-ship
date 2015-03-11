@@ -7,7 +7,14 @@ require_once("../core/domain/Util.php");
 <script language="javascript" type="text/javascript">$m.wand.copy_value_to_html = true;</script>
 
 <div class="mod-sponsor-contentLeft">
+		<?php if (true) {
+			echo "<div id='fade' class='black_overlay'></div>"; 
+			echo "<div id='light_userprofile' class='white_content' style='border:thin solid #486c7a;'>";
+			include("mod-closed.php");
+			echo "</div>";
+		} ?>
 	<form id="sponsor-form" class="pure-form sponsor-form" action="<?php echo Util::getHttpSponsorPath(); ?>/mod-sponsor-processor.php" method="POST">	
+
 		<input type="hidden" name="testMode" value=""/>			
 		
 		<div class="mod-sponsor-controlLevel">
@@ -120,12 +127,15 @@ require_once("../core/domain/Util.php");
 
 </div>
 <div class="mod-sponsor-contentRight">
+	<?php if (true) {
+			echo "<div id='fade' class='black_overlay'></div>"; 
+		} ?>
 	<p>Your generous gift <span id="levelAmountDisplay">of $100</span> provides <span id="levelTimeDisplay">1 year</span> <span id="levelServiceDisplay">of advanced</span> web conference service to <span id="designateNameDisplay">an eligible 501(c)(3) organization</span>.</p>
 	<p id="sponsorCheckedDisplay">This gift will be acknowledged to our partners in the name of <span id="sponsorNameDisplay">the donor</span>.</p>
 	<p id="sponsorOptOutDisplay">At your request this gift will remain anonymous.</p>						
 	<p id="impactCheckedDisplay">We will be delighted to send your targeted impact report to <span id="impactEmailDisplay">the donation email address</span>.</p>
 	<p id="impactOptOutDisplay">At your request we will withold your targeted impact report.</p>	
-	<p id="user-message0" class="user-message"><?php echo $message; ?></p>	
+	<p id="user-message1" class="user-message"><?php echo $message; ?></p>	
 	<div class="mod-sponsor-sponsorButtons">						
 		<a class="pure-button mod-sponsor-button" id="paypalButton" href="#" onclick="sponsorValidateAndSubmit();" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;"><span class="fa fa-paypal" style="font-size:110%;"></span> PayPal</a>
 		<a class="pure-button mod-sponsor-button" id="stripeButton" href="#" style="padding:5px;font-family: 'PT Sans Narrow', sans-serif;font-size:110%;font-size:110%;"><span class="fa fa-cc-stripe" style="font-size:120%;" ></span> Credit</a>

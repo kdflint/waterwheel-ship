@@ -57,9 +57,9 @@ require_once("../core/domain/Util.php");
 			<p>For more information or to be considered for a team placement, submit this no-obligation form.</p>
 			<p style="font-weight:normal;">Here are some resources that describe the Northbridge volunteer experience.</p>
 		</div>
-		<p><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getHttpVolunteerPath(); ?>/whyVolunteerWithNorthbridge.pdf" target="_blank" style="margin-left:5px;">Why Volunteer?</a></p>
+		<!--<p><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getHttpVolunteerPath(); ?>/whyVolunteerWithNorthbridge.pdf" target="_blank" style="margin-left:5px;">Why Volunteer?</a></p>-->
 		<p><span class="fa fa-github fa-2x"></span> <a class="mod-volunteer-anchor" href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank" style="margin-left:5px;">Team Playbook</a> </p>
-		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-volunteer-anchor" href="#" style="margin-left:3px;" onclick="$('td:eq(0)').trigger('click');">Information Webinar</a></p>
+		<!--<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-volunteer-anchor" href="#" style="margin-left:3px;" onclick="$('td:eq(0)').trigger('click');">Information Webinar</a></p>-->
 		<p style="position:absolute;left:140px;">
 			<a class="twitter-share-button"
 				href="https://twitter.com/share"
