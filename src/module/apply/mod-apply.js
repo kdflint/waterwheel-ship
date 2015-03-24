@@ -25,9 +25,7 @@ function applyValidateAndSubmit() {
     tnameField.style.backgroundColor = "white";
     tnameField.placeholder = "Team name";
     if (tname == null || tname == "") {
-      tnameField.placeholder = "Team name is required.";
-      tnameField.style.background = errorBackground;
-      pass = false;
+      pass = true;
     } else if (!isSafeCharacterSet(tname)) {
     	tnameField.placeholder = "Not allowed: < > % * & = / \\ !";
       tnameField.style.background = errorBackground;
@@ -55,11 +53,9 @@ function applyValidateAndSubmit() {
     einField.style.backgroundColor = "white";
     einField.placeholder = "EIN";
     if (ein == null || ein == "" ) {
-      einField.placeholder = "EIN is required.";
-      einField.style.background = errorBackground;
-      pass = false;
+      pass = true;
     } else if (!ein.match(/[\d]{2}-?[\d]{7}/)) {
-    	einField.placeholder = "Valid EIN is required.";
+    	einField.placeholder = "Valid EIN is required (or none).";
       einField.style.background = errorBackground;
     	einField.value = "";
     	pass = false;

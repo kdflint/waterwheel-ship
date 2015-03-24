@@ -71,6 +71,10 @@ final class Util {
 		return self::getFileCorePath() . self::$domain_path;
 	}
 	
+	public static function getStaticDownloadPath() {
+		return "http://northbridgetech.org/downloads";
+	}
+	
 	public static function getEnvName() {
 		return ENV_NAME;
 	}

@@ -42,8 +42,6 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 
 end widget comment out-->
 
-
-
 <!-- http://purecss.io/ -->
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/pure-min.css" />
 <!-- http://fortawesome.github.io/Font-Awesome/ -->
@@ -61,7 +59,7 @@ end widget comment out-->
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/script.js" ></script>
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/jquery.hslides.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/jquery.easing.js"></script>
-		
+
 <!-- initialize horizontal sliders, using context passed to page -->
 <script language="javascript" type="text/javascript">
 		$((function(){
@@ -94,3 +92,7 @@ end widget comment out-->
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<script language="javascript" type="text/javascript">
+	preloadCurtain = new Image(13,119);
+	preloadCurtain.src = "<?php echo $coreHttpPath; ?>/images/curtain.png";
+</script>

@@ -15,14 +15,14 @@ require_once("../core/domain/Util.php");
 		} ?>
 		<div class="mod-apply-columnLeft">
 			<div class="mod-apply-controlLabel">Team Information</div>
-				<input type="text" name="tname" placeholder="Team Name" maxlength="50"><span class="required"> *</span>
+				<input type="text" name="tname" placeholder="Team Name" maxlength="50"></span>
 				<input type="text" name="cname" placeholder="Contact Name" maxlength="50"><span class="required"> *</span>
 				<input type="email" name="email_1" placeholder="Email" required><span class="required"> *</span>
 				<input type="email" name="email_2" placeholder="Confirm Email" required><span class="required"> *</span>
 			
 			<div class="mod-apply-controlLabel" style="margin-top: 10px;">Organization Information</div>
 				<input type="text" name="oname" placeholder="Organization Name" maxlength="75"><span class="required"> *</span>
-				<input type="text" name="ein" placeholder="EIN" maxlength="10"><span class="required"> *</span>
+				<input type="text" name="ein" placeholder="EIN" maxlength="10"></span>
 				<input type="text" name="url" placeholder="Web Site" maxlength="100"><span class="required"> *</span>
          <select id="cause" name="budget">
          		<option value="0" selected>Organization Budget Req'd</option>
@@ -72,7 +72,8 @@ require_once("../core/domain/Util.php");
 			<p>No gimmicks. No obligation. Use this form to apply for partnership with Northbridge Technology Alliance.</p>
 			<p style="font-weight:normal;">Partnership gains eligibility for Northbridge technology services, including space in our global web conference center.</p>
 		</div>
-		<!--<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Whitepaper_grant_details.pdf" style="margin-left:5px;" target="_blank" >Partnership Details</a></p>-->
+		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;" target="_blank" >Partnership Details</a></p>
+		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_tech_specs.pdf" style="margin-left:5px;" target="_blank" >Micro-grant and Technical Details</a></p>
 		<!--<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="#" style="margin-left:3px;" onclick="$('td:eq(0)').trigger('click');">Information Webinar</a></p>-->
 		<p style="position:absolute;left:140px;">
 			<a class="twitter-share-button"

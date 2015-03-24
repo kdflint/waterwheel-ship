@@ -32,12 +32,15 @@ class Application {
 	}
 	
 	public function setTname($tin) {
-		if (isset($tin) &&
-			  Validate::string($tin, array('min_length' => 1, 'max_length' => 50)) &&
+		if (isset($tin) && strlen($tin) > 0) {
+			if (Validate::string($tin, array('min_length' => 1, 'max_length' => 50)) &&
 			  Util::isCleanCharacterSet($tin)) {
 				 $this->tname = $tin;
-		} else {
-			throw new Exception("Invalid state on team name.");
+			} else {
+				throw new Exception("Invalid state on team name.");
+	  	}
+	  } else {
+	  	$this->tname = "";
 	  }
 	  return;
 	}
@@ -66,8 +69,11 @@ class Application {
 	
 	public function setEin($ein) {
 		$tmp;
-		if (isset($ein)) {
+		if (isset($ein) && strlen($ein) > 0) {
 			$tmp = str_replace("-","",$ein);
+		} else {
+			$this->ein = "";
+			return;
 		}
 		if (isset($tmp) &&
 			  Validate::string($tmp, array('format' => VALIDATE_NUM, 'min_length' => 9, 'max_length' => 9))) {

@@ -49,7 +49,7 @@ class Message {
     	case self::VOLUNTEER_NOTIFY:
         return "Volunteer Notification";
     	case self::APPLICATION_CONFIRM:
-        return "Application Subject";
+        return "Application Submission Confirmation";
       case self::APPLICATION_NOTIFY;
       	return "Application Notification";
     	default:
