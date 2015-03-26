@@ -104,18 +104,17 @@ header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index
 				<div id="navTopAboutContext">
 					<?php include("whitepaper-link.php"); ?>			
 				</div>
-				<div id="calendar" style="position:absolute;top:195px;">
-					<div id="sm-links" style="margin-bottom:5px;">
-						<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x olive" style="margin-left:7px;"></a>
-						<a href="https://plus.google.com/u/0/b/101145194341428988499/101145194341428988499/posts" target="_blank"><span class="fa fa-google-plus-square fa-3x olive" style="margin-left:7px;"></a>
-						<a href="https://www.linkedin.com/company/2232384" target="_blank"><span class="fa fa-linkedin fa-3x olive" style="margin-left:7px;"></a>
-						<a href="https://www.facebook.com/northbridgenfp#" target="_blank"><span class="fa fa-facebook-square fa-3x olive"></a>
-						<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x olive" style="margin-left:7px;"></a>
-					</div>
+				<div id="calendar" style="position:absolute;top:192px;width:200px;">
 					<button id="contextSwitch" class="button" onClick="switchToAbout()">About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;"></span></button>
-					<!-- Calendar plugin -->
-					<!--<div id="event-list"></div>-->
-					<p class="otherblue" style="margin-top:10px;font-size:130%;text-align:center;"> Upcoming Events </p>
+					<div id="sm-links" style="margin-top:10px;">
+						<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x skyblue" style="margin-left:5px;"></a>
+						<a href="https://plus.google.com/u/0/b/101145194341428988499/101145194341428988499/posts" target="_blank"><span class="fa fa-google-plus-square fa-3x skyblue" style="margin-left:5px;"></a>
+						<a href="https://www.linkedin.com/company/2232384" target="_blank"><span class="fa fa-linkedin fa-3x skyblue" style="margin-left:5px;"></a>
+						<a href="https://www.facebook.com/northbridgenfp#" target="_blank"><span class="fa fa-facebook-square fa-3x skyblue" style="margin-left:5px;"></a>
+						<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x skyblue" style="margin-left:5px;"></a>
+					</div>
+					<!-- EventBrite widget -->
+					<div style="width:200px;text-align:center;margin-left:5px;margin-top:5px;" ><iframe  src="https://www.eventbrite.com/calendar-widget?eid=16317964471&showPrivate=1&sig=AGbIMNxpHUlRkcT_ZbQGyQ7X_arlwKyFyQ" frameborder="0" height="377" width="200" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:195px; text-align:center;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/ecal">Event management</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=ecal">Eventbrite</a></div></div>
 				</div>
 				<?php // include("../..."); ?>
 			</div>

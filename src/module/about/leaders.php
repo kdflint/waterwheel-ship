@@ -4,7 +4,7 @@ require_once("../core/domain/Util.php");
 
 <p class="mod-about-leaderText">Northbridge leaders are made of special stuff. This organization is created by our leaders from the start to put front and center the concerns of those who are traditionally marginalized. You don't find this every day of the week, and goodness like this does not come into being without real life leaders who are able to envision and then forge new paths into the future. </p>
 
-<div class="pure-menu pure-menu-open" style="border-width:0px;">
+<div class="pure-menu pure-menu-open" style="border-width:0px;width:150px;">
 	<ul>
 		<li><a href="#" onclick="switchLeaderView(0);" style="width:100px;margin-bottom:5px;text-align:left;">Board of Directors</a></li>
 		<li><a href="#" onclick="switchLeaderView(1);" style="width:100px;margin-bottom:5px;text-align:left;">Executive Staff</a></li>

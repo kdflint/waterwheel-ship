@@ -72,9 +72,9 @@ require_once("../core/domain/Util.php");
 			<p>No gimmicks. No obligation. Use this form to apply for partnership with Northbridge Technology Alliance.</p>
 			<p style="font-weight:normal;">Partnership gains eligibility for Northbridge technology services, including space in our global web conference center.</p>
 		</div>
-		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;" target="_blank" >Partnership Details</a></p>
-		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_tech_specs.pdf" style="margin-left:5px;" target="_blank" >Micro-grant and Technical Details</a></p>
-		<!--<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="#" style="margin-left:3px;" onclick="$('td:eq(0)').trigger('click');">Information Webinar</a></p>-->
+		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Partnership Details</a></p>
+		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_tech_specs.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Conference Room Details</a></p>
+		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="https://www.eventbrite.com/e/orientation-webinar-tickets-16320055726?ref=ecal" style="margin-left:3px;font-weight:bold;" target="_blank">Orientation Webinar</a></p>
 		<p style="position:absolute;left:140px;">
 			<a class="twitter-share-button"
 				href="https://twitter.com/share"
