@@ -67,7 +67,7 @@
 .mod-leader-frame {
 	position: absolute;
 	top: 98px;	
-	width: 430px;
+	width: 500px;
 	height: 385px;
 	left: 160px;
 	visibility: hidden;
@@ -77,6 +77,7 @@
 	border: 1px solid #fcb040;
 	border-radius: 10px;
 }
+
 
 .mod-about-header {
 	font-weight: bold;

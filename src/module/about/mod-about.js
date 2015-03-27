@@ -13,8 +13,17 @@ function switchAboutView(viewIndex) {
 	document.getElementById("aboutQuote" + viewIndex).style.opacity='1';
 }
 
+function switchAllianceView(viewIndex) {
+	for (i = 0; i <= 1; i++) {
+	  document.getElementById("allianceIndex" + i).style.visibility='hidden';
+    document.getElementById("allianceIndex" + i).style.opacity='0';
+	}
+	document.getElementById("allianceIndex" + viewIndex).style.visibility='visible';
+	document.getElementById("allianceIndex" + viewIndex).style.opacity='1';
+}
+
 function switchLeaderView(viewIndex) {
-	for (i = 0; i <= 2; i++) {
+	for (i = 0; i <= 1; i++) {
 	  document.getElementById("leaderIndex" + i).style.visibility='hidden';
     document.getElementById("leaderIndex" + i).style.opacity='0';
 	}

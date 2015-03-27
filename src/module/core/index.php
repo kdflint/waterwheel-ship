@@ -126,7 +126,7 @@ header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index
 			<div id="aboutApp" class="aboutApp">
 				<div class="aboutHeader">
 					<img src="images/NB_horizontal_tagline_rgb.png" width="515" height="160" style="padding:30px 10px 10px 30px;"/>
-					<div id="aboutQuote0" class="mod-about-quotes">All in.<br/>No regrets.<br/>Flint</div>
+					<div id="aboutQuote0" class="mod-about-quotes">[News is] a first rough draft of history.<br/>Graham.</div>
 					<div id="aboutQuote1" class="mod-about-quotes" style="visibility:visible;opacity:1;">In the shadow of each other, the people live.<br/>Proverb.</div>
 					<div id="aboutQuote2" class="mod-about-quotes">It always seems impossible until it's done.<br/>Mandela</div>
 					<div id="aboutQuote3" class="mod-about-quotes">... go instead where there is no path and leave a trail.<br/>Emerson</div>
@@ -136,9 +136,9 @@ header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index
 	   				<ul>
         			<li><a href="#" onclick="switchAboutView(0);">News</a></li>
         			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(1);">About</a></li>
+        			<li><a href="#" onclick="switchAboutView(4);">Alliance</a></li>
         			<li><a href="#" onclick="switchAboutView(2);">Projects</a></li>
         			<li><a href="#" onclick="switchAboutView(3);">Leaders</a></li>
-        			<li><a href="#" onclick="switchAboutView(4);">Partners</a></li>
         			<li><a href="#" onclick="switchAboutView(5);">Gallery</a></li>
     				</ul>
 					</div>
@@ -157,7 +157,7 @@ header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index
 						<?php include("../about/leaders.php"); ?>		
           </div>
 					<div id="aboutIndex4" class="mod-about-frame">
-						<?php include("../about/partners.php"); ?>		
+						<?php include("../about/alliance.php"); ?>		
           </div>
 					<div id="aboutIndex5" class="mod-about-frame">
 						<?php include("../about/gallery.php"); ?>		

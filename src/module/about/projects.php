@@ -3,7 +3,7 @@ require_once("../core/domain/Util.php");
 ?>
 
 <p class="mod-about-header">Build IT Together</p>
-<p class="mod-about-leaderText"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Build-IT-Together.pdf" target="_blank">Program Whitepaper</a></span>All Northbridge projects are launched and supported within the framework of the Build IT Together program. This program provides a framework within which NorthBridge partners work together to imagine and create technology solutions that can raise productivity for many organizations at once.</p>
+<p class="mod-about-leaderText"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Whitepaper_build_it_together.pdf" target="_blank">Program Whitepaper</a></span>All Northbridge projects are launched and supported within the framework of the Build IT Together program. This program provides a framework within which NorthBridge partners work together to imagine and create technology solutions that can raise productivity for many organizations at once.</p>
 <p class="mod-about-leaderText">Our partners provide the ideas; NorthBridge structures the conversation and provides technical leadership and implementation.</p>
 
 <div class="mod-about-frameBottom">
