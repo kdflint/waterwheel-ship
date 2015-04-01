@@ -3,7 +3,7 @@ require_once("../core/domain/Util.php");
 ?>
 
 <p class="mod-about-header">Build IT Together</p>
-<p class="mod-about-leaderText"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Whitepaper_build_it_together.pdf" target="_blank">Program Whitepaper</a></span>All Northbridge projects are launched and supported within the framework of the Build IT Together program. This program provides a framework within which NorthBridge partners work together to imagine and create technology solutions that can raise productivity for many organizations at once.</p>
+<p class="mod-about-leaderText"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_build_it_together.pdf" target="_blank">Program Whitepaper</a></span>All Northbridge projects are launched and supported within the framework of the Build IT Together program. This program provides a framework within which NorthBridge partners work together to imagine and create technology solutions that can raise productivity for many organizations at once.</p>
 <p class="mod-about-leaderText">Our partners provide the ideas; NorthBridge structures the conversation and provides technical leadership and implementation.</p>
 
 <div class="mod-about-frameBottom">
@@ -14,7 +14,7 @@ require_once("../core/domain/Util.php");
 	</div>
 	<div class="mod-about-frameBottomMiddle">
 			<p style="font-weight:bold;">Nexus</p>
-			<p class="mod-about-normalText"><!--<span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getHttpDownloadPath(); ?>/Nexus-Overview.pdf" target="_blank">Whitepaper</a></span>-->In pilot phase through 2015, Nexus facilitates collaboration among networks of community service providers. Nexus incorporates our global web conference service and adds a suite of web based collaboration tools including directory services, discussion forums, calendering, workgroups, real time chat, private messaging, and collaboration tracking.
+			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_nexus.pdf" target="_blank">Project Whitepaper</a></span>In pilot phase through 2015, Nexus facilitates collaboration among networks of community service providers. Nexus incorporates our global web conference service and adds a suite of web based collaboration tools including directory services, discussion forums, calendering, workgroups, real time chat, private messaging, and collaboration tracking.
 			</p>
 	</div>
 	<div class="mod-about-frameBottomRight">

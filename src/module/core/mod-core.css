@@ -94,9 +94,13 @@ div.curtain {
 	top: 0px;
 	left: 960px;	
 	height: 800px;
-	width: 900px;
+	//width: 900px;
 	z-index: 2;
 	background-image: url("images/curtain.png");
+}
+
+#curtain {
+	width: 900px;
 }
 
 #madeUp_index0 {

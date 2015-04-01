@@ -22,13 +22,29 @@ header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index
 		
 <!--================== End Meta ==================-->
 
+	<script type="text/javascript">
+		$(window).load(function() {
+			$(".loader").fadeOut("slow");
+		})
+	</script>
+	
+	<script type="text/javascript">
+		$(window).load(function() { // makes sure the whole site is loaded
+			$("#status").fadeOut("slow"); // will first fade out the loading animation
+			$("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+		})
+	</script>
+
 	</head>
 
 	<body>
 		<!--<div class="loader"></div>-->
+		<div id="preloader">
+	<div id="status">One moment...</div>
+</div>
 
 		<div class="container">
-			<div class="curtain"></div>
+			<div id="curtain" class="curtain"></div>
 					
 			<!-- Sponsor Context -->
 			<div id="sponsorApp" class="sponsorApp">

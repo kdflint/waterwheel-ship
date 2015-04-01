@@ -26,21 +26,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 
 <!--================== Core Module Meta ==================-->
 
-<!-- initialize calendar widget - commented for now because buggy
-
-<script id="spc-event-calendar-script" src="http://northbridgetech.org/dev/nexus/module/calendar/services/event-calendar/event-calendar.php?accessKey=98641b8c5f580fd30198f0d162e55a1e"></script>
-
-<script language="javascript" type="text/javascript">
-  initSPCWidgets(function() {
-     $("#calendars").spcCalendars();
-     $("#month-calendar").spcMonthCalendar();
-     $("#upcoming-events").spcUpcomingEvents();
-     $("#event-search").spcSearch();
-     $("#event-list").spcEventList();
-   });
-</script>
-
-end widget comment out-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <!-- http://purecss.io/ -->
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/pure-min.css" />
@@ -92,7 +78,9 @@ end widget comment out-->
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<!--
 <script language="javascript" type="text/javascript">
 	preloadCurtain = new Image(13,119);
 	preloadCurtain.src = "<?php echo $coreHttpPath; ?>/images/curtain.png";
 </script>
+-->
