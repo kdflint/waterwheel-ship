@@ -6,7 +6,7 @@ require_once("../core/domain/Util.php");
 		<p class="mod-about-leaderText">The developed world is abundant with computer technology. However, relatively few of these physical and intellectual resources are intentionally leveraged toward solving humanitarian problems.</p>
 		<p class="mod-about-header">At NorthBridge, we intend to reverse this trend.</p>
 		<p class="mod-about-leaderText">We are a tax-exempt, vendor-neutral, volunteer alliance of technology experts with a passion for social justice. We partner with organizations who are working toward increased care and opportunity for marginalized individuals. We specialize in cooperative application development.</p>
-		<iframe width="378" height="213" style="margin-top:10px;" src="//www.youtube.com/embed/fdBmU7KKdoI?rel=0" frameborder="0" allowfullscreen="true"></iframe>
+		<iframe width="378" height="213" id="powtoon_embed" style="margin-top:10px;visibility:hidden;" src="//www.youtube.com/embed/fdBmU7KKdoI?rel=0" frameborder="0" allowfullscreen="true"></iframe>
 	</div>
 	
 	<div class="mod-about-frameRight">

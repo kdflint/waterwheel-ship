@@ -2,7 +2,11 @@
 require_once("../core/domain/Util.php");
 ?>
 
-<p class="mod-about-leaderText">The Alliance is where the Northbridge magic happens. Everything we do as an organization supports a dynamic, working alliance between social leaders and technical leaders. Northbridge helps social leaders pool their expertise, together imagining technology solutions that could raise productivity for all of them. Then our organized and efficient skilled IT volunteer teams dig in and build solutions that advance our partners reach.</p>
+<p class="mod-about-leaderText">
+	<span style="float:right;padding:5px;">
+<span class="fa fa-video-camera fa-1x"></span> <a class="mod-about-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank">Partner Perspective</a></br>
+		<span class="fa fa-video-camera fa-1x"></span> <a class="mod-about-anchor" href="https://youtu.be/KrasyjOjglM" target="_blank">Volunteer Perspective</a>
+	</span> The Alliance is where the Northbridge magic happens. Everything we do as an organization supports a dynamic, working alliance between social leaders and technical leaders. Northbridge helps social leaders pool their expertise, together imagining technology solutions that could raise productivity for all of them. Then our organized and efficient skilled IT volunteer teams dig in and build solutions that advance our partners reach.</p>
 
 <div class="pure-menu pure-menu-open" style="border-width:0px;width:150px;">
 	<ul>
@@ -24,7 +28,7 @@ require_once("../core/domain/Util.php");
 
 	<div id="allianceIndex1" class="mod-leader-frame" style="top:120px;"">
 		<p class="mod-about-leaderText"><span style="float:right;padding:5px;"><span class="fa fa-cogs fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getHttpCorePath(); ?>/index.php?view=volunteer">Volunteer</a></span>Without our volunteers we've got nothing. With them we change the world. It really only seems right to name each and every one!</p>
-		<p class="mod-about-leaderText">But since that's not possible in this space, and since our teams do enjoy a little friendly competition amongs themselves, we settle for naming a Team of the Month.</p>
+		<p class="mod-about-leaderText">But since that's not possible in this space, and since our teams do enjoy a little friendly competition amongst themselves, we settle for naming a Team of the Month.</p>
 		<p class="mod-about-header">Volunteer Team of the Month</p>
 		<p class="mod-about-normalText">Team North Stars continues to break ground not only by developing features for the pilot deployment of Nexus but also for refining the Northbridge methods for volunteer engagement. The North Stars are</p>
 		<ul>

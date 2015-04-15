@@ -48,7 +48,7 @@ require_once("../core/domain/Util.php");
 				<div class="mod-apply-controlContent">
 					<input type="checkbox" name="services[]" value="6" /> Health Equity<br/>
 					<input type="checkbox" name="services[]" value="7" /> Education Equity<br/>
-					<input type="checkbox" name="services[]" value="8" /> Environment Equity<br/>
+					<input type="checkbox" name="services[]" value="8" /> Environmnt Equity<br/>
 					<input type="checkbox" name="services[]" value="5" /> Human/Civil Rights<br/>
 				</div>
 			</div>
@@ -70,9 +70,10 @@ require_once("../core/domain/Util.php");
 	<div class="mod-apply-frameRight">
 		<div class="mod-apply-controlLabel">
 			<p>No gimmicks. No obligation. Use this form to apply for partnership with Northbridge Technology Alliance.</p>
-			<p style="font-weight:normal;">Partnership gains eligibility for Northbridge technology services, including space in our global web conference center.</p>
+			<p style="font-weight:normal;">Partnership gains eligibility for our technology services, including our web conference center.</p>
 		</div>
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Partnership Details</a></p>
+		<p><span class="fa fa-video-camera fa-2x"></span> <a class="mod-apply-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank" style="margin-left:5px;font-weight:bold;">A Partner Perspective</a> </p>
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_tech_specs.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Conference Room Details</a></p>
 		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="https://www.eventbrite.com/e/orientation-webinar-tickets-16320055726?ref=ecal" style="margin-left:3px;font-weight:bold;" target="_blank">Orientation Webinar</a></p>
 		<p style="position:absolute;left:140px;">
@@ -80,7 +81,7 @@ require_once("../core/domain/Util.php");
 				href="https://twitter.com/share"
 				data-url="<?php echo Util::getHttpCorePath(); ?>/index.php?view=apply"
 				data-via="<?php echo Util::getTwitterHandle(); ?>"
-				data-text="Exclusive opportunity for community building nonprofits.">Tweet
+				data-text="Don't miss! Technology for community building nonprofits.">Tweet
 			</a>
 			<script>
 				window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));

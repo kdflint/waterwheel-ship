@@ -2,7 +2,7 @@
 require_once("../core/domain/Util.php");
 ?>
 
-<p class="mod-about-leaderText">Northbridge leaders are made of special stuff. This organization is created by our leaders from the start to put front and center the concerns of those who are traditionally marginalized. You don't find this every day of the week, and goodness like this does not come into being without real life leaders who are able to envision and then forge new paths into the future. </p>
+<p class="mod-about-leaderText">Northbridge leaders are made of special stuff. This organization was founded from the start to put front and center the concerns of those who are traditionally marginalized. You don't find this every day of the week, and goodness like this does not come into being without real life leaders who are able to envision and then forge new paths into the future. </p>
 
 <div class="pure-menu pure-menu-open" style="border-width:0px;width:150px;">
 	<ul>
@@ -34,11 +34,11 @@ require_once("../core/domain/Util.php");
 
 	<div id="leaderIndex1" class="mod-leader-frame">
 		<p style="font-weight:bold;">Chief Executive Officer<span style="float:right;padding:10px;"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_kf.jpg" id="kf" width="100" height="100" style="border-radius:10px;"/></span></p>
-		<p class="mod-about-leaderText">Kathy Flint<br/></p>
+		<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.youtube.com/playlist?list=PL8w0M4fNcdiBjWC5yamhB4g61ytByQ_wT" target="_blank" style="margin-left:5px;font-weight:bold;"><span class="fa fa-video-camera fa-2x" style="margin-right:20px;"></span></a>Kathy Flint</p>
 		<p class="mod-about-normalText">In 2011 Kathy founded Northbridge Technology Alliance in order to realize her vision for bringing technological innovation into the service of social progress. In 2013 she shifted her professional focus from the corporate sector to the nonprofit sector in order to lead Northbridge to its full potential.</p>
 		<p class="mod-about-normalText">Prior to founding Northbridge, Kathy served in a variety of Fortune 500 corporate software engineering and leadership roles. Most recently she was positioned with U.S. Bancorp as Development Manager for Internet and Electronic Payments, where she led enterprise-scale software engineering, architecture, and security efforts supporting $5 billion in electronic financial transactions annually. </p>
 		<p class="mod-about-normalText">When not coding, leading volunteers, speaking, or fundraising for Northbridge, Kathy enjoys playing the cello and figuring out how to be the mother of two brilliant teenagers in Evanston, Illinois. </p>
-		<p class="mod-about-normalText">M.S. with honors, University of Chicago</p>
+		<p class="mod-about-normalText">M.S. with honors, University of Chicago </p>
 	</div>
 </div>
 

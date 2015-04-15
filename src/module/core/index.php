@@ -74,7 +74,7 @@ header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index
 										<p><span class="fa fa-send fa-3x tan" ></p>
 									</div>
 									<h1 class="slider white">Is your team changing the world?</h1>
-									<p class="white"><b>Are you on a team that is doing social justice or community building work?</b> You may be eligible for a global web conference room.</p>
+									<p class="white"><b>Are you on a team that is doing social justice or community building work?</b> You are eligible for a global web conference room.</p>
 								</div>
 							</li>
 							<li class="two">
@@ -92,7 +92,7 @@ header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index
 										<p><span class="fa fa-cogs fa-3x otherblue"/></p>
 									</div>
 									<h1 class="slider skyblue">Be as big as you want to be!</h1>
-									<p class="skyblue"><b>Use your skills to help others change the world.</b> Join our influential group of volunteers deploying real-world projects.<br/></p>
+									<p class="skyblue"><b>Use your technical skills to help others change the world.</b> Join our influential group of volunteers deploying real-world projects.<br/></p>
 								</div>
 							</li>
 						</ul>
@@ -130,7 +130,7 @@ header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index
 						<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x skyblue" style="margin-left:5px;"></a>
 					</div>
 					<!-- EventBrite widget -->
-					<div style="width:200px;text-align:center;margin-left:5px;margin-top:5px;" ><iframe  src="https://www.eventbrite.com/calendar-widget?eid=16317964471&showPrivate=1&sig=AGbIMNxpHUlRkcT_ZbQGyQ7X_arlwKyFyQ" frameborder="0" height="377" width="200" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:195px; text-align:center;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/ecal">Event management</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=ecal">Eventbrite</a></div></div>
+					<div style="width:200px;text-align:center;margin-left:5px;margin-top:30px;" ><iframe  src="https://www.eventbrite.com/calendar-widget?eid=16317964471&showPrivate=1&sig=AGbIMNxpHUlRkcT_ZbQGyQ7X_arlwKyFyQ" frameborder="0" height="377" width="200" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:195px; text-align:center;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/ecal">Event management</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=ecal">Eventbrite</a></div></div>
 				</div>
 				<?php // include("../..."); ?>
 			</div>
