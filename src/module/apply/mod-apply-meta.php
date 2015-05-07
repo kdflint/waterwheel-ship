@@ -9,5 +9,14 @@ require_once("../core/domain/Util.php");
 
 <link rel="stylesheet" type="text/css" href="<?php echo Util::getHttpApplyPath(); ?>/mod-apply.css" />
 
-<script language="javascript" type="text/javascript" src="<?php echo Util::getHttpApplyPath(); ?>/mod-apply.js"></script>	
+<!-- register email-info lightbox close event -->
+<script>
+	$(document).mouseup(function (event){
+    var clickedElement = event.target;
+    if(clickedElement.id.substring(0,10) !== "info-email") {
+			hideInfoEmailField();
+		}
+	});
+</script>
 
+<script language="javascript" type="text/javascript" src="<?php echo Util::getHttpApplyPath(); ?>/mod-apply.js"></script>	

@@ -4,7 +4,7 @@ require_once("domain/Util.php");
 $coreHttpPath = Util::getHttpCorePath();
 $envName = Util::getEnvName();
 
-$viewArray = array("apply"=>"0", "sponsor"=>"1", "volunteer"=>"2");
+$viewArray = array("apply"=>"0", "sponsor"=>"1", "volunteer"=>"2", "apply_form"=>"0");
 $viewSuccess = array(
 	"volunteer"=>"Got it! Your confirmation email will be delivered in a few minutes.",
 	"apply"=>"Got it! Your confirmation email will be delivered in a few minutes."
@@ -12,8 +12,9 @@ $viewSuccess = array(
 
 // initialize slide focus
 $slideIndex = 0;
-if(isset($_GET['view']) && isset($viewArray[$_GET['view']])) {
+if (isset($_GET['view']) && isset($viewArray[$_GET['view']])) {
   $slideIndex = $viewArray[$_GET["view"]];
+  $_GET['context'] = "nexus";
 }
 
 // initialize user messages
@@ -78,9 +79,3 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<!--
-<script language="javascript" type="text/javascript">
-	preloadCurtain = new Image(13,119);
-	preloadCurtain.src = "<?php echo $coreHttpPath; ?>/images/curtain.png";
-</script>
--->

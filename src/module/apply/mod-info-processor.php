@@ -18,21 +18,11 @@ if (isset($_POST['testMode']) && !strcmp($_POST['testMode'], "true")) {
 if (isset($application)) {
 	
 	try {
-		$application->setOname($_POST['oname']); 
-		$application->setEin($_POST['ein']);
-		$application->setUrl($_POST['url']);
-		$application->setBudget($_POST['budget']);
-		$application->setTname($_POST['tname']);
-		$application->setCname($_POST['cname']);
 		$application->setEmail($_POST['email_1']);
-		$application->setServices($_POST['services']);		
-		$application->setServiceComment($_POST['otherService']);
-		$application->setReach($_POST['reach']);		
-		$application->setMission($_POST['mission']);	
 	} catch(Exception $e) { logErrorAndReturn($e, $testMode, null); }
 			
-	$application->apply();
-	$application->notify();
+	$application->sendInformation();
+	
 } else { 
 	
 	logErrorAndReturn("Application object is null.", $testMode, null);
@@ -44,16 +34,16 @@ function logErrorAndReturn($error, $test, $app) {
 	if ($test) {
 		echo $error->getMessage();
 	} else {
-		header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=apply");
+		//header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=apply");
 	}
 	exit(0);
 }
 
 function logNormalAndReturn($test, $app) {
 	if ($test) {
-		header("location:" . Util::getHttpApplyPath() . "/tester.php?context=nexus&view=apply&success=true");
+		//header("location:" . Util::getHttpApplyPath() . "/tester.php?context=nexus&view=apply");
 	} else {
-		header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=apply&success=true");
+		//header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=apply");
 	}
 	exit(0);
 }	

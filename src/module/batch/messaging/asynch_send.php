@@ -10,7 +10,7 @@ $logger = Log::singleton("file", "message_log", "", $conf, PEAR_LOG_DEBUG);
 $sendQueueLengthMax = 10;
 $queueEmpty = FALSE;
 
-$logger->log("Message process started", PEAR_LOG_DEBUG);
+$logger->log("Message process started", PEAR_LOG_INFO);
 
 while (!$queueEmpty) {
 
@@ -20,6 +20,7 @@ while (!$queueEmpty) {
 	
 	while ($row = pg_fetch_array($cursor)) {
 		$message = new Message($row['type'], $row['to'], $row['name']);
+		$logger->log("Message dump " . $message->toString(), PEAR_LOG_DEBUG);
 		$message->send();
 		$counter++;
 		$query = "update message_queue set status_id_fk = '11', update_dttm = now() where id = $1";

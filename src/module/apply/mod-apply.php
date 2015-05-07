@@ -4,7 +4,7 @@ require_once("../core/domain/Util.php");
 
 ?>
 
-<form id="apply-form" class="pure-form apply-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-apply-processor.php" method="POST">
+<form id="apply-form" class="pure-form apply-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-apply-processor.php" method="POST" style="visibility:hidden;opacity:0;transition: opacity 1s;">
 	<input type="hidden" name="testMode" value=""/>
 	<div class="mod-apply-frameLeft">	
 		<?php if (false) {
@@ -69,14 +69,16 @@ require_once("../core/domain/Util.php");
 	</div>		
 	<div class="mod-apply-frameRight">
 		<div class="mod-apply-controlLabel">
-			<p>No gimmicks. No obligation. Use this form to apply for partnership with Northbridge Technology Alliance.</p>
+			<p><a class="pure-button button-link" href="javascript:void(0)" onclick="switchToApplyInfo();" style="margin:5px 0px 5px 10px;width:80%;"><span class="fa fa-step-backward" style="font-size:90%;margin-right:4px;" ></span> Back to Menu</a></p>
+			<p>Use this form to apply for partnership with Northbridge Technology Alliance.</p>
 			<p style="font-weight:normal;">Partnership gains eligibility for our technology services, including our web conference center.</p>
 		</div>
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Partnership Details</a></p>
 		<p><span class="fa fa-video-camera fa-2x"></span> <a class="mod-apply-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank" style="margin-left:5px;font-weight:bold;">A Partner Perspective</a> </p>
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_tech_specs.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Conference Room Details</a></p>
 		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="https://www.eventbrite.com/e/orientation-webinar-tickets-16320055726?ref=ecal" style="margin-left:3px;font-weight:bold;" target="_blank">Orientation Webinar</a></p>
-		<p style="position:absolute;left:140px;">
+		<p id="user-message0" class="user-message"><?php echo $message; ?></p>
+		<p style="position:absolute;left:14px;bottom:16px;">
 			<a class="twitter-share-button"
 				href="https://twitter.com/share"
 				data-url="<?php echo Util::getHttpCorePath(); ?>/index.php?view=apply"
@@ -87,8 +89,7 @@ require_once("../core/domain/Util.php");
 				window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
 			</script>
 		</p>
-		<p id="user-message0" class="user-message"><?php echo $message; ?></p>	
-		<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit();" style="background:#99af7d;"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Apply</a>
+		<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit();" style="background: rgba(137, 157, 112, 0.6);"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Apply</a>
 	</div>
 	
 </form>	

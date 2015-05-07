@@ -8,7 +8,7 @@ function switchToAbout() {
 	document.getElementById("sponsorHeaderRight").style.left = "20px";
 	document.getElementById("powtoon_embed").style.visibility='visible';
 	document.getElementById("curtain").style.width = "0px";
- 	document.getElementById("contextSwitch").innerHTML='<span class="fa fa-chevron-circle-left fa-2x tan" style="margin-right:10px;vertical-align:middle;"></span>Web Tools';
+ 	document.getElementById("contextSwitch").innerHTML='<span class="fa fa-chevron-circle-left fa-2x tan" style="margin-right:10px;vertical-align:middle;"></span>Nexus Web Tools';
  	document.getElementById("defaultMenuItem").focus();
 	document.getElementById("contextSwitch").onclick = function() {switchToSponsor()}
 	window.scrollTo(0,0);
@@ -27,6 +27,21 @@ function switchToSponsor() {
 	document.getElementById("contextSwitch").innerHTML='About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;vertical-align:middle;">';
 	document.getElementById("contextSwitch").onclick = function() {switchToAbout()}
 	window.scrollTo(0,0);
+}
+
+function switchToApplyForm() {
+	document.getElementById("info-email-form").style.visibility="hidden";
+	document.getElementById("info-email-form").style.opacity="0";
+	document.getElementById("apply-form").style.visibility="visible";
+	document.getElementById("apply-form").style.opacity="1";
+}
+
+
+function switchToApplyInfo() {
+	document.getElementById("info-email-form").style.visibility="visible";
+	document.getElementById("info-email-form").style.opacity="1";
+	document.getElementById("apply-form").style.visibility="hidden";
+	document.getElementById("apply-form").style.opacity="0";
 }
 
 function isValidEmail(email) {
@@ -56,4 +71,3 @@ function isSafeCharacterSet(set) {
 function otherCommentsSelectCheckbox(checkboxId) {
 		document.getElementById(checkboxId).checked=true;
 }
-

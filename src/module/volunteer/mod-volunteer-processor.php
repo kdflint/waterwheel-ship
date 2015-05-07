@@ -40,16 +40,16 @@ function logErrorAndReturn($error, $test, $vol) {
 	if ($test) {
 		echo $error->getMessage();
 	} else {
-		header("location:" . Util::getHttpCorePath() . "/index.php?view=volunteer");
+		header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=volunteer");
 	}
 	exit(0);
 }
 
 function logNormalAndReturn($test, $vol) {
 	if ($test) {
-		header("location:" . Util::getHttpVolunteerPath() . "/tester.php?view=volunteer&success=true");
+		header("location:" . Util::getHttpVolunteerPath() . "/tester.php?context=nexus&view=volunteer&success=true");
 	} else {
-		header("location:" . Util::getHttpCorePath() . "/index.php?view=volunteer&success=true");
+		header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=volunteer&success=true");
 	}
 	exit(0);
 }	

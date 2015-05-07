@@ -1,3 +1,68 @@
+function showInfoEmailField() {
+	document.getElementById("info-email").style.display='block';
+	document.getElementById("fade").style.display='block';
+}
+
+function hideInfoEmailField() {
+	document.getElementById("info-email").style.display='none';
+	document.getElementById("fade").style.display='none';
+	var input = document.getElementById("info-email-input");
+	var control = document.getElementById("info-email-button");
+	input.innerHTML = "<input id='info-email-input' type='email' name='email_1' placeholder='Recipient Email' maxlength='100' style='width:320px;margin-top:10px;' required >";
+	control.innerHTML = "<span class='fa fa-play' style='margin-right:4px;' ></span>Send";
+  control.onclick = function() {infoEmailValidateAndSubmit();};
+}
+
+function showInfoSuccessMessage(email_address) {
+	var input = document.getElementById("info-email-input");
+	var control = document.getElementById("info-email-button");
+  input.innerHTML = "<span style='width:320px;position:absolute;margin-left:5px;margin-top:5px;'>Got it! Your information packet will be delivered in a few minutes to " + email_address + ".</span>";
+  control.innerHTML = "<span class='fa fa-close' style='margin-right:4px;' ></span>Close";
+  control.onclick = function() {hideInfoEmailField();};
+}
+
+function infoEmailValidateAndSubmit() {
+	
+		pass = true;
+		var applyForm = document.forms["info-email-form"];
+		var submitButton = document.getElementById("info-email-button");
+		var errorBackground = "rgba(252,176,64,0.5) url('') no-repeat right top";
+
+    var email_1Field = applyForm["email_1"];
+    var email_1 = email_1Field.value;
+    email_1Field.style.backgroundColor = "white";
+    email_1Field.placeholder = "Recipient Email";
+    if (email_1 == null || email_1 == "") {
+      email_1Field.placeholder = "Valid email is required.";
+      email_1Field.style.background = errorBackground;
+      pass = false;
+    } else if (!isValidEmail(email_1)) {
+      email_1Field.placeholder = "Valid email is required.";
+      email_1Field.style.background = errorBackground;
+      email_1Field.value = "";
+   	 	pass = false;
+    } else if (email_1.length > 100) {
+      email_1Field.placeholder = "Email max length is 100";
+      email_1Field.style.background = errorBackground;
+      email_1Field.value = "";
+      pass = false;
+    }
+           
+ 		if (Boolean(pass)) {
+ 			var xhr = new XMLHttpRequest();
+ 			var processor = "../apply/mod-info-processor.php";
+			xhr.onreadystatechange = function() {
+  			if (xhr.readyState > 1 && xhr.status == 200) {
+					showInfoSuccessMessage(email_1);
+  			} else {
+  			}
+  		} 
+    	xhr.open('POST', processor);
+    	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    	xhr.send("email_1=" + email_1);			
+ 		}  
+}
+
 function applyValidateAndSubmit() {
 		
 		var pass = true;
@@ -98,7 +163,6 @@ function applyValidateAndSubmit() {
       email_1Field.value = "";
     	pass = false;
     } else if (email_1.length > 100) {
-    	alert("max length exceeded");
       email_1Field.placeholder = "Email max length is 100";
       email_1Field.style.background = errorBackground;
       email_1Field.value = "";

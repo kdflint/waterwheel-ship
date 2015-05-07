@@ -1,5 +1,5 @@
 
-.mod-apply-frameLeft, .mod-apply-frameRight {
+.mod-apply-frameLeft, .mod-apply-frameRight, .mod-apply-frameSingle {
 	position: absolute;
 	background-color: #ffffff;
 	height:330px;
@@ -23,6 +23,11 @@
 	width: 210px;
 	border-left: thin dashed;
 	border-left-color: #99af7d;
+}
+
+.mod-apply-frameSingle {
+	left: 0px;
+	width: 720px;
 }
 
 .mod-apply-columnLeft {

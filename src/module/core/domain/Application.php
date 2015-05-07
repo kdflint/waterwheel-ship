@@ -169,6 +169,10 @@ class Application {
 		return $this->insertApplication();
 	}
 	
+	public function sendInformation() {
+		$this->queueApplicationInquiryMessage();
+	}
+	
 	public function notify() {
 		$this->queueApplicationConfirmMessage();
 		$this->queueApplicationNotifyMessage();
@@ -199,6 +203,12 @@ class Application {
 		return;
 	}
 
+	private function queueApplicationInquiryMessage() {
+		$query = Util::getMessageQueueInsert();
+		$result = Util::psExecute($query, array("5", $this->email, ""));
+		return;
+	}
+	
 	private function queueApplicationConfirmMessage() {
 		$query = Util::getMessageQueueInsert();
 		$result = Util::psExecute($query, array("3", $this->email, $this->cname));
