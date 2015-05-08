@@ -100,7 +100,8 @@ if(!preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
 				<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x" style="color:#dae0bc;"></a>
 			</div>
 			<div style="position:absolute;top:130px;left:50px;">	
-				<p >We create software solutions for charitable organizations who are engaged in social justice and community-building efforts so that their collective impact is increased.</p>	
+				<p >Is your team changing the world? You may be eligible for a global web conference room.</p>	
+				<p >No games. No gimmicks. Just your mission.</p>
 				<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Order Your Information Packet</a></p>
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> 
 					<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
