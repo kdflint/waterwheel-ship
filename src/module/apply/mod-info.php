@@ -8,7 +8,7 @@ require_once("../core/domain/Util.php");
 	<div class="mod-apply-frameSingle" style="font-size:130%;">	
 		<p style="margin:30px;"><b>Partnership with Northbridge:&nbsp;&nbsp;No games. No gimmicks. Just your mission.</b></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
-		<p style="margin:20px;" ><a class="pure-button button-link" href="https://www.eventbrite.com/e/orientation-webinar-tickets-16320055726?ref=ecal" target="_blank">Register for Webinar</a></p>
+		<p style="margin:20px;" ><a class="pure-button button-link" href="https://www.eventbrite.com/e/information-webinar-tickets-16320068765?ref=ecal" target="_blank">Register for Webinar</a></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="switchToApplyForm()" >Application Form</a></p>
 		<iframe id="partner_perspective_embed" width="378" height="213" style="position:absolute;left:290px;top:90px;" src="https://www.youtube.com/embed/tk-QNJruZgM?rel=0" allowfullscreen="true"></iframe>
 		

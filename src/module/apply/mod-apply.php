@@ -75,8 +75,7 @@ require_once("../core/domain/Util.php");
 		</div>
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Partnership Details</a></p>
 		<p><span class="fa fa-video-camera fa-2x"></span> <a class="mod-apply-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank" style="margin-left:5px;font-weight:bold;">A Partner Perspective</a> </p>
-		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_tech_specs.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Conference Room Details</a></p>
-		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="https://www.eventbrite.com/e/orientation-webinar-tickets-16320055726?ref=ecal" style="margin-left:3px;font-weight:bold;" target="_blank">Orientation Webinar</a></p>
+		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16320068765?ref=ecal" style="margin-left:3px;font-weight:bold;" target="_blank">Information Webinar</a></p>
 		<p id="user-message0" class="user-message"><?php echo $message; ?></p>
 		<p style="position:absolute;left:14px;bottom:16px;">
 			<a class="twitter-share-button"

@@ -44,16 +44,16 @@ function logErrorAndReturn($error, $test, $app) {
 	if ($test) {
 		echo $error->getMessage();
 	} else {
-		header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=apply");
+		header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=apply_form");
 	}
 	exit(0);
 }
 
 function logNormalAndReturn($test, $app) {
 	if ($test) {
-		header("location:" . Util::getHttpApplyPath() . "/tester.php?context=nexus&view=apply&success=true");
+		header("location:" . Util::getHttpApplyPath() . "/tester.php?context=nexus&view=apply_form&success=true");
 	} else {
-		header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=apply&success=true");
+		header("location:" . Util::getHttpCorePath() . "/index.php?context=nexus&view=apply_form&success=true");
 	}
 	exit(0);
 }	
