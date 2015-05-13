@@ -1,6 +1,7 @@
 <?php 
 
 require_once("../core/domain/Util.php");
+$message = "";
 
 ?>
 

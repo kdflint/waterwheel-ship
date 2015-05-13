@@ -42,6 +42,8 @@ function switchToApplyInfo() {
 	document.getElementById("info-email-form").style.opacity="1";
 	document.getElementById("apply-form").style.visibility="hidden";
 	document.getElementById("apply-form").style.opacity="0";
+	// clear previous success message
+	document.getElementById("user-message0").innerHTML='';
 }
 
 function isValidEmail(email) {

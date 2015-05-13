@@ -94,7 +94,7 @@ if(!preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
 			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_rgb.png" width="300" height="82" style="padding:20px 10px 10px 8px;"/>
 			<div style="position:absolute;top:130px;width:45px;padding-left:8px;">		
 				<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x" style="color:#dae0bc;"></a><br/>
-				<a href="https://plus.google.com/u/0/b/101145194341428988499/101145194341428988499/posts" target="_blank"><span class="fa fa-google-plus-square fa-3x" style="color:#dae0bc;"></a><br/>
+				<a href="//plus.google.com/u/0/101145194341428988499?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;"><span class="fa fa-google-plus-square fa-3x" style="color:#dae0bc;"></a><br/>
 				<a href="https://www.linkedin.com/company/2232384" target="_blank"><span class="fa fa-linkedin fa-3x" style="color:#dae0bc;"></a><br/>
 				<a href="https://www.facebook.com/northbridgenfp#" target="_blank"><span class="fa fa-facebook-square fa-3x" style="color:#dae0bc;"></a><br/>
 				<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x" style="color:#dae0bc;"></a>
