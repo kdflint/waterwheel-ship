@@ -165,6 +165,13 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 					<div id="aboutQuote3" class="mod-about-quotes">... go instead where there is no path and leave a trail.<br/>Emerson</div>
 					<div id="aboutQuote4" class="mod-about-quotes">working together... we might just be able to fix it...<br/>Cascio</div>
 					<div id="aboutQuote5" class="mod-about-quotes">All in.<br/>No regrets.<br/>Flint</div>
+					<div style="position:absolute;top:135px;left:560px;"> 
+						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> 
+							<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="float:right;margin-top:25px;"> 
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
+						</form> 
+					</div>
 					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="margin-left:47px;font-size:140%;letter-spacing:.75px;">
 	   				<ul>
         			<li><a href="#" onclick="switchAboutView(0);">News</a></li>
