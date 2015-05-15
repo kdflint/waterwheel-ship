@@ -24,7 +24,7 @@ class Message {
 		// Global links text-to-html translation table
 		// If a link in the text version of the message exactly matches a link here, it will translate into a styled button
 		"http://northbridgetech.org/index.php?view=apply_form" => "Apply Now",
-		"https://www.eventbrite.com/e/orientation-webinar-tickets-16320055726?ref=ecal" => "Register for Webinar",
+		"https://www.eventbrite.com/e/information-webinar-tickets-16320068765?ref=ecal" => "Register for Webinar",
 		"https://youtu.be/tk-QNJruZgM" => "<img src='http://northbridgetech.org/images/video-camera_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;' /> Watch",
 		"http://northbridgetech.org/downloads/Northbridge_partnership.pdf" => "<img src='http://northbridgetech.org/images/file-pdf-o_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;' /> Download",
 		"http://northbridgetech.org/downloads/Northbridge_web_conference_center.pdf" => "<img src='http://northbridgetech.org/images/file-pdf-o_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;'/> Download"
@@ -151,7 +151,7 @@ Content-Transfer-Encoding: 7bit
 			<tr>
 				<td style='vertical-align:top;padding-top:10px;'>
 					<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/twitter_dae0bc_32.png' width='32' height=32' /></a><br/>
-					<a href='https://plus.google.com/u/0/b/101145194341428988499/101145194341428988499/posts' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/google-plus-square_dae0bc_32.png' width='32' height=32' /></a><br/>
+					<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img src='" . Util::getHttpCorePath() . "/images/google-plus-square_dae0bc_32.png' width='32' height=32' /></a><br/>
 					<a href='https://www.linkedin.com/company/2232384' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/linkedin_dae0bc_32.png' width='32' height=32' /></a><br/>
 					<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/facebook-square_dae0bc_32.png' width='32' height=32' /></a><br/>
 					<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/github_dae0bc_32.png' width='32' height=32' /></a>

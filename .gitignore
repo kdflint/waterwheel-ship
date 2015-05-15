@@ -4,4 +4,5 @@
 *.key
 *.bak
 *.cfg
+.pgpass
 src/config
