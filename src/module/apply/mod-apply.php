@@ -23,7 +23,7 @@ require_once("../core/domain/Util.php");
 			<div class="mod-apply-controlLabel" style="margin-top: 10px;">Organization Information</div>
 				<input type="text" name="oname" placeholder="Organization Name" maxlength="75"><span class="required"> *</span>
 				<input type="text" name="ein" placeholder="EIN" maxlength="10"></span>
-				<input type="text" name="url" placeholder="Web Site" maxlength="100"><span class="required"> *</span>
+				<input type="text" name="url" placeholder="Web Site" maxlength="100"></span>
          <select id="cause" name="budget">
          		<option value="0" selected>Organization Budget Req'd</option>
          		<option value="1">$0 - $10,000</option>
@@ -71,11 +71,11 @@ require_once("../core/domain/Util.php");
 		<div class="mod-apply-controlLabel">
 			<p><a class="pure-button button-link" href="javascript:void(0)" onclick="switchToApplyInfo();" style="margin:5px 0px 5px 10px;width:80%;"><span class="fa fa-step-backward" style="font-size:90%;margin-right:4px;" ></span> Back to Menu</a></p>
 			<p>Use this form to apply for partnership with Northbridge Technology Alliance.</p>
-			<p style="font-weight:normal;">Partnership gains eligibility for our technology services, including the Nexus Global Web Conference Center.</p>
+			<p style="font-weight:normal;">Partnership gains eligibility for our technology services, including the global Nexus Web Conference Center.</p>
 		</div>
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-apply-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Partnership Details</a></p>
 		<p><span class="fa fa-video-camera fa-2x"></span> <a class="mod-apply-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank" style="margin-left:5px;font-weight:bold;">A Partner Perspective</a> </p>
-		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16320068765?ref=ecal" style="margin-left:3px;font-weight:bold;" target="_blank">Information Webinar</a></p>
+		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-apply-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16320070771" style="margin-left:3px;font-weight:bold;" target="_blank">Information Webinar</a></p>
 		<p id="user-message0" class="user-message"><?php echo $message; ?></p>
 		<p style="position:absolute;left:14px;bottom:16px;">
 			<a class="twitter-share-button"

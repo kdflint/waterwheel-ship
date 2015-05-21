@@ -1,3 +1,13 @@
+function showInfoWebinarField() {
+	document.getElementById("info-webinar").style.display='block';
+	document.getElementById("fade").style.display='block';
+}
+
+function hideInfoWebinarField() {
+	document.getElementById("info-webinar").style.display='none';
+	document.getElementById("fade").style.display='none';	
+}
+
 function showInfoEmailField() {
 	document.getElementById("info-email").style.display='block';
 	document.getElementById("fade").style.display='block';
@@ -131,9 +141,7 @@ function applyValidateAndSubmit() {
     urlField.style.backgroundColor = "white";
     urlField.placeholder = "Web Site";
     if (url == null || url == "") {
-      urlField.placeholder = "Web Site is required.";
-      urlField.style.background = errorBackground;
-      pass = false;
+      pass = true;
     } else if (url.match(/[<>*]+/) || url.length < 4 || !url.match(/[.]+/)) {
     	urlField.placeholder = "Valid Web Site is required.";
       urlField.style.background = errorBackground;

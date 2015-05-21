@@ -16,6 +16,9 @@ require_once("../core/domain/Util.php");
     if(clickedElement.id.substring(0,10) !== "info-email") {
 			hideInfoEmailField();
 		}
+    if(clickedElement.id.substring(0,10) !== "info-webinar") {
+			hideInfoWebinarField();
+		}
 	});
 </script>
 
