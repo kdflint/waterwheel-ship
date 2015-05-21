@@ -60,7 +60,7 @@ require_once("../core/domain/Util.php");
 		<!--<p><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getHttpVolunteerPath(); ?>/whyVolunteerWithNorthbridge.pdf" target="_blank" style="margin-left:5px;">Why Volunteer?</a></p>-->
 		<p><span class="fa fa-github fa-2x"></span> <a class="mod-volunteer-anchor" href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank" style="margin-left:5px;font-weight:bold;">Team Playbook</a> </p>
 		<p><span class="fa fa-video-camera fa-2x"></span> <a class="mod-volunteer-anchor" href="https://youtu.be/KrasyjOjglM" target="_blank" style="margin-left:5px;font-weight:bold;">A Volunteer Perspective</a> </p>
-		<p><span class="fa fa-comment-o fa-2x"></span> <a class="mod-volunteer-anchor" href="https://www.eventbrite.com/e/orientation-webinar-tickets-16320055726?ref=ecal" target="_blank" style="margin-left:3px;font-weight:bold;">Orientation Webinar</a></p>
+		<p><span class="fa fa-comment-o fa-2x"></span> <a class="mod-volunteer-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16320070771" target="_blank" style="margin-left:3px;font-weight:bold;">Orientation Webinar</a></p>
 		<p style="position:absolute;left:140px;">
 			<a class="twitter-share-button"
 				href="https://twitter.com/share"

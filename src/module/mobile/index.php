@@ -64,7 +64,7 @@ if(!preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
 		function showInfoEmailField() {
 			document.getElementById("info-email").style.display='block';
 		}
-
+		
 		function hideInfoEmailField() {
 			document.getElementById("info-email").style.display='none';
 			var input = document.getElementById("info-email-input");
@@ -109,13 +109,13 @@ if(!preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
 					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
 				</form> 
 				<a href="<?php echo $coreHttpPath; ?>/index.php?context=desktop" style="color:#d27b4b;margin-left:40px;">Desktop Site</a>
+				
 				<div id="info-email" class="white_content" style="min-height:156px;display:none;border-radius:8px;position:absolute;top:2px;left:0px;width:90%;">
 					<form id="info-email-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST">
-						<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:100%;margin-top:10px;" required ></span>
-					
-							<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:left;"><span class="fa fa-close" style="margin-right:4px;" ></span> Close</a>
-							<a id="info-email-button" class="pure-button button-link" onclick="infoEmailValidateAndSubmit();" style="width:46px;border-radius:4px;float:right;"><span class="fa fa-play" style="margin-right:4px;" ></span>Send</a>
-						
+						<p>We will send a packet of information to your email address. Your address used respectfully. We will not spam you.</p>
+						<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:100%;margin-top:10px;" required ></span>					
+							<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:left;"><span class="fa fa-times" style="margin-right:4px;" ></span> Close</a>
+							<a id="info-email-button" class="pure-button button-link" onclick="infoEmailValidateAndSubmit();" style="width:46px;border-radius:4px;float:right;"><span class="fa fa-play" style="margin-right:4px;" ></span>Send</a>						
 					</form>
 				</div>	
 			</div>
@@ -124,9 +124,8 @@ if(!preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
 				<a class="twitter-timeline" width="310" height="250" href="https://twitter.com/NorthbridgeNFP" data-widget-id="568601776015024128">Tweets by @NorthbridgeNFP</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</div>
-
-
 		
 		</div>
 	</body>
 </html>
+
