@@ -196,7 +196,7 @@ class Application {
 		}
 		
 		if (isset($this->serviceComment) && strlen($this->serviceComment) > 0) {
-			$query = "update grant_application_service_area set note = $1 where grant_application_id_fk = " . $appId . " and service_area_id_fk = '9'";
+			$query = "update grant_application_service_area set note = $1 where grant_application_id_fk = " . $appId . " and service_area_id_fk = '2'";
 			Util::psExecute($query, array($this->serviceComment));
 		}
 
