@@ -36,7 +36,6 @@ function switchToApplyForm() {
 	document.getElementById("apply-form").style.opacity="1";
 }
 
-
 function switchToApplyInfo() {
 	document.getElementById("info-email-form").style.visibility="visible";
 	document.getElementById("info-email-form").style.opacity="1";
