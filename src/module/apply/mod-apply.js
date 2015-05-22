@@ -26,7 +26,7 @@ function hideInfoEmailField() {
 function showInfoSuccessMessage(email_address) {
 	var input = document.getElementById("info-email-input");
 	var control = document.getElementById("info-email-button");
-  input.innerHTML = "<span style='width:320px;position:absolute;margin-left:5px;margin-top:5px;'>Got it! Your information packet will be delivered in a few minutes to " + email_address + ".</span>";
+  input.innerHTML = "<span style='width:320px;position:absolute;margin-left:5px;margin-top:5px;'>Got it! Your information packet will be delivered in a few minutes to " + email_address + "</span>";
   control.innerHTML = "<span class='fa fa-close' style='margin-right:4px;' ></span>Close";
   control.onclick = function() {hideInfoEmailField();};
 }
