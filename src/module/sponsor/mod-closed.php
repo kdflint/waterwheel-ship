@@ -1,5 +1,5 @@
 	<div class="mod-apply-controlLabel" style="font-size:125%;">Coming soon - designate your gift to your favorite organization!</div>
-	<p style="font-weight:normal;margin-top:10px;font-size:110%;">Until then, please use our standard donation processing at PayPal. Your $60 or $120 gift will help us make web conferencing available for one full year to a qualified Northbridge partner organization.</p>
+	<p style="font-weight:normal;margin-top:10px;font-size:110%;">Until then, we are grateful to receive your gift of any amount using our standard donation processing at PayPal.&nbsp;</br>&nbsp;</br>Your $60 or $120 gift will help us make web conferencing available for one full year to a qualified Northbridge partner organization.</p>
 	
 	<p style="text-align: right;"> 
 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> 
