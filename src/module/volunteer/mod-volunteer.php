@@ -58,11 +58,11 @@ require_once("../core/domain/Util.php");
 			<p>For more information or to be considered for a team placement, submit this no-obligation form.</p>
 			<p style="font-weight:normal;">Here are some resources that describe the Northbridge volunteer experience.</p>
 		</div>
-		<!--<p><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getHttpVolunteerPath(); ?>/whyVolunteerWithNorthbridge.pdf" target="_blank" style="margin-left:5px;">Why Volunteer?</a></p>-->
 		<p><span class="fa fa-github fa-2x"></span> <a class="mod-volunteer-anchor" href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank" style="margin-left:5px;font-weight:bold;">Team Playbook</a> </p>
 		<p><span class="fa fa-video-camera fa-2x"></span> <a class="mod-volunteer-anchor" href="https://youtu.be/KrasyjOjglM" target="_blank" style="margin-left:5px;font-weight:bold;">A Volunteer Perspective</a> </p>
-		<p><span class="fa fa-comment-o fa-2x"></span> <a class="mod-volunteer-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16320070771" target="_blank" style="margin-left:3px;font-weight:bold;">Information Webinar</a></p>
-		<p style="position:absolute;left:140px;">
+		<p><span class="fa fa-comment-o fa-2x"></span> <a class="mod-volunteer-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16317817030" target="_blank" style="margin-left:3px;font-weight:bold;">Information Webinar</a></p>
+		<p id="user-message2" class="user-message"><?php echo $message; ?></p>	
+		<p style="position:absolute;left:14px;bottom:16px;">
 			<a class="twitter-share-button"
 				href="https://twitter.com/share"
 				data-url="<?php echo Util::getHttpCorePath(); ?>/index.php?view=volunteer"
@@ -73,7 +73,6 @@ require_once("../core/domain/Util.php");
 				window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
 			</script>
 		</p>
-		<p id="user-message2" class="user-message"><?php echo $message; ?></p>	
 		<a class="pure-button button-submit" id="volunteerSubmitButton" href="#" onclick="volunteerValidateAndSubmit();" style="background:#fcb040;"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Submit</a>
 	</div>
 	
