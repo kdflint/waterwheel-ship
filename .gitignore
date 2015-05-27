@@ -6,3 +6,4 @@
 *.cfg
 .pgpass
 src/config
+src/module/core/domain/DbTest.php
