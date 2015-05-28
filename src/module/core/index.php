@@ -84,7 +84,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 										<p><span class="fa fa-send fa-3x tan" ></p>
 									</div>
 									<h1 class="slider white">Is your team changing the world?</h1>
-									<p class="white" style="font-size:115%;margin-top:15px;">You may be eligible for a global web conference room.</p>
+									<p class="white" style="font-size:115%;margin-top:15px;">You may be eligible for a global web meeting room.</p>
 								</div>
 							</li>
 							<li class="two">
