@@ -11,6 +11,12 @@ function switchAboutView(viewIndex) {
 	document.getElementById("aboutIndex" + viewIndex).style.zIndex='10';
 	document.getElementById("aboutQuote" + viewIndex).style.visibility='visible';
 	document.getElementById("aboutQuote" + viewIndex).style.opacity='1';
+
+	if (viewIndex == 1) {
+		document.getElementById("powtoon_embed").style.visibility='visible';
+	} else {
+		document.getElementById("powtoon_embed").style.visibility='hidden';
+	}
 }
 
 function switchAllianceView(viewIndex) {
