@@ -7,6 +7,7 @@ function switchToAbout() {
 	document.getElementById("navTopAboutContext").style.opacity = "1";
 	document.getElementById("sponsorHeaderRight").style.left = "20px";
 	document.getElementById("powtoon_embed").style.visibility='visible';
+	document.getElementById("partner_perspective_embed").style.visibility='hidden';
 	document.getElementById("curtain").style.width = "0px";
  	document.getElementById("contextSwitch").innerHTML='<span class="fa fa-chevron-circle-left fa-2x tan" style="margin-right:10px;vertical-align:middle;"></span>Nexus Web Tools';
  	document.getElementById("defaultMenuItem").focus();
@@ -23,6 +24,7 @@ function switchToSponsor() {
 	document.getElementById("navTopAboutContext").style.opacity = "0";
 	document.getElementById("sponsorHeaderRight").style.left = "520px";
 	document.getElementById("powtoon_embed").style.visibility='hidden';
+	document.getElementById("partner_perspective_embed").style.visibility='visible';
 	document.getElementById("curtain").style.width = "900px";
 	document.getElementById("contextSwitch").innerHTML='About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;vertical-align:middle;">';
 	document.getElementById("contextSwitch").onclick = function() {switchToAbout()}
@@ -34,6 +36,7 @@ function switchToApplyForm() {
 	document.getElementById("info-email-form").style.opacity="0";
 	document.getElementById("apply-form").style.visibility="visible";
 	document.getElementById("apply-form").style.opacity="1";
+	document.getElementById("partner_perspective_embed").style.visibility='hidden';
 }
 
 function switchToApplyInfo() {
@@ -41,6 +44,7 @@ function switchToApplyInfo() {
 	document.getElementById("info-email-form").style.opacity="1";
 	document.getElementById("apply-form").style.visibility="hidden";
 	document.getElementById("apply-form").style.opacity="0";
+	document.getElementById("partner_perspective_embed").style.visibility='visible';
 	// clear previous success message
 	document.getElementById("user-message0").innerHTML='';
 }
