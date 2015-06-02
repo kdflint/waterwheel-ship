@@ -1,21 +1,25 @@
 function showInfoWebinarField() {
 	document.getElementById("info-webinar").style.display='block';
 	document.getElementById("fade").style.display='block';
+	document.getElementById("partner_perspective_embed").style.visibility='hidden';
 }
 
 function hideInfoWebinarField() {
 	document.getElementById("info-webinar").style.display='none';
 	document.getElementById("fade").style.display='none';	
+	document.getElementById("partner_perspective_embed").style.visibility='visible';
 }
 
 function showInfoEmailField() {
 	document.getElementById("info-email").style.display='block';
 	document.getElementById("fade").style.display='block';
+	document.getElementById("partner_perspective_embed").style.visibility='hidden';
 }
 
 function hideInfoEmailField() {
 	document.getElementById("info-email").style.display='none';
 	document.getElementById("fade").style.display='none';
+	document.getElementById("partner_perspective_embed").style.visibility='visible';
 	var input = document.getElementById("info-email-input");
 	var control = document.getElementById("info-email-button");
 	input.innerHTML = "<input id='info-email-input' type='email' name='email_1' placeholder='Recipient Email' maxlength='100' style='width:320px;margin-top:10px;' required >";
