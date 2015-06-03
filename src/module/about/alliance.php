@@ -4,26 +4,28 @@ require_once("../core/domain/Util.php");
 
 <p class="mod-about-leaderText">
 	<span style="float:right;padding:5px;">
-<span class="fa fa-video-camera fa-1x"></span> <a class="mod-about-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank">Partner Perspective</a></br>
+<span class="fa fa-send fa-1x"></span> <a class="mod-about-anchor" href="#" onClick="switchToSponsor();">Apply for Partnership</a><br/>
+		<span class="fa fa-video-camera fa-1x"></span> <a class="mod-about-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank">Partner Perspective</a><br/>
 		<span class="fa fa-video-camera fa-1x"></span> <a class="mod-about-anchor" href="https://youtu.be/KrasyjOjglM" target="_blank">Volunteer Perspective</a>
-	</span> The Alliance is where the Northbridge magic happens. Everything we do as an organization supports a dynamic, working alliance between social leaders and technical leaders. Northbridge helps social leaders pool their expertise, together imagining technology solutions that could raise productivity for all of them. Then our organized and efficient skilled IT volunteer teams dig in and build solutions that advance our partners reach.</p>
+	</span>
+	The Alliance is where the Northbridge magic happens. Everything we do as an organization supports a dynamic, working alliance between social leaders and technical leaders. Northbridge helps social leaders pool their expertise, together imagining technology solutions that could raise productivity for all of them. Then our organized and efficient skilled IT volunteer teams dig in and build solutions that advance our partners reach.</p>
 
 <div class="pure-menu pure-menu-open" style="border-width:0px;width:150px;">
 	<ul>
 		<li><a href="#" onclick="switchAllianceView(0);" style="width:100px;margin-bottom:5px;text-align:left;">Partners</a></li>
 		<li><a href="#" onclick="switchAllianceView(1);" style="width:100px;margin-bottom:5px;text-align:left;">Volunteers</a></li>
 	</ul>
+
 </div>
 
 <div class="leaders">
 	<div id="allianceIndex0" class="mod-leader-frame mod-about-normalText" style="visibility:visible;opacity:1;top:120px;">
-		<p class="mod-about-leaderText">These are just a few of the partners that Northbridge serves.</p>
+		<!--<p class="mod-about-leaderText">These are just a few of the partners that Northbridge serves.</p>-->
 		<img src="<?php echo Util::getHttpAboutPath(); ?>/images/cat.gif" width="223" height="100" style="padding-top:5px;padding-right:20px;"/>
 		<img src="<?php echo Util::getHttpAboutPath(); ?>/images/fh.png" width="234" height="115" style="padding-top:5px;" />
 		<img src="<?php echo Util::getHttpAboutPath(); ?>/images/cfcht.png" width="365" height="88" style="padding-top:5px;" />
 		<img src="<?php echo Util::getHttpAboutPath(); ?>/images/cfhr.png" width="300" height="50" style="padding-top:0px;" />
 		<img src="<?php echo Util::getHttpAboutPath(); ?>/images/edc.png" width="182" height="116" style="padding-top:5px;" />
-
 	</div>
 
 	<div id="allianceIndex1" class="mod-leader-frame" style="top:120px;"">
