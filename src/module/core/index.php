@@ -14,7 +14,13 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 		header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index.php');
 	}
 }
-	
+
+$msie_8 = FALSE;
+$ua = $_SERVER["HTTP_USER_AGENT"];
+if ($ua) {
+	$msie_8 = strpos($ua, 'MSIE 8.0') ? TRUE : FALSE;
+}
+
 ?>
 
 <html>
@@ -44,14 +50,19 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 			$("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
 		})
 	</script>
-
+	
 	</head>
 
 	<body>
 		<!--<div class="loader"></div>-->
 		<div id="preloader">
-	<div id="status">One moment...</div>
-</div>
+			<div id="status">One moment...</div>
+		</div>
+
+		<?php if($msie_8) { ?>
+			<div style="background: #000; text-align: center; position: absolute; top: 0px; width: 100%; color: #FFF;">This website is not compatible with your outdated Internet Explorer version. <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank" style="color: #fff; text-decoration: underline;">Please upgrade here.</a></div>
+			<iframe width="360" height="700" src="http://northbridgetech.org/apps/waterwheel/module/mobile/index.php?context=ie8" frameborder="0" scrolling="no" allowfullscreen></iframe>
+		<?php } else { ?>
 
 		<div class="container">
 			<div id="curtain" class="curtain"></div>
@@ -139,16 +150,25 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 				<div id="calendar" style="position:absolute;top:192px;width:200px;">
 					<button id="contextSwitch" class="button" onClick="switchToAbout()">About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;"></span></button>
 					<div id="sm-links" style="margin-top:10px;">
-						<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x skyblue" style="margin-left:5px;"></a>
-						<a href="//plus.google.com/u/0/101145194341428988499?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;"><span class="fa fa-google-plus-square fa-3x skyblue" style="margin-left:5px;"></a>						
-						<a href="https://www.linkedin.com/company/2232384" target="_blank"><span class="fa fa-linkedin fa-3x skyblue" style="margin-left:5px;"></a>
-						<a href="https://www.facebook.com/northbridgenfp#" target="_blank"><span class="fa fa-facebook-square fa-3x skyblue" style="margin-left:5px;"></a>
-						<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x skyblue" style="margin-left:5px;"></a>
+						<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x skyblue" style="margin-left:5px;"></span></a>
+						<a href="//plus.google.com/u/0/101145194341428988499?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;"><span class="fa fa-google-plus-square fa-3x skyblue" style="margin-left:5px;"></span></a>						
+						<a href="https://www.linkedin.com/company/2232384" target="_blank"><span class="fa fa-linkedin fa-3x skyblue" style="margin-left:5px;"></span></a>
+						<a href="https://www.facebook.com/northbridgenfp#" target="_blank"><span class="fa fa-facebook-square fa-3x skyblue" style="margin-left:5px;"></span></a>
+						<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x skyblue" style="margin-left:5px;"></span></a>
 					</div>
 					<!-- EventBrite widget -->
-					<div style="width:200px;text-align:center;margin-left:5px;margin-top:10px;" ><iframe  src="https://www.eventbrite.com/calendar-widget?eid=16317964471&showPrivate=1&sig=AGbIMNxpHUlRkcT_ZbQGyQ7X_arlwKyFyQ" frameborder="0" height="377" width="200" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:195px; text-align:center;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/ecal">Event management</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=ecal">Eventbrite</a></div></div>
+						<div style="width:200px;text-align:center;margin-left:5px;margin-top:10px;" >
+							<iframe  src="https://www.eventbrite.com/calendar-widget?eid=16317964471&showPrivate=1&sig=AGbIMNxpHUlRkcT_ZbQGyQ7X_arlwKyFyQ" frameborder="0" height="377" width="200" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true">
+							</iframe>
+							<div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:195px; text-align:center;" >
+								<a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/ecal">Event management</a> 
+								<span style="color:#ddd;">powered by</span> 
+								<a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=ecal">Eventbrite</a>
+							</div>
+						</div>
 				</div>
-				<?php // include("../..."); ?>
+				<?php // include("../..."); 
+				?>
 			</div>
 			<!-- /Global Navigation Context -->
 
@@ -222,9 +242,9 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 		<script type="text/javascript">
 			var stateObj = { foo: "bar" };
 			history.pushState(stateObj, "", "index.php#");
-		</script>			
+		</script>	
+		
+		<?php } ?>		
 
 	</body>
 </html>
-
-
