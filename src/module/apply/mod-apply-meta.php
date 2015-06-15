@@ -14,10 +14,10 @@ require_once("../core/domain/Util.php");
 	$(document).mouseup(function (event){
     var clickedElement = event.target;
     if(clickedElement.id.substring(0,10) !== "info-email") {
-			hideInfoEmailField();
+			//hideInfoEmailField();
 		}
     if(clickedElement.id.substring(0,10) !== "info-webinar") {
-			hideInfoWebinarField();
+			//hideInfoWebinarField();
 		}
 	});
 </script>
