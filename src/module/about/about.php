@@ -10,8 +10,10 @@ require_once("../core/domain/Util.php");
 	</div>
 	
 	<div class="mod-about-frameRight">
+		<!--
 		<p class="mod-about-header">Conference Room Grant Now Open</p>
 		<p class="mod-about-normalText"><a href=""><a class="mod-about-anchor" href="#" onClick="switchToSponsor();"><b>Details and Apply</b></a></p>
+		-->
 		<p class="mod-about-header">Mission</p>
 		<p class="mod-about-normalText">We create software solutions for charitable organizations who are engaged in social justice and community-building efforts so that their collective impact is increased.</p>
 		<p class="mod-about-header">Vision</p>
