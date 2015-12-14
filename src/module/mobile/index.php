@@ -115,8 +115,9 @@ if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GE
 				<p >No games. No gimmicks. Just your mission.</p>
 				<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Order Your Information Packet</a></p>
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> 
-					<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="float:left;margin-left:20px;"> 
+					<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">
+					<a href="javascript:void(0)" onclick="alert('To donate by check, please mail your contribution to:\n\nNorthbridge Technology Alliance\n400 South Blvd., Unit A\nEvanston, IL  60202')" style="position:absolute;margin-left:140px;margin-top:-18px;"><img src="<?php echo Util:: getHttpCorePath(); ?>/images/Check_Pen.png" alt="by Check" ></a>
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="position:absolute;margin-left:20px;"> 
 					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
 				</form> 
 				<?php if(!$ie8) { ?>
