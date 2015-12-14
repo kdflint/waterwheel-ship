@@ -121,7 +121,7 @@ if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GE
 					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
 				</form> 
 				<?php if(!$ie8) { ?>
-					<a href="<?php echo $coreHttpPath; ?>/index.php?context=desktop" style="color:#d27b4b;margin-left:40px;">Desktop Site</a>
+					<a href="<?php echo $coreHttpPath; ?>/index.php?context=desktop" style="color:#d27b4b;position:absolute;margin-left:25px;margin-top:20px;">Desktop Site</a>
 				<?php } ?>
 				<div id="info-email" class="white_content" style="min-height:156px;display:none;border-radius:8px;position:absolute;top:2px;left:0px;width:90%;">
 					<form id="info-email-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST">
