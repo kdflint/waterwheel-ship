@@ -60,7 +60,7 @@ if ($ua) {
 		</div>
 
 		<?php if($msie_8) { ?>
-			<div style="background: #000; text-align: center; position: absolute; top: 0px; width: 100%; color: #FFF;">This website is not compatible with your outdated Internet Explorer version. <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank" style="color: #fff; text-decoration: underline;">Please upgrade here.</a></div>
+			<div style="background: #000; text-align: center; position: absolute; top: 0px; width: 100%; color: #FFF;">This website is not compatible with your Internet Explorer version. <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank" style="color: #fff; text-decoration: underline;">Please upgrade here.</a></div>
 			<iframe width="360" height="700" src="http://northbridgetech.org/apps/waterwheel/module/mobile/index.php?context=ie8" frameborder="0" scrolling="no" allowfullscreen></iframe>
 		<?php } else { ?>
 
@@ -186,8 +186,9 @@ if ($ua) {
 					<div id="aboutQuote5" class="mod-about-quotes">All in.<br/>No regrets.<br/>Flint</div>
 					<div style="position:absolute;top:135px;left:560px;"> 
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> 
-							<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="float:right;margin-top:25px;"> 
+							<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">
+							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="position:absolute;margin-left:30px;margin-top:18px;"> 
+							<a href="javascript:void(0)" onclick="alert('To donate by check, please mail your contribution to:\n\nNorthbridge Technology Alliance\n400 South Blvd., Unit A\nEvanston, IL  60202')" style="position:absolute;margin-left:135px;"><img src="images/Check_Pen.png" alt="by Check" ></a>
 							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
 						</form> 
 					</div>
