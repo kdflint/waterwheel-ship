@@ -6,27 +6,45 @@ class MessageLetterhead {
 	
 	private $replyTo = "kathy.flint@northbridgetech.org";
 	private $bcc = "";
-	private $subject = "[Nexus] New Features";
-	private $from = "Northbridge Technology Alliance <kathy.flint@northbridgetech.org>";
+	private $subject = "[Nexus] System Problem Resolved";
+	private $from = "Northbridge Technology Alliance <noreply@northbridgetech.org>";
 	private $to = "kathy.flint@northbridgetech.org";	
-	private $emailStyle = "";
+	private $emailStyle = "text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);margin-top:20px;margin-bottom:20px;border-radius:6px;font-family:Oxygen;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
+	private $linkStyle = "";
+	
+/*
+	private $messageBody = 
+"Dear Northbridge Supporter,\r\n\r\nCongratulations are in order! Look at what YOU have created.\r\n\r\n\r\nhttp://nexus.northbridgetech.org/demo\r\n\r\n\r\nOur sophisticated web conferencing app that YOU have created is now used <b>internationally by 43 nonprofit organizations</b> who are transforming society in the following areas: Community Development, Education Equity, Environment Equity, Health Equity, Human/Civil Rights, and Human Services.\r\n\r\n<i>\"This is to good to be true - thank you!\"</i> - Chicago Antiracism Commission\r\n\r\nYet, it IS true. And this is what happens when generous people like you, intent on improving society, act on their intention.\r\n\r\n<b>With an end-of-year holiday gift, will you help us scale our impact from tens to hundreds?</b>\r\n\r\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW\r\n\r\nFor just $50, we can provide 120 hours of web conferencing facilities to a community-building organization. \r\n\r\nFor $250, we can provide 24/7 global webinar capacity.\r\n\r\n<b>Will you help us end our fiscal year in the best position possible?</b>\r\n\r\nThanks as always, and my best regards,\r\n\r\nKathy Flint, CEO\r\nNorthbridge Technology Alliance";
+*/
 	
 	private $messageBody = 
-"Dear Nexus Web Meet user,\r\n\r\nNorthbridge is pleased to announce major enhancements to Nexus Web Meet!\r\n\r\nIn response to your feedback, these new features are available immediately.\r\n\r\n<b>Guest Pass:</b> Every meeting you create now includes a Guest Pass. This Guest Pass allows you to admit people into your conference room who are not enrolled Team members.\r\n\r\n<b>Video Link Meeting Type:</b> A new meeting configuration is now available, designed to let you add a video component to your existing telephone conference line meetings. This type of meeting is excellent for supporting a centralized meeting where some participants are gathered in one place but a few are joining remotely.\r\n\r\n<b>System Technical Check:</b> An automatic system check now provides real time feedback about the compatibility of the user's system to join a Nexus Web Meet meeting.\r\n\r\nYou can explore all these features by logging in to Nexus Web Meet, or by visiting http://nexus.northbridgetech.org/demo\r\n\r\nAll our best in support of your work,\r\n\r\nThe Development Team at\r\nNorthbridge Technology Alliance";
-
+"Dear Nexus Web Meet User,\r\n\r\nToday we discovered and resolved a system defect that may have affected your ability over the past three weeks to login, enroll, or reset your Nexus Web Meet password.\r\n\r\nIf you have not experienced difficulty with any of that functionality, you can safely disregard this message!\r\n\r\nIf you have recently experienced difficulty with any of those functions, you may wish to attempt your activity again. If you have any questions, or if problems persist, please reply to this email.\r\n\r\nWe sincerely apologize for any inconvenience this may have cause for you!\r\n\r\nSincerely,\r\n\r\nThe Support Team at\r\nNorthbridge Technology Alliance";
 	
 	public function __construct() {
 	}
 	
-	private $links = array(
+	private $buttons = array(
 		// Global links text-to-html translation table
 		// If a link in the text version of the message exactly matches a link here, it will translate into a styled button. Example:
-		"http://nexus.northbridgetech.org/demo" => "the public Demo Site"
+		"http://nexus.northbridgetech.org/demo" => "Nexus Web Meet Demo"
 	);
+
+	private $links = array(
+		// Global links text-to-html translation table
+		// If a link in the text version of the message exactly matches a link here, it will translate into a link. Example:
+		"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW" => "<img alt='Donate' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif'>"
+	);
+
+	private function formatButtons($in) {
+		foreach($this->buttons as $key => $value) {
+			$in = str_replace($key, "<a style='" . $this->emailStyle . "' href='" . $key . "'>" . $value . "</a>", $in);
+		}
+		return $in;
+	}
 
 	private function formatLinks($in) {
 		foreach($this->links as $key => $value) {
-			$in = str_replace($key, "<a style='" . $this->emailStyle . "' href='" . $key . "'>" . $value . "</a>", $in);
+			$in = str_replace($key, "<a style='" . $this->linkStyle . "' href='" . $key . "'>" . $value . "</a>", $in);
 		}
 		return $in;
 	}
@@ -39,7 +57,8 @@ class MessageLetterhead {
 	private function constructHtmlMessage($boundary) {
 		$formatLineBreaks = str_replace("\r\n\r\n", "</p><p>",$this->messageBody);
 		$formatLineBreaks = str_replace("\r\n", "<br/>",$formatLineBreaks);
-		$formatLinkButtons = $this->formatLinks($formatLineBreaks);
+		$formatLinks = $this->formatLinks($formatLineBreaks);
+		$formatLinkButtons = $this->formatButtons($formatLinks);
 		return "--" . $boundary . "
 Content-Type: text/html; charset=\"iso-8859-1\"
 Content-Transfer-Encoding: 7bit
