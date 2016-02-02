@@ -118,6 +118,8 @@ $.fn.hSlides = function(settings) {
 			
 			if (activeIndex == 0) {
 				//document.getElementById("partner_perspective_embed").style.visibility='visible';
+				hideInfoEmailField();
+				hideInfoWebinarField();
 				switchToApplyInfo();
 			}			
 			

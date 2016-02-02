@@ -28,6 +28,9 @@ function switchToSponsor() {
 	document.getElementById("curtain").style.width = "900px";
 	document.getElementById("contextSwitch").innerHTML='About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;vertical-align:middle;">';
 	document.getElementById("contextSwitch").onclick = function() {switchToAbout()}
+	hideInfoEmailField();
+	hideInfoWebinarField();
+	switchToApplyInfo();
 	window.scrollTo(0,0);
 }
 
