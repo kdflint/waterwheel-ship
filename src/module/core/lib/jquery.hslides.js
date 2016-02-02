@@ -117,7 +117,8 @@ $.fn.hSlides = function(settings) {
 			document.getElementById("madeUp_index" + activeIndex).style.visibility='visible';
 			
 			if (activeIndex == 0) {
-				document.getElementById("partner_perspective_embed").style.visibility='visible';
+				//document.getElementById("partner_perspective_embed").style.visibility='visible';
+				switchToApplyInfo();
 			}			
 			
 			document.getElementById("madeUp_index0").style.opacity='0';

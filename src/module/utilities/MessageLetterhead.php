@@ -6,14 +6,19 @@ class MessageLetterhead {
 	
 	private $replyTo = "kathy.flint@northbridgetech.org";
 	private $bcc = "";
-	private $subject = "[Northbridge] Congratulations!";
+	private $subject = "[Nexus] System Problem Resolved";
 	private $from = "Northbridge Technology Alliance <noreply@northbridgetech.org>";
 	private $to = "kathy.flint@northbridgetech.org";	
 	private $emailStyle = "text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);margin-top:20px;margin-bottom:20px;border-radius:6px;font-family:Oxygen;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
 	private $linkStyle = "";
 	
+/*
 	private $messageBody = 
-"Dear Northbridge Supporter,\r\n\r\nCongratulations are in order! Look at what YOU have created.\r\n\r\n\r\nhttp://nexus.northbridgetech.org/demo\r\n\r\n\r\nThis sophisticated web conferencing app that YOU have created is now used internationally by 43 nonprofit organizations who are transforming society in the following areas: Community Development, Education Equity, Environment Equity, Health Equity, Human/Civil Rights, and Human Services.\r\n\r\n<i>\"This is to good to be true - thank you!\"</i> - Chicago Antiracism Commission\r\n\r\nYet, it IS true. And this is what happens when generous people like you, intent on improving society, act on their intention.\r\n\r\n<b>With an end-of-year holiday gift, will you help us scale our impact from tens to hundreds?</b>\r\n\r\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW\r\n\r\nFor just $50, we can provide 120 hours of web conferencing facilities to a community-building organization. \r\n\r\nFor $250, we can provide 24/7 global webinar capacity.\r\n\r\n<b>Will you help us end our fiscal year in the best position possible?</b>\r\n\r\nBest regards,\r\n\r\nKathy Flint, CEO\r\nNorthbridge Technology Alliance";
+"Dear Northbridge Supporter,\r\n\r\nCongratulations are in order! Look at what YOU have created.\r\n\r\n\r\nhttp://nexus.northbridgetech.org/demo\r\n\r\n\r\nOur sophisticated web conferencing app that YOU have created is now used <b>internationally by 43 nonprofit organizations</b> who are transforming society in the following areas: Community Development, Education Equity, Environment Equity, Health Equity, Human/Civil Rights, and Human Services.\r\n\r\n<i>\"This is to good to be true - thank you!\"</i> - Chicago Antiracism Commission\r\n\r\nYet, it IS true. And this is what happens when generous people like you, intent on improving society, act on their intention.\r\n\r\n<b>With an end-of-year holiday gift, will you help us scale our impact from tens to hundreds?</b>\r\n\r\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW\r\n\r\nFor just $50, we can provide 120 hours of web conferencing facilities to a community-building organization. \r\n\r\nFor $250, we can provide 24/7 global webinar capacity.\r\n\r\n<b>Will you help us end our fiscal year in the best position possible?</b>\r\n\r\nThanks as always, and my best regards,\r\n\r\nKathy Flint, CEO\r\nNorthbridge Technology Alliance";
+*/
+	
+	private $messageBody = 
+"Dear Nexus Web Meet User,\r\n\r\nToday we discovered and resolved a system defect that may have affected your ability over the past three weeks to login, enroll, or reset your Nexus Web Meet password.\r\n\r\nIf you have not experienced difficulty with any of that functionality, you can safely disregard this message!\r\n\r\nIf you have recently experienced difficulty with any of those functions, you may wish to attempt your activity again. If you have any questions, or if problems persist, please reply to this email.\r\n\r\nWe sincerely apologize for any inconvenience this may have cause for you!\r\n\r\nSincerely,\r\n\r\nThe Support Team at\r\nNorthbridge Technology Alliance";
 	
 	public function __construct() {
 	}
