@@ -125,7 +125,7 @@ if ($ua) {
 							include("../apply/mod-apply.php");
 							include("../apply/mod-info.php");
 							if (isset($_GET['view']) && !strcmp($_GET['view'], 'apply_form')) {
-								// For now, this behaviour is overridden by hslides condition at line 119 (activeIndex == 0)
+								// For now, this behaviour is overridden by jquery.hslides.js condition at about line 119 (activeIndex == 0)
 								?><script type="text/javascript">switchToApplyForm()</script> <?php
 							}
 						?>		
