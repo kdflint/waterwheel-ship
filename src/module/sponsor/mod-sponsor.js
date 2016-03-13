@@ -1,3 +1,10 @@
+function toggleMemberDetails(detailId) {
+	document.getElementById('package-details-nexus').style.display = 'none';
+	document.getElementById('package-details-training').style.display = 'none';
+	document.getElementById('package-details-caucus').style.display = 'none';
+	document.getElementById(detailId).style.display = 'block';
+}
+
 function getCurrentLevelIndex() {
 	var radio = document.forms['sponsor-form'].levels;
 	for (var i = 0; i < radio.length; i++) {

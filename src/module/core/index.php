@@ -104,6 +104,7 @@ if ($ua) {
 										<p><span class="fa fa-binoculars fa-3x tan" ></span></p>
 									</div>
 									<h1 class="slider white">Membership Benefits</h1>
+									<p class="white" style="font-size:115%;margin-top:15px;">Check out the whitepaper for even more detail!</p>
 									<p class="white"><b></b></p>
 								</div>
 							</li>

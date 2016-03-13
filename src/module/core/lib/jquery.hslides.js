@@ -128,12 +128,12 @@ $.fn.hSlides = function(settings) {
 			document.getElementById("madeUp_index2").style.opacity='0';
 			document.getElementById("madeUp_index" + activeIndex).style.opacity='1';
 			
-			var curMessage = document.getElementById("user-message" + activeIndex).innerHTML;
+			//var curMessage = document.getElementById("user-message" + activeIndex).innerHTML;
 			//document.getElementById("user-message0").innerHTML='';
-			document.getElementById("user-message1").innerHTML='';
+			//document.getElementById("user-message1").innerHTML='';
 			document.getElementById("user-message2").innerHTML='';
 			document.getElementById("user-message4").innerHTML='Use this no-obligation form to check membership eligibility for your team, committee, work group, Board or task force.';
-			document.getElementById("user-message" + activeIndex).innerHTML=curMessage;
+			//document.getElementById("user-message" + activeIndex).innerHTML=curMessage;
 		};
 		// center the panels if configured
 		var centerPanels = function(){

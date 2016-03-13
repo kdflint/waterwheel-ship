@@ -108,6 +108,11 @@ p {
 	text-decoration: none;
 }
 
+.benefits-grid {
+	text-decoration: none;
+	color: inherit;
+}	
+
 .pure-menu li a {
 	color: #475b64;
 	font-family: Oswald, arial, sans-serif;
