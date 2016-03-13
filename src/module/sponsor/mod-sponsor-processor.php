@@ -7,7 +7,7 @@ $testMode = FALSE;
 
 // POST to database
 
-if (isset($_POST['stripeToken']) && strlen($_POST['stripeToken'] > 0) {
+if (isset($_POST['stripeToken']) && strlen($_POST['stripeToken'] > 0)) {
 	require_once('../../../vendor/autoload.php');	
 	// Set your secret key: remember to change this to your live secret key in production
 	// See your keys here https://dashboard.stripe.com/account
@@ -28,7 +28,7 @@ if (isset($_POST['stripeToken']) && strlen($_POST['stripeToken'] > 0) {
 	} catch(Card $e) {
 	  // The card has been declined
 	}
-} else if () {
+} else if (true) {
 	//paypal condition
 }
 

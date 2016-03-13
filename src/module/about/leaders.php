@@ -2,17 +2,18 @@
 require_once("../core/domain/Util.php");
 ?>
 
-<p class="mod-about-leaderText">Northbridge leaders are made of special stuff. This organization was founded from the start to put front and center the concerns of those who are traditionally marginalized. You don't find this every day of the week, and goodness like this does not come into being without real life leaders who are able to envision and then forge new paths into the future. </p>
+<p class="mod-about-leaderText">Northbridge people are made of special stuff. This organization was founded from the start to put front and center the concerns of those who are traditionally marginalized. You don't find this every day of the week, and not without real life leaders who are able to envision and then forge new paths into the future. </p>
 
-<div class="pure-menu pure-menu-open" style="border-width:0px;width:150px;">
+<div class="pure-menu pure-menu-open" style="border-width:0px;width:150px;padding-top:10px;">
 	<ul>
-		<li><a href="#" onclick="switchLeaderView(0);" style="width:100px;margin-bottom:5px;text-align:left;">Board of Directors</a></li>
+		<li><a href="#" onclick="switchLeaderView(2);" style="width:100px;margin-bottom:5px;text-align:left;">Volunteers</a></li>		
 		<li><a href="#" onclick="switchLeaderView(1);" style="width:100px;margin-bottom:5px;text-align:left;">Executive Staff</a></li>
+		<li><a href="#" onclick="switchLeaderView(0);" style="width:100px;margin-bottom:5px;text-align:left;">Board of Directors</a></li>
 	</ul>
 </div>
 
 <div class="leaders">
-	<div id="leaderIndex0" class="mod-leader-frame mod-about-normalText" style="visibility:visible;opacity:1;">
+	<div id="leaderIndex0" class="mod-leader-frame mod-about-normalText">
 		<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/brittanyvanputten" target="_blank" onmouseover="focusLeaderPic('bvp');" onmouseout="unfocusLeaderPic('bvp');">Brittany VanPutten</a>, <b>President</b>, UX Designer, SpringCM; DePaul Univ</p>
 		<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/zgilyana" target="_blank" onmouseover="focusLeaderPic('zg');" onmouseout="unfocusLeaderPic('zg');">Zaia Gilyana</a>, <b>Secretary</b>, Development Manager, US Bancorp; DeVry Univ</p>
 		<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/aleximmerman" target="_blank" onmouseover="focusLeaderPic('ai');" onmouseout="unfocusLeaderPic('ai');">Alex Immerman</a>, <b>Treasurer</b>, Associate, Blue Ridge Partners; Univ of Chicago</p>
@@ -41,5 +42,28 @@ require_once("../core/domain/Util.php");
 		<p class="mod-about-normalText">M.S. with honors, University of Chicago </p>
 	</div>
 </div>
+
+	<div id="leaderIndex2" class="mod-leader-frame" style="visibility:visible;opacity:1;">
+		<p class="mod-about-leaderText">
+			<span style="float:right;padding:5px;">
+				<span class="fa fa-cogs fa-1x"></span> <a class="mod-about-anchor" href="#" onClick="switchToVolunteer();">Volunteer</a><br/>
+				<span class="fa fa-video-camera fa-1x"></span> <a class="mod-about-anchor" href="https://youtu.be/KrasyjOjglM" target="_blank">Testimonial</a><br/>
+				<span class="fa fa-github fa-1x"></span> <a class="mod-about-anchor" href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank">Playbook</a><br/>
+			</span>
+			Without our volunteers we've got nothing. With them we change the world. It really only seems right to name each and every one!
+		</p>
+		<p class="mod-about-leaderText">But since that's not possible in this space, and since our teams do enjoy a little friendly competition amongst themselves, we settle for naming a Team of the Month.</p>
+		<p class="mod-about-header">Volunteer Team of the Month</p>
+		<p class="mod-about-normalText">Team North Stars continues to break ground not only by developing features for the pilot deployment of Nexus but also for refining the Northbridge methods for volunteer engagement. The North Stars are</p>
+		<ul>
+			<li>Lou Patel, Coach</li>
+			<li>Kathy Flint, Mentor</li>
+			<li>Gretchen Saylor</li>
+			<li>Elizabeth Eckhardt</li>
+			<li>Will Alston</li>
+			<li>Stephen Henry</li>
+			<li>Jafar Abdelrahman</li>
+		</ul>
+	</div>
 
 	

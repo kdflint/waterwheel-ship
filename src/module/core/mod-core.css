@@ -42,8 +42,8 @@
 .sponsorHeaderHeadline {
 	position: absolute;
 	top: 15px;
-	left: 100px;
-	text-align: right;
+	left: 70px;
+	text-align: center;
 }	
 
 .allianceContent {
@@ -147,7 +147,7 @@ div.curtain {
  	text-decoration: none;
  	transition: opacity 2s;
  	text-align: center;
- 	margin-left: 25px;
+ 	margin-left: 10px;
 }
 
 .whitepaper-button:hover {
@@ -198,7 +198,6 @@ h1.slider {
 }
 
 .sponsorSlider{
-	background:url(../images/slide.gif) center top no-repeat;
 	height:90px;
 	width:100%;
 }
@@ -234,7 +233,7 @@ margin:0 15px 0 0;
 	background: #fcb040;
 }
 
-/* --------------------LINKs------------------ */
+/* --------------------LINKS------------------ */
 .active {
 padding:10px 10px 0 10px;
 	background:#fcc8bc;

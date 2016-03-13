@@ -75,12 +75,20 @@ final class Util {
 		return "http://northbridgetech.org/downloads";
 	}
 	
+	public static function getDemoUrl() {
+		return DEMO_URL;
+	}
+	
 	public static function getEnvName() {
 		return ENV_NAME;
 	}
 	
 	public static function getTwitterHandle() {
 		return TWITTER_HANDLE;
+	}
+	
+	public static function getBlogId() {
+		return BLOG_ID;
 	}
 	
 	

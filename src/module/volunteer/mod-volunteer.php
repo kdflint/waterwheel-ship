@@ -4,76 +4,86 @@ require_once("../core/domain/Util.php");
 
 ?>
 
-<form id="volunteer-form" class="pure-form volunteer-form" action="<?php echo Util::getHttpVolunteerPath(); ?>/mod-volunteer-processor.php" method="POST">
+<!-- This is actually the Membership Application form, moved into the Volunteer module, replacing the old Volunteer interest form. -->
+<!-- It's much easier to re-use the existing form name despite the possible confusion! -->
+<!-- All styles pointed to volunteer module style names -->
+<!-- The original Membership Application form is preserved in the Apply module -->
+
+<form id="volunteer-form" class="pure-form volunteer-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-apply-processor.php" method="POST">
 	<input type="hidden" name="testMode" value=""/>
-	<input type="hidden" name="sliderIndex" value="2"/>
 	<div class="mod-volunteer-frameLeft">	
-		<div class="mod-volunteer-columnLeft">
-			<div class="mod-volunteer-controlLabel">Contact Information</div>
-				<input type="text" name="fname" placeholder="First name" maxlength="25"><span class="required"> *</span>
-				<input type="text" name="lname" placeholder="Last name" maxlength="25">
-				<input type="email" name="email_1" placeholder="Email" required><span class="required"> *</span>
-				<input type="email" name="email_2" placeholder="Confirm Email" required><span class="required"> *</span>
-			<div class="mod-volunteer-controlLabel" style="margin-top:10px;">What would you like to get from your volunteer work with Northbridge?</div>
-			<div class="mod-volunteer-controlContent">
-				<input type="checkbox" name="motives[]" value="1" /> Professional networking opportunities<br/>
-				<input type="checkbox" name="motives[]" value="2" /> Skill development<br/>
-				<input type="checkbox" name="motives[]" value="3" /> Leadership opportunities<br/>
-				<input type="checkbox" name="motives[]" value="4" /> Involvement in the open source community<br/>
-				<input type="checkbox" name="motives[]" value="5" /> Creative and groundbreaking work<br/>
-				<input id="motiveOther" type="checkbox" name="motives[]" value="6" /> Other <input type="text" name="otherMotive" placeholder="Please specify"  maxLength="50" style="width:70%;" onkeypress="otherCommentsSelectCheckbox('motiveOther', this);"/><br/>
+		<?php if (false) {
+			echo "<div id='fade' class='black_overlay'></div>"; 
+			echo "<div id='light_userprofile' class='white_content'>";
+			include("mod-closed.php");
+			echo "</div>";
+		} ?>
+		<p style="font-size:130%;font-weight:bold;margin-left:5px;margin-top:10px;"></p>
+		<div class="mod-volunteer-columnLeft">		
+			<div class="mod-volunteer-controlLabel">What is your team's service area?<span class="required"> *</span></div>
+			<div id="service-area-area" class="mod-volunteer-controlContent" style="height:165px;border-radius:4px;">
+				<div class="mod-volunteer-columnRightLeft">
+					<input type="checkbox" name="services[]" value="9" /> Human Services<br/>
+					<input type="checkbox" name="services[]" value="4" /> Restorative Justice<br/>
+					<input type="checkbox" name="services[]" value="5" /> Human/Civil Rights<br/>
+					<input type="checkbox" name="services[]" value="5" /> Advocacy/Education<br/>
+				</div>
+				<div class="mod-volunteer-columnRightRight">
+					<input type="checkbox" name="services[]" value="6" /> Health Equity<br/>
+					<input type="checkbox" name="services[]" value="7" /> Education Equity<br/>
+					<input type="checkbox" name="services[]" value="8" /> Environment Equity<br/>
+					<input type="checkbox" name="services[]" value="8" /> Housing Equity<br/>
+				</div>
+				<div style="position: absolute;top: 102px;">
+					<input type="checkbox" name="services[]" value="8" /> Intersectional Systemic Equity<br/>
+					<input type="checkbox" name="services[]" value="1" /> Underserved Community Development<br/>
+					<input type="checkbox" name="services[]" value="3" /> Research and Public Policy<br/>
+					<input type="checkbox" name="services[]" value="3" /> Other Social Justice or Community Building Focus<br/>
+				</div>
+			</div>
+			<div style="margin-top:10px;">
+				<div class="mod-volunteer-controlLabel">Contact Email (optional)</div>
+				<input type="email" name="email_1" placeholder="Email">
+				<input type="email" name="email_2" placeholder="Confirm Email">		
 			</div>
 		</div>
 		<div class="mod-volunteer-columnRight">		
-			<div class="mod-volunteer-controlLabel">What is your expertise?</div>
-			<div class="mod-volunteer-columnRightLeft">
-				<div class="mod-volunteer-controlContent">
-					<input type="checkbox" name="skills[]" value="13" /> Server Admin.<br/>
-					<input type="checkbox" name="skills[]" value="6" /> Database <br/>
-					<input type="checkbox" name="skills[]" value="14" /> User Experience <br/>
-				</div>
+			<div class="mod-volunteer-controlLabel" style="margin-top: 0px;">Describe your organizational affiliation</div>
+			<div style="margin-bottom:5px;">If your work is cross-organizational (hurray!) please represent one of your primary sponsors.</div>
+      <select id="country" name="country">
+      	<option value="0" selected>Governing Country</option>
+				<?php include("countryDropdownOptions.html"); ?>
+      </select><span class="required" > *</span>
+      <select id="cause" name="budget" style="margin-top:5px;">
+      	<option value="0" selected>Organizational Budget</option>
+      	<option value="1">$0 - $10,000</option>
+      	<option value="2">$10,001 - $100,000</option>
+      	<option value="3">$100,001 - $250,000</option>
+      	<option value="4">$250,001 - $500,000</option>
+      	<option value="5">$500,001 - $1,000,000</option>
+       	<option value="6"> &gt; $1,000,000</option>
+      </select><span class="required" > *</span>
+     	<div class="mod-volunteer-controlLabel" style="margin-top: 10px;">Describe your organizational structure<span class="required"> *</span></div>
+			<div id="structure-area" class="mod-volunteer-controlContent" style="height:70px;border-radius:4px;">
+       	<input type="checkbox" name="structure[]" value="0" /> Grass roots, community organized<br/>
+       	<input type="checkbox" name="structure[]" value="1" /> Incorporated or regulated nonprofit/charity<br/>
+       	<input type="checkbox" name="structure[]" value="2" /> Tax-exempt nonprofit/charity<br/>
 			</div>
-			<div class="mod-volunteer-columnRightRight">
-				<div class="mod-volunteer-controlContent">
-					<input type="checkbox" name="skills[]" value="10"/> Coding <br/>
-					<input type="checkbox" name="skills[]" value="9" /> Feature Analysis <br/>
-					<input type="checkbox" name="skills[]" value="15" /> Technical Writing<br/>
-				</div>
-			</div>
-			<div class="mod-volunteer-columnRightBottom">
-				<div class="mod-volunteer-controlContent">
-					<input type="checkbox" name="skills[]" value="7" /> Testing (automated or otherwise)<br/>
-					<input id="skillOther" type="checkbox" name="skills[]" value="16" /> Other <input type="text" name="otherSkill" placeholder="Please specify" maxLength="50" style="width:78%;" onkeypress="otherCommentsSelectCheckbox('skillOther', this);"/><br/>
-				</div>
-				<div class="mod-volunteer-controlLabel" style="margin-top:10px;">What else would you like to tell us about yourself?</div>
-				<div class="mod-volunteer-controlContent">
-					<textarea name="otherInfo" placeholder="Specific skills, level of experience, personal goals, etc." rows="8" maxlength="500" style="width:100%;"></textarea>
-				</div>
-			</div>
+		<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit('volunteer-form');" style="background:#fcb040;bottom:-46px;width:85%;left:auto;"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Check Eligibility</a>
+
 		</div>		
 	</div>		
 	<div class="mod-volunteer-frameRight">
-		<div class="mod-volunteer-controlLabel">
-			<p>For more information or to be considered for a team placement, submit this no-obligation form.</p>
-			<p style="font-weight:normal;">Here are some resources that describe the Northbridge volunteer experience.</p>
+		<p id="user-message4" class="skyblue" style="font-size:130%;font-weight:bold;margin-left:5px;margin-top:10px;"></p>
+		<p id="user-message2" class="user-message" style="bottom:auto;margin-top:10px;font-size:120%;"></p>
+		<!--
+		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Partnership Details</a></p>
+		<p><span class="fa fa-video-camera fa-2x"></span> <a class="mod-volunteer-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank" style="margin-left:5px;font-weight:bold;">A Partner Perspective</a> </p>
+		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-volunteer-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16317817030" style="margin-left:3px;font-weight:bold;" target="_blank">Information Webinar</a></p>
+		-->
+		<div id="apply-link" style="display:none;">
+			<a class="pure-button button-submit mod-sponsor-button" href="#" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:4px;" ></span> View Application</a>
 		</div>
-		<p><span class="fa fa-github fa-2x"></span> <a class="mod-volunteer-anchor" href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank" style="margin-left:5px;font-weight:bold;">Team Playbook</a> </p>
-		<p><span class="fa fa-video-camera fa-2x"></span> <a class="mod-volunteer-anchor" href="https://youtu.be/KrasyjOjglM" target="_blank" style="margin-left:5px;font-weight:bold;">A Volunteer Perspective</a> </p>
-		<p><span class="fa fa-comment-o fa-2x"></span> <a class="mod-volunteer-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16317817030" target="_blank" style="margin-left:3px;font-weight:bold;">Information Webinar</a></p>
-		<p id="user-message2" class="user-message"><?php echo $message; ?></p>	
-		<p style="position:absolute;left:14px;bottom:16px;">
-			<a class="twitter-share-button"
-				href="https://twitter.com/share"
-				data-url="<?php echo Util::getHttpCorePath(); ?>/index.php?view=volunteer"
-				data-via="<?php echo Util::getTwitterHandle(); ?>"
-				data-text="Excellent FOSS tech volunteer opportunities!">Tweet
-			</a>
-			<script>
-				window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
-			</script>
-		</p>
-		<a class="pure-button button-submit" id="volunteerSubmitButton" href="#" onclick="volunteerValidateAndSubmit();" style="background:#fcb040;"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Submit</a>
 	</div>
 	
 </form>	
-

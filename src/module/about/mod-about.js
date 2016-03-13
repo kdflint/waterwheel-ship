@@ -29,7 +29,7 @@ function switchAllianceView(viewIndex) {
 }
 
 function switchLeaderView(viewIndex) {
-	for (i = 0; i <= 1; i++) {
+	for (i = 0; i <= 2; i++) {
 	  document.getElementById("leaderIndex" + i).style.visibility='hidden';
     document.getElementById("leaderIndex" + i).style.opacity='0';
 	}

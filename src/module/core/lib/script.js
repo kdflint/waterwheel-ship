@@ -9,7 +9,7 @@ function switchToAbout() {
 	document.getElementById("powtoon_embed").style.visibility='visible';
 	document.getElementById("partner_perspective_embed").style.visibility='hidden';
 	document.getElementById("curtain").style.width = "0px";
- 	document.getElementById("contextSwitch").innerHTML='<span class="fa fa-chevron-circle-left fa-2x tan" style="margin-right:10px;vertical-align:middle;"></span>Nexus Web Tools';
+ 	document.getElementById("contextSwitch").innerHTML='<span class="fa fa-chevron-circle-left fa-2x tan" style="margin-right:10px;vertical-align:middle;"></span>Membership';
  	document.getElementById("defaultMenuItem").focus();
 	document.getElementById("contextSwitch").onclick = function() {switchToSponsor()}
 	window.scrollTo(0,0);
@@ -35,21 +35,30 @@ function switchToSponsor() {
 }
 
 function switchToApplyForm() {
+	/*
 	document.getElementById("info-email-form").style.visibility="hidden";
 	document.getElementById("info-email-form").style.opacity="0";
 	document.getElementById("apply-form").style.visibility="visible";
 	document.getElementById("apply-form").style.opacity="1";
 	document.getElementById("partner_perspective_embed").style.visibility='hidden';
+	*/
+	document.getElementById("volunteer-form").reset();
+	$('li:eq(2)').trigger('click');		
 }
 
 function switchToApplyInfo() {
 	document.getElementById("info-email-form").style.visibility="visible";
 	document.getElementById("info-email-form").style.opacity="1";
-	document.getElementById("apply-form").style.visibility="hidden";
-	document.getElementById("apply-form").style.opacity="0";
+	//document.getElementById("apply-form").style.visibility="hidden";
+	//document.getElementById("apply-form").style.opacity="0";
 	document.getElementById("partner_perspective_embed").style.visibility='visible';
-	// clear previous success message
-	document.getElementById("user-message0").innerHTML='';
+	//document.getElementById("user-message0").innerHTML='';
+}
+
+function switchToVolunteer() {
+	switchToSponsor();
+	switchToApplyForm();
+	//$('li:eq(2)').trigger('click');	
 }
 
 function isValidEmail(email) {
