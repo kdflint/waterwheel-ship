@@ -14,7 +14,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 			echo "</div>";
 		} ?>
 	<div class="" style="font-size:130%;margin-bottom:15px;">	
-		<p style="margin:10px 10px 10px 30px;font-size:110%;"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_nexus.pdf" target="_blank">Complete Details</a></span><b>Two membership levels,<br/>structured by team.*</b></p>
+		<p style="margin:10px 10px 10px 30px;font-size:110%;"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Summary.pdf" target="_blank">Complete Details</a></span><b>Two membership levels,<br/>structured by team.*</b></p>
 	</div>
 	<table class="pure-table">
 		<thead><tr>
@@ -52,7 +52,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 				<tr><td>Desktop share</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Recording</td><td>&nbsp;</td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Skype audio</td><td>&nbsp;</td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
-				<tr><td colspan="3" style="font-size:110%;"><span class="fa fa-file-pdf-o fa-lg"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_nexus.pdf" target="_blank">Complete feature list</a></td></tr>
+				<tr><td colspan="3" style="font-size:110%;"><span class="fa fa-file-pdf-o fa-lg"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Summary.pdf" target="_blank">Complete feature list</a></td></tr>
 			<tbody>
 		</table>
 	</div>

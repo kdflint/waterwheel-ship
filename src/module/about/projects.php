@@ -15,12 +15,12 @@ require_once("../core/domain/Util.php");
 	</div>
 	<div class="mod-about-frameBottomMiddle">
 			<p style="font-weight:bold;">Nexus Advantage</p>
-			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_nexus.pdf" target="_blank">Whitepaper</a></span>In pilot phase through 2016, Nexus Advantage is a collaboration platform that facilitates collaboration among networks of community service providers. Nexus Advantage incorporates Nexus Web Meet and adds a suite of web based collaboration tools including directory services, discussion forums, calendering, workgroups, real time chatting, private messaging, and collaboration tracking.
+			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Whitepaper_NexusAdvantage.pdf" target="_blank">Whitepaper</a></span>In pilot phase through 2016, Nexus Advantage is a collaboration platform that facilitates collaboration among networks of community service providers. Nexus Advantage incorporates Nexus Web Meet and adds a suite of web based collaboration tools including directory services, discussion forums, calendering, workgroups, real time chatting, private messaging, and collaboration tracking.
 			</p>
 	</div>
 	<div class="mod-about-frameBottomRight">
 			<p style="font-weight:bold;">Nexus Training</p>
-			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-graduation-cap fa-2x"></span></span>As great as our software is, our training webinars are where the real Northbridge magic happens! Northbridge conducts regular training sessions designed to help our social justice leaders adopt virtual web conferencing and webinars into their collaboration and outreach practices. Through several sessions designed for different levels of familiarity, our instructor-led webinars create expert users able to meet a variety of program needs using virtual conferencing tools.
+			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-graduation-cap fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Training.pdf" target="_blank">Whitepaper</a></span>As great as our software is, our training webinars are where the real Northbridge magic happens! Northbridge conducts regular training sessions designed to help our social justice leaders adopt virtual web conferencing and webinars into their collaboration and outreach practices. Through several sessions designed for different levels of familiarity, our instructor-led webinars create expert users able to meet a variety of program needs using virtual conferencing tools.
 			</p>
 	</div>
 </div>
