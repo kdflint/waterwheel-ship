@@ -165,6 +165,10 @@ p {
 	border-bottom-right-radius: 10px;
 }
 
+.pure-table tbody tr td:nth-child(1n+2) {
+	font-weight: normal;
+}
+
 .pure-table td {
 	border-width: 0px;
 	border-left: 0px;

@@ -42,17 +42,18 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 	<div id="package-details-nexus" style="display:block;">
 		<table id="nexus-details-table" class="pure-table details-table">
 			<thead>
-			<tr><td colspan="3">Nexus Web Meet Usage License</td></tr>
+			<tr><td colspan="3">Nexus Web Meet<a class="benefits-grid" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_NexusWM.pdf" target="_blank"><span class="fa fa-file-pdf-o fa-2x" style="float:right;"></span></a></td></tr>
 			<tr><td>&nbsp;</td><td>Activist</td><td>Director</td></tr></thead>
 			<tbody>
-				<tr><td>WebEx&nbsp;compare</td><td>$720</td><td>$1420</td></tr>
+				<tr><td>Compare&nbsp;WebEx</td><td>$450</td><td>&gt; $900</td></tr>
 				<tr><td>Minutes</td><td>Unlim.</td><td>Unlim.</td></tr>
-				<tr><td>Admins/Seats</td><td>3/6</td><td>10/18</td></tr>
+				<tr><td>Admins/Seats</td><td>3/6</td><td>8/25</td></tr>
 				<tr><td>All-way video</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Desktop share</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Recording</td><td>&nbsp;</td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Skype audio</td><td>&nbsp;</td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
-				<tr><td colspan="3" style="font-size:110%;"><span class="fa fa-file-pdf-o fa-lg"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Summary.pdf" target="_blank">Complete feature list</a></td></tr>
+				
+				<tr><td>Much more...</td><td colspan="2" style="font-size:110%;"><span class="fa fa-file-pdf-o fa-lg"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Summary.pdf" target="_blank">Complete List</a></td></tr>
 			<tbody>
 		</table>
 	</div>
@@ -60,7 +61,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 	<div id="package-details-training" style="display:none;">
 		<table id="training-details-table" class="pure-table details-table">
 			<thead>
-			<tr><td colspan="3">Training Packages</td></tr>
+			<tr><td colspan="3">Training Packages<a class="benefits-grid" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Training.pdf" target="_blank"><span class="fa fa-file-pdf-o fa-2x" style="float:right;"></span></a></td></tr>
 			<tr><td>Course</td><td>Activist</td><td>Director</td></tr></thead>
 			<tbody>
 				<tr><td>Intro. to Virtual Collaboration</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
@@ -74,7 +75,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 	<div id="package-details-caucus" style="display:none;">
 		<table id="caucus-details-table" class="pure-table details-table">
 			<thead>
-			<tr><td colspan="3">Caucus Tracks</td></tr>
+			<tr><td colspan="3">Caucus Tracks<a class="benefits-grid" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Caucus.pdf" target="_blank"><span class="fa fa-file-pdf-o fa-2x" style="float:right;"></span></a></td></tr>
 			<tr><td>&nbsp;</td><td>Activist</td><td>Director</td></tr></thead>
 			<tbody>
 				<tr><td>Track 1: Focused on improving the member owned Nexus software</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>

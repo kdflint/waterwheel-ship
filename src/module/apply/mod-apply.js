@@ -80,7 +80,8 @@ function infoEmailValidateAndSubmit() {
 function applyValidateAndSubmit(thisForm) {
 		
 		var pass = true;
-		var eligibleDecision = "Congratulations! Your team is eligible for membership with Northbridge.";
+		//var eligibleDecision = "";
+		var eligibleDecision = [];
 		var eligibleMessage = [];
 		var applyForm = document.forms[thisForm];
 		var submitButton = document.getElementById("applySubmitButton");
@@ -97,8 +98,8 @@ function applyValidateAndSubmit(thisForm) {
      	}
 		}
 		if (checkedCount == 0) {
-			eligibleMessage[eligibleMessage.length] = "For your team to be eligible, you must be working in one of our service areas.";
-			eligibleDecision = "Your team is not eligible for membership with Northbridge.";
+			eligibleMessage[0] = "For your team to be eligible, you must be working in one of our service areas.";
+			eligibleDecision[0] = "Your team is not eligible for membership with Northbridge.";
 			document.getElementById("service-area-area").style.background = errorBackground;
 			areaLit = true;
 		} else if (checkedCount >= 1 && !(
@@ -112,8 +113,8 @@ function applyValidateAndSubmit(thisForm) {
 			serviceBoxes[8].checked == true ||
 			serviceBoxes[9].checked == true
 			)) {
-			eligibleMessage[eligibleMessage.length] = "Depending on more details of your service area, you may be eligible for membership. Our complete membership application will collect that information.";
-			eligibleDecision = "Your team may be eligible for membership with Northbridge.";
+			eligibleMessage[1] = "Depending on more details of your service area, you may be eligible for membership. Our complete membership application will collect that information.";
+			eligibleDecision[1] = "Your team may be eligible for membership with Northbridge.";
   	}
   	
   	var email_1Field = applyForm["email_1"];
@@ -168,16 +169,16 @@ function applyValidateAndSubmit(thisForm) {
      	}
 		}
 		if (checkedCount == 0) {
-			eligibleMessage[eligibleMessage.length] = "For your team to be eligible, you must have some type of organizational structure.";
-			eligibleDecision = "Your team is not eligible for membership with Northbridge.";
+			eligibleMessage[0] = "For your team to be eligible, you must have some type of organizational structure.";
+			eligibleDecision[0] = "Your team is not eligible for membership with Northbridge.";
 			if (!Boolean(areaLit)) {
 				document.getElementById("structure-area").style.background = errorBackground;
 				areaLit = true;
 			}
 		} else if (checkedCount == 1) {
 			if (structureBoxes[0].checked == true && budget >= 2) {
-				eligibleMessage[eligibleMessage.length] = "For your community organized team to be eligible, you must have a budget of < $10,001 USD. (Please consider some type of nonprofit incorporation structure if your budget exceeds this amount.)";
-				eligibleDecision = "Your team is not eligible for membership with Northbridge.";
+				eligibleMessage[0] = "For your community organized team to be eligible, you must have a budget of < $10,001 USD. (Please consider some type of nonprofit incorporation structure if your budget exceeds this amount.)";
+				eligibleDecision[0] = "Your team is not eligible for membership with Northbridge.";
 				if (!Boolean(areaLit)) {
 					document.getElementById("structure-area").style.background = errorBackground;
 					areaLit = true;
@@ -185,13 +186,23 @@ function applyValidateAndSubmit(thisForm) {
 			}
   	}
   	
-  	eligibleMessage[eligibleMessage.length] = "";
+		eligibleMessage[2] = "";
+		eligibleDecision[2] = "Congratulations! Your team is eligible for membership with Northbridge.";
+		var decisionIndex = 2;
+		
+		if (eligibleDecision[0]) {
+			decisionIndex = 0;
+		} else if (eligibleDecision[1]) {
+			decisionIndex = 1;
+		} else {
+			decisionIndex = 2;
+		}
       
  		if (Boolean(pass)) {
  			// This indicates we passed form validation, not passed eligibility check
- 			document.getElementById('user-message4').innerHTML = eligibleDecision;
- 			document.getElementById('user-message2').innerHTML = eligibleMessage[0];
- 			if (eligibleDecision.contains("Congratulations") || eligibleDecision.contains("may be")) {
+ 			document.getElementById('user-message4').innerHTML = eligibleDecision[decisionIndex];
+ 			document.getElementById('user-message2').innerHTML = eligibleMessage[decisionIndex];
+ 			if (decisionIndex > 0) {
 				document.getElementById("apply-link").style.display = "block";
 				if (isValidEmail(email_1) && isValidEmail(email_2) && email_1 == email_2) {
 					document.forms["info-email-form"]["email_1"].value = email_1;
@@ -202,7 +213,7 @@ function applyValidateAndSubmit(thisForm) {
  				document.getElementById("apply-link").style.display = "none";
  			}
  		} else {
- 			document.getElementById('user-message4').innerHTML = "If you fill out this form, we can check membership eligibility for your team, committee, work group, Board or task force.";
+ 			document.getElementById('user-message4').innerHTML = "If you fill out this form completely, we can check membership eligibility for your team, committee, work group, Board or task force.";
  			document.getElementById('user-message2').innerHTML = "";
 			document.getElementById("service-area-area").style.background = "white";
 			document.getElementById("structure-area").style.background = "white";

@@ -74,7 +74,7 @@ require_once("../core/domain/Util.php");
 		</div>		
 	</div>		
 	<div class="mod-volunteer-frameRight">
-		<p id="user-message4" class="skyblue" style="font-size:130%;font-weight:bold;margin-left:5px;margin-top:10px;"></p>
+		<p id="user-message4" class="skyblue" style="font-size:130%;font-weight:bold;margin-left:5px;margin-top:10px;">Use this no-obligation form to check membership eligibility for your team, committee, work group, Board or task force.</p>
 		<p id="user-message2" class="user-message" style="bottom:auto;margin-top:10px;font-size:120%;"></p>
 		<!--
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Partnership Details</a></p>
