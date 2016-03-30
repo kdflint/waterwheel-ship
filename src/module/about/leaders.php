@@ -2,7 +2,7 @@
 require_once("../core/domain/Util.php");
 ?>
 
-<p class="mod-about-leaderText">Northbridge people are made of special stuff. This organization was founded from the start to put front and center the concerns of those who are traditionally marginalized. You don't find this every day of the week, and not without real life leaders who are able to envision and then forge new paths into the future. </p>
+<p class="mod-about-leaderText">Northbridge people are made of special stuff. This organization was founded to put front and center the concerns of those who are traditionally marginalized. You don't find this every day of the week, and not without real life leaders who are able to envision and then forge new paths into the future. </p>
 
 <div class="pure-menu pure-menu-open" style="border-width:0px;width:150px;padding-top:10px;">
 	<ul>

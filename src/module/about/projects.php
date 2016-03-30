@@ -3,7 +3,7 @@ require_once("../core/domain/Util.php");
 ?>
 
 <p class="mod-about-leaderText"><span style="float:right;padding:5px;"><span class="fa fa-users fa-2x"></span>  <a class="mod-about-anchor" href="#" onClick="switchToSponsor();">Membership</a></span>Nexus is our flagship open source software product. </p>
-<p class="mod-about-leaderText">It is widely acknowledged by the social justice community that the most effective work in our sector is done collaboratively. It is also widely acknowledged that collaborations are notoriously difficult to achieve. There is no shortage of collaborative tools and solutions in the marketplace at large. However, there are big obstacles to unified adoption by organizationally unconnected nonprofits, including cost, security, community delineation, and central administration. 
+<p class="mod-about-leaderText">It is widely acknowledged by the social justice community that the most effective work in our sector is done collaboratively. It is also widely acknowledged that collaborations are notoriously difficult to achieve. There are big obstacles to unified technology adoption by organizationally unconnected nonprofits, including cost, security, community delineation, and central administration. 
 </p>
 <p class="mod-about-leaderText">Nexus solves these problems. It available as a hosted service to members of Northbridge.</p>
 

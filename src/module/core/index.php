@@ -188,7 +188,7 @@ if ($ua) {
 			<!-- About Context -->
 			<div id="aboutApp" class="aboutApp">
 				<div class="aboutHeader">
-					<img src="images/NB_horizontal_tagline_rgb.png" width="515" height="160" style="padding:30px 10px 10px 30px;"/>
+					<img src="images/NB_horizontal_tagline_rgb.png" width="515" height="160" style="padding:30px 10px 10px 30px;" />
 					<div id="aboutQuote0" class="mod-about-quotes">[News is] a first rough draft of history.<br/>P. Graham</div>
 					<div id="aboutQuote1" class="mod-about-quotes" style="visibility:visible;opacity:1;">In the shadow of each other, the people live.<br/>Proverb</div>
 					<div id="aboutQuote2" class="mod-about-quotes">It always seems impossible until it's done.<br/>N. Mandela</div>

@@ -106,12 +106,12 @@ function applyValidateAndSubmit(thisForm) {
 			serviceBoxes[0].checked == true ||
 			serviceBoxes[1].checked == true ||
 			serviceBoxes[2].checked == true ||
+			serviceBoxes[3].checked == true ||
 			serviceBoxes[4].checked == true ||
 			serviceBoxes[5].checked == true ||
 			serviceBoxes[6].checked == true ||
 			serviceBoxes[7].checked == true ||
-			serviceBoxes[8].checked == true ||
-			serviceBoxes[9].checked == true
+			serviceBoxes[8].checked == true
 			)) {
 			eligibleMessage[1] = "Depending on more details of your service area, you may be eligible for membership. Our complete membership application will collect that information.";
 			eligibleDecision[1] = "Your team may be eligible for membership with Northbridge.";
