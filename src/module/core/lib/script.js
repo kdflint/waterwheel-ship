@@ -1,3 +1,5 @@
+var imagePath;
+
 function switchToAbout() {
 	document.getElementById("navApp").style.left='0px';
 	document.getElementById("aboutApp").style.left='200px';
@@ -91,9 +93,8 @@ function otherCommentsSelectCheckbox(checkboxId) {
 }
 
 function labnolThumb(id) {
-    //return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
-    // Use a local copy of the youtube thumbnail, sized as we need it
-    return '<img class="youtube-thumb" src="//localhost/waterwheel/module/core/images/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+    // Use a local copy of the youtube thumbnail, sized as we need it. Find original at //i.ytimg.com/vi/<video_id>/hqdefault.jpg
+    return '<img class="youtube-thumb" src="' + imagePath + '/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
 }
  
 function labnolIframe() {

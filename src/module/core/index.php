@@ -39,6 +39,10 @@ if ($ua) {
 		
 <!--================== End Meta ==================-->
 
+	<script>
+		imagePath = '<?php echo Util::getHttpCorePath() . "/images"; ?>';	
+	</script>
+
 	<script type="text/javascript">
 		$(window).load(function() {
 			$(".loader").fadeOut("slow");

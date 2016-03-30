@@ -6,11 +6,9 @@ require_once("../core/domain/Util.php");
 		<p class="mod-about-leaderText">The developed world is abundant with computer technology. However, too few of these physical and intellectual resources are intentionally leveraged toward solving human problems.</p>
 		<p class="mod-about-header">At Northbridge, we intend to reverse this trend.</p>
 		<p class="mod-about-leaderText">We are a vendor-neutral, volunteer alliance of technology experts with a passion for social justice. We support organizations who are working, in various ways, toward an intentionally sustainable and equitable society. We specialize in cooperative application development in the open source tradition.</p>
-		<!--<iframe width="378" height="213" id="powtoon_embed" style="margin-top:10px;visibility:hidden;" src="//www.youtube.com/embed/fdBmU7KKdoI?rel=0" frameborder="0" allowfullscreen="true">-->
 		<div class="youtube-container" id="powtoon_embed" style="width:420px;height:213px;margin-top:10px;visibility:hidden;">
    		<div class="youtube-player" data-id="fdBmU7KKdoI"></div>
 		</div>
-		<!--</iframe>-->
 	</div>
 	
 	<div class="mod-about-frameRight">
