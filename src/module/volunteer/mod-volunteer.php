@@ -25,11 +25,12 @@ require_once("../core/domain/Util.php");
 				<div class="mod-volunteer-columnRightLeft">
 					<input type="checkbox" name="services[]" value="9" /> Human Services<br/>
 					<input type="checkbox" name="services[]" value="4" /> Restorative Justice<br/>
-					<input type="checkbox" name="services[]" value="5" /> Human/Civil Rights<br/>
-					<input type="checkbox" name="services[]" value="5" /> Advocacy/Education<br/>
+					<input type="checkbox" name="services[]" value="5" /> Human Rights<br/>
+					<input type="checkbox" name="services[]" value="6" /> Health Equity<br/>
+					<!--<input type="checkbox" name="services[]" value="5" /> Advocacy/Education<br/>-->
 				</div>
 				<div class="mod-volunteer-columnRightRight">
-					<input type="checkbox" name="services[]" value="6" /> Health Equity<br/>
+					<!--<input type="checkbox" name="services[]" value="6" /> Health Equity<br/>-->
 					<input type="checkbox" name="services[]" value="7" /> Education Equity<br/>
 					<input type="checkbox" name="services[]" value="8" /> Environment Equity<br/>
 					<input type="checkbox" name="services[]" value="8" /> Housing Equity<br/>
@@ -37,7 +38,7 @@ require_once("../core/domain/Util.php");
 				<div style="position: absolute;top: 102px;">
 					<input type="checkbox" name="services[]" value="8" /> Intersectional Systemic Equity<br/>
 					<input type="checkbox" name="services[]" value="1" /> Underserved Community Development<br/>
-					<input type="checkbox" name="services[]" value="3" /> Research and Public Policy<br/>
+					<!--<input type="checkbox" name="services[]" value="3" /> Research and Public Policy<br/>-->
 					<input type="checkbox" name="services[]" value="3" /> Other Social Justice or Community Building Focus<br/>
 				</div>
 			</div>
