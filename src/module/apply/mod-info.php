@@ -6,12 +6,13 @@ require_once("../core/domain/Util.php");
 
 <form id="info-email-form" class="pure-form apply-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST" style="visibility:visible;opacity:1;transition: opacity 1s;">
 	<div class="mod-apply-frameSingle" style="font-size:130%;">	
-		<!--<p style="margin:30px;"><b>Partnership with Northbridge:&nbsp;&nbsp;No games. No gimmicks. Just your mission.</b></p>-->
-		<p style="margin:30px;"><b><!--Grant cycle now open for one year web meeting room. 15 rooms available.&nbsp;&nbsp;-->No games. No gimmicks. Just your mission.</b></p>
-		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="switchToApplyForm()" >Application Form</a></p>
+		<p style="margin:10px 10px 10px 30px;font-size:110%;"><b>For annual dues as low as $120</b><p><p style="margin-left:30px;">unlimited Nexus Web Meet minutes, plus expert training and community</p>
+		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="switchToApplyForm();" >Check Eligibility</a></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoWebinarField();">Streaming Webinar</a></p>
-		<iframe id="partner_perspective_embed" width="378" height="213" style="position:absolute;left:290px;top:90px;" src="https://www.youtube.com/embed/tk-QNJruZgM?rel=0" allowfullscreen="true"></iframe>
+		<div class="youtube-container" id="partner_perspective_embed" style="width:420px;height:240px;left:280px;top:90px;position:absolute;">
+   		<div class="youtube-player" data-id="tk-QNJruZgM"></div>
+		</div>
 		
 		<div id="fade" class="black_overlay" style="display:none;"></div>
 

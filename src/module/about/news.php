@@ -2,6 +2,12 @@
 require_once("../core/domain/Util.php");
 ?>
 <div>
-	<a class="twitter-timeline" width="520" height="415" href="https://twitter.com/NorthbridgeNFP" data-widget-id="568601776015024128">Tweets by @NorthbridgeNFP</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	<div id="24lb_thread" class="lb24 lb_<?php echo(Util::getBlogId()); ?>" style="height:500px;overflow:auto;font-weight:normal;font-size:110%;"></div>
+	<script type="text/javascript">
+		(function() {
+			var lb24 = document.createElement('script'); lb24.type = 'text/javascript'; lb24.id = '24lbScript'; lb24.async = true; lb24.charset="utf-8";
+			lb24.src = '//v.24liveblog.com/embed/24.js?id=<?php echo(Util::getBlogId()); ?>';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(lb24);
+		})();
+	</script>
 </div>

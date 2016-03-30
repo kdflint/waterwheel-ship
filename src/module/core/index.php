@@ -18,6 +18,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 $msie_8 = FALSE;
 $ua = $_SERVER["HTTP_USER_AGENT"];
 if ($ua) {
+	// TODO - simple alternative for IE 8. Lower than 8?
 	$msie_8 = strpos($ua, 'MSIE 8.0') ? TRUE : FALSE;
 }
 
@@ -38,6 +39,10 @@ if ($ua) {
 		
 <!--================== End Meta ==================-->
 
+	<script>
+		imagePath = '<?php echo Util::getHttpCorePath() . "/images"; ?>';	
+	</script>
+
 	<script type="text/javascript">
 		$(window).load(function() {
 			$(".loader").fadeOut("slow");
@@ -50,7 +55,7 @@ if ($ua) {
 			$("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
 		})
 	</script>
-	
+		
 	</head>
 
 	<body>
@@ -71,8 +76,8 @@ if ($ua) {
 			<div id="sponsorApp" class="sponsorApp">
 				<div class="sponsorHeader">
 					<div class="sponsorHeaderLeft">
-						<span class="fa fa-group yellow sponsorHeaderLeader"></span>
-						<p class="skyblue sponsorHeaderHeadline">Nexus&nbsp;web&nbsp;tools<br/>for&nbsp;world-changers<br/>
+						<p class="skyblue sponsorHeaderHeadline" style="line-height:130%;">Exclusive<br/>technology benefits<br/>for social justice leaders</p>
+							<!--
 							<span class="fa fa-comments"></span>
 							<span class="fa fa-play-circle" style="margin:5px;"></span>
 							<span class="fa fa-laptop" style="margin:5px;"></span>
@@ -80,7 +85,7 @@ if ($ua) {
 							<span class="fa fa-microphone" style="margin:5px;"></span>
 							<span class="fa fa-video-camera" style="margin:5px;"></span>
 							<span class="fa fa-mobile" style="margin:5px;"></span>
-						</p>			
+							-->		
 					</div>
 					<div class="sponsorHeaderRight" id="sponsorHeaderRight">
 						<?php include("whitepaper-link.php"); ?>	
@@ -91,29 +96,30 @@ if ($ua) {
 						<ul class="accord accordion1">
 							<li class="one">
 								<div class="headerbox">
-									<div class="title"><strong>Apply</strong>
-										<p><span class="fa fa-send fa-3x tan" ></p>
+									<div class="title"><strong>Overview</strong>
+										<p><span class="fa fa-info-circle fa-3x tan" ></span></p>
 									</div>
-									<h1 class="slider white">Is your team changing the world?</h1>
-									<p class="white" style="font-size:115%;margin-top:15px;">You may be eligible for a global web meeting room.</p>
+									<h1 class="slider white">Membership Benefits</h1>
+									<p class="white" style="font-size:115%;margin-top:15px;">Featuring our member-owned software Nexus Web Meet</p>
 								</div>
 							</li>
 							<li class="two">
 								<div class="headerbox">	
-									<div class="title"><strong>Sponsor</strong>
-										<p><span class="fa fa-money fa-3x tan" ></p>
+									<div class="title"><strong>Details</strong>
+										<p><span class="fa fa-binoculars fa-3x tan" ></span></p>
 									</div>
-									<h1 class="slider white">Fund technology for world-changers</h1>
-									<p class="white"><b>Give a web conference room to a team that is changing the world.</b> Choose your level. Track your impact. Make a difference.</p>
+									<h1 class="slider white">Membership Benefits</h1>
+									<p class="white" style="font-size:115%;margin-top:15px;">Check out the whitepaper for even more detail!</p>
+									<p class="white"><b></b></p>
 								</div>
 							</li>
-							<li class="three">
+							<li class="three" id="volunteer-tab">
 								<div class="headerbox">
-									<div class="title"><strong>Volunteer</strong>
-										<p><span class="fa fa-cogs fa-3x otherblue"/></p>
+									<div class="title"><strong>Apply</strong>
+										<p><span class="fa fa-paper-plane fa-3x otherblue"></span></p>
 									</div>
-									<h1 class="slider skyblue">Be as big as you want to be!</h1>
-									<p class="skyblue"><b>Use your technical skills to help others change the world.</b> Join our influential group of volunteers deploying real-world projects.<br/></p>
+									<h1 class="slider skyblue">Membership Benefits</h1>
+									<p class="skyblue" style="font-size:115%;margin-top:15px;"><b>Check your eligibility and apply</b></p>
 								</div>
 							</li>
 						</ul>
@@ -122,7 +128,7 @@ if ($ua) {
 				<div class="allianceContent">
 					<div id="madeUp_index0">
 						<?php 
-							include("../apply/mod-apply.php");
+							//include("../apply/mod-apply.php");
 							include("../apply/mod-info.php");
 							if (isset($_GET['view']) && !strcmp($_GET['view'], 'apply_form')) {
 								// For now, this behaviour is overridden by jquery.hslides.js condition at about line 119 (activeIndex == 0)
@@ -150,14 +156,17 @@ if ($ua) {
 				</div>
 				<div id="calendar" style="position:absolute;top:192px;width:200px;">
 					<button id="contextSwitch" class="button" onClick="switchToAbout()">About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;"></span></button>
-					<div id="sm-links" style="margin-top:10px;">
+					<div id="sm-links" style="margin-top:10px;margin-bottom:26px;">
 						<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x skyblue" style="margin-left:5px;"></span></a>
 						<a href="//plus.google.com/u/0/101145194341428988499?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;"><span class="fa fa-google-plus-square fa-3x skyblue" style="margin-left:5px;"></span></a>						
 						<a href="https://www.linkedin.com/company/2232384" target="_blank"><span class="fa fa-linkedin fa-3x skyblue" style="margin-left:5px;"></span></a>
 						<a href="https://www.facebook.com/northbridgenfp#" target="_blank"><span class="fa fa-facebook-square fa-3x skyblue" style="margin-left:5px;"></span></a>
 						<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x skyblue" style="margin-left:5px;"></span></a>
 					</div>
-					<!-- EventBrite widget -->
+					<!-- Twitter widget -->
+					<a class="twitter-timeline" width="520" height="415" href="https://twitter.com/NorthbridgeNFP" data-widget-id="568601776015024128">Tweets by @NorthbridgeNFP</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					<!-- EventBrite widget
 						<div style="width:200px;text-align:center;margin-left:5px;margin-top:10px;" >
 							<iframe  src="https://www.eventbrite.com/calendar-widget?eid=16317964471&showPrivate=1&sig=AGbIMNxpHUlRkcT_ZbQGyQ7X_arlwKyFyQ" frameborder="0" height="377" width="200" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true">
 							</iframe>
@@ -167,6 +176,7 @@ if ($ua) {
 								<a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=ecal">Eventbrite</a>
 							</div>
 						</div>
+						-->
 				</div>
 				<?php // include("../..."); 
 				?>
@@ -178,13 +188,13 @@ if ($ua) {
 			<!-- About Context -->
 			<div id="aboutApp" class="aboutApp">
 				<div class="aboutHeader">
-					<img src="images/NB_horizontal_tagline_rgb.png" width="515" height="160" style="padding:30px 10px 10px 30px;"/>
-					<div id="aboutQuote0" class="mod-about-quotes">[News is] a first rough draft of history.<br/>Graham.</div>
-					<div id="aboutQuote1" class="mod-about-quotes" style="visibility:visible;opacity:1;">In the shadow of each other, the people live.<br/>Proverb.</div>
-					<div id="aboutQuote2" class="mod-about-quotes">It always seems impossible until it's done.<br/>Mandela</div>
-					<div id="aboutQuote3" class="mod-about-quotes">... go instead where there is no path and leave a trail.<br/>Emerson</div>
-					<div id="aboutQuote4" class="mod-about-quotes">working together... we might just be able to fix it...<br/>Cascio</div>
-					<div id="aboutQuote5" class="mod-about-quotes">All in.<br/>No regrets.<br/>Flint</div>
+					<img src="images/NB_horizontal_tagline_rgb.png" width="515" height="160" style="padding:30px 10px 10px 30px;" />
+					<div id="aboutQuote0" class="mod-about-quotes">[News is] a first rough draft of history.<br/>P. Graham</div>
+					<div id="aboutQuote1" class="mod-about-quotes" style="visibility:visible;opacity:1;">In the shadow of each other, the people live.<br/>Proverb</div>
+					<div id="aboutQuote2" class="mod-about-quotes">It always seems impossible until it's done.<br/>N. Mandela</div>
+					<div id="aboutQuote3" class="mod-about-quotes">To&nbsp;build&nbsp;community requires vigilant awareness...<br/>b. hooks</div>
+					<div id="aboutQuote4" class="mod-about-quotes">together... we might just be able to fix it...<br/>J. Cascio</div>
+					<div id="aboutQuote5" class="mod-about-quotes">All in, no regrets.<br/>K. Flint</div>
 					<div style="position:absolute;top:135px;left:560px;"> 
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> 
 							<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">
@@ -195,11 +205,11 @@ if ($ua) {
 					</div>
 					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="margin-left:47px;font-size:140%;letter-spacing:.75px;">
 	   				<ul>
-        			<li><a href="#" onclick="switchAboutView(0);">News</a></li>
-        			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(1);">About</a></li>
-        			<li><a href="#" onclick="switchAboutView(4);">Alliance</a></li>
-        			<li><a href="#" onclick="switchAboutView(2);">Projects</a></li>
-        			<li><a href="#" onclick="switchAboutView(3);">Leaders</a></li>
+        			<li><a href="#" onclick="switchAboutView(1);">About</a></li>
+        			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(2);">Nexus</a></li>
+        			<li><a href="#" onclick="switchAboutView(4);">Impact</a></li>
+        			<li><a id="peopleMenuItem" href="#" onclick="switchAboutView(3);">People</a></li>
+        			<li><a href="#" onclick="switchAboutView(0);">Blog</a></li>
         			<li><a href="#" onclick="switchAboutView(5);">Gallery</a></li>
     				</ul>
 					</div>
@@ -231,7 +241,8 @@ if ($ua) {
 		</div><!-- /container -->
 		
 		<!-- initialize major context -->
-		<?php if (isset($_GET['context']) && !strcmp($_GET['context'], 'nexus')) { ?>
+		<?php //if (isset($_GET['context']) && !strcmp($_GET['context'], 'nexus')) { ?>
+		<?php if (true) { ?>
 			<script type="text/javascript">
 				switchToSponsor();
 			</script>
@@ -247,6 +258,10 @@ if ($ua) {
 		</script>	
 		
 		<?php } ?>		
+		
+		<script>
+			transformYouTubeDivs();
+		</script>
 
 	</body>
 </html>

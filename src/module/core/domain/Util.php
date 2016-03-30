@@ -72,7 +72,11 @@ final class Util {
 	}
 	
 	public static function getStaticDownloadPath() {
-		return "http://northbridgetech.org/downloads";
+		return self::getHttpDownloadPath();
+	}
+	
+	public static function getDemoUrl() {
+		return DEMO_URL;
 	}
 	
 	public static function getEnvName() {
@@ -81,6 +85,10 @@ final class Util {
 	
 	public static function getTwitterHandle() {
 		return TWITTER_HANDLE;
+	}
+	
+	public static function getBlogId() {
+		return BLOG_ID;
 	}
 	
 	

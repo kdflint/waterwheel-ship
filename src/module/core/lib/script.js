@@ -1,3 +1,5 @@
+var imagePath;
+
 function switchToAbout() {
 	document.getElementById("navApp").style.left='0px';
 	document.getElementById("aboutApp").style.left='200px';
@@ -9,7 +11,8 @@ function switchToAbout() {
 	document.getElementById("powtoon_embed").style.visibility='visible';
 	document.getElementById("partner_perspective_embed").style.visibility='hidden';
 	document.getElementById("curtain").style.width = "0px";
- 	document.getElementById("contextSwitch").innerHTML='<span class="fa fa-chevron-circle-left fa-2x tan" style="margin-right:10px;vertical-align:middle;"></span>Nexus Web Tools';
+ 	document.getElementById("contextSwitch").innerHTML='<span class="fa fa-chevron-circle-left fa-2x tan" style="margin-right:10px;vertical-align:middle;"></span>Membership';
+ 	document.getElementById("defaultMenuItem").click();
  	document.getElementById("defaultMenuItem").focus();
 	document.getElementById("contextSwitch").onclick = function() {switchToSponsor()}
 	window.scrollTo(0,0);
@@ -35,21 +38,30 @@ function switchToSponsor() {
 }
 
 function switchToApplyForm() {
+	/*
 	document.getElementById("info-email-form").style.visibility="hidden";
 	document.getElementById("info-email-form").style.opacity="0";
 	document.getElementById("apply-form").style.visibility="visible";
 	document.getElementById("apply-form").style.opacity="1";
 	document.getElementById("partner_perspective_embed").style.visibility='hidden';
+	*/
+	document.getElementById("volunteer-form").reset();
+	$('li:eq(2)').trigger('click');		
 }
 
 function switchToApplyInfo() {
 	document.getElementById("info-email-form").style.visibility="visible";
 	document.getElementById("info-email-form").style.opacity="1";
-	document.getElementById("apply-form").style.visibility="hidden";
-	document.getElementById("apply-form").style.opacity="0";
+	//document.getElementById("apply-form").style.visibility="hidden";
+	//document.getElementById("apply-form").style.opacity="0";
 	document.getElementById("partner_perspective_embed").style.visibility='visible';
-	// clear previous success message
-	document.getElementById("user-message0").innerHTML='';
+	//document.getElementById("user-message0").innerHTML='';
+}
+
+function switchToVolunteer() {
+	switchToSponsor();
+	switchToApplyForm();
+	//$('li:eq(2)').trigger('click');	
 }
 
 function isValidEmail(email) {
@@ -78,4 +90,28 @@ function isSafeCharacterSet(set) {
 
 function otherCommentsSelectCheckbox(checkboxId) {
 		document.getElementById(checkboxId).checked=true;
+}
+
+function labnolThumb(id) {
+    // Use a local copy of the youtube thumbnail, sized as we need it. Find original at //i.ytimg.com/vi/<video_id>/hqdefault.jpg
+    return '<img class="youtube-thumb" src="' + imagePath + '/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+}
+ 
+function labnolIframe() {
+    var iframe = document.createElement("iframe");
+    //iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
+    iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?allowfullscreen=1&autoplay=1");
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("class", "youtube-iframe");
+    this.parentNode.replaceChild(iframe, this);
+}
+
+function transformYouTubeDivs() {
+   var v = document.getElementsByClassName("youtube-player");
+   for (var n = 0; n < v.length; n++) {
+    var p = document.createElement("div");
+   	p.innerHTML = labnolThumb(v[n].dataset.id);
+   	p.onclick = labnolIframe;
+   	v[n].appendChild(p);
+ 	}
 }

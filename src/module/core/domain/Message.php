@@ -17,7 +17,7 @@ class Message {
 		"Volunteer Submission Notification",
 		"Application Submission Confirmation",
 		"Application Submission Notification",
-		"Partnership Information Packet"
+		"Membership Information Packet"
 	);
 	
 	private $links = array(
@@ -26,8 +26,8 @@ class Message {
 		"http://northbridgetech.org/index.php?view=apply_form" => "Apply Now",
 		"https://www.eventbrite.com/e/information-webinar-tickets-16317817030" => "Register for Webinar",
 		"https://youtu.be/tk-QNJruZgM" => "<img src='http://northbridgetech.org/images/video-camera_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;' /> Watch",
-		"http://northbridgetech.org/downloads/Northbridge_partnership.pdf" => "<img src='http://northbridgetech.org/images/file-pdf-o_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;' /> Download",
-		"http://northbridgetech.org/downloads/Northbridge_web_conference_center.pdf" => "<img src='http://northbridgetech.org/images/file-pdf-o_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;'/> Download"
+		"http://northbridgetech.org/downloads/Member_Benefit_Summary" => "<img src='http://northbridgetech.org/images/file-pdf-o_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;' /> Download",
+		"http://nexus.northbridgetech.org/demo" => "<img src='http://northbridgetech.org/images/wrench_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;'/> Demo"
 	);
 
 	private $type;
@@ -66,7 +66,7 @@ class Message {
       case self::APPLICATION_NOTIFY;
       	return "Application Notification";
       case self::PARTNER_INFORMATION_PACKET;
-      	return "Partnership Information";
+      	return "Membership Information";
     	default:
         return "";
 		}
@@ -118,13 +118,11 @@ class Message {
       case self::APPLICATION_NOTIFY;
       	return "A new partnership applicaton has been received.";
       case self::PARTNER_INFORMATION_PACKET;
-      	return "Here is the information that you requested recently. Questions? Just reply to this email and a real person will get right back to you.\r\n\r\nNorthbridge creates software solutions for charitable organizations who are engaged in social justice and community-building efforts so that their collective impact is increased.\r\n\r\nPartnership with Northbridge means that an organization or team has demonstrated to Northbridge that their activities are focused on social justice and community-building and is therefore eligible to benefit from the charitable services that Northbridge provides.\r\n\r\nThose benefits include:\r\n\r\n* the privilege to participate in moderated conversations about the technical needs of the social justice community\r\n\r\n* exclusive access to the Nexus Web Conference Center\r\n\r\n* exclusive access to our growing suite of web-based collaborative tools\r\n\r\n\r\nApplication for partnership with Northbridge takes just a few minutes from a tablet sized device or larger.\r\n\r\nhttp://northbridgetech.org/index.php?view=apply_form\r\n\r\nYou may enjoy a brief webinar hosted by Founder and CEO Kathy Flint. In this live, informal setting, Kathy will talk with you about the benefits of partnership with Northbridge Technology Alliance and answer your questions.\r\n\r\nhttps://www.eventbrite.com/e/information-webinar-tickets-16317817030\r\n\r\nThis is how one Northbridge partner describes his experience with Northbridge and the Nexus Web Conference Center.\r\n\r\nhttps://youtu.be/tk-QNJruZgM\r\n\r\nWhitepaper: Partnership with Northbridge Technology Alliance\r\n\r\nhttp://northbridgetech.org/downloads/Northbridge_partnership.pdf\r\n\r\nWhitepaper: Nexus Web Conference Center\r\n\r\nhttp://northbridgetech.org/downloads/Northbridge_web_conference_center.pdf\r\n\r\nWe hope these resources are helpful. You may reply to this email with any questions at all. You will reach a real person who wants to help your social mission succeed. We hope to hear from you!";
+      	return "Here is the information that you requested recently. Questions? Just reply to this email and a real person will get right back to you.\r\n\r\nNorthbridge creates software solutions for charitable organizations who are engaged in social justice and community-building efforts so that their collective impact is increased.\r\n\r\nWe invite teams who are doing that sort of work into exclusive membership with us. Membership benefits include: \r\n\r\n* Usage licensing for our member-owned Nexus Web Meet virtual conference center\r\n\r\n* Expert, instructor-led training to help you adopt the latest streaming collaboration technologies\r\n\r\n* Caucus participation a structured way for you to participate in the advancement of technologies developed specifically by and for the social justice community\r\n\r\n\r\nApplication for membership with Northbridge takes just a few minutes from a tablet sized device or larger.\r\n\r\nhttp://northbridgetech.org/index.php?view=apply_form\r\n\r\nYou may enjoy a brief webinar hosted by Founder and CEO Kathy Flint. In this live, informal setting, Kathy will talk with you about the benefits of membership with Northbridge Technology Alliance and answer your questions.\r\n\r\nhttps://www.eventbrite.com/e/information-webinar-tickets-16317817030\r\n\r\nThis is how one Northbridge member describes his experience with Northbridge and Nexus Web Meet.\r\n\r\nhttps://youtu.be/tk-QNJruZgM\r\n\r\nWhitepaper: Membership with Northbridge Technology Alliance\r\n\r\nhttp://northbridgetech.org/downloads/Member_Benefits_Summary.pdf\r\n\r\nTry: Nexus Web Meet\r\n\r\nhttp://nexus.northbridgetech.org/demo\r\n\r\nWe hope these resources are helpful. You may reply to this email with any questions at all. You will reach a real person who wants to help your social mission succeed. We hope to hear from you!";
     	default:
         return "";
 		}		
 	}
-	
-
 	
 	private function getMessageFooter() {
 		return "This message is produced and distributed by Northbridge Technology Alliance, a United States 501(c)(3) nonprofit corporation, Evanston, Illinois  60202";
