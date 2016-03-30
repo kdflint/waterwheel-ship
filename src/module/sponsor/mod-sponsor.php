@@ -13,21 +13,21 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 			include("mod-closed.php");
 			echo "</div>";
 		} ?>
-	<div class="" style="font-size:130%;margin-bottom:15px;">	
+	<div class="" style="font-size:130%;margin-bottom:10px;">	
 		<p style="margin:10px 10px 10px 30px;font-size:110%;"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Summary.pdf" target="_blank">Complete Details</a></span><b>Two membership levels,<br/>structured by team.*</b></p>
 	</div>
 	<table class="pure-table">
 		<thead><tr>
-			<td>Level</td>
-			<td>Great For</td>
+			<td style="width:56px;">Level</td>
+			<td style="width:140px;">Great For</td>
 			<td>Annual Dues</td>
-			<td style="background:#f68620;border-radius:10px;"><a class="benefits-grid" href="javascript:void(0)" onclick="toggleMemberDetails('package-details-nexus');"><div style="height:100%;width:100%;"><span class="fa fa-external-link-square fa-lg" style="float:right;"></span>Nexus Web Meet</div></a></td>
-			<td style="background:#dae0bc;border-radius:10px;"><a class="benefits-grid" href="javascript:void(0)" onclick="toggleMemberDetails('package-details-training');"><div style="height:100%;width:100%;"><span class="fa fa-external-link-square fa-lg" style="float:right;"></span>Training Package</div></a></td>
-			<td style="background:#a6c3ce;border-radius:10px;"><a class="benefits-grid" href="javascript:void(0)" onclick="toggleMemberDetails('package-details-caucus');"><div style="height:100%;width:100%;"><span class="fa fa-external-link-square fa-lg" style="float:right;"></span>Caucus Tracks</div></a></td>
+			<td style="background:#f68620;border-radius:10px;width:83px;"><a class="benefits-grid" href="javascript:void(0)" onclick="toggleMemberDetails('package-details-nexus');"><div style="height:100%;width:100%;"><span class="fa fa-external-link-square fa-lg" style="float:right;"></span>Nexus<br/>Web&nbsp;Meet</div></a></td>
+			<td style="background:#dae0bc;border-radius:10px;width:83px;"><a class="benefits-grid" href="javascript:void(0)" onclick="toggleMemberDetails('package-details-training');"><div style="height:100%;width:100%;"><span class="fa fa-external-link-square fa-lg" style="float:right;"></span>Training<br/>Package</div></a></td>
+			<td style="background:#a6c3ce;border-radius:10px;width:74px;"><a class="benefits-grid" href="javascript:void(0)" onclick="toggleMemberDetails('package-details-caucus');"><div style="height:100%;width:100%;"><span class="fa fa-external-link-square fa-lg" style="float:right;"></span>Caucus<br/>Tracks</div></a></td>
 		</tr></thead>
 		<tbody>
-			<tr><td><b>Activist</b></td><td>Volunteer teams, leadership teams, smaller committees or task forces</td><td>$120 USD</td><td>Standard Feature Set</td><td>Standard Package</td><td>Track 1</td></tr>
-			<tr><td><b>Director</b></td><td>Boards of Directors, larger committees, community groups</td><td>$200 USD</td><td>Extended Feature Set</td><td>Extended Package</td><td>Tracks&nbsp;1&nbsp;&&nbsp;2</td></tr>
+			<tr><td><b>Activist</b></td><td>Volunteer teams, leadership teams, smaller committees or task forces</td><td>$120<br/>USD</td><td>Standard Feature Set</td><td>Standard Package</td><td>Track 1</td></tr>
+			<tr><td><b>Director</b></td><td>Boards of Directors, larger committees, community groups</td><td>$200<br/>USD</td><td>Extended Feature Set</td><td>Extended Package</td><td>Tracks&nbsp;1&nbsp;&&nbsp;2</td></tr>
 		</tbody>
 	</table>
 	<div class="" style="font-size:120%;margin-top:5px;margin-left:20px;">	
@@ -45,7 +45,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 			<tr><td colspan="3">Nexus Web Meet<a class="benefits-grid" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_NexusWM.pdf" target="_blank"><span class="fa fa-file-pdf-o fa-2x" style="float:right;"></span></a></td></tr>
 			<tr><td>&nbsp;</td><td>Activist</td><td>Director</td></tr></thead>
 			<tbody>
-				<tr><td>Compare&nbsp;WebEx</td><td>$450</td><td>&gt; $900</td></tr>
+				<tr><td>Compare&nbsp;Citrix</td><td>$450</td><td>&gt; $900</td></tr>
 				<tr><td>Minutes</td><td>Unlim.</td><td>Unlim.</td></tr>
 				<tr><td>Admins/Seats</td><td>3/6</td><td>8/25</td></tr>
 				<tr><td>All-way video</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>

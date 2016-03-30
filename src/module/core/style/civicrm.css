@@ -1,0 +1,5 @@
+body, #site-slogan, .ui-widget, .comment-form label {
+    font-family: Oxygen, Georgia,"Times New Roman",Times,serif !important;
+}
+
+.breadcrumb { display:none; }

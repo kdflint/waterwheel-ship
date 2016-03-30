@@ -1,4 +1,6 @@
 function switchAboutView(viewIndex) {
+	// Clear background color which may have been initialized in switchLeaderView())
+	document.getElementById("peopleMenuItem").style.background='';
 	for (i = 0; i <= 5; i++) {
     document.getElementById("aboutIndex" + i).style.visibility='hidden';
     document.getElementById("aboutIndex" + i).style.opacity='0';
@@ -17,6 +19,12 @@ function switchAboutView(viewIndex) {
 	} else {
 		document.getElementById("powtoon_embed").style.visibility='hidden';
 	}
+
+	if (viewIndex == 3) {
+		// Set default submenu item background equivalent to 'active'
+		document.getElementById("defaultLeaderMenuItem").style.background='#a6c3ce';
+	}
+	
 }
 
 function switchAllianceView(viewIndex) {
@@ -29,6 +37,10 @@ function switchAllianceView(viewIndex) {
 }
 
 function switchLeaderView(viewIndex) {
+	// Clear initialized background color
+	document.getElementById("defaultLeaderMenuItem").style.background='';
+	// Hold parent menu color equivalent to active (otherwise submenu focus overrides)
+	document.getElementById("peopleMenuItem").style.background='#a6c3ce';
 	for (i = 0; i <= 2; i++) {
 	  document.getElementById("leaderIndex" + i).style.visibility='hidden';
     document.getElementById("leaderIndex" + i).style.opacity='0';

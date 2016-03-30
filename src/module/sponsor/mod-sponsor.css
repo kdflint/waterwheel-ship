@@ -21,7 +21,7 @@
 	width: 210px;
 	border-left: thin dashed;
 	border-left-color: #486c7a;
-	font-weight: bold;
+	//font-weight: 400;
 }
 
 .mod-sponsor-controlLevel, .mod-sponsor-controlSponsorship, .mod-sponsor-controlImpact, .mod-sponsor-controlDesignate {

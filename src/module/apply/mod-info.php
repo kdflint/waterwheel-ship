@@ -10,7 +10,9 @@ require_once("../core/domain/Util.php");
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="switchToApplyForm();" >Check Eligibility</a></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoWebinarField();">Streaming Webinar</a></p>
-		<iframe id="partner_perspective_embed" width="378" height="213" style="position:absolute;left:290px;top:90px;" src="https://www.youtube.com/embed/tk-QNJruZgM?rel=0" allowfullscreen="true"></iframe>
+		<div class="youtube-container" id="partner_perspective_embed" style="width:420px;height:240px;left:280px;top:90px;position:absolute;">
+   		<div class="youtube-player" data-id="tk-QNJruZgM"></div>
+		</div>
 		
 		<div id="fade" class="black_overlay" style="display:none;"></div>
 

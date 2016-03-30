@@ -38,10 +38,6 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/style.css" />		
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/mod-core.css" />	
 
-<!-- Stripe -->
-<script language="javascript" type="text/javascript" src="https://checkout.stripe.com/v2/checkout.js"></script>
-<script language="javascript" type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
-
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/jquery.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/script.js" ></script>
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/jquery.hslides.js"></script>

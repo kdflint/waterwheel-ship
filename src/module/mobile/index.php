@@ -25,7 +25,7 @@ if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GE
 	<head>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">	
 		<meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0" />	
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans|Oxygen|Swanky+and+Moo+Moo">	
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans|Oxygen:400,700,300|Swanky+and+Moo+Moo">	
 		<link rel="stylesheet" type="text/css" href="<?php echo Util:: getHttpCorePath(); ?>/style/font-awesome-4.2.0/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/pure-min.css" />
 		<link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/style.css" />

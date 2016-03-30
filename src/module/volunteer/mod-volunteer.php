@@ -82,7 +82,7 @@ require_once("../core/domain/Util.php");
 		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-volunteer-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16317817030" style="margin-left:3px;font-weight:bold;" target="_blank">Information Webinar</a></p>
 		-->
 		<div id="apply-link" style="display:none;">
-			<a class="pure-button button-submit mod-sponsor-button" href="#" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:4px;" ></span> View Application</a>
+			<a class="pure-button button-submit mod-sponsor-button" href="http://northbridgetech.org/dev/members/index.php?q=civicrm/contribute/transact&reset=1&id=2" onclick="alert('The membership application form is not complete - this is just a draft.');" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:4px;" ></span> View Application</a>
 		</div>
 	</div>
 	

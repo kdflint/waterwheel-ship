@@ -18,6 +18,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 $msie_8 = FALSE;
 $ua = $_SERVER["HTTP_USER_AGENT"];
 if ($ua) {
+	// TODO - simple alternative for IE 8. Lower than 8?
 	$msie_8 = strpos($ua, 'MSIE 8.0') ? TRUE : FALSE;
 }
 
@@ -50,7 +51,7 @@ if ($ua) {
 			$("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
 		})
 	</script>
-	
+		
 	</head>
 
 	<body>
@@ -200,10 +201,10 @@ if ($ua) {
 					</div>
 					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="margin-left:47px;font-size:140%;letter-spacing:.75px;">
 	   				<ul>
-        			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(1);">About</a></li>
-        			<li><a href="#" onclick="switchAboutView(2);">Nexus</a></li>
+        			<li><a href="#" onclick="switchAboutView(1);">About</a></li>
+        			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(2);">Nexus</a></li>
         			<li><a href="#" onclick="switchAboutView(4);">Impact</a></li>
-        			<li><a href="#" onclick="switchAboutView(3);">People</a></li>
+        			<li><a id="peopleMenuItem" href="#" onclick="switchAboutView(3);">People</a></li>
         			<li><a href="#" onclick="switchAboutView(0);">Blog</a></li>
         			<li><a href="#" onclick="switchAboutView(5);">Gallery</a></li>
     				</ul>
@@ -253,6 +254,10 @@ if ($ua) {
 		</script>	
 		
 		<?php } ?>		
+		
+		<script>
+			transformYouTubeDivs();
+		</script>
 
 	</body>
 </html>
