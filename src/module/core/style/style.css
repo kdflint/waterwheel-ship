@@ -227,7 +227,7 @@ div.play-button {
 	left: 45%; 
 	top: 35%; 
 	position: absolute; 
-	background: url("http://localhost/waterwheel/module/core/images/play_arrow.png") no-repeat; 
+	background: url("play_arrow.png") no-repeat; 
 }
 
 .youtube-iframe { 

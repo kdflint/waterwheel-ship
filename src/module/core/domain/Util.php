@@ -72,7 +72,7 @@ final class Util {
 	}
 	
 	public static function getStaticDownloadPath() {
-		return "http://northbridgetech.org/downloads";
+		return self::getHttpDownloadPath();
 	}
 	
 	public static function getDemoUrl() {
