@@ -15,14 +15,15 @@ function switchAboutView(viewIndex) {
 	document.getElementById("aboutQuote" + viewIndex).style.opacity='1';
 
 	if (viewIndex == 1) {
+		// About menu Item
 		document.getElementById("powtoon_embed").style.visibility='visible';
 	} else {
 		document.getElementById("powtoon_embed").style.visibility='hidden';
 	}
 
 	if (viewIndex == 3) {
-		// Set default submenu item background equivalent to 'active'
-		document.getElementById("defaultLeaderMenuItem").style.background='#a6c3ce';
+		// People menu item
+		setDefaultLeaderView();
 	}
 	
 }
@@ -35,6 +36,12 @@ function switchAllianceView(viewIndex) {
 	document.getElementById("allianceIndex" + viewIndex).style.visibility='visible';
 	document.getElementById("allianceIndex" + viewIndex).style.opacity='1';
 }
+
+function setDefaultLeaderView() {
+	// Set default submenu item background equivalent to 'active'
+	switchLeaderView(2);
+	document.getElementById("defaultLeaderMenuItem").style.background='#a6c3ce';
+}	
 
 function switchLeaderView(viewIndex) {
 	// Clear initialized background color
