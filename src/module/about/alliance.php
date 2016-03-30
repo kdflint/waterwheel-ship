@@ -23,17 +23,17 @@ require_once("../core/domain/Util.php");
 
 <div class="leaders">
 	<div id="allianceIndex0" class="mod-leader-frame mod-about-normalText" style="visibility:visible;opacity:1;top:120px;left:0px;width:670px;height:330px;">
-		<img src="<?php echo Util::getHttpAboutPath(); ?>/images/cat.gif" width="223" height="100" style="padding-right:20px;"/>
-		<img src="<?php echo Util::getHttpAboutPath(); ?>/images/fh.png" width="234" height="115" style="padding-right:30px;" />
-		<img src="http://localhost/nexus/nexus/partner/sunflower_foundation.jpg" style="" />
+		<img src="<?php echo Util::getHttpCorePath(); ?>/images/cat.gif" width="223" height="100" style="padding-right:20px;"/>
+		<img src="<?php echo Util::getHttpCorePath(); ?>/images/fh.png" width="234" height="115" style="padding-right:30px;" />
+		<img src="<?php echo Util::getHttpCorePath(); ?>/images/sunflower_foundation.jpg" style="" />
 		
-		<img src="<?php echo Util::getHttpAboutPath(); ?>/images/cfcht.png" width="365" height="88" style="padding-top:5px;padding-right:10px;" />
-		<img src="http://localhost/nexus/nexus/partner/ibarj_complete.resized.png" style="padding-top:5px;" />
+		<img src="<?php echo Util::getHttpCorePath(); ?>/images/cfcht.png" width="365" height="88" style="padding-top:5px;padding-right:10px;" />
+		<img src="<?php echo Util::getHttpCorePath(); ?>/images/ibarj_complete.resized.png" style="padding-top:5px;" />
 		
-		<img src="http://localhost/nexus/nexus/partner/worldtrust2.resized.png" style="padding-top:5px;padding-right:10px;" />
-		<img src="http://localhost/nexus/nexus/partner/ayuda.png" style="padding-top:5px;padding-right:10px;" />
-		<img src="http://localhost/nexus/nexus/partner/cala_banner_resized.jpg" style="padding-top:5px;padding-right:10px;" />
-		<img src="http://localhost/nexus/nexus/partner/prc_resized.jpg" style="padding-top:5px;" />
+		<img src="<?php echo Util::getHttpCorePath(); ?>/images/worldtrust2.resized.png" style="padding-top:5px;padding-right:10px;" />
+		<img src="<?php echo Util::getHttpCorePath(); ?>/images/ayuda.png" style="padding-top:5px;padding-right:10px;" />
+		<img src="<?php echo Util::getHttpCorePath(); ?>/images/cala_banner_resized.jpg" style="padding-top:5px;padding-right:10px;" />
+		<img src="<?php echo Util::getHttpCorePath(); ?>/images/prc_resized.jpg" style="padding-top:5px;" />
 
 	</div>
 
