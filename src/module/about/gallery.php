@@ -4,7 +4,7 @@
 <div style="position:absolute;width:350px;">
 <p>8-Part Lecture on Open Source and Social Activism<br/>presented to the Chicago Chapter of the ACM, 2015</p>
 <div class="youtube-container" id="gallery_embed" style="width:350px;position:absolute;">
-	<div class="youtube-player" data-id="pPsE1H1WuCw"></div>
+	<div class="youtube-player" id="pPsE1H1WuCw"></div>
 </div>
 </div>
 		
