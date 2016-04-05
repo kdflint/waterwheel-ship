@@ -152,7 +152,7 @@ function applyValidateAndSubmit(thisForm) {
       budgetField.style.background = errorBackground;
       pass = false;
     }
-    
+          
     var countryField = applyForm["country"];
     var country = countryField.value;
     countryField.style.backgroundColor = "white";
