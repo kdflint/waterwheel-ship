@@ -80,7 +80,6 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 	</head>
 
 	<body>
-		<!--<div class="loader"></div>-->
 		<div id="preloader">
 			<div id="status">One moment...</div>
 		</div>

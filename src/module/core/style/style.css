@@ -1,5 +1,6 @@
 body { 
-	font: 12px/20px Oxygen, Arial, sans-serif;
+	/* font: style variant weight size/line height family */
+	font: normal 400 normal 12px/20px "Oxygen", Arial, sans-serif;
 	text-align: center; 
 	background-color: #638f90;
 	color:#484848;

@@ -25,7 +25,7 @@ $coreHttpPath = Util::getHttpCorePath();
 <!-- http://fortawesome.github.io/Font-Awesome/ -->
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/font-awesome-4.2.0/css/font-awesome.min.css">
 <!-- https://www.google.com -->
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans|Oxygen|Swanky+and+Moo+Moo">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans|Oxygen:400,300,700|Swanky+and+Moo+Moo">
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/style.css">		
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/mod-core.css">	
 
