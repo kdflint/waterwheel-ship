@@ -6,9 +6,9 @@ require_once("../core/domain/Util.php");
 
 <div class="pure-menu pure-menu-open" style="border-width:0px;width:150px;padding-top:10px;">
 	<ul>
-		<li><a id="defaultLeaderMenuItem" href="#" onclick="switchLeaderView(2);" style="width:100px;margin-bottom:5px;text-align:left;">Volunteers</a></li>		
-		<li><a href="#" onclick="switchLeaderView(1);" style="width:100px;margin-bottom:5px;text-align:left;">Executive Staff</a></li>
-		<li><a href="#" onclick="switchLeaderView(0);" style="width:100px;margin-bottom:5px;text-align:left;">Board of Directors</a></li>
+		<li><a id="defaultLeaderMenuItem" href="#" onclick="switchLeaderView(2);" style="width:100px;margin-bottom:5px;text-align:left;" tabindex="7">Volunteers</a></li>		
+		<li><a href="#" onclick="switchLeaderView(1);" style="width:100px;margin-bottom:5px;text-align:left;" tabindex="8">Executive Staff</a></li>
+		<li><a href="#" onclick="switchLeaderView(0);" style="width:100px;margin-bottom:5px;text-align:left;" tabindex="9">Board of Directors</a></li>
 	</ul>
 </div>
 

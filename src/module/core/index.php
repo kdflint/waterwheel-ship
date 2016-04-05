@@ -226,12 +226,12 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 					</div>
 					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="margin-left:47px;font-size:140%;letter-spacing:.75px;">
 	   				<ul>
-        			<li><a href="#" onclick="switchAboutView(1);">About</a></li>
-        			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(2);">Nexus</a></li>
-        			<li><a href="#" onclick="switchAboutView(4);">Impact</a></li>
-        			<li><a id="peopleMenuItem" href="#" onclick="switchAboutView(3);">People</a></li>
-        			<li><a href="#" onclick="switchAboutView(0);">Blog</a></li>
-        			<li><a href="#" onclick="switchAboutView(5);">Gallery</a></li>
+        			<li><a href="#" onclick="switchAboutView(1);" tabindex="1">About</a></li>
+        			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(2);" tabindex="2">Nexus</a></li>
+        			<li><a href="#" onclick="switchAboutView(4);" tabindex="3">Impact</a></li>
+        			<li><a id="peopleMenuItem" href="#" onclick="switchAboutView(3);" tabindex="4">People</a></li>
+        			<li><a href="#" onclick="switchAboutView(0);" tabindex="5">Blog</a></li>
+        			<li><a href="#" onclick="switchAboutView(5);" tabindex="6">Gallery</a></li>
     				</ul>
 					</div>
 				</div>
