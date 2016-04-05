@@ -22,6 +22,26 @@ if ($ua) {
 	$msie_8 = strpos($ua, 'MSIE 8.0') ? TRUE : FALSE;
 }
 
+$viewArray = array("apply"=>"2", "sponsor"=>"1", "volunteer"=>"2", "apply_form"=>"2");
+$viewSuccess = array(
+	"volunteer"=>"Got it! Your confirmation email will be delivered in a few minutes.",
+	"apply_form"=>"Got it! Your confirmation email will be delivered in a few minutes."
+	);
+
+// initialize slide focus
+$slideIndex = 0;
+if (isset($_GET['view']) && isset($viewArray[$_GET['view']])) {
+  $slideIndex = $viewArray[$_GET["view"]];
+  $_GET['context'] = "nexus";
+}
+
+// initialize user messages
+$message = "";
+if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['view']])) {
+  $message = $viewSuccess[$_GET["view"]];
+}
+
+
 ?>
 
 <html>
@@ -29,6 +49,7 @@ if ($ua) {
 	<head>
 		<title>Northbridge Technology Alliance</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">		
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<?php 
 			include("mod-core-meta.php");
 			include("../apply/mod-apply-meta.php"); 
