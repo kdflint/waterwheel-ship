@@ -11,7 +11,7 @@ require_once("../core/domain/Util.php");
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoWebinarField();">Streaming Webinar</a></p>
 		<div class="youtube-container" id="partner_perspective_embed" style="width:420px;height:240px;left:280px;top:90px;position:absolute;">
-   		<div class="youtube-player" data-id="tk-QNJruZgM"></div>
+   		<div class="youtube-player" id="tk-QNJruZgM"></div>
 		</div>
 		
 		<div id="fade" class="black_overlay" style="display:none;"></div>

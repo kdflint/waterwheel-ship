@@ -20,7 +20,7 @@ require_once("../core/domain/Util.php");
 	</div>
 	<div class="mod-about-frameBottomRight">
 			<p style="font-weight:bold;">Nexus Training</p>
-			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-graduation-cap fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Training.pdf" target="_blank">Whitepaper</a></span>As great as our software is, our training webinars are where the real Northbridge magic happens! Northbridge conducts regular training sessions designed to help our social justice leaders adopt virtual web conferencing and webinars into their collaboration and outreach practices. Through several sessions designed for different levels of familiarity, our instructor-led webinars create expert users able to meet a variety of program needs using virtual conferencing tools.
+			<p class="mod-about-normalText"><span style="float:right;padding:5px;"><span class="fa fa-graduation-cap fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Training.pdf" target="_blank">Whitepaper</a></span>As great as our software is, our training webinars are where the real Northbridge magic happens! Northbridge conducts regular training sessions designed to help our social justice leaders adopt virtual web conferencing and webinars into their collaboration and outreach practices. Through sessions designed for different levels of familiarity, our instructor-led webinars empower users to meet a variety of program needs using virtual media.
 			</p>
 	</div>
 </div>
