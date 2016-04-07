@@ -16,6 +16,7 @@ if (isset($_POST['testMode']) && !strcmp($_POST['testMode'], "true")) {
 
 if (isset($volunteer)) {
 	
+	// TODO - handle undefined indexes for following
 	try {
 		$volunteer->setFname($_POST['fname']); 
 		$volunteer->setLname($_POST['lname']);
