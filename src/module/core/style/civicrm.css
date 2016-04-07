@@ -1,5 +1,15 @@
+@import url("http://fonts.googleapis.com/css?family=Oxygen:400,300,700");
+
 body, #site-slogan, .ui-widget, .comment-form label {
-    font-family: Oxygen, Georgia,"Times New Roman",Times,serif !important;
+    font-family: "Oxygen", Arial, sans-serif !important;
 }
 
 .breadcrumb { display:none; }
+
+.crm-container .help { background-color: #f7f8ef; border: 1px solid #2786c2; }
+
+.crm-container .header-dark { background-color: #486c7a; opacity: .9; border-radius: 4px; }
+
+.crm-container .crm-button { background: #475b64; font-size: 18px; }
+
+div.status { background-color: #f7f8ef; border: 1px solid #2786c2; border-radius: 4px;}
