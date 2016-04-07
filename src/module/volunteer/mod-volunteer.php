@@ -9,7 +9,7 @@ require_once("../core/domain/Util.php");
 <!-- All styles pointed to volunteer module style names -->
 <!-- The original Membership Application form is preserved in the Apply module -->
 
-<form id="volunteer-form" class="pure-form volunteer-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-apply-processor.php" method="POST">
+<form id="volunteer-form" class="pure-form volunteer-form" action="" method="POST">
 	<input type="hidden" name="testMode" value=""/>
 	<div class="mod-volunteer-frameLeft">	
 		<?php if (false) {
