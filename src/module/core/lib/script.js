@@ -115,3 +115,6 @@ function transformYouTubeDivs() {
    	v[n].appendChild(p);
  	}
 }
+
+function insertBreadcrumb() {
+}

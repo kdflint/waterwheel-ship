@@ -2,19 +2,16 @@
 <?php 
 require_once("../core/domain/Util.php");
 $coreHttpPath = Util::getHttpCorePath();
-$applyHttpPath = Util::getHttpApplyPath();;
+$applyHttpPath = Util::getHttpApplyPath();
 
-//http://detectmobilebrowsers.com/
 $useragent=$_SERVER['HTTP_USER_AGENT'];
-$ie8 = FALSE;
 
 if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GET['context'], 'mobile'))) {
-	$ie8 = TRUE;
 	// request is explicitly for mobile site - bypass desktop redirect
 } else {
 	// if user agent does not match a mobile pattern, go to desktop site
-	if(!preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i',$useragent)||preg_match('/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i',substr($useragent,0,4))) {
-		header('Location: http://northbridgetech.org');
+	if(!Util::isMobileUserAgent($useragent)) {
+		header('Location: ' . $coreHttpPath . '/index.php?context=desktop');
 	}
 }
 
@@ -47,11 +44,6 @@ if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GE
 				text-align: left;
 			}
 			
-			.table {
-				width:90%;
-				display:
-				block;max-width:620px;
-			}
 	</style>	
 
 	<script language="javascript" type="text/javascript" src="<?php echo $applyHttpPath; ?>/mod-apply.js"></script>	
@@ -68,7 +60,7 @@ if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GE
 	</script>
 	
 	<script>
-		// override the scripts in mod-apply.js
+		// override the scripts in domain scripts
 		
 		function showInfoEmailField() {
 			document.getElementById("info-email").style.display='block';
@@ -94,51 +86,186 @@ if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GE
   		closer.style.display = "none";
   		control.onclick = function() {hideInfoEmailField();};
 		}
-</script>
+		
+		function showEligibilityForm() {
+			document.getElementById("info-eligible").style.display='block';
+		}
+		
+		function hideEligibilityForm() {
+			document.getElementById("info-eligible").style.display='none';
+		}	
+		
+		function eligibilityValidate() {
+	 		var applyLink = document.getElementById("info-eligibility-apply-link");
+	 		var applyDisabled = document.getElementById("info-eligibility-apply-disabled")
+	 		applyLink.style.display = "none";
+			applyDisabled.style.display = "inline";
+	
+			var pass = true;
+			var eligibleDecision = [];
+			var eligibleMessage = [];
+			var applyForm = document.forms['info-eligibility-form'];
+			var errorBackground = "rgba(252,176,64,0.5) url('') no-repeat right top";
+			document.getElementById("user-message4").style.background = "white";
+			document.getElementById("structure-area").style.background = "white";
+	
+	    var serviceField = applyForm["services"];
+	    var service = serviceField.value;
+			serviceField.style.backgroundColor = "white";
+			if (service == 0) {
+				serviceField.style.background = errorBackground;
+				pass = false;
+			} else if (service == 3) {
+				eligibleMessage[1] = "Depending on more details of your service area, you may be eligible for membership. Our membership registration will collect that information.";
+				eligibleDecision[1] = "Your team may be eligible for membership with Northbridge.";				
+			} else {
+	  	}
+				
+	    var budgetField = applyForm["budget"];
+	    var budget = budgetField.value;
+	    budgetField.style.backgroundColor = "white";
+	    if (budget == null || budget == "" || budget == "0") {
+	      budgetField.style.background = errorBackground;
+	      pass = false;
+	    }
+	          
+	    var countryField = applyForm["country"];
+	    var country = countryField.value;
+	    countryField.style.backgroundColor = "white";
+	    if (country == null || country == "" || country == "0") {
+	      countryField.style.background = errorBackground;
+	      pass = false;
+	    }
+	    
+	    var structureBoxes = applyForm["structure[]"];
+	    checkedCount = 0;
+	    for (var i=0, length = structureBoxes.length; i<length; i++) {
+	    	if (structureBoxes[i].checked == true) {
+	        checkedCount++;
+	     	}
+			}
+			if (checkedCount == 0) {
+				document.getElementById("structure-area").style.background = errorBackground;
+				pass = false;
+			} else if (checkedCount == 1) {
+				if (structureBoxes[0].checked == true && budget >= 2) {
+					eligibleDecision[0] = "For your grass roots team to be eligible, you must have a budget of less than $10,001 USD.";
+				}
+	  	}
+	  	
+			eligibleMessage[2] = "";
+			eligibleDecision[2] = '<span style="color:#d27b4b;font-size:130%;">Congratulations!</span><br/>Your team is eligible for Northbridge membership.';
+			var decisionIndex = 2;
+			
+			if (eligibleDecision[0]) {
+				decisionIndex = 0;
+			} else if (eligibleDecision[1]) {
+				decisionIndex = 1;
+			} else {
+				decisionIndex = 2;
+			}
+	      
+	 		if (Boolean(pass)) {
+	 			// This indicates we passed form validation, not passed eligibility check
+	 			document.getElementById('user-message4').innerHTML = eligibleDecision[decisionIndex];
+	 			if (decisionIndex > 0) {
+	 				applyLink.style.display = "inline";
+					applyDisabled.style.display = "none";
+	 			} else {
+	 				applyLink.style.display = "none";
+					applyDisabled.style.display = "inline";
+					document.getElementById("structure-area").style.background = errorBackground;
+					document.getElementById("user-message4").style.background = errorBackground;
+	 			}
+	 		} else {
+	 			document.getElementById('user-message4').innerHTML = "If you fill out this form completely, we can check membership eligibility for your team, committee, work group, Board or task force.";
+	 			applyLink.style.display = "none";
+				applyDisabled.style.display = "inline";
+	 		}			
+		}
+	</script>
 	
 	</head>
 	
 	<body>
-		<div class="container" style="width:95%">
-			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_rgb.png" width="300" height="82" style="padding:20px 10px 10px 8px;"/>
-			<div style="position:absolute;top:130px;width:45px;padding-left:8px;">		
-				<?php if(!$ie8) { ?>
-					<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x" style="color:#dae0bc;"></a><br/>
-					<a href="//plus.google.com/u/0/101145194341428988499?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;"><span class="fa fa-google-plus-square fa-3x" style="color:#dae0bc;"></a><br/>
-					<a href="https://www.linkedin.com/company/2232384" target="_blank"><span class="fa fa-linkedin fa-3x" style="color:#dae0bc;"></a><br/>
-					<a href="https://www.facebook.com/northbridgenfp#" target="_blank"><span class="fa fa-facebook-square fa-3x" style="color:#dae0bc;"></a><br/>
-					<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x" style="color:#dae0bc;"></a>
-				<?php } ?>
-			</div>
-			<div style="position:absolute;top:130px;left:50px;">	
-				<p >Is your team changing the world? You may be eligible for a global web conference room.</p>	
-				<p >No games. No gimmicks. Just your mission.</p>
-				<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Order Your Information Packet</a></p>
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> 
-					<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">
-					<a href="javascript:void(0)" onclick="alert('To donate by check, please mail your contribution to:\n\nNorthbridge Technology Alliance\n400 South Blvd., Unit A\nEvanston, IL  60202')" style="position:absolute;margin-left:140px;margin-top:-18px;"><img src="<?php echo Util:: getHttpCorePath(); ?>/images/Check_Pen.png" alt="by Check" ></a>
-					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="position:absolute;margin-left:20px;"> 
-					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
-				</form> 
-				<?php if(!$ie8) { ?>
-					<a href="<?php echo $coreHttpPath; ?>/index.php?context=desktop" style="color:#d27b4b;position:absolute;margin-left:25px;margin-top:20px;">Desktop Site</a>
-				<?php } ?>
-				<div id="info-email" class="white_content" style="min-height:156px;display:none;border-radius:8px;position:absolute;top:2px;left:0px;width:90%;">
-					<form id="info-email-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST">
-						<p>We will send a packet of information to your email address. Your address used respectfully. We will not spam you.</p>
-						<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:100%;margin-top:10px;" required ></span>					
-							<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:left;"><span class="fa fa-times" style="margin-right:4px;" ></span> Close</a>
-							<a id="info-email-button" class="pure-button button-link" onclick="infoEmailValidateAndSubmit();" style="width:46px;border-radius:4px;float:right;"><span class="fa fa-play" style="margin-right:4px;" ></span>Send</a>						
-					</form>
-				</div>	
+		<div class="container" style="width:95%;max-width:400px;text-align:center;">
+			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_rgb.png" width="300" height="82" style="margin-left:-30px;padding:20px 10px 10px 0px;"/>
+			<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Cutting edge<br/>technology benefits<br/>for social justice leaders</p>
+			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showEligibilityForm();">Check Your Eligibility</a></p>
+			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
+
+			<div id="info-email" class="white_content" style="min-height:170px;display:none;border-radius:8px;position:absolute;top:115px;left:0px;width:100%;">
+				<form id="info-email-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST">
+					<p>We will send a packet of information to your email address. Your address used respectfully. We will not spam you.</p>
+					<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:90%;margin-top:10px;margin-bottom:10px;margin-left:20px;" required ></span>					
+					<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:left;"><span class="fa fa-times" style="margin-right:4px;" ></span> Close</a>
+					<a id="info-email-button" class="pure-button button-link" onclick="infoEmailValidateAndSubmit();" style="width:46px;border-radius:4px;background-color:#d27b4b;float:right;"><span class="fa fa-play" style="margin-right:4px;" ></span>Send</a>						
+				</form>
+			</div>	
+
+			<div id="info-eligible" class="white_content" style="min-height:275px;display:none;border-radius:8px;position:absolute;top:115px;left:0px;width:100%;">
+				<form id="info-eligibility-form" action="" method="POST">
+					<p id="user-message4">Use this no-obligation form to check membership eligibility for your team, committee, work group, Board or task force.</p>
+					<select id="services" name="services" style="width:90%;margin-top:5px;margin-left:20px;margin-right:20px;">
+						<option value="0" selected>Service Area?</option>
+						<option value="9" /> Human Services<br/>
+						<option value="4" /> Restorative Justice<br/>
+						<option value="5" /> Human Rights<br/>
+						<option value="6" /> Health Equity<br/>
+						<option value="7" /> Education Equity<br/>
+						<option value="8" /> Environment Equity<br/>
+						<option value="8" /> Housing Equity<br/>
+						<option value="8" /> Intersectional Systemic Equity<br/>
+						<option value="1" /> Underserved Community Development<br/>
+						<option value="3" /> Other Social Justice or Community Building Focus<br/>
+					</select>
+      		<select id="country" name="country" style="width:90%;margin-top:10px;margin-left:20px;">
+      			<option value="0" selected>Governing Country</option>
+						<?php include("../volunteer/countryDropdownOptions.html"); ?>
+      		</select>		
+      		<select id="budget" name="budget" style="width:90%;margin-top:10px;margin-left:20px;">
+      			<option value="0" selected>Organizational Budget</option>
+      			<option value="1">$0 - $10,000</option>
+      			<option value="2">$10,001 - $100,000</option>
+      			<option value="3">$100,001 - $250,000</option>
+      			<option value="4">$250,001 - $500,000</option>
+      			<option value="5">$500,001 - $1,000,000</option>
+       			<option value="6"> &gt; $1,000,000</option>
+      		</select>					
+					<p style="font-weight:normal;margin-left:20px;margin-top:10px;">Please describe your organizational structure</p>
+					<div id="structure-area" style="margin-left:20px;">
+		      	<input type="checkbox" name="structure[]" value="0" /> <span style="font-weight:normal;">Grass roots, community organized</span><br/>
+       			<input type="checkbox" name="structure[]" value="1" /> <span style="font-weight:normal;">Incorporated or regulated nonprofit/charity</span><br/>
+       			<input type="checkbox" name="structure[]" value="2" /> <span style="font-weight:normal;">Tax-exempt nonprofit/charity</span>					
+       		</div>
+	
+						<a id="info-eligibility-close-box" class="pure-button button-link" onclick="hideEligibilityForm();" style="width:46px;border-radius:4px;"><span class="fa fa-times" style="margin-right:4px;" ></span>Close</a>
+						<a id="info-eligibility-check-button" class="pure-button button-link" onclick="eligibilityValidate();" style="width:46px;border-radius:4px;"><span class="fa fa-play" style="margin-right:4px;" ></span>Check</a>						
+						<a id="info-eligibility-apply-disabled" class="pure-button pure-button-disabled button-link" href="#" onclick="alert('Please confirm your eligibility before viewing the registration form.');" style="width:150px;padding-left:.4em;border-radius:4px;background-color:#d27b4b;display:inline;"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration Form</a>
+						<a id="info-eligibility-apply-link" class="pure-button button-link" href="http://northbridgetech.org/dev/members/index.php?q=civicrm/contribute/transact&reset=1&id=2" style="width:150px;padding-left:.4em;border-radius:4px;background-color:#d27b4b;display:none;"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration Form</a>
+
+				</form>
 			</div>
 
-			<div style="position:absolute;top:340px;">
-				<a class="twitter-timeline" width="310" height="250" href="https://twitter.com/NorthbridgeNFP" data-widget-id="568601776015024128">Tweets by @NorthbridgeNFP</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</div>
-		
+			<hr color='#dae0bc'/>
+			<p>
+				<a href='https://twitter.com/NorthbridgeNFP' target='_blank'><img style="margin-right:15px;" src='http://northbridgetech.org/images/twitter_dae0bc_32.png' width='32' height=32' /></a>
+				<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img style="margin-right:15px;" src='http://northbridgetech.org/images/google-plus-square_dae0bc_32.png' width='32' height=32' /></a>
+				<a href='https://www.linkedin.com/company/2232384' target='_blank'><img style="margin-right:15px;" src='http://northbridgetech.org/images/linkedin_dae0bc_32.png' width='32' height=32' /></a>
+				<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img style="margin-right:15px;" src='http://northbridgetech.org/images/facebook-square_dae0bc_32.png' width='32' height=32' /></a>
+				<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img src='http://northbridgetech.org/images/github_dae0bc_32.png' width='32' height=32' /></a>
+			</p>
+			<p style="text-align:left;">Northbridge Technology Alliance creates software solutions for organizations who are engaged in social justice and community-building efforts.</p>
+			<a href="<?php echo $coreHttpPath; ?>/index.php?context=desktop" style="color:#d27b4b;float:right;">Desktop Site</a>
 		</div>
 	</body>
 </html>
+
+<!--
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> 
+	<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">
+	<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="position:absolute;margin-left:20px;"> 
+	<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
+</form> 
+-->
 

@@ -202,7 +202,7 @@ class Application {
 
 		return;
 	}
-
+	
 	private function queueApplicationInquiryMessage() {
 		$query = Util::getMessageQueueInsert();
 		$result = Util::psExecute($query, array("5", $this->email, ""));

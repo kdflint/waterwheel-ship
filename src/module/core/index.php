@@ -2,24 +2,38 @@
 <?php 
 
 require_once("domain/Util.php");
+require_once("domain/Breadcrumb.php");
 
-//http://detectmobilebrowsers.com/
-$useragent=$_SERVER['HTTP_USER_AGENT'];
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+$mobileHttpPath = Util::getHttpMobilePath();
+$campaign = "";
+$crumb = new Breadcrumb();
+$crumb = "";
 
-if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
-	// request is explicitly for desktop site - bypass mobile redirect
-} else {
-	// if user agent matches a mobile pattern, go to mobile site
-	if(preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i',$useragent)||preg_match('/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i',substr($useragent,0,4))) {
-		header('Location: http://northbridgetech.org/apps/waterwheel/module/mobile/index.php');
+if (isset($_GET['c']) && strlen($_GET['c']) > 0 && Util::isCleanCharacterSet($_GET['c'])) {
+	$campaign = substr($_GET['c'],0,2);
+	$crumb->setCampaign($campaign);
+	if (isset($_GET['m']) && strlen($_GET['m']) > 0 && Util::isCleanCharacterSet($_GET['m'])) {
+		$crumb = substr($_GET['m'],0,4);
+		$crumb->setCrumb(substr($_GET['m'],0,4));
 	}
+	$crumb->insert();
 }
 
 $msie_8 = FALSE;
 $ua = $_SERVER["HTTP_USER_AGENT"];
 if ($ua) {
 	// TODO - simple alternative for IE 8. Lower than 8?
-	$msie_8 = strpos($ua, 'MSIE 8.0') ? TRUE : FALSE;
+	$msie_8 = strpos($ua, 'MSIE 8') || strpos($ua, 'MSIE 7') ||  strpos($ua, 'MSIE 6') ? TRUE : FALSE;
+}
+
+if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
+	// request is explicitly for desktop site - bypass mobile redirect
+} else {
+	// if user agent matches a mobile pattern, go to mobile site
+	if(Util::isMobileUserAgent($useragent) || $msie_8) { 
+		header('Location: ' . $mobileHttpPath . '/index.php?context=mobile');
+	}
 }
 
 $viewArray = array("apply"=>"2", "sponsor"=>"1", "volunteer"=>"2", "apply_form"=>"2");
@@ -40,7 +54,6 @@ $message = "";
 if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['view']])) {
   $message = $viewSuccess[$_GET["view"]];
 }
-
 
 ?>
 
@@ -81,13 +94,10 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 
 	<body>
 		<div id="preloader">
-			<div id="status">One moment...</div>
+			<div id="status" style="font-size:200%;">
+				One moment... 
+			</div>
 		</div>
-
-		<?php if($msie_8) { ?>
-			<div style="background: #000; text-align: center; position: absolute; top: 0px; width: 100%; color: #FFF;">This website is not compatible with your Internet Explorer version. <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank" style="color: #fff; text-decoration: underline;">Please upgrade here.</a></div>
-			<iframe width="360" height="700" src="http://northbridgetech.org/apps/waterwheel/module/mobile/index.php?context=ie8" frameborder="0" scrolling="no" allowfullscreen></iframe>
-		<?php } else { ?>
 
 		<div class="container">
 			<div id="curtain" class="curtain"></div>
@@ -96,16 +106,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 			<div id="sponsorApp" class="sponsorApp">
 				<div class="sponsorHeader">
 					<div class="sponsorHeaderLeft">
-						<p class="skyblue sponsorHeaderHeadline" style="line-height:130%;">Exclusive<br/>technology benefits<br/>for social justice leaders</p>
-							<!--
-							<span class="fa fa-comments"></span>
-							<span class="fa fa-play-circle" style="margin:5px;"></span>
-							<span class="fa fa-laptop" style="margin:5px;"></span>
-							<span class="fa fa-globe" style="margin:5px;"></span>
-							<span class="fa fa-microphone" style="margin:5px;"></span>
-							<span class="fa fa-video-camera" style="margin:5px;"></span>
-							<span class="fa fa-mobile" style="margin:5px;"></span>
-							-->		
+						<p class="skyblue sponsorHeaderHeadline" style="line-height:130%;">Cutting edge<br/>technology benefits<br/>for social justice leaders</p>
 					</div>
 					<div class="sponsorHeaderRight" id="sponsorHeaderRight">
 						<?php include("whitepaper-link.php"); ?>	
@@ -139,7 +140,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 										<p><span class="fa fa-paper-plane fa-3x otherblue"></span></p>
 									</div>
 									<h1 class="slider skyblue">Membership Benefits</h1>
-									<p class="skyblue" style="font-size:115%;margin-top:15px;"><b>Check your eligibility and apply</b></p>
+									<p class="skyblue" style="font-size:115%;margin-top:15px;"><b>Confirm your eligibility, then register</b></p>
 								</div>
 							</li>
 						</ul>
@@ -276,9 +277,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 			var stateObj = { foo: "bar" };
 			history.pushState(stateObj, "", "index.php#");
 		</script>	
-		
-		<?php } ?>		
-		
+			
 		<script>
 			transformYouTubeDivs();
 		</script>
