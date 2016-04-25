@@ -23,17 +23,20 @@ if (isset($_GET['c']) && strlen($_GET['c']) > 0 && Util::isCleanCharacterSet($_G
 $msie_8 = FALSE;
 $ua = $_SERVER["HTTP_USER_AGENT"];
 if ($ua) {
-	// TODO - simple alternative for IE 8. Lower than 8?
 	$msie_8 = strpos($ua, 'MSIE 8') || strpos($ua, 'MSIE 7') ||  strpos($ua, 'MSIE 6') ? TRUE : FALSE;
 }
 
 if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 	// request is explicitly for desktop site - bypass mobile redirect
 } else {
-	// if user agent matches a mobile pattern, go to mobile site
-	if(Util::isMobileUserAgent($useragent) || $msie_8) { 
+	if(Util::isMobileUserAgent($useragent)) { 
 		header('Location: ' . $mobileHttpPath . '/index.php?context=mobile');
+		exit(0);
+	} else if($msie_8) { 
+		header('Location: ' . $mobileHttpPath . '/index.php?context=ie8');
+		exit(0);
 	}
+
 }
 
 $viewArray = array("apply"=>"2", "sponsor"=>"1", "volunteer"=>"2", "apply_form"=>"2");
@@ -226,8 +229,8 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 					</div>
 					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="margin-left:47px;font-size:140%;letter-spacing:.75px;">
 	   				<ul>
-        			<li><a href="#" onclick="switchAboutView(1);" tabindex="1">About</a></li>
-        			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(2);" tabindex="2">Nexus</a></li>
+        			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(1);" tabindex="1">About</a></li>
+        			<li><a href="#" onclick="switchAboutView(2);" tabindex="2">Nexus</a></li>
         			<li><a href="#" onclick="switchAboutView(4);" tabindex="3">Impact</a></li>
         			<li><a id="peopleMenuItem" href="#" onclick="switchAboutView(3);" tabindex="4">People</a></li>
         			<li><a href="#" onclick="switchAboutView(0);" tabindex="5">Blog</a></li>
