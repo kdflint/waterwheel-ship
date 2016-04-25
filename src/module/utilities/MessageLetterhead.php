@@ -6,10 +6,10 @@ class MessageLetterhead {
 	
 	private $replyTo = "kathy.flint@northbridgetech.org";
 	private $bcc = "";
-	private $subject = "[Nexus] System Problem Resolved";
-	private $from = "Northbridge Technology Alliance <noreply@northbridgetech.org>";
+	private $subject = "Exclusive Technology Benefits";
+	private $from = "Kathy Flint <kathy.flint@northbridgetech.org>";
 	private $to = "kathy.flint@northbridgetech.org";	
-	private $emailStyle = "text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);margin-top:20px;margin-bottom:20px;border-radius:6px;font-family:Oxygen;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
+	private $emailStyle = "text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);border-radius:6px;font-family:Oxygen;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
 	private $linkStyle = "";
 	
 /*
@@ -18,7 +18,7 @@ class MessageLetterhead {
 */
 	
 	private $messageBody = 
-"Dear Nexus Web Meet User,\r\n\r\nToday we discovered and resolved a system defect that may have affected your ability over the past three weeks to login, enroll, or reset your Nexus Web Meet password.\r\n\r\nIf you have not experienced difficulty with any of that functionality, you can safely disregard this message!\r\n\r\nIf you have recently experienced difficulty with any of those functions, you may wish to attempt your activity again. If you have any questions, or if problems persist, please reply to this email.\r\n\r\nWe sincerely apologize for any inconvenience this may have cause for you!\r\n\r\nSincerely,\r\n\r\nThe Support Team at\r\nNorthbridge Technology Alliance";
+"Hello,\r\n\r\nResearching in Guidestar, I discovered your organization.\r\n\r\nI am the founder of Northbridge Technology Alliance, a nonprofit social enterprise that has served the social justice community since 2011.\r\n\r\nIt is important to me that you become aware of our new technology benefits package.\r\n\r\nThrough this program, starting at $120 annually, you can be equipped with a state-of-the-art virtual web meeting room, good for webinars, trainings, volunteer meetings, and Board meetings.\r\n\r\nThere are more benefits in addition... read more, with no obligation.\r\n\r\nhttp://northbridgetech.org?view=apply\r\n\r\nMany large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your mission!\r\n\r\nLooking forward to bending the arc alongside you,\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\n";
 	
 	public function __construct() {
 	}
@@ -26,13 +26,15 @@ class MessageLetterhead {
 	private $buttons = array(
 		// Global links text-to-html translation table
 		// If a link in the text version of the message exactly matches a link here, it will translate into a styled button. Example:
-		"http://nexus.northbridgetech.org/demo" => "Nexus Web Meet Demo"
+		"http://nexus.northbridgetech.org/demo" => "Try Nexus",
+		"http://northbridgetech.org?view=apply" => "Northbridge Member Benefits"
 	);
 
 	private $links = array(
 		// Global links text-to-html translation table
 		// If a link in the text version of the message exactly matches a link here, it will translate into a link. Example:
-		"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW" => "<img alt='Donate' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif'>"
+		"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW" => "<img alt='Donate' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif'>",
+		//"http://northbridgetech.org?view=apply" => "Northbridge Member Benefits"
 	);
 
 	private function formatButtons($in) {
@@ -118,6 +120,10 @@ Content-Transfer-Encoding: 7bit
 		$output .= "Twitter = " . Util::getTwitterHandle() . "\r\n";
 		$output .= "Message Body = " . $this->messageBody . "\r\n";
 		return $output;
+	}
+	
+	public function toHTMLString () {
+		return $this->constructHtmlMessage("xxxx");
 	}
 
 }
