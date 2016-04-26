@@ -67,7 +67,7 @@ class Message {
       case self::APPLICATION_NOTIFY;
       	return "Application Notification";
       case self::PARTNER_INFORMATION_PACKET;
-      	return "[Northbridge] Information Packet";
+      	return "[Northbridge] Membership Information Packet";
     	default:
         return "";
 		}
@@ -140,14 +140,18 @@ Content-Transfer-Encoding: 7bit
 <!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01//EN'>
 <html>
 	<head>
+		<meta http-equiv='Content-type' content='text/html;charset=UTF-8'>	
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oxygen'>
+		<style>
+			p { margin-bottom:10px; }	
+		</style>
 	</head>
 	<body style='font-family:\"Oxygen\",Arial,sans-serif;color:#484848;'>
 	<center>
 		<table style='display:block;max-width:620px;text-align:left;font-family:\"Oxygen\",Arial,sans-serif;color:#484848;'>
   		<tr>
 	    	<td style='text-align:center;'>
-					<a href='http://northbridgetech.org'><img src='" . Util::getHttpCorePath() . "/images/NB_horizontal_tagline_rgb.png' alt='Northbridge Technology Alliance Logo' width='330' height='103' style='margin-bottom:20px;margin-left:-30px;'/></a>
+					<a href='http://northbridgetech.org'><img src='http://northbridgetech.org/images/NB_horizontal_tagline_rgb.png' alt='Northbridge Technology Alliance Logo' width='330' height='103' style='margin-bottom:30px;margin-left:-30px;'/></a>
     		</td>
   		</tr>
 			<tr>
@@ -157,11 +161,11 @@ Content-Transfer-Encoding: 7bit
 				<td style='vertical-align:top;padding-top:10px;font-size:70%;'>
 					<hr color='#dae0bc'/>
 					<center>
-						<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/twitter_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
-						<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img src='" . Util::getHttpCorePath() . "/images/google-plus-	square_dae0bc_32.png' width='32' height=32' style='margin-right:15px;' /></a>
-						<a href='https://www.linkedin.com/company/2232384' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/linkedin_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
-						<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/facebook-square_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
-						<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/github_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
+						<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img src='http://northbridgetech.org/images/twitter_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
+						<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img src='http://northbridgetech.org/images/google-plus-square_dae0bc_32.png' width='32' height=32' style='margin-right:15px;' /></a>
+						<a href='https://www.linkedin.com/company/2232384' target='_blank'><img src='http://northbridgetech.org/images/linkedin_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
+						<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img src='http://northbridgetech.org/images/facebook-square_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
+						<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img src='http://northbridgetech.org/images/github_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
 					</center>
 					<p style='font-size:90%;color:#666666;'>" . $this->getMessageFooter() . "</td></tr>
 				</td>

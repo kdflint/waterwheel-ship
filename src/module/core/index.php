@@ -6,16 +6,15 @@ require_once("domain/Breadcrumb.php");
 
 $useragent = $_SERVER['HTTP_USER_AGENT'];
 $mobileHttpPath = Util::getHttpMobilePath();
-$campaign = "";
+$campaign = $message = "";
 $crumb = new Breadcrumb();
-$crumb = "";
 
 if (isset($_GET['c']) && strlen($_GET['c']) > 0 && Util::isCleanCharacterSet($_GET['c'])) {
 	$campaign = substr($_GET['c'],0,2);
 	$crumb->setCampaign($campaign);
 	if (isset($_GET['m']) && strlen($_GET['m']) > 0 && Util::isCleanCharacterSet($_GET['m'])) {
-		$crumb = substr($_GET['m'],0,4);
-		$crumb->setCrumb(substr($_GET['m'],0,4));
+		$message = substr($_GET['m'],0,4);
+		$crumb->setCrumb($message);
 	}
 	$crumb->insert();
 }
