@@ -264,8 +264,8 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 		</div><!-- /container -->
 		
 		<!-- initialize major context -->
-		<?php //if (isset($_GET['context']) && !strcmp($_GET['context'], 'nexus')) { ?>
-		<?php if (true) { ?>
+		<?php if (isset($_GET['context']) && !strcmp($_GET['context'], 'nexus')) { ?>
+		<?php //if (true) { ?>
 			<script type="text/javascript">
 				switchToSponsor();
 			</script>
