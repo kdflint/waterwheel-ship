@@ -2,51 +2,36 @@
 
 require_once("../core/domain/Util.php");
 
-class MessageLetterhead {
+class MessageInvitation {
 	
 	private $replyTo = "kathy.flint@northbridgetech.org";
 	private $bcc = "";
-	private $subject = "Exclusive Technology Benefits";
-	private $from = "Kathy Flint <kathy.flint@northbridgetech.org>";
+	private $subject = "[Nexus] Invitation Notification";
+	private $from = "Northbridge Technology Alliance <noreply@northbridgetech.org>";
 	private $to = "kathy.flint@northbridgetech.org";	
-	private $emailStyle = "text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);border-radius:6px;font-family:Oxygen;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
-	private $linkStyle = "";
-	
-/*
-	private $messageBody = 
-"Dear Northbridge Supporter,\r\n\r\nCongratulations are in order! Look at what YOU have created.\r\n\r\n\r\nhttp://nexus.northbridgetech.org/demo\r\n\r\n\r\nOur sophisticated web conferencing app that YOU have created is now used <b>internationally by 43 nonprofit organizations</b> who are transforming society in the following areas: Community Development, Education Equity, Environment Equity, Health Equity, Human/Civil Rights, and Human Services.\r\n\r\n<i>\"This is to good to be true - thank you!\"</i> - Chicago Antiracism Commission\r\n\r\nYet, it IS true. And this is what happens when generous people like you, intent on improving society, act on their intention.\r\n\r\n<b>With an end-of-year holiday gift, will you help us scale our impact from tens to hundreds?</b>\r\n\r\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW\r\n\r\nFor just $50, we can provide 120 hours of web conferencing facilities to a community-building organization. \r\n\r\nFor $250, we can provide 24/7 global webinar capacity.\r\n\r\n<b>Will you help us end our fiscal year in the best position possible?</b>\r\n\r\nThanks as always, and my best regards,\r\n\r\nKathy Flint, CEO\r\nNorthbridge Technology Alliance";
-*/
+	private $emailStyle = "";
 	
 	private $messageBody = 
-"Hello,\r\n\r\nResearching in Guidestar, I discovered your organization.\r\n\r\nI am the founder of Northbridge Technology Alliance, a nonprofit social enterprise that has served the social justice community since 2011.\r\n\r\nIt is important to me that you become aware of our new technology benefits package.\r\n\r\nThrough this program, starting at $120 annually, you can be equipped with a state-of-the-art virtual web meeting room, good for webinars, trainings, volunteer meetings, and Board meetings.\r\n\r\nThere are more benefits in addition... read more, with no obligation.\r\n\r\nhttp://northbridgetech.org?view=apply\r\n\r\nMany large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your mission!\r\n\r\nLooking forward to bending the arc alongside you,\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\n";
+	"Hello Donna,\r\n\r\nYou have been added to the Nexus Web Meet Conference team: Episcopal Diocese of Chicago Anti-racism Commission\r\n\r\nPlease follow this link to complete your enrollment.\r\n\r\nhttp://nexus.northbridgetech.org/web/enroll?invitation=19ab490c-48d1-4627-88c7-f9968cf4982a\r\n\r\nOnce your enrollment is complete then you can add other members to your team.\r\n\r\nPlease reply to this email with any questions at all!\r\n\r\nThe Development Team at\r\nNorthbridge Technology Alliance";
+	
+	/*
+	To recreate an original enrollment packet, like we did for Kim Power
+	private $messageBody = 
+	"Hello,\r\n\r\nYou have been added to the Nexus Web Meet Conference team The Sunflower Foundation (Australia) Inc. ®\r\n\r\nPlease follow this link to complete your enrollment.\r\n\r\nhttp://nexus.northbridgetech.org/web/enroll?invitation=5474501b-e26f-0a98-a790-dbe7c6dd5a31\r\n\r\nThe Development Team at\r\nNorthbridge Technology Alliance";
+	*/
 	
 	public function __construct() {
 	}
 	
-	private $buttons = array(
-		// Global links text-to-html translation table
-		// If a link in the text version of the message exactly matches a link here, it will translate into a styled button. Example:
-		"http://nexus.northbridgetech.org/demo" => "Try Nexus",
-		"http://northbridgetech.org?view=apply" => "Northbridge Member Benefits"
-	);
-
 	private $links = array(
 		// Global links text-to-html translation table
-		// If a link in the text version of the message exactly matches a link here, it will translate into a link. Example:
-		"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW" => "<img alt='Donate' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif'>",
-		//"http://northbridgetech.org?view=apply" => "Northbridge Member Benefits"
+		// If a link in the text version of the message exactly matches a link here, it will translate into a styled button. Example:
+		"http://nexus.northbridgetech.org/web/enroll?invitation=19ab490c-48d1-4627-88c7-f9968cf4982a" => "http://nexus.northbridgetech.org/web/enroll?invitation=19ab490c-48d1-4627-88c7-f9968cf4982a"
 	);
-
-	private function formatButtons($in) {
-		foreach($this->buttons as $key => $value) {
-			$in = str_replace($key, "<a style='" . $this->emailStyle . "' href='" . $key . "'>" . $value . "</a>", $in);
-		}
-		return $in;
-	}
 
 	private function formatLinks($in) {
 		foreach($this->links as $key => $value) {
-			$in = str_replace($key, "<a style='" . $this->linkStyle . "' href='" . $key . "'>" . $value . "</a>", $in);
+			$in = str_replace($key, "<a style='" . $this->emailStyle . "' href='" . $key . "'>" . $value . "</a>", $in);
 		}
 		return $in;
 	}
@@ -59,8 +44,7 @@ class MessageLetterhead {
 	private function constructHtmlMessage($boundary) {
 		$formatLineBreaks = str_replace("\r\n\r\n", "</p><p>",$this->messageBody);
 		$formatLineBreaks = str_replace("\r\n", "<br/>",$formatLineBreaks);
-		$formatLinks = $this->formatLinks($formatLineBreaks);
-		$formatLinkButtons = $this->formatButtons($formatLinks);
+		$formatLinkButtons = $this->formatLinks($formatLineBreaks);
 		return "--" . $boundary . "
 Content-Type: text/html; charset=\"iso-8859-1\"
 Content-Transfer-Encoding: 7bit
@@ -120,10 +104,6 @@ Content-Transfer-Encoding: 7bit
 		$output .= "Twitter = " . Util::getTwitterHandle() . "\r\n";
 		$output .= "Message Body = " . $this->messageBody . "\r\n";
 		return $output;
-	}
-	
-	public function toHTMLString () {
-		return $this->constructHtmlMessage("xxxx");
 	}
 
 }

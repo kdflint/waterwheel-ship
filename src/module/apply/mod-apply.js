@@ -79,6 +79,11 @@ function infoEmailValidateAndSubmit() {
 
 function applyValidateAndSubmit(thisForm) {
 		
+ 		var applyLink = document.getElementById("apply-link");
+ 		var applyDisabled = document.getElementById("apply-disabled")
+ 		applyLink.style.display = "none";
+		applyDisabled.style.display = "block";
+
 		var pass = true;
 		//var eligibleDecision = "";
 		var eligibleDecision = [];
@@ -113,7 +118,7 @@ function applyValidateAndSubmit(thisForm) {
 			serviceBoxes[7].checked == true ||
 			serviceBoxes[8].checked == true
 			)) {
-			eligibleMessage[1] = "Depending on more details of your service area, you may be eligible for membership. Our complete membership application will collect that information.";
+			eligibleMessage[1] = "Depending on more details of your service area, you may be eligible for membership. Our membership registration will collect that information.";
 			eligibleDecision[1] = "Your team may be eligible for membership with Northbridge.";
   	}
   	
@@ -187,7 +192,7 @@ function applyValidateAndSubmit(thisForm) {
   	}
   	
 		eligibleMessage[2] = "";
-		eligibleDecision[2] = "Congratulations! Your team is eligible for membership with Northbridge.";
+		eligibleDecision[2] = 'Congratulations! Your team is eligible for membership with Northbridge.';
 		var decisionIndex = 2;
 		
 		if (eligibleDecision[0]) {
@@ -203,14 +208,16 @@ function applyValidateAndSubmit(thisForm) {
  			document.getElementById('user-message4').innerHTML = eligibleDecision[decisionIndex];
  			document.getElementById('user-message2').innerHTML = eligibleMessage[decisionIndex];
  			if (decisionIndex > 0) {
-				document.getElementById("apply-link").style.display = "block";
+ 				applyLink.style.display = "block";
+				applyDisabled.style.display = "none";
 				if (isValidEmail(email_1) && isValidEmail(email_2) && email_1 == email_2) {
 					document.forms["info-email-form"]["email_1"].value = email_1;
 					// TODO - customize the email to say we noticed that they were eligible
-					infoEmailValidateAndSubmit();
+					//infoEmailValidateAndSubmit();
 				}
  			} else {
- 				document.getElementById("apply-link").style.display = "none";
+ 				applyLink.style.display = "none";
+				applyDisabled.style.display = "block";
  			}
  		} else {
  			document.getElementById('user-message4').innerHTML = "If you fill out this form completely, we can check membership eligibility for your team, committee, work group, Board or task force.";
@@ -316,3 +323,4 @@ function applyValidateAndSubmit(thisForm) {
     }
     */
 }
+

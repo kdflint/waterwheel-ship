@@ -10,6 +10,6 @@ if (isset($message)) {
 	echo("Message object is null.");
 }
 
-echo($message->toString());
+echo($message->toHTMLString());
 
 ?>

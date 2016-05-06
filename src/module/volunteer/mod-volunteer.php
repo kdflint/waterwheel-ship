@@ -9,7 +9,7 @@ require_once("../core/domain/Util.php");
 <!-- All styles pointed to volunteer module style names -->
 <!-- The original Membership Application form is preserved in the Apply module -->
 
-<form id="volunteer-form" class="pure-form volunteer-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-apply-processor.php" method="POST">
+<form id="volunteer-form" class="pure-form volunteer-form" action="" method="POST">
 	<input type="hidden" name="testMode" value=""/>
 	<div class="mod-volunteer-frameLeft">	
 		<?php if (false) {
@@ -77,14 +77,18 @@ require_once("../core/domain/Util.php");
 	<div class="mod-volunteer-frameRight">
 		<p id="user-message4" class="skyblue" style="font-size:130%;font-weight:bold;margin-left:5px;margin-top:10px;">Use this no-obligation form to check membership eligibility for your team, committee, work group, Board or task force.</p>
 		<p id="user-message2" class="user-message" style="bottom:auto;margin-top:10px;font-size:120%;"></p>
+		<div id="apply-disabled" style="display:block;">
+			<a class="pure-button pure-button-disabled button-submit mod-sponsor-button" href="#" onclick="alert('Please confirm your eligibility before viewing the registration form.');" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>View Registration Form</a>
+		</div>
+		<div id="apply-link" style="display:none;">
+			<a class="pure-button button-submit mod-sponsor-button" href="<?php echo Util::getMemberRegrUrl(); ?>"  style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>View Registration Form</a>
+		</div>
+	</div>
+	
+</form>	
+
 		<!--
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Partnership Details</a></p>
 		<p><span class="fa fa-video-camera fa-2x"></span> <a class="mod-volunteer-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank" style="margin-left:5px;font-weight:bold;">A Partner Perspective</a> </p>
 		<p><span class="fa fa-comment-o fa-2x"></span>  <a class="mod-volunteer-anchor" href="https://www.eventbrite.com/e/information-webinar-tickets-16317817030" style="margin-left:3px;font-weight:bold;" target="_blank">Information Webinar</a></p>
 		-->
-		<div id="apply-link" style="display:none;">
-			<a class="pure-button button-submit mod-sponsor-button" href="http://northbridgetech.org/dev/members/index.php?q=civicrm/contribute/transact&reset=1&id=2" onclick="alert('The membership application form is not complete - this is just a draft.');" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:4px;" ></span> View Application</a>
-		</div>
-	</div>
-	
-</form>	

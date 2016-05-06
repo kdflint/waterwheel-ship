@@ -23,11 +23,12 @@ class Message {
 	private $links = array(
 		// Global links text-to-html translation table
 		// If a link in the text version of the message exactly matches a link here, it will translate into a styled button
-		"http://northbridgetech.org/index.php?view=apply_form" => "Apply Now",
-		"https://www.eventbrite.com/e/information-webinar-tickets-16317817030" => "Register for Webinar",
-		"https://youtu.be/tk-QNJruZgM" => "<img src='http://northbridgetech.org/images/video-camera_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;' /> Watch",
-		"http://northbridgetech.org/downloads/Member_Benefit_Summary" => "<img src='http://northbridgetech.org/images/file-pdf-o_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;' /> Download",
-		"http://nexus.northbridgetech.org/demo" => "<img src='http://northbridgetech.org/images/wrench_484848_24.png' width='20' height=20' style='vertical-align:text-bottom;'/> Demo"
+		"http://northbridgetech.org/index.php?view=apply_form" => "<img src='http://northbridgetech.org/images/eligibility.png' style='margin-left:20px;' alt='Eligibility Check' />",
+		"https://www.eventbrite.com/e/information-webinar-tickets-16317817030" => "<img src='http://northbridgetech.org/images/webinar.png' style='margin-left:20px;' alt='Register for Webinar' />",
+		"https://youtu.be/tk-QNJruZgM" => "<img src='http://northbridgetech.org/images/testimonial.png' style='margin-left:20px;' alt='Watch Testimonial' />",
+		"http://northbridgetech.org/downloads/Member_Benefits_Summary.pdf" => "<img src='http://northbridgetech.org/images/benefits.png' style='margin-left:20px;' alt='Member Benefits' />",
+		"http://nexus.northbridgetech.org/demo" => "<img src='http://northbridgetech.org/images/demo.png' style='margin-left:20px;' alt='Demo' />",
+		"https://www.linkedin.com/in/kathyflint" => "<img src='http://northbridgetech.org/images/sig.jpg' alt='Signature' width='200' height='50'/>"
 	);
 
 	private $type;
@@ -39,7 +40,7 @@ class Message {
 	private $messageBody;
 	private $to;	
 	private $name;
-	private $emailStyle = "text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);margin:10px;border-radius:6px;font-family:Oxygen;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
+	private $emailStyle = ""; //"text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);margin:10px;border-radius:6px;font-family:Oxygen;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
 
 	public function __construct($messageTypeId, $toAddr, $salutationName) {
 		$this->type = $messageTypeId; 
@@ -52,7 +53,7 @@ class Message {
 	}
 	
 	private function getFrom($typeId) {
-		return "Northbridge Technology Alliance <contact@northbridgetech.org>";
+		return "Kathy Flint <contact@northbridgetech.org>";
 	}
 
 	private function getSubject($typeId) {
@@ -66,7 +67,7 @@ class Message {
       case self::APPLICATION_NOTIFY;
       	return "Application Notification";
       case self::PARTNER_INFORMATION_PACKET;
-      	return "Membership Information";
+      	return "[Northbridge] Membership Information Packet";
     	default:
         return "";
 		}
@@ -84,15 +85,15 @@ class Message {
 	private function getTeam($typeId) {
 		switch ($typeId) {
 	    case self::VOLUNTEER_CONFIRM:
-       	return "Technology Alliance";
+       	return "Northbridge Technology Alliance";
     	case self::VOLUNTEER_NOTIFY:
-        return "Internal";
+        return "Northbridge Internal";
     	case self::APPLICATION_CONFIRM:
-        return "Technology Alliance";
+        return "Northbridge Technology Alliance";
       case self::APPLICATION_NOTIFY;
-      	return "Internal";
+      	return "Northbridge Internal";
       case self::PARTNER_INFORMATION_PACKET;
-      	return "Technology Alliance";
+      	return "Kathy Flint, CEO<br/>Northbridge Technology Alliance";
     	default:
         return "";
 		}
@@ -116,9 +117,9 @@ class Message {
     	// TODO - finish
         return "Thank you for your application for partnership with Northbridge Technology Alliance.\r\n\r\nWe will review your information and contact you at this email address within two weeks.\r\n\r\nIf you believe you have received this message in error, would you kindly reply and let us know?";
       case self::APPLICATION_NOTIFY;
-      	return "A new partnership applicaton has been received.";
+      	return "A new partnership application has been received.";
       case self::PARTNER_INFORMATION_PACKET;
-      	return "Here is the information that you requested recently. Questions? Just reply to this email and a real person will get right back to you.\r\n\r\nNorthbridge creates software solutions for charitable organizations who are engaged in social justice and community-building efforts so that their collective impact is increased.\r\n\r\nWe invite teams who are doing that sort of work into exclusive membership with us. Membership benefits include: \r\n\r\n* Usage licensing for our member-owned Nexus Web Meet virtual conference center\r\n\r\n* Expert, instructor-led training to help you adopt the latest streaming collaboration technologies\r\n\r\n* Caucus participation a structured way for you to participate in the advancement of technologies developed specifically by and for the social justice community\r\n\r\n\r\nApplication for membership with Northbridge takes just a few minutes from a tablet sized device or larger.\r\n\r\nhttp://northbridgetech.org/index.php?view=apply_form\r\n\r\nYou may enjoy a brief webinar hosted by Founder and CEO Kathy Flint. In this live, informal setting, Kathy will talk with you about the benefits of membership with Northbridge Technology Alliance and answer your questions.\r\n\r\nhttps://www.eventbrite.com/e/information-webinar-tickets-16317817030\r\n\r\nThis is how one Northbridge member describes his experience with Northbridge and Nexus Web Meet.\r\n\r\nhttps://youtu.be/tk-QNJruZgM\r\n\r\nWhitepaper: Membership with Northbridge Technology Alliance\r\n\r\nhttp://northbridgetech.org/downloads/Member_Benefits_Summary.pdf\r\n\r\nTry: Nexus Web Meet\r\n\r\nhttp://nexus.northbridgetech.org/demo\r\n\r\nWe hope these resources are helpful. You may reply to this email with any questions at all. You will reach a real person who wants to help your social mission succeed. We hope to hear from you!";
+      	return "Here is the information that you requested recently.\r\n\r\nQuestions? Just reply to this email. You will reach a real person who is determined that your social mission succeed.\r\n\r\nI look forward to bending the arc with you!\r\n\r\nRegards,\r\n\r\nhttps://www.linkedin.com/in/kathyflint\r\n\r\nKathy Flint, CEO&nbsp;<br/>Northbridge Technology Alliance\r\n\r\n<hr color='#dae0bc'/>\r\n\r\nNorthbridge creates software solutions for charitable organizations who are engaged in social justice and community-raising efforts so that their collective impact is increased.\r\n\r\nNorthbridge is a membership organization. Membership with Northbridge is open to folks who are working toward social justice and community-raising goals. Membership benefits include: \r\n\r\n* Usage license for our member-owned Nexus Web Meet virtual conference center\r\n\r\n* Expert, instructor-led training to help you adopt the latest streaming collaboration technologies\r\n\r\n* Caucus participation: a lightweight, structured way for you to participate in the advancement of technologies for the social justice community\r\n\r\n\r\nChecking your eligibility for membership takes just a few minutes.\r\n\r\nhttp://northbridgetech.org/index.php?view=apply_form\r\n\r\nYou may enjoy a brief webinar hosted by Founder and CEO Kathy Flint. In this live, informal setting, Kathy will talk about our innovative community and the benefits of membership. Questions welcome in this interactive setting!\r\n\r\nhttps://www.eventbrite.com/e/information-webinar-tickets-16317817030\r\n\r\nHere is a video testimonial from one Northbridge member describing his experience with Nexus Web Meet.\r\n\r\nhttps://youtu.be/tk-QNJruZgM\r\n\r\nWhitepaper: Membership Benefits\r\n\r\nhttp://northbridgetech.org/downloads/Member_Benefits_Summary.pdf\r\n\r\nTry: Nexus Web Meet\r\n\r\nhttp://nexus.northbridgetech.org/demo";
     	default:
         return "";
 		}		
@@ -139,25 +140,38 @@ Content-Transfer-Encoding: 7bit
 <!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01//EN'>
 <html>
 	<head>
+		<meta http-equiv='Content-type' content='text/html;charset=UTF-8'>	
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oxygen'>
+		<style>
+			p { margin-bottom:10px; }	
+		</style>
 	</head>
-	<body style='font-family:Oxygen,Arial,sans-serif;color:#484848;'>
-		<table style='width:90%;display:block;max-width:620px;'>
+	<body style='font-family:\"Oxygen\",Arial,sans-serif;color:#484848;'>
+	<center>
+		<table style='display:block;max-width:620px;text-align:left;font-family:\"Oxygen\",Arial,sans-serif;color:#484848;'>
+  		<tr>
+	    	<td style='text-align:center;'>
+					<a href='http://northbridgetech.org'><img src='http://northbridgetech.org/images/NB_horizontal_tagline_rgb.png' alt='Northbridge Technology Alliance Logo' width='330' height='103' style='margin-bottom:30px;margin-left:-30px;'/></a>
+    		</td>
+  		</tr>
 			<tr>
-				<td colspan='2'><img src='" . Util::getHttpCorePath() . "/images/NB_horizontal_rgb.png' alt='Northbridge Technology Alliance Logo' width='252' height='68' style='padding-bottom:10px;padding-right:30px;'/></td>
-			</tr>
-			<tr>
-				<td style='vertical-align:top;padding-top:10px;'>
-					<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/twitter_dae0bc_32.png' width='32' height=32' /></a><br/>
-					<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img src='" . Util::getHttpCorePath() . "/images/google-plus-square_dae0bc_32.png' width='32' height=32' /></a><br/>
-					<a href='https://www.linkedin.com/company/2232384' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/linkedin_dae0bc_32.png' width='32' height=32' /></a><br/>
-					<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/facebook-square_dae0bc_32.png' width='32' height=32' /></a><br/>
-					<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/github_dae0bc_32.png' width='32' height=32' /></a>
+				<td style='vertical-align:top;'><p>" . $this->getSalutation($this->type) . "</p><p>" . $formatLinkButtons . "</p>	</td>
+	  	</tr>
+	  	<tr>
+				<td style='vertical-align:top;padding-top:10px;font-size:70%;'>
+					<hr color='#dae0bc'/>
+					<center>
+						<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img src='http://northbridgetech.org/images/twitter_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
+						<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img src='http://northbridgetech.org/images/google-plus-square_dae0bc_32.png' width='32' height=32' style='margin-right:15px;' /></a>
+						<a href='https://www.linkedin.com/company/2232384' target='_blank'><img src='http://northbridgetech.org/images/linkedin_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
+						<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img src='http://northbridgetech.org/images/facebook-square_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
+						<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img src='http://northbridgetech.org/images/github_dae0bc_32.png' width='32' height=32' style='margin-right:15px;'/></a>
+					</center>
+					<p style='font-size:90%;color:#666666;'>" . $this->getMessageFooter() . "</td></tr>
 				</td>
-				<td style='vertical-align:top;padding-left:10px;'><p>" . $this->getSalutation($this->type) . "</p><p>" . $formatLinkButtons . "</p><p>Our regards,<br/>Northbridge " . $this->team . "</p></td>
 			</tr>
-			<tr><td colspan='2'style='font-size:70%;color:#666666;'><hr color='#dae0bc'/><p>" . $this->getMessageFooter() . "</td></tr>
 		</table>
+	<center>
 	</body>
 </html>
 --" . $boundary . "--\r\n";
@@ -165,7 +179,7 @@ Content-Transfer-Encoding: 7bit
 	
 	private function constructTextMessage($boundary) {
 		return "--" . $boundary . "\r\n" . "Content-Type: text/plain; charset=\"iso-8859-1\"\r\n" . "Content-Transfer-Encoding: 7bit\r\n
-Hello " . $this->name . ",\r\n\r\n" . $this->messageBody . "\r\n\r\nOur regards,\r\n\r\nNorthbridge " . $this->team . "\r\n\r\n=================\r\n" . $this->getMessageFooter() . "\r\n";
+Hello " . $this->name . ",\r\n\r\n" . $this->messageBody . "\r\n\r\nWarm regards,\r\n\r\nKarhy Flint, CEO\r\n\r\nNorthbridge " . $this->team . "\r\n\r\n=================\r\n" . $this->getMessageFooter() . "\r\n";
 	}
 	
 	private function constructMessage($boundary) {
@@ -192,6 +206,10 @@ Hello " . $this->name . ",\r\n\r\n" . $this->messageBody . "\r\n\r\nOur regards,
 		$output .= "Subject = " . $this->subject . "\n";
 		$output .= "Message Body = " . $this->messageBody . "\n";
 		return $output;
+	}
+
+	public function toHTMLString () {
+		return $this->constructHtmlMessage("xxxx");
 	}
 
 }
