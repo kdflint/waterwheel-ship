@@ -84,6 +84,10 @@ final class Util {
 		return DEMO_URL;
 	}
 	
+	public static function getMemberRegrUrl() {
+		return MEMBER_REGR_URL;
+	}
+	
 	public static function getEnvName() {
 		return ENV_NAME;
 	}
