@@ -38,7 +38,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 
 }
 
-$viewArray = array("apply"=>"2", "sponsor"=>"1", "volunteer"=>"2", "apply_form"=>"2");
+$viewArray = array("apply"=>"2", "sponsor"=>"1", "volunteer"=>"2", "apply_form"=>"2", "membership"=>"0");
 $viewSuccess = array(
 	"volunteer"=>"Got it! Your confirmation email will be delivered in a few minutes.",
 	"apply_form"=>"Got it! Your confirmation email will be delivered in a few minutes."
