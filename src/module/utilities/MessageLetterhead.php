@@ -17,8 +17,13 @@ class MessageLetterhead {
 "Dear Northbridge Supporter,\r\n\r\nCongratulations are in order! Look at what YOU have created.\r\n\r\n\r\nhttp://nexus.northbridgetech.org/demo\r\n\r\n\r\nOur sophisticated web conferencing app that YOU have created is now used <b>internationally by 43 nonprofit organizations</b> who are transforming society in the following areas: Community Development, Education Equity, Environment Equity, Health Equity, Human/Civil Rights, and Human Services.\r\n\r\n<i>\"This is to good to be true - thank you!\"</i> - Chicago Antiracism Commission\r\n\r\nYet, it IS true. And this is what happens when generous people like you, intent on improving society, act on their intention.\r\n\r\n<b>With an end-of-year holiday gift, will you help us scale our impact from tens to hundreds?</b>\r\n\r\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW\r\n\r\nFor just $50, we can provide 120 hours of web conferencing facilities to a community-building organization. \r\n\r\nFor $250, we can provide 24/7 global webinar capacity.\r\n\r\n<b>Will you help us end our fiscal year in the best position possible?</b>\r\n\r\nThanks as always, and my best regards,\r\n\r\nKathy Flint, CEO\r\nNorthbridge Technology Alliance";
 */
 	
+/*
 	private $messageBody = 
 "Hello,\r\n\r\nResearching in Guidestar, I discovered your organization.\r\n\r\nI am the founder of Northbridge Technology Alliance, a nonprofit social enterprise that has served the social justice community since 2011.\r\n\r\nIt is important to me that you become aware of our new technology benefits package.\r\n\r\nThrough this program, starting at $120 annually, you can be equipped with a state-of-the-art virtual web meeting room, good for webinars, trainings, volunteer meetings, and Board meetings.\r\n\r\nThere are more benefits in addition... read more, with no obligation.\r\n\r\nhttp://northbridgetech.org?view=apply\r\n\r\nMany large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your mission!\r\n\r\nLooking forward to bending the arc alongside you,\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\n";
+*/
+
+	private $messageBody = 
+"Hello,\r\n\r\nResearching in Guidestar, I discovered your organization.\r\n\r\nI am the founder of Northbridge Technology Alliance, a 501(c)(3) technology social enterprise that has served the social justice community since 2011.\r\n\r\n<b>Have you ever wished for a way to do high-quality, remote collaboration with your colleagues and constituents?</b>\r\n\r\nThrough our membership program, starting at $120 annually, you can be equipped with a state-of-the-art virtual web meeting room, good for webinars, trainings, volunteer meetings, and Board meetings.\r\n\r\nOnly 10% of the nonprofits listed in Guidestar qualify for this opportunity.\r\n\r\nRead more, with no obligation whatsoever.\r\n\r\nhttp://northbridgetech.org?view=membership\r\n\r\nIf you prefer not to click on an email link, just search the web for \"Northbridge Technology Alliance\"\r\n\r\nIf you are not someone with a need for this opportunity, would you please forward this message to a colleague who might benefit?\r\n\r\nRegards,\r\n\r\n<a href='https://www.linkedin.com/in/kathyflint'><img src='http://northbridgetech.org/images/sig.jpg' alt='Signature and Link to LinkedIn Profile' width='200' height='50'/></a>\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\nP.S. Many large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your social justice mission!";
 	
 	public function __construct() {
 	}
@@ -27,7 +32,7 @@ class MessageLetterhead {
 		// Global links text-to-html translation table
 		// If a link in the text version of the message exactly matches a link here, it will translate into a styled button. Example:
 		"http://nexus.northbridgetech.org/demo" => "Try Nexus",
-		"http://northbridgetech.org?view=apply" => "Northbridge Member Benefits"
+		"http://northbridgetech.org?view=membership" => "Northbridge Member Benefits"
 	);
 
 	private $links = array(
@@ -57,7 +62,7 @@ class MessageLetterhead {
 	
 	/* generate these social media images from Front Awesome library at http://fa2png.io/ */
 	private function constructHtmlMessage($boundary) {
-		$formatLineBreaks = str_replace("\r\n\r\n", "</p><p>",$this->messageBody);
+		$formatLineBreaks = str_replace("\r\n\r\n", "</p><p style='margin-top:10px;'>",$this->messageBody);
 		$formatLineBreaks = str_replace("\r\n", "<br/>",$formatLineBreaks);
 		$formatLinks = $this->formatLinks($formatLineBreaks);
 		$formatLinkButtons = $this->formatButtons($formatLinks);
@@ -65,28 +70,37 @@ class MessageLetterhead {
 Content-Type: text/html; charset=\"iso-8859-1\"
 Content-Transfer-Encoding: 7bit
 
-<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01//EN'>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html>
 	<head>
-		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Oxygen'>
 	</head>
-	<body style='font-family:Oxygen,Arial,sans-serif;color:#484848;'>
-		<table style='width:90%;display:block;max-width:620px;'>
+	<body>
+	<center>
+		<table style='display:block;max-width:620px;color:#484848;font-family:Arial,sans-serif;'>
 			<tr>
-				<td colspan='2'><img src='" . Util::getHttpCorePath() . "/images/NB_horizontal_rgb.png' alt='Northbridge Technology Alliance Logo' width='252' height='68' style='padding-bottom:10px;padding-right:30px;'/></td>
-			</tr>
-			<tr>
-				<td style='vertical-align:top;padding-top:10px;'>
-					<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/twitter_dae0bc_32.png' width='32' height=32' /></a><br/>
-					<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img src='" . Util::getHttpCorePath() . "/images/google-plus-square_dae0bc_32.png' width='32' height=32' /></a><br/>
-					<a href='https://www.linkedin.com/company/2232384' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/linkedin_dae0bc_32.png' width='32' height=32' /></a><br/>
-					<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/facebook-square_dae0bc_32.png' width='32' height=32' /></a><br/>
-					<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img src='" . Util::getHttpCorePath() . "/images/github_dae0bc_32.png' width='32' height=32' /></a>
+				<td style='text-align:center;'>
+					<img src='http://northbridgetech.org/images/NB_horizontal_tagline_rgb.png' alt='Northbridge Technology Alliance Logo' width='330' height='103' style='padding-bottom:30px;'/
 				</td>
-				<td style='vertical-align:top;padding-left:10px;'><p>" . $formatLinkButtons . "</p></td>
 			</tr>
-			<tr><td colspan='2'style='font-size:70%;color:#666666;'><hr color='#dae0bc'/><p>" . $this->getMessageFooter() . "</td></tr>
+			<tr>
+				<td style='text-align:left;vertical-align:top;padding-left:10px;'><p>" . $formatLinkButtons . "</p></td>
+			</tr>
+			<tr>
+				<td style='text-align:left;font-size:70%;color:#666666;'>
+				<hr color='#dae0bc'/>
+				<center>
+				<p>
+					<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/twitter_dae0bc_32.png' width='32' height=32' /></a>
+					<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/google-plus-square_dae0bc_32.png' width='32' height=32' /></a>
+					<a href='https://www.linkedin.com/company/2232384' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/linkedin_dae0bc_32.png' width='32' height=32' /></a>
+					<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/facebook-square_dae0bc_32.png' width='32' height=32' /></a>
+					<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/github_dae0bc_32.png' width='32' height=32' /></a>
+				</p></center><p>"	 . $this->getMessageFooter() . "
+				</p>
+				</td>
+			</tr>
 		</table>
+	</center>
 	</body>
 </html>
 --" . $boundary . "--\r\n";
