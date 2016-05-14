@@ -2,39 +2,33 @@
 
 require_once("../core/domain/Util.php");
 
-class MessageLetterhead {
+class MessageMembershipDirectEmail {
 	
 	private $replyTo = "kathy.flint@northbridgetech.org";
-	private $bcc = "";
+	private $bcc = "direct.email.monitor@northbridgetech.org";
 	private $subject = "Nonprofit Technology Membership Program";
-	private $from = "Kathy Flint <kathy.flint@northbridgetech.org>";
-	private $to = "northbridge.test@yahoo.com";	
+	private $from = "Kathy Flint <kathy.flint@northbridgetech.org>";	
 	private $emailStyle = "text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);border-radius:6px;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
 	private $linkStyle = "";
 	
-/*
-	private $messageBody = 
-"Dear Northbridge Supporter,\r\n\r\nCongratulations are in order! Look at what YOU have created.\r\n\r\n\r\nhttp://nexus.northbridgetech.org/demo\r\n\r\n\r\nOur sophisticated web conferencing app that YOU have created is now used <b>internationally by 43 nonprofit organizations</b> who are transforming society in the following areas: Community Development, Education Equity, Environment Equity, Health Equity, Human/Civil Rights, and Human Services.\r\n\r\n<i>\"This is to good to be true - thank you!\"</i> - Chicago Antiracism Commission\r\n\r\nYet, it IS true. And this is what happens when generous people like you, intent on improving society, act on their intention.\r\n\r\n<b>With an end-of-year holiday gift, will you help us scale our impact from tens to hundreds?</b>\r\n\r\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW\r\n\r\nFor just $50, we can provide 120 hours of web conferencing facilities to a community-building organization. \r\n\r\nFor $250, we can provide 24/7 global webinar capacity.\r\n\r\n<b>Will you help us end our fiscal year in the best position possible?</b>\r\n\r\nThanks as always, and my best regards,\r\n\r\nKathy Flint, CEO\r\nNorthbridge Technology Alliance";
-*/
+	private $to = "";
+	private $sname = "Hello";
+	private $sarea = "social justice";
+	private $crumb = "";
+	private $campaign = "1";
 	
-/*
-	private $messageBody = 
-"Hello,\r\n\r\nResearching in Guidestar, I discovered your organization.\r\n\r\nI am the founder of Northbridge Technology Alliance, a nonprofit social enterprise that has served the social justice community since 2011.\r\n\r\nIt is important to me that you become aware of our new technology benefits package.\r\n\r\nThrough this program, starting at $120 annually, you can be equipped with a state-of-the-art virtual web meeting room, good for webinars, trainings, volunteer meetings, and Board meetings.\r\n\r\nThere are more benefits in addition... read more, with no obligation.\r\n\r\nhttp://northbridgetech.org?view=apply\r\n\r\nMany large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your mission!\r\n\r\nLooking forward to bending the arc alongside you,\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\n";
-*/
-
-	private $messageBody = 
-"Hello,\r\n\r\nGuidestar lists you as one of 10% of nonprofit organizations who qualify for this opportunity.\r\n\r\nNorthbridge Technology Alliance is a 501(c)(3) technology social enterprise that has served the social justice community since 2011.\r\n\r\n<b>Do you work with a socially impactful team that wishes for a way to do high-quality, remote collaboration with your colleagues and constituents?</b>\r\n\r\nThrough our membership program, starting at $120 annually, you can be equipped with a state-of-the-art virtual web meeting room, good for webinars, trainings, volunteer meetings, and Board meetings.\r\n\r\nRead more, with no obligation whatsoever.\r\n\r\nhttp://northbridgetech.org?view=membership\r\n\r\nIf you prefer not to click on an email link, search the web for \"Northbridge Technology Alliance\"\r\n\r\nWould you please forward this message to a colleague who might benefit?\r\n\r\nBest regards,\r\n\r\nhttps://www.linkedin.com/in/kathyflint\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\nP.S. Many large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your social justice mission!";
-
-//<a href='https://www.linkedin.com/in/kathyflint'><img src='http://northbridgetech.org/images/sig.jpg' alt='Signature' title='Signature' width='200' height='50'/></a>
-	
-	public function __construct() {
+	public function __construct($email, $name, $code, $crumb) {
+		if ($name) { $this->sname = "Dear " . $name; }
+		if ($code && isset($this->areas[$code])) { $this->sarea = $this->areas[$code]; }
+		if ($email && Util::validateEmail($email)) { $this->to = $email; } 
+		if ($crumb) { $this->crumb = $crumb; }
+		$this->buttons["http://northbridgetech.org?view=membership&c=" . $this->campaign . "&m=" . $crumb] = "Northbridge Member Benefits";
 	}
 	
 	private $buttons = array(
 		// Global links text-to-html translation table
 		// If a link in the text version of the message exactly matches a link here, it will translate into a styled button. Example:
-		"http://nexus.northbridgetech.org/demo" => "Try Nexus",
-		"http://northbridgetech.org?view=membership" => "Northbridge Member Benefits"
+		//"http://northbridgetech.org?view=membership" => "Northbridge Member Benefits"
 	);
 
 	private $links = array(
@@ -42,7 +36,15 @@ class MessageLetterhead {
 		// If a link in the text version of the message exactly matches a link here, it will translate into a link. Example:
 		"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW" => "<img alt='Donate' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif'>",
 		"https://www.linkedin.com/in/kathyflint" => "<img src='http://northbridgetech.org/images/sig.jpg' alt='Signature' title='Signature' width='200' height='50'/>"
-		//"http://northbridgetech.org?view=apply" => "Northbridge Member Benefits"
+	);
+	
+	private $areas = array(
+		"0" => "social justice",
+		"1" => "systemic racial equity",
+		"2" => "systemic racial equity for indigenous American people",
+		"3" => "systemic racial equity for Latino people",
+		"4" => "systemic racial equity for African American people",
+		"5" => "restorative justice"
 	);
 
 	private function formatButtons($in) {
@@ -59,13 +61,18 @@ class MessageLetterhead {
 		return $in;
 	}
 	
+	private function getMessageBody() {
+		return 
+		$this->sname . ",\r\n\r\nGuidestar reports that you are working in the area of " . $this->sarea . ". This places you within 10% of U.S. nonprofit organizations who qualify for this opportunity.\r\n\r\nNorthbridge Technology Alliance is a 501(c)(3) technology social enterprise that has served the social justice community since 2011.\r\n\r\n<b>Does your mission-focused team wish for a way to do high-quality, remote collaboration with your colleagues and constituents?</b>\r\n\r\nThrough our membership program, starting at $120 annually, you can be equipped with a state-of-the-art virtual web meeting room, good for webinars, trainings, volunteer meetings and Board meetings.\r\n\r\nRead more, with no obligation.\r\n\r\nhttp://northbridgetech.org?view=membership&c=" . $this->campaign . "&m=" . $this->crumb . "\r\n\r\nIf you prefer not to click on an email link, search the web for \"Northbridge Technology Alliance\"\r\n\r\nWould you please forward this message to a colleague who might benefit?\r\n\r\nBest regards,\r\n\r\nhttps://www.linkedin.com/in/kathyflint\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\nP.S. Many large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your social justice mission!";
+	}
+
 	private function getMessageFooter() {
 		return "Northbridge Technology Alliance creates software solutions for organizations who are engaged in social justice and community-building efforts. This message is produced and distributed by Northbridge Technology Alliance, a United States 501(c)(3) nonprofit corporation, Evanston, Illinois  60202";
 	}
 	
 	/* generate these social media images from Front Awesome library at http://fa2png.io/ */
 	private function constructHtmlMessage($boundary) {
-		$formatLineBreaks = str_replace("\r\n\r\n", "</p><p style='margin-top:10px;'>",$this->messageBody);
+		$formatLineBreaks = str_replace("\r\n\r\n", "</p><p style='margin-top:10px;'>", $this->getMessageBody());
 		$formatLineBreaks = str_replace("\r\n", "<br/>",$formatLineBreaks);
 		$formatLinks = $this->formatLinks($formatLineBreaks);
 		$formatLinkButtons = $this->formatButtons($formatLinks);
