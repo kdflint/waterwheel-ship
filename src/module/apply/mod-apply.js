@@ -192,7 +192,7 @@ function applyValidateAndSubmit(thisForm) {
   	}
   	
 		eligibleMessage[2] = "";
-		eligibleDecision[2] = 'Congratulations! Your team is eligible for membership with Northbridge.';
+		eligibleDecision[2] = '<span style="font-size:150%">Congratulations!</span><p style="margin-top:10px;">Your team is eligible for membership with Northbridge.</p><p style="margin-top:10px;">Click the blue button to continue.</p>';
 		var decisionIndex = 2;
 		
 		if (eligibleDecision[0]) {
