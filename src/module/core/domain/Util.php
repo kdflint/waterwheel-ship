@@ -131,6 +131,13 @@ final class Util {
 		}
 	return true;
 	}
+
+	public static function validateEmail($in) {
+		if (filter_var($in, FILTER_VALIDATE_EMAIL)) {
+			return true;
+		}
+		return false;
+	}
 	
 	
 	/*************** DATABASE UTILITIES ***************/

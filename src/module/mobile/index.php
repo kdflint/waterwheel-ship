@@ -194,7 +194,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 
 			<div id="info-email" class="white_content" style="min-height:170px;display:none;border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:4px;border-bottom-right-radius:4px;position:absolute;top:115px;left:0px;width:95%;max-width:400px;border-bottom:0px;">
 				<form id="info-email-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST">
-					<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span> Close</a><p>We will send a packet of information to your email address. Your address used respectfully. We will not spam you.</p>
+					<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span> Close</a><p>We will send a packet of information to your email address. Your address will be used respectfully. We will not spam you.</p>
 					<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:90%;margin-top:10px;margin-bottom:10px;margin-left:20px;margin-right:20px;height:30px;" required ></span>					
 					<div id="info_buttons" style="position:absolute;bottom:0px;width:95%;">
 						<p><a id="info-email-button" class="pure-button button-link" onclick="infoEmailValidateAndSubmit();" style="width:90%;border-radius:4px;background-color:#d27b4b;float:right;"><span class="fa fa-play" style="margin-right:4px;" ></span>Send Information</a></p>

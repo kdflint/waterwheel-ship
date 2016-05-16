@@ -6,10 +6,10 @@ class MessageLetterhead {
 	
 	private $replyTo = "kathy.flint@northbridgetech.org";
 	private $bcc = "";
-	private $subject = "Exclusive Technology Benefits";
+	private $subject = "Nonprofit Technology Membership Program";
 	private $from = "Kathy Flint <kathy.flint@northbridgetech.org>";
-	private $to = "kathy.flint@northbridgetech.org";	
-	private $emailStyle = "text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);border-radius:6px;font-family:Oxygen;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
+	private $to = "northbridge.test@yahoo.com";	
+	private $emailStyle = "text-decoration:none;font-weight:bold;width:160px;background:none repeat scroll 0% 0% rgba(137, 157, 112, 0.6);border-radius:6px;font-size:100%;padding:0.5em 1em;color:rgba(0, 0, 0, 0.8);";
 	private $linkStyle = "";
 	
 /*
@@ -23,7 +23,9 @@ class MessageLetterhead {
 */
 
 	private $messageBody = 
-"Hello,\r\n\r\nResearching in Guidestar, I discovered your organization.\r\n\r\nI am the founder of Northbridge Technology Alliance, a 501(c)(3) technology social enterprise that has served the social justice community since 2011.\r\n\r\n<b>Have you ever wished for a way to do high-quality, remote collaboration with your colleagues and constituents?</b>\r\n\r\nThrough our membership program, starting at $120 annually, you can be equipped with a state-of-the-art virtual web meeting room, good for webinars, trainings, volunteer meetings, and Board meetings.\r\n\r\nOnly 10% of the nonprofits listed in Guidestar qualify for this opportunity.\r\n\r\nRead more, with no obligation whatsoever.\r\n\r\nhttp://northbridgetech.org?view=membership\r\n\r\nIf you prefer not to click on an email link, just search the web for \"Northbridge Technology Alliance\"\r\n\r\nIf you are not someone with a need for this opportunity, would you please forward this message to a colleague who might benefit?\r\n\r\nRegards,\r\n\r\n<a href='https://www.linkedin.com/in/kathyflint'><img src='http://northbridgetech.org/images/sig.jpg' alt='Signature and Link to LinkedIn Profile' width='200' height='50'/></a>\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\nP.S. Many large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your social justice mission!";
+"Hello,\r\n\r\nGuidestar lists you as one of 10% of nonprofit organizations who qualify for this opportunity.\r\n\r\nNorthbridge Technology Alliance is a 501(c)(3) technology social enterprise that has served the social justice community since 2011.\r\n\r\n<b>Do you work with a socially impactful team that wishes for a way to do high-quality, remote collaboration with your colleagues and constituents?</b>\r\n\r\nThrough our membership program, starting at $120 annually, you can be equipped with a state-of-the-art virtual web meeting room, good for webinars, trainings, volunteer meetings, and Board meetings.\r\n\r\nRead more, with no obligation whatsoever.\r\n\r\nhttp://northbridgetech.org?view=membership\r\n\r\nIf you prefer not to click on an email link, search the web for \"Northbridge Technology Alliance\"\r\n\r\nWould you please forward this message to a colleague who might benefit?\r\n\r\nBest regards,\r\n\r\nhttps://www.linkedin.com/in/kathyflint\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\nP.S. Many large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your social justice mission!";
+
+//<a href='https://www.linkedin.com/in/kathyflint'><img src='http://northbridgetech.org/images/sig.jpg' alt='Signature' title='Signature' width='200' height='50'/></a>
 	
 	public function __construct() {
 	}
@@ -39,6 +41,7 @@ class MessageLetterhead {
 		// Global links text-to-html translation table
 		// If a link in the text version of the message exactly matches a link here, it will translate into a link. Example:
 		"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CR3GPPFSE7ARW" => "<img alt='Donate' src='https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif'>",
+		"https://www.linkedin.com/in/kathyflint" => "<img src='http://northbridgetech.org/images/sig.jpg' alt='Signature' title='Signature' width='200' height='50'/>"
 		//"http://northbridgetech.org?view=apply" => "Northbridge Member Benefits"
 	);
 
@@ -73,13 +76,14 @@ Content-Transfer-Encoding: 7bit
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
 <html>
 	<head>
+			<meta http-equiv='Content-type' content='text/html;charset=UTF-8'>	
 	</head>
 	<body>
 	<center>
 		<table style='display:block;max-width:620px;color:#484848;font-family:Arial,sans-serif;'>
 			<tr>
 				<td style='text-align:center;'>
-					<img src='http://northbridgetech.org/images/NB_horizontal_tagline_rgb.png' alt='Northbridge Technology Alliance Logo' width='330' height='103' style='padding-bottom:30px;'/
+					<img src='http://northbridgetech.org/images/NB_horizontal_tagline_rgb.png' alt='Northbridge Technology Alliance: Helping people change the world' title='Northbridge Technology Alliance: Helping people change the world' width='330' height='103' style='padding-bottom:30px;'/
 				</td>
 			</tr>
 			<tr>
@@ -90,11 +94,11 @@ Content-Transfer-Encoding: 7bit
 				<hr color='#dae0bc'/>
 				<center>
 				<p>
-					<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/twitter_dae0bc_32.png' width='32' height=32' /></a>
-					<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/google-plus-square_dae0bc_32.png' width='32' height=32' /></a>
-					<a href='https://www.linkedin.com/company/2232384' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/linkedin_dae0bc_32.png' width='32' height=32' /></a>
-					<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/facebook-square_dae0bc_32.png' width='32' height=32' /></a>
-					<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/github_dae0bc_32.png' width='32' height=32' /></a>
+					<a href='https://twitter.com/'" . Util::getTwitterHandle() . "' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/twitter_dae0bc_32.png' width='32' height=32' alt='TW' title='Twitter'/></a>
+					<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/google-plus-square_dae0bc_32.png' width='32' height=32' alt='GP' title='GooglePlus'/></a>
+					<a href='https://www.linkedin.com/company/2232384' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/linkedin_dae0bc_32.png' width='32' height=32' alt='LI' title='LinkedIn' /></a>
+					<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/facebook-square_dae0bc_32.png' width='32' height=32' alt='FB' title='Facebook'/></a>
+					<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img style='margin-right:15px;' src='" . Util::getHttpCorePath() . "/images/github_dae0bc_32.png' width='32' height=32' alt='GH' title='GitHub' /></a>
 				</p></center><p>"	 . $this->getMessageFooter() . "
 				</p>
 				</td>
