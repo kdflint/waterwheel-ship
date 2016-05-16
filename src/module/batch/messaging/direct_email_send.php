@@ -6,11 +6,11 @@ require_once("domain/Util.php");
 require_once("domain/MessageMembershipDirectEmail.php");
 
 $conf = array('append' => true, 'mode' => 0644, 'timeFormat' => '%X %x');
-$logger = Log::singleton("file", "message_log", "", $conf, PEAR_LOG_DEBUG);
-$sendQueueLengthMax = 1;
+$logger = Log::singleton("file", "direct_email_message_log", "", $conf, PEAR_LOG_INFO);
+$sendQueueLengthMax = "1";
 $queueEmpty = FALSE;
 
-//$logger->log("Message process started", PEAR_LOG_INFO);
+$logger->log("Direct email process started", PEAR_LOG_INFO);
 
 while (!$queueEmpty) {
 
@@ -23,18 +23,14 @@ while (!$queueEmpty) {
 		$logger->log("Message dump " . $message->toString(), PEAR_LOG_DEBUG);
 		$message->send();
 		$counter++;
-		$query = "update prospects set send_dttm = now(), is_sent = 't' where id = $row['id']";
+		$query = "update prospects set send_dttm = now(), is_sent = 't' where id = $1";
 		Util::psExecute($query, array($row['id']));
-		$logger->log("Message id " . $row['id'] . " status updated to Sent", PEAR_LOG_DEBUG);
+		$logger->log("Message id " . $row['id'] . " status updated to Sent", PEAR_LOG_INFO);
 	}
 
 	$logger->log($counter . " messages processed", PEAR_LOG_INFO);
 	
-	if ($counter == 0) {
-		$queueEmpty = TRUE;
-		//$logger->log("The message queue is empty", PEAR_LOG_DEBUG);
-	}
-
+	$queueEmpty = TRUE;
 }
 
 //$logger->log("Message process ended", PEAR_LOG_INFO);	
