@@ -35,11 +35,11 @@ require_once("../core/domain/Util.php");
 					<input type="checkbox" name="services[]" value="8" /> Environment Equity<br/>
 					<input type="checkbox" name="services[]" value="8" /> Housing Equity<br/>
 				</div>
-				<div style="position: absolute;top: 102px;">
+				<div style="position: absolute;top: 112px;">
 					<input type="checkbox" name="services[]" value="8" /> Intersectional Systemic Equity<br/>
 					<input type="checkbox" name="services[]" value="1" /> Underserved Community Development<br/>
 					<!--<input type="checkbox" name="services[]" value="3" /> Research and Public Policy<br/>-->
-					<input type="checkbox" name="services[]" value="3" /> Other Social Justice or Community Building Focus<br/>
+					<input type="checkbox" name="services[]" value="3" /> Other Social Justice or Community-Raising Focus<br/>
 				</div>
 			</div>
 			<div style="margin-top:10px;">
