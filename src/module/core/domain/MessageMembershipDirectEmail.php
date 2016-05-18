@@ -11,7 +11,7 @@ class MessageMembershipDirectEmail {
 	
 	private $to = "";
 	private $sname = "Hello";
-	private $sarea = "social justice";
+	private $sarea = "promote broad-reaching social justice";
 	private $crumb = "";
 	private $campaign = "1";
 	
@@ -36,19 +36,19 @@ class MessageMembershipDirectEmail {
 	);
 	
 	private $areas = array(
-		"0" => "social justice",
-		"1" => "systemic racial equity",
-		"2" => "systemic racial equity for indigenous American people",
-		"3" => "systemic racial equity for Latino people",
-		"4" => "systemic racial equity for African American people",
-		"5" => "restorative justice",
-		"6" => "restorative, community-based advocacy",
-		"7" => "community-raising and neighborhood development",
-		"8" => "social and family services",
-		"9" => "environmental equity",
-		"10" => "civil rights and economic equity for women and girls",
-		"11" => "civil rights",
-		"12" => "international human rights"
+		"0" => "promote broad-reaching social justice",
+		"1" => "promote systemic racial equity",
+		"2" => "ensure systemic racial equity for indigenous American people",
+		"3" => "ensure systemic racial equity for Latino people",
+		"4" => "ensure systemic racial equity for African American people",
+		"5" => "promote restorative justice",
+		"6" => "provide restorative, community-based advocacy",
+		"7" => "promote economic and neighborhood development",
+		"8" => "provide integrated social and family services",
+		"9" => "promote environmental equity",
+		"10" => "ensure civil rights and economic equity for women and girls",
+		"11" => "promote civil rights",
+		"12" => "promote international human rights"
 	);
 
 	private function formatButtons($in) {
@@ -68,11 +68,13 @@ class MessageMembershipDirectEmail {
 	
 	private function getMessageBody() {
 		return 
-		$this->sname . ",\r\n\r\nGuidestar reports that you are working in the area of " . $this->sarea . ". This places you within 10% of U.S. nonprofit organizations who qualify for this opportunity.\r\n\r\nNorthbridge Technology Alliance is a 501(c)(3) technology social enterprise that has served the social justice community exclusively since 2011.\r\n\r\n<b>Has your mission-focused team wished for a way to do high-quality, remote collaboration with colleagues and constituents?</b>\r\n\r\nThrough our membership program, starting at $120 annually, you can be equipped and trained with a state-of-the-art virtual web meeting room <u>allowing you to conduct remote trainings, volunteer meetings, Board meetings and small-scale webinars</u>.\r\n\r\nRead more, and confirm your eligibility, with no obligation.\r\n\r\nhttp://northbridgetech.org?view=membership&c=" . $this->campaign . "&m=" . $this->crumb . "\r\n\r\nIf you prefer not to click on an email link, search the web for \"Northbridge Technology Alliance\"\r\n\r\nOur exclusive nonprofit membership program is very valuable, providing collaboration services at a small fraction of comparable profit-sector offerings. Would you please forward this message to a colleague who might benefit?\r\n\r\nBest regards,\r\n\r\nhttps://www.linkedin.com/in/kathyflint\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\nP.S. Many large corporations are realizing the advantages that virtual collaboration can provide. We are determined that you have the same opportunities for advancing your social justice mission!\r\n\r\n";
+		$this->sname . ",\r\n\r\nYour efforts to " . $this->sarea . " qualify you for membership at Northbridge Technology Alliance, a 501(c)(3) organization. We are committed to social justice and since 2011 have been easing the cost and burden of technology for organizations with similar missions.\r\n\r\n<b>Does your mission-focused team wish for high-quality remote collaboration with colleagues and constituents? Are expensive virtual collaboration platforms not in your current budget?</b>\r\n\r\nWe can help. Our membership program, starting at $120 annually, will equip and train you with a state-of-the-art virtual web meeting room. Conduct remote trainings, volunteer meetings, Board meetings and small-scale webinars using an ordinary computer or laptop without leaving your office.\r\n\r\nRead more, and confirm your eligibility, with no obligation.\r\n\r\nhttp://northbridgetech.org?view=membership&c=" . $this->campaign . "&m=" . $this->crumb . "\r\n\r\nIf you know of a colleague who might benefit, please consider forwarding this message.\r\n\r\nWe look forward to working together to advance your important mission!\r\n\r\nBest regards,\r\n\r\nhttps://www.linkedin.com/in/kathyflint\r\n\r\nKathy D. Flint, CEO\r\nNorthbridge Technology Alliance\r\n\r\nP.S. Many large corporations are realizing the advantages that virtual collaboration can provide. We are <u>determined</u> that you have the same opportunities for advancing your social justice mission.\r\n\r\n";
 	}
+	
+	//\r\n\r\nNorthbridge Technology Alliance is a 501(c)(3) technology social enterprise that has served the social justice community exclusively since 2011.
 
 	private function getMessageFooter() {
-		return "<p>Northbridge Technology Alliance creates software solutions for organizations who are engaged in social justice and community-building efforts. This message is produced and distributed by Northbridge Technology Alliance, a United States 501(c)(3) nonprofit corporation, Evanston, Illinois  60202.</p style='margin-top:10px;'>\r\n\r\n<p>Opt out: This message was generated by a real person, and we do not intend to email you again. To ensure this, you many simply reply to this message with 'opt out' in the subject line.</p>" ;
+		return "<p>Northbridge Technology Alliance creates software solutions for organizations who are engaged in social justice and community-building efforts. This message is produced and distributed by Northbridge Technology Alliance, a United States 501(c)(3) nonprofit corporation, Evanston, Illinois  60202.</p style='margin-top:10px;'>\r\n\r\n<p>Opt out: Your email address was obtained from Guidestar. This message is from a real person, and we do not intend to email you again. To ensure this, you may reply to this message with 'opt out' in the subject line. </p>" ;
 	}
 	
 	/* generate these social media images from Front Awesome library at http://fa2png.io/ */

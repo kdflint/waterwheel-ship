@@ -75,8 +75,8 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 		
 <!--================== End Meta ==================-->
 
-	<script>
-		imagePath = '<?php echo Util::getHttpCorePath() . "/images"; ?>';	
+	<script type="text/javascript">
+		imagePath = '<?php echo Util::getHttpCorePath() . "/images"; ?>';		
 	</script>
 
 	<script type="text/javascript">
@@ -89,6 +89,14 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 		$(window).load(function() { // makes sure the whole site is loaded
 			$("#status").fadeOut("slow"); // will first fade out the loading animation
 			$("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+					
+			$('body').on('keypress', '#info-email', function(args) {
+				// Enter key is pressed inside the information form
+    		if (args.keyCode == 13) {
+       	 	$("#info-email-button").click();
+        	return false;
+    		}
+			});
 		})
 	</script>
 		
