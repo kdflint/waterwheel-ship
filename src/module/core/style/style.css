@@ -17,16 +17,6 @@ body {
 	text-align: left;
 }
 
-.loader {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url('../images/loading.gif') 50% 50% no-repeat rgb(255,255,255);
-}
-
 /* Preloader */
 #preloader {
 	position:absolute;
@@ -237,4 +227,27 @@ div.play-button {
 	position: absolute; 
 	top: 0; 
 	left: 0; 
+}
+
+.icon-gallery {
+	overflow: hidden;
+	width: 100%;
+	height: 400px;
+	background: #ffffff;
+	text-align: center;
+	padding: 0px 0px;
+	opacity: 1;
+}
+
+.icon-gallery li {
+	margin: 4px;
+	overflow: hidden;
+	border: 7px solid rgba(237,240,222,.8);
+}
+
+.icon-gallery .mTSButton{
+	background-color: rgba(0,0,0,.7);
+	-moz-border-radius: 48px;
+	-webkit-border-radius: 48px; 
+	border-radius: 48px;
 }

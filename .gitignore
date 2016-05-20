@@ -7,3 +7,6 @@
 .pgpass
 src/config
 src/module/core/domain/DbTest.php
+src/module/core/lib/thumbnail-scroller-master/examples/*
+LICENSE
+README

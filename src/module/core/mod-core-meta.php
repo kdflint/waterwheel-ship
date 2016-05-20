@@ -28,11 +28,14 @@ $coreHttpPath = Util::getHttpCorePath();
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans|Oxygen:400,300,700|Swanky+and+Moo+Moo">
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/style.css">		
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/mod-core.css">	
+<!-- http://manos.malihu.gr/jquery-thumbnail-scroller -->
+<link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/lib/thumbnail-scroller-master/jquery.mThumbnailScroller.css">
 
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/jquery.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/script.js" ></script>
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/jquery.hslides.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/jquery.easing.js"></script>
+<script language="javascript" type="text/javascript" src="<?php echo $coreHttpPath; ?>/lib/thumbnail-scroller-master/js/minified/jquery.mThumbnailScroller.min.js"></script>
 
 <!-- initialize horizontal sliders, using context passed to page -->
 <script language="javascript" type="text/javascript">

@@ -75,20 +75,24 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 		
 <!--================== End Meta ==================-->
 
-	<script>
-		imagePath = '<?php echo Util::getHttpCorePath() . "/images"; ?>';	
-	</script>
+	<script type="text/javascript">
+		imagePath = '<?php echo Util::getHttpCorePath() . "/images"; ?>';		
 
-	<script type="text/javascript">
-		$(window).load(function() {
-			$(".loader").fadeOut("slow");
-		})
-	</script>
-	
-	<script type="text/javascript">
 		$(window).load(function() { // makes sure the whole site is loaded
 			$("#status").fadeOut("slow"); // will first fade out the loading animation
-			$("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+			$("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website
+      $("#members-icon-gallery").mThumbnailScroller({
+      	axis:"y",
+				type:"click-52",
+				style:"buttons-in"
+      });
+			$('body').on('keypress', '#info-email', function(args) {
+				// Enter key is pressed inside the information form
+    		if (args.keyCode == 13) {
+       	 	$("#info-email-button").click();
+        	return false;
+    		}
+			});
 		})
 	</script>
 		
@@ -179,16 +183,17 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 				</div>
 				<div id="calendar" style="position:absolute;top:192px;width:200px;">
 					<button id="contextSwitch" class="button" onClick="switchToAbout()">About Northbridge<span class="fa fa-chevron-circle-right fa-2x tan" style="margin-left:10px;vertical-align:middle;"></span></button>
-					<div id="sm-links" style="margin-top:10px;margin-bottom:26px;">
+					<div id="sm-links" style="margin-top:10px;margin-bottom:10px;">
 						<a href="https://twitter.com/<?php echo Util::getTwitterHandle(); ?>" target="_blank"><span class="fa fa-twitter fa-3x skyblue" style="margin-left:5px;"></span></a>
 						<a href="//plus.google.com/u/0/101145194341428988499?prsrc=3" rel="publisher" target="_blank" style="text-decoration:none;"><span class="fa fa-google-plus-square fa-3x skyblue" style="margin-left:5px;"></span></a>						
 						<a href="https://www.linkedin.com/company/2232384" target="_blank"><span class="fa fa-linkedin fa-3x skyblue" style="margin-left:5px;"></span></a>
 						<a href="https://www.facebook.com/northbridgenfp#" target="_blank"><span class="fa fa-facebook-square fa-3x skyblue" style="margin-left:5px;"></span></a>
 						<a href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank"><span class="fa fa-github fa-3x skyblue" style="margin-left:5px;"></span></a>
 					</div>
-					<!-- Twitter widget -->
+					<!-- Twitter widget
 					<a class="twitter-timeline" width="520" height="415" href="https://twitter.com/NorthbridgeNFP" data-widget-id="568601776015024128">Tweets by @NorthbridgeNFP</a>
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					-->
 					<!-- EventBrite widget
 						<div style="width:200px;text-align:center;margin-left:5px;margin-top:10px;" >
 							<iframe  src="https://www.eventbrite.com/calendar-widget?eid=16317964471&showPrivate=1&sig=AGbIMNxpHUlRkcT_ZbQGyQ7X_arlwKyFyQ" frameborder="0" height="377" width="200" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true">
@@ -200,6 +205,25 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 							</div>
 						</div>
 						-->
+						<div id="members-icon-gallery" class="icon-gallery">
+						
+  						<ul>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/cala_banner.jpg" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/cat.gif" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/edc_logo.png" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/ibarj_complete.png" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/sunflower_foundation.jpg" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/courage_campaign.jpg" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/ayuda.png" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/cfhr.png" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/fh.png" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/cfcht_logo.png" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/crossroads.jpg" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/roosevelt_univ.png" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/prc.jpg" /></li>
+								<li><img src="<?php echo Util::getHttpCorePath(); ?>/images/icon-gallery/worldtrust.png" /></li>
+  						</ul>
+						</div>
 				</div>
 				<?php // include("../..."); 
 				?>
