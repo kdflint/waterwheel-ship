@@ -45,11 +45,11 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 			<tr><td colspan="3">Nexus Web Meet<a class="benefits-grid" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_NexusWM.pdf" target="_blank"><span class="fa fa-file-pdf-o fa-2x" style="float:right;"></span></a></td></tr>
 			<tr><td>&nbsp;</td><td>Activist</td><td>Director</td></tr></thead>
 			<tbody>
-				<tr><td>Compare&nbsp;Citrix</td><td>$450</td><td>&gt; $900</td></tr>
 				<tr><td>Minutes</td><td>Unlim.</td><td>Unlim.</td></tr>
 				<tr><td>Admins/Seats</td><td>3/6</td><td>8/25</td></tr>
 				<tr><td>All-way video</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Desktop share</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
+				<tr><td>Polling</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Recording</td><td>&nbsp;</td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Skype audio</td><td>&nbsp;</td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				
