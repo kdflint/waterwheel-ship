@@ -46,7 +46,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 			<tr><td>&nbsp;</td><td>Activist</td><td>Director</td></tr></thead>
 			<tbody>
 				<tr><td>Minutes</td><td>Unlim.</td><td>Unlim.</td></tr>
-				<tr><td>Admins/Seats</td><td>3/6</td><td>8/25</td></tr>
+				<tr><td>Admins/Seats</td><td>3/6</td><td>10/20</td></tr>
 				<tr><td>All-way video</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Desktop share</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
 				<tr><td>Polling</td><td><img src="<?php echo($checkmark); ?>" /></td><td><img src="<?php echo($checkmark); ?>" /></td></tr>
