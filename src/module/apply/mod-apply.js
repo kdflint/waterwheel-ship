@@ -10,10 +10,22 @@ function hideInfoWebinarField() {
 	document.getElementById("partner_perspective_embed").style.visibility='visible';
 }
 
+function hideSpecialOffer() {
+	document.getElementById("special-offer").style.display='none';
+	document.getElementById("fade").style.display='none';	
+	document.getElementById("partner_perspective_embed").style.visibility='visible';	
+}
+
 function showInfoEmailField() {
 	document.getElementById("info-email").style.display='block';
 	document.getElementById("fade").style.display='block';
 	document.getElementById("partner_perspective_embed").style.visibility='hidden';
+}
+
+function showSpecialOfferField() {
+	document.getElementById("special-offer").style.display='block';
+	document.getElementById("fade").style.display='block';
+	document.getElementById("partner_perspective_embed").style.visibility='hidden';	
 }
 
 function hideInfoEmailField() {

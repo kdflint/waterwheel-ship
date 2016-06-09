@@ -8,6 +8,7 @@ $useragent = $_SERVER['HTTP_USER_AGENT'];
 $mobileHttpPath = Util::getHttpMobilePath();
 $campaign = $message = "";
 $crumb = new Breadcrumb();
+$specialOfferTrigger = "false";
 
 if (isset($_GET['c']) && strlen($_GET['c']) > 0 && Util::isCleanCharacterSet($_GET['c'])) {
 	$campaign = substr($_GET['c'],0,2);
@@ -17,6 +18,10 @@ if (isset($_GET['c']) && strlen($_GET['c']) > 0 && Util::isCleanCharacterSet($_G
 		$crumb->setCrumb($message);
 	}
 	$crumb->insert();
+}
+
+if (!strcmp($campaign, '2')) {
+ $specialOfferTrigger = "true"; 
 }
 
 $msie_8 = FALSE;
@@ -93,9 +98,12 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
         	return false;
     		}
 			});
+			if (<?php echo $specialOfferTrigger; ?>) {
+				showSpecialOfferField();
+			}
 		})
 	</script>
-		
+	
 	</head>
 
 	<body>
