@@ -69,7 +69,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 			var input = document.getElementById("info-email-input");
 			var control = document.getElementById("info-email-button");
 			var closer = document.getElementById("info-email-close-box");
-			input.innerHTML = "<input type='email' name='email_1' placeholder='Recipient Email' maxlength='100' style='width:100%;margin-top:10px;' required >";
+			input.innerHTML = "<input type='email' name='email_1' placeholder='Recipient Email' maxlength='100' style='width:95%;margin-top:10px;margin-bottom:10px;height:30px;' required >";
 			control.innerHTML = "<span class='fa fa-play' style='margin-right:4px;' ></span>Send Information";
   		closer.style.display = "block";
   		control.onclick = function() {infoEmailValidateAndSubmit();};
@@ -187,15 +187,45 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 	
 	<body>
 		<div class="container" style="width:95%;max-width:400px;text-align:center;">
-			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_rgb.png" width="300" height="82" style="padding:20px 10px 10px 0px;"/>
-			<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Cutting edge<br/>technology benefits<br/>for social justice leaders</p>
+			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_tagline_rgb.png" width="300" height="93" style="padding:20px 10px 10px 0px;"/>
+			<!--<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Cutting edge<br/>technology benefits<br/>for social justice leaders</p>-->
+			
+			<!--
 			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showEligibilityForm();">Check Your Eligibility</a></p>
 			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
+			-->
 
-			<div id="info-email" class="white_content" style="min-height:170px;display:none;border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:4px;border-bottom-right-radius:4px;position:absolute;top:115px;left:0px;width:95%;max-width:400px;border-bottom:0px;">
+			<!--<div id="special-offer" class="white_content" style="position:absolute;top:115px;left:0px;width:95%;max-width:400px;border-radius:8px;display:block;">-->
+			
+			<p style="font-size:120%;font-weight:bold;margin-top:10px;">
+				Special Offer! Benefits Tech Pack<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://northbridgetech.org/?view=membership&c=2&m=1" data-text="Like a food coop, for technology." data-via="NorthbridgeNFP" data-size="large" data-hashtags="andjusticeforall"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRsP2POqMBzsW0sODPm6G8csR8Qg-oniJ0czmsG-eoWOAT4vSYZ" width="72" height="28" style="vertical-align:text-top;margin-left:10px;"/></a>
+			</p>
+			<p style="width:100%;text-align:left;">
+				<a class="pure-button button-link" href="https://www.eventbrite.com/e/mini-training-virtual-collaboration-for-social-activists-tickets-25983638763" target="_blank" style="width:46px;border-radius:4px;background:#f68620;">
+					<span class="fa fa-external-link" style="margin-right:4px;" ></span>RSVP</a>
+				Sample Training: Virtual collaboration
+			</p>
+			<p style="margin-top:10px;width:100%;text-align:left;">
+				<a class="pure-button button-link" href="http://nexus.northbridgetech.org/demo" target="_bank" style="width:46px;border-radius:4px;background:#f68620;">
+					<span class="fa fa-wrench" style="margin-right:4px;" ></span>Try</a>
+				Sample Nexus: Take it for a spin!
+			</p>
+			<p style="margin-top:10px;width:100%;text-align:left;">
+				<a class="pure-button button-link" href="http://northbridgetech.org/apps/members/civicrm/contribute/transact?reset=1&id=1" target="_blank" style="width:110px;border-radius:4px;background:#f68620;">
+					<span class="fa fa-paper-plane" style="margin-right:4px;" ></span></span>Pre-approved!</a>
+				Your work deserves our best...
+			</p>
+			<p style="margin-top:10px;text-align:left;" >
+				<a class="pure-button button-link" style="width:110px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a>
+				We'll send you some more info.
+			</p>
+
+			<!--</div>-->
+
+			<div id="info-email" class="white_content" style="min-height:170px;display:none;border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;position:absolute;top:140px;left:0px;width:95%;max-width:400px;border-bottom:0px;">
 				<form id="info-email-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST">
 					<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span> Close</a><p>We will send a packet of information to your email address. Your address will be used respectfully. We will not spam you.</p>
-					<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:90%;margin-top:10px;margin-bottom:10px;margin-left:20px;margin-right:20px;height:30px;" required ></span>					
+					<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:95%;margin-top:10px;margin-bottom:10px;height:30px;" required ></span>					
 					<div id="info_buttons" style="position:absolute;bottom:0px;width:95%;">
 						<p><a id="info-email-button" class="pure-button button-link" onclick="infoEmailValidateAndSubmit();" style="width:90%;border-radius:4px;background-color:#d27b4b;float:right;"><span class="fa fa-play" style="margin-right:4px;" ></span>Send Information</a></p>
 					</div>				
@@ -259,7 +289,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 			</p>
 			<p style="text-align:left;">Northbridge Technology Alliance creates software solutions for organizations who are engaged in social justice and community-building efforts.</p>
 			<?php if (!$ie8) { ?>
-				<a href="<?php echo $coreHttpPath; ?>/index.php?context=desktop" style="color:#d27b4b;float:right;">Desktop Site</a>
+				<a href="<?php echo $coreHttpPath; ?>/index.php?context=desktop&view=membership&c=2&m=1" style="color:#d27b4b;float:right;">Desktop Site</a>
 			<?php } ?>
 		</div>
 	</body>
