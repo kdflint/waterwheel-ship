@@ -26,6 +26,8 @@ function showSpecialOfferField() {
 	document.getElementById("special-offer").style.display='block';
 	document.getElementById("fade").style.display='block';
 	document.getElementById("partner_perspective_embed").style.visibility='hidden';	
+	document.getElementById("special-offer-link").innerHTML = 'Special Offer';
+
 }
 
 function hideInfoEmailField() {

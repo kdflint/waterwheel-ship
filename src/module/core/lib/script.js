@@ -33,6 +33,7 @@ function switchToSponsor() {
 	document.getElementById("contextSwitch").onclick = function() {switchToAbout()}
 	hideInfoEmailField();
 	hideInfoWebinarField();
+	hideSpecialOffer();
 	switchToApplyInfo();
 	window.scrollTo(0,0);
 }
