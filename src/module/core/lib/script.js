@@ -12,7 +12,7 @@ function switchToAbout() {
 	document.getElementById("partner_perspective_embed").style.visibility='hidden';
 	document.getElementById("curtain").style.width = "0px";
  	document.getElementById("contextSwitch").innerHTML='<span class="fa fa-chevron-circle-left fa-2x tan" style="margin-right:10px;vertical-align:middle;"></span>Membership';
- 	document.getElementById("defaultMenuItem").click();
+ 	switchAboutView(1);
  	document.getElementById("defaultMenuItem").focus();
 	document.getElementById("contextSwitch").onclick = function() {switchToSponsor()}
 	window.scrollTo(0,0);

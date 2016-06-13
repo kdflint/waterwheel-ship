@@ -4,11 +4,20 @@
 require_once("domain/Util.php");
 require_once("domain/Breadcrumb.php");
 
-$useragent = $_SERVER['HTTP_USER_AGENT'];
-$mobileHttpPath = Util::getHttpMobilePath();
 $campaign = $message = "";
 $crumb = new Breadcrumb();
 $specialOfferTrigger = "false";
+$useragent = $_SERVER['HTTP_USER_AGENT'];
+$msie_8 = FALSE;
+$mobileHttpPath = Util::getHttpMobilePath();
+$viewArray = array("apply"=>"2", "sponsor"=>"1", "volunteer"=>"2", "apply_form"=>"2", "membership"=>"0");
+$viewSuccess = array(
+	"volunteer"=>"Got it! Your confirmation email will be delivered in a few minutes.",
+	"apply_form"=>"Got it! Your confirmation email will be delivered in a few minutes."
+	);
+$isMemberContext = false;
+$slideIndex = 0;
+$userMessage = "";
 
 if (isset($_GET['c']) && strlen($_GET['c']) > 0 && Util::isCleanCharacterSet($_GET['c'])) {
 	$campaign = substr($_GET['c'],0,2);
@@ -24,10 +33,8 @@ if (!strcmp($campaign, '2')) {
  $specialOfferTrigger = "true"; 
 }
 
-$msie_8 = FALSE;
-$ua = $_SERVER["HTTP_USER_AGENT"];
-if ($ua) {
-	$msie_8 = strpos($ua, 'MSIE 8') || strpos($ua, 'MSIE 7') ||  strpos($ua, 'MSIE 6') ? TRUE : FALSE;
+if ($useragent) {
+	$msie_8 = strpos($useragent, 'MSIE 8') || strpos($useragent, 'MSIE 7') ||  strpos($useragent, 'MSIE 6') ? TRUE : FALSE;
 }
 
 if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
@@ -40,26 +47,17 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'desktop')) {
 		header('Location: ' . $mobileHttpPath . '/index.php?context=ie8');
 		exit(0);
 	}
-
 }
 
-$viewArray = array("apply"=>"2", "sponsor"=>"1", "volunteer"=>"2", "apply_form"=>"2", "membership"=>"0");
-$viewSuccess = array(
-	"volunteer"=>"Got it! Your confirmation email will be delivered in a few minutes.",
-	"apply_form"=>"Got it! Your confirmation email will be delivered in a few minutes."
-	);
-
 // initialize slide focus
-$slideIndex = 0;
 if (isset($_GET['view']) && isset($viewArray[$_GET['view']])) {
   $slideIndex = $viewArray[$_GET["view"]];
-  $_GET['context'] = "nexus";
+  $isMemberContext = true;
 }
 
 // initialize user messages
-$message = "";
 if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['view']])) {
-  $message = $viewSuccess[$_GET["view"]];
+  $userMessage = $viewSuccess[$_GET["view"]];
 }
 
 ?>
@@ -296,8 +294,8 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 		</div><!-- /container -->
 		
 		<!-- initialize major context -->
-		<?php if (isset($_GET['context']) && !strcmp($_GET['context'], 'nexus')) { ?>
 		<?php //if (true) { ?>
+		<?php if ($isMemberContext) { ?>
 			<script type="text/javascript">
 				switchToSponsor();
 			</script>
