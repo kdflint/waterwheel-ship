@@ -198,7 +198,8 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 			<!--<div id="special-offer" class="white_content" style="position:absolute;top:115px;left:0px;width:95%;max-width:400px;border-radius:8px;display:block;">-->
 			
 			<p style="font-size:120%;font-weight:bold;margin-top:10px;">
-				Special Offer! Benefits Tech Pack<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://northbridgetech.org/?view=membership&c=2&m=1" data-text="Like a food coop, for technology." data-via="NorthbridgeNFP" data-size="large" data-hashtags="andjusticeforall"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRsP2POqMBzsW0sODPm6G8csR8Qg-oniJ0czmsG-eoWOAT4vSYZ" width="72" height="28" style="vertical-align:text-top;margin-left:10px;"/></a>
+				Special Offer! Benefits Tech Pack<a href="https://twitter.com/intent/tweet?text=Social%20justice%20peeps...%204%20u!%20Like%20a%20food%20coop,%20for%20technology%2E&via=NorthbridgeNFP&url=http://northbridgetech.org?view=membership%26c=2%26m=3" target="_blank"><img src="../core/images/tweet.png" width="72" height="28" style="vertical-align:text-top;margin-left:10px;" alt="Tweet"/>
+				</a>
 			</p>
 			<p style="width:100%;text-align:left;">
 				<a class="pure-button button-link" href="https://www.eventbrite.com/e/mini-training-virtual-collaboration-for-social-activists-tickets-25983638763" target="_blank" style="width:46px;border-radius:4px;background:#f68620;">
@@ -216,18 +217,18 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 				Your work deserves our best...
 			</p>
 			<p style="margin-top:10px;text-align:left;" >
-				<a class="pure-button button-link" style="width:110px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a>
+				<a class="pure-button button-link" style="width:110px;border-radius:4px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a>
 				We'll send you some more info.
 			</p>
 
 			<!--</div>-->
 
-			<div id="info-email" class="white_content" style="min-height:170px;display:none;border-top-left-radius:8px;border-top-right-radius:8px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;position:absolute;top:140px;left:0px;width:95%;max-width:400px;border-bottom:0px;">
+			<div id="info-email" class="white_content" style="min-height:170px;display:none;position:absolute;top:140px;left:0px;width:95%;max-width:400px;border:0px;">
 				<form id="info-email-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST">
-					<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span> Close</a><p>We will send a packet of information to your email address. Your address will be used respectfully. We will not spam you.</p>
+					<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span> Back</a><p>We will send a packet of information to your email address. Your address will be used respectfully. We will not spam you.</p>
 					<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:95%;margin-top:10px;margin-bottom:10px;height:30px;" required ></span>					
 					<div id="info_buttons" style="position:absolute;bottom:0px;width:95%;">
-						<p><a id="info-email-button" class="pure-button button-link" onclick="infoEmailValidateAndSubmit();" style="width:90%;border-radius:4px;background-color:#d27b4b;float:right;"><span class="fa fa-play" style="margin-right:4px;" ></span>Send Information</a></p>
+						<p><a id="info-email-button" class="pure-button button-link" onclick="infoEmailValidateAndSubmit();" style="width:90%;border-radius:4px;background:#f68620;float:right;"><span class="fa fa-play" style="margin-right:4px;" ></span>Send Information</a></p>
 					</div>				
 				</form>
 			</div>	
