@@ -27,7 +27,7 @@ require_once("../core/domain/Util.php");
 		<div id="info-webinar" class="white_content" style="top:80px;left:260px;width:420px;min-height:40px;display:none;border-radius:8px;">
 			<p><a onclick="hideInfoWebinarField();" style="float:right;"><span class="fa fa-times-circle-o fa-2x" style="margin-right:4px;flat:right;color:#899d70;cursor:pointer;" ></span></a></p>&nbsp;<br/>
 			<p style="margin-top:10px;">This link will take you to an event page where you can register for a brief, no-obligation, informational webinar.</p>
-			<a id="" class="pure-button button-link" onclick="hideInfoWebinarField()" href="https://www.eventbrite.com/e/information-webinar-tickets-16317817030" target="_blank" style="width:70px;border-radius:4px;float:right;"><span class="fa fa-external-link" style="margin-right:6px;" ></span>Register</a>
+			<a class="pure-button button-link" onclick="hideInfoWebinarField()" href="https://www.eventbrite.com/e/information-webinar-tickets-16317817030" target="_blank" style="width:70px;border-radius:4px;float:right;"><span class="fa fa-external-link" style="margin-right:6px;" ></span>Register</a>
 		</div>
 		
 		<div id="special-offer" class="white_content" style="top:80px;left:260px;width:420px;min-height:40px;display:none;border-radius:8px;">
@@ -35,7 +35,11 @@ require_once("../core/domain/Util.php");
 			<a onclick="hideSpecialOffer();" style="float:right;"><span class="fa fa-times-circle-o fa-2x" style="margin-right:4px;flat:right;color:#899d70;cursor:pointer;" ></span></a>
 			</p>
 			<p style="font-size:120%;font-weight:bold;">
-				Special Offer! Benefits Tech Pack<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://northbridgetech.org/?view=membership&c=2&m=1" data-text="Like a food coop, for technology." data-via="NorthbridgeNFP" data-size="large" data-hashtags="andjusticeforall"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRsP2POqMBzsW0sODPm6G8csR8Qg-oniJ0czmsG-eoWOAT4vSYZ" width="72" height="28" style="vertical-align:text-top;margin-left:10px;"/></a>
+				Special Offer! Benefits Tech Pack
+				<a href="https://twitter.com/intent/tweet?text=Social%20justice%20peeps...%204%20u!%20Like%20a%20food%20coop,%20for%20technology%2E&via=NorthbridgeNFP&url=http://northbridgetech.org?view=membership%26c=2%26m=3" target="_blank">
+					<img src="images/tweet.png" width="72" height="28" style="vertical-align:text-top;margin-left:10px;" alt="Tweet"/>
+				</a>
+				
 			</p>
 			<p style="width:100%;">
 				<a class="pure-button button-link" href="https://www.eventbrite.com/e/mini-training-virtual-collaboration-for-social-activists-tickets-25983638763" target="_blank" style="width:46px;border-radius:4px;background:#f68620;">
@@ -43,19 +47,16 @@ require_once("../core/domain/Util.php");
 				Sample Training: Virtual collaboration
 			</p>
 			<p style="margin-top:10px;width:100%;">
-				<a class="pure-button button-link" href="http://nexus.northbridgetech.org/demo" target="_bank" style="width:46px;border-radius:4px;background:#f68620;">
+				<a class="pure-button button-link" href="http://nexus.northbridgetech.org/demo" target="_blank" style="width:46px;border-radius:4px;background:#f68620;">
 					<span class="fa fa-wrench" style="margin-right:4px;" ></span>Try</a>
 				Sample Nexus: Take it for a spin!
 			</p>
 			<p style="margin-top:10px;width:100%;">
 				<a class="pure-button button-link" href="http://northbridgetech.org/apps/members/civicrm/contribute/transact?reset=1&id=1" target="_blank" style="width:110px;border-radius:4px;background:#f68620;">
-					<span class="fa fa-paper-plane" style="margin-right:4px;" ></span></span>Pre-approved!</a>
+					<span class="fa fa-paper-plane" style="margin-right:4px;" ></span>Pre-approved!</a>
 				Your work deserves our best...
 			</p>
 		</div>
-
-
-
 
 	</div>	
 </form>	

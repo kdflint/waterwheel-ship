@@ -120,6 +120,7 @@ $.fn.hSlides = function(settings) {
 				//document.getElementById("partner_perspective_embed").style.visibility='visible';
 				hideInfoEmailField();
 				hideInfoWebinarField();
+				hideSpecialOffer();
 				switchToApplyInfo();
 			}			
 			
