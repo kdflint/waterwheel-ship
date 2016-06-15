@@ -200,7 +200,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 			<!--<div id="special-offer" class="white_content" style="position:absolute;top:115px;left:0px;width:95%;max-width:400px;border-radius:8px;display:block;">-->
 			
 			<p style="font-size:120%;font-weight:bold;margin-top:10px;">
-				Special Offer! Benefits Tech Pack<a href="https://twitter.com/intent/tweet?text=Social%20justice%20peeps...%204%20u!%20Like%20a%20food%20coop,%20for%20technology%2E&via=NorthbridgeNFP&url=http://northbridgetech.org?view=membership%26c=2%26m=3" target="_blank"><img src="../core/images/tweet.png" width="72" height="28" style="vertical-align:text-top;margin-left:10px;" alt="Tweet"/>
+				Special Offer! Benefits Tech Pack<a href="https://twitter.com/intent/tweet?text=Social%20justice%20peeps...%204%20u!%20Like%20a%20food%20coop,%20for%20technology%2E&via=NorthbridgeNFP&url=http://ow.ly/oNlQ301iDDr" target="_blank"><img src="../core/images/tweet.png" width="72" height="28" style="vertical-align:text-top;margin-left:10px;" alt="Tweet"/>
 				</a>
 			</p>
 			<p style="width:100%;text-align:left;">
