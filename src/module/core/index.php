@@ -68,6 +68,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 		<title>Northbridge Technology Alliance</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">		
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="description" content="Nonprofit. Technology benefits for social justice leaders. Shouldn't your technology be as great as you are?">
 		<?php 
 			include("mod-core-meta.php");
 			include("../apply/mod-apply-meta.php"); 
@@ -310,7 +311,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 			history.pushState(stateObj, "", "index.php#");
 		</script>	
 			
-		<script>
+		<script type="text/javascript">
 			transformYouTubeDivs();
 		</script>
 

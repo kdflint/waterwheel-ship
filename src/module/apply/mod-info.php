@@ -27,7 +27,7 @@ require_once("../core/domain/Util.php");
 		<div id="info-webinar" class="white_content" style="top:80px;left:260px;width:420px;min-height:40px;display:none;border-radius:8px;">
 			<p><a onclick="hideInfoWebinarField();" style="float:right;"><span class="fa fa-times-circle-o fa-2x" style="margin-right:4px;flat:right;color:#899d70;cursor:pointer;" ></span></a></p>&nbsp;<br/>
 			<p style="margin-top:10px;">This link will take you to an event page where you can register for a brief, no-obligation, informational webinar.</p>
-			<a id="" class="pure-button button-link" onclick="hideInfoWebinarField()" href="https://www.eventbrite.com/e/information-webinar-tickets-16317817030" target="_blank" style="width:70px;border-radius:4px;float:right;"><span class="fa fa-external-link" style="margin-right:6px;" ></span>Register</a>
+			<a class="pure-button button-link" onclick="hideInfoWebinarField()" href="https://www.eventbrite.com/e/information-webinar-tickets-16317817030" target="_blank" style="width:70px;border-radius:4px;float:right;"><span class="fa fa-external-link" style="margin-right:6px;" ></span>Register</a>
 		</div>
 		
 		<div id="special-offer" class="white_content" style="top:80px;left:260px;width:420px;min-height:40px;display:none;border-radius:8px;">
@@ -47,13 +47,13 @@ require_once("../core/domain/Util.php");
 				Sample Training: Virtual collaboration
 			</p>
 			<p style="margin-top:10px;width:100%;">
-				<a class="pure-button button-link" href="http://nexus.northbridgetech.org/demo" target="_bank" style="width:46px;border-radius:4px;background:#f68620;">
+				<a class="pure-button button-link" href="http://nexus.northbridgetech.org/demo" target="_blank" style="width:46px;border-radius:4px;background:#f68620;">
 					<span class="fa fa-wrench" style="margin-right:4px;" ></span>Try</a>
 				Sample Nexus: Take it for a spin!
 			</p>
 			<p style="margin-top:10px;width:100%;">
 				<a class="pure-button button-link" href="http://northbridgetech.org/apps/members/civicrm/contribute/transact?reset=1&id=1" target="_blank" style="width:110px;border-radius:4px;background:#f68620;">
-					<span class="fa fa-paper-plane" style="margin-right:4px;" ></span></span>Pre-approved!</a>
+					<span class="fa fa-paper-plane" style="margin-right:4px;" ></span>Pre-approved!</a>
 				Your work deserves our best...
 			</p>
 		</div>

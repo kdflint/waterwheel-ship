@@ -27,7 +27,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 		</tr></thead>
 		<tbody>
 			<tr><td><b>Activist</b></td><td>Volunteer teams, leadership teams, smaller&nbsp;committees or task forces</td><td>$120<br/>USD</td><td>Standard Feature Set</td><td>Standard Package</td><td>Track 1</td></tr>
-			<tr><td><b>Director</b></td><td>Boards of Directors, larger committees, community groups</td><td>$200<br/>USD</td><td>Extended Feature Set</td><td>Extended Package</td><td>Tracks&nbsp;1&nbsp;&&nbsp;2</td></tr>
+			<tr><td><b>Director</b></td><td>Boards of Directors, larger committees, community groups</td><td>$200<br/>USD</td><td>Extended Feature Set</td><td>Extended Package</td><td>Tracks&nbsp;1&nbsp;&amp;&nbsp;2</td></tr>
 		</tbody>
 	</table>
 	<div class="" style="font-size:120%;margin-top:5px;margin-left:20px;">	
