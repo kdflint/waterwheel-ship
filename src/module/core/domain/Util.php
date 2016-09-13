@@ -84,8 +84,12 @@ final class Util {
 		return DEMO_URL;
 	}
 	
-	public static function getMemberRegrUrl() {
-		return MEMBER_REGR_URL;
+	public static function getMemberRegrUrl($marketerId = '1') {
+		return MEMBER_REGR_URL . $marketerId;
+	}
+	
+	public static function isAllowedMarketerId($id) {
+		return true;
 	}
 	
 	public static function getEnvName() {

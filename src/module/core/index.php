@@ -4,7 +4,7 @@
 require_once("domain/Util.php");
 require_once("domain/Breadcrumb.php");
 
-$campaign = $message = "";
+$campaign = $message = $marketerId = "";
 $crumb = new Breadcrumb();
 $specialOfferTrigger = "false";
 $useragent = $_SERVER['HTTP_USER_AGENT'];
@@ -28,6 +28,17 @@ if (isset($_GET['c']) && strlen($_GET['c']) > 0 && Util::isCleanCharacterSet($_G
 	}
 	$crumb->insert();
 }
+
+// initialize Apply link according to most recent marketer referral
+if (isset($_GET['r']) && strlen($_GET['r']) == 1 && Util::isAllowedMarketerId($_GET['r'])) {
+	$marketerId = $_GET['r'];
+	setcookie("member_campaign_id", $marketerId, time() + (86400 * 30), "/"); // 86400 = 1 day
+} else if (isset($_COOKIE['member_campaign_id']) && strlen($_COOKIE['member_campaign_id']) == 1 && Util::isAllowedMarketerId($_COOKIE['member_campaign_id'])) {
+	$marketerId = $_COOKIE['member_campaign_id'];
+} else {
+	$marketerId = "1";
+}
+$applyLink = Util::getMemberRegrUrl($marketerId);
 
 if (!strcmp($campaign, '2')) {
  $specialOfferTrigger = "true"; 
