@@ -6,6 +6,18 @@ $applyHttpPath = Util::getHttpApplyPath();
 
 $useragent=$_SERVER['HTTP_USER_AGENT'];
 $ie8 = FALSE;
+$marketerId = "";
+
+// initialize Apply link according to most recent marketer referral
+if (isset($_GET['r']) && strlen($_GET['r']) == 1 && Util::isAllowedMarketerId($_GET['r'])) {
+	$marketerId = $_GET['r'];
+	setcookie("member_campaign_id", $marketerId, time() + (86400 * 30), "/"); // 86400 = 1 day
+} else if (isset($_COOKIE['member_campaign_id']) && strlen($_COOKIE['member_campaign_id']) == 1 && Util::isAllowedMarketerId($_COOKIE['member_campaign_id'])) {
+	$marketerId = $_COOKIE['member_campaign_id'];
+} else {
+	$marketerId = "1";
+}
+$applyLink = Util::getMemberRegrUrl($marketerId);
 
 if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GET['context'], 'mobile'))) {
 	// request is explicitly for mobile site - bypass desktop redirect
@@ -214,7 +226,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 				Sample Nexus: Take it for a spin!
 			</p>
 			<p style="margin-top:10px;width:100%;text-align:left;">
-				<a class="pure-button button-link" href="http://northbridgetech.org/apps/members/civicrm/contribute/transact?reset=1&id=1" target="_blank" style="width:110px;border-radius:4px;background:#f68620;">
+				<a class="pure-button button-link" href="<?php echo($applyLink); ?>" target="_blank" style="width:110px;border-radius:4px;background:#f68620;">
 					<span class="fa fa-paper-plane" style="margin-right:4px;" ></span>Pre-approved!</a>
 				Your work deserves our best...
 			</p>

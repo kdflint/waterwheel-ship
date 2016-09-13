@@ -81,7 +81,7 @@ require_once("../core/domain/Util.php");
 			<a class="pure-button pure-button-disabled button-submit mod-sponsor-button" href="#" onclick="alert('Please confirm your eligibility before viewing the registration form.');" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>View Registration Form</a>
 		</div>
 		<div id="apply-link" style="display:none;">
-			<a class="pure-button button-submit mod-sponsor-button" href="<?php echo Util::getMemberRegrUrl(); ?>"  style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>View Registration Form</a>
+			<a class="pure-button button-submit mod-sponsor-button" href="<?php echo($applyLink); ?>"  style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>View Registration Form</a>
 		</div>
 	</div>
 	
