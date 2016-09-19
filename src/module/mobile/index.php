@@ -201,20 +201,27 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 	
 	<body>
 		<div class="container" style="width:95%;max-width:400px;text-align:center;">
-			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_tagline_rgb.png" width="300" height="93" style="padding:20px 10px 10px 0px;"/>
-			<!--<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Cutting edge<br/>technology benefits<br/>for social justice leaders</p>-->
+			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_tagline_rgb.png" width="300" height="93" style="padding:20px 10px 20px 0px;"/>
+			<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Technology benefits for social justice leaders</p>
+			
+			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showEligibilityForm();">Check Your Eligibility</a></p>
+			
+			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
+			
+			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="http://nexus.northbridgetech.org/demo" target="_blank" ><span class="fa fa-wrench" style="margin-right:4px;" ></span>Try Nexus</a></p>
+
+
+			<!--
+			<div id="special-offer" class="white_content" style="position:absolute;top:115px;left:0px;width:95%;max-width:400px;border-radius:8px;display:block;">
+			-->
 			
 			<!--
-			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showEligibilityForm();">Check Your Eligibility</a></p>
-			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
-			-->
-
-			<!--<div id="special-offer" class="white_content" style="position:absolute;top:115px;left:0px;width:95%;max-width:400px;border-radius:8px;display:block;">-->
-			
 			<p style="font-size:120%;font-weight:bold;margin-top:10px;">
 				Special Offer! Benefits Tech Pack<a href="https://twitter.com/intent/tweet?text=Social%20justice%20peeps...%204%20u!%20Like%20a%20food%20coop,%20for%20technology%2E&via=NorthbridgeNFP&url=http://ow.ly/oNlQ301iDDr" target="_blank"><img src="../core/images/tweet.png" width="72" height="28" style="vertical-align:text-top;margin-left:10px;" alt="Tweet"/>
 				</a>
 			</p>
+			-->
+			<!--
 			<p style="width:100%;text-align:left;">
 				<a class="pure-button button-link" href="https://www.eventbrite.com/e/mini-training-virtual-collaboration-for-social-activists-tickets-25983638763" target="_blank" style="width:46px;border-radius:4px;background:#f68620;">
 					<span class="fa fa-external-link" style="margin-right:4px;" ></span>RSVP</a>
@@ -230,14 +237,15 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 					<span class="fa fa-paper-plane" style="margin-right:4px;" ></span>Pre-approved!</a>
 				Your work deserves our best...
 			</p>
+
 			<p style="margin-top:10px;text-align:left;" >
 				<a class="pure-button button-link" style="width:110px;border-radius:4px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a>
 				We'll send you some more info.
 			</p>
-
+			-->
 			<!--</div>-->
 
-			<div id="info-email" class="white_content" style="min-height:170px;display:none;position:absolute;top:140px;left:0px;width:95%;max-width:400px;border:0px;">
+			<div id="info-email" class="white_content" style="min-height:170px;display:none;position:absolute;top:140px;left:0px;width:95%;max-width:400px;border:0px;border-radius:0px;">
 				<form id="info-email-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST">
 					<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span> Back</a><p>We will send a packet of information to your email address. Your address will be used respectfully. We will not spam you.</p>
 					<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:95%;margin-top:10px;margin-bottom:10px;height:30px;" required ></span>					
@@ -247,10 +255,10 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 				</form>
 			</div>	
 
-			<div id="info-eligible" class="white_content" style="min-height:325px;display:none;border-radius:8px;position:absolute;top:115px;left:0px;width:95%;max-width:400px;">
+			<div id="info-eligible" class="white_content" style="min-height:325px;display:none;border-radius:8px;position:absolute;top:125px;left:0px;width:95%;max-width:400px;">
 				<form id="info-eligibility-form" action="" method="POST">
 					<a id="info-eligibility-close-box" class="pure-button button-link" onclick="hideEligibilityForm();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span>Close</a>
-					<p id="user-message4">Use this no-obligation form to check membership eligibility for your Board, committee, work group or task force.</p>
+					<p id="user-message4">No-obligation. Check membership eligibility for your Board, committee, work group or task force.</p>
 					<div id="eligibility_body" style="margin-top:15px;width:94%;">
 						<select id="services" name="services" style="width:92%;margin-top:5px;margin-left:20px;margin-right:20px;height:30px;">
 							<option value="0" selected>Service Area</option>
@@ -288,7 +296,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 					<div id="eligibility_buttons" style="margin-top:15px;width:94%;">
 						<a id="info-eligibility-check-button" class="pure-button button-link" onclick="eligibilityValidate();" style="border-radius:4px;margin-top:10px;margin-right:0px;margin-left:0px;width:108px;float:left"><span class="fa fa-play" style="margin-right:4px;" ></span>Check Eligibility</a>						
 						<a id="info-eligibility-apply-disabled" class="pure-button pure-button-disabled button-link" href="#" onclick="alert('Please confirm your eligibility before viewing the registration form.');" style="border-radius:4px;background-color:#d27b4b;display:inline-block;margin-top:10px;margin-left:0px;margin-right:0px;width:108px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration</a>
-						<a id="info-eligibility-apply-link" class="pure-button button-link" href="http://northbridgetech.org/dev/members/index.php?q=civicrm/contribute/transact?reset=1&id=2" style="border-radius:4px;background-color:#d27b4b;display:none;margin-top:10px;margin-left:0px;margin-right:0px;width:108px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration</a>
+						<a id="info-eligibility-apply-link" class="pure-button button-link" href="<?php echo($applyLink); ?>" style="border-radius:4px;background-color:#d27b4b;display:none;margin-top:10px;margin-left:0px;margin-right:0px;width:108px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration</a>
 					</div>
 
 				</form>
