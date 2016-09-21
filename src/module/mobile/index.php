@@ -204,11 +204,15 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_tagline_rgb.png" width="300" height="93" style="padding:20px 10px 20px 0px;"/>
 			<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Technology benefits for social justice leaders</p>
 			
-			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showEligibilityForm();">Check Your Eligibility</a></p>
+			<p style="margin:8px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showEligibilityForm();">Check Your Eligibility</a></p>
 			
-			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
-			
+			<p style="margin:6px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
+
+			<p style="margin:6px;" ><a class="pure-button button-link" style="width:190px;" href="https://www.youtube.com/watch?v=tk-QNJruZgM&feature=youtu.be" target="_blank"><span class="fa fa-youtube-play fa-lg" style="margin-right:4px;" ></span>Testimonial</a></p>		
+				
+			<!--
 			<p style="margin:10px;" ><a class="pure-button button-link" style="width:190px;" href="http://nexus.northbridgetech.org/demo" target="_blank" ><span class="fa fa-wrench" style="margin-right:4px;" ></span>Try Nexus</a></p>
+			-->
 
 
 			<!--
@@ -245,7 +249,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 			-->
 			<!--</div>-->
 
-			<div id="info-email" class="white_content" style="min-height:170px;display:none;position:absolute;top:140px;left:0px;width:95%;max-width:400px;border:0px;border-radius:0px;">
+			<div id="info-email" class="white_content" style="min-height:172px;display:none;position:absolute;top:140px;left:0px;width:95%;max-width:400px;border:0px;border-radius:0px;">
 				<form id="info-email-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST">
 					<a id="info-email-close-box" class="pure-button button-link" onclick="hideInfoEmailField();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span> Back</a><p>We will send a packet of information to your email address. Your address will be used respectfully. We will not spam you.</p>
 					<span id="info-email-input"><input type="email" name="email_1" placeholder="Recipient Email" maxlength="100" style="width:95%;margin-top:10px;margin-bottom:10px;height:30px;" required ></span>					
@@ -295,8 +299,8 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
        		</div>
 					<div id="eligibility_buttons" style="margin-top:15px;width:94%;">
 						<a id="info-eligibility-check-button" class="pure-button button-link" onclick="eligibilityValidate();" style="border-radius:4px;margin-top:10px;margin-right:0px;margin-left:0px;width:108px;float:left"><span class="fa fa-play" style="margin-right:4px;" ></span>Check Eligibility</a>						
-						<a id="info-eligibility-apply-disabled" class="pure-button pure-button-disabled button-link" href="#" onclick="alert('Please confirm your eligibility before viewing the registration form.');" style="border-radius:4px;background-color:#d27b4b;display:inline-block;margin-top:10px;margin-left:0px;margin-right:0px;width:108px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration</a>
-						<a id="info-eligibility-apply-link" class="pure-button button-link" href="<?php echo($applyLink); ?>" style="border-radius:4px;background-color:#d27b4b;display:none;margin-top:10px;margin-left:0px;margin-right:0px;width:108px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration</a>
+						<a id="info-eligibility-apply-disabled" class="pure-button pure-button-disabled button-link" href="#" onclick="alert('Please confirm your eligibility before viewing the registration form.');" style="border-radius:4px;background-color:#d27b4b;display:inline-block;margin-top:10px;margin-left:0px;margin-right:0px;width:114px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration</a>
+						<a id="info-eligibility-apply-link" class="pure-button button-link" href="<?php echo($applyLink); ?>" style="border-radius:4px;background-color:#d27b4b;display:none;margin-top:10px;margin-left:0px;margin-right:0px;width:114px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration</a>
 					</div>
 
 				</form>
