@@ -14,7 +14,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 			echo "</div>";
 		} ?>
 	<div class="" style="font-size:130%;margin-bottom:10px;">	
-		<p style="margin:10px 10px 10px 30px;font-size:110%;"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Summary.pdf" target="_blank">Complete Details</a></span><b>Two membership levels,<br/>structured by team.*</b></p>
+		<p style="margin:10px 10px 10px 30px;font-size:110%;"><span style="float:right;padding:5px;"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Summary.pdf" target="_blank">Complete Details</a></span><b>Three membership levels,<br/>structured by individual or team.*</b></p>
 	</div>
 	<table class="pure-table" style="font-size:98%;">
 		<thead><tr>
@@ -26,8 +26,9 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 			<td style="background:#a6c3ce;border-radius:10px;width:72px;"><a class="benefits-grid" href="javascript:void(0)" onclick="toggleMemberDetails('package-details-caucus');"><div style="height:100%;width:100%;"><span class="fa fa-external-link-square fa-lg" style="float:right;"></span>Caucus<br/>Tracks</div></a></td>
 		</tr></thead>
 		<tbody>
-			<tr><td><b>Activist</b></td><td>Volunteer teams, leadership teams, smaller&nbsp;committees or task forces</td><td>$120<br/>USD</td><td>Standard Feature Set</td><td>Standard Package</td><td>Track 1</td></tr>
-			<tr><td><b>Director</b></td><td>Boards of Directors, larger committees, community groups</td><td>$200<br/>USD</td><td>Extended Feature Set</td><td>Extended Package</td><td>Tracks&nbsp;1&nbsp;&amp;&nbsp;2</td></tr>
+			<tr><td><b>Community</b></td><td>Individuals</td><td>$0</td><td>-</td><td>Introduction</td><td>Track 2</td></tr>
+			<tr><td><b>Activist</b></td><td>Volunteer teams, smaller&nbsp;committees or task forces</td><td>$120<br/>USD</td><td>Standard Feature Set</td><td>Standard Package</td><td>Track 1</td></tr>
+			<tr><td><b>Director</b></td><td>Boards, larger committees, community groups</td><td>$200<br/>USD</td><td>Extended Feature Set</td><td>Extended Package</td><td>Tracks&nbsp;1&nbsp;&amp;&nbsp;2</td></tr>
 		</tbody>
 	</table>
 	<div class="" style="font-size:120%;margin-top:5px;margin-left:20px;">	

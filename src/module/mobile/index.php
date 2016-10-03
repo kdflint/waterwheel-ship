@@ -129,7 +129,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 				pass = false;
 			} else if (service == 3) {
 				eligibleMessage[1] = "Depending on more details of your service area, you may be eligible for membership. Our membership registration will collect that information.";
-				eligibleDecision[1] = "Your team may be eligible for membership with Northbridge.";				
+				eligibleDecision[1] = "You may be eligible for membership with Northbridge.";				
 			} else {
 	  	}
 				
@@ -166,7 +166,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 	  	}
 	  	
 			eligibleMessage[2] = "";
-			eligibleDecision[2] = '<span style="color:#d27b4b;font-size:130%;">Congratulations!</span><br/>Your team is eligible for membership.<br/>Click the orange button to continue.';
+			eligibleDecision[2] = '<span style="color:#d27b4b;font-size:130%;">Congratulations!</span><br/>You are eligible for membership.<br/>Click the orange button to continue.';
 			var decisionIndex = 2;
 			
 			if (eligibleDecision[0]) {
@@ -262,7 +262,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 			<div id="info-eligible" class="white_content" style="min-height:325px;display:none;border-radius:8px;position:absolute;top:125px;left:0px;width:95%;max-width:400px;">
 				<form id="info-eligibility-form" action="" method="POST">
 					<a id="info-eligibility-close-box" class="pure-button button-link" onclick="hideEligibilityForm();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span>Close</a>
-					<p id="user-message4">No-obligation. Check membership eligibility for your Board, committee, work group or task force.</p>
+					<p id="user-message4">No-obligation. Check membership eligibility for yourself, your Board, committee, work group or task force.</p>
 					<div id="eligibility_body" style="margin-top:15px;width:94%;">
 						<select id="services" name="services" style="width:92%;margin-top:5px;margin-left:20px;margin-right:20px;height:30px;">
 							<option value="0" selected>Service Area</option>
