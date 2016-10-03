@@ -6,8 +6,12 @@ require_once("../core/domain/Util.php");
 
 <form id="info-email-form" class="pure-form apply-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST" style="visibility:visible;opacity:1;transition: opacity 1s;">
 	<div class="mod-apply-frameSingle" style="font-size:130%;">	
-		<p style="margin:10px 10px 10px 30px;font-size:110%;"><b>For annual dues as low as $120</b><a href="#" onclick="showSpecialOfferField();" style="float:right;margin-right:20px;text-decoration:none;font-size:120%"><span id="special-offer-link" style="color:#f68620;text-decoration:none;font-weight:bold;"></span></a></p><p style="margin-left:30px;">unlimited Nexus Web Meet minutes, plus expert training and community</p>
-			<!-- LEFT OFF - put in special offer icon -->
+		<p style="margin:10px 10px 10px 30px;font-size:110%;"><b>For annual dues as low as $120</b>
+			<!--
+			<a href="#" onclick="showSpecialOfferField();" style="float:right;margin-right:20px;text-decoration:none;font-size:120%"><span id="special-offer-link" style="color:#f68620;text-decoration:none;font-weight:bold;"></span></a></p>
+			-->
+			<span style="color:#f68620;text-decoration:none;font-weight:bold;float:right;">Free Community Membership</span>
+			<p style="margin-left:30px;">unlimited Nexus Web Meet minutes, plus expert training and community</p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="switchToApplyForm();" >Check Eligibility</a></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoWebinarField();">Streaming Webinar</a></p>
