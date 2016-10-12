@@ -10,7 +10,7 @@ require_once("../core/domain/Util.php");
 			<!--
 			<a href="#" onclick="showSpecialOfferField();" style="float:right;margin-right:20px;text-decoration:none;font-size:120%"><span id="special-offer-link" style="color:#f68620;text-decoration:none;font-weight:bold;"></span></a></p>
 			-->
-			<span style="color:#f68620;text-decoration:none;font-weight:bold;float:right;">Free Community Membership</span>
+			<a href="javascript:void(0)" onclick="switchToApplyForm();"><span style="color:#f68620;text-decoration:none;font-weight:bold;float:right;">Free Community Membership</span></a>
 			<p style="margin-left:30px;">unlimited Nexus Web Meet minutes, plus expert training and community</p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="switchToApplyForm();" >Check Eligibility</a></p>
 		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
