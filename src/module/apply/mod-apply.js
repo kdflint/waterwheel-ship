@@ -188,9 +188,9 @@ function applyValidateAndSubmit(thisForm) {
      	}
 		}
 		if (checkedCount == 0) {
-			eligibleMessage[0] = "To be eligible, you must be affiliated with some type of organizational structure.";
-			eligibleDecision[0] = "You are not eligible for membership with Northbridge.";
 			if (!Boolean(areaLit)) {
+				eligibleMessage[0] = "To be eligible, you must be affiliated with some type of organizational structure.";
+				eligibleDecision[0] = "You are not eligible for membership with Northbridge.";
 				document.getElementById("structure-area").style.background = errorBackground;
 				areaLit = true;
 			}
@@ -206,7 +206,7 @@ function applyValidateAndSubmit(thisForm) {
   	}
   	
 		eligibleMessage[2] = "";
-		eligibleDecision[2] = '<span style="font-size:150%">Congratulations!</span><p style="margin-top:10px;">You are eligible for membership with Northbridge.</p><p style="margin-top:10px;">Click the blue button to continue.</p>';
+		eligibleDecision[2] = '<span style="font-size:150%">Good stuff!</span><p style="margin-top:10px;">You are eligible for membership with Northbridge.</p><p style="margin-top:10px;">Click the blue button to continue.</p>';
 		var decisionIndex = 2;
 		
 		if (eligibleDecision[0]) {

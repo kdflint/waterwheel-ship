@@ -145,7 +145,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 										<p><span class="fa fa-info-circle fa-3x tan" ></span></p>
 									</div>
 									<h1 class="slider white">Membership Benefits</h1>
-									<p class="white" style="font-size:115%;margin-top:15px;">Featuring our member-owned software Nexus Web Meet</p>
+									<p class="white" style="font-size:115%;margin-top:15px;">Designed to propel your mission forward</p>
 								</div>
 							</li>
 							<li class="two">

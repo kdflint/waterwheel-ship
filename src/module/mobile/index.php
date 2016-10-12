@@ -166,7 +166,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 	  	}
 	  	
 			eligibleMessage[2] = "";
-			eligibleDecision[2] = '<span style="color:#d27b4b;font-size:130%;">Congratulations!</span><br/>You are eligible for membership.<br/>Click the orange button to continue.';
+			eligibleDecision[2] = '<span style="color:#d27b4b;font-size:130%;">Good stuff!</span><br/>You are eligible for membership.<br/>Click the orange button to continue.';
 			var decisionIndex = 2;
 			
 			if (eligibleDecision[0]) {
