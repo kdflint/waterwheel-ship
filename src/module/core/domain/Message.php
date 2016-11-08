@@ -19,6 +19,10 @@ class Message {
 		"Application Submission Notification",
 		"Membership Information Packet"
 	);
+	
+	// To recreate one of these button images, copy the html portion of mailTest.php into a new html file
+	// Open the file in the local browser, make adjustments then take a screenshot
+	// Informational Video is the most recent. Has correct colors.
 		
 	private $links = array(
 		// Global links text-to-html translation table
