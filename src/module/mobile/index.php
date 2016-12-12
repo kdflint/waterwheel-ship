@@ -310,11 +310,13 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 
 			<hr style="color:#dae0bc;"/>
 			<p>
-				<a href='https://twitter.com/NorthbridgeNFP' target='_blank'><img style="margin-right:15px;" src='http://northbridgetech.org/images/twitter_dae0bc_32.png' width='32' height='32' /></a>
-				<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img style="margin-right:15px;" src='http://northbridgetech.org/images/google-plus-square_dae0bc_32.png' width='32' height='32' /></a>
-				<a href='https://www.linkedin.com/company/2232384' target='_blank'><img style="margin-right:15px;" src='http://northbridgetech.org/images/linkedin_dae0bc_32.png' width='32' height='32' /></a>
-				<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img style="margin-right:15px;" src='http://northbridgetech.org/images/facebook-square_dae0bc_32.png' width='32' height='32' /></a>
-				<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img src='http://northbridgetech.org/images/github_dae0bc_32.png' width='32' height='32' /></a>
+				<a href='https://twitter.com/NorthbridgeNFP' target='_blank'><img style="margin-right:10px;" src='http://northbridgetech.org/images/twitter_dae0bc_32.png' width='32' height='32' /></a>
+				<a href='//plus.google.com/u/0/101145194341428988499?prsrc=3' rel='publisher' target='_blank' style='text-decoration:none;'><img style="margin-right:10px;" src='http://northbridgetech.org/images/google-plus-square_dae0bc_32.png' width='32' height='32' /></a>
+				<a href='https://www.linkedin.com/company/2232384' target='_blank'><img style="margin-right:10px;" src='http://northbridgetech.org/images/linkedin_dae0bc_32.png' width='32' height='32' /></a>
+				<a href='https://www.facebook.com/northbridgenfp#' target='_blank'><img style="margin-right:10px;" src='http://northbridgetech.org/images/facebook-square_dae0bc_32.png' width='32' height='32' /></a>
+				<a href='https://github.com/NorthBridge/playbook/wiki/1.How-We-Do' target='_blank'><img style="margin-right:10px;" src='http://northbridgetech.org/images/github_dae0bc_32.png' width='32' height='32' /></a>
+				<a href="http://members.northbridgetech.org/donate" target="_blank"><img src="http://northbridgetech.org/images/donate-now.png" width="75" height="29" /></a>
+
 			</p>
 			<p style="text-align:left;">Northbridge Technology Alliance creates software solutions for organizations who are engaged in social justice and community-building efforts.</p>
 			<?php if (!$ie8) { ?>
