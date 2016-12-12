@@ -260,13 +260,16 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 					<div id="aboutQuote3" class="mod-about-quotes">To&nbsp;build&nbsp;community requires vigilant awareness...<br/>b. hooks</div>
 					<div id="aboutQuote4" class="mod-about-quotes">together... we might just be able to fix it...<br/>J. Cascio</div>
 					<div id="aboutQuote5" class="mod-about-quotes">All in, no regrets.<br/>K. Flint</div>
-					<div style="position:absolute;top:135px;left:560px;"> 
+					<div style="position:absolute;top:135px;left:590px;"> 
+						<a href="http://members.northbridgetech.org/donate" target="_blank"><img src="images/donate-now.png" width="150" height="57" /></a>
+						<!--
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> 
 							<input type="hidden" name="cmd" value="_s-xclick"> <input type="hidden" name="notify_url" value="http://northbridgetech.org/paypalIpnListener.php"> <input type="hidden" name="hosted_button_id" value="CR3GPPFSE7ARW">
 							<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" style="position:absolute;margin-left:30px;margin-top:18px;"> 
 							<a href="javascript:void(0)" onclick="alert('To donate by check, please mail your contribution to:\n\nNorthbridge Technology Alliance\n400 South Blvd., Unit A\nEvanston, IL  60202')" style="position:absolute;margin-left:135px;"><img src="images/Check_Pen.png" alt="by Check" ></a>
 							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> 
 						</form> 
+						-->
 					</div>
 					<div class="pure-menu pure-menu-open pure-menu-horizontal" style="margin-left:47px;font-size:140%;letter-spacing:.75px;">
 	   				<ul>
