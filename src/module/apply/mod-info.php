@@ -6,16 +6,25 @@ require_once("../core/domain/Util.php");
 
 <form id="info-email-form" class="pure-form apply-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST" style="visibility:visible;opacity:1;transition: opacity 1s;">
 	<div class="mod-apply-frameSingle" style="font-size:130%;">	
-		<p style="margin:10px 10px 10px 30px;font-size:110%;"><b>For annual dues as low as $120</b>
+		<p style="margin:10px 10px 10px 30px;font-size:110%;"><b>Community webinars, no-travel volunteer training, remote Board meetings...</b>
 			<!--
 			<a href="#" onclick="showSpecialOfferField();" style="float:right;margin-right:20px;text-decoration:none;font-size:120%"><span id="special-offer-link" style="color:#f68620;text-decoration:none;font-weight:bold;"></span></a></p>
 			-->
-			<a href="javascript:void(0)" onclick="switchToApplyForm();"><span style="color:#f68620;text-decoration:none;font-weight:bold;float:right;">Free Community Membership</span></a>
-			<p style="margin-left:30px;">unlimited Nexus Web Meet minutes, plus expert training and community</p>
-		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="switchToApplyForm();" >Check Eligibility</a></p>
-		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
-		<p style="margin:20px;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoWebinarField();">Streaming Webinar</a></p>
-		<div class="youtube-container" id="partner_perspective_embed" style="width:420px;height:240px;left:280px;top:90px;position:absolute;">
+			<div style="font-size:100%;margin-left:30px;">
+				<p>...these tools belong in your toolbox! This grant awards a "just-right" amount of vendor-neutral, guided training for your entire team, along with up to one full year of private, configurable conference room use in our virtual conference center, <a class="mod-about-anchor" href="<?php echo Util::getDemoUrl(); ?>" target="_blank">Nexus Web Meet</a>.</p>
+				<p style="font-size:90%;margin-top:20px;">The current grant cycle targets these impact areas:
+				<ul style="width:240px;font-size:90%;">
+					<li>Chicago: Comunity Engagement for Strong Neighborhoods</li>
+					<li>Illinois: Health Care Equity</li>
+					<li>United States: Systemic Racial Equity</li>
+				</ul>
+			</p>
+			<p style="margin:20px;" ><a class="pure-button button-link one tan" href=""<?php echo($applyLink); ?>" target="_blank"><!--onclick="switchToApplyForm();"-->Details & Apply</a></p>
+			<p style="margin:20px;display:none;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
+			<p style="margin:20px;display:none;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoWebinarField();">Streaming Webinar</a></p>
+		</div>
+		<!--<div class="youtube-container" id="partner_perspective_embed" style="width:420px;height:240px;left:280px;top:90px;position:absolute;">-->
+		<div class="youtube-container" id="partner_perspective_embed" style="width:315px;height:210px;left:400px;top:150px;position:absolute;">
    		<div class="youtube-player" id="tk-QNJruZgM"></div>
 		</div>
 		

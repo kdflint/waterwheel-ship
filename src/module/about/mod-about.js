@@ -63,3 +63,17 @@ function focusLeaderPic(leader) {
 function unfocusLeaderPic(leader) {
 	document.getElementById(leader).style.opacity='.5';
 }
+
+function focusBoardCurrent() {
+	document.getElementById("board-alum").style.display='none';
+	document.getElementById("board-current").style.display='block';
+	document.getElementById("board-alum-text").style.display='none';
+	document.getElementById("board-current-text").style.display='block';
+}
+
+function focusBoardAlum() {
+	document.getElementById("board-alum").style.display='block';
+	document.getElementById("board-current").style.display='none';
+	document.getElementById("board-alum-text").style.display='block';
+	document.getElementById("board-current-text").style.display='none';
+}

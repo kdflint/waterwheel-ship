@@ -197,7 +197,8 @@ p {
 	position: relative; 
 	width: 100%; 
 	cursor: pointer; 
-	display: block; 
+	display: block;
+	border-radius: 10px; 
 }
 
 img.youtube-thumb { 

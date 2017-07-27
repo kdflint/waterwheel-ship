@@ -130,7 +130,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 			<div id="sponsorApp" class="sponsorApp">
 				<div class="sponsorHeader">
 					<div class="sponsorHeaderLeft">
-						<p class="skyblue sponsorHeaderHeadline" style="line-height:130%;">Cutting edge<br/>technology benefits<br/>for social justice leaders</p>
+						<p class="skyblue sponsorHeaderHeadline" style="line-height:130%;">Cutting edge<br/>technology for<br/>social justice leaders</p>
 					</div>
 					<div class="sponsorHeaderRight" id="sponsorHeaderRight">
 						<?php include("whitepaper-link.php"); ?>	
@@ -141,20 +141,20 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 						<ul class="accord accordion1">
 							<li class="one">
 								<div class="headerbox">
-									<div class="title"><strong>Overview</strong>
-										<p><span class="fa fa-info-circle fa-3x tan" ></span></p>
+									<div class="title"><strong>Grants</strong>
+										<p><span class="fa fa-handshake-o fa-4x tan" style="margin-top:-5px"></span></p>
 									</div>
-									<h1 class="slider white">Membership Benefits</h1>
-									<p class="white" style="font-size:115%;margin-top:15px;">Designed to propel your mission forward</p>
+									<h1 class="slider white">2017 Technology Grants</h1>
+									<p class="white" style="font-size:115%;margin-top:15px;">Valued at $5,000</p>
 								</div>
 							</li>
 							<li class="two">
 								<div class="headerbox">	
-									<div class="title"><strong>Details</strong>
-										<p><span class="fa fa-binoculars fa-3x tan" ></span></p>
+									<div class="title"><strong>Membership</strong>
+										<p><span class="fa fa-users fa-3x tan" ></span></p>
 									</div>
 									<h1 class="slider white">Membership Benefits</h1>
-									<p class="white" style="font-size:115%;margin-top:15px;">Check out the whitepaper for even more detail!</p>
+									<p class="white" style="font-size:115%;margin-top:15px;">Community led, community owned</p>
 									<p class="white"><b></b></p>
 								</div>
 							</li>
@@ -163,8 +163,8 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 									<div class="title"><strong>Apply</strong>
 										<p><span class="fa fa-paper-plane fa-3x otherblue"></span></p>
 									</div>
-									<h1 class="slider skyblue">Membership Benefits</h1>
-									<p class="skyblue" style="font-size:115%;margin-top:15px;"><b>Confirm your eligibility, then register</b></p>
+									<h1 class="slider skyblue">Take Advantage</h1>
+									<p class="skyblue" style="font-size:115%;margin-top:15px;"><b>Good stuff for socially progressive leaders!</b></p>
 								</div>
 							</li>
 						</ul>
