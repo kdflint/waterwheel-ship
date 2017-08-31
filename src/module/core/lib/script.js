@@ -52,6 +52,11 @@ function switchToApplyForm() {
 	$('li:eq(2)').trigger('click');		
 }
 
+function switchToMember() {
+	switchToSponsor();
+	$('li:eq(1)').trigger('click');		
+}
+
 function switchToApplyInfo() {
 	document.getElementById("info-email-form").style.visibility="visible";
 	document.getElementById("info-email-form").style.opacity="1";

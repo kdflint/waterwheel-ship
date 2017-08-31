@@ -86,7 +86,7 @@ force or Board<span class="required"> *</span></div>
 		</div>		
 	</div>		
 	<div class="mod-volunteer-frameRight">
-		<p id="user-message4" class="skyblue" style="font-size:130%;font-weight:bold;margin-left:5px;margin-top:10px;">Use this no-obligation form to check eligibility for our programs.</p>
+		<p id="user-message4" class="skyblue" style="font-size:130%;font-weight:bold;margin-left:5px;margin-top:10px;">Use this no-obligation form to check eligibility for our grant and membership programs.</p>
 		<p id="user-message2" class="user-message" style="bottom:auto;margin-top:10px;font-size:120%;"></p>
 		<div id="apply-disabled" style="display:none;">
 			<a class="pure-button pure-button-disabled button-submit mod-sponsor-button two tan" href="#" onclick="alert('Please confirm your eligibility before viewing the application forms.');" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>Details & Apply</a>

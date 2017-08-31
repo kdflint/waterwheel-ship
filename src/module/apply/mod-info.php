@@ -11,7 +11,7 @@ require_once("../core/domain/Util.php");
 			<a href="#" onclick="showSpecialOfferField();" style="float:right;margin-right:20px;text-decoration:none;font-size:120%"><span id="special-offer-link" style="color:#f68620;text-decoration:none;font-weight:bold;"></span></a></p>
 			-->
 			<div style="font-size:100%;margin-left:30px;">
-				<p>...these tools belong in your toolbox! This grant awards a "just-right" amount of vendor-neutral, guided training for your entire team, along with up to one full year of private, configurable conference room use in our virtual conference center, <a class="mod-about-anchor" href="<?php echo Util::getDemoUrl(); ?>" target="_blank">Nexus Web Meet</a>.</p>
+				<p>Your work deserves these tools! This grant awards a "just-right" amount of vendor-neutral, guided training for your entire team, along with up to one full year of private, configurable conference room use in our virtual conference center, <a class="mod-about-anchor" href="<?php echo Util::getDemoUrl(); ?>" target="_blank">Nexus Web Meet</a>.</p>
 				<p style="font-size:90%;margin-top:20px;">The current grant cycle targets these impact areas:
 				<ul style="width:240px;font-size:90%;">
 					<li>Chicago: Comunity Engagement for Strong Neighborhoods</li>

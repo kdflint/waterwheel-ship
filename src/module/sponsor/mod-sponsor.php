@@ -17,11 +17,12 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 		<p style="margin:10px 10px 10px 30px;font-size:110%;"><span style="float:right;padding:5px;"> <a class="pure-button button-link two tan" href="javascript:void(0)" onclick="switchToApplyForm();" style="font-size:120%;">Check Your Eligilibity</a></span>
 			<!--<a class="mod-about-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Member_Benefit_Summary.pdf" target="_blank">Complete Details</a>-->
 				<!--<b>Several membership levels,<br/>structured by individual, team, or organization</b></p>-->
-					<p style="margin:10px 10px 10px 30px;font-size:130%;"><b>Thoughtful benefits, by and for the social justice community</b>
+					<p style="margin:10px 10px 10px 30px;font-size:140%;"><b>Thoughtful benefits, by and for the social justice community</b>
 	</div>
+	<!--Membership with Northbridge (starting at <i><b>free</b></i>) is how you connect to our community-owned resources. -->
 	<div style="font-size:110%;margin-left:30px;">
-		<p>Membership with Northbridge (starting at <i><b>free</b></i>) is how you connect to our community-owned resources. Unlike a typical software profit-driven company, we don't just throw a license at you. We have built our formidable open source, community-owned technology platform, Nexus, from direct feeedback with major players in the socially progressive community. Our training and caucus tracks help you move your mission forward. Your mission is what matters to us; you win, we sleep at night!</p>
-		<p>Here are a couple examples of our membership levels and benefits.</p>
+		<p>Unlike a typical software profit-driven company, we don't just throw a software license at you. We have built our hands-down awesome membership program around our determination to advance your mission. Our training and caucus tracks are excellent by themselves. Then we toss in our open source, community-owned technology platform, Nexus, to round out the most cost-effective membership program you will ever find.</p>
+		<p>Levels start at free, for eligible groups. Here are a couple examples of our membership packages.</p>
 		<table class="pure-table" style="font-size:100%;margin-top:10px;float:right;margin-right:30px;" >
 			<thead><tr>
 				<td style="background:#f68620;border-radius:10px;width:85px;"><a class="benefits-grid" href="javascript:void(0)" onclick="toggleMemberDetails('package-details-nexus');"><div 	style="height:100%;width:100%;"><span class="fa fa-external-link-square fa-lg" style="float:right;"></span>&nbsp;<br/>Technology</div></a></td>

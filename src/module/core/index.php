@@ -160,8 +160,8 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 							</li>
 							<li class="three" id="volunteer-tab">
 								<div class="headerbox">
-									<div class="title"><strong>Apply</strong>
-										<p><span class="fa fa-paper-plane fa-3x otherblue"></span></p>
+									<div class="title"><strong>Eligibility</strong>
+										<p><span class="fa fa-id-card-o fa-3x otherblue"></span></p>
 									</div>
 									<h1 class="slider skyblue">Take Advantage</h1>
 									<p class="skyblue" style="font-size:115%;margin-top:15px;"><b>Good stuff for socially progressive leaders!</b></p>
@@ -275,16 +275,17 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 	   				<ul>
         			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(1);" tabindex="1">About</a></li>
         			<li><a href="#" onclick="switchAboutView(2);" tabindex="2">Nexus</a></li>
+        			<li><a href="#" onclick="switchToSponsor();" tabindex="5">Grants</a></li>
         			<li><a href="#" onclick="switchAboutView(4);" tabindex="3">Impact</a></li>
         			<li><a id="peopleMenuItem" href="#" onclick="switchAboutView(3);" tabindex="4">People</a></li>
-        			<li><a href="#" onclick="switchAboutView(0);" tabindex="5">Blog</a></li>
+        			<!--<li><a href="#" onclick="switchAboutView(0);" tabindex="5">Blog</a></li>-->
         			<li><a href="#" onclick="switchAboutView(5);" tabindex="6">Gallery</a></li>
     				</ul>
 					</div>
 				</div>
 				<div class="aboutContent">
 					<div id="aboutIndex0" class="mod-about-frame">
-						<?php include("../about/news.php"); ?>		
+						<!--<?php include("../about/news.php"); ?>	-->	
            </div>
 					<div id="aboutIndex1" class="mod-about-frame" style="visibility:visible;opacity:1;">
 						<?php include("../about/about.php"); ?>		

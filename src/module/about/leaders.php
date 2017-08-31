@@ -15,37 +15,39 @@ require_once("../core/domain/Util.php");
 <div class="leaders">
 	<div id="leaderIndex0" class="mod-leader-frame mod-about-normalText">
 		<div id="board-current-text">
-			<p><a class="mod-about-anchor" href="#" onclick="focusBoardAlum();" style="float:right;">Alumni</a></p>
-			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/atspin" target="_blank" onmouseover="focusLeaderPic('as');" onmouseout="unfocusLeaderPic('as');">Angela Spinazze</a>, Nonprofit Consultant, Chicago; School of the Art Institute of Chicago, M.A.</p>
-			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/christopherahubbard" target="_blank" onmouseover="focusLeaderPic('ch');" onmouseout="unfocusLeaderPic('ch');">Christopher Hubbard</a>, Asst. Professor, North Park Univ; Chicago School of Professional Psychology, Ph.D.</p>
-			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/pub/dan-terrasi/0/a93/15b" target="_blank" onmouseover="focusLeaderPic('dt');" onmouseout="unfocusLeaderPic('dt');">Dan Terrasi</a>, Business Information Officer, US Bancorp; Hofstra Univ, B.S.</p>
+			<p><a class="mod-about-anchor mod-about-leaderText" href="javascript:void(0);" onclick="focusBoardAlum();" style="float:right;">Alumni</a></p>
 			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/kathyflint" target="_blank" onmouseover="focusLeaderPic('kf');" onmouseout="unfocusLeaderPic('kf');">Kathy D. Flint</a>, <b>Interim President</b>, Founder, CEO, Northbridge Tech. Alliance; Univ of Chicago, M.S.</p>
+			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/christopherahubbard" target="_blank" onmouseover="focusLeaderPic('ch');" onmouseout="unfocusLeaderPic('ch');">Christopher Hubbard</a>, Asst. Professor, North Park Univ; Chicago School of Professional Psychology, Ph.D.</p>
 			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/donafuwa" target="_blank" onmouseover="focusLeaderPic('do');" onmouseout="unfocusLeaderPic('do');">Dimeji Onafuwa</a>, Principal, MEJI Design Consultancy; Carnegie Mellon, Ph.D. Candidate</p>
-
+			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/atspin" target="_blank" onmouseover="focusLeaderPic('as');" onmouseout="unfocusLeaderPic('as');">Angela Spinazze</a>, Nonprofit Consultant, Chicago; School of the Art Institute of Chicago, M.A.</p>
+			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/pub/dan-terrasi/0/a93/15b" target="_blank" onmouseover="focusLeaderPic('dt');" onmouseout="unfocusLeaderPic('dt');">Dan Terrasi</a>, Business Information Officer, US Bancorp; Hofstra Univ, B.S.</p>
 		</div>
 		<div id="board-alum-text" style="display:none;">
-			<p><a class="mod-about-anchor" href="#" onclick="focusBoardCurrent();" style="float:right;">Current</a></p>
-			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/brittanyvanputten" target="_blank" onmouseover="focusLeaderPic('bvp');" onmouseout="unfocusLeaderPic('bvp');">Brittany VanPutten</a>, <b>President</b>, 2012-2016</p>
+			<p><a class="mod-about-anchor mod-about-leaderText" href="javascript:void(0);" onclick="focusBoardCurrent();" style="float:right;">Current</a></p>
 			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/zgilyana" target="_blank" onmouseover="focusLeaderPic('zg');" onmouseout="unfocusLeaderPic('zg');">Zaia Gilyana</a>, <b>Secretary</b>, 2010-2016</p>
-			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/sivakuppuswamy" target="_blank" onmouseover="focusLeaderPic('sk');" onmouseout="unfocusLeaderPic('sk');">Shiva Kuppuswamy</a>, 2012-2016</p>
 			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/aleximmerman" target="_blank" onmouseover="focusLeaderPic('ai');" onmouseout="unfocusLeaderPic('ai');">Alex Immerman</a>, <b>Treasurer</b>, 2012-2016</p>
+			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/sivakuppuswamy" target="_blank" onmouseover="focusLeaderPic('sk');" onmouseout="unfocusLeaderPic('sk');">Shiva Kuppuswamy</a>, 2012-2016</p>
+			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/elizabeth-tatum-1230856a" target="_blank" onmouseover="focusLeaderPic('et');" onmouseout="unfocusLeaderPic('et');">Elizabeth Tatum</a>, 2010-2014</p>
+			<p class="mod-about-leaderText"><a class="mod-about-anchor" href="https://www.linkedin.com/in/brittanyvanputten" target="_blank" onmouseover="focusLeaderPic('bvp');" onmouseout="unfocusLeaderPic('bvp');">Brittany VanPutten</a>, <b>President</b>, 2012-2016</p>
+
 
 		</div>
 			<table id="board-current" class="pure-table" style="margin-left:-5px;margin-top:20px;">
 				<tr>
-					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/atspin" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_as.jpg" id="as" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
-					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/christopherahubbard" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_ch.jpg" id="ch" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
-					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/pub/dan-terrasi/0/a93/15b" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_dt.jpg" id="dt" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a>
 					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/kathyflint" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_kf.jpg" id="kf" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
+					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/christopherahubbard" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_ch.jpg" id="ch" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
 					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/donafuwa" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_do.jpg" id="do" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
+					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/atspin" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_as.jpg" id="as" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
+					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/pub/dan-terrasi/0/a93/15b" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_dt.jpg" id="dt" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a>
 				</tr>
 			</table>
 			<table id="board-alum" class="pure-table" style="margin-left:-5px;margin-top:20px;display:none;">
 				<tr>
-					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/brittanyvanputten" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_bvp.jpg" id="bvp" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
 					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/zgilyana" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_zg.jpg" id="zg" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
-					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/sivakuppuswamy" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_sk.jpg" id="sk" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
 					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/aleximmerman" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_ai.jpg" id="ai" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
+					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/sivakuppuswamy" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_sk.jpg" id="sk" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
+					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/elizabeth-tatum-1230856a" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_et.jpg" id="sk" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
+					<td style="padding: .5em .5em;"><a href="https://www.linkedin.com/in/brittanyvanputten" target="_blank"><img src="<?php echo Util::getHttpCorePath(); ?>/images/leader_bvp.jpg" id="bvp" width="90" height="90" style="opacity:.5;border-radius:10px;"/></a></td>
 				</tr>
 			</table>
 	</div>
@@ -63,7 +65,7 @@ require_once("../core/domain/Util.php");
 	<div id="leaderIndex2" class="mod-leader-frame" style="visibility:visible;opacity:1;">
 		<p class="mod-about-leaderText">
 			<span style="float:right;padding:10px;margin-right:10px;">
-				<span class="fa fa-cogs fa-2x"></span> <a class="mod-about-anchor" href="http://northbridgetech.org/apps/members/node/5"> <!--onClick="switchToVolunteer();"-->Volunteer</a><br/>
+				<span class="fa fa-cogs fa-2x"></span> <a class="mod-about-anchor" href="http://northbridgetech.org/apps/members/node/5" target="_blank">Volunteer</a><br/>
 				<span class="fa fa-github fa-2x" style="margin-right:7px;"></span> <a class="mod-about-anchor" href="https://github.com/NorthBridge/playbook/wiki/1.How-We-Do" target="_blank">Playbook</a><br/>
 				<span class="fa fa-video-camera fa-2x" style="margin-right:3px;"></span> <a class="mod-about-anchor" href="https://youtu.be/KrasyjOjglM" target="_blank">Testimonial</a>
 			</span>
