@@ -95,11 +95,10 @@ function applyValidateAndSubmit(thisForm) {
 		
  		var applyLink = document.getElementById("apply-link");
  		var applyDisabled = document.getElementById("apply-disabled")
- 		applyLink.style.display = "none";
-		applyDisabled.style.display = "block";
+ 		//applyLink.style.display = "none";
+		//applyDisabled.style.display = "block";
 
 		var pass = true;
-		//var eligibleDecision = "";
 		var eligibleDecision = [];
 		var eligibleMessage = [];
 		var applyForm = document.forms[thisForm];
@@ -108,63 +107,8 @@ function applyValidateAndSubmit(thisForm) {
 		document.getElementById("service-area-area").style.background = "white";
 		document.getElementById("structure-area").style.background = "white";
 		var areaLit = false;
-
-    var serviceBoxes = applyForm["services[]"];
-    var checkedCount = 0;
-    for (var i=0, length = serviceBoxes.length; i<length; i++) {
-    	if (serviceBoxes[i].checked == true) {
-        checkedCount++;
-     	}
-		}
-		if (checkedCount == 0) {
-			eligibleMessage[0] = "To be eligible for membership, you must be working in one of our service areas.";
-			eligibleDecision[0] = "You are not eligible for membership with Northbridge.";
-			document.getElementById("service-area-area").style.background = errorBackground;
-			areaLit = true;
-		} else if (checkedCount >= 1 && !(
-			serviceBoxes[0].checked == true ||
-			serviceBoxes[1].checked == true ||
-			serviceBoxes[2].checked == true ||
-			serviceBoxes[3].checked == true ||
-			serviceBoxes[4].checked == true ||
-			serviceBoxes[5].checked == true ||
-			serviceBoxes[6].checked == true ||
-			serviceBoxes[7].checked == true ||
-			serviceBoxes[8].checked == true
-			)) {
-			eligibleMessage[1] = "Depending on more details of your service area, you may be eligible for membership. Our membership registration will collect that information.";
-			eligibleDecision[1] = "Your team may be eligible for membership with Northbridge.";
-  	}
-  	
-  	var email_1Field = applyForm["email_1"];
-    var email_1 = email_1Field.value;
-    email_1Field.style.backgroundColor = "white";
-    email_1Field.placeholder = "Email";
-    if (email_1 == null || email_1 == "") {
-    } else if (!isValidEmail(email_1)) {
-      email_1Field.placeholder = "Please enter a valid email.";
-      email_1Field.style.background = errorBackground;
-      email_1Field.value = "";
-    	pass = false;
-    } else if (email_1.length > 100) {
-      email_1Field.placeholder = "Email max length is 100";
-      email_1Field.style.background = errorBackground;
-      email_1Field.value = "";
-      pass = false;
-    }
-       
-    var email_2Field = applyForm["email_2"];
-    var email_2 = email_2Field.value;
-    email_2Field.style.backgroundColor = "white";
-    email_2Field.placeholder = "Confirm Email";
-    if (!(email_1 == null || email_1 == "") && email_1 != email_2) {
-      email_2Field.placeholder = "Email does not match.";
-      email_2Field.style.background = errorBackground;
-      email_2Field.value = "";
-    	pass = false;
-    } 
-			
-    var budgetField = applyForm["budget"];
+		
+    var budgetField = applyForm["budget-team"];
     var budget = budgetField.value;
     budgetField.style.backgroundColor = "white";
     if (budget == null || budget == "" || budget == "0") {
@@ -179,7 +123,7 @@ function applyValidateAndSubmit(thisForm) {
       countryField.style.background = errorBackground;
       pass = false;
     }
-    
+		
     var structureBoxes = applyForm["structure[]"];
     checkedCount = 0;
     for (var i=0, length = structureBoxes.length; i<length; i++) {
@@ -189,14 +133,14 @@ function applyValidateAndSubmit(thisForm) {
 		}
 		if (checkedCount == 0) {
 			if (!Boolean(areaLit)) {
-				eligibleMessage[0] = "To be eligible, you must be affiliated with some type of organizational structure.";
-				eligibleDecision[0] = "You are not eligible for membership with Northbridge.";
+				eligibleMessage[0] = "To be eligible, your group must have some type of structure.";
+				eligibleDecision[0] = "Your group is not eligible for benefits with Northbridge.";
 				document.getElementById("structure-area").style.background = errorBackground;
 				areaLit = true;
 			}
 		} else if (checkedCount == 1) {
 			if (structureBoxes[0].checked == true && budget >= 2) {
-				eligibleMessage[0] = "For your community organized affiliation to be eligible, you must have a budget of < $10,001 USD. (Please consider some type of nonprofit incorporation structure if your budget exceeds this amount.)";
+				eligibleMessage[0] = "For your community organized work to be eligible, you must have a budget of < $10,001 USD. (Please consider some type of nonprofit incorporation structure if your budget exceeds this amount.)";
 				eligibleDecision[0] = "You are not eligible for membership with Northbridge.";
 				if (!Boolean(areaLit)) {
 					document.getElementById("structure-area").style.background = errorBackground;
@@ -204,9 +148,36 @@ function applyValidateAndSubmit(thisForm) {
 				}
 			}
   	}
-  	
+
+    var serviceBoxes = applyForm["services[]"];
+    var checkedCount = 0;
+    for (var i=0, length = serviceBoxes.length; i<length; i++) {
+    	if (serviceBoxes[i].checked == true) {
+        checkedCount++;
+     	}
+		}
+		if (checkedCount == 0) {
+			eligibleMessage[0] = "To be eligible for benefits or grants, you must be working in one of our impact areas.";
+			eligibleDecision[0] = "Your group is not eligible for benefits with Northbridge.";
+			document.getElementById("service-area-area").style.background = errorBackground;
+			areaLit = true;
+		} else if (checkedCount >= 1 && !(
+			serviceBoxes[0].checked == true ||
+			serviceBoxes[1].checked == true ||
+			serviceBoxes[2].checked == true ||
+			serviceBoxes[3].checked == true ||
+			serviceBoxes[4].checked == true ||
+			serviceBoxes[5].checked == true ||
+			serviceBoxes[7].checked == true ||
+			serviceBoxes[8].checked == true ||
+			serviceBoxes[9].checked == true
+			)) {
+			eligibleMessage[1] = "Depending on more details of your impact area, you may be eligible for benefits or grants. Our application process will collect that information.";
+			eligibleDecision[1] = "Your group may be eligible for benefits with Northbridge.";
+  	}
+  			    	
 		eligibleMessage[2] = "";
-		eligibleDecision[2] = '<span style="font-size:150%">Good stuff!</span><p style="margin-top:10px;">You are eligible for membership with Northbridge.</p><p style="margin-top:10px;">Click the blue button to continue.</p>';
+		eligibleDecision[2] = '<span style="font-size:150%">Good stuff!</span><p style="margin-top:10px;">You are eligible for some level of grants or benefits with Northbridge.</p><p style="margin-top:10px;">Click the blue button to see what applications are open now.</p>';
 		var decisionIndex = 2;
 		
 		if (eligibleDecision[0]) {
@@ -224,117 +195,17 @@ function applyValidateAndSubmit(thisForm) {
  			if (decisionIndex > 0) {
  				applyLink.style.display = "block";
 				applyDisabled.style.display = "none";
-				if (isValidEmail(email_1) && isValidEmail(email_2) && email_1 == email_2) {
-					document.forms["info-email-form"]["email_1"].value = email_1;
-					// TODO - customize the email to say we noticed that they were eligible
-					//infoEmailValidateAndSubmit();
-				}
  			} else {
- 				applyLink.style.display = "none";
-				applyDisabled.style.display = "block";
+ 				applyLink.style.display = "block";
+				applyDisabled.style.display = "none";
  			}
  		} else {
- 			document.getElementById('user-message4').innerHTML = "If you fill out this form completely, we can check membership eligibility for your team, committee, work group, Board or task force.";
+ 			document.getElementById('user-message4').innerHTML = "If you fill out this form completely, we can check eligibility for your team, committee, work group, Board or task force.";
  			document.getElementById('user-message2').innerHTML = "";
 			document.getElementById("service-area-area").style.background = "white";
 			document.getElementById("structure-area").style.background = "white";
-			document.getElementById("apply-link").style.display = "none";
+			//document.getElementById("apply-link").style.display = "none";
  		}
- 		
- 		
-		/*
-    var onameField = applyForm["oname"];
-    var oname = onameField.value;
-    onameField.style.backgroundColor = "white";
-    onameField.placeholder = "Organization name";
-    if (oname == null || oname == "") {
-      onameField.placeholder = "Organization name is required.";
-      onameField.style.background = errorBackground;
-      pass = false;
-    } else if (!isSafeCharacterSet(oname)) {
-    	onameField.placeholder = "Not allowed: < > % * & = / \\ !";
-      onameField.style.background = errorBackground;
-    	onameField.value = "";
-    	pass = false;
-    }
-     
-    var tnameField = applyForm["tname"];
-    var tname = tnameField.value;
-    tnameField.style.backgroundColor = "white";
-    tnameField.placeholder = "Team name";
-    if (tname == null || tname == "") {
-      pass = true;
-    } else if (!isSafeCharacterSet(tname)) {
-    	tnameField.placeholder = "Not allowed: < > % * & = / \\ !";
-      tnameField.style.background = errorBackground;
-    	tnameField.value = "";
-    	pass = false;
-    }
- 
-    var cnameField = applyForm["cname"];
-    var cname = cnameField.value;
-    cnameField.style.backgroundColor = "white";
-    cnameField.placeholder = "Contact name";
-    if (cname == null || cname == "") {
-      cnameField.placeholder = "Contact name is required.";
-      cnameField.style.background = errorBackground;
-      pass = false;
-    } else if (!isSafeCharacterSet(cname)) {
-    	cnameField.placeholder = "Not allowed: < > % * & = / \\ !";
-      cnameField.style.background = errorBackground;
-    	cnameField.value = "";
-    	pass = false;
-    }
-    
-    var einField = applyForm["ein"];
-    var ein = einField.value;
-    einField.style.backgroundColor = "white";
-    einField.placeholder = "EIN";
-    if (ein == null || ein == "" ) {
-      pass = true;
-    } else if (!ein.match(/[\d]{2}-?[\d]{7}/)) {
-    	einField.placeholder = "Valid EIN is required (or none).";
-      einField.style.background = errorBackground;
-    	einField.value = "";
-    	pass = false;
-    }
-    
-    var urlField = applyForm["url"];
-    var url = urlField.value;
-    urlField.style.backgroundColor = "white";
-    urlField.placeholder = "Web Site";
-    if (url == null || url == "") {
-      pass = true;
-    } else if (url.match(/[<>*]+/) || url.length < 4 || !url.match(/[.]+/)) {
-    	urlField.placeholder = "Valid Web Site is required.";
-      urlField.style.background = errorBackground;
-    	urlField.value = "";
-    	pass = false;
-    }
-    
-    var reachField = applyForm["reach"];
-    var reach = reachField.value;
-    reachField.style.backgroundColor = "white";
-    reachField.placeholder = "Population and geography";
-    if (reach == null || reach == "") {
-      reachField.placeholder = "Population and geography is required.";
-      reachField.style.background = errorBackground;
-      pass = false;
-  	} else { 
-  		reachField.value = reach.replace(/[<>%*&=/\\!]/g, '');
-    }
-    
-    var missionField = applyForm["mission"];
-    var mission = missionField.value;
-    missionField.style.backgroundColor = "white";
-    missionField.placeholder = "Specific goals or formal mission statement. 300 characters or less, please.";
-    if (mission == null || mission == "") {
-      missionField.placeholder = "Specific goals or formal mission statement is required.";
-      missionField.style.background = errorBackground;
-      pass = false;
-  	} else { 
-  		missionField.value = mission.replace(/[<>%*&=/\\!]/g, '');
-    }
-    */
+ 	
 }
 

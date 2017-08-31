@@ -3,11 +3,12 @@ require_once("../core/domain/Util.php");
 ?>
 
 <p class="mod-about-leaderText">
-	<span style="float:right;padding:5px;">
-		<span class="fa fa-group fa-1x"></span> <a class="mod-about-anchor" href="#" onClick="switchToSponsor();">Membership</a><br/>
-		<span class="fa fa-video-camera fa-1x"></span> <a class="mod-about-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank">Testimonial</a><br/>
+	<span style="float:right;padding:5px;margin-right:10px;">
+		<span class="fa fa-handshake-o fa-2x"></span>  <a class="mod-about-anchor" href="#" onClick="switchToSponsor();">Grants</a><br/>
+		<span class="fa fa-users fa-2x" style="margin-right:7px;"></span>  <a class="mod-about-anchor" href="#" onClick="switchToMember();">Membership</a><br/>
+		<span class="fa fa-video-camera fa-2x" style="margin-right:7px;"></span> <a class="mod-about-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank">Testimonial</a>
 	</span>
-	We provide capacity-building technological support&mdash;that's good.
+	We provide capacity-building technology and training&mdash;that's good.
 </p>
 <p class="mod-about-leaderText">We provide it within the context of a dynamic social enterprise&mdash;<b>that's IMPACT!</b></p>
 <p class="mod-about-leaderText">Our alliance between social leaders and principled, professional technical volunteers is advancing missions across the international social justice spectrum.</p>

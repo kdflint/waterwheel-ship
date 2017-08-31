@@ -23,7 +23,8 @@ $coreHttpPath = Util::getHttpCorePath();
 <!-- http://purecss.io/ -->
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/pure-min.css">
 <!-- http://fortawesome.github.io/Font-Awesome/ -->
-<link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/font-awesome-4.2.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/font-awesome-4.7.0/css/font-awesome.min.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- https://www.google.com -->
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald:400,300|Open+Sans|Oxygen:400,300,700|Swanky+and+Moo+Moo">
 <link rel="stylesheet" type="text/css" href="<?php echo $coreHttpPath; ?>/style/style.css">		

@@ -20,4 +20,20 @@ body, #site-slogan, .ui-widget, .comment-form label {
 
 #crm-container.crm-public #crm-submit-buttons { margin-top: 20px; margin-bottom: 30px; }
 
+#pricesetTotal { display:none; } 
+
 div.status { background-color: #f7f8ef; border: 1px solid #2786c2; border-radius: 4px;}
+
+.crm-contribution-page-id-8 > 
+.membership-group > 
+.display-block > 
+table > tbody > tr > :nth-child(2) {
+	display:none;
+}
+
+.crm-contribution-page-id-8 > 
+.membership-group > 
+.display-block > 
+.total_amount-section {
+	display:none;
+}
