@@ -3,7 +3,7 @@ require_once("../core/domain/Util.php");
 ?>
 <div class="">
 	<div class="mod-about-frameLeft">
-		<p class="mod-about-leaderText">The developed world is abundant with computer technology. However, too few of these physical and intellectual resources are intentionally leveraged toward solving human problems.</p>
+		<p class="mod-about-leaderText">We have no shortage of computer technology. We have a shortage of creative intention. Too few of our technology resources are intentionally leveraged toward solving human problems.</p>
 		<p class="mod-about-header">At Northbridge, we intend to reverse this trend.</p>
 		<p class="mod-about-leaderText">We are a vendor-neutral, volunteer alliance of technology experts with a passion for social justice. We support organizations who are working, in various ways, toward an intentionally sustainable and equitable society. We specialize in cooperative application development in the open source tradition.</p>
 		<div class="youtube-container" id="powtoon_embed" style="width:420px;height:213px;margin-top:10px;visibility:hidden;">
