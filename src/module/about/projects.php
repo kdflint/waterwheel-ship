@@ -9,7 +9,7 @@ require_once("../core/domain/Util.php");
 		<span class="fa fa-video-camera fa-2x" style="margin-right:7px;"></span> <a class="mod-about-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank">Testimonial</a>
 	</span>
 Nexus is our flagship open source software product. </p>
-<p class="mod-about-leaderText">It is widely acknowledged by the social justice community that the most effective work in our sector is done collaboratively. It is also widely acknowledged that collaborations are hard! It doesn't help that there are big obstacles to unified technology use by unconnected nonprofits, like cost, security, and administration. 
+<p class="mod-about-leaderText">It is widely acknowledged by the social justice community that the most effective work in our sector is done collaboratively. It is also acknowledged that collaborations are hard! It doesn't help that there are big obstacles to unified technology use by unconnected nonprofits, like cost, security, and administration. 
 </p>
 <p class="mod-about-leaderText">Nexus solves these problems. It available as a hosted service to grantees and members of Northbridge.</p>
 

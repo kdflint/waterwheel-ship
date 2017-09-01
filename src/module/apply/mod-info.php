@@ -11,7 +11,8 @@ require_once("../core/domain/Util.php");
 			<a href="#" onclick="showSpecialOfferField();" style="float:right;margin-right:20px;text-decoration:none;font-size:120%"><span id="special-offer-link" style="color:#f68620;text-decoration:none;font-weight:bold;"></span></a></p>
 			-->
 			<div style="font-size:100%;margin-left:30px;">
-				<p>Your work deserves these tools! This grant awards a "just-right" amount of vendor-neutral, guided training for your entire team, along with up to one full year of private, configurable conference room use in our virtual conference center, <a class="mod-about-anchor" href="<?php echo Util::getDemoUrl(); ?>" target="_blank">Nexus Web Meet</a>.</p>
+				<!--a "just-right" amount of vendor-neutral, guided training for your entire team. Six months of virtual conference center use supports our planning worksheets so you can learn our to -->
+				<p>Your work deserves these tools! This grant awards vendor-neutral training, guided strategic planning, and a private, full-featured conference room in our virtual <a class="mod-about-anchor" href="<?php echo Util::getDemoUrl(); ?>" target="_blank">web conference center</a>. Grantees emerge with a straightforward road map for their own technology adoption and become eligible to take advantage of Northbridge Technology Alliance's exclusive membership opportunities.</p>
 				<p style="font-size:90%;margin-top:20px;">The current grant cycle targets these impact areas:
 				<ul style="width:240px;font-size:90%;">
 					<li>Chicago: Comunity Engagement for Strong Neighborhoods</li>
@@ -19,7 +20,7 @@ require_once("../core/domain/Util.php");
 					<li>United States: Systemic Racial Equity</li>
 				</ul>
 			</p>
-			<p style="margin:20px;" ><a class="pure-button button-link one tan" href=""<?php echo($applyLink); ?>" target="_blank"><!--onclick="switchToApplyForm();"-->Details & Apply</a></p>
+			<p style="margin:20px;" ><a class="pure-button button-link one tan" href="<?php echo($applyLink); ?>" target="_blank">Details & Apply</a></p>
 			<p style="margin:20px;display:none;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
 			<p style="margin:20px;display:none;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoWebinarField();">Streaming Webinar</a></p>
 		</div>
