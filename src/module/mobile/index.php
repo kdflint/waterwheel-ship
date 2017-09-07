@@ -192,8 +192,8 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 	 			}
 	 		} else {
 	 			document.getElementById('user-message4').innerHTML = "If you fill out this form completely, we can confirm eligibility for your Board, committee, work group or task force.";
-	 			applyLink.style.display = "none";
-				applyDisabled.style.display = "inline-block";
+	 			//applyLink.style.display = "none";
+				//applyDisabled.style.display = "inline-block";
 	 		}			
 		}
 	</script>
