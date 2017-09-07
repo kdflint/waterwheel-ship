@@ -38,7 +38,8 @@ if (isset($_GET['r']) && strlen($_GET['r']) == 1 && Util::isAllowedMarketerId($_
 } else {
 	$marketerId = "1";
 }
-$applyLink = Util::getMemberRegrUrl($marketerId);
+//$applyLink = Util::getMemberRegrUrl($marketerId);
+$applyLink = "http://northbridgetech.org/apps/members/grant";
 
 if (!strcmp($campaign, '2')) {
  $specialOfferTrigger = "true"; 
@@ -275,7 +276,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 	   				<ul>
         			<li><a id="defaultMenuItem" href="#" onclick="switchAboutView(1);" tabindex="1">About</a></li>
         			<li><a href="#" onclick="switchAboutView(2);" tabindex="2">Nexus</a></li>
-        			<li><a href="#" onclick="switchToSponsor();" tabindex="5">Grants</a></li>
+        			<li><a href="#" onclick="switchToGrant();" tabindex="5">Grants</a></li>
         			<li><a href="#" onclick="switchAboutView(4);" tabindex="3">Impact</a></li>
         			<li><a id="peopleMenuItem" href="#" onclick="switchAboutView(3);" tabindex="4">People</a></li>
         			<!--<li><a href="#" onclick="switchAboutView(0);" tabindex="5">Blog</a></li>-->

@@ -4,7 +4,7 @@ require_once("../core/domain/Util.php");
 
 <p class="mod-about-leaderText">
 	<span style="float:right;padding:5px;margin-right:10px;">
-		<span class="fa fa-handshake-o fa-2x"></span>  <a class="mod-about-anchor" href="#" onClick="switchToSponsor();">Grants</a><br/>
+		<span class="fa fa-handshake-o fa-2x"></span>  <a class="mod-about-anchor" href="#" onClick="switchToGrant();">Grants</a><br/>
 		<span class="fa fa-users fa-2x" style="margin-right:7px;"></span>  <a class="mod-about-anchor" href="#" onClick="switchToMember();">Membership</a><br/>
 		<span class="fa fa-video-camera fa-2x" style="margin-right:7px;"></span> <a class="mod-about-anchor" href="https://youtu.be/tk-QNJruZgM" target="_blank">Testimonial</a>
 	</span>

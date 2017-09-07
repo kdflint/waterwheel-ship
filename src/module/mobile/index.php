@@ -17,7 +17,8 @@ if (isset($_GET['r']) && strlen($_GET['r']) == 1 && Util::isAllowedMarketerId($_
 } else {
 	$marketerId = "1";
 }
-$applyLink = Util::getMemberRegrUrl($marketerId);
+//$applyLink = Util::getMemberRegrUrl($marketerId);
+$applyLink = "http://northbridgetech.org/apps/members/grant";
 
 if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GET['context'], 'mobile'))) {
 	// request is explicitly for mobile site - bypass desktop redirect
@@ -110,8 +111,8 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 		function eligibilityValidate() {
 	 		var applyLink = document.getElementById("info-eligibility-apply-link");
 	 		var applyDisabled = document.getElementById("info-eligibility-apply-disabled")
-	 		applyLink.style.display = "none";
-			applyDisabled.style.display = "inline-block";
+	 		//applyLink.style.display = "none";
+			//applyDisabled.style.display = "inline-block";
 	
 			var pass = true;
 			var eligibleDecision = [];
@@ -166,7 +167,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 	  	}
 	  	
 			eligibleMessage[2] = "";
-			eligibleDecision[2] = '<span style="color:#d27b4b;font-size:130%;">Good stuff!</span><br/>You are eligible for membership.<br/>Click the orange button to continue.';
+			eligibleDecision[2] = '<span style="color:#d27b4b;font-size:130%;">Good stuff!</span><br/>You are eligible for our programs.<br/>Click the orange button to continue.';
 			var decisionIndex = 2;
 			
 			if (eligibleDecision[0]) {
@@ -181,11 +182,11 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 	 			// This indicates we passed form validation, not passed eligibility check
 	 			document.getElementById('user-message4').innerHTML = eligibleDecision[decisionIndex];
 	 			if (decisionIndex > 0) {
-	 				applyLink.style.display = "inline-block";
-					applyDisabled.style.display = "none";
+	 				//applyLink.style.display = "inline-block";
+					//applyDisabled.style.display = "none";
 	 			} else {
-	 				applyLink.style.display = "none";
-					applyDisabled.style.display = "inline-block";
+	 				//applyLink.style.display = "none";
+					//applyDisabled.style.display = "inline-block";
 					document.getElementById("structure-area").style.background = errorBackground;
 					document.getElementById("user-message4").style.background = errorBackground;
 	 			}
@@ -202,13 +203,19 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 	<body>
 		<div class="container" style="width:95%;max-width:400px;text-align:center;">
 			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_tagline_rgb.png" width="300" height="93" style="padding:20px 10px 20px 0px;"/>
-			<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Technology benefits for social justice leaders</p>
+			<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Technology for social justice leaders</p>
+
+			<p style="margin:8px;" ><a class="pure-button button-link" style="width:190px;" href="<?php echo($applyLink); ?>" target="_blank" >2017 Grant Application</a></p>
 			
-			<p style="margin:8px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showEligibilityForm();">Check Your Eligibility</a></p>
+			<p style="margin:8px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showEligibilityForm();">Am I Eligible?</a></p>
 			
+			<!--
 			<p style="margin:6px;" ><a class="pure-button button-link" style="width:190px;" href="https://www.youtube.com/watch?v=8jyCYAZLwao&feature=youtu.be" target="_blank"><span class="fa fa-youtube-play fa-lg" style="margin-right:4px;" ></span>Overview</a></p>
+			-->
 				
+			<!--
 			<p style="margin:6px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>
+			-->
 
 			<!--<p style="margin:6px;" ><a class="pure-button button-link" style="width:190px;" href="https://www.youtube.com/watch?v=tk-QNJruZgM&feature=youtu.be" target="_blank"><span class="fa fa-youtube-play fa-lg" style="margin-right:4px;" ></span>Testimonial</a></p>		-->
 				
@@ -264,7 +271,7 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 			<div id="info-eligible" class="white_content" style="min-height:325px;display:none;border-radius:8px;position:absolute;top:125px;left:0px;width:95%;max-width:400px;">
 				<form id="info-eligibility-form" action="" method="POST">
 					<a id="info-eligibility-close-box" class="pure-button button-link" onclick="hideEligibilityForm();" style="width:46px;border-radius:4px;float:right;margin-top:5px;"><span class="fa fa-times" style="margin-right:4px;" ></span>Close</a>
-					<p id="user-message4">No-obligation. Check membership eligibility for yourself, your Board, committee, work group or task force.</p>
+					<p id="user-message4">No-obligation. Check eligibility for yourself, your Board, committee, work group or task force.</p>
 					<div id="eligibility_body" style="margin-top:15px;width:94%;">
 						<select id="services" name="services" style="width:92%;margin-top:5px;margin-left:20px;margin-right:20px;height:30px;">
 							<option value="0" selected>Service Area</option>
@@ -301,8 +308,8 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
        		</div>
 					<div id="eligibility_buttons" style="margin-top:15px;width:94%;">
 						<a id="info-eligibility-check-button" class="pure-button button-link" onclick="eligibilityValidate();" style="border-radius:4px;margin-top:10px;margin-right:0px;margin-left:0px;width:108px;float:left"><span class="fa fa-play" style="margin-right:4px;" ></span>Check Eligibility</a>						
-						<a id="info-eligibility-apply-disabled" class="pure-button pure-button-disabled button-link" href="#" onclick="alert('Please confirm your eligibility before viewing the registration form.');" style="border-radius:4px;background-color:#d27b4b;display:inline-block;margin-top:10px;margin-left:0px;margin-right:0px;width:114px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration</a>
-						<a id="info-eligibility-apply-link" class="pure-button button-link" href="<?php echo($applyLink); ?>" style="border-radius:4px;background-color:#d27b4b;display:none;margin-top:10px;margin-left:0px;margin-right:0px;width:114px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Registration</a>
+						<a id="info-eligibility-apply-disabled" class="pure-button pure-button-disabled button-link" href="#" onclick="alert('Please confirm your eligibility before viewing the registration form.');" style="border-radius:4px;background-color:#d27b4b;display:none;margin-top:10px;margin-left:0px;margin-right:0px;width:114px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Applications</a>
+						<a id="info-eligibility-apply-link" class="pure-button button-link" href="<?php echo($applyLink); ?>" target="_blank"" style="border-radius:4px;background-color:#d27b4b;display:inline-block;margin-top:10px;margin-left:0px;margin-right:0px;width:114px;float:right"><span class="fa fa-paper-plane" style="margin-right:4px;" ></span>View Applications</a>
 					</div>
 
 				</form>
