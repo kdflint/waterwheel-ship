@@ -12,7 +12,7 @@ require_once("../core/domain/Util.php");
 			-->
 			<div style="font-size:100%;margin-left:30px;">
 				<!--a "just-right" amount of vendor-neutral, guided training for your entire team. Six months of virtual conference center use supports our planning worksheets so you can learn our to -->
-				<p>Your work deserves these tools! This grant awards vendor-neutral training, guided strategic planning, and a private, full-featured conference room in our virtual <a class="mod-about-anchor" href="<?php echo Util::getDemoUrl(); ?>" target="_blank">web conference center</a>. Grantees emerge with a straightforward road map for their own technology adoption and become eligible to take advantage of Northbridge Technology Alliance's selective membership opportunities.</p>
+				<p>Your work deserves these tools! This 2017 grant, valued at $5,000, awards vendor-neutral training, guided strategic planning, and a private, full-featured conference room in our virtual <a class="mod-about-anchor" href="<?php echo Util::getDemoUrl(); ?>" target="_blank">web conference center</a>. Grantees emerge with a straightforward road map for their own technology adoption and become eligible for the major cost benefits of our highly selective membership program.</p>
 				<p style="font-size:90%;margin-top:20px;">The current grant cycle targets these impact areas:
 				<ul style="width:240px;font-size:90%;">
 					<li>Metropolitan Chicago: Comunity Engagement for Strong Neighborhoods</li>
