@@ -21,7 +21,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 	</div>
 	<!--Membership with Northbridge (starting at <i><b>free</b></i>) is how you connect to our community-owned resources. -->
 	<div style="font-size:110%;margin-left:30px;">
-		<p>Unlike a typical software profit-driven company, we don't just throw a software license at you. We have built our hands-down awesome membership program around our determination to advance your mission. Our training and caucus tracks are excellent by themselves. Then we toss in our open source, community-owned technology platform, Nexus, to round out the most cost-effective membership program you will ever find.</p>
+		<p>Unlike a typical software profit-driven company, we don't just throw a software license at you. We have built our highly selective membership program around our determination to advance your mission. Our training and caucus tracks are excellent by themselves. Then we toss in our open source, community-owned technology platform, Nexus, to round out the most cost-effective membership program you will ever find.</p>
 		<p>Levels start at free, for eligible groups. Here are a couple examples of our membership packages.</p>
 		<table class="pure-table" style="font-size:100%;margin-top:10px;float:right;margin-right:30px;" >
 			<thead><tr>
