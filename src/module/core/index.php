@@ -80,7 +80,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 		<title>Northbridge Technology Alliance</title>
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8">		
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="description" content="Nonprofit. Technology benefits for social justice leaders. Shouldn't your technology be as great as you are?">
+		<meta name="description" content="Nonprofit. Technology grants for social justice leaders. Shouldn't your technology be as great as you are?">
 		<?php 
 			include("mod-core-meta.php");
 			include("../apply/mod-apply-meta.php"); 
@@ -131,7 +131,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 			<div id="sponsorApp" class="sponsorApp">
 				<div class="sponsorHeader">
 					<div class="sponsorHeaderLeft">
-						<p class="skyblue sponsorHeaderHeadline" style="line-height:130%;">Cutting edge<br/>technology for<br/>social justice leaders</p>
+						<p class="skyblue sponsorHeaderHeadline" style="line-height:130%;">2018<br/>Tech Grant for<br/>social justice leaders</p>
 					</div>
 					<div class="sponsorHeaderRight" id="sponsorHeaderRight">
 						<?php include("whitepaper-link.php"); ?>	
@@ -142,30 +142,30 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 						<ul class="accord accordion1">
 							<li class="one">
 								<div class="headerbox">
-									<div class="title"><strong>Grants</strong>
+									<div class="title"><strong>Why?</strong>
 										<p><span class="fa fa-handshake-o fa-4x tan" style="margin-top:-5px"></span></p>
 									</div>
-									<h1 class="slider white">2017 Technology Grants</h1>
+									<h1 class="slider white">2018 Technology Grant</h1>
 									<p class="white" style="font-size:115%;margin-top:15px;">Valued at $5,000</p>
 								</div>
 							</li>
 							<li class="two">
 								<div class="headerbox">	
-									<div class="title"><strong>Membership</strong>
+									<div class="title"><strong>What?</strong>
 										<p><span class="fa fa-users fa-3x tan" ></span></p>
 									</div>
-									<h1 class="slider white">Membership Benefits</h1>
-									<p class="white" style="font-size:115%;margin-top:15px;">Community led, community owned</p>
+									<h1 class="slider white">2018 Technology Grant</h1>
+									<p class="white" style="font-size:115%;margin-top:15px;">Valued at $5,000</p>
 									<p class="white"><b></b></p>
 								</div>
 							</li>
 							<li class="three" id="volunteer-tab">
 								<div class="headerbox">
-									<div class="title"><strong>Eligibility</strong>
+									<div class="title"><strong>Who?</strong>
 										<p><span class="fa fa-id-card-o fa-3x otherblue"></span></p>
 									</div>
-									<h1 class="slider skyblue">Take Advantage</h1>
-									<p class="skyblue" style="font-size:115%;margin-top:15px;"><b>Good stuff for socially progressive leaders!</b></p>
+									<h1 class="slider skyblue">2018 Technology Grant</h1>
+									<p class="skyblue" style="font-size:115%;margin-top:15px;"><b>Valued at $5,000</b></p>
 								</div>
 							</li>
 						</ul>
@@ -311,8 +311,8 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 		</div><!-- /container -->
 		
 		<!-- initialize major context -->
-		<?php //if (true) { ?>
-		<?php if ($isMemberContext) { ?>
+		<?php if (true) { ?>
+		<?php //if ($isMemberContext) { ?>
 			<script type="text/javascript">
 				switchToSponsor();
 			</script>

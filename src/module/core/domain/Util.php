@@ -84,6 +84,10 @@ final class Util {
 		return DEMO_URL;
 	}
 	
+	public static function getGrantApplicationUrl() {
+		return GRANT_APP_URL;
+	}
+	
 	public static function getMemberRegrUrl($marketerId = '1') {
 		return MEMBER_REGR_URL . $marketerId;
 	}

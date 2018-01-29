@@ -144,7 +144,8 @@ p {
 }
 
 #nexus-details-table thead tr:first-child td {
-	background: #f68620;
+	color: #f68620;
+	font-size: 110%;
 }
 
 #training-details-table thead tr:first-child td {

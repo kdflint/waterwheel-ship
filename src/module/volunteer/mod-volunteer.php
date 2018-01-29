@@ -9,9 +9,37 @@ require_once("../core/domain/Util.php");
 <!-- All styles pointed to volunteer module style names -->
 <!-- The original Membership Application form is preserved in the Apply module -->
 
-<form id="volunteer-form" class="pure-form volunteer-form" action="" method="POST">
+
+<div class="mod-volunteer-frameLeft"  style="font-size:130%;">	
+		<p style="margin:10px 10px 10px 30px;font-size:130%;"><b>Who? Broad impact areas for 2018</b>
+		<div style="font-size:100%;margin-left:30px;">
+			
+		<ul style="font-size:90%;">
+    <li>Chicago: Community Engagement for Strong Neighborhoods</li>
+    <li>Illinois: Health Care Equity</li>
+    <li>USA: Systemic Racial Equity</li>
+    <li>International: Human Rights</li>
+    <li>Other, by invitation (LOI to <a class="benefits-grid" href="mailto:grants@northbridgetech.org">grants@northbridgetech.org</a>)</li>
+		</ul>
+		
+		<p>We consider all of these common teamwork situations to be eligible.</p>
+		
+		<ul style="font-size:90%;">
+    <li>Task force or committee working within a local faith community</li>
+    <li>Staff committee fulfilling the work of a traditional nonprofit service-oriented program</li>
+    <li>Board of Directors</li>
+    <li>Grass-roots, community-based activism group</li>
+    <li>Local chapter of an NGO</li>
+    <li>Academic or research project</li>
+		</ul>
+		<p style="margin-top:20px;">
+		<p>
+		</div>
+	
+	<?php /* Hiding this whole form because I may want to reuse it. ** ?>
+	
+	<form id="volunteer-form" class="pure-form volunteer-form" action="" method="POST" style="display:none;">
 	<input type="hidden" name="testMode" value=""/>
-	<div class="mod-volunteer-frameLeft">	
 		<?php if (false) {
 			echo "<div id='fade' class='black_overlay'></div>"; 
 			echo "<div id='light_userprofile' class='white_content'>";
@@ -82,21 +110,33 @@ force or Board<span class="required"> *</span></div>
 			</div>
 
 		<a class="pure-button button-submit" id="applySubmitButton" href="#" onclick="applyValidateAndSubmit('volunteer-form');" style="background:#fcb040;bottom:-94px;width:85%;left:auto;"><span class="fa fa-play" style="font-size:110%;margin-right:4px;" ></span> Check Eligibility</a>
-
 		</div>		
-	</div>		
+	</form>	
+	<?php */ ?>
+	</div>	
+	
 	<div class="mod-volunteer-frameRight">
-		<p id="user-message4" class="skyblue" style="font-size:130%;font-weight:bold;margin-left:5px;margin-top:10px;">Use this no-obligation form to check eligibility for our grant and membership programs.</p>
-		<p id="user-message2" class="user-message" style="bottom:auto;margin-top:10px;font-size:120%;"></p>
+		<div style="margin:10px;">
+		<!--<p id="user-message4" class="skyblue" style="font-size:130%;font-weight:bold;margin-left:5px;margin-top:10px;">Use this no-obligation form to check eligibility for our grant and membership programs.</p>-->
+		<p id="user-message4" class="skyblue" style="font-size:130%;font-weight:bold;">We are fostering a diverse profile of 2018 grantees.</p>
+		<p class="skyblue" style="font-size:130%;font-weight:bold;margin-top:10px;">If your work touches one or more of our impact areas, we welcome your application!</p>
+		<p id="user-message2" class="user-message" style="bottom:auto;font-size:120%;"></p>
+		<p style="margin-top:10px;"><a class="benefits-grid" href="<?php echo Util::getStaticDownloadPath(); ?>/Whitepaper_GranteeFAQ.pdf" target="_blank"><span class="fa fa-file-pdf-o fa-2x orange" style="margin-right:8px;"></span><span class="skyblue" style="font-size:130%;"><b>FAQ</b></span></a></p>
+		<p style-"margin-top:10px;"><a class="benefits-grid" href="<?php echo Util::getStaticDownloadPath(); ?>/Whitepaper_GrantGuidelines.pdf" target="_blank"><span class="fa fa-file-pdf-o fa-2x orange" style="margin-right:8px;"></span><span class="skyblue" style="font-size:130%;"><b>Submission Guidelines</b></span></a></p>
+		<p class="skyblue" style="font-size:120%;font-weight:bold;margin-top:10px;">Questions to <a class="benefits-grid" href="mailto:grants@northbridgetech.org">grants@northbridgetech.org</a></p>
+	</div>
+		<!--
 		<div id="apply-disabled" style="display:none;">
 			<a class="pure-button pure-button-disabled button-submit mod-sponsor-button two tan" href="#" onclick="alert('Please confirm your eligibility before viewing the application forms.');" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>Details & Apply</a>
 		</div>
 		<div id="apply-link" style="display:block;">
 			<a class="pure-button button-submit mod-sponsor-button two tan" href="<?php echo($applyLink); ?>"  style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>Details & Apply</a>
 		</div>
+		-->
+		<a class="pure-button button-submit button-link three skyblue" style="font-size:140%;left:10px;" href="<?php echo Util::getGrantApplicationUrl(); ?>" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:10px;" ></span>Details & Apply</a>
 	</div>
 	
-</form>	
+
 
 		<!--
 		<p style="margin-top:10px"><span class="fa fa-file-pdf-o fa-2x"></span> <a class="mod-volunteer-anchor" href="<?php echo Util::getStaticDownloadPath(); ?>/Northbridge_partnership.pdf" style="margin-left:5px;font-weight:bold;" target="_blank" >Partnership Details</a></p>
