@@ -18,7 +18,7 @@ if (isset($_GET['r']) && strlen($_GET['r']) == 1 && Util::isAllowedMarketerId($_
 	$marketerId = "1";
 }
 //$applyLink = Util::getMemberRegrUrl($marketerId);
-$applyLink = "http://northbridgetech.org/apps/members/grant";
+$applyLink = Util::getGrantApplicationUrl();
 
 if (isset($_GET['context']) && (!strcmp($_GET['context'], 'ie8') || !strcmp($_GET['context'], 'mobile'))) {
 	// request is explicitly for mobile site - bypass desktop redirect
@@ -203,11 +203,13 @@ if (isset($_GET['context']) && !strcmp($_GET['context'], 'ie8')) {
 	<body>
 		<div class="container" style="width:95%;max-width:400px;text-align:center;">
 			<img src="<?php echo Util:: getHttpCorePath(); ?>/images/NB_horizontal_tagline_rgb.png" width="300" height="93" style="padding:20px 10px 20px 0px;"/>
-			<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Technology for social justice leaders</p>
+			<p class="skyblue sponsorHeaderHeadline" style="font-size:150%;">Tech Grant for social justice leaders</p>
 
-			<p style="margin:8px;" ><a class="pure-button button-link" style="width:190px;" href="<?php echo($applyLink); ?>" target="_blank" >2017 Grant Application</a></p>
+			<p style="margin:8px;" ><a class="pure-button button-link" style="width:190px;" href="<?php echo($applyLink); ?>" target="_blank" >2018 Grant Application</a></p>
 			
+			<!--
 			<p style="margin:8px;" ><a class="pure-button button-link" style="width:190px;" href="javascript:void(0)" onclick="showEligibilityForm();">Am I Eligible?</a></p>
+			-->
 			
 			<!--
 			<p style="margin:6px;" ><a class="pure-button button-link" style="width:190px;" href="https://www.youtube.com/watch?v=8jyCYAZLwao&feature=youtu.be" target="_blank"><span class="fa fa-youtube-play fa-lg" style="margin-right:4px;" ></span>Overview</a></p>
