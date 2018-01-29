@@ -136,9 +136,7 @@ div.curtain {
 
 .whitepaper-button {
 	position: relative;
-	top: 15px;
-	//width: 130px;
-	//height: 25px;
+	top: 25px;
 	border-radius: 10px;
 	font-size: 15px;
 	font-family: Oxygen, Arial, sans-serif;
@@ -147,7 +145,6 @@ div.curtain {
  	text-decoration: none;
  	transition: opacity 2s;
  	text-align: center;
- 	margin-left: 10px;
 }
 
 .whitepaper-button:hover {
