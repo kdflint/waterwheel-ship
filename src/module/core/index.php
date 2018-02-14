@@ -131,7 +131,9 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 			<div id="sponsorApp" class="sponsorApp">
 				<div class="sponsorHeader">
 					<div class="sponsorHeaderLeft">
-						<p class="skyblue sponsorHeaderHeadline" style="line-height:130%;">2018<br/>Tech Grant for<br/>social justice leaders</p>
+						<p class="skyblue sponsorHeaderHeadline" style="line-height:110%;margin-top:20px;">
+							<span style="font-size:150%;font-weight:bold;"><span class="orange">2018</span> Tech Grant</span><br/>
+							<span style="">for Social Justice Leaders</span></p>
 					</div>
 					<div class="sponsorHeaderRight" id="sponsorHeaderRight">
 						<?php include("whitepaper-link.php"); ?>	
@@ -146,7 +148,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 										<p><span class="fa fa-handshake-o fa-4x tan" style="margin-top:-5px"></span></p>
 									</div>
 									<h1 class="slider white">2018 Technology Grant</h1>
-									<p class="white" style="font-size:115%;margin-top:15px;">Valued at $5,000</p>
+									<p class="white" style="font-size:260%;margin-top:10px;">valued at $5,000</p>
 								</div>
 							</li>
 							<li class="two">
@@ -155,7 +157,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 										<p><span class="fa fa-users fa-3x tan" ></span></p>
 									</div>
 									<h1 class="slider white">2018 Technology Grant</h1>
-									<p class="white" style="font-size:115%;margin-top:15px;">Valued at $5,000</p>
+									<p class="white" style="font-size:260%;margin-top:10px;">valued at $5,000</p>
 									<p class="white"><b></b></p>
 								</div>
 							</li>
@@ -165,7 +167,7 @@ if(isset($_GET['view']) && isset($_GET['success']) && isset($viewSuccess[$_GET['
 										<p><span class="fa fa-id-card-o fa-3x otherblue"></span></p>
 									</div>
 									<h1 class="slider skyblue">2018 Technology Grant</h1>
-									<p class="skyblue" style="font-size:115%;margin-top:15px;"><b>Valued at $5,000</b></p>
+									<p class="skyblue" style="font-size:260%;margin-top:10px;"><b>valued at $5,000</b></p>
 								</div>
 							</li>
 						</ul>

@@ -66,7 +66,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 					<td><a class="benefits-grid" href="<?php echo Util::getDemoUrl(); ?>" target="_blank"><span class="fa fa-wrench fa-2x orange" style="margin-right:8px;"></span><span class="skyblue" style="font-size:130%;"><b>Try It</b></span></a></td>
 				</tr>
 		</table>
-		<a class="pure-button button-submit button-link three skyblue" style="font-size:130%;left:10px;" href="<?php echo Util::getGrantApplicationUrl(); ?>" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:10px;" ></span>Details & Apply</a>
+		<?php include("apply.php"); ?>
 	</div>
 
 	<div id="package-details-training" style="display:none;margin:10px;">
@@ -74,7 +74,7 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 		<p class="skyblue" style="font-size:120%;"><b>What good is technology unless you can use it confidently?</b></p>
 		<p style="font-size:110%;">Web-based meeting technology can be used in different ways for different purposes. Anyone who uses this medium effectively  has spent time learning about it.</p>
 		<p style="font-size:110%;">That's why this grant removes knowledge barriers, awarding a "just-right" amount of vendor-neutral training.</p>
-		<a class="pure-button button-submit button-link three skyblue" style="font-size:130%;left:10px;" href="<?php echo Util::getGrantApplicationUrl(); ?>" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:10px;" ></span>Details & Apply</a>
+		<?php include("apply.php"); ?>
 	</div>
 
 	<div id="package-details-caucus" style="display:none;margin:10px;">
@@ -83,6 +83,6 @@ $checkmark = "images/dT6okxEbc.resized2.png";
 		<p style="font-size:110%;">This is a risk-free, time-efficient way to explore new tech ideas and possibilities.</p>
 		<p style="font-size:110%;">Our grantees emerge with a straightforward, vendor-neutral road map for their own technology adoption and become eligible for the benefits of Northbridge Technology Alliance's highly selective membership program.</p>
 		<p></p>
-		<a class="pure-button button-submit button-link three skyblue" style="font-size:130%;left:10px;" href="<?php echo Util::getGrantApplicationUrl(); ?>" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:10px;" ></span>Details & Apply</a>
+		<?php include("apply.php"); ?>
 	</div>
 </div>

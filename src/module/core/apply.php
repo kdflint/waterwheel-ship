@@ -1,0 +1,1 @@
+<a class="pure-button button-submit button-link three skyblue" style="font-size:17px;left:10px;" href="<?php echo Util::getGrantApplicationUrl(); ?>" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:10px;" ></span>APPLY NOW</a>
