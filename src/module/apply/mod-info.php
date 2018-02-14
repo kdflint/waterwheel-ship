@@ -6,22 +6,24 @@ require_once("../core/domain/Util.php");
 
 <form id="info-email-form" class="pure-form apply-form" action="<?php echo Util::getHttpApplyPath(); ?>/mod-info-processor.php" method="POST" style="visibility:visible;opacity:1;transition: opacity 1s;">
 	<div class="mod-apply-frameSingle" style="font-size:130%;">	
-		<p style="margin:10px 10px 10px 30px;font-size:110%;"><b>Why? Social leaders need powerful ways to connect and communicate.</b>
+		<p style="margin:10px 10px 10px 30px;font-size:130%;"><b>Why? Social leaders need powerful ways to connect and communicate.</b>
 			<!--
 			<a href="#" onclick="showSpecialOfferField();" style="float:right;margin-right:20px;text-decoration:none;font-size:120%"><span id="special-offer-link" style="color:#f68620;text-decoration:none;font-weight:bold;"></span></a></p>
 			-->
 			<div style="font-size:100%;margin-left:30px;">
 				<!--a "just-right" amount of vendor-neutral, guided training for your entire team. Six months of virtual conference center use supports our planning worksheets so you can learn our to -->
 				<!--<p>Your work deserves these tools! This 2017 grant, valued at $5,000, awards vendor-neutral training, guided strategic planning, and a private, full-featured conference room in our virtual <a class="mod-about-anchor" href="<?php echo Util::getDemoUrl(); ?>" target="_blank">web conference center</a>. Grantees emerge with a straightforward road map for their own technology adoption and become eligible for the major cost benefits of our highly selective membership program.</p>-->
-				<p>Cost should not be a barrier to the skillful, strategic use of remote meeting technology. There are many ways that web-based meetings can increase the reach and impact of socially progressive missions.</p>
+				<p>Cost should never be a barrier to the strategic use of remote meeting technology.<br/>This grant provides you and your team with premium web-based remote meeting formats.</p>
 				<div style="top:110px;left:400px;position:absolute;">
-					<p>This grant provides premium web-based remote meeting formats suitable for a variety of communication needs, such as</p>
-					<ul>
+					<p>Now you have access to:</p>
+					<ul style="font-weight:bold;">
 						<li>Community outreach webinars</li>
 						<li>No-travel volunteer training</li>
+						<li>Recources for better engagement</li>
 						<li>Remote Board meetings</li>
 					</ul>
-					<a class="pure-button button-submit button-link three skyblue" style="bottom:-80px;left:120px;" href="<?php echo Util::getGrantApplicationUrl(); ?>" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:10px;" ></span>Details & Apply</a>
+					<p><i>It's time to increase the impact of your mission!</i></p>
+					<a class="pure-button button-submit button-link three skyblue" style="bottom:-72px;left:120px;" href="<?php echo Util::getGrantApplicationUrl(); ?>" target="_blank"><span class="fa fa-paper-plane" style="font-size:105%;margin-right:10px;" ></span>APPLY NOW</a>
 				</div>
 			<?php /* ?>
 			<p style="margin:20px;display:none;" ><a class="pure-button button-link" href="javascript:void(0)" onclick="showInfoEmailField();">Information Packet</a></p>

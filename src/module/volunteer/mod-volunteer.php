@@ -127,13 +127,13 @@ force or Board<span class="required"> *</span></div>
 	</div>
 		<!--
 		<div id="apply-disabled" style="display:none;">
-			<a class="pure-button pure-button-disabled button-submit mod-sponsor-button two tan" href="#" onclick="alert('Please confirm your eligibility before viewing the application forms.');" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>Details & Apply</a>
+			<a class="pure-button pure-button-disabled button-submit mod-sponsor-button two tan" href="#" onclick="alert('Please confirm your eligibility before viewing the application forms.');" style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>APPLY NOW</a>
 		</div>
 		<div id="apply-link" style="display:block;">
-			<a class="pure-button button-submit mod-sponsor-button two tan" href="<?php echo($applyLink); ?>"  style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>Details & Apply</a>
+			<a class="pure-button button-submit mod-sponsor-button two tan" href="<?php echo($applyLink); ?>"  style="bottom:47px;width:75%;left:auto;" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:5px;" ></span>APPLY NOW</a>
 		</div>
 		-->
-		<a class="pure-button button-submit button-link three skyblue" style="font-size:140%;left:10px;" href="<?php echo Util::getGrantApplicationUrl(); ?>" target="_blank"><span class="fa fa-paper-plane" style="font-size:110%;margin-right:10px;" ></span>Details & Apply</a>
+		<?php include("apply.php"); ?>
 	</div>
 	
 

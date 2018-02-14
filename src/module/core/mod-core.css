@@ -1,14 +1,14 @@
 .sponsorHeader {
-	height: 160px;
+	height: 140px;
 	width: 740px;
 	padding: 20px 0px 10px;
 }
 
 .sponsorHeaderLeft {
-	font: bold 33px "Oxygen", Arial, sans-serif;
+	font: 33px "Oxygen", Arial, sans-serif;
 	position: absolute;
 	width: 520px;
-	line-height: 110%;
+	//line-height: 110%;
 }
 
 .sponsorHeaderRight {
